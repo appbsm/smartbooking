@@ -1,0 +1,14 @@
+#php_value post_max_size 100M
+#php_value upload_max_filesize 100M
+#php_value max_execution_time 50000
+
+RewriteEngine on
+
+
+#RewriteCond %{HTTP_HOST} !^www\.
+#RewriteRule ^(.*)$ http://www.%{HTTP_HOST}/$1 [R=301,L]
+#RewriteEngine On 
+#RewriteCond %{HTTPS} !=on RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301] 
+
+RewriteCond $1 !^(index\.php|vendor|images|bootstrap|css|js|assets|upload|temp|fonts|blueimp-gallery)
+RewriteRule ^(.*)$ /sms_booking_beta/index.php/$1 [L]
