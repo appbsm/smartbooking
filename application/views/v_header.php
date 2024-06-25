@@ -25,7 +25,8 @@ if ($id_guest != '') {
 }
 ?>
 <head>
-  <link rel="icon" type="image/x-icon" href="<?php echo site_url(); ?>images/favicon.ico">
+<title>Smart Booking</title>
+  <link rel="icon" type="image/x-icon" href="<?php echo site_url(); ?>images/10.png">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="">
