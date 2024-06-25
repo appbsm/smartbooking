@@ -1,0 +1,1232 @@
+body {
+	font-size: 0.8em;
+	/*font-family: 'source_sans', 'thai_sans', Arial, Tahoma!important;*/
+	/* font-family:'Syne', sans-serif; */
+	font-family: 'Prompt',sans-serif;
+}
+
+a {
+  color: #5a5a5a;
+}
+
+
+.button-primary {
+  background-color: #81BB4A; /* Green */
+  border-color: #81BB4A;
+  color: white;  
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 0.9em;
+  transition-duration: 0.4s;
+}
+
+.button-primary:hover {
+  color: #EAECEE;
+}
+
+.button-primary-w {
+	background-color: #ffffff; /* Green */
+	border-color: #81BB4A;
+	color: #81BB4A;  
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 0.9em;
+	transition-duration: 0.4s;
+  }
+  
+  .button-primary-w:hover {
+	background-color: #81BB4A;
+	color: #ffffff;
+  }
+
+
+
+
+.img_border {
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+  }
+  
+.imgThumbnail_bg {
+	margin-top: 5px;
+	/*padding-left: 5px;*/
+}
+
+.imgThumbnail_sm {
+	padding: 5px;	
+	border-radius: 5px;
+}
+
+.navbar {
+	padding: 0!important;
+	
+}
+
+.room_type {
+	border-radius: 5px;
+	border-color: #CCC;
+	border-style: solid;
+	border-width: 1px;
+}
+
+.icon {
+	border-radius: 0;
+}
+
+.previous, .next {
+	margin: 10px;
+	background-color: #81BB4A;
+	color: white;
+	padding: 5px 15px 5px 15px;
+	text-decoration: none;
+}
+
+.paginate_button {
+	margin:10px;
+}
+
+a:hover {
+	text-decoration: none;
+	color: black;	
+	cursor: pointer;
+}
+
+
+.price {
+	margin: 0 10px 0 10px!important;
+	background-color: #839287;/*GREEN #81BB4A;*/
+	color: white;
+	padding: 2px 0 2px 0;
+}
+
+button, .btn {
+	background-color: #839287!important;
+	color: #FFF!important;
+	border: #839287;
+}
+
+
+.btn-square {
+	background-color:transparent!important;
+	color: black!important;
+}
+}
+
+.project_name {
+	margin-left: auto;
+	font-size: 4vh;
+	color: #343a40;
+}
+
+
+
+@media only screen and (width: 522px) {
+	.project_name {
+		font-size: 3.3vh;
+		padding-right: 5px;
+	}
+	
+}
+
+@media only screen and (max-width: 280px) {
+	.main-1 {
+		margin-top: 155px;
+	}
+
+	.logo {
+		padding-right: 10px;
+	}
+	.search_room_header {
+		margin-top: -55px;
+	}
+	
+	
+}
+
+@media only screen and (min-width: 281px) and (max-width: 386px) {
+	.main-1 {
+		margin-top: 120px;
+	}
+}
+
+@media only screen and (min-width: 387px) {
+
+}
+
+.roomtypes {
+	font-size: 3vh;
+	font-weight: bold;
+}
+
+.icon_container {
+  position: relative;
+  min-height: 25px;
+}
+
+.text-left .col-md-9 {
+  height: 40px !important;
+}
+
+.icon-content-img {
+  position: absolute;
+  bottom: 0;
+}
+
+.icon-content {
+  /*position: absolute;*/
+}
+
+@media only screen and (max-width: 411px) {
+	.top-left-grid img {
+		width: 100%;
+		height: auto;
+		max-height: 97%;
+	}
+}
+
+@media only screen and (min-width: 412px) {
+	.top-left-grid img {
+		width: 100%;
+		height: auto;
+		max-height: 98.5%;
+	}
+}
+
+@media only screen and (max-width: 767px) {
+	.top-left-grid {
+		padding-left: 15px !important;
+		padding-right: 15px !important;
+	}
+	.top-right-grid {
+		padding-left: 16px !important;
+		padding-right: 0px !important;
+	}
+}
+
+@media only screen and (min-width: 768px) {
+	.top-left-grid {
+		padding-left: 15px !important;
+		padding-right: 3px !important;
+	}
+	.top-right-grid {
+		padding-left: 3px !important;
+		padding-right: 3px !important;
+	}
+}
+
+@media only screen and (max-width: 767px) {
+	.room_type .text-left .row {
+		margin: 0 -35px 0 -30px !important;
+	}
+	.room_type .price {
+		margin-right: -15px;
+	}
+}
+
+@media only screen and (min-width: 768px) {
+	.room_type .text-left .row {
+		margin: 0 -35px 0 -40px !important;
+	}
+}
+
+@media only screen and (max-width: 300px) {
+	.room_type .text-left .row .col-md-2 {
+		width: 5% !important;
+		padding-left: 5px !important;
+		padding-right: 5px !important;
+	}
+	.room_type .text-left .row .col-md-9 {
+		width: 90% !important;
+		padding-left: 20px !important;
+		padding-right: 0px !important;
+	}
+}
+
+@media only screen and (min-width: 301px) and (max-width: 575px) {
+	.room_type .text-left .row .col-md-2 {
+		width: 5% !important;
+		padding-left: 15px !important;
+		padding-right: 5px !important;
+	}
+	.room_type .text-left .row .col-md-9 {
+		width: 90% !important;
+		padding-left: 20px !important;
+		padding-right: 1px !important;
+	}
+}
+
+@media only screen and (min-width: 576px) and (max-width: 1200px) {
+	.room_type .text-left .row .col-md-2 {
+		width: 3% !important;
+		padding-left: 8px !important;
+		padding-right: 0px !important;
+	}
+	.room_type .text-left .row .col-md-9 {
+		width: 95% !important;
+		padding-left: 1px !important;
+		padding-right: 0px !important;
+	}
+}
+
+@media only screen and (min-width: 1201px) {
+	.room_type .text-left .row .col-md-9 {
+		padding-left: 10px !important;
+	}
+}
+
+.room_type1 .icon-content {
+	white-space: nowrap;
+    overflow: hidden;
+    text-overflow: clip;
+}
+
+.room-type-name {
+	font-size: 2.5vh;
+	font-weight: bold;
+	padding-top: 10px;
+	padding-bottom: 5px;
+	color: #17202A!important;
+}
+
+.footer {
+	font-size: 17px;
+	width: 100%;
+	height: 35px;
+	margin-top: 2px;
+	text-align: center;
+}
+
+.footer-phone {
+	overflow: hidden;
+	white-space: nowrap;
+}
+
+@media only screen and (min-width: 1201px) {
+	.container-fluid {
+		padding-left: 50px;
+		padding-right: 50px;
+	}
+}
+
+@media only screen and (max-width: 1200px) {
+	.container-fluid {
+		padding-left: 7px;
+		padding-right: 7px;
+	}
+}
+
+.room_img {
+	cursor: pointer;
+}
+
+/*SEARCH */
+
+select {
+	border: 1px;
+    border-color: #ABB2B9;
+	border-style: solid;
+	border-radius: 3px;
+	
+}
+
+input {
+	border: 1px;
+    border-color: #ABB2B9;
+	border-style: solid;
+	border-radius: 3px;
+	height: 2em;
+}
+
+.group {
+	display:flex;
+    flex-direction:column;
+    text-align: left;
+    margin-left: 5px;
+    width: 50%;
+}
+#dropdownMenuButton {
+	/*height: 3em!important;
+	
+	border-radius: 5px;*/
+	
+}
+
+.dropdown {
+	font-size: 1em;
+}
+
+.dropdown-menu {
+	width: 100%;
+	border: #7F8C8D;
+	/*height: 200px;*/
+	
+}
+
+.dropdown-item {
+	font-size: 0.8em!important;
+}
+
+.input_number {
+	-moz-appearance: textfield;
+	text-align: center;
+	font-size: 1.5em;
+	border: none;
+	background-color: #fffff;
+	color: #202030;
+	width: 80px;
+}
+
+.input_number_sm {
+	-moz-appearance: textfield;
+	text-align: center!important;
+	padding-left: 10px;
+	border: none;
+	background-color: #fffff;
+	color: #202030;
+	width: 40px;
+	font-size: 1rem;
+}
+
+.input-number::webkit-outer-spin-button,
+.input-number::webkit-inner-spin-button {
+	-webkit-appearance: none;
+	margin: 0;
+	border: none;
+}
+
+.input-number:focus {
+	border: none;
+}
+
+.btn_stepper {
+	color: #3264fe;
+	background-color: #ffffff;
+	border: none;
+	font-size: 30px;
+	cursor: pointer;
+	outline: 0!important;
+}
+
+.btn_stepper_sm {
+	color: #3264fe;
+	background-color: #ffffff;
+	border: none;
+	font-size: 20px;
+	cursor: pointer;
+	outline: 0!important;
+}
+
+.stepper {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.required {
+	font-weight: bold;
+	color: red;
+}
+
+.search_input {
+	height: 30px;
+	background: white;
+	border-radius: 5px;
+	border: 1px solid #C6C6C7;
+}
+
+
+
+.box {
+  display: flex;
+  flex-wrap: wrap;
+  height: 50px;
+  width: 100%;
+  align-content: space-between;
+  position: relative;
+}
+
+/* Style the list */
+ul.breadcrumb {
+  padding: 5px 5px 5px 5px;
+  list-style: none;
+  background-color: #eee;
+}
+
+/* Display list items side by side */
+ul.breadcrumb li {
+  display: inline;
+  font-size: 12px;;
+}
+
+/* Add a slash symbol (/) before/behind each list item */
+ul.breadcrumb li+li:before {
+  padding: 8px;
+  color: black;
+  content: "/\00a0";
+}
+
+/* Add a color to all links inside the list */
+ul.breadcrumb li a {
+  color: #0275d8;
+  text-decoration: none;
+}
+
+/* Add a color on mouse-over */
+ul.breadcrumb li a:hover {
+  color: #01447e;
+  text-decoration: underline;
+}
+
+/* HOME PAGE*/
+@media only screen and (min-width: 1181px) {
+	.slideshow { 
+	  margin: 50px 10px 10px 10px auto; 
+	  padding: 10px; 
+	  position: relative; 
+	  display: grid;
+	  width: 100%;   
+	  height: 48vh;;
+	}	
+}
+
+/*
+@media only screen and (min-width: 821px) and (max-width: 1180px) {
+	.slideshow { 
+	  margin: 50px 10px 10px 10px auto; 
+	  padding: 10px; 
+	  position: relative; 
+	  display: grid;
+	  width: 100%;   
+	}	
+}
+*/
+
+@media only screen and (min-width: 768px) and (max-width: 820px) {
+	.slideshow { 
+	  margin: 50px 10px 10px 10px auto; 
+	  padding: 10px; 
+	  position: relative; 
+	  display: grid;
+	  width: 100%;   
+	  height: 20vh;;
+	}	
+}
+
+
+@media only screen and (max-width: 820px) and (min-width: 767px) {
+	.slideshow { 
+	  margin: 50px 10px 10px 10px auto; 
+	  padding: 10px; 
+	  position: relative; 
+	  display: grid;
+	  width: 100%;   
+	  height: 19vh;;
+	  /*
+	  box-shadow: 0 0 20px rgba(0,0,0,0.4); 
+	  */
+	}
+	
+}
+
+@media only screen and (max-width: 768px) and (min-width: 601px) {
+	.slideshow { 
+	  margin: 50px 10px 10px 10px auto; 
+	  padding: 10px; 
+	  position: relative; 
+	  display: grid;
+	  width: 100%;   
+	  height: 24vh;;
+	  /*
+	  box-shadow: 0 0 20px rgba(0,0,0,0.4); 
+	  */
+	}
+	
+}
+
+/*Galaxy fold single screen*/
+@media only screen and (min-width: 414px) and (max-width: 600px) {
+	.slideshow { 
+	  margin: 50px 10px 10px 10px auto; 
+	  padding: 10px; 
+	  position: relative; 
+	  display: grid;
+	  width: 100%;   
+	  height: 38vh;;
+	  /*
+	  box-shadow: 0 0 20px rgba(0,0,0,0.4); 
+	  */
+	}
+	
+	
+}
+
+/*Galaxy fold double screen*/
+@media only screen and (min-width: 601px) and (max-width: 716px) {
+	.slideshow { 
+	  margin: 50px 10px 10px 10px auto; 
+	  padding: 10px; 
+	  position: relative; 
+	  display: grid;
+	  width: 100%;   
+	  /*
+	  box-shadow: 0 0 20px rgba(0,0,0,0.4); 
+	  */
+	}
+	
+	
+}
+
+/*Iphone SE single screen - width: 375*/
+@media only screen and (width: 375px) {
+	.slideshow { 
+	  margin: 50px 10px 10px 10px auto; 
+	  padding: 10px; 
+	  position: relative; 
+	  display: grid;
+	  width: 100%;   
+	  height: 28vh;;
+	  /*
+	  box-shadow: 0 0 20px rgba(0,0,0,0.4); 
+	  */
+	}
+	
+	
+	
+}
+
+/*Iphone SE single screen - width: 667*/
+@media only screen and (width: 667px) {
+	.slideshow { 
+	  margin: 50px 10px 10px 10px auto; 
+	  padding: 10px; 
+	  position: relative; 
+	  display: grid;
+	  width: 100%;   
+	  height: 74vh;;
+	  /*
+	  box-shadow: 0 0 20px rgba(0,0,0,0.4); 
+	  */
+	}	
+}
+
+
+/*Pixel single screen 851*/
+@media only screen and (width: 851px) {
+	.slideshow { 
+	  margin: 50px 10px 10px 10px auto; 
+	  padding: 10px; 
+	  position: relative; 
+	  display: grid;
+	  width: 100%;   
+	  height: 51vh;;
+	  /*
+	  box-shadow: 0 0 20px rgba(0,0,0,0.4); 
+	  */
+	}
+}
+
+/*GalaxyS8+ single screen 740*/
+@media only screen and (width: 740px) {
+	.slideshow { 
+	  margin: 50px 10px 10px 10px auto; 
+	  padding: 10px; 
+	  position: relative; 
+	  display: grid;
+	  width: 100%;   
+	  height: 77vh;;
+	  /*
+	  box-shadow: 0 0 20px rgba(0,0,0,0.4); 
+	  */
+	}
+}
+
+/*Iphone SE single screen*/
+
+@media only screen and (min-width: 376px) and (max-width: 413px) {
+	.slideshow { 
+	  margin: 50px 10px 10px 10px auto; 
+	  padding: 10px; 
+	  position: relative; 
+	  display: grid;
+	  width: 100%;   
+	  height: 23vh;;
+	  /*
+	  box-shadow: 0 0 20px rgba(0,0,0,0.4); 
+	  */
+	}
+}
+
+
+/*Iphone SE 667*/
+@media only screen and (width: 667px) {
+	.slideshow { 
+	  margin: 50px 10px 10px 10px auto; 
+	  padding: 10px; 
+	  position: relative; 
+	  display: grid;
+	  width: 100%;   
+	  height: 74vh;;
+	  /*
+	  box-shadow: 0 0 20px rgba(0,0,0,0.4); 
+	  */
+	}
+	
+	
+}
+
+/*Iphone XR 414*/
+@media only screen and (width: 414px) {
+	.slideshow { 
+	  margin: 50px 10px 10px 10px auto; 
+	  padding: 10px; 
+	  position: relative; 
+	  display: grid;
+	  width: 100%;   
+	  height: 23vh;;
+	  /*
+	  box-shadow: 0 0 20px rgba(0,0,0,0.4); 
+	  */
+	}
+	
+	
+	
+}
+
+/*Iphone XR 896*/
+@media only screen and (width: 896px) {
+	.slideshow { 
+	  margin: 50px 10px 10px 10px auto; 
+	  padding: 10px; 
+	  position: relative; 
+	  display: grid;
+	  width: 100%;   
+	  height: 55vh;;
+	  /*
+	  box-shadow: 0 0 20px rgba(0,0,0,0.4); 
+	  */
+	}
+	
+	
+}
+
+
+/*Ipad Air 820*/
+@media only screen and (width: 820px) {
+	.slideshow { 
+	  margin: 50px 10px 10px 10px auto; 
+	  padding: 10px; 
+	  position: relative; 
+	  display: grid;
+	  width: 100%;   
+	  height: 18vh;;
+	  /*
+	  box-shadow: 0 0 20px rgba(0,0,0,0.4); 
+	  */
+	}
+	
+	
+	
+	.room-type-name {
+		font-size: 1.5vh;
+	}
+	
+	.room-type-name {
+		font-size: 1.5vh;
+	}
+	
+	.project_name {
+		font-size: 2vh;
+	}
+	
+	.roomtypes {
+		font-size: 1.5vh;
+	}
+	
+}
+
+/*Surface Pro 7 912*/
+@media only screen and (width: 912px) {
+	.slideshow { 
+	  margin: 50px 10px 10px 10px auto; 
+	  padding: 10px; 
+	  position: relative; 
+	  display: grid;
+	  width: 100%;   
+	  height: 16vh;
+	  /*
+	  box-shadow: 0 0 20px rgba(0,0,0,0.4); 
+	  */
+	
+	}
+}
+
+/*Samsung Galaxy A51/A71 914*/
+@media only screen and (width: 914px) {
+	.slideshow { 
+	  margin: 50px 10px 10px 10px auto; 
+	  padding: 10px; 
+	  position: relative; 
+	  display: grid;
+	  width: 100%;   
+	  height: 53vh;
+	  /*
+	  box-shadow: 0 0 20px rgba(0,0,0,0.4); 
+	  */
+	
+	}
+}
+
+/*Ipad Mini 768*/
+@media only screen and (width: 768px) {
+	.slideshow { 
+	  margin: 50px 10px 10px 10px auto; 
+	  padding: 10px; 
+	  position: relative; 
+	  display: grid;
+	  width: 100%;   
+	  height: 17vh;
+	  /*
+	  box-shadow: 0 0 20px rgba(0,0,0,0.4); 
+	  */
+	}
+	
+
+	
+	.room-type-name {
+		font-size: 1.5vh;
+	}
+	
+	.room-type-name {
+		font-size: 1.5vh;
+	}
+	
+	.project_name {
+		font-size: 2vh;
+	}
+	
+	.roomtypes {
+		font-size: 1.5vh;
+	}
+	
+}
+
+/*Ipad Mini 1024*/
+@media only screen and (width: 1024px) {
+	.slideshow { 
+	  margin: 50px 10px 10px 10px auto; 
+	  padding: 10px; 
+	  position: relative; 
+	  display: grid;
+	  width: 100%;   
+	  height: 34vh;;
+	  /*
+	  box-shadow: 0 0 20px rgba(0,0,0,0.4); 
+	  */
+	}
+	
+	
+	
+	.room-type-name {
+		font-size: 1.5vh;
+	}
+	
+	.room-type-name {
+		font-size: 1.5vh;
+	}
+	
+	.project_name {
+		font-size: 2vh;
+	}
+	
+	.roomtypes {
+		font-size: 2vh;
+	}
+}
+
+
+/*Galaxy fold single screen*/
+@media only screen and (max-width: 374px) and (min-width: 200px) {
+	.slideshow { 
+	  margin: 50px 10px 10px 10px auto; 
+	  padding: 10px; 
+	  position: relative; 
+	  display: grid;
+	  width: 100%;   
+	  height: 20vh;;
+	  /*
+	  box-shadow: 0 0 20px rgba(0,0,0,0.4); 
+	  */
+	}
+	
+	
+}
+
+/*Galaxy fold 653*/
+@media only screen and (width: 653px) {
+	.slideshow { 
+	  margin: 50px 10px 10px 10px auto; 
+	  padding: 10px; 
+	  position: relative; 
+	  display: grid;
+	  width: 100%;   
+	  height: 100vh;;
+	  /*
+	  box-shadow: 0 0 20px rgba(0,0,0,0.4); 
+	  */
+	}
+	
+	
+}
+
+/*Galaxy fold 717 */
+@media only screen and (width: 717px) {
+	.slideshow { 
+	  margin: 50px 10px 10px 10px auto; 
+	  padding: 10px; 
+	  position: relative; 
+	  display: grid;
+	  width: 100%;   
+	  height: 54vh;
+	  /*
+	  box-shadow: 0 0 20px rgba(0,0,0,0.4); 
+	  */
+	}
+}
+
+/*Galaxy note 360 */
+@media only screen and (width: 360px) {
+	.slideshow { 
+	  margin: 50px 10px 10px 10px auto; 
+	  padding: 10px; 
+	  position: relative; 
+	  display: grid;
+	  width: 100%;   
+	  height: 27vh;;
+	  /*
+	  box-shadow: 0 0 20px rgba(0,0,0,0.4); 
+	  */
+	}
+}
+
+/*Galaxy note 915 */
+@media only screen and (width: 915px) {
+	.slideshow { 
+	  margin: 50px 10px 10px 10px auto; 
+	  padding: 10px; 
+	  position: relative; 
+	  display: grid;
+	  width: 100%;   
+	  height: 53vh;;
+	  /*
+	  box-shadow: 0 0 20px rgba(0,0,0,0.4); 
+	  */
+	}
+}
+
+/*Iphone 12 Pro 844 */
+@media only screen and (width: 844px) {
+	.slideshow { 
+	  margin: 50px 10px 10px 10px auto; 
+	  padding: 10px; 
+	  position: relative; 
+	  display: grid;
+	  width: 100%;   
+	  height: 50vh;;
+	  /*
+	  box-shadow: 0 0 20px rgba(0,0,0,0.4); 
+	  */
+	}		
+}
+
+/*Surface Duo 720 */
+@media only screen and (width: 720px) {
+	.slideshow { 
+	  margin: 50px 10px 10px 10px auto; 
+	  padding: 10px; 
+	  position: relative; 
+	  display: grid;
+	  width: 100%;   
+	  height: 52vh;;
+	  /*
+	  box-shadow: 0 0 20px rgba(0,0,0,0.4); 
+	  */
+	}		
+}
+
+/*Galaxy note 640 */
+@media only screen and (width: 640px) {
+	.slideshow { 
+	  margin: 50px 10px 10px 10px auto; 
+	  padding: 10px; 
+	  position: relative; 
+	  display: grid;
+	  width: 100%;   
+	  height: 77vh;;
+	  /*
+	  box-shadow: 0 0 20px rgba(0,0,0,0.4); 
+	  */
+	}
+	
+	
+}
+
+@media only screen and (min-width: 1024px) {
+	.project_name {
+		font-size: 20px;
+		padding-right: 5px;
+	}
+	
+	.slideshow { 
+	  margin: 50px 10px 10px 10px auto; 
+	  padding: 10px; 
+	  position: relative; 
+	  display: grid;
+	  width: 100%;   
+	  height: 22vw;;
+	  /*
+	  box-shadow: 0 0 20px rgba(0,0,0,0.4); 
+	  */
+	}
+	
+	.room-type-name {
+		font-size: 16px;
+		font-weight: bold;
+		padding-top: 10px;
+		padding-bottom: 5px;
+		color: #17202A!important;
+	}
+	
+	.roomtypes {
+		font-size: 16px;
+		font-weight: bold;
+	}	
+}
+
+.package_cbox {
+	vertical-align: middle; 
+	margin: -2px 3px 0 0!important;
+}
+
+.checkbox-dropdown {
+    width: 100%;
+    border: 1px solid #c5c5c5 /*#aaa*/;
+    padding: 10px;
+    position: relative;
+    margin: 0 auto;
+    
+    user-select: none;
+    z-index: 1;
+    
+    border-radius: 5px; 
+   
+    padding-top: 3px; 
+    height: 30px; 
+    font-size: 1em;
+    
+}
+
+/* Display CSS arrow to the right of the dropdown text */
+.checkbox-dropdown:after {
+    content:'';
+    height: 0;
+    position: absolute;
+    width: 0;
+    border: 6px solid transparent;      
+    border-top-color: #000;
+    top: 50%;
+    right: 10px;
+    margin-top: -3px;
+}
+
+/* Reverse the CSS arrow when the dropdown is active */
+.checkbox-dropdown.is-active:after {
+    border-bottom-color: #000;
+    border-top-color: #fff;
+    margin-top: -9px;
+}
+
+.checkbox-dropdown-list {
+	text-align: left;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 100%; /* align the dropdown right below the dropdown text */
+    border: inherit;
+    border-top: none;
+    left: -1px; /* align the dropdown to the left */
+    right: -1px; /* align the dropdown to the right */
+    opacity: 0; /* hide the dropdown */    
+    transition: opacity 0.4s ease-in-out;
+    height: 100px;
+    overflow: scroll;
+    overflow-x: hidden;
+    pointer-events: none; /* avoid mouse click events inside the dropdown */
+    
+}
+.is-active .checkbox-dropdown-list {
+    opacity: 1; /* display the dropdown */
+    background-color: white; 
+    pointer-events: auto; /* make sure that the user still can select checkboxes */
+}
+
+.checkbox-dropdown-list li label {
+    display: block;
+    border-bottom: 1px solid silver;
+    padding: 10px;
+   
+    transition: all 0.2s ease-out;
+}
+
+.checkbox-dropdown-list li label:hover {
+    background-color: #C6C6C7 /*#555*/;
+    color: white;
+}
+
+/*Progress Step Bar - Start*/
+.container_progress_bar {
+	padding-top: 3em;
+	width: 100%;
+	margin: auto;
+	text-align: center;
+	}
+.progressbar {
+	counter-reset: step;
+	float: center;
+	}
+	/*
+	.progressbar li {
+	list-style: none;
+	display: inline-block;
+	width: 24%;
+	position: relative;
+	text-align: center;
+	cursor: pointer;
+	}
+	*/
+	.progressbar li:before {
+	content: counter(step);
+	counter-increment: step;
+	width: 2.5em;
+	height: 2.5em;
+	line-height : 2.5em;
+	border: 1px solid #ddd;
+	border-radius: 100%;
+	display: block;
+	text-align: center;
+	margin: 0 auto 10px auto;
+	background-color: #fff;
+	}
+	
+	.progressbar li:first-child:after {
+	content: none;
+	}
+	.progressbar li.active {
+	color: green;
+	}
+
+	/* this is for the circle*/
+	.progressbar li.active:before { 
+	border-color: green;
+	background-color: green;
+	color: #fff;
+	} 
+	.progressbar li.active + li:after {
+	background-color: green;
+	}
+
+/* Progress Step Bar - End */
+
+@media only screen and (min-width: 470px) {
+	.progressbar li {
+	list-style: none;
+	display: inline-block;
+	width: 24%;
+	position: relative;
+	text-align: center;
+	cursor: pointer;
+	}
+	.progressbar li:after {
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 1px;
+	background-color: #ddd;
+	
+	top: 15px;
+	left: -50%;
+	z-index : -1;
+	}
+}
+
+@media only screen and (max-width: 469px) {
+	.progressbar li {
+	list-style: none;
+	/*display: inline-block;*/
+	/*width: 24%;*/
+	position: relative;
+	text-align: center;
+	cursor: pointer;
+	}
+	
+}
+
+.dropdown-menu {
+		background-color: #f8f9fa!important;
+	}
+	
+.btn_sign_in {
+	/*background-color:#81BB4A; */
+	font-size: 1em!important;
+}
+
+.navbar-expand {
+	margin-right: 10px;
+	background-color: #f8f9fa!important;
+	
+	}
+@media only screen and (max-width: 280px) {
+	header {
+		margin: 30px 0 20px 0!important;
+	}
+	
+	#navbarSupportedContent {
+		width: 175px;
+		background-color: #f8f9fa!important;
+	}
+	
+	.navbar-expand {
+	font-size: 0.8em;
+	margin-right: 15px;
+	background-color: #f8f9fa!important;
+	
+	}
+	
+	#profile_name {
+	 /* Hide the text. */
+    display: none;
+	}
+	
+	#profile_dropdown {
+		display: block!important;
+		background-color: #C6C6C7!important;
+		height: 20px;
+		width: 20px;
+		margin-left: 5px;
+	}
+	
+	.btn_sign_in {
+		/*background-color:#81BB4A; */
+		font-size: 0.9em!important;
+		padding: 5px 7px 5px 7px!important;
+	}
+}
+
+@media only screen and (max-width: 576px) {
+	.mob_space {
+		height: 30px!important;
+	}
+}

@@ -1,0 +1,222 @@
+/* GLOBAL STYLES
+-------------------------------------------------- */
+/* Padding below the footer and lighter body text */
+
+
+
+body {
+  padding-top: 2rem;
+  /* padding-bottom: 3rem; */
+  color: #000000;
+}
+
+
+
+.header{
+  position: relative;
+}
+
+.navbar-nav {
+  
+	/*margin: auto;*/
+}
+
+.home-p{
+  position: relative;
+}
+
+.search-box{
+  position: absolute;
+  top: 50px;
+  
+
+}
+
+.search-bg{
+  background-color: #e2e0e0;
+}
+
+
+.n_link {
+	background-color: #81BB4A;
+	border: 1px solid #81BB4A;
+	border-radius: 4px;
+	margin: 5px;
+}
+
+
+.property-slider-wrap, .img-property-slide-wrap {
+  position: relative; }
+  .property-slider-wrap .tns-outer .tns-inner, .img-property-slide-wrap .tns-outer .tns-inner {
+    padding-bottom: 100px !important; }
+  .property-slider-wrap .tns-nav, .img-property-slide-wrap .tns-nav {
+    position: absolute;
+    left: 50%;
+    -webkit-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    transform: translateX(-50%);
+    bottom: 40px;
+    z-index: 2; }
+    .property-slider-wrap .tns-nav button, .img-property-slide-wrap .tns-nav button {
+      background: none;
+      border: none;
+      display: inline-block;
+      margin: 2px;
+      position: relative; }
+      .property-slider-wrap .tns-nav button:active, .property-slider-wrap .tns-nav button:focus, .img-property-slide-wrap .tns-nav button:active, .img-property-slide-wrap .tns-nav button:focus {
+        outline: none; }
+      .property-slider-wrap .tns-nav button:before, .img-property-slide-wrap .tns-nav button:before {
+        position: absolute;
+        content: "";
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background-color: rgba(0, 0, 0, 0.2);
+        right: 0;
+        -webkit-transition: .3s all ease;
+        -o-transition: .3s all ease;
+        transition: .3s all ease; }
+      .property-slider-wrap .tns-nav button.tns-nav-active:before, .img-property-slide-wrap .tns-nav button.tns-nav-active:before {
+        background-color: #81BB4A; }
+
+
+
+
+#property-nav {
+  position: absolute;
+  width: 100%;
+  bottom: 300px;
+
+}
+  #property-nav span {
+    display: inline-block;
+    cursor: pointer;
+    padding: 7px 20px;
+    border-radius: 30px;
+    background: rgba(0, 32, 74, 0.1);
+    color: #81BB4A;
+    text-align: center;
+    -webkit-transition: .3s all ease;
+    -o-transition: .3s all ease;
+    transition: .3s all ease; }
+    #property-nav span:hover, #property-nav span.active {
+      background: #81BB4A;
+      color: #fff !important; }
+  #property-nav .prev, #property-nav .next {
+    position: absolute;
+    cursor: pointer; }
+    #property-nav .prev:hover, #property-nav .next:hover {
+      color: #81BB4A; }
+  #property-nav .prev {
+    left: 0; }
+  #property-nav .next {
+    right: 0; }
+
+
+._price {
+	margin: 0 5px 0 5px;
+	background-color: #839287;/*GREEN #81BB4A;*/
+	color: white;
+	padding: 2px 0 2px 0;
+}
+
+
+
+
+
+/* MARKETING CONTENT
+-------------------------------------------------- */
+
+/* Center align the text within the three columns below the carousel */
+.marketing .col-lg-4 {
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+.marketing h2 {
+  font-weight: 400;
+}
+/* rtl:begin:ignore */
+.marketing .col-lg-4 p {
+  margin-right: .75rem;
+  margin-left: .75rem;
+}
+/* rtl:end:ignore */
+
+
+/* Featurettes
+------------------------- */
+
+.featurette-divider {
+  margin: 5rem 0; /* Space out the Bootstrap <hr> more */
+}
+
+/* Thin out the marketing headings */
+.featurette-heading {
+  font-weight: 300;
+  line-height: 1;
+  /* rtl:remove */
+  letter-spacing: -.05rem;
+}
+
+
+/* RESPONSIVE CSS
+-------------------------------------------------- */
+
+@media (min-width: 40em) {
+  /* Bump up size of carousel content */
+  .carousel-caption p {
+    margin-bottom: 1.25rem;
+    font-size: 1.25rem;
+    line-height: 1.4;
+  }
+
+  .featurette-heading {
+    font-size: 50px;
+  }
+}
+
+.cart_image {
+	max-width: 240px;
+}
+
+#dropdownMenuButton {
+	width: 100%;
+	height: auto;
+}
+	
+@media (max-width: 820px){
+	.cart_image {
+			max-width: 200px!important;
+		}
+}
+
+@media (max-width: 820px){
+	.cart_image {
+			max-width: 200px!important;
+		}
+}
+
+@media (min-width: 820px){
+	.container {
+		max-width: 95%!important;
+	}	
+	
+	
+}
+
+@media (min-width: 62em) {
+  .featurette-heading {
+    margin-top: 7rem;
+  }
+}
+
+@media (max-width: 820px){
+	.navbar {
+		background-color: white;		
+	}	
+	.search-box {
+		position: initial!important;
+	}
+}
+
+

@@ -1,0 +1,38 @@
+.border-r-10 {
+    border:1px solid #81BB4A;
+    border-radius: 10px;
+}
+
+.btn-save{
+    background-color: #81BB4A;
+    color: aliceblue;
+}
+
+.input-icons i {
+    position: absolute;
+    z-index: 99;
+}
+  
+.input-icons {
+    width: 100%;
+    margin-bottom: 10px;
+}
+  
+.icon {
+    padding: 10px;
+    color: rgb(71, 72, 71);
+    min-width: 50px;
+    text-align: center;
+}
+  
+.input-field {
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+}
+
+@media (max-width: 500px) {
+    .block-control{
+        height:200px;
+    }
+}

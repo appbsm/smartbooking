@@ -1,0 +1,12 @@
+.bg-package{
+    background-color: #81BB4A;
+    padding: .5rem;
+    width: 100%;
+  }
+  
+.bg-package h2 {
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    font-size: large;
+  }

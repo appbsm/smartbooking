@@ -1,0 +1,239 @@
+@charset "utf-8";
+* { margin:0; padding:0;}
+@font-face {
+    font-family: 'thai_sans';
+    src: url('../font/thaisanslite_r1.eot');
+    src: url('../font/thaisanslite_r1.eot?#iefix') format('embedded-opentype'),
+         url('../font/thaisanslite_r1.woff2') format('woff2'),
+         url('../font/thaisanslite_r1.woff') format('woff'),
+         url('../font/thaisanslite_r1.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'source_sans';
+    src: url('../font/sourcesanspro-extralight.eot');
+    src: url('../font/sourcesanspro-extralight.eot?#iefix') format('embedded-opentype'),
+         url('../font/sourcesanspro-extralight.woff2') format('woff2'),
+         url('../font/sourcesanspro-extralight.woff') format('woff'),
+         url('../font/sourcesanspro-extralight.ttf') format('truetype');
+    font-weight: 100;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'source_sans';
+    src: url('../font/sourcesanspro-light.eot');
+    src: url('../font/sourcesanspro-light.eot?#iefix') format('embedded-opentype'),
+         url('../font/sourcesanspro-light.woff2') format('woff2'),
+         url('../font/sourcesanspro-light.woff') format('woff'),
+         url('../font/sourcesanspro-light.ttf') format('truetype');
+    font-weight: 200;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'source_sans';
+    src: url('../font/sourcesanspro-regular.eot');
+    src: url('../font/sourcesanspro-regular.eot?#iefix') format('embedded-opentype'),
+         url('../font/sourcesanspro-regular.woff2') format('woff2'),
+         url('../font/sourcesanspro-regular.woff') format('woff'),
+         url('../font/sourcesanspro-regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'source_sans';
+    src: url('../font/sourcesanspro-semibold.eot');
+    src: url('../font/sourcesanspro-semibold.eot?#iefix') format('embedded-opentype'),
+         url('../font/sourcesanspro-semibold.woff2') format('woff2'),
+         url('../font/sourcesanspro-semibold.woff') format('woff'),
+         url('../font/sourcesanspro-semibold.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'source_sans';
+    src: url('../font/sourcesanspro-bold.eot');
+    src: url('../font/sourcesanspro-bold.eot?#iefix') format('embedded-opentype'),
+         url('../font/sourcesanspro-bold.woff2') format('woff2'),
+         url('../font/sourcesanspro-bold.woff') format('woff'),
+         url('../font/sourcesanspro-bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+
+
+/* GLOBAL STYLES
+-------------------------------------------------- */
+/* Padding below the footer and lighter body text */
+
+body {
+  font-family: 'source_sans', 'thai_sans', Arial, Tahoma!important;	
+  font-size: 16px;
+  /* padding-top: 3rem; */
+  /* padding-bottom: 3rem; */
+  color: black;/*#5a5a5a;*/
+  
+}
+
+header {
+	font-family: 'source_sans', 'thai_sans', Arial, Tahoma!important;	
+	font-size: 78%;
+
+}
+
+.btn-secondary {
+	background-color: #BDBFBC;
+	border-color: #BDBFBC;
+	font-size: 0.9em;
+}
+
+.our_product {
+	font-family: 'thai_sans', Arial!important;	
+	font-size: 1.3em;
+	font-weight: normal;
+	line-height: 2em;
+}
+
+html {
+	font-size: 16px;
+	font-family: 'source_sans', 'thai_sans', Arial!important;
+	
+}
+
+.navbar-nav {
+	padding-right: 100px;
+	margin: auto;
+	
+}
+
+/*
+.nav {
+	font-size: 1.2em;
+}
+*/
+.n_link {
+	/*background-color: #81BB4A;*/
+	font-weight: bold;
+	color: black!important;
+	border: 1px solid #81BB4A;
+	border-radius: 4px;
+	margin: 5px;
+}
+
+.active {
+	background-color: #81BB4A;
+	font-weight: bold;
+	color: white!important;
+}
+
+a:hover {
+  /*background-color: white;*/
+  background-color: #81BB4A;
+  color: black!important;
+}
+
+/* CUSTOMIZE THE CAROUSEL
+-------------------------------------------------- */
+
+/* Carousel base class */
+.carousel {
+  margin-bottom: 4rem;
+}
+/* Since positioning the image, we need to help out the caption */
+.carousel-caption {
+  bottom: 3rem;
+  z-index: 10;
+}
+
+/* Declare heights because of positioning of img element */
+.carousel-item, .carousel-inner {
+  height: 600px;
+}
+.carousel-item > img {
+  position: absolute;
+  object-fit:cover;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;;
+}
+
+
+/* MARKETING CONTENT
+-------------------------------------------------- */
+
+/* Center align the text within the three columns below the carousel */
+.marketing .col-lg-4 {
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+.marketing h2 {
+  font-weight: 400;
+}
+/* rtl:begin:ignore */
+.marketing .col-lg-4 p {
+  margin-right: .75rem;
+  margin-left: .75rem;
+}
+/* rtl:end:ignore */
+
+
+/* Featurettes
+------------------------- */
+
+.featurette-divider {
+  margin: 5rem 0; /* Space out the Bootstrap <hr> more */
+}
+
+/* Thin out the marketing headings */
+.featurette-heading {
+  font-weight: 300;
+  line-height: 1;
+  /* rtl:remove */
+  letter-spacing: -.05rem;
+}
+
+
+/* RESPONSIVE CSS
+-------------------------------------------------- */
+
+@media (min-width: 40em) {
+  /* Bump up size of carousel content */
+  .carousel-caption p {
+    margin-bottom: 1.25rem;
+    font-size: 1.25rem;
+    line-height: 1.4;
+  }
+
+  .featurette-heading {
+    font-size: 50px;
+  }
+}
+
+@media (min-width: 62em) {
+  .featurette-heading {
+    margin-top: 7rem;
+  }
+}
+
+h5 {
+	font-size: 1.2rem!important;
+}
+
+h1 {
+	font-size: 2rem!important;
+}
+
+h2 {
+	font-size: 1.8rem!important;
+}
+
+h3 {
+	font-size: 1.6rem!important;
+}
+
+h4 {
+	font-size: 1.4rem!important;
+}
