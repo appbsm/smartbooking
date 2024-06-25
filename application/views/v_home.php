@@ -4,6 +4,8 @@ $CI = &get_instance();
 $CI->load->model('m_room_type');
 
 ?>
+<title>Smart Booking</title>
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
 	.slideshow {
@@ -116,6 +118,12 @@ $CI->load->model('m_room_type');
 			/* height: 400px; */
 		}
 	}
+	@media (min-width: 1024px) {
+    .carousel-inner .carousel-item img {
+        height: 500px;
+        object-fit: cover; /* Optional: This will ensure the image covers the 500px height without distortion */
+    }
+}
 </style>
 
 <!-- Package -->
@@ -123,8 +131,9 @@ $CI->load->model('m_room_type');
 <link rel="stylesheet" href="<?= site_url() ?>/css/tiny-slider.css">
 <link rel="stylesheet" href="<?= site_url() ?>/css/package.css">
 <!-- <link rel="stylesheet" href="<?= site_url() ?>/css/main.css"> -->
-
+<link rel="icon" type="image/png" sizes="16x16" href="<?= site_url() ?>/images/10.png">
 <link rel="stylesheet" href="<?= site_url() ?>assets/select-picker/css/bootstrap-select.min.css">
+
 
 
 <div class=" home-p mb-4 mt-4">
