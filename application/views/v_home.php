@@ -51,6 +51,40 @@ $CI->load->model('m_room_type');
 		flex-direction: row;
 		justify-content: end;
 	}
+	
+	.description-banner {
+		background-color: #e2e0e0;
+		color: #839287;
+		text-align: center;
+		padding: 20px;
+		font-size: 16px;
+		font-weight: 400;
+	}
+	.long-text {
+		display: none; /* ซ่อนข้อความยาวในตอนแรก */
+		font-size: small;
+		mmargin: 0;
+	}
+	.short-text {
+		margin: 0;
+		font-size: small;
+	}
+	.a-readmore {
+		color: #839287;
+	}
+	.readmore-toggle {
+		display: block;
+		cursor: pointer;
+		color: #839287;
+		font-size: small !important;
+		margin-top: 10px;
+	}
+
+	.readmore-toggle:hover {
+		text-decoration: underline;
+		font-size: small;
+	}
+	
 
 	/* Styles for Mobile Phones */
 	@media (max-width: 480px) {
@@ -268,6 +302,7 @@ $CI->load->model('m_room_type');
 				</div>
 			</div>
 		</form>
+		
 
 
 
@@ -302,9 +337,78 @@ $CI->load->model('m_room_type');
 		</div> -->
 
 	</div>
+		<!-- Descripttion -->
+		<script>
+		/*
+			document.addEventListener('DOMContentLoaded', function() {
+				document.getElementById('readMoreBtn').addEventListener('click', function() {
+					var longText = document.querySelector('.long-text');
+					var btn = document.getElementById('readMoreBtn');
 
+					if (longText.style.display === 'none') {
+						longText.style.display = 'block';
+						btn.textContent = 'ซ่อนข้อความ';
+					} else {
+						longText.style.display = 'none';
+						btn.textContent = 'อ่านต่อ';
+					}
+				});
+			});
+		*/
+		document.addEventListener('DOMContentLoaded', function() {
+			document.getElementById('readMoreBtn').addEventListener('click', function() {
+				var longText = document.querySelector('.long-text');
+				var btn = document.getElementById('readMoreBtn');
+
+				if (longText.style.display === 'none') {
+					longText.style.display = 'block';
+					btn.innerHTML = 'ซ่อนข้อความ...<i class="fas fa-angle-down"></i>';
+				} else {
+					longText.style.display = 'none';
+					btn.innerHTML = 'อ่านต่อ...<i class="fas fa-angle-up"></i>';
+				}
+			});
+		});
+
+		</script>
+		<div class="col-md-12 mb-4 description-banner">
+			<div class="section-heading text-center mb-3">
+				<a href="https://smsmartbooking.buildersmart.com/project_info" target="_blank" class="a-readmore">
+					<h5 style="font-weight: 600;">
+						<?php
+							if (sizeof($packages) > 0) {
+								echo ($lang == 'english') ? 'SM Resort' : 'SM Resort';
+							}
+						?>
+					</h5>
+				</a>
+			</div>
+			<div class="row">
+				<div class="col-md-12">
+					<div class="content">
+						<p class="short-text">
+							<?php
+								if (sizeof($packages) > 0) {
+									echo ($lang == 'english') ? 'Relax amidst the stunning scenery, surrounded by nature and fresh air.
+SM Resort redefines a new style of accommodation with its modern resort collection under the BuildSmart Group. Located in the picturesque Khao Yai area' : 'เอสเอ็ม รีสอร์ท คือนิยามของที่พักแนวใหม่ คอลเลคชั่นรีสอร์ททันสมัย ในเครือของบริษัท บิวเดอสมาร์ท พร้อมการพลิกโฉมใหม่อย่างโดดเด่นบนพื้นที่เขาใหญ่';
+								}
+							?>
+						</p>
+						<p class="long-text">
+							<?php
+								if (sizeof($packages) > 0) {
+									echo ($lang == 'english') ? 'SM Resort redefines a new style of accommodation with its modern resort collection under the BuildSmart Group. Located in the picturesque Khao Yai area, SM Resort offers a remarkable transformation to welcome guests. With various activities available, we are ready to provide a new kind of experience for travelers. Additionally, we host a variety of gatherings and events, ensuring to create precious memories for you. <a href="https://smsmartbooking.buildersmart.com/project_info" target="_blank"><em><i class="fas fa-angle-double-left"></i>readmore...<i class="fas fa-angle-double-right"></i></em></a>' : ' เพื่อต้อนรับแขกผู้มาเยือน พร้อมทั้งมีกิจกรรมต่างๆมากมาย พร้อมแล้วที่จะมอบประสบการณ์ในแบบฉบับใหม่ให้กับนักเดินทาง  รวมถึงงานเลี้ยงสังสรรค์ต่างๆ ที่พร้อมแล้วที่จะสร้างความทรงจำอันล้ำค่าเพื่อคุณ  <a href="https://smsmartbooking.buildersmart.com/project_info" target="_blank"><em><i class="fas fa-angle-double-left"></i>อ่านต่อ...<i class="fas fa-angle-double-right"></i></em></a>';
+								}
+							?>
+						</p>
+						<!--<button id="readMoreBtn" class="mt-3">อ่านต่อ...</button>-->
+						<span id="readMoreBtn" class="readmore-toggle"> อ่านต่อ...<i class="fas fa-angle-up"></i></span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- Descripttion -->
 </div>
-
 
 <!-- Package -->
 <div class="section mt-4">
