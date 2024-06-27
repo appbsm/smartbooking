@@ -27,13 +27,14 @@ $lang  = $lg;
 					<div class="col-md-6 col-lg-6 text-right mt-3">							
 						<p ><?php echo $lang == 'english' ? 'If your interest room rent could you please contact admin via Line or Mobile <span class="footer-phone">065-989-8845</span>' : 'หากท่านสนใจห้องพักกรุณาติดต่อพนักงานผ่าน Line หรือ โทร <span class="footer-phone">065-989-8845</span>'; ?></p>
 						<img class="logo-footer" src="<?php echo site_url();?>/images/line.jpg" alt="qr-code" data-at2x="<?php echo site_url();?>/images/line.jpg" width="100" height="100">
+						<!--
 						<p>
 							<a class="btn btn-square me-1" href="" ><i class="fab fa-twitter"></i></a>
 							<a class="btn btn-square me-1" href="" ><i class="fab fa-facebook-f"></i></a>
 							<a class="btn btn-square me-1" href="" ><i class="fab fa-youtube"></i></a>
 							<a class="btn btn-square me-0" href="" ><i class="fab fa-linkedin-in"></i></a>
-						</p>
-						
+						</p>	
+						-->
 					</div>
 				</div>
 			</div>
