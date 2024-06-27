@@ -85,6 +85,145 @@ $CI->load->model('m_room_type');
 		font-size: small;
 	}
 	
+	/*PROMOTION & PACKAGE*/
+	.card {
+	  border: none;
+	  border-radius: 0;
+	  box-shadow: 2px 6px 8px 0 rgba(22, 22, 26, 0.18);
+	}
+	.carousel-inner {
+	  /*padding: 1em;*/
+	}
+	.carousel-control-prev,
+	.carousel-control-next {
+	  background-color: #e1e1e1;
+	  width: 6vh;
+	  height: 6vh;
+	  border-radius: 50%;
+	  top: 50%;
+	  transform: translateY(-50%);
+	}
+	.carousel-control-prev span,
+	.carousel-control-next span {
+	  width: 1.5rem;
+	  height: 1.5rem;
+	}
+	@media screen and (min-width: 577px) {
+	  .cards-wrapper {
+		display: flex;
+	  }
+	  .card {
+		margin: 0 0.5em;
+		width: calc(100% / 2);
+	  }
+	  .image-wrapper {
+		height: 20vw;
+		margin: 0 auto;
+	  }
+	}
+	@media screen and (max-width: 576px) {
+	  .card:not(:first-child) {
+		display: none;
+	  }
+	}
+	.image-wrapper img {
+	  max-width: 100%;
+	  max-height: 100%;
+	}
+	.package-tx-title {
+		color: #0d6efd !important;
+		font-size: 18px ;
+		font-weight: 600;
+		cursor: pointer;
+	}
+	.package-tx-title:hover {
+		color: #000 !important;
+		font-size: 18px ;
+		font-weight: 600;
+		cursor: pointer;
+	}
+	.package-tx-sub {
+		color: #000 !important;
+		font-size: 14px ;
+		cursor: pointer;
+		font-weight: 600;
+	}
+	.package-tx {
+		-webkit-line-clamp: 2;
+		color: rgba(249, 109, 1, 1.00);
+		font-style: normal;
+		font-size: 14px ;
+	}
+	.package-tx-line {
+		color: rgba(143, 143, 143, 1.00);
+		font-style: normal;
+		text-decoration-line: line-through;
+		font-size: 14px ;
+		margin: 0;
+	}
+	.package-period-tt {
+		-webkit-line-clamp: 2;
+		font-style: normal;
+		font-size: 12px ;
+		margin: 0;
+	}
+	.package-period {
+		-webkit-line-clamp: 2;
+		color: #000 !important;
+		font-style: normal;
+		font-size: 14px ;
+		margin: 0;
+	}
+	.package-img {
+		width: 100%;
+		height: 100%;
+	}
+	.discount {
+		position: absolute;
+		background-color: #e12d2d;
+		top: 16px;
+		width: 86px;
+		border-radius: 4px;
+		text-align: center;
+		margin: -16px -20px;
+	}
+	.discount-no {
+		font-size: 16px !important;
+		color: #fff !important;
+		margin: 0;
+	}
+	.discount-title {
+		font-size: x-small !important;
+		color: #fff !important;
+		margin: 0;
+	}
+	.btn-more {
+		width: auto;
+		height: auto;
+		text-transform: uppercase;
+		line-height: 30px;
+		color: #fff !important;
+		font-size: small;
+		background-color: #839287;
+		border-color: #839287;
+	}
+	/*PROMOTION & PACKAGE*/
+	
+	/*Room Types*/
+	.roomtype-tx-title {
+		color: #000 !important;
+		font-size: 18px ;
+		font-weight: 500;
+		cursor: pointer;
+	}
+	.roomtype-tx-title:hover {
+		color: #0d6efd !important;
+		font-size: 18px ;
+		font-weight: 500;
+		cursor: pointer;
+	}
+	/*Room Types*/
+	
 
 	/* Styles for Mobile Phones */
 	@media (max-width: 480px) {
@@ -153,7 +292,7 @@ $CI->load->model('m_room_type');
 		}
 	}
 	@media (min-width: 1024px) {
-    .carousel-inner .carousel-item img {
+    .carousel-inner-packgage .carousel-item img {
         height: 500px;
         object-fit: cover; /* Optional: This will ensure the image covers the 500px height without distortion */
     }
@@ -169,6 +308,9 @@ $CI->load->model('m_room_type');
 <link rel="stylesheet" href="<?= site_url() ?>assets/select-picker/css/bootstrap-select.min.css">
 
 
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
 
 <div class=" home-p mb-4 mt-4">
 	<!-- Carousel Start -->
@@ -425,7 +567,210 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
 		<!-- Descripttion -->
 </div>
 
+<!-- PROMOTION & PACKAGE -->
+<div class="slider-wrapper slider1-wrapper" style="padding-top: 30px;">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12 col-md-12 col-sm-12 col-12"> 
+				<h4 style="text-align: center; padding-bottom: 15px;">
+					<a id="package" href="javascript:;">PROMOTION & PACKAGE</a>
+				</h4>
+				<div id="carouselExampleControls-Package" class="carousel slide" data-bs-ride="carousel">
+				  <div class="carousel-inner-packgage">
+					<div class="carousel-item active">
+					  <div class="cards-wrapper">
+						<div class="card">
+						  <div class="image-wrapper">
+							<img class="package-img" src="https://sharefolder.buildersmart.com/sms_booking/upload/package_photo/8_648ad3a488cab.jpg" alt="...">
+						  </div>
+						  <div class="card-body">
+							<h5 class="package-tx-title">SM Resort Showroom @ Khaoyai</h5>
+							<p class="package-tx-sub">Promotion package rent out all rooms for @24 Persons (MAX)</p>
+							<p class="package-tx-line mt-2">THB19,800</p>
+							<p class="package-tx">THB19,300</p>
+							<p class="package-period-tt mt-2">
+								<span>Promo period</span>
+								<!--<span style="float: right;">Min. transaction</span>-->
+							</p>
+							<p class="package-period">
+								<i class="far fa-calendar"></i> &nbsp;<span>01 AUG 2023 - 31 DEC 2024</span>
+								<!--<span style="float: right;">THB19,800</span>-->
+							</p>
+							<div class="discount">
+								<p class="discount-title">Discount</p>
+								<p class="discount-no">10%</p>
+							</div>
+							<a href="#" class="btn mt-2 btn-more" style="float: right;">Read More</a>
+						  </div>
+						</div>
+						<div class="card">
+						  <div class="image-wrapper">
+							<img class="package-img" src="https://sharefolder.buildersmart.com/sms_booking/upload/package_photo/8_648ad3a488cab.jpg" alt="...">
+						  </div>
+						  <div class="card-body">
+							<h5 class="package-tx-title">SM Resort Showroom @ Khaoyai</h5>
+							<p class="package-tx-sub">Promotion package rent out all rooms for @24 Persons (MAX)</p>
+							<p class="package-tx-line mt-2">THB19,800</p>
+							<p class="package-tx">THB19,300</p>
+							<p class="package-period-tt mt-2">
+								<span>Promo period</span>
+							</p>
+							<p class="package-period">
+								<i class="far fa-calendar"></i> &nbsp;<span>01 AUG 2023 - 31 DEC 2024</span>
+							</p>
+							<div class="discount">
+								<p class="discount-title">Discount</p>
+								<p class="discount-no">10%</p>
+							</div>
+							<a href="#" class="btn mt-2 btn-more" style="float: right;">Read More</a>
+						  </div>
+						</div>
+						<div class="card">
+						  <div class="image-wrapper">
+							<img class="package-img" src="https://sharefolder.buildersmart.com/sms_booking/upload/package_photo/8_648ad3a488cab.jpg" alt="...">
+						  </div>
+						  <div class="card-body">
+							<h5 class="package-tx-title">SM Resort Showroom @ Khaoyai</h5>
+							<p class="package-tx-sub">Promotion package rent out all rooms for @24 Persons (MAX)</p>
+							<p class="package-tx-line mt-2">THB19,800</p>
+							<p class="package-tx">THB19,300</p>
+							<p class="package-period-tt mt-2">
+								<span>Promo period</span>
+							</p>
+							<p class="package-period">
+								<i class="far fa-calendar"></i> &nbsp;<span>01 AUG 2023 - 31 DEC 2024</span>
+							</p>
+							<div class="discount">
+								<p class="discount-title">Discount</p>
+								<p class="discount-no">10%</p>
+							</div>
+							<a href="#" class="btn mt-2 btn-more" style="float: right;">Read More</a>
+						  </div>
+						</div>
+					  </div>
+					</div>
+					<div class="carousel-item">
+					  <div class="cards-wrapper">
+						<div class="card">
+						  <div class="image-wrapper">
+							<img class="package-img" src="https://sharefolder.buildersmart.com/sms_booking/upload/package_photo/8_648ad3a488cab.jpg" alt="...">
+						  </div>
+						  <div class="card-body">
+							<h5 class="package-tx-title">SM Resort Showroom @ Khaoyai</h5>
+							<p class="package-tx-sub">Promotion package rent out all rooms for @24 Persons (MAX)</p>
+							<p class="package-tx-line mt-2">THB19,800</p>
+							<p class="package-tx">THB19,300</p>
+							<p class="package-period-tt mt-2">
+								<span>Promo period</span>
+								<!--<span style="float: right;">Min. transaction</span>-->
+							</p>
+							<p class="package-period">
+								<i class="far fa-calendar"></i> &nbsp;<span>01 AUG 2023 - 31 DEC 2024</span>
+								<!--<span style="float: right;">THB19,800</span>-->
+							</p>
+							<div class="discount">
+								<p class="discount-title">Discount</p>
+								<p class="discount-no">10%</p>
+							</div>
+							<a href="#" class="btn mt-2 btn-more" style="float: right;">Read More</a>
+						  </div>
+						</div>
+						<div class="card">
+						  <div class="image-wrapper">
+							<img class="package-img" src="https://sharefolder.buildersmart.com/sms_booking/upload/package_photo/8_648ad3a488cab.jpg" alt="...">
+						  </div>
+						  <div class="card-body">
+							<h5 class="package-tx-title">SM Resort Showroom @ Khaoyai</h5>
+							<p class="package-tx-sub">Promotion package rent out all rooms for @24 Persons (MAX)</p>
+							<p class="package-tx-line mt-2">THB19,800</p>
+							<p class="package-tx">THB19,300</p>
+							<p class="package-period-tt mt-2">
+								<span>Promo period</span>
+							</p>
+							<p class="package-period">
+								<i class="far fa-calendar"></i> &nbsp;<span>01 AUG 2023 - 31 DEC 2024</span>
+							</p>
+							<div class="discount">
+								<p class="discount-title">Discount</p>
+								<p class="discount-no">10%</p>
+							</div>
+							<a href="#" class="btn mt-2 btn-more" style="float: right;">Read More</a>
+						  </div>
+						</div>
+						<div class="card">
+						  <div class="image-wrapper">
+							<img class="package-img" src="https://sharefolder.buildersmart.com/sms_booking/upload/package_photo/8_648ad3a488cab.jpg" alt="...">
+						  </div>
+						  <div class="card-body">
+							<h5 class="package-tx-title">SM Resort Showroom @ Khaoyai</h5>
+							<p class="package-tx-sub">Promotion package rent out all rooms for @24 Persons (MAX)</p>
+							<p class="package-tx-line mt-2">THB19,800</p>
+							<p class="package-tx">THB19,300</p>
+							<p class="package-period-tt mt-2">
+								<span>Promo period</span>
+							</p>
+							<p class="package-period">
+								<i class="far fa-calendar"></i> &nbsp;<span>01 AUG 2023 - 31 DEC 2024</span>
+							</p>
+							<div class="discount">
+								<p class="discount-title">Discount</p>
+								<p class="discount-no">10%</p>
+							</div>
+							<a href="#" class="btn mt-2 btn-more" style="float: right;">Read More</a>
+						  </div>
+						</div>
+					  </div>
+					</div>
+				  </div>
+				  <!-- Have a problem prev and next -->
+				  <!--
+				  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls-Package" data-bs-slide="prev">
+					<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+					<span class="visually-hidden">Previous</span>
+				  </button>
+				  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls-Package" data-bs-slide="next">
+					<span class="carousel-control-next-icon" aria-hidden="true"></span>
+					<span class="visually-hidden">Next</span>
+				  </button>
+				  -->
+				</div>
+			</div> 
+		</div> 
+	</div> 
+</div>
+<script>
+	const multipleItemCarousel = document.querySelector("#carouselExampleControls-Package");
+		if (window.matchMedia("(min-width:576px)").matches) {
+		  const carousel = new bootstrap.Carousel(multipleItemCarousel, {
+			interval: false
+		  });
+
+		  var carouselWidth = $(".carousel-inner-packgage")[0].scrollWidth;
+		  var cardWidth = $(".carousel-item").width();
+
+		  var scrollPosition = 0;
+
+		  $(".carousel-control-next").on("click", function () {
+			if (scrollPosition < carouselWidth - cardWidth * 4) {
+			  scrollPosition = scrollPosition + cardWidth;
+			  $(".carousel-inner-packgage").animate({ scrollLeft: scrollPosition }, 600);
+			}
+		  });
+		  $(".carousel-control-prev").on("click", function () {
+			if (scrollPosition > 0) {
+			  scrollPosition = scrollPosition - cardWidth;
+			  $(".carousel-inner-packgage").animate({ scrollLeft: scrollPosition }, 600);
+			}
+		  });
+		} else {
+		  $(multipleItemCarousel).addClass("slide");
+		}
+		*/
+</script>
+<!-- PROMOTION & PACKAGE -->
+
 <!-- Package -->
+<!--
 <div class="section mt-4">
 	<div class="container">
 		<div class="col-md-12 mb-4 ">
@@ -473,12 +818,14 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
 		</div>
 	</div>
 </div>
-
+-->
 <!-- End Package -->
 <div class="container mt-1">
 	<div class="row">
-		<div class="col-md-12 ml-2 text-center">
-			<h5><?php echo $this->lang->line('room_types'); ?></h5>
+		<div class="col-md-12 ml-2 text-center mt-4">
+			<h4>
+				<a id="roomtype" href="javascript:;"><?php echo $this->lang->line('room_types'); ?></a>
+			</h4>
 		</div>
 	</div>
 	<div class="row">
@@ -497,7 +844,9 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
 				<div class="product-card">
 					<div class="header">
 						<div class="pl-4 text-left">
-							<h6><?php echo ($lang == 'english') ? $rt->room_type_name_en : $rt->room_type_name_th; ?></h6>
+							<a href="http://192.168.20.22/sm_booking1/detail.php" target="_blank">
+								<h5 class="roomtype-tx-title"><?php echo ($lang == 'english') ? $rt->room_type_name_en : $rt->room_type_name_th; ?></h5>
+							</a>
 						</div>
 					</div>
 					<div class="content-product">
@@ -1006,7 +1355,7 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
 		});*/
 
 
-
+		/*
 		$('.slideshow').each(function(i, obj) {
 			$('#slideshow-' + i + ' > div:gt(0)').hide();
 			setInterval(function() {
@@ -1018,6 +1367,22 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
 					.appendTo('#slideshow-' + i);
 			}, 3000); // 3 seconds
 		});
+		*/
+		$('.slideshow').each(function(i, obj) {
+			$('#slideshow-' + i + ' > div:gt(0)').hide();
+			setInterval(function() {
+				$('#slideshow-' + i + ' > div:first')
+					.fadeOut(1) // เปลี่ยนค่าจาก 1 เป็น 3000 เพื่อให้เกิดการสไลด์ช้า ๆ
+					.next()
+					.fadeIn(4000)
+					.end()
+					.appendTo('#slideshow-' + i);
+			}, 5000); // 6 วินาที (3000 milliseconds * 2) เพื่อให้รูปสไลด์ช้า ๆ จากขวาไปซ้าย
+		});
+
+		
+		
+
 
 		$(".checkbox-dropdown").click(function() {
 			$(this).toggleClass("is-active");
