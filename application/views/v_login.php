@@ -79,6 +79,8 @@ $lang  = $lg;
                              id="password" placeholder="<?php echo $this->lang->line('password');?>">
 				</div>
 			</div>
+			
+
 			<div class="row d-flex justify-content-center">
 				<div class="col-sm-12 col-md-6 text-center">
                     <button name="login_btn" class="btn button-primary btn-user btn-block"><?php echo $this->lang->line('login');?></button>
@@ -101,17 +103,17 @@ $lang  = $lg;
 			</div>
 
 			<script>
-				// Optionally, you can add JavaScript to open links in a new tab
 				$('#link-login-facebook').click(function(e) {
-					e.preventDefault(); // Prevent default link behavior
-					window.open($(this).attr('href'), '_blank'); // Open in a new tab
+					e.preventDefault(); 
+					window.open($(this).attr('href'), '_blank'); 
 				});
 
 				$('#link-login-google').click(function(e) {
-					e.preventDefault(); // Prevent default link behavior
-					window.open($(this).attr('href'), '_blank'); // Open in a new tab
+					e.preventDefault(); 
+					window.open($(this).attr('href'), '_blank'); 
 				});
 			</script>
+			
 
             <div class="row d-flex justify-content-center mt-3">
                 <div class="col-md-6 text-center">
