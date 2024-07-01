@@ -98,14 +98,23 @@ table, tr, th, td {
 	text-align: center;
 }
 
-
+.button__badge {
+	margin-right: 0px;
+	font-size: 0.8em !important;
+	position: absolute;
+	top: -8px !important;
+	right: -4px !important;
+}
 </style>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
 <main class="main-2">
 	<div class="container">
 
 
-<div class="container_progress_bar">
+	<div class="container_progress_bar">
       <ul class="progressbar">
         <li class="active"><?php echo $this->lang->line('guest_info');?></li>
         <li class="active"><?php echo $this->lang->line('billing');?></li>
@@ -119,7 +128,9 @@ table, tr, th, td {
   <input type="hidden" name="id_booking" id="id_booking" value="<?php echo $booking->id_booking;?>">
   <div class="container-fluid" >
   	<div class="row">
-  		<div class="col-md-12 price room_type_header"><?php echo $this->lang->line('step_3');?></div>
+  		<div class="col-md-12 price room_type_header m-0">
+			<h4><span><?php echo $this->lang->line('step_3');?></span></h4>
+		</div>
   	</div>
   	<?php 
   	$total_payment = (isset($booking_payment->total_payment)) ? $booking_payment->total_payment : 0;

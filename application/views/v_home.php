@@ -66,12 +66,12 @@ $CI->load->model('m_room_type');
 	}
 	.long-text {
 		display: none; /* ซ่อนข้อความยาวในตอนแรก */
-		font-size: small;
+		font-size: 1em !important;
 		mmargin: 0;
 	}
 	.short-text {
 		margin: 0;
-		font-size: small;
+		font-size: 1em !important;
 	}
 	.a-readmore {
 		color: #839287;
@@ -80,13 +80,13 @@ $CI->load->model('m_room_type');
 		display: block;
 		cursor: pointer;
 		color: #839287;
-		font-size: small !important;
+		font-size: 1em !important;
 		margin-top: 10px;
 	}
 
 	.readmore-toggle:hover {
 		text-decoration: underline;
-		font-size: small;
+		font-size: 1em !important;
 	}
 	
 	/*PROMOTION & PACKAGE*/
@@ -310,6 +310,35 @@ $CI->load->model('m_room_type');
 		left: 0;
 	}
 		/*Room Types*/
+	
+	.button__badge {
+		margin-right: 0px;
+		font-size: 0.6em !important;
+		position: absolute;
+		top: -8px !important;
+		right: -4px !important;
+	}
+	
+	.form-control-ckinout {
+		padding: 1.165rem .75rem !important;
+	}
+	.form-control-btnsearch {
+		padding: 1.165rem .75rem !important;
+	}
+	a {
+		color: rgb(90, 90, 90) !important;
+		text-decoration: none !important;
+	}
+	a:hover {
+		color: #007bff !important;
+		text-decoration: none !important;
+		background-color: transparent !important;
+		-webkit-text-decoration-skip: objects !important;
+	}
+	.book_now:hover {
+        background-color: #839287 !important; 
+        color: #fff !important; 
+    }
 
 	/* Styles for Mobile Phones */
 	@media (max-width: 480px) {
@@ -378,11 +407,14 @@ $CI->load->model('m_room_type');
 		}
 	}
 	@media (min-width: 1024px) {
-    .carousel-inner-packgage .carousel-item img {
-        height: 500px;
-        object-fit: cover; /* Optional: This will ensure the image covers the 500px height without distortion */
-    }
-}
+		.carousel-inner-packgage .carousel-item img {
+			height: 500px;
+			object-fit: cover; /* Optional: This will ensure the image covers the 500px height without distortion */
+		}
+		.img-cover {
+			height: 500px !important;
+		}
+	}
 </style>
 
 <!-- Package -->
@@ -398,7 +430,10 @@ $CI->load->model('m_room_type');
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
 
-<div class=" home-p mb-4 mt-4">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<div class=" home-p mb-4 mt-2">
 	<!-- Carousel Start -->
 	<div id="carousel carouselExampleIndicators" class="carousel slide carousel-fade" data-ride="carousel">
 		<!-- <ol class="carousel-indicators">
@@ -412,7 +447,7 @@ $CI->load->model('m_room_type');
 			foreach ($project_photos as $key => $photo) {
 			?>
 				<div class="carousel-item <?php echo ($ctr == 1) ? 'active' : ''; ?>">
-					<img class="d-block w-100" src="<?php echo share_folder_path() . $photo->project_photo_url; ?>" alt="First slide">
+					<img class="d-block w-100 img-cover" src="<?php echo share_folder_path() . $photo->project_photo_url; ?>" alt="First slide">
 				</div>
 			<?php $ctr++;
 			} ?>
@@ -459,13 +494,13 @@ $CI->load->model('m_room_type');
 						<div class="col-md-12 text-left">
 							<label class="ml-1" for="name"><?php echo $this->lang->line('check_in_date'); ?></label>
 
-							<input type='text' class=" form-control datepicker search_input" name="check_in_date" id="check_in_date" value="" />
+							<input type='text' class=" form-control form-control-ckinout datepicker search_input" name="check_in_date" id="check_in_date" value="" />
 						</div>
 					</div>
 					<div class="col-xl-2 col-lg-2 col-md-6 col-sm-6 col-xs-6">
 						<div class="col-md-12 text-left">
 							<label class="ml-1" for="name"><?php echo $this->lang->line('check_out_date'); ?></label>
-							<input type='text' class="form-control datepicker search_input" name="check_out_date" id="check_out_date" value="" />
+							<input type='text' class="form-control form-control-ckinout datepicker search_input" name="check_out_date" id="check_out_date" value="" />
 						</div>
 					</div>
 					<div class="col-lg-3 col-md-6">
@@ -524,7 +559,9 @@ $CI->load->model('m_room_type');
 					<div class="col-lg-2 col-md-6">
 						<div class="col-md-12 mb-2 text-left">
 							<label for="name">&nbsp;</label>
-							<button disabled id="search" class="form-control search_input search_button btn-default" data-search-type="search_room" style="background-color:#81BB4A;cursor: pointer; "><?php echo $this->lang->line('search'); ?></button>
+							<button disabled id="search" class="form-control form-control-btnsearch search_input search_button btn-default" data-search-type="search_room" style="background-color:#81BB4A;cursor: pointer; display: flex; align-items: center; justify-content: center; ">
+								<?php echo $this->lang->line('search'); ?>
+							</button>
 						</div>
 					</div>
 				</div>
@@ -609,14 +646,14 @@ $CI->load->model('m_room_type');
 		</script>
 		<div class="col-md-12 mb-4 description-banner">
 			<div class="section-heading text-center mb-3">
-				<a href="https://smsmartbooking.buildersmart.com/project_info" target="_blank" class="a-readmore">
-					<h5 style="font-weight: 600;">
+				<a href="https://smsmartbooking.buildersmart.com/project_info" target="_blank" class="a-readmore" id="aboutus">
+					<h4 style="font-weight: 600;">
 						<?php
 							if (sizeof($packages) > 0) {
 								echo ($lang == 'english') ? 'SM Resort' : 'SM Resort';
 							}
 						?>
-					</h5>
+					</h4>
 				</a>
 			</div>
 			<div class="row">
@@ -658,8 +695,10 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-12 col-md-12 col-sm-12 col-12"> 
-				<h4 style="text-align: center; padding-bottom: 15px;">
-					<a id="package" href="javascript:;">PROMOTION & PACKAGE</a>
+				<h4 style="text-align: center; padding-bottom: 15px;" id="nav_packagep_promotions">
+					<a id="package" href="javascript:;">
+						<?php echo $lang == "english" ? 'Package & Promotions' : 'แพ็คเกจและโปรโมชั่น'; ?>
+					</a>
 				</h4>
 				<div id="carouselExampleControls-Package" class="carousel slide" data-bs-ride="carousel">
 				  <div class="carousel-inner-packgage">
@@ -908,17 +947,19 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
 <!-- End Package -->
 
 <!-- Room Types -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+
 
 <div class="container mt-5">
-	<div class="row text-center mb-4">
+	<div class="row text-center mb-0" id="nav_roomstype">
 		<div class="col-md-12">
 			<h4>
 				<a id="roomtype" href="javascript:;"><?php echo $this->lang->line('room_types'); ?></a>
 			</h4>
 		</div>
 	</div>
+	
+	<!-- New Room Types -->
 	<!--
 	<div class="row">
 		<?php
@@ -944,8 +985,10 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
 		} ?>
 	</div>
 	-->
+	<!-- New Room Types -->
+	
 	<div class="row">
-		<div class="col-md-12 ml-2 text-center mt-4">
+		<div class="col-md-12 ml-2 text-center mt-2">
 			<div class="header">
 				<div class="pl-4 text-center mb-4">
 					<a href="http://192.168.20.22/sm_booking1/detail.php" target="_blank">
@@ -1532,7 +1575,7 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
 								}
 							?>
 						</button>
-						<a href="javascript:;" data-roomtype="1" class="btn button-primary book_now" id="" style="margin-left: 5px;">
+						<a href="javascript:;" data-roomtype="1" class="btn button-primary book_now book_now:hover" id="" style="margin-left: 5px;">
 							<?php
 								if (sizeof($packages) > 0) {
 									echo ($lang == 'english') ? 'Book Now' : 'จองตอนนี้';
@@ -2159,7 +2202,7 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
 								}
 							?>
 						</button>
-						<a href="javascript:;" data-roomtype="1" class="btn button-primary book_now" id="" style="margin-left: 5px;">
+						<a href="javascript:;" data-roomtype="1" class="btn button-primary book_now book_now:hover" id="" style="margin-left: 5px;">
 							<?php
 								if (sizeof($packages) > 0) {
 									echo ($lang == 'english') ? 'Book Now' : 'จองตอนนี้';

@@ -69,7 +69,22 @@ $cancellation_policy = $this->m_project_info->get_property_policy($id_project_in
 		width: 100%;
 		border-bottom: 1px solid black;
 	}
+	
+	.button__badge {
+		margin-right: 0px;
+		font-size: 0.6em !important;
+		position: absolute;
+		top: -8px !important;
+		right: -4px !important;
+	}
+	.btn-payment:hover {
+        background-color: #839287 !important; 
+        color: #fff !important; 
+    }
 </style>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
 <main class="main-2">
 	<div class="container">
@@ -90,7 +105,9 @@ $cancellation_policy = $this->m_project_info->get_property_policy($id_project_in
 
 		<div class="container-fluid">
 			<div class="row">
-				<div class="col-md-12 price room_type_header"><span style="margin-left: 10px;"><?php echo $this->lang->line('step_2'); ?></span></div>
+				<div class="col-md-12 price room_type_header m-0">
+					<h5><span style="margin-left: 10px;"><?php echo $this->lang->line('step_2'); ?></span></h5>
+				</div>
 			</div>
 			<div class="row">
 				<div class="col-md-12 mt-4">
@@ -218,10 +235,10 @@ $cancellation_policy = $this->m_project_info->get_property_policy($id_project_in
 							</div>
 
 							<div class="row mt-3" style="margin: 1px 0 1px 15px;">
-								<div class="col-md-12 col-sm-12 mb-3 price" style="margin: 0 -5px 0 0; color: white; font-weight: bold; font-size: 1.2em; padding: 3px 15px 3px 15px;"><?php echo $this->lang->line('booking_items'); ?>:</div>
+								<div class="col-md-12 col-sm-12 mb-3 price" style="margin: 0 -5px 0 0; color: white; font-weight: bold; font-size: 1em; padding: 3px 15px 3px 15px;"><?php echo $this->lang->line('booking_items'); ?>:</div>
 								<div class="col-md-12 col-sm-12">
 									<div class="table-responsive">
-										<table class="table table-bordered">
+										<table class="table table-bordered" style="border-color: var(--bs-border-color);">
 											<thead>
 												<tr style="text-align: center;">
 													<th style="width: 80px;"><?php echo $this->lang->line('number'); ?></th>
@@ -284,8 +301,8 @@ $cancellation_policy = $this->m_project_info->get_property_policy($id_project_in
 								</div>
 
 								<div class="col-md-12 col-sm-12 price" style="margin: 0 -5px 0 0">
-									<div style="color: white; font-weight: bold; font-size: 1.2em; padding: 3px 0 0 10px;"><?php echo $this->lang->line('notes'); ?>:</div>
-									<p style="font-size:1.2em; padding: 3px 40px 3px 40px;">
+									<div style="color: white; font-weight: bold; font-size: 1em; padding: 3px 0 0 10px;"><?php echo $this->lang->line('notes'); ?>:</div>
+									<p style="font-size:1em; padding: 3px 40px 3px 40px;">
 										<!-- This will serve as your invoice . Please settle the amount stated within 2 hours, then proceed to the next step for <br>the confirmation of your booking. Thank you. -->
 										<?php
 										foreach ($cancellation_policy as $cp) {
@@ -308,7 +325,7 @@ $cancellation_policy = $this->m_project_info->get_property_policy($id_project_in
 					 -->
 						<?php if ($booking->status == 'Booked' || $booking->status == 'Verifying') { ?>
 							<div class="col-md-12 mb-5 text-center" style="">
-								<a href="<?php echo site_url('booking/payment') . '?number=' . $booking_number; ?>" class="btn button-primary" id=""><?php echo $this->lang->line('proceed_to_payment'); ?></a>
+								<a href="<?php echo site_url('booking/payment') . '?number=' . $booking_number; ?>" class="btn button-primary btn-payment" id=""><?php echo $this->lang->line('proceed_to_payment'); ?></a>
 							</div>
 						<?php } ?>
 					</div>

@@ -39,7 +39,24 @@ $lang  = $lg;
 </head>
 
 
+<style>
+	.button__badge {
+		margin-right: 0px;
+		font-size: 0.6em !important;
+		position: absolute;
+		top: -8px !important;
+		right: -4px !important;
+	}
+	.form-control-userpass {
+		padding: 1.165rem .75rem !important;
+	}
+	.form-control-email {
+		padding: 1.165rem .75rem !important;
+	}
+</style>
 
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
 
 <main class="main-2">
@@ -50,7 +67,7 @@ $lang  = $lg;
 			<div class="row my-3 d-flex justify-content-center">
 				<div class="col-sm-12 col-md-6">
                     <label class="form-label" for="email"><span class="required">*</span><?php echo $this->lang->line('username');?></label>
-                    <input type="text" name="username" class="form-control form-control-user"
+                    <input type="text" name="username" class="form-control form-control-user form-control-userpass"
                             id="username" aria-describedby="username"
                                 placeholder="<?php echo $this->lang->line('username');?>">
 				</div>
@@ -58,7 +75,7 @@ $lang  = $lg;
 			<div class="row my-3 d-flex justify-content-center">
 				<div class="col-sm-12 col-md-6">
                     <label class="form-label" for="password"><span class="required">*</span><?php echo $this->lang->line('password');?></label>
-                    <input type="password" name="password" class="form-control form-control-user"
+                    <input type="password" name="password" class="form-control form-control-user form-control-userpass"
                              id="password" placeholder="<?php echo $this->lang->line('password');?>">
 				</div>
 			</div>
@@ -67,6 +84,35 @@ $lang  = $lg;
                     <button name="login_btn" class="btn button-primary btn-user btn-block"><?php echo $this->lang->line('login');?></button>
 				</div>
 			</div>
+			<div class="row d-flex justify-content-center mt-3">
+				<div class="col-sm-12 col-md-6 text-center">
+					<a href="login_with_facebook.php" id="link-login-facebook" class="text-primary">
+						<i class="fab fa-facebook-f"></i> Login with Facebook
+					</a>
+				</div>
+			</div>
+
+			<div class="row d-flex justify-content-center mt-3">
+				<div class="col-sm-12 col-md-6 text-center">
+					<a href="login_with_google.php" id="link-login-google" class="text-danger">
+						<i class="fab fa-google"></i> Login with Google
+					</a>
+				</div>
+			</div>
+
+			<script>
+				// Optionally, you can add JavaScript to open links in a new tab
+				$('#link-login-facebook').click(function(e) {
+					e.preventDefault(); // Prevent default link behavior
+					window.open($(this).attr('href'), '_blank'); // Open in a new tab
+				});
+
+				$('#link-login-google').click(function(e) {
+					e.preventDefault(); // Prevent default link behavior
+					window.open($(this).attr('href'), '_blank'); // Open in a new tab
+				});
+			</script>
+
             <div class="row d-flex justify-content-center mt-3">
                 <div class="col-md-6 text-center">
                     <div class="row mx-2 d-flex justify-content-between">
@@ -100,7 +146,7 @@ $lang  = $lg;
   <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
 
     <div class="modal-content">
-      <div class="modal-header" style="text-align: center; margin: auto;">
+      <div class="modal-header" style="text-align: center; margin: auto; border-bottom: none !important;">
       	<h4><?php echo $this->lang->line('get_password_reset')?></h4>
       </div>
       
@@ -119,12 +165,12 @@ $lang  = $lg;
 	            </div>
 	       </div> -->
 	       <div class="col-md-12">
-	       		<div class="row">
+	       		<div class="row" style="align-items: center;">
 		       		<div class="col-md-3" style="text-align: right;">
 		       		<label class="form-label" for="reset_email"><span class="required">*</span><?php echo $this->lang->line('email');?></label>
 		       		</div>
 		       		<div class="col-md-8">
-		       		<input type="text" id="reset_email" name="reset_email" class="form-control" value="" required />
+		       		<input type="text" id="reset_email" name="reset_email" class="form-control form-control-email" value="" required />
 		       		</div>
 	            </div>
 	       </div>

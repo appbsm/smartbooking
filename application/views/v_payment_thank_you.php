@@ -120,7 +120,17 @@ page[size="A4"][layout="portrait"] {
 	padding: 20px;
 }
 
+.button__badge {
+	margin-right: 0px;
+	font-size: 0.8em !important;
+	position: absolute;
+	top: -8px !important;
+	right: -4px !important;
+}
 </style>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
 <main class="main-2">
 <div class="container">
@@ -128,7 +138,9 @@ page[size="A4"][layout="portrait"] {
 
   <div class="container-fluid" >
   	<div class="row">
-  		<div class="col-md-12 price room_type_header" style="text-align: center;"><?php echo $this->lang->line('thank_you');?>!</div>
+  		<div class="col-md-12 price room_type_header m-0" style="text-align: center;">
+			<h4><span><?php echo $this->lang->line('thank_you');?>!</span></h4>
+		</div>
   	</div>
   	<div class="row"> 
   		
