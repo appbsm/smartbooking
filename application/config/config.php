@@ -29,7 +29,9 @@ $config['base_url'] = 'http://'. (getHostByName(getHostName()) == $ip ? $ip : '1
 //$config['base_url'] = getHostByName(getHostName()) == $ip ? 'https://smsbookingadmin.buildersmart2.com/' : ('http://localhost:81'. $folder);
 
 //$config['base_url'] = 'http://192.168.20.22:8748/';
-$config['base_url'] = 'http://192.168.20.22/smartbooking_admin_test/';
+$config['base_url'] = 'http://10.100.100.24/sms_booking_beta_demo/';
+// $config['base_url'] = 'http://localhost:181/sms_booking_beta_demo/';
+
 
 /*
 |--------------------------------------------------------------------------
