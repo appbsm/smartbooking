@@ -8,6 +8,10 @@ $CI->load->model('m_room_type');
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
+	.carousel-item.active {
+		z-index: 0 !important;
+		opacity: 1;
+	}
 	.slideshow {
 		/* position: absolute; */
 		/* display: flex;
@@ -62,12 +66,12 @@ $CI->load->model('m_room_type');
 	}
 	.long-text {
 		display: none; /* ซ่อนข้อความยาวในตอนแรก */
-		font-size: small;
+		font-size: 1em !important;
 		mmargin: 0;
 	}
 	.short-text {
 		margin: 0;
-		font-size: small;
+		font-size: 1em !important;
 	}
 	.a-readmore {
 		color: #839287;
@@ -76,15 +80,265 @@ $CI->load->model('m_room_type');
 		display: block;
 		cursor: pointer;
 		color: #839287;
-		font-size: small !important;
+		font-size: 1em !important;
 		margin-top: 10px;
 	}
 
 	.readmore-toggle:hover {
 		text-decoration: underline;
-		font-size: small;
+		font-size: 1em !important;
 	}
 	
+	/*PROMOTION & PACKAGE*/
+	.card {
+	  border: none;
+	  border-radius: 0;
+	  box-shadow: 2px 6px 8px 0 rgba(22, 22, 26, 0.18);
+	}
+	.carousel-inner {
+	  /*padding: 1em;*/
+	}
+	.carousel-control-prev,
+	.carousel-control-next {
+	  background-color: #e1e1e1;
+	  width: 6vh;
+	  height: 6vh;
+	  border-radius: 50%;
+	  top: 50%;
+	  transform: translateY(-50%);
+	}
+	.carousel-control-prev span,
+	.carousel-control-next span {
+	  width: 1.5rem;
+	  height: 1.5rem;
+	}
+	@media screen and (min-width: 577px) {
+	  .cards-wrapper {
+		display: flex;
+	  }
+	  .card {
+		margin: 0 0.5em;
+		width: calc(100% / 2);
+	  }
+	  .image-wrapper {
+		height: 20vw;
+		margin: 0 auto;
+	  }
+	}
+	@media screen and (max-width: 576px) {
+	  .card:not(:first-child) {
+		display: none;
+	  }
+	}
+	.image-wrapper img {
+	  max-width: 100%;
+	  max-height: 100%;
+	}
+	.package-tx-title {
+		color: #0d6efd !important;
+		font-size: 18px ;
+		font-weight: 600;
+		cursor: pointer;
+	}
+	.package-tx-title:hover {
+		color: #000 !important;
+		font-size: 18px ;
+		font-weight: 600;
+		cursor: pointer;
+	}
+	.package-tx-sub {
+		color: #000 !important;
+		font-size: 14px ;
+		cursor: pointer;
+		font-weight: 600;
+	}
+	.package-tx {
+		-webkit-line-clamp: 2;
+		color: rgba(249, 109, 1, 1.00);
+		font-style: normal;
+		font-size: 14px ;
+	}
+	.package-tx-line {
+		color: rgba(143, 143, 143, 1.00);
+		font-style: normal;
+		text-decoration-line: line-through;
+		font-size: 14px ;
+		margin: 0;
+	}
+	.package-period-tt {
+		-webkit-line-clamp: 2;
+		font-style: normal;
+		font-size: 12px ;
+		margin: 0;
+	}
+	.package-period {
+		-webkit-line-clamp: 2;
+		color: #000 !important;
+		font-style: normal;
+		font-size: 14px ;
+		margin: 0;
+	}
+	.package-img {
+		width: 100%;
+		height: 100%;
+	}
+	.discount {
+		position: absolute;
+		background-color: #e12d2d;
+		top: 16px;
+		width: 86px;
+		border-radius: 4px;
+		text-align: center;
+		margin: -16px;
+	}
+	.discount-no {
+		font-size: 16px !important;
+		color: #fff !important;
+		margin: 0;
+	}
+	.discount-title {
+		font-size: x-small !important;
+		color: #fff !important;
+		margin: 0;
+	}
+	.btn-more {
+		width: auto;
+		height: auto;
+		text-transform: uppercase;
+		line-height: 30px;
+		color: #fff !important;
+		font-size: small;
+		background-color: #839287;
+		border-color: #839287;
+	}
+	/*PROMOTION & PACKAGE*/
+	
+	/*Room Types*/
+	.roomtype-tx-title {
+		color: #000 !important;
+		font-size: 18px ;
+		font-weight: 500;
+		cursor: pointer;
+	}
+	.roomtype-tx-title:hover {
+		color: #0d6efd !important;
+		font-size: 18px ;
+		font-weight: 500;
+		cursor: pointer;
+	}
+	
+	
+	/*accordion*/
+	.accordion-button {
+		background-color: #f8f9fa;
+		color: #000;
+		font-size: 1.25rem;
+	}
+	.accordion-button:focus {
+		box-shadow: none;
+	}
+	.accordion-button:not(.collapsed) {
+		color: #000;
+		background-color: #e9ecef;
+	}
+	.accordion-body {
+		font-size: 1rem;
+		color: #6c757d;
+	}	
+	.accordion-button.button-accordion {
+        background-color: #fff !important; 
+        color: #839287 !important; 
+        border: none !important; 
+		font-size: 16px !important;
+    }
+	.accordion-item {
+		color: var(--bs-accordion-color);
+		background-color: var(--bs-accordion-bg);
+		border-left: none !important;
+		border-right: none !important;
+		border-top: none !important;
+		border-bottom: var(--bs-accordion-border-width) solid var(--bs-accordion-border-color);
+	}
+	/*accordion*/
+	.card-roomtype {
+		width: 100%;
+		max-width: 100%;
+		height: 100%;
+	}
+	.icon-service {
+		width: 32px;
+		height: 32px;
+	}
+	.tx-service {
+		color: #839287 !important;
+		font-size: 16px !important;
+		font-weight: 400;
+	}
+	.location {
+		font-size: 16px !important;
+		color: #839287 !important;
+		margin: 0 0;
+		line-height: 20px;
+		font-weight: 400;
+	}
+	.img-sec span, .gallery_section .img-sec span {
+		position: absolute;
+		background: red;
+		color: #fff;
+		padding: 2px 20px;
+		right: 0;
+		bottom: 24px;
+	}
+	.img-sec span:before, .gallery_section .img-sec span:before {
+		content: "";
+		width: 21px;
+		height: 21px;
+		background: red;
+		position: absolute;
+		left: -10px;
+		top: 4px;
+		transform: rotate(45deg);
+	}
+	.img-sec span:after, .gallery_section .img-sec span:after {
+		content: "";
+		width: 8px;
+		height: 8px;
+		background: #fff;
+		position: absolute;
+		top: 10px;
+		border-radius: 50%;
+		left: 0;
+	}
+		/*Room Types*/
+	
+	.button__badge {
+		margin-right: 0px;
+		font-size: 0.6em !important;
+		position: absolute;
+		top: -8px !important;
+		right: -4px !important;
+	}
+	
+	.form-control-ckinout {
+		padding: 1.165rem .75rem !important;
+	}
+	.form-control-btnsearch {
+		padding: 1.165rem .75rem !important;
+	}
+	a {
+		color: rgb(90, 90, 90) !important;
+		text-decoration: none !important;
+	}
+	a:hover {
+		color: #007bff !important;
+		text-decoration: none !important;
+		background-color: transparent !important;
+		-webkit-text-decoration-skip: objects !important;
+	}
+	.book_now:hover {
+        background-color: #839287 !important; 
+        color: #fff !important; 
+    }
 
 	/* Styles for Mobile Phones */
 	@media (max-width: 480px) {
@@ -153,11 +407,14 @@ $CI->load->model('m_room_type');
 		}
 	}
 	@media (min-width: 1024px) {
-    .carousel-inner .carousel-item img {
-        height: 500px;
-        object-fit: cover; /* Optional: This will ensure the image covers the 500px height without distortion */
-    }
-}
+		.carousel-inner-packgage .carousel-item img {
+			height: 500px;
+			object-fit: cover; /* Optional: This will ensure the image covers the 500px height without distortion */
+		}
+		.img-cover {
+			height: 500px !important;
+		}
+	}
 </style>
 
 <!-- Package -->
@@ -169,8 +426,14 @@ $CI->load->model('m_room_type');
 <link rel="stylesheet" href="<?= site_url() ?>assets/select-picker/css/bootstrap-select.min.css">
 
 
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
 
-<div class=" home-p mb-4 mt-4">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<div class=" home-p mb-4 mt-2">
 	<!-- Carousel Start -->
 	<div id="carousel carouselExampleIndicators" class="carousel slide carousel-fade" data-ride="carousel">
 		<!-- <ol class="carousel-indicators">
@@ -184,7 +447,7 @@ $CI->load->model('m_room_type');
 			foreach ($project_photos as $key => $photo) {
 			?>
 				<div class="carousel-item <?php echo ($ctr == 1) ? 'active' : ''; ?>">
-					<img class="d-block w-100" src="<?php echo share_folder_path() . $photo->project_photo_url; ?>" alt="First slide">
+					<img class="d-block w-100 img-cover" src="<?php echo share_folder_path() . $photo->project_photo_url; ?>" alt="First slide">
 				</div>
 			<?php $ctr++;
 			} ?>
@@ -231,13 +494,13 @@ $CI->load->model('m_room_type');
 						<div class="col-md-12 text-left">
 							<label class="ml-1" for="name"><?php echo $this->lang->line('check_in_date'); ?></label>
 
-							<input type='text' class=" form-control datepicker search_input" name="check_in_date" id="check_in_date" value="" />
+							<input type='text' class=" form-control form-control-ckinout datepicker search_input" name="check_in_date" id="check_in_date" value="" />
 						</div>
 					</div>
 					<div class="col-xl-2 col-lg-2 col-md-6 col-sm-6 col-xs-6">
 						<div class="col-md-12 text-left">
 							<label class="ml-1" for="name"><?php echo $this->lang->line('check_out_date'); ?></label>
-							<input type='text' class="form-control datepicker search_input" name="check_out_date" id="check_out_date" value="" />
+							<input type='text' class="form-control form-control-ckinout datepicker search_input" name="check_out_date" id="check_out_date" value="" />
 						</div>
 					</div>
 					<div class="col-lg-3 col-md-6">
@@ -296,7 +559,9 @@ $CI->load->model('m_room_type');
 					<div class="col-lg-2 col-md-6">
 						<div class="col-md-12 mb-2 text-left">
 							<label for="name">&nbsp;</label>
-							<button disabled id="search" class="form-control search_input search_button btn-default" data-search-type="search_room" style="background-color:#81BB4A;cursor: pointer; "><?php echo $this->lang->line('search'); ?></button>
+							<button disabled id="search" class="form-control form-control-btnsearch search_input search_button btn-default" data-search-type="search_room" style="background-color:#81BB4A;cursor: pointer; display: flex; align-items: center; justify-content: center; ">
+								<?php echo $this->lang->line('search'); ?>
+							</button>
 						</div>
 					</div>
 				</div>
@@ -381,14 +646,14 @@ $CI->load->model('m_room_type');
 		</script>
 		<div class="col-md-12 mb-4 description-banner">
 			<div class="section-heading text-center mb-3">
-				<a href="https://smsmartbooking.buildersmart.com/project_info" target="_blank" class="a-readmore">
-					<h5 style="font-weight: 600;">
+				<a href="https://smsmartbooking.buildersmart.com/project_info" target="_blank" class="a-readmore" id="aboutus">
+					<h4 style="font-weight: 600;">
 						<?php
 							if (sizeof($packages) > 0) {
 								echo ($lang == 'english') ? 'SM Resort' : 'SM Resort';
 							}
 						?>
-					</h5>
+					</h4>
 				</a>
 			</div>
 			<div class="row">
@@ -425,7 +690,212 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
 		<!-- Descripttion -->
 </div>
 
+<!-- PROMOTION & PACKAGE -->
+<div class="slider-wrapper slider1-wrapper" style="padding-top: 30px;">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12 col-md-12 col-sm-12 col-12"> 
+				<h4 style="text-align: center; padding-bottom: 15px;" id="nav_packagep_promotions">
+					<a id="package" href="javascript:;">
+						<?php echo $lang == "english" ? 'Package & Promotions' : 'แพ็คเกจและโปรโมชั่น'; ?>
+					</a>
+				</h4>
+				<div id="carouselExampleControls-Package" class="carousel slide" data-bs-ride="carousel">
+				  <div class="carousel-inner-packgage">
+					<div class="carousel-item active">
+					  <div class="cards-wrapper">
+						<div class="card">
+						  <div class="image-wrapper">
+							<img class="package-img" src="https://sharefolder.buildersmart.com/sms_booking/upload/package_photo/8_648ad3a488cab.jpg" alt="...">
+						  </div>
+						  <div class="card-body">
+							<h5 class="package-tx-title">SM Resort Showroom @ Khaoyai</h5>
+							<p class="package-tx-sub">Promotion package rent out all rooms for @24 Persons (MAX)</p>
+							<p class="package-tx-line mt-2">THB19,800</p>
+							<p class="package-tx">THB19,300</p>
+							<p class="package-period-tt mt-2">
+								<span>Promo period</span>
+								<!--<span style="float: right;">Min. transaction</span>-->
+							</p>
+							<p class="package-period">
+								<i class="far fa-calendar"></i> &nbsp;<span>01 AUG 2023 - 31 DEC 2024</span>
+								<!--<span style="float: right;">THB19,800</span>-->
+							</p>
+							<div class="discount">
+								<p class="discount-title">Discount</p>
+								<p class="discount-no">10%</p>
+							</div>
+							<a href="#" class="btn mt-2 btn-more" style="float: right;">Read More</a>
+						  </div>
+						</div>
+						<div class="card">
+						  <div class="image-wrapper">
+							<img class="package-img" src="https://sharefolder.buildersmart.com/sms_booking/upload/package_photo/8_648ad3a488cab.jpg" alt="...">
+						  </div>
+						  <div class="card-body">
+							<h5 class="package-tx-title">SM Resort Showroom @ Khaoyai</h5>
+							<p class="package-tx-sub">Promotion package rent out all rooms for @24 Persons (MAX)</p>
+							<p class="package-tx-line mt-2">THB19,800</p>
+							<p class="package-tx">THB19,300</p>
+							<p class="package-period-tt mt-2">
+								<span>Promo period</span>
+							</p>
+							<p class="package-period">
+								<i class="far fa-calendar"></i> &nbsp;<span>01 AUG 2023 - 31 DEC 2024</span>
+							</p>
+							<div class="discount">
+								<p class="discount-title">Discount</p>
+								<p class="discount-no">10%</p>
+							</div>
+							<a href="#" class="btn mt-2 btn-more" style="float: right;">Read More</a>
+						  </div>
+						</div>
+						<div class="card">
+						  <div class="image-wrapper">
+							<img class="package-img" src="https://sharefolder.buildersmart.com/sms_booking/upload/package_photo/8_648ad3a488cab.jpg" alt="...">
+						  </div>
+						  <div class="card-body">
+							<h5 class="package-tx-title">SM Resort Showroom @ Khaoyai</h5>
+							<p class="package-tx-sub">Promotion package rent out all rooms for @24 Persons (MAX)</p>
+							<p class="package-tx-line mt-2">THB19,800</p>
+							<p class="package-tx">THB19,300</p>
+							<p class="package-period-tt mt-2">
+								<span>Promo period</span>
+							</p>
+							<p class="package-period">
+								<i class="far fa-calendar"></i> &nbsp;<span>01 AUG 2023 - 31 DEC 2024</span>
+							</p>
+							<div class="discount">
+								<p class="discount-title">Discount</p>
+								<p class="discount-no">10%</p>
+							</div>
+							<a href="#" class="btn mt-2 btn-more" style="float: right;">Read More</a>
+						  </div>
+						</div>
+					  </div>
+					</div>
+					<div class="carousel-item">
+					  <div class="cards-wrapper">
+						<div class="card">
+						  <div class="image-wrapper">
+							<img class="package-img" src="https://sharefolder.buildersmart.com/sms_booking/upload/package_photo/8_648ad3a488cab.jpg" alt="...">
+						  </div>
+						  <div class="card-body">
+							<h5 class="package-tx-title">SM Resort Showroom @ Khaoyai</h5>
+							<p class="package-tx-sub">Promotion package rent out all rooms for @24 Persons (MAX)</p>
+							<p class="package-tx-line mt-2">THB19,800</p>
+							<p class="package-tx">THB19,300</p>
+							<p class="package-period-tt mt-2">
+								<span>Promo period</span>
+								<!--<span style="float: right;">Min. transaction</span>-->
+							</p>
+							<p class="package-period">
+								<i class="far fa-calendar"></i> &nbsp;<span>01 AUG 2023 - 31 DEC 2024</span>
+								<!--<span style="float: right;">THB19,800</span>-->
+							</p>
+							<div class="discount">
+								<p class="discount-title">Discount</p>
+								<p class="discount-no">10%</p>
+							</div>
+							<a href="#" class="btn mt-2 btn-more" style="float: right;">Read More</a>
+						  </div>
+						</div>
+						<div class="card">
+						  <div class="image-wrapper">
+							<img class="package-img" src="https://sharefolder.buildersmart.com/sms_booking/upload/package_photo/8_648ad3a488cab.jpg" alt="...">
+						  </div>
+						  <div class="card-body">
+							<h5 class="package-tx-title">SM Resort Showroom @ Khaoyai</h5>
+							<p class="package-tx-sub">Promotion package rent out all rooms for @24 Persons (MAX)</p>
+							<p class="package-tx-line mt-2">THB19,800</p>
+							<p class="package-tx">THB19,300</p>
+							<p class="package-period-tt mt-2">
+								<span>Promo period</span>
+							</p>
+							<p class="package-period">
+								<i class="far fa-calendar"></i> &nbsp;<span>01 AUG 2023 - 31 DEC 2024</span>
+							</p>
+							<div class="discount">
+								<p class="discount-title">Discount</p>
+								<p class="discount-no">10%</p>
+							</div>
+							<a href="#" class="btn mt-2 btn-more" style="float: right;">Read More</a>
+						  </div>
+						</div>
+						<div class="card">
+						  <div class="image-wrapper">
+							<img class="package-img" src="https://sharefolder.buildersmart.com/sms_booking/upload/package_photo/8_648ad3a488cab.jpg" alt="...">
+						  </div>
+						  <div class="card-body">
+							<h5 class="package-tx-title">SM Resort Showroom @ Khaoyai</h5>
+							<p class="package-tx-sub">Promotion package rent out all rooms for @24 Persons (MAX)</p>
+							<p class="package-tx-line mt-2">THB19,800</p>
+							<p class="package-tx">THB19,300</p>
+							<p class="package-period-tt mt-2">
+								<span>Promo period</span>
+							</p>
+							<p class="package-period">
+								<i class="far fa-calendar"></i> &nbsp;<span>01 AUG 2023 - 31 DEC 2024</span>
+							</p>
+							<div class="discount">
+								<p class="discount-title">Discount</p>
+								<p class="discount-no">10%</p>
+							</div>
+							<a href="#" class="btn mt-2 btn-more" style="float: right;">Read More</a>
+						  </div>
+						</div>
+					  </div>
+					</div>
+				  </div>
+				  <!-- Have a problem prev and next -->
+				  <!--
+				  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls-Package" data-bs-slide="prev">
+					<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+					<span class="visually-hidden">Previous</span>
+				  </button>
+				  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls-Package" data-bs-slide="next">
+					<span class="carousel-control-next-icon" aria-hidden="true"></span>
+					<span class="visually-hidden">Next</span>
+				  </button>
+				  -->
+				</div>
+			</div> 
+		</div> 
+	</div> 
+</div>
+<script>
+	const multipleItemCarousel = document.querySelector("#carouselExampleControls-Package");
+		if (window.matchMedia("(min-width:576px)").matches) {
+		  const carousel = new bootstrap.Carousel(multipleItemCarousel, {
+			interval: false
+		  });
+
+		  var carouselWidth = $(".carousel-inner-packgage")[0].scrollWidth;
+		  var cardWidth = $(".carousel-item").width();
+
+		  var scrollPosition = 0;
+
+		  $(".carousel-control-next").on("click", function () {
+			if (scrollPosition < carouselWidth - cardWidth * 4) {
+			  scrollPosition = scrollPosition + cardWidth;
+			  $(".carousel-inner-packgage").animate({ scrollLeft: scrollPosition }, 600);
+			}
+		  });
+		  $(".carousel-control-prev").on("click", function () {
+			if (scrollPosition > 0) {
+			  scrollPosition = scrollPosition - cardWidth;
+			  $(".carousel-inner-packgage").animate({ scrollLeft: scrollPosition }, 600);
+			}
+		  });
+		} else {
+		  $(multipleItemCarousel).addClass("slide");
+		}
+		*/
+</script>
+<!-- PROMOTION & PACKAGE -->
+
 <!-- Package -->
+<!--
 <div class="section mt-4">
 	<div class="container">
 		<div class="col-md-12 mb-4 ">
@@ -473,12 +943,1286 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
 		</div>
 	</div>
 </div>
-
+-->
 <!-- End Package -->
+
+<!-- Room Types -->
+
+
+
+<div class="container mt-5">
+	<div class="row text-center mb-0" id="nav_roomstype">
+		<div class="col-md-12">
+			<h4>
+				<a id="roomtype" href="javascript:;"><?php echo $this->lang->line('room_types'); ?></a>
+			</h4>
+		</div>
+	</div>
+	
+	<!-- New Room Types -->
+	<!--
+	<div class="row">
+		<?php
+			$ctr = 0;
+			$date = date('Y-m-d');
+			foreach ($room_types as $key => $rt) {
+				$rate = $CI->m_room_type->get_day_rate($rt->id_room_type, $date);
+				if ($rate == '') {
+					$rate = $rt->default_rate;
+				}
+				$photos = $CI->m_room_type->get_room_type_photos($rt->id_room_type);
+		?>
+		<div class="col-md-12 ml-2 text-center mt-4">
+			<div class="header">
+				<div class="pl-4 text-left">
+					<a href="http://192.168.20.22/sm_booking1/detail.php" target="_blank">
+						<h5 class="roomtype-tx-title"><?php echo ($lang == 'english') ? $rt->room_type_name_en : $rt->room_type_name_th; ?></h5>
+					</a>
+				</div>
+			</div>
+		</div>
+		<?php $ctr++;
+		} ?>
+	</div>
+	-->
+	<!-- New Room Types -->
+	
+	<div class="row">
+		<div class="col-md-12 ml-2 text-center mt-2">
+			<div class="header">
+				<div class="pl-4 text-center mb-4">
+					<a href="http://192.168.20.22/sm_booking1/detail.php" target="_blank">
+						<h5 class="roomtype-tx-title">SM 1 - Standard Room</h5>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-6 col-sm-12">
+			<div class="accordion" id="accordionExample">
+				<div class="accordion-item">
+					<h2 class="accordion-header" id="headingOneInfo">
+						<button class="accordion-button collapsed button-accordion" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOneInfo" aria-expanded="false" aria-controls="collapseOne">
+							<?php
+								if (sizeof($packages) > 0) {
+									echo ($lang == 'english') ? 'Room Information' : 'รายละเอียดห้อง';
+								}
+							?>
+						</button>
+					</h2>
+					<div id="collapseOneInfo" class="accordion-collapse collapse" aria-labelledby="headingOneInfo" data-bs-parent="#accordionExample">
+						<div class="accordion-body">
+							<div class="col-md-12" style="padding-right: 0;">
+								<div class="row">
+									<div class="row mx-auto mt-2">
+										<div class="col-3 mx-auto icon_container">
+											<span class="icon-content"><object data="http://192.168.20.22/smartbooking_front_test/images/icons/house.svg" height="20"></object></span>
+										</div>
+										<div class="col-9 icon_container">
+											<span class="icon-content">ขนาดพื้นที่ห้อง: 18 ตรม.</span>
+										</div>
+									</div>
+									<div class="row mx-auto mt-2">
+										<div class="col-3 text-left icon_container">
+											<!-- <span class="icon-content"><img class="icon" src="https://sharefolder.buildersmart.com/sms_booking/images/icons/icons8-bedroom-50.png" height="18"></span> -->
+											<span class="icon-content"><object data="https://sharefolder.buildersmart.com/sms_booking/images/icons/icons8-bedroom-50.png" height="18"></object></span>
+										</div>
+										<div class="col-9 text-left icon_container">
+											<span class="icon-content">ห้องนอน:1 Queen-bed</span>
+										</div>
+									</div>
+									<div class="row mx-auto mt-2">
+										<div class="col-3 text-left icon_container">
+											<span class="icon-content  ml-1"><object data="https://sharefolder.buildersmart.com/sms_booking/images/icons/bathroom.png" height="18"></object></span>
+										</div>
+										<div class="col-9 text-left icon_container">
+											<span class="icon-content">ห้องน้ำ: 1 ห้องน้ำ</span>
+										</div>
+									</div>
+									<div class="row mx-auto mt-2">
+										<div class="col-3 text-left icon_container">
+											<span class="icon-content" style="margin-left:1px;"><object data="https://sharefolder.buildersmart.com/sms_booking/images/icons/person-fill.svg" height="18"></object></span>
+										</div>
+										<div class="col-9 text-left icon_container">
+											<span class="icon-content">จำนวนผู้เข้าพัก: 2</span>
+										</div>
+									</div>
+									<div class="row mx-auto mt-2">
+										<div class="col-3 text-left icon_container">
+											<object data="https://sharefolder.buildersmart.com/sms_booking/images/icons/tv.svg" height="20"> </object>
+										</div>
+										<div class="col-9 text-left icon_container">
+											<span class="icon-content">TV (Internet)</span>
+										</div>
+									</div>
+									<div class="row mx-auto mt-2">
+										<div class="col-3 text-left icon_container">
+											<span class="icon-content"><object data="https://sharefolder.buildersmart.com/sms_booking/images/icons/snow.svg" height="20"> </object></span>
+										</div>
+										<div class="col-9 text-left icon_container">
+											<span class="icon-content">เครื่องปรับอากาศ</span>
+										</div>
+									</div>
+									<div class="row mx-auto mt-2">
+										<div class="col-3 text-left icon_container">
+											<span class="icon-content"><object data="https://sharefolder.buildersmart.com/sms_booking/images/icons/wifi.svg" height="20"> </object></span>
+										</div>
+										<div class="col-9 text-left icon_container">
+											<span class="icon-content">Free WIFI</span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="accordion-item">
+					<h2 class="accordion-header" id="headingOne">
+						<button class="accordion-button collapsed button-accordion" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+							<?php
+								if (sizeof($packages) > 0) {
+									echo ($lang == 'english') ? 'Highlights' : 'ไฮไลท์';
+								}
+							?>
+						</button>
+					</h2>
+					<div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+						<div class="accordion-body">
+							<div class="col-md-12" style="padding-right: 0;">
+								<div class="row">
+									<div class="col-sm-3 mb-2 text-center">
+										<img src="http://192.168.20.22/sm_booking1/includes/image.php?filename=upload/project_highlight/1_63bb731cd4018.png" class="icon-service"><br>
+										<h6 class="mt-1 tx-service">
+											<?php
+												if (sizeof($packages) > 0) {
+													echo ($lang == 'english') ? 'Wifi' : 'ไวไฟ';
+												}
+											?>
+										</h6>
+									</div>
+
+									<div class="col-sm-3 mb-2 text-center">
+										<img src="http://192.168.20.22/sm_booking1/includes/image.php?filename=upload/project_highlight/1_63bb7dd7c487e.png" class="icon-service"><br>
+										<h6 class="mt-1 tx-service">
+											<?php
+												if (sizeof($packages) > 0) {
+													echo ($lang == 'english') ? 'Mountain View' : 'วิวภูเขา';
+												}
+											?>
+										</h6>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="accordion-item">
+					<h2 class="accordion-header" id="headingTwo">
+						<button class="accordion-button collapsed button-accordion" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+							<?php
+								if (sizeof($packages) > 0) {
+									echo ($lang == 'english') ? 'Facilities & Amenities' : 'สาธารณูปโภค & สิ่งอำนวยความสะดวก';
+								}
+							?>
+						</button>
+					</h2>
+					<div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+						<div class="accordion-body">
+							<div class="col-md-12" style="padding-right: 0;">
+								<div class="row">
+									<div class="col-sm-3 mb-4 text-center">
+										<span>
+											<img src="http://192.168.20.22/sm_booking1/includes/image.php?filename=upload/amenity_icon/8_63bbae41caae1.jpeg" alt="" class="icon-service">
+										</span>
+										<h6 class="mt-1 tx-service">
+											<?php
+												if (sizeof($packages) > 0) {
+													echo ($lang == 'english') ? 'Hair dryer' : 'ไดร์เป่าผม';
+												}
+											?>
+										</h6>
+									</div>
+									<div class="col-sm-3 mb-4 text-center">
+										<span>
+											<img src="http://192.168.20.22/sm_booking1/includes/image.php?filename=upload/amenity_icon/12_63bbae8cc44a4.png" alt="" class="icon-service">
+										</span>
+										<h6 class="mt-1 tx-service">
+											<?php
+												if (sizeof($packages) > 0) {
+													echo ($lang == 'english') ? 'Refrigerator' : 'ตู้เย็น';
+												}
+											?>
+										</h6>
+									</div>
+									<div class="col-sm-3 mb-4 text-center">
+										<span>
+											<img src="http://192.168.20.22/sm_booking1/includes/image.php?filename=upload/amenity_icon/5_63bbae117d8c3.png" alt="" class="icon-service">
+										</span>
+										<h6 class="mt-1 tx-service">
+											<?php
+												if (sizeof($packages) > 0) {
+													echo ($lang == 'english') ? 'Free WiFi' : 'ไวไฟฟรี';
+												}
+											?>
+										</h6>
+									</div>
+									<div class="col-sm-3 mb-4 text-center">
+										<span>
+											<img src="http://192.168.20.22/sm_booking1/includes/image.php?filename=upload/amenity_icon/9_63bbae5f2438f.png" alt="" class="icon-service">
+										</span>
+										<h6 class="mt-1 tx-service">
+											<?php
+												if (sizeof($packages) > 0) {
+													echo ($lang == 'english') ? 'Toiletries' : 'อุปกรณ์อาบน้ำ';
+												}
+											?>
+										</h6>
+									</div>
+									<div class="col-sm-3 mb-4 text-center">
+										<span>
+											<img src="http://192.168.20.22/sm_booking1/includes/image.php?filename=upload/amenity_icon/13_63bbae956b002.png" alt="" class="icon-service">
+										</span>
+										<h6 class="mt-1 tx-service">
+											<?php
+												if (sizeof($packages) > 0) {
+													echo ($lang == 'english') ? 'Free bottled water' : 'น้ำดื่มขวดฟรี';
+												}
+											?>
+										</h6>
+									</div>
+									<div class="col-sm-3 mb-4 text-center">
+										<span>
+											<img src="http://192.168.20.22/sm_booking1/includes/image.php?filename=upload/amenity_icon/6_63bbae311f776.png" alt="" class="icon-service">
+										</span>
+										<h6 class="mt-1 tx-service">
+											<?php
+												if (sizeof($packages) > 0) {
+													echo ($lang == 'english') ? 'TV (Internet)' : 'สมาร์ททีวี';
+												}
+											?>
+										</h6>
+										</div>
+									<div class="col-sm-3 mb-4 text-center">
+										<span>
+											<img src="http://192.168.20.22/sm_booking1/includes/image.php?filename=upload/amenity_icon/10_63bbae7bdaf5d.png" alt="" class="icon-service">
+										</span>
+										<h6 class="mt-1 tx-service">
+											<?php
+												if (sizeof($packages) > 0) {
+													echo ($lang == 'english') ? 'Shower' : 'ฝักบัวอาบน้ำ';
+												}
+											?>
+										</h6>
+									</div>
+									<div class="col-sm-3 mb-4 text-center">
+										<span>
+											<img src="http://192.168.20.22/sm_booking1/includes/image.php?filename=upload/amenity_icon/14_63bbae9e4ce23.jpeg" alt="" class="icon-service">
+										</span>
+										<h6 class="mt-1 tx-service">
+											<?php
+												if (sizeof($packages) > 0) {
+													echo ($lang == 'english') ? 'Coffee maker' : 'เครื่องชงกาแฟ';
+												}
+											?>
+										</h6>
+									</div>
+									<div class="col-sm-3 mb-4 text-center">
+										<span>
+											<img src="http://192.168.20.22/sm_booking1/includes/image.php?filename=upload/amenity_icon/18_63bbaec8bffdf.png" alt="" class="icon-service">
+										</span>
+										<h6 class="mt-1 tx-service">
+											<?php
+												if (sizeof($packages) > 0) {
+													echo ($lang == 'english') ? 'Desk' : 'โต๊ะ';
+												}
+											?>
+										</h6>
+									</div>
+									<div class="col-sm-3 mb-4 text-center">
+										<span>
+											<img src="http://192.168.20.22/sm_booking1/includes/image.php?filename=upload/amenity_icon/7_63bbae39bd8d5.png" alt="" class="icon-service">
+										</span>
+										<h6 class="mt-1 tx-service">
+											<?php
+												if (sizeof($packages) > 0) {
+													echo ($lang == 'english') ? 'Towels' : 'ผ้าเช็ดตัว';
+												}
+											?>
+										</h6>
+									</div>
+									<div class="col-sm-3 mb-4 text-center">
+										<span>
+											<img src="http://192.168.20.22/sm_booking1/includes/image.php?filename=upload/amenity_icon/11_63bbae84cf279.png" alt="" class="icon-service">
+										</span>
+										<h6 class="mt-1 tx-service">
+											<?php
+												if (sizeof($packages) > 0) {
+													echo ($lang == 'english') ? 'Mirror' : 'กระจก';
+												}
+											?>
+										</h6>
+									</div>
+									<div class="col-sm-3 mb-4 text-center">
+										<span>
+											<img src="http://192.168.20.22/sm_booking1/includes/image.php?filename=upload/amenity_icon/15_63bbaeae7684a.png" alt="" class="icon-service">
+										</span>
+										<h6 class="mt-1 tx-service">
+											<?php
+												if (sizeof($packages) > 0) {
+													echo ($lang == 'english') ? 'Air Conditioning' : 'เครื่องปรับอากาศ';
+												}
+											?>
+										</h6>
+									</div>
+									<div class="col-sm-3 mb-4 text-center">
+										<span>
+											<img src="http://192.168.20.22/sm_booking1/includes/image.php?filename=upload/amenity_icon/19_63bbaed00412a.png" alt="" class="icon-service">
+										</span>
+										<h6 class="mt-1 tx-service">
+											<?php
+												if (sizeof($packages) > 0) {
+													echo ($lang == 'english') ? 'Trash can' : 'ถังขยะ';
+												}
+											?>
+										</h6>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="accordion-item">
+					<h2 class="accordion-header" id="headingThree">
+						<button class="accordion-button collapsed button-accordion" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseTwo">
+							<?php
+								if (sizeof($packages) > 0) {
+									echo ($lang == 'english') ? 'Nearby Locations' : 'สถานที่ใกล้เคียง';
+								}
+							?>
+						</button>
+					</h2>
+					<div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+						<div class="accordion-body">
+							<div class="col-md-12" style="padding: 0;">		
+								<div class="table-responsive" style="font-size: small; line-height: 15px;">
+									<table class="table table-bordered" style="border-color: #ccc !important;">
+										<tbody>
+											<tr class="text-center">
+												<th class="location">
+													<?php
+														if (sizeof($packages) > 0) {
+															echo ($lang == 'english') ? 'Location' : 'ชื่อสถานที่';
+														}
+													?>
+												</th>
+												<th class="location">
+													<?php
+														if (sizeof($packages) > 0) {
+															echo ($lang == 'english') ? 'Distance(km)' : 'ระยะทาง(km)';
+														}
+													?>
+												</th>
+											</tr>
+											<tr>
+												<td class="location">
+													<span class="location">
+														<?php
+															if (sizeof($packages) > 0) {
+																echo ($lang == 'english') ? 'ครัวอิ่มแปล้' : 'ครัวอิ่มแปล้';
+															}
+														?>
+													</span>
+												</td>
+												<td class="location">
+													<span class="location" style="float: right;">
+														<?php
+															if (sizeof($packages) > 0) {
+																echo ($lang == 'english') ? '0.07&nbsp;m.' : '0.07&nbsp;ม.';
+															}
+														?>
+													</span>
+												</td>
+											</tr>
+											<tr>
+												<td class="location">
+													<span class="location">
+														<?php
+															if (sizeof($packages) > 0) {
+																echo ($lang == 'english') ? 'The Pandora Camp Khaoyai' : 'The Pandora Camp Khaoyai';
+															}
+														?>
+													</span>
+												</td>
+												<td class="location">
+													<span class="location" style="float: right;">
+														<?php
+															if (sizeof($packages) > 0) {
+																echo ($lang == 'english') ? '10&nbsp;m.' : '10&nbsp;ม.';
+															}
+														?>
+													</span>
+												</td>
+											</tr>
+											<tr>
+												<td class="location">
+													<span class="location">
+														<?php
+															if (sizeof($packages) > 0) {
+																echo ($lang == 'english') ? 'Toscana Valley' : 'Toscana Valley';
+															}
+														?>
+													</span>
+												</td>
+												<td class="location">
+													<span class="location" style="float: right;">
+														<?php
+															if (sizeof($packages) > 0) {
+																echo ($lang == 'english') ? '10&nbsp;m.' : '10&nbsp;ม.';
+															}
+														?>
+													</span>
+												</td>
+											</tr>
+											<tr>
+												<td class="location">
+													<span class="location">
+														<?php
+															if (sizeof($packages) > 0) {
+																echo ($lang == 'english') ? 'เขาใหญ่อาร์ตมิวเซียม' : 'เขาใหญ่อาร์ตมิวเซียม';
+															}
+														?>
+													</span>
+												</td>
+												<td class="location">
+													<span class="location" style="float: right;">
+														<?php
+															if (sizeof($packages) > 0) {
+																echo ($lang == 'english') ? '15&nbsp;m.' : '15&nbsp;ม.';
+															}
+														?>
+													</span>
+												</td>
+											</tr>
+											<tr>
+												<td class="location">
+													<span class="location">
+														<?php
+															if (sizeof($packages) > 0) {
+																echo ($lang == 'english') ? 'My Ozone Animal Club' : 'My Ozone Animal Club';
+															}
+														?>
+													</span>
+												</td>
+												<td class="location">
+													<span class="location" style="float: right;">
+														<?php
+															if (sizeof($packages) > 0) {
+																echo ($lang == 'english') ? '25&nbsp;m.' : '25&nbsp;ม.';
+															}
+														?>
+													</span>
+												</td>
+											</tr>
+											<tr>
+												<td class="location">
+													<span class="location">
+														<?php
+															if (sizeof($packages) > 0) {
+																echo ($lang == 'english') ? 'Scenical World' : 'Scenical World';
+															}
+														?>
+													</span>
+												</td>
+												<td class="location">
+													<span class="location" style="float: right;">
+														<?php
+															if (sizeof($packages) > 0) {
+																echo ($lang == 'english') ? '30&nbsp;m.' : '30&nbsp;ม.';
+															}
+														?>
+													</span>
+												</td>
+											</tr>
+											<tr>
+												<td class="location">
+													<span class="location">
+														<?php
+															if (sizeof($packages) > 0) {
+																echo ($lang == 'english') ? 'Khao Yai National Park' : 'Khao Yai National Park';
+															}
+														?>
+													</span>
+												</td>
+												<td class="location">
+													<span class="location" style="float: right;">
+														<?php
+															if (sizeof($packages) > 0) {
+																echo ($lang == 'english') ? '30&nbsp;m.' : '30&nbsp;ม.';
+															}
+														?>
+													</span>
+												</td>
+											</tr>
+										</tbody>
+									</table>  
+								</div>		
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="accordion-item">
+					<h2 class="accordion-header" id="headingFour">
+						<button class="accordion-button collapsed button-accordion" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseTwo">
+							<?php
+								if (sizeof($packages) > 0) {
+									echo ($lang == 'english') ? 'Conditions And Policies' : 'เงื่อนไขและข้อกำหนดในการเข้าพัก';
+								}
+							?>
+						</button>
+					</h2>
+					<div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+						<div class="accordion-body">
+							<div class="col-md-12" style="padding: 0;">		
+								<span>
+									<u>
+										<?php
+											if (sizeof($packages) > 0) {
+												echo ($lang == 'english') ? 'Cancellation Policy' : 'นโยบายการยกเลิกการจอง';
+											}
+										?>
+									</u>
+								</span>	
+								<ol>			
+									<li>
+										<?php
+											if (sizeof($packages) > 0) {
+												echo ($lang == 'english') ? 'Payment transfer should be done within 2 hours after booking. If not transfered, system will automatically cancel the booking.' : 'การโอนเงินต้องเสร็จสิ้นภายใน 2 ชั่วโมงหลังการจอง มิฉะนั้นระบบจะยกเลิกการจองโดยอัตโนมัติ';
+											}
+										?>
+									</li>			
+								</ol>
+								<span>
+									<u>
+										<?php
+											if (sizeof($packages) > 0) {
+												echo ($lang == 'english') ? 'Showroom Policy' : 'นโยบายโชว์รูม';
+											}
+										?>
+									</u>
+								</span>
+								<ol>		
+									<li>
+										<?php
+											if (sizeof($packages) > 0) {
+												echo ($lang == 'english') ? 'Hotel check-in time is 02:00 PM, check-out time is 12:00 PM. If check-in early or check-out late, have ฿500/Hr extra charge by showroom condition.' : 'เวลาเช็คอิน 14.00 น. เวลาเช็คเอ้าท์ 12.00 น. หากเข้าพักก่อน หรือ เช็คเอ้าท์เกิน ชั่วโมงละ 500 บาท ตามเงื่อนไขโชว์รูม';
+											}
+										?>
+									</li>
+									<li>
+										<?php
+											if (sizeof($packages) > 0) {
+												echo ($lang == 'english') ? 'Pets are not allowed in showroom area.' : 'ไม่อนุญาตให้นำสัตว์เลี้ยงเข้าพักภายในบริเวณโชว์รูม';
+											}
+										?>
+									</li>
+									<li>
+										<?php
+											if (sizeof($packages) > 0) {
+												echo ($lang == 'english') ? 'Cooking is not allowed in room area, except in the area we provide.' : 'ไม่อนุญาตให้ประกอบอาหารภายในบริเวณที่พัก ยกเว้นเฉพาะพื้นที่ที่ทางโชว์รูมจัดไว้ให้เท่านั้น';
+											}
+										?>
+									</li>
+									<li>
+										<?php
+											if (sizeof($packages) > 0) {
+												echo ($lang == 'english') ? 'Please remain silent between 10:00 PM and 06:00 AM.' : 'ขอความกรุณางดใช้เสียง ตั้งแต่เวลา 22.00 น. - 06.00 น.';
+											}
+										?>
+									</li>
+									<li>
+										<?php
+											if (sizeof($packages) > 0) {
+												echo ($lang == 'english') ? 'In case that guests damage showroom properties, they must compensate money by the price of properties.' : 'ในกรณีทำให้ทรัพย์สินของโชว์รูมเสียหายให้ชดใช้คืนตามมูลค่าของทรัพย์สินนั้น';
+											}
+										?>
+									</li>
+									<li>
+										<?php
+											if (sizeof($packages) > 0) {
+												echo ($lang == 'english') ? 'Smoking is not allowed in room area and showroom area, except in the area we provide. Violators will be fined ฿2,000.' : 'งดสูบบุหรี่ในห้องพัก และบริเวณโชว์รูม ฝ่าฝืนปรับ 2,000 บาท (ลูกค้าสามารถสูบบุหรี่ในพื้นที่ที่โชว์รูมจัดไว้ให้เท่านั้น)';
+											}
+										?>
+									</li>
+									<li>
+										<?php
+											if (sizeof($packages) > 0) {
+												echo ($lang == 'english') ? 'Firework, cracker or sky lantern ignition is not allowed in showroom area. Violators will be fined ฿2,000.' : 'งดจุดพลุ, ประทัด, ดอกไม้ไฟ หรือ โคมลอย ในบริเวณโชว์รูม ฝ่าฝืนปรับ 2,000 บาท';
+											}
+										?>
+									</li>			
+								</ol>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="footer mt-4">
+					<div class="ml-2 text-right">
+						<button class="btn button-primary-w add_to_cart" data-id="1" data-price="1500" id="" style="margin-right: 5px;" fdprocessedid="t8mt0r">
+							<?php
+								if (sizeof($packages) > 0) {
+									echo ($lang == 'english') ? 'Add To Cart' : 'เก็บใส่ตะกร้า';
+								}
+							?>
+						</button>
+						<a href="javascript:;" data-roomtype="1" class="btn button-primary book_now book_now:hover" id="" style="margin-left: 5px;">
+							<?php
+								if (sizeof($packages) > 0) {
+									echo ($lang == 'english') ? 'Book Now' : 'จองตอนนี้';
+								}
+							?>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="col-md-6 col-sm-12">
+			<div class="cards-wrapper">
+				<div class="card card-roomtype img-sec">				
+					<div class="hover-img " style="width: 100%; height: 100%;">
+						<a href="javascript:;"> 
+							<img src="http://192.168.20.22/sm_booking1/includes/image.php?filename=upload/room_type_photo/1_64880eea98d2c.jpeg" class="img-fluid" alt="Room Image">
+						</a>
+					</div>
+					<span style="font-size: smaller;">1,500 / Night</span>								 
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class="row mt-4">
+		<div class="col-md-12 ml-2 text-center mt-4">
+			<div class="header">
+				<div class="pl-4 text-center mb-4">
+					<a href="http://192.168.20.22/sm_booking1/detail.php" target="_blank">
+						<h5 class="roomtype-tx-title">SM 2 - Superior Room</h5>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-6 col-sm-12">
+			<div class="cards-wrapper">
+				<div class="card card-roomtype img-sec">				
+					<div class="hover-img " style="width: 100%; height: 100%;">
+						<a href="javascript:;"> 
+							<img src="http://192.168.20.22/sm_booking1/includes/image.php?filename=upload/room_type_photo/2_64880fd39e3fb.jpeg" class="img-fluid" alt="Room Image">
+						</a>
+					</div>
+					<span style="font-size: smaller;">1,800 / Night</span>								 
+				</div>
+			</div>
+		</div>
+		<div class="col-md-6 col-sm-12">
+			<div class="accordion" id="accordionExample">
+				<div class="accordion-item">
+					<h2 class="accordion-header" id="headingOneInfo2">
+						<button class="accordion-button collapsed button-accordion" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOneInfo2" aria-expanded="false" aria-controls="collapseOne">
+							<?php
+								if (sizeof($packages) > 0) {
+									echo ($lang == 'english') ? 'Room Information' : 'รายละเอียดห้อง';
+								}
+							?>
+						</button>
+					</h2>
+					<div id="collapseOneInfo2" class="accordion-collapse collapse" aria-labelledby="headingOneInfo2" data-bs-parent="#accordionExample">
+						<div class="accordion-body">
+							<div class="col-md-12" style="padding-right: 0;">
+								<div class="row">
+									<div class="row mx-auto mt-2">
+										<div class="col-3 mx-auto icon_container">
+											<span class="icon-content"><object data="http://192.168.20.22/smartbooking_front_test/images/icons/house.svg" height="20"></object></span>
+										</div>
+										<div class="col-9 icon_container">
+											<span class="icon-content">ขนาดพื้นที่ห้อง: 18 ตรม.</span>
+										</div>
+									</div>
+									<div class="row mx-auto mt-2">
+										<div class="col-3 text-left icon_container">
+											<!-- <span class="icon-content"><img class="icon" src="https://sharefolder.buildersmart.com/sms_booking/images/icons/icons8-bedroom-50.png" height="18"></span> -->
+											<span class="icon-content"><object data="https://sharefolder.buildersmart.com/sms_booking/images/icons/icons8-bedroom-50.png" height="18"></object></span>
+										</div>
+										<div class="col-9 text-left icon_container">
+											<span class="icon-content">ห้องนอน:1 Queen-bed</span>
+										</div>
+									</div>
+									<div class="row mx-auto mt-2">
+										<div class="col-3 text-left icon_container">
+											<span class="icon-content  ml-1"><object data="https://sharefolder.buildersmart.com/sms_booking/images/icons/bathroom.png" height="18"></object></span>
+										</div>
+										<div class="col-9 text-left icon_container">
+											<span class="icon-content">ห้องน้ำ: 1 ห้องน้ำ</span>
+										</div>
+									</div>
+									<div class="row mx-auto mt-2">
+										<div class="col-3 text-left icon_container">
+											<span class="icon-content" style="margin-left:1px;"><object data="https://sharefolder.buildersmart.com/sms_booking/images/icons/person-fill.svg" height="18"></object></span>
+										</div>
+										<div class="col-9 text-left icon_container">
+											<span class="icon-content">จำนวนผู้เข้าพัก: 2</span>
+										</div>
+									</div>
+									<div class="row mx-auto mt-2">
+										<div class="col-3 text-left icon_container">
+											<object data="https://sharefolder.buildersmart.com/sms_booking/images/icons/tv.svg" height="20"> </object>
+										</div>
+										<div class="col-9 text-left icon_container">
+											<span class="icon-content">TV (Internet)</span>
+										</div>
+									</div>
+									<div class="row mx-auto mt-2">
+										<div class="col-3 text-left icon_container">
+											<span class="icon-content"><object data="https://sharefolder.buildersmart.com/sms_booking/images/icons/snow.svg" height="20"> </object></span>
+										</div>
+										<div class="col-9 text-left icon_container">
+											<span class="icon-content">เครื่องปรับอากาศ</span>
+										</div>
+									</div>
+									<div class="row mx-auto mt-2">
+										<div class="col-3 text-left icon_container">
+											<span class="icon-content"><object data="https://sharefolder.buildersmart.com/sms_booking/images/icons/wifi.svg" height="20"> </object></span>
+										</div>
+										<div class="col-9 text-left icon_container">
+											<span class="icon-content">Free WIFI</span>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="accordion-item">
+					<h2 class="accordion-header" id="headingOne2">
+						<button class="accordion-button collapsed button-accordion" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne2" aria-expanded="false" aria-controls="collapseOne">
+							<?php
+								if (sizeof($packages) > 0) {
+									echo ($lang == 'english') ? 'Highlights' : 'ไฮไลท์';
+								}
+							?>
+						</button>
+					</h2>
+					<div id="collapseOne2" class="accordion-collapse collapse" aria-labelledby="headingOne2" data-bs-parent="#accordionExample">
+						<div class="accordion-body">
+							<div class="col-md-12" style="padding-right: 0;">
+								<div class="row">
+									<div class="col-sm-3 mb-2 text-center">
+										<img src="http://192.168.20.22/sm_booking1/includes/image.php?filename=upload/project_highlight/1_63bb731cd4018.png" class="icon-service"><br>
+										<h6 class="mt-1 tx-service">
+											<?php
+												if (sizeof($packages) > 0) {
+													echo ($lang == 'english') ? 'Wifi' : 'ไวไฟ';
+												}
+											?>
+										</h6>
+									</div>
+
+									<div class="col-sm-3 mb-2 text-center">
+										<img src="http://192.168.20.22/sm_booking1/includes/image.php?filename=upload/project_highlight/1_63bb7dd7c487e.png" class="icon-service"><br>
+										<h6 class="mt-1 tx-service">
+											<?php
+												if (sizeof($packages) > 0) {
+													echo ($lang == 'english') ? 'Mountain View' : 'วิวภูเขา';
+												}
+											?>
+										</h6>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="accordion-item">
+					<h2 class="accordion-header" id="headingTwo2">
+						<button class="accordion-button collapsed button-accordion" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo2" aria-expanded="false" aria-controls="collapseTwo">
+							<?php
+								if (sizeof($packages) > 0) {
+									echo ($lang == 'english') ? 'Facilities & Amenities' : 'สาธารณูปโภค & สิ่งอำนวยความสะดวก';
+								}
+							?>
+						</button>
+					</h2>
+					<div id="collapseTwo2" class="accordion-collapse collapse" aria-labelledby="headingTwo2" data-bs-parent="#accordionExample">
+						<div class="accordion-body">
+							<div class="col-md-12" style="padding-right: 0;">
+								<div class="row">
+									<div class="col-sm-3 mb-4 text-center">
+										<span>
+											<img src="http://192.168.20.22/sm_booking1/includes/image.php?filename=upload/amenity_icon/8_63bbae41caae1.jpeg" alt="" class="icon-service">
+										</span>
+										<h6 class="mt-1 tx-service">
+											<?php
+												if (sizeof($packages) > 0) {
+													echo ($lang == 'english') ? 'Hair dryer' : 'ไดร์เป่าผม';
+												}
+											?>
+										</h6>
+									</div>
+									<div class="col-sm-3 mb-4 text-center">
+										<span>
+											<img src="http://192.168.20.22/sm_booking1/includes/image.php?filename=upload/amenity_icon/12_63bbae8cc44a4.png" alt="" class="icon-service">
+										</span>
+										<h6 class="mt-1 tx-service">
+											<?php
+												if (sizeof($packages) > 0) {
+													echo ($lang == 'english') ? 'Refrigerator' : 'ตู้เย็น';
+												}
+											?>
+										</h6>
+									</div>
+									<div class="col-sm-3 mb-4 text-center">
+										<span>
+											<img src="http://192.168.20.22/sm_booking1/includes/image.php?filename=upload/amenity_icon/5_63bbae117d8c3.png" alt="" class="icon-service">
+										</span>
+										<h6 class="mt-1 tx-service">
+											<?php
+												if (sizeof($packages) > 0) {
+													echo ($lang == 'english') ? 'Free WiFi' : 'ไวไฟฟรี';
+												}
+											?>
+										</h6>
+									</div>
+									<div class="col-sm-3 mb-4 text-center">
+										<span>
+											<img src="http://192.168.20.22/sm_booking1/includes/image.php?filename=upload/amenity_icon/9_63bbae5f2438f.png" alt="" class="icon-service">
+										</span>
+										<h6 class="mt-1 tx-service">
+											<?php
+												if (sizeof($packages) > 0) {
+													echo ($lang == 'english') ? 'Toiletries' : 'อุปกรณ์อาบน้ำ';
+												}
+											?>
+										</h6>
+									</div>
+									<div class="col-sm-3 mb-4 text-center">
+										<span>
+											<img src="http://192.168.20.22/sm_booking1/includes/image.php?filename=upload/amenity_icon/13_63bbae956b002.png" alt="" class="icon-service">
+										</span>
+										<h6 class="mt-1 tx-service">
+											<?php
+												if (sizeof($packages) > 0) {
+													echo ($lang == 'english') ? 'Free bottled water' : 'น้ำดื่มขวดฟรี';
+												}
+											?>
+										</h6>
+									</div>
+									<div class="col-sm-3 mb-4 text-center">
+										<span>
+											<img src="http://192.168.20.22/sm_booking1/includes/image.php?filename=upload/amenity_icon/6_63bbae311f776.png" alt="" class="icon-service">
+										</span>
+										<h6 class="mt-1 tx-service">
+											<?php
+												if (sizeof($packages) > 0) {
+													echo ($lang == 'english') ? 'TV (Internet)' : 'สมาร์ททีวี';
+												}
+											?>
+										</h6>
+										</div>
+									<div class="col-sm-3 mb-4 text-center">
+										<span>
+											<img src="http://192.168.20.22/sm_booking1/includes/image.php?filename=upload/amenity_icon/10_63bbae7bdaf5d.png" alt="" class="icon-service">
+										</span>
+										<h6 class="mt-1 tx-service">
+											<?php
+												if (sizeof($packages) > 0) {
+													echo ($lang == 'english') ? 'Shower' : 'ฝักบัวอาบน้ำ';
+												}
+											?>
+										</h6>
+									</div>
+									<div class="col-sm-3 mb-4 text-center">
+										<span>
+											<img src="http://192.168.20.22/sm_booking1/includes/image.php?filename=upload/amenity_icon/14_63bbae9e4ce23.jpeg" alt="" class="icon-service">
+										</span>
+										<h6 class="mt-1 tx-service">
+											<?php
+												if (sizeof($packages) > 0) {
+													echo ($lang == 'english') ? 'Coffee maker' : 'เครื่องชงกาแฟ';
+												}
+											?>
+										</h6>
+									</div>
+									<div class="col-sm-3 mb-4 text-center">
+										<span>
+											<img src="http://192.168.20.22/sm_booking1/includes/image.php?filename=upload/amenity_icon/18_63bbaec8bffdf.png" alt="" class="icon-service">
+										</span>
+										<h6 class="mt-1 tx-service">
+											<?php
+												if (sizeof($packages) > 0) {
+													echo ($lang == 'english') ? 'Desk' : 'โต๊ะ';
+												}
+											?>
+										</h6>
+									</div>
+									<div class="col-sm-3 mb-4 text-center">
+										<span>
+											<img src="http://192.168.20.22/sm_booking1/includes/image.php?filename=upload/amenity_icon/7_63bbae39bd8d5.png" alt="" class="icon-service">
+										</span>
+										<h6 class="mt-1 tx-service">
+											<?php
+												if (sizeof($packages) > 0) {
+													echo ($lang == 'english') ? 'Towels' : 'ผ้าเช็ดตัว';
+												}
+											?>
+										</h6>
+									</div>
+									<div class="col-sm-3 mb-4 text-center">
+										<span>
+											<img src="http://192.168.20.22/sm_booking1/includes/image.php?filename=upload/amenity_icon/11_63bbae84cf279.png" alt="" class="icon-service">
+										</span>
+										<h6 class="mt-1 tx-service">
+											<?php
+												if (sizeof($packages) > 0) {
+													echo ($lang == 'english') ? 'Mirror' : 'กระจก';
+												}
+											?>
+										</h6>
+									</div>
+									<div class="col-sm-3 mb-4 text-center">
+										<span>
+											<img src="http://192.168.20.22/sm_booking1/includes/image.php?filename=upload/amenity_icon/15_63bbaeae7684a.png" alt="" class="icon-service room_img img-thumbnail" data-type="0" data-ctr="1">
+										</span>
+										<h6 class="mt-1 tx-service">
+											<?php
+												if (sizeof($packages) > 0) {
+													echo ($lang == 'english') ? 'Air Conditioning' : 'เครื่องปรับอากาศ';
+												}
+											?>
+										</h6>
+									</div>
+									<div class="col-sm-3 mb-4 text-center">
+										<span>
+											<img src="http://192.168.20.22/sm_booking1/includes/image.php?filename=upload/amenity_icon/19_63bbaed00412a.png" alt="" class="icon-service room_img img-thumbnail">
+										</span>
+										<h6 class="mt-1 tx-service">
+											<?php
+												if (sizeof($packages) > 0) {
+													echo ($lang == 'english') ? 'Trash can' : 'ถังขยะ';
+												}
+											?>
+										</h6>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="accordion-item">
+					<h2 class="accordion-header" id="headingThree2">
+						<button class="accordion-button collapsed button-accordion" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree2" aria-expanded="false" aria-controls="collapseTwo">
+							<?php
+								if (sizeof($packages) > 0) {
+									echo ($lang == 'english') ? 'Nearby Locations' : 'สถานที่ใกล้เคียง';
+								}
+							?>
+						</button>
+					</h2>
+					<div id="collapseThree2" class="accordion-collapse collapse" aria-labelledby="headingThree2" data-bs-parent="#accordionExample">
+						<div class="accordion-body">
+							<div class="col-md-12" style="padding: 0;">		
+								<div class="table-responsive" style="font-size: small; line-height: 15px;">
+									<table class="table table-bordered" style="border-color: #ccc !important;">
+										<tbody>
+											<tr class="text-center">
+												<th class="location">
+													<?php
+														if (sizeof($packages) > 0) {
+															echo ($lang == 'english') ? 'Location' : 'ชื่อสถานที่';
+														}
+													?>
+												</th>
+												<th class="location">
+													<?php
+														if (sizeof($packages) > 0) {
+															echo ($lang == 'english') ? 'Distance(km)' : 'ระยะทาง(km)';
+														}
+													?>
+												</th>
+											</tr>
+											<tr>
+												<td class="location">
+													<span class="location">
+														<?php
+															if (sizeof($packages) > 0) {
+																echo ($lang == 'english') ? 'ครัวอิ่มแปล้' : 'ครัวอิ่มแปล้';
+															}
+														?>
+													</span>
+												</td>
+												<td class="location">
+													<span class="location" style="float: right;">
+														<?php
+															if (sizeof($packages) > 0) {
+																echo ($lang == 'english') ? '0.07&nbsp;m.' : '0.07&nbsp;ม.';
+															}
+														?>
+													</span>
+												</td>
+											</tr>
+											<tr>
+												<td class="location">
+													<span class="location">
+														<?php
+															if (sizeof($packages) > 0) {
+																echo ($lang == 'english') ? 'The Pandora Camp Khaoyai' : 'The Pandora Camp Khaoyai';
+															}
+														?>
+													</span>
+												</td>
+												<td class="location">
+													<span class="location" style="float: right;">
+														<?php
+															if (sizeof($packages) > 0) {
+																echo ($lang == 'english') ? '10&nbsp;m.' : '10&nbsp;ม.';
+															}
+														?>
+													</span>
+												</td>
+											</tr>
+											<tr>
+												<td class="location">
+													<span class="location">
+														<?php
+															if (sizeof($packages) > 0) {
+																echo ($lang == 'english') ? 'Toscana Valley' : 'Toscana Valley';
+															}
+														?>
+													</span>
+												</td>
+												<td class="location">
+													<span class="location" style="float: right;">
+														<?php
+															if (sizeof($packages) > 0) {
+																echo ($lang == 'english') ? '10&nbsp;m.' : '10&nbsp;ม.';
+															}
+														?>
+													</span>
+												</td>
+											</tr>
+											<tr>
+												<td class="location">
+													<span class="location">
+														<?php
+															if (sizeof($packages) > 0) {
+																echo ($lang == 'english') ? 'เขาใหญ่อาร์ตมิวเซียม' : 'เขาใหญ่อาร์ตมิวเซียม';
+															}
+														?>
+													</span>
+												</td>
+												<td class="location">
+													<span class="location" style="float: right;">
+														<?php
+															if (sizeof($packages) > 0) {
+																echo ($lang == 'english') ? '15&nbsp;m.' : '15&nbsp;ม.';
+															}
+														?>
+													</span>
+												</td>
+											</tr>
+											<tr>
+												<td class="location">
+													<span class="location">
+														<?php
+															if (sizeof($packages) > 0) {
+																echo ($lang == 'english') ? 'My Ozone Animal Club' : 'My Ozone Animal Club';
+															}
+														?>
+													</span>
+												</td>
+												<td class="location">
+													<span class="location" style="float: right;">
+														<?php
+															if (sizeof($packages) > 0) {
+																echo ($lang == 'english') ? '25&nbsp;m.' : '25&nbsp;ม.';
+															}
+														?>
+													</span>
+												</td>
+											</tr>
+											<tr>
+												<td class="location">
+													<span class="location">
+														<?php
+															if (sizeof($packages) > 0) {
+																echo ($lang == 'english') ? 'Scenical World' : 'Scenical World';
+															}
+														?>
+													</span>
+												</td>
+												<td class="location">
+													<span class="location" style="float: right;">
+														<?php
+															if (sizeof($packages) > 0) {
+																echo ($lang == 'english') ? '30&nbsp;m.' : '30&nbsp;ม.';
+															}
+														?>
+													</span>
+												</td>
+											</tr>
+											<tr>
+												<td class="location">
+													<span class="location">
+														<?php
+															if (sizeof($packages) > 0) {
+																echo ($lang == 'english') ? 'Khao Yai National Park' : 'Khao Yai National Park';
+															}
+														?>
+													</span>
+												</td>
+												<td class="location">
+													<span class="location" style="float: right;">
+														<?php
+															if (sizeof($packages) > 0) {
+																echo ($lang == 'english') ? '30&nbsp;m.' : '30&nbsp;ม.';
+															}
+														?>
+													</span>
+												</td>
+											</tr>
+										</tbody>
+									</table>  
+								</div>		
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="accordion-item">
+					<h2 class="accordion-header" id="headingFour2">
+						<button class="accordion-button collapsed button-accordion" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour2" aria-expanded="false" aria-controls="collapseTwo">
+							<?php
+								if (sizeof($packages) > 0) {
+									echo ($lang == 'english') ? 'Conditions And Policies' : 'เงื่อนไขและข้อกำหนดในการเข้าพัก';
+								}
+							?>
+						</button>
+					</h2>
+					<div id="collapseFour2" class="accordion-collapse collapse" aria-labelledby="headingFour2" data-bs-parent="#accordionExample">
+						<div class="accordion-body">
+							<div class="col-md-12" style="padding: 0;">		
+								<span>
+									<u>
+										<?php
+											if (sizeof($packages) > 0) {
+												echo ($lang == 'english') ? 'Cancellation Policy' : 'นโยบายการยกเลิกการจอง';
+											}
+										?>
+									</u>
+								</span>	
+								<ol>			
+									<li>
+										<?php
+											if (sizeof($packages) > 0) {
+												echo ($lang == 'english') ? 'Payment transfer should be done within 2 hours after booking. If not transfered, system will automatically cancel the booking.' : 'การโอนเงินต้องเสร็จสิ้นภายใน 2 ชั่วโมงหลังการจอง มิฉะนั้นระบบจะยกเลิกการจองโดยอัตโนมัติ';
+											}
+										?>
+									</li>			
+								</ol>
+								<span>
+									<u>
+										<?php
+											if (sizeof($packages) > 0) {
+												echo ($lang == 'english') ? 'Showroom Policy' : 'นโยบายโชว์รูม';
+											}
+										?>
+									</u>
+								</span>
+								<ol>		
+									<li>
+										<?php
+											if (sizeof($packages) > 0) {
+												echo ($lang == 'english') ? 'Hotel check-in time is 02:00 PM, check-out time is 12:00 PM. If check-in early or check-out late, have ฿500/Hr extra charge by showroom condition.' : 'เวลาเช็คอิน 14.00 น. เวลาเช็คเอ้าท์ 12.00 น. หากเข้าพักก่อน หรือ เช็คเอ้าท์เกิน ชั่วโมงละ 500 บาท ตามเงื่อนไขโชว์รูม';
+											}
+										?>
+									</li>
+									<li>
+										<?php
+											if (sizeof($packages) > 0) {
+												echo ($lang == 'english') ? 'Pets are not allowed in showroom area.' : 'ไม่อนุญาตให้นำสัตว์เลี้ยงเข้าพักภายในบริเวณโชว์รูม';
+											}
+										?>
+									</li>
+									<li>
+										<?php
+											if (sizeof($packages) > 0) {
+												echo ($lang == 'english') ? 'Cooking is not allowed in room area, except in the area we provide.' : 'ไม่อนุญาตให้ประกอบอาหารภายในบริเวณที่พัก ยกเว้นเฉพาะพื้นที่ที่ทางโชว์รูมจัดไว้ให้เท่านั้น';
+											}
+										?>
+									</li>
+									<li>
+										<?php
+											if (sizeof($packages) > 0) {
+												echo ($lang == 'english') ? 'Please remain silent between 10:00 PM and 06:00 AM.' : 'ขอความกรุณางดใช้เสียง ตั้งแต่เวลา 22.00 น. - 06.00 น.';
+											}
+										?>
+									</li>
+									<li>
+										<?php
+											if (sizeof($packages) > 0) {
+												echo ($lang == 'english') ? 'In case that guests damage showroom properties, they must compensate money by the price of properties.' : 'ในกรณีทำให้ทรัพย์สินของโชว์รูมเสียหายให้ชดใช้คืนตามมูลค่าของทรัพย์สินนั้น';
+											}
+										?>
+									</li>
+									<li>
+										<?php
+											if (sizeof($packages) > 0) {
+												echo ($lang == 'english') ? 'Smoking is not allowed in room area and showroom area, except in the area we provide. Violators will be fined ฿2,000.' : 'งดสูบบุหรี่ในห้องพัก และบริเวณโชว์รูม ฝ่าฝืนปรับ 2,000 บาท (ลูกค้าสามารถสูบบุหรี่ในพื้นที่ที่โชว์รูมจัดไว้ให้เท่านั้น)';
+											}
+										?>
+									</li>
+									<li>
+										<?php
+											if (sizeof($packages) > 0) {
+												echo ($lang == 'english') ? 'Firework, cracker or sky lantern ignition is not allowed in showroom area. Violators will be fined ฿2,000.' : 'งดจุดพลุ, ประทัด, ดอกไม้ไฟ หรือ โคมลอย ในบริเวณโชว์รูม ฝ่าฝืนปรับ 2,000 บาท';
+											}
+										?>
+									</li>			
+								</ol>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="footer mt-4" style="justify-content: flex-start;">
+				<div class="ml-2 text-right">
+					<div class="ml-2 text-right">
+						<button class="btn button-primary-w add_to_cart" data-id="1" data-price="1500" id="" style="margin-right: 5px;" fdprocessedid="t8mt0r">
+							<?php
+								if (sizeof($packages) > 0) {
+									echo ($lang == 'english') ? 'Add To Cart' : 'เก็บใส่ตะกร้า';
+								}
+							?>
+						</button>
+						<a href="javascript:;" data-roomtype="1" class="btn button-primary book_now book_now:hover" id="" style="margin-left: 5px;">
+							<?php
+								if (sizeof($packages) > 0) {
+									echo ($lang == 'english') ? 'Book Now' : 'จองตอนนี้';
+								}
+							?>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Room Types -->
+
 <div class="container mt-1">
 	<div class="row">
-		<div class="col-md-12 ml-2 text-center">
-			<h5><?php echo $this->lang->line('room_types'); ?></h5>
+		<div class="col-md-12 ml-2 text-center mt-4">
+			<h4>
+				<a id="roomtype" href="javascript:;"><?php echo $this->lang->line('room_types'); ?></a>
+			</h4>
 		</div>
 	</div>
 	<div class="row">
@@ -497,7 +2241,9 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
 				<div class="product-card">
 					<div class="header">
 						<div class="pl-4 text-left">
-							<h6><?php echo ($lang == 'english') ? $rt->room_type_name_en : $rt->room_type_name_th; ?></h6>
+							<a href="http://192.168.20.22/sm_booking1/detail.php" target="_blank">
+								<h5 class="roomtype-tx-title"><?php echo ($lang == 'english') ? $rt->room_type_name_en : $rt->room_type_name_th; ?></h5>
+							</a>
 						</div>
 					</div>
 					<div class="content-product">
@@ -1006,7 +2752,7 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
 		});*/
 
 
-
+		
 		$('.slideshow').each(function(i, obj) {
 			$('#slideshow-' + i + ' > div:gt(0)').hide();
 			setInterval(function() {
@@ -1018,6 +2764,23 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
 					.appendTo('#slideshow-' + i);
 			}, 3000); // 3 seconds
 		});
+		/*
+		$('.slideshow').each(function(i, obj) {
+			$('#slideshow-' + i + ' > div:gt(0)').hide();
+			setInterval(function() {
+				$('#slideshow-' + i + ' > div:first')
+					.fadeOut(1) 
+					.next()
+					.fadeIn(4000)
+					.end()
+					.appendTo('#slideshow-' + i);
+			}, 5000); 
+		});
+		*/
+
+		
+		
+
 
 		$(".checkbox-dropdown").click(function() {
 			$(this).toggleClass("is-active");

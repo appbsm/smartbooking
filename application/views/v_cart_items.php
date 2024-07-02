@@ -72,7 +72,21 @@ $check_out_date = date('d-m-Y', strtotime($check_in_date . '+1 day'));
 			max-width: 300px;
 		}
 	}
+	
+	.button__badge {
+		margin-right: 0px;
+		font-size: 0.6em !important;
+		position: absolute;
+		top: -8px !important;
+		right: -4px !important;
+	}
+	.form-control-ckinout {
+		padding: 1.165rem .75rem !important;
+	}
 </style>
+
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
 <?php
 $this->load->model('m_package');
@@ -87,7 +101,9 @@ $r_date = 0;
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12">
-				<div class="col-md-12 price room_type_header"><span style="margin-left: 10px;"><?php echo $this->lang->line('my_cart'); ?></span></div>
+				<div class="col-md-12 price room_type_header mt-3">
+					<h5><span style="margin-left: 10px;"><?php echo $this->lang->line('my_cart'); ?></span></h5>
+				</div>
 			</div>
 
 		</div>
@@ -97,17 +113,17 @@ $r_date = 0;
 
 			<div class="col-md-4">
 				<!-- <div class="group"> -->
-				<label for="name"><?php echo $this->lang->line('check_in_date'); ?></label>
-				<input type='text' class="form-control datepicker search_input" name="check_in_date" id="check_in_date" value="<?= $check_in_date; ?>" />
+				<label for="name" style="font-weight: 500;"><?php echo $this->lang->line('check_in_date'); ?></label>
+				<input type='text' class="form-control datepicker search_input form-control-ckinout" name="check_in_date" id="check_in_date" value="<?= $check_in_date; ?>" />
 				<!-- </div> -->
 			</div>
 			<div class="col-md-4">
-				<label for="name"><?php echo $this->lang->line('check_out_date'); ?></label>
-				<input type='text' class="form-control datepicker search_input" name="check_out_date" id="check_out_date" value="<?= $check_out_date; ?>" />
+				<label for="name" style="font-weight: 500;"><?php echo $this->lang->line('check_out_date'); ?></label>
+				<input type='text' class="form-control datepicker search_input form-control-ckinout" name="check_out_date" id="check_out_date" value="<?= $check_out_date; ?>" />
 			</div>
 
 			<div class="col-md-4">
-				<label class="ml-1" for="name"><?php echo $lang == "english" ? 'Adult' : 'ผู้เข้าพัก'; ?></label>
+				<label class="ml-1" for="name" style="font-weight: 500;"><?php echo $lang == "english" ? 'Adult' : 'ผู้เข้าพัก'; ?></label>
 				<div class="dropdown">
 					<button class="btn dropdown-toggle w-100 search_input" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 						<span id="div_adult"><?php echo @$search_data['adult'] ? $search_data['adult'] : 2; ?></span> <?php echo $this->lang->line('adults'); ?>, <span id="div_children"><?php echo @$search_data['children'] ? $search_data['children'] : 0; ?></span> <?php echo $this->lang->line('children'); ?> <!-- , <span id="div_room">1</span> Rooms -->
@@ -168,7 +184,7 @@ $r_date = 0;
 		<div class="row">
 			<div class="col-md-12 ">
 				<input type="checkbox" style="height:15px;width:15px;" class="select_all cb" onClick="toggle(this);">
-				<p class="ml-2 mt-0">เลือกทั้งหมด</p>
+				<p class="ml-2 mt-0" style="font-weight: 500;"><?php echo $lang == "english" ? 'Select All' : 'เลือกทั้งหมด'; ?></p>
 			</div>
 			<div class="col-md-9">
 				<!-- package or room -->

@@ -1,3 +1,9 @@
+<?php
+$lang = ($this->session->userdata('site_lang') !== null) ? $this->session->userdata('site_lang') : 'thai';
+$CI = &get_instance();
+$CI->load->model('m_room_type');
+
+?>
 <!doctype html>
 <html lang="en">
 <?php
@@ -80,6 +86,28 @@ if ($id_guest != '') {
       font-size: 1em !important;
       /* font-family: arial; */
     }
+	
+	.btn-sign-in:hover {
+        background-color: #839287 !important; 
+        color: #fff !important; 
+    }
+	
+	.form-control-ckinout {
+		padding: 1.165rem .75rem !important;
+	}
+	.form-control-btnsearch {
+		padding: 1.165rem .75rem !important;
+	}
+	a {
+		color: rgb(90, 90, 90) !important;
+		text-decoration: none !important;
+	}
+	a:hover {
+		color: #007bff !important;
+		text-decoration: none !important;
+		background-color: transparent !important;
+		-webkit-text-decoration-skip: objects !important;
+	}
   </style>
 
   <script>
@@ -126,9 +154,38 @@ if ($id_guest != '') {
     <nav class="navbar navbar-expand-sm navbar-light bg-light fixed-top text-center mr-auto mb-4" style="height:70px;background-color:#839287;">
     <div class="container d-flex flex-row">
 		
-	  <span class="mx-3"><a class="logo" href="<?php echo site_url('home'); ?>"><img src="<?php echo site_url(); ?>images/10.png" width="70"></a></span>      
+	  <span class="mx-3">
+		<a class="logo" href="<?php echo site_url('home'); ?>"><img src="<?php echo site_url(); ?>images/10.png" width="70"></a>
+	  </span>  
+
+	  <!-- new menu -->
+	  <div class="col-6">
+		<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item" id="nav_aboutus">
+                <a class="nav-link" href="#aboutus">
+					<?php echo $lang == "english" ? 'About us' : 'เกี่ยวกับเรา'; ?> 
+				</a>
+            </li>
+            <li class="nav-item" id="nav_roomstype">
+                <a class="nav-link" href="#roomtype">
+					<?php echo $lang == "english" ? 'Rooms type' : 'ประเภทห้อง'; ?> 
+				</a>
+            </li>
+            <li class="nav-item" id="nav_packagep_promotions">
+                <a class="nav-link" href="#package">
+					<?php echo $lang == "english" ? 'Package & Promotions' : 'แพ็คเกจและโปรโมชั่น'; ?> 
+				</a>
+            </li>
+            <li class="nav-item" id="nav_contactus">
+                <a class="nav-link" href="#contactus">
+					<?php echo $lang == "english" ? 'Contact us' : 'ติดต่อเรา'; ?>
+				</a>
+            </li>
+        </ul>
+	</div>
+	  <!-- new menu -->
       <div class="" id="navbarSupportedContent" >       
-        <div class="navbar navbar-expand d-flex flex-row">
+        <div class="navbar navbar-expand d-flex flex-row" style="gap: 0 16px;">
           
 		  <?php if ($id_guest != '') { ?>
 		  <?php if ($guest->photo_url != '') { ?>
@@ -153,7 +210,7 @@ if ($id_guest != '') {
 		  else {
 		  ?>
 		  <div class="button mx-1">
-                <a class="btn btn_sign_in"  href="<?php echo site_url('login'); ?>" height="20">Sign In</a>
+                <a class="btn btn_sign_in btn-sign-in"  href="<?php echo site_url('login'); ?>" height="20">Sign In</a>
               </div>
 		  <?php } ?>
 		  <div class="button">
@@ -175,4 +232,6 @@ if ($id_guest != '') {
       
       </div>
     </nav>
+	
+	-->
 </header>

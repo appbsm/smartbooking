@@ -15,10 +15,10 @@ $lang  = $lg;
 	<footer class="mt-3 bg-light" >
 		<div class="footer-top">
 			<div class="container">
-				<div class="row " >
+				<div class="row " id="contactus">
 					<div class="col-md-6 col-lg-6 footer-about wow fadeInUp mt-3">
 						<div class="d-flex pt-2">
-							<img src="<?= site_url() ?>/images/10.png" style="width: 70px;" class="" alt="logo-smartbooking" />
+							<img src="<?= site_url() ?>/images/10.png" style="width: 70px;" class="" alt="logo-smartbooking" id="contactus"/>
 						</div>
 						<div class="d-flex pt-2">
 							<p class=" mt-3" ><?php echo $lang == 'english' ? 'BuilderSmart (Public) Company Limited <br/>1055 Rama 3 Road.Chongnonsi, Yannawa, Bangkok 10120 <br/><br/> SM Resort @ Khaoyai <br/> 499 Moo 4 Pong Ta Long, Pak Chong, Nakhon Ratchasima 30130': 'บริษัท บิวเดอสมาร์ท จำกัด (มหาชน) <br/>1055 ถนนพระราม 3 แขวงช่องนนทรี เขตยานนาวา กทม 10120 <br/><br/> เอส เอ็ม รีสอร์ท เขาใหญ่<br/> 499 หมู่ 4 ตำบล โป่งตาลอง อำเภอปากช่อง นครราชสีมา 30130';?></p>                 
