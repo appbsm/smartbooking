@@ -8,6 +8,9 @@ $CI->load->model('m_room_type');
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
+	.span, .icon-content {
+		color: #000 !important;
+	}
 	.carousel-item.active {
 		z-index: 0 !important;
 		opacity: 1;
@@ -57,8 +60,11 @@ $CI->load->model('m_room_type');
 	}
 	
 	.description-banner {
-		background-color: #e2e0e0;
-		color: #839287;
+		/*background-color: #e2e0e0;
+		color: #839287;*/
+		background-color: rgb(42, 42, 46);
+		color: rgb(215, 215, 219);
+		/*color: rgb(83 146 249);*/
 		text-align: center;
 		padding: 20px;
 		font-size: 16px;
@@ -67,26 +73,50 @@ $CI->load->model('m_room_type');
 	.long-text {
 		display: none; /* ซ่อนข้อความยาวในตอนแรก */
 		font-size: 1em !important;
-		mmargin: 0;
+		margin: 0;
+		color: rgba(255, 255, 255, 1.00);
+		text-shadow: 2px 2px 4px #000000;
 	}
 	.short-text {
 		margin: 0;
 		font-size: 1em !important;
+		color: rgba(255, 255, 255, 1.00);
+		text-shadow: 2px 2px 4px #000000;
 	}
 	.a-readmore {
-		color: #839287;
+		/*color: #839287;
+		color: rgb(215, 215, 219) !important;
+		color: rgb(83 146 249) !important;*/
+		color: #fff !important;
+		text-shadow: 2px 2px 4px #000000;
 	}
 	.readmore-toggle {
 		display: block;
 		cursor: pointer;
-		color: #839287;
+		/*color: #839287;*/
 		font-size: 1em !important;
 		margin-top: 10px;
+		background-color: rgb(42, 42, 46);
+		color: rgb(215, 215, 219);
+		/*color: rgb(83 146 249);*/
 	}
 
 	.readmore-toggle:hover {
 		text-decoration: underline;
 		font-size: 1em !important;
+	}
+	
+	.em-readmore {
+		/*color: rgb(83 146 249) !important; */
+		color: rgb(215, 215, 219) !important;
+	}
+	
+	.tx-title-header {
+		color: #000 !important;
+		text-shadow: 0px 0px 1px #000
+	}
+	.tx-title-sub {
+		color: #000 !important;
 	}
 	
 	/*PROMOTION & PACKAGE*/
@@ -151,12 +181,16 @@ $CI->load->model('m_room_type');
 		font-size: 14px ;
 		cursor: pointer;
 		font-weight: 600;
+		margin-bottom: 8px;
 	}
 	.package-tx {
 		-webkit-line-clamp: 2;
-		color: rgba(249, 109, 1, 1.00);
+		/*color: rgba(249, 109, 1, 1.00);*/
+		color: rgb(249 1 1);
 		font-style: normal;
 		font-size: 14px ;
+		font-weight: 700;
+		margin-bottom: 8px;
 	}
 	.package-tx-line {
 		color: rgba(143, 143, 143, 1.00);
@@ -170,6 +204,7 @@ $CI->load->model('m_room_type');
 		font-style: normal;
 		font-size: 12px ;
 		margin: 0;
+		font-weight: 700;
 	}
 	.package-period {
 		-webkit-line-clamp: 2;
@@ -207,10 +242,27 @@ $CI->load->model('m_room_type');
 		text-transform: uppercase;
 		line-height: 30px;
 		color: #fff !important;
-		font-size: small;
-		background-color: #839287;
-		border-color: #839287;
+		font-size: small !important;
+		/*background-color: #839287;
+		border-color: #839287;*/
+		background-color: #5392f9 !important;
+		border-color: #5392f9 !important;
 	}
+	.btn-add_to_cart {
+		width: auto;
+		height: auto;
+		text-transform: uppercase;
+		line-height: 30px;
+		color: #fff !important;
+		font-size: small;
+		background-color: #5392f9 !important;
+		border-color: #5392f9 !important;
+	}
+	.btn-add_to_cart:hover {
+        background-color: #fff !important;
+        color: #5392f9 !important; 
+		border-color: #5392f9 !important;
+    }
 	/*PROMOTION & PACKAGE*/
 	
 	/*Room Types*/
@@ -243,11 +295,13 @@ $CI->load->model('m_room_type');
 	}
 	.accordion-body {
 		font-size: 1rem;
-		color: #6c757d;
+		/*color: #6c757d;*/
+		color: #000;
 	}	
 	.accordion-button.button-accordion {
         background-color: #fff !important; 
-        color: #839287 !important; 
+        /*color: #839287 !important; */
+		color: #000 !important;
         border: none !important; 
 		font-size: 16px !important;
     }
@@ -266,17 +320,19 @@ $CI->load->model('m_room_type');
 		height: 100%;
 	}
 	.icon-service {
-		width: 32px;
-		height: 32px;
+		width: 20px;
+		height: 20px;
 	}
 	.tx-service {
-		color: #839287 !important;
+		/*color: #839287 !important;*/
+		color: #000 !important;
 		font-size: 16px !important;
 		font-weight: 400;
 	}
 	.location {
 		font-size: 16px !important;
-		color: #839287 !important;
+		/*color: #839287 !important;*/
+		color: #000 !important;
 		margin: 0 0;
 		line-height: 20px;
 		font-weight: 400;
@@ -336,9 +392,37 @@ $CI->load->model('m_room_type');
 		-webkit-text-decoration-skip: objects !important;
 	}
 	.book_now:hover {
-        background-color: #839287 !important; 
-        color: #fff !important; 
+        background-color: #fff !important;
+        color: #5392f9 !important; 
+		border-color: #5392f9 !important;
     }
+	.book_now {
+		width: auto;
+		height: auto;
+		text-transform: uppercase;
+		line-height: 30px;
+		color: #fff !important;
+		font-size: small;
+		background-color: #5392f9 !important;
+		border-color: #5392f9 !important;
+	}
+	
+	.search-bg {
+		/*background-color: #f8f7f9 ;*/
+		backdrop-filter: blur(10px);
+		background-color: rgb(255 255 255 / 48%) !important;
+	}
+	.btn-filter {
+		background-color: #fff !important;
+		color: #000 !important;
+		border: #5392f9 !important;
+	}
+	.btn-search {
+		background-color: #5392f9 !important;
+		color: #fff !important;
+		border: #5392f9 !important;
+	}
+
 
 	/* Styles for Mobile Phones */
 	@media (max-width: 480px) {
@@ -477,7 +561,7 @@ $CI->load->model('m_room_type');
 			<input type="hidden" name="project_id" id="project_id" value="">
 
 			<div class="container mt-5">
-				<div class="row search-bg pt-3" style="border: 1px solid #C6C6C7; border-radius: 5px; padding: 5px 0 5px 0; margin: 0 4px 0 4px;">
+				<div class="row search-bg pt-3" style="border: 2px solid #C6C6C7; border-radius: 5px; padding: 5px 0 5px 0; margin: 0 4px 0 4px;">
 					<div class="col-lg-3 ">
 						<div class="col-md-12 text-left">
 							<label class="ml-1" for="name"><?php echo $lang == "english" ? 'Location' : 'สถานที่'; ?> </label>
@@ -559,7 +643,7 @@ $CI->load->model('m_room_type');
 					<div class="col-lg-2 col-md-6">
 						<div class="col-md-12 mb-2 text-left">
 							<label for="name">&nbsp;</label>
-							<button disabled id="search" class="form-control form-control-btnsearch search_input search_button btn-default" data-search-type="search_room" style="background-color:#81BB4A;cursor: pointer; display: flex; align-items: center; justify-content: center; ">
+							<button disabled id="search" class="form-control form-control-btnsearch search_input search_button btn-default btn-search" data-search-type="search_room" style="background-color:#81BB4A;cursor: pointer; display: flex; align-items: center; justify-content: center; ">
 								<?php echo $this->lang->line('search'); ?>
 							</button>
 						</div>
@@ -670,7 +754,7 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
 						<p class="long-text">
 							<?php
 								if (sizeof($packages) > 0) {
-									echo ($lang == 'english') ? 'SM Resort redefines a new style of accommodation with its modern resort collection under the BuildSmart Group. Located in the picturesque Khao Yai area, SM Resort offers a remarkable transformation to welcome guests. With various activities available, we are ready to provide a new kind of experience for travelers. Additionally, we host a variety of gatherings and events, ensuring to create precious memories for you. <a href="https://smsmartbooking.buildersmart.com/project_info" target="_blank"><em><i class="fas fa-angle-double-left"></i>Read more...<i class="fas fa-angle-double-right"></i></em></a>' : ' เพื่อต้อนรับแขกผู้มาเยือน พร้อมทั้งมีกิจกรรมต่างๆมากมาย พร้อมแล้วที่จะมอบประสบการณ์ในแบบฉบับใหม่ให้กับนักเดินทาง  รวมถึงงานเลี้ยงสังสรรค์ต่างๆ ที่พร้อมแล้วที่จะสร้างความทรงจำอันล้ำค่าเพื่อคุณ  <a href="https://smsmartbooking.buildersmart.com/project_info" target="_blank"><em><i class="fas fa-angle-double-left"></i>อ่านต่อ...<i class="fas fa-angle-double-right"></i></em></a>';
+									echo ($lang == 'english') ? 'SM Resort redefines a new style of accommodation with its modern resort collection under the BuildSmart Group. Located in the picturesque Khao Yai area, SM Resort offers a remarkable transformation to welcome guests. With various activities available, we are ready to provide a new kind of experience for travelers. Additionally, we host a variety of gatherings and events, ensuring to create precious memories for you. <a href="https://smsmartbooking.buildersmart.com/project_info" target="_blank" class="em-readmore"><em><i class="fas fa-angle-double-left"></i>Read more...<i class="fas fa-angle-double-right"></i></em></a>' : ' เพื่อต้อนรับแขกผู้มาเยือน พร้อมทั้งมีกิจกรรมต่างๆมากมาย พร้อมแล้วที่จะมอบประสบการณ์ในแบบฉบับใหม่ให้กับนักเดินทาง  รวมถึงงานเลี้ยงสังสรรค์ต่างๆ ที่พร้อมแล้วที่จะสร้างความทรงจำอันล้ำค่าเพื่อคุณ  <a href="https://smsmartbooking.buildersmart.com/project_info" target="_blank" class="em-readmore"><em><i class="fas fa-angle-double-left"></i>อ่านต่อ...<i class="fas fa-angle-double-right"></i></em></a>';
 								}
 							?>
 						</p>
@@ -696,7 +780,7 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
 		<div class="row">
 			<div class="col-lg-12 col-md-12 col-sm-12 col-12"> 
 				<h4 style="text-align: center; padding-bottom: 15px;" id="nav_packagep_promotions">
-					<a id="package" href="javascript:;">
+					<a id="package" href="javascript:;" class="tx-title-header">
 						<?php echo $lang == "english" ? 'Package & Promotions' : 'แพ็คเกจและโปรโมชั่น'; ?>
 					</a>
 				</h4>
@@ -954,7 +1038,9 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
 	<div class="row text-center mb-0" id="nav_roomstype">
 		<div class="col-md-12">
 			<h4>
-				<a id="roomtype" href="javascript:;"><?php echo $this->lang->line('room_types'); ?></a>
+				<a id="roomtype" href="javascript:;" class="tx-title-header"><?php //echo $this->lang->line('room_types'); ?>
+					<?php echo ($lang == 'english') ? "Room Types" : "ประเภทของห้อง" ?>
+				</a>
 			</h4>
 		</div>
 	</div>
@@ -985,19 +1071,147 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
 		} ?>
 	</div>
 	-->
-	<!-- New Room Types -->
-	
+
+<!-- -------------------------------New Room Types------------------------------------- -->
+
+	<?php 
+	$index = 0;
+	foreach ($room_types as $key => $rt) {
+		$rate = $CI->m_room_type->get_day_rate($rt->id_room_type, $date);
+		if ($rate == '') {
+			$rate = $rt->default_rate;
+		}
+		$photos = $CI->m_room_type->get_room_type_photos($rt->id_room_type);
+
+		if ($index % 2 == 0) {
+		}else{
+
+		}
+	?>
 	<div class="row">
 		<div class="col-md-12 ml-2 text-center mt-2">
 			<div class="header">
 				<div class="pl-4 text-center mb-4">
-					<a href="http://192.168.20.22/sm_booking1/detail.php" target="_blank">
-						<h5 class="roomtype-tx-title">SM 1 - Standard Room</h5>
+					<a href="http://192.168.20.22/sm_booking1/detail.php" target="_blank" class="tx-title-sub">
+						<!-- <h5 class="roomtype-tx-title">SM 1 - Standard Room</h5> -->
+						<h5 class="roomtype-tx-title"><?php echo ($lang == 'english') ? $rt->room_type_name_en : $rt->room_type_name_th; ?></h5>
 					</a>
 				</div>
 			</div>
 		</div>
 	</div>
+
+	<div class="row">
+		<div class="col-md-6 col-sm-12">
+			<div class="accordion" id="accordionExample">
+
+				<div class="accordion-item">
+					<h2 class="accordion-header" id="headingOneInfo">
+						<button class="accordion-button collapsed button-accordion" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOneInfo<? echo $index; ?>" aria-expanded="false" aria-controls="collapseOne">
+							<?php
+								if (sizeof($packages) > 0) {
+									echo ($lang == 'english') ? 'Room Information' : 'รายละเอียดห้อง';
+								}
+							?>
+						</button>
+					</h2>
+					<div id="collapseOneInfo<? echo $index; ?>" class="accordion-collapse collapse" aria-labelledby="headingOneInfo" data-bs-parent="#accordionExample">
+						<div class="accordion-body">
+							<div class="col-md-12" style="padding-right: 0;">
+								<div class="row">
+
+									<div class="row mx-auto mt-2">
+										<div class="col-3 mx-auto icon_container">
+											<span class="icon-content"><object data="http://192.168.20.22/smartbooking_front_test/images/icons/house.svg" height="20"></object></span>
+										</div>
+										<div class="col-9 icon_container">
+											<span class="icon-content"><? echo ($lang == 'english') ? 'Area 18 Sq.m' : 'ขนาดพื้นที่ห้อง: 18 ตรม.'; ?></span>
+										</div>
+									</div>
+
+									<div class="row mx-auto mt-2">
+										<div class="col-3 text-left icon_container">
+											<span class="icon-content"><object data="https://sharefolder.buildersmart.com/sms_booking/images/icons/icons8-bedroom-50.png" height="18"></object></span>
+										</div>
+										<div class="col-9 text-left icon_container">
+											<span class="icon-content"><? echo ($lang == 'english') ? '1 Queen-bed' : 'ห้องนอน: 1 (Queen-Bed)'; ?></span>
+											
+										</div>
+									</div>
+
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<div class="accordion-item">
+					<h2 class="accordion-header" id="headingOne">
+						<button class="accordion-button collapsed button-accordion" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne<? echo $index; ?>" aria-expanded="false" aria-controls="collapseOne">
+							<?php
+								if (sizeof($packages) > 0) {
+									echo ($lang == 'english') ? 'Highlights' : 'ไฮไลท์';
+								}
+							?>
+						</button>
+					</h2>
+					<div id="collapseOne<? echo $index; ?>" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+						<div class="accordion-body">
+							<div class="col-md-12" style="padding-right: 0;">
+								<div class="row">
+									<div class="col-sm-3 mb-2 text-center">
+										<img src="http://192.168.20.22/sm_booking1/includes/image.php?filename=upload/project_highlight/1_63bb731cd4018.png" class="icon-service"><br>
+										<h6 class="mt-1 tx-service">
+											<?php
+												if (sizeof($packages) > 0) {
+													echo ($lang == 'english') ? 'Wifi' : 'ไวไฟ';
+												}
+											?>
+										</h6>
+									</div>
+
+									<div class="col-sm-3 mb-2 text-center">
+										<img src="http://192.168.20.22/sm_booking1/includes/image.php?filename=upload/project_highlight/1_63bb7dd7c487e.png" class="icon-service"><br>
+										<h6 class="mt-1 tx-service">
+											<?php
+												if (sizeof($packages) > 0) {
+													echo ($lang == 'english') ? 'Mountain View' : 'วิวภูเขา';
+												}
+											?>
+										</h6>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+		<div class="col-md-6 col-sm-12">
+			<div class="cards-wrapper">
+				<div class="card card-roomtype img-sec">				
+					<div class="hover-img " style="width: 100%; height: 100%;">
+						<?php //foreach ($photos as $ctr1 => $photo) { ?>
+						<a href="javascript:;"> 
+							<img src="<?php echo share_folder_path() . $photos[0]->room_photo_url; ?>" class="img-fluid" alt="Room Image">
+							<!-- <img class="room_img img-thumbnail" data-type="<?php echo $ctr; ?>" data-ctr="<?php //echo $ctr1; ?>" src="<?php //echo share_folder_path() . $photo->room_photo_url; ?>" width="100%"> -->
+						</a>
+						<?php //} ?>
+					</div>
+
+					<?php
+						$price = ($lang == 'english') ? number_format($rate, 0) . '/Night' : 'ราคา ' . number_format($rate, 0) . '/คืน';
+					?>
+					<span style="font-size: smaller;"><?php echo $price; ?></span>								 
+				</div>
+			</div>
+		</div>
+
+	</div>
+	<?php $index++; } ?>
+
 	<div class="row">
 		<div class="col-md-6 col-sm-12">
 			<div class="accordion" id="accordionExample">
@@ -1566,9 +1780,9 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
 						</div>
 					</div>
 				</div>
-				<div class="footer mt-4">
+				<div class="footer mt-3">
 					<div class="ml-2 text-right">
-						<button class="btn button-primary-w add_to_cart" data-id="1" data-price="1500" id="" style="margin-right: 5px;" fdprocessedid="t8mt0r">
+						<button class="btn button-primary-w add_to_cart btn-add_to_cart" data-id="1" data-price="1500" id="" style="margin-right: 5px;" fdprocessedid="t8mt0r">
 							<?php
 								if (sizeof($packages) > 0) {
 									echo ($lang == 'english') ? 'Add To Cart' : 'เก็บใส่ตะกร้า';
@@ -1599,12 +1813,14 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
 			</div>
 		</div>
 	</div>
+
+<!-- -------------------------------End New Room Types------------------------------------- -->
 	
 	<div class="row mt-4">
 		<div class="col-md-12 ml-2 text-center mt-4">
 			<div class="header">
 				<div class="pl-4 text-center mb-4">
-					<a href="http://192.168.20.22/sm_booking1/detail.php" target="_blank">
+					<a href="http://192.168.20.22/sm_booking1/detail.php" target="_blank" class="tx-title-sub">
 						<h5 class="roomtype-tx-title">SM 2 - Superior Room</h5>
 					</a>
 				</div>
@@ -1624,7 +1840,7 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
 				</div>
 			</div>
 		</div>
-		<div class="col-md-6 col-sm-12">
+		<div class="col-md-6 col-sm-12" style="border: 1px solid #cccccc52; border-radius: 8px; box-shadow: rgb(0 0 0 / 9%) 0px 1px 4px 1px;">
 			<div class="accordion" id="accordionExample">
 				<div class="accordion-item">
 					<h2 class="accordion-header" id="headingOneInfo2">
@@ -2192,10 +2408,10 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
 					</div>
 				</div>
 			</div>
-			<div class="footer mt-4" style="justify-content: flex-start;">
+			<div class="footer mt-3" style="justify-content: flex-start;">
 				<div class="ml-2 text-right">
 					<div class="ml-2 text-right">
-						<button class="btn button-primary-w add_to_cart" data-id="1" data-price="1500" id="" style="margin-right: 5px;" fdprocessedid="t8mt0r">
+						<button class="btn button-primary-w add_to_cart btn-add_to_cart" data-id="1" data-price="1500" id="" style="margin-right: 5px;" fdprocessedid="t8mt0r">
 							<?php
 								if (sizeof($packages) > 0) {
 									echo ($lang == 'english') ? 'Add To Cart' : 'เก็บใส่ตะกร้า';
@@ -2221,10 +2437,11 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
 	<div class="row">
 		<div class="col-md-12 ml-2 text-center mt-4">
 			<h4>
-				<a id="roomtype" href="javascript:;"><?php echo $this->lang->line('room_types'); ?></a>
+				<a id="roomtype" href="javascript:;" class="tx-title-header"><?php echo $this->lang->line('room_types'); ?></a>
 			</h4>
 		</div>
 	</div>
+
 	<div class="row">
 
 		<?php
@@ -2341,7 +2558,7 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
 					</div>
 					<div class="footer">
 						<div class="ml-2 text-right">
-							<button class="btn button-primary-w add_to_cart" data-id="<?php echo $rt->id_room_type; ?>" data-price="<?php echo $rt->default_rate; ?>" id="" style="margin-right: 5px;"><?php echo $this->lang->line('add_to_cart'); ?></button>
+							<button class="btn button-primary-w add_to_cart btn-add_to_cart" data-id="<?php echo $rt->id_room_type; ?>" data-price="<?php echo $rt->default_rate; ?>" id="" style="margin-right: 5px;"><?php echo $this->lang->line('add_to_cart'); ?></button>
 							<a href="javascript:;" data-roomtype="<?php echo $rt->id_room_type; ?>" class="btn button-primary book_now" id="" style="margin-left: 5px;"><?php echo $this->lang->line('book_now'); ?></a>
 						</div>
 					</div>
@@ -2450,6 +2667,170 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
 		</div>
 	</div>
 </div>
+
+<!-- facilities & amenities and nearby location-->
+
+<div class="container mt-5">
+	<div class="row">
+		<div class="col-md-12 ml-2 text-center mt-4">
+			<h4 style="text-align: center; padding-bottom: 15px;" id="nav_packagep_promotions">
+				<a id="nearby_locations" href="javascript:;" class="tx-title-header">
+					<?php echo $lang == "english" ? 'Facilities & Amenities and Nearby Locations' : 'สิ่งอำนวยความสะดวก และ สถานที่ใกล้เคียง'; ?>
+				</a>
+			</h4>
+		</div>
+	</div>
+	<div class="row mb-0" id="nav_roomstype">
+		<div class="col-md-12" style="display: flex;">
+			<div class="col-md-8">
+			<div class="section_header "id="facilities_amenities">
+				<h5 style="font-weight: 600;">รายละเอียดโครงการ</h5>
+			</div>		
+			<div class="row mb-2">	
+				<div class="container-fluid mb-4">		
+					<div class="col-md-12">			
+		    			เอส เอ็ม รีสอร์ท โชว์รูม เขาใหญ่		    		
+		    		</div>
+		    	</div>
+			</div>
+	
+			<div class="section_header "><u>จุดเด่นของโครงการ</u></div>
+			<div class="row mb-2">			
+				<div class="container-fluid mb-4">
+					<div class="col-md-12">		
+						<div class="h_container" style="display: flex; flex-direction: row; ">	
+		    				<div style="bottom: 0; padding-right: 50px;">
+								&nbsp;<img src="https://sharefolder.buildersmart.com/sms_booking/upload/project_highlight/1_63bb731cd4018.png" width="18">
+								<span class="highlights_desc" style="font-size: 1.1em;">ไวไฟ</span>
+		    				</div>
+		    				<div style="bottom: 0; padding-right: 50px;">
+								&nbsp;<img src="https://sharefolder.buildersmart.com/sms_booking/upload/project_highlight/1_63bb7dd7c487e.png" width="18">
+								<span class="highlights_desc" style="font-size: 1.1em;">วิวภูเขา</span>
+		    				</div>
+		    			</div>		
+		    		</div>
+				</div>
+			</div>
+			
+			<div class="section_header "><u>สิ่งอำนวยความสะดวกของโครงการ</u></div>
+				<div class="row">			
+					<div class="container-fluid mb-4">
+						<div class="col-md-12">	
+							<div class="row" id="pj-con">	
+								<div class="col-md-6" style="bottom: 0; ">
+								
+								<input type="checkbox" checked="checked" style="vertical-align:middle; pointer-events:none;">
+								&nbsp;<img src="https://sharefolder.buildersmart.com/sms_booking/upload/facility_icon/24_63bba1a28104f.png" width="18">
+								<span class="highlights_desc" style="font-size: 1.1em;"> สวน</span>
+								</div>
+												<div class="col-md-6" style="bottom: 0; ">
+								
+								<input type="checkbox" checked="checked" style="vertical-align:middle; pointer-events:none;">
+								&nbsp;<img src="https://sharefolder.buildersmart.com/sms_booking/upload/facility_icon/2_63bb9f9e65dcb.png" width="18">
+								<span class="highlights_desc" style="font-size: 1.1em;"> ไวไฟฟรี</span>
+								</div>
+												<div class="col-md-6" style="bottom: 0; ">
+								
+								<input type="checkbox" checked="checked" style="vertical-align:middle; pointer-events:none;">
+								&nbsp;<img src="https://sharefolder.buildersmart.com/sms_booking/upload/facility_icon/21_63bba16c5dc37.png" width="18">
+								<span class="highlights_desc" style="font-size: 1.1em;"> บริการทำความสะอาดรายวัน</span>
+								</div>
+												<div class="col-md-6" style="bottom: 0; ">
+								
+								<input type="checkbox" checked="checked" style="vertical-align:middle; pointer-events:none;">
+								&nbsp;<img src="https://sharefolder.buildersmart.com/sms_booking/upload/facility_icon/1_641d577616c9f.png" width="18">
+								<span class="highlights_desc" style="font-size: 1.1em;"> วิวภูเขา</span>
+								</div>
+							
+							</div>	
+						</div>
+					</div>
+				</div>
+	
+				<div class="section_header "><u>เงื่อนไขและข้อกำหนดในการเข้าพัก</u></div>
+					<div class="row">			
+						<div class="container-fluid mb-4">
+							<div class="col-md-12">			
+								<span>นโยบายการยกเลิกการจอง</span>
+								<ol>		
+									<li>การโอนเงินต้องเสร็จสิ้นภายใน 2 ชั่วโมงหลังการจอง มิฉะนั้นระบบจะยกเลิกการจองโดยอัตโนมัติ</li>			
+								</ol>
+								<span>นโยบายโชว์รูม</span>    			
+								<ol>
+									<li>เวลาเช็คอิน 14.00 น. เวลาเช็คเอ้าท์ 12.00 น. หากเข้าพักก่อน หรือ เช็คเอ้าท์เกิน ชั่วโมงละ 500 บาท ตามเงื่อนไขโชว์รูม</li>				
+									<li>ไม่อนุญาตให้นำสัตว์เลี้ยงเข้าพักภายในบริเวณโชว์รูม</li>					
+									<li>ไม่อนุญาตให้ประกอบอาหารภายในบริเวณที่พัก ยกเว้นเฉพาะพื้นที่ที่ทางโชว์รูมจัดไว้ให้เท่านั้น</li>					
+									<li>ขอความกรุณางดใช้เสียง ตั้งแต่เวลา 22.00 น. - 06.00 น.</li>					
+									<li>ในกรณีทำให้ทรัพย์สินของโชว์รูมเสียหายให้ชดใช้คืนตามมูลค่าของทรัพย์สินนั้น</li>					
+									<li>งดสูบบุหรี่ในห้องพัก และบริเวณโชว์รูม ฝ่าฝืนปรับ 2,000 บาท (ลูกค้าสามารถสูบบุหรี่ในพื้นที่ที่โชว์รูมจัดไว้ให้เท่านั้น)</li>					
+									<li>งดจุดพลุ, ประทัด, ดอกไม้ไฟ หรือ โคมลอย ในบริเวณโชว์รูม ฝ่าฝืนปรับ 2,000 บาท</li>			
+								</ol>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4">
+					<div class="section_header ">
+						<h5 style="font-weight: 600;">สถานที่ใกล้เคียง</h5>
+					</div>
+					<div class="row mb4">
+						<div class="col-md-12">		
+							<div class="table-responsive">
+								<table class="table table-bordered">
+									<tbody>
+										<tr>
+											<th>ชื่อสถานที่</th>
+											<th>ระยะทาง(km)</th>
+										</tr>
+										<tr>
+											<td>ครัวอิ่มแปล้</td>
+											<td style="text-align: center;">0.07</td>
+										</tr>
+										<tr>
+											<td>The Pandora Camp Khaoyai</td>
+											<td style="text-align: center;">10</td>
+										</tr>
+										<tr>
+											<td>Toscana Valley</td>
+											<td style="text-align: center;">10</td>
+										</tr>
+										<tr>
+											<td>เขาใหญ่อาร์ตมิวเซียม</td>
+											<td style="text-align: center;">15</td>
+										</tr>
+										<tr>
+											<td>My Ozone Animal Club</td>
+											<td style="text-align: center;">25</td>
+										</tr>
+										<tr>
+											<td>Scenical World </td>
+											<td style="text-align: center;">30</td>
+										</tr>
+										<tr>
+											<td>Khao Yai National Park</td>
+											<td style="text-align: center;">30</td>
+										</tr>
+									</tbody>
+								</table>  
+							</div>		
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	
+	<div class="row text-center mb-0" id="nav_roomstype">
+		<div class="col-md-12">
+			<!-- Google map -->
+			<div id="google-map">
+				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5462.972307432571!2d101.55065412783209!3d14.490156270739496!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x311c3b5927861817%3A0x4ef8dd372f4d0716!2sSMS%20Showroom!5e0!3m2!1sth!2sth!4v1683184985267!5m2!1sth!2sth" width=100% height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+			</div>
+			<!-- End Google map -->
+		</div>
+	</div>
+</div>
+
+<!-- facilities & amenities and nearby location -->
 
 <!-- <script src="//code.jquery.com/jquery.js"></script> -->
 <script src="<?php echo site_url(); ?>js/jquery.min.js"></script>
