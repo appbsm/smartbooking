@@ -108,6 +108,32 @@ if ($id_guest != '') {
 		background-color: transparent !important;
 		-webkit-text-decoration-skip: objects !important;
 	}
+	
+	.menu-bar {
+		width: 100%;
+		max-width: 100%;
+		display: flex;
+		justify-content: space-around;
+		font-weight: 400;
+	}
+	
+	.btn_sign_in {
+		width: 100%;
+        padding: 10px;
+        background-color: #5392f9 !important;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+        transition: background-color 0.3s;
+	}
+	.btn_sign_in:hover {
+        background-color: #5392f9b3 !important;
+        color: #fff !important;
+        border: #5392f9 !important;
+	}
+	
   </style>
 
   <script>
@@ -151,7 +177,7 @@ if ($id_guest != '') {
 
 <body>
   <header>
-    <nav class="navbar navbar-expand-sm navbar-light bg-light fixed-top text-center mr-auto mb-4" style="height:70px;background-color:#839287;">
+    <nav class="navbar navbar-expand-sm navbar-light bg-light fixed-top text-center mr-auto mb-0" style="height:70px; background-color:#fff !important; border-bottom: 1px solid #ccc;">
     <div class="container d-flex flex-row">
 		
 	  <span class="mx-3">
@@ -159,8 +185,8 @@ if ($id_guest != '') {
 	  </span>  
 
 	  <!-- new menu -->
-	  <div class="col-6">
-		<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+	  <div class="col-9">
+		<ul class="navbar-nav me-auto mb-2 mb-lg-0 menu-bar">
             <li class="nav-item" id="nav_aboutus">
                 <a class="nav-link" href="#aboutus">
 					<?php echo $lang == "english" ? 'About us' : 'เกี่ยวกับเรา'; ?> 
@@ -177,6 +203,16 @@ if ($id_guest != '') {
 				</a>
             </li>
             <li class="nav-item" id="nav_contactus">
+                <a class="nav-link" href="#facilities_amenities">
+					<?php echo $lang == "english" ? 'Facilities & Amenities' : 'สิ่งอำนวยความสะดวก'; ?>
+				</a>
+            </li>
+			<li class="nav-item" id="nav_contactus">
+                <a class="nav-link" href="#nearby_locations">
+					<?php echo $lang == "english" ? 'Nearby Locations' : 'สถานที่ใกล้เคียง'; ?>
+				</a>
+            </li>
+			<li class="nav-item" id="nav_contactus">
                 <a class="nav-link" href="#contactus">
 					<?php echo $lang == "english" ? 'Contact us' : 'ติดต่อเรา'; ?>
 				</a>
@@ -185,7 +221,7 @@ if ($id_guest != '') {
 	</div>
 	  <!-- new menu -->
       <div class="" id="navbarSupportedContent" >       
-        <div class="navbar navbar-expand d-flex flex-row" style="gap: 0 16px;">
+        <div class="navbar navbar-expand d-flex flex-row" style="gap: 0 16px; background-color:#fff !important;">
           
 		  <?php if ($id_guest != '') { ?>
 		  <?php if ($guest->photo_url != '') { ?>
@@ -210,7 +246,7 @@ if ($id_guest != '') {
 		  else {
 		  ?>
 		  <div class="button mx-1">
-                <a class="btn btn_sign_in btn-sign-in"  href="<?php echo site_url('login'); ?>" height="20">Sign In</a>
+                <a class="btn btn_sign_in"  href="<?php echo site_url('login'); ?>" height="20">Sign In</a>
               </div>
 		  <?php } ?>
 		  <div class="button">
@@ -233,5 +269,5 @@ if ($id_guest != '') {
       </div>
     </nav>
 	
-	-->
+	
 </header>

@@ -3,10 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<<<<<<< HEAD
-=======
     <link rel="icon" type="image/png" sizes="16x16" href="images/10.png">
->>>>>>> 9aaecfd7a09801e775613de11d488ecafd7f5a34
     <title>smsmartbooking Sign In</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" />
@@ -35,15 +32,11 @@
         padding: 16px 30px 24px;
         position: relative;
         border-radius: 8px;
-<<<<<<< HEAD
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-=======
-        box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 6px 2px;
->>>>>>> 9aaecfd7a09801e775613de11d488ecafd7f5a34
         width: 400px;
         text-align: center;
         max-width: 100%;
         margin: 0 15px;
+        box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 6px 2px;
     }
 
     h3 {
@@ -56,11 +49,11 @@
         color: #666;
     }
 
-    input[type="email"],input[type="mobilenumber"],
+    input[type="email"],input[type="firstname"],input[type="lastname"],
     input[type="password"] {
         width: 100%;
         padding: 10px;
-        margin: 10px 0;
+        /* margin: 10px 0; */
         font-size: 14px;
         border: 1px solid #ccc;
         border-radius: 4px;
@@ -73,6 +66,8 @@
         text-align: left;
         margin-bottom: 0px;
         margin-top: 5px;
+        font-weight: 500;
+        font-size: 16px;
     }
 
     button {
@@ -219,6 +214,7 @@
         line-height: 24px;
         font-weight: 500;
         margin: 0px;
+        padding-bottom: 16px;
     }
     .tx-sub-signin {
         font-size: 14px;
@@ -332,6 +328,21 @@
             width: 40%;
         }
     }
+
+    .tx-ck-agree  {
+        font-size: 14px;
+    }
+    input[type=checkbox], input[type=radio] {
+        margin: 4px 4px 0;
+    }
+    .ck-agree {
+        width: 100%;
+        display: flex;
+        position: relative;
+        -webkit-box-align: center;
+        align-items: center;
+        user-select: none;
+    }
 </style>
 <script>
     document.addEventListener('DOMContentLoaded', function() {
@@ -350,22 +361,19 @@
         <div class="login-panel">
             <div class="login-form">
                 <div class="login-panel-title" style="text-align: left;">
-                    <h3 class="tx-signin">Sign in</h3>
-                    <div>
-                        <h6 class="tx-sub-signin">For security, please sign in to access your information</h6>
-                    </div>
+                    <h3 class="tx-signin">Sign up</h3>
                 </div>
                 <div>
-                    <div class="tabs">
-                        <ul class="tab-signin">
-                            <li class="tab-email active"><div><span>EMAIL</span></div></li>
-                            <li class="tab-mobile"><div><span>MOBILE</span></div></li>
-                        </ul>
-                    </div>
-
-                    <!-- tab email-->
                     <div class="form-content form-email">
                         <form>
+                            <div class="form-group">
+                                <label for="email">First name</label>
+                                <input type="firstname" id="email" name="email" placeholder="First name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="Last name">Last name</label>
+                                <input type="lastname" id="email" name="email" placeholder="Last name" required>
+                            </div>
                             <div class="form-group">
                                 <label for="email">Email</label>
                                 <input type="email" id="email" name="email" placeholder="Email" required>
@@ -377,60 +385,30 @@
                                     <span class="toggle-password"><i class="fas fa-eye-slash"></i></span>
                                 </div>
                             </div>
-                            <button type="submit">Sign in</button>
-                        </form>
-                        <div class="footer-links">
-<<<<<<< HEAD
-                            <a href="#">Create account</a>
-=======
-                            <a href="register.php">Create account</a>
->>>>>>> 9aaecfd7a09801e775613de11d488ecafd7f5a34
-                            <a href="#">
-                                <svg width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="forget-svg" style="padding-right: 4px;">
-                                    <path d="M5.286 9.143V6.388A6.388 6.388 0 0 1 11.673 0h1.167a6.388 6.388 0 0 1 6.388 6.388 1 1 0 0 1-2 0A4.388 4.388 0 0 0 12.84 2h-1.167a4.388 4.388 0 0 0-4.387 4.388v2.755H19a2 2 0 0 1 2 2v10.714a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V11.143a2 2 0 0 1 2-2h.286zM13 17.829a3.001 3.001 0 1 0-2 0v2.15a1 1 0 1 0 2 0v-2.15zM11 15a1 1 0 1 1 2 0 1 1 0 0 1-2 0z"></path>
-                                </svg>
-                                Forgot password?
-                            </a>
-                        </div>
-                    </div>
-                    <!-- end tab email-->
-
-                    <!-- tab mobile-->
-                    <div class="form-content form-mobile" style="display: none;">
-                        <form>
                             <div class="form-group">
-                                <label for="mobilenumber">Mobile Number</label>
-                                <input type="mobilenumber" id="mobilenumber" name="mobilenumber" placeholder="Mobile Number" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="password">Password</label>
-                                <div class="password-container">
-                                    <input type="password" id="password" name="password" placeholder="Password" required>
-                                    <span class="toggle-password"><i class="fas fa-eye-slash"></i></span>
+                                <div style="padding: 8px 0;">
+                                    <label class="ck-agree">
+                                        <input id="newsLetter" name="newsLetter" data-cy="newsLetter" type="checkbox" class="" checked="">
+                                        <span class="tx-ck-agree">I agree to receive updates and promotions about Smsmartbooking and its affiliates or business&nbsp;partners via various channels, including WhatsApp. Opt out anytime. Read more in the Privacy Policy.</span>
+                                    </label>
                                 </div>
                             </div>
-                            <button type="submit">Sign in</button>
+                            <button type="submit">Sign up</button>
                         </form>
-                        <div class="footer-links">
+                        <!-- <div class="footer-links">
                             <a href="#">Create account</a>
                             <a href="#">
-<<<<<<< HEAD
-                                <svg width="0.875em" height="0.875em" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="forget-svg" style="padding-right: 4px;">
-=======
                                 <svg width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="forget-svg" style="padding-right: 4px;">
->>>>>>> 9aaecfd7a09801e775613de11d488ecafd7f5a34
                                     <path d="M5.286 9.143V6.388A6.388 6.388 0 0 1 11.673 0h1.167a6.388 6.388 0 0 1 6.388 6.388 1 1 0 0 1-2 0A4.388 4.388 0 0 0 12.84 2h-1.167a4.388 4.388 0 0 0-4.387 4.388v2.755H19a2 2 0 0 1 2 2v10.714a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V11.143a2 2 0 0 1 2-2h.286zM13 17.829a3.001 3.001 0 1 0-2 0v2.15a1 1 0 1 0 2 0v-2.15zM11 15a1 1 0 1 1 2 0 1 1 0 0 1-2 0z"></path>
                                 </svg>
                                 Forgot password?
                             </a>
-                        </div>
+                        </div> -->
                     </div>
-                    <!-- end tab mobile-->
-
                 </div>
                 <div class="or-signin" style="margin-top: 8px;">
                     <div class="line-or-signin"></div>
-                    <div>
+                    <div style="margin-top: 8px;">
                         <span class="sc-fznZeY tx-or-signin">or sign in with</span>
                     </div> 
                     <div class="line-or-signin"></div>
@@ -444,6 +422,12 @@
                             <img src="https://cdn6.agoda.net/images/universal-login/facebook-logo.svg" alt="Facebook" class="icon-social">Facebook
                         </button>
                     </div>
+                </div>
+                <hr/>
+                <div class="form-group">
+                    <a href="signin.php">
+                        <button type="submit">Already have an account? Sign in</button>
+                    </a>
                 </div>
                 <div class="terms-policy">
                     <span>By signing in, I agree to Smsmartbooking's </span><br/>
