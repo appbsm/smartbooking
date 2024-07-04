@@ -3,7 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<<<<<<< HEAD
+=======
     <link rel="icon" type="image/png" sizes="16x16" href="images/10.png">
+>>>>>>> 9aaecfd7a09801e775613de11d488ecafd7f5a34
     <title>smsmartbooking Sign In</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" />
@@ -32,7 +35,11 @@
         padding: 16px 30px 24px;
         position: relative;
         border-radius: 8px;
+<<<<<<< HEAD
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+=======
         box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 6px 2px;
+>>>>>>> 9aaecfd7a09801e775613de11d488ecafd7f5a34
         width: 400px;
         text-align: center;
         max-width: 100%;
@@ -373,7 +380,11 @@
                             <button type="submit">Sign in</button>
                         </form>
                         <div class="footer-links">
+<<<<<<< HEAD
+                            <a href="#">Create account</a>
+=======
                             <a href="register.php">Create account</a>
+>>>>>>> 9aaecfd7a09801e775613de11d488ecafd7f5a34
                             <a href="#">
                                 <svg width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="forget-svg" style="padding-right: 4px;">
                                     <path d="M5.286 9.143V6.388A6.388 6.388 0 0 1 11.673 0h1.167a6.388 6.388 0 0 1 6.388 6.388 1 1 0 0 1-2 0A4.388 4.388 0 0 0 12.84 2h-1.167a4.388 4.388 0 0 0-4.387 4.388v2.755H19a2 2 0 0 1 2 2v10.714a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V11.143a2 2 0 0 1 2-2h.286zM13 17.829a3.001 3.001 0 1 0-2 0v2.15a1 1 0 1 0 2 0v-2.15zM11 15a1 1 0 1 1 2 0 1 1 0 0 1-2 0z"></path>
@@ -403,7 +414,11 @@
                         <div class="footer-links">
                             <a href="#">Create account</a>
                             <a href="#">
+<<<<<<< HEAD
+                                <svg width="0.875em" height="0.875em" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="forget-svg" style="padding-right: 4px;">
+=======
                                 <svg width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="forget-svg" style="padding-right: 4px;">
+>>>>>>> 9aaecfd7a09801e775613de11d488ecafd7f5a34
                                     <path d="M5.286 9.143V6.388A6.388 6.388 0 0 1 11.673 0h1.167a6.388 6.388 0 0 1 6.388 6.388 1 1 0 0 1-2 0A4.388 4.388 0 0 0 12.84 2h-1.167a4.388 4.388 0 0 0-4.387 4.388v2.755H19a2 2 0 0 1 2 2v10.714a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V11.143a2 2 0 0 1 2-2h.286zM13 17.829a3.001 3.001 0 1 0-2 0v2.15a1 1 0 1 0 2 0v-2.15zM11 15a1 1 0 1 1 2 0 1 1 0 0 1-2 0z"></path>
                                 </svg>
                                 Forgot password?

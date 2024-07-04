@@ -1057,7 +1057,11 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
 	<div class="row text-center mb-0" id="nav_roomstype">
 		<div class="col-md-12">
 			<h4>
+<<<<<<< HEAD
+				<a id="roomtype" href="javascript:;"><?php //echo $this->lang->line('room_types'); ?>
+=======
 				<a id="roomtype" href="javascript:;" class="tx-title-header"><?php //echo $this->lang->line('room_types'); ?>
+>>>>>>> 9aaecfd7a09801e775613de11d488ecafd7f5a34
 					<?php echo ($lang == 'english') ? "Room Types" : "ประเภทของห้อง" ?>
 				</a>
 			</h4>
@@ -1104,15 +1108,22 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
 
 		if ($index % 2 == 0) {
 		}else{
+<<<<<<< HEAD
+=======
 
+>>>>>>> 9aaecfd7a09801e775613de11d488ecafd7f5a34
 		}
 	?>
 	<div class="row">
 		<div class="col-md-12 ml-2 text-center mt-2">
 			<div class="header">
 				<div class="pl-4 text-center mb-4">
+<<<<<<< HEAD
+					<a href="http://192.168.20.22/sm_booking1/detail.php" target="_blank">
+=======
 					<a href="http://192.168.20.22/sm_booking1/detail.php" target="_blank" class="tx-title-sub">
 						<!-- <h5 class="roomtype-tx-title">SM 1 - Standard Room</h5> -->
+>>>>>>> 9aaecfd7a09801e775613de11d488ecafd7f5a34
 						<h5 class="roomtype-tx-title"><?php echo ($lang == 'english') ? $rt->room_type_name_en : $rt->room_type_name_th; ?></h5>
 					</a>
 				</div>
