@@ -6,105 +6,134 @@ $CI->load->model('m_room_type');
 ?>
 
 <style>
-body {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
-}
+	body {
+		margin: 0;
+		padding: 0;
+		border: 0;
+		font-size: 100%;
+		font: inherit;
+		vertical-align: baseline;
+	}
 
-.navbrand {
+	.navbrand {
 
-}
+	}
 
-label {
-	font-weight: 100!important;
-}
+	label {
+		font-weight: 100!important;
+	}
 
-.nav-link.active {
-	background-color: #81BB4A!important;
-}
+	.nav-link.active {
+		background-color: #81BB4A!important;
+	}
 
-.room_type_header {
-	font-size: 1.4em;
-	font-weight: bold;
-	color: #eee;
-}
+	.room_type_header {
+		font-size: 1.4em;
+		font-weight: bold;
+		color: #eee;
+	}
 
-hr {
-	border: 0;
-	border-top: 1px solid #CCC;
-}
+	hr {
+		border: 0;
+		border-top: 1px solid #CCC;
+	}
 
-.hr3 {
-  border: 0;
-  height: 2px;
-  background-image: linear-gradient(to right, transparent, #CCC, transparent);  
-}
+	.hr3 {
+	  border: 0;
+	  height: 2px;
+	  background-image: linear-gradient(to right, transparent, #CCC, transparent);  
+	}
 
-.section_header {
-	font-weight: bold; 
-	font-size: 1.1em;
-}
-
-
+	.section_header {
+		font-weight: bold; 
+		font-size: 1.1em;
+	}
 
 
+	page {
+	  background: white;
+	  display: block;
+	  margin: 0 auto;
+	  margin-bottom: 0.5cm;
+	  box-shadow: 0 0 0.5cm rgba(0,0,0,0.5);
+	}
+	page[size="A4"] {  
+	  width: 21cm;
+	  height: 29.7cm; 
+	}
+	page[size="A4"][layout="portrait"] {
+	  width: 29.7cm;
+	  height: 21cm;  
+	}
+	@media print {
+	  body, page {
+		margin: 0;
+		box-shadow: 0;
+	  }
+	}
 
+	.page_content {
+		padding: 20px;
+	}
 
-page {
-  background: white;
-  display: block;
-  margin: 0 auto;
-  margin-bottom: 0.5cm;
-  box-shadow: 0 0 0.5cm rgba(0,0,0,0.5);
-}
-page[size="A4"] {  
-  width: 21cm;
-  height: 29.7cm; 
-}
-page[size="A4"][layout="portrait"] {
-  width: 29.7cm;
-  height: 21cm;  
-}
-@media print {
-  body, page {
-    margin: 0;
-    box-shadow: 0;
-  }
-}
+	.box {
+	  border: 1px solid #7F8C8D; 
+	  border-radius: 10px;
+	}
 
-.page_content {
-	padding: 20px;
-}
+	.balance_amount_1 {
+		/*background-color: red;*/
+		color: red;
+	}
 
-.box {
-  border: 1px solid #7F8C8D; 
-  border-radius: 10px;
-}
+	table, tr, th, td {
+		text-align: center;
+	}
 
-.balance_amount_1 {
-	/*background-color: red;*/
-	color: red;
-}
+	.center_text {
+		text-align: center;
+	}
 
-table, tr, th, td {
-	text-align: center;
-}
+	.button__badge {
+		margin-right: 0px;
+		font-size: 0.8em !important;
+		position: absolute;
+		top: -8px !important;
+		right: -4px !important;
+	}
 
-.center_text {
-	text-align: center;
-}
-
-.button__badge {
-	margin-right: 0px;
-	font-size: 0.8em !important;
-	position: absolute;
-	top: -8px !important;
-	right: -4px !important;
-}
+	.input-payment {
+		height: 40px !important;
+	}
+	.table-payment-his {
+		font-weight: bold;
+		text-align: center;
+		width: 100%;
+		margin: 0 !important;
+		border-top-left-radius: 8px;
+		border-top-right-radius: 8px;
+	}
+	.price {
+		/*background-color: #2a2a2e;*/
+		background-color: #5392f9;
+		color: white;
+		text-shadow: 2px 2px 4px #000000;
+	}
+	.btn-payment {
+		width: auto;
+		height: auto;
+		text-transform: uppercase;
+		line-height: 30px !important;
+		color: #fff !important;
+		font-size: 14px !important;
+		background-color: #5392f9 !important;
+		border-color: #5392f9 !important;
+	}
+	.btn-payment:hover {
+        background-color: #fff !important;
+        color: #5392f9 !important; 
+		border-color: #5392f9 !important;
+    }
 </style>
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
@@ -129,7 +158,9 @@ table, tr, th, td {
   <div class="container-fluid" >
   	<div class="row">
   		<div class="col-md-12 price room_type_header m-0">
-			<h4><span><?php echo $this->lang->line('step_3');?></span></h4>
+			<h4>
+				<span><?php echo $this->lang->line('step_3');?></span>
+			</h4>
 		</div>
   	</div>
   	<?php 
@@ -151,32 +182,34 @@ table, tr, th, td {
   	
   		<div class="col-md-6">
   		<div class="row mt-3">	
-  			<div class="col-md-12">
+  			<div class="col-md-12 mb-4">
 	  			<div class="form-outline">
-	                <label class="form-label" for="booking_number"><span class="required">*</span><?php echo $this->lang->line('booking_number');?></label>
-	            	<input type="text" id="booking_number" name="booking_number" class="form-control" value="<?php echo $booking_number;?>" readonly required/>					                    
+	                <label class="form-label" for="booking_number">
+						<span class="required">*</span><?php echo $this->lang->line('booking_number');?>
+					</label>
+	            	<input type="text" id="booking_number" name="booking_number" class="form-control input-payment" value="<?php echo $booking_number;?>" readonly required/>					                    
 	            </div>
             </div>
             
-            <div class="col-md-12">
+            <div class="col-md-12 mb-4">
 	  			<div class="form-outline">
 	                <label class="form-label" for="booking_date"><span class="required">*</span><?php echo $this->lang->line('booking_date');?></label>
-	            	<input type="text" id="booking_date" name="booking_date" class="form-control" value="<?php echo date('d-m-Y', strtotime($booking->booking_date));?>" readonly required/>					                    
+	            	<input type="text" id="booking_date" name="booking_date" class="form-control input-payment" value="<?php echo date('d-m-Y', strtotime($booking->booking_date));?>" readonly required/>					                    
 	            </div>
             </div>            
             
-            <div class="col-md-12">
+            <div class="col-md-12 mb-4">
 	  			<div class="form-outline">
 	                <label class="form-label" for="transfer_date"><span class="required">*</span><?php echo $this->lang->line('transfer_date');?></label>
-	                <input type='text' class="form-control datepicker" name="transfer_date" id="transfer_date" value="" required />				                    
+	                <input type='text' class="form-control datepicker input-payment" name="transfer_date" id="transfer_date" value="" required />				                    
 	            </div>
             </div>
             
-            <div class="col-md-12">
+            <div class="col-md-12 mb-4">
 	  			<div class="form-outline">
 	                <label class="form-label" for="transfer_time"><span class="required">*</span><?php echo $this->lang->line('transfer_time');?></label>		
 	            	<div class='input-group date' id='transfer_time'>
-			          <input type='text' class="form-control" name="transfer_time" value="<?php echo date('H:i');?>" required />
+			          <input type='text' class="form-control input-payment" name="transfer_time" value="<?php echo date('H:i');?>" required />
 			          <span class="input-group-addon">
 			            <span class="glyphicon glyphicon-time"></span>
 			          </span>
@@ -186,17 +219,17 @@ table, tr, th, td {
 	            </div>
             </div>
             
-            <div class="col-md-12">
+            <div class="col-md-12 mb-4">
 	  			<div class="form-outline">
 	                <label class="form-label" for="amount"><span class="required">*</span><?php echo $this->lang->line('amount');?></label>
-	            	<input type="text" id="amount" name="amount" class="form-control" value="<?php echo number_format($booking->balance_amount,2);?>" required />					                    
+	            	<input type="text" id="amount" name="amount" class="form-control input-payment" value="<?php echo number_format($booking->balance_amount,2);?>" required />					                    
 	            </div>
             </div>
             
-            <div class="col-md-12">
+            <div class="col-md-12 mb-4">
 	  			<div class="form-outline">
 	                <label class="form-label" for="transfer_slip"><span class="required">*</span><?php echo $this->lang->line('attach_transfer_slip');?></label>
-	            	<input type="file" id="transfer_slip" name="transfer_slip" class="form-control" required />					                    
+	            	<input type="file" id="transfer_slip" name="transfer_slip" class="form-control input-payment" required />					                    
 	            </div>
             </div>
   		</div>
@@ -208,15 +241,15 @@ table, tr, th, td {
 						<button class="btn button-primary " id="back">Back</button>
 					</div> -->
 					<div class="col-md-12 mb-2 text-center"> 
-						<button class="btn button-primary " id="payment"><?php echo $this->lang->line('submit_to_payment');?></button>
+						<button class="btn button-primary btn-payment" id="payment"><?php echo $this->lang->line('submit_to_payment');?></button>
 					</div>
 					</div>
   		</div>
   		
-  		<div class="col-md-6">
+  		<div class="col-md-6" style="line-height: 20px;">
   			<div class="row mt-4" style="border: 1px solid #7F8C8D; border-radius: 10px; ">	
-  				<div class="col-md-12 price" style="font-weight: bold; text-align: center; width: 100%; margin: 10px 0 0 0!important">
-				 <?php echo $this->lang->line('payment_history');?>
+  				<div class="col-md-12 price table-payment-his">
+					<?php echo $this->lang->line('payment_history');?>
 				</div>
 				
 	  			<div class="col-md-12">

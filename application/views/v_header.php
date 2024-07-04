@@ -203,12 +203,12 @@ if ($id_guest != '') {
 				</a>
             </li>
             <li class="nav-item" id="nav_contactus">
-                <a class="nav-link" href="#facilities_amenities">
+                <a class="nav-link" href="http://192.168.20.22/smartbooking_front_test/facilities_amenities.php" target="_blank">
 					<?php echo $lang == "english" ? 'Facilities & Amenities' : 'สิ่งอำนวยความสะดวก'; ?>
 				</a>
             </li>
 			<li class="nav-item" id="nav_contactus">
-                <a class="nav-link" href="#nearby_locations">
+                <a class="nav-link" href="http://192.168.20.22/smartbooking_front_test/nearby_locations.php" target="_blank">
 					<?php echo $lang == "english" ? 'Nearby Locations' : 'สถานที่ใกล้เคียง'; ?>
 				</a>
             </li>
@@ -232,7 +232,7 @@ if ($id_guest != '') {
 			<a class="nav-link align-text-bottom dropdown-toggle" id="profile_name" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 				<?php echo $guest->firstname . ' ' . substr($guest->lastname, 0, 1). '.'; ?>
 			</a>
-			<button class="btn btn-outline-default btn-default btn-sm dropdown-toggle" style="display: none;" id="profile_dropdown" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+			<button class="btn btn-outline-default btn-default btn-sm dropdown-toggle" style="display: none; " id="profile_dropdown" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
 		  <div class="input-group-append">
 			
 		  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">

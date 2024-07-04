@@ -82,6 +82,67 @@ $check_out_date = date('d-m-Y', strtotime($check_in_date . '+1 day'));
 	}
 	.form-control-ckinout {
 		padding: 1.165rem .75rem !important;
+		height: 40px !important;
+	}
+	.price {
+		/*background-color: #2a2a2e;*/
+		background-color: #5392f9;
+		color: white;
+		text-shadow: 2px 2px 4px #000000;
+	}
+	.btn-adults {
+		height: 40px !important; 
+		border: 1px solid #5392f9 !important;
+		background-color: unset !important; 
+		color: #000 !important;
+	}
+	.border-r-10 {
+		/*border: 1px solid #81BB4A;*/
+		border: 1px solid #ccc;
+		border-radius: 10px;
+	}
+	.btn-backnext {
+		width: auto;
+		height: auto;
+		text-transform: uppercase;
+		line-height: 24px !important;
+		color: #fff !important;
+		font-size: 16px !important;
+		background-color: #5392f9 !important;
+		border-color: #5392f9 !important;
+	}
+	.btn-backnext:hover {
+        background-color: #fff !important;
+        color: #5392f9 !important; 
+		border-color: #5392f9 !important;
+    }
+	.fa-xl {
+		font-size: 1em;
+		line-height: 0.04167em;
+		vertical-align: -0.125em;
+	}
+	.fa-lg {
+		font-size: 1.55em;
+		line-height: 0.05em;
+		vertical-align: -0.075em;
+	}
+	.input_number_sm {
+		-moz-appearance: textfield;
+		text-align: center !important;
+		padding-left: 10px;
+		border: none;
+		background-color: #fff;
+		color: #202030;
+		width: 40px;
+		font-size: 1rem !important;
+	}
+	.btn_stepper_sm {
+		color: #3264fe;
+		background-color: unset !important;
+		border: none;
+		font-size: 20px;
+		cursor: pointer;
+		outline: 0 !important;
 	}
 </style>
 
@@ -101,7 +162,7 @@ $r_date = 0;
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12">
-				<div class="col-md-12 price room_type_header mt-3">
+				<div class="col-md-12 price room_type_header mt-3" style="margin-top: 40px !important;">
 					<h5><span style="margin-left: 10px;"><?php echo $this->lang->line('my_cart'); ?></span></h5>
 				</div>
 			</div>
@@ -113,19 +174,19 @@ $r_date = 0;
 
 			<div class="col-md-4">
 				<!-- <div class="group"> -->
-				<label for="name" style="font-weight: 500;"><?php echo $this->lang->line('check_in_date'); ?></label>
+				<label for="name" style="font-weight: 500;" class="mb-0"><?php echo $this->lang->line('check_in_date'); ?></label>
 				<input type='text' class="form-control datepicker search_input form-control-ckinout" name="check_in_date" id="check_in_date" value="<?= $check_in_date; ?>" />
 				<!-- </div> -->
 			</div>
 			<div class="col-md-4">
-				<label for="name" style="font-weight: 500;"><?php echo $this->lang->line('check_out_date'); ?></label>
+				<label for="name" style="font-weight: 500;" class="mb-0"><?php echo $this->lang->line('check_out_date'); ?></label>
 				<input type='text' class="form-control datepicker search_input form-control-ckinout" name="check_out_date" id="check_out_date" value="<?= $check_out_date; ?>" />
 			</div>
 
 			<div class="col-md-4">
-				<label class="ml-1" for="name" style="font-weight: 500;"><?php echo $lang == "english" ? 'Adult' : 'ผู้เข้าพัก'; ?></label>
+				<label class="ml-1 mb-0" for="name" style="font-weight: 500;"><?php echo $lang == "english" ? 'Adult' : 'ผู้เข้าพัก'; ?></label>
 				<div class="dropdown">
-					<button class="btn dropdown-toggle w-100 search_input" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					<button class="btn dropdown-toggle w-100 search_input btn-adults" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 						<span id="div_adult"><?php echo @$search_data['adult'] ? $search_data['adult'] : 2; ?></span> <?php echo $this->lang->line('adults'); ?>, <span id="div_children"><?php echo @$search_data['children'] ? $search_data['children'] : 0; ?></span> <?php echo $this->lang->line('children'); ?> <!-- , <span id="div_room">1</span> Rooms -->
 					</button>
 					<div class="dropdown-menu" style="vertical-align: bottom;" aria-labelledby="dropdownMenuButton">
@@ -183,7 +244,7 @@ $r_date = 0;
 		</div>
 		<div class="row">
 			<div class="col-md-12 ">
-				<input type="checkbox" style="height:15px;width:15px;" class="select_all cb" onClick="toggle(this);">
+				<input type="checkbox" style="height:15px; width:15px; margin-left: 8px;" class="select_all cb" onClick="toggle(this);">
 				<p class="ml-2 mt-0" style="font-weight: 500;"><?php echo $lang == "english" ? 'Select All' : 'เลือกทั้งหมด'; ?></p>
 			</div>
 			<div class="col-md-9">
@@ -284,13 +345,15 @@ $r_date = 0;
 								<div class="col-12 border-r-10">
 									<div class="row mt-3">
 										<div class="col-1 text-right">
-											<input <?php echo ($is_package_available == 0) ? 'disabled' : ''; ?> style="height:15px;width:15px;" type="checkbox" class="chk_item cb package" data-id="package_<?php echo $package_rooms[0]->id_package; ?>" id="id_package_<?php echo $package_rooms[0]->id_package; ?>" data-item-type="package" data-item="<?php echo $package_rooms[0]->id_package; ?>" data-price="<?php echo $package_rooms[0]->price; ?>">
+											<input <?php echo ($is_package_available == 0) ? 'disabled' : ''; ?> style="height:15px; width:15px;" type="checkbox" class="chk_item cb package" data-id="package_<?php echo $package_rooms[0]->id_package; ?>" id="id_package_<?php echo $package_rooms[0]->id_package; ?>" data-item-type="package" data-item="<?php echo $package_rooms[0]->id_package; ?>" data-price="<?php echo $package_rooms[0]->price; ?>">
 										</div>
 										<div class="col-9 pl-0">
 											<h5><?php echo $package_rooms[0]->name; ?></h5>
 										</div>
 										<div class="col-2 text-right">
-											<a class="delete-item" data-id="<?php echo ($this->session->userdata('id_guest') != '') ? $item->id_cart_item : $key; ?>"><i class="fa-solid fa-trash-can fa-xl" style="color: #030303;"></i></a>
+											<a class="delete-item" data-id="<?php echo ($this->session->userdata('id_guest') != '') ? $item->id_cart_item : $key; ?>">
+												<i class="fa-solid fa-trash-can fa-xl" style="color: #030303;"></i>
+											</a>
 										</div>
 									</div>
 									<div class="row">
@@ -298,12 +361,16 @@ $r_date = 0;
 										<div class="col-md-2 pl-0 align-self-center">
 
 											<div class="text-center" style="display: flex; justify-content: center; background-color: white; vertical-align: bottom; font-size: 12px!important;">
-												<button class="btn_stepper_sm" data-max="<?php echo sizeof($package_count); ?>" data-cart-item="<?php echo ($this->session->userdata('id_guest') != '') ? $id_cart : $key; ?>" data-package="<?php $package_rooms[0]->id_package; ?>" id="decrement-package-<?php echo $package_rooms[0]->id_package; ?>" onClick="stepper_package(this);"><i class="fa-solid fa-circle-minus fa-lg" style="color: #000000;"></i></button>
+												<button class="btn_stepper_sm bg-fa-lg" data-max="<?php echo sizeof($package_count); ?>" data-cart-item="<?php echo ($this->session->userdata('id_guest') != '') ? $id_cart : $key; ?>" data-package="<?php $package_rooms[0]->id_package; ?>" id="decrement-package-<?php echo $package_rooms[0]->id_package; ?>" onClick="stepper_package(this);">
+													<i class="fa-solid fa-circle-minus fa-lg" style="color: #000000;"></i>
+												</button>
 
 												<input class="input_number_sm room_stepper ml-2" type="number" min="0" max="<?php echo sizeof($package_count); ?>" step="1" value="<?php echo ($room_qty == 0) ? 1 : $room_qty; ?>" id="package_<?php echo $item->id_package; ?>" readonly>
 
 
-												<button class="btn_stepper_sm" data-max="<?php echo sizeof($package_count); ?>" data-cart-item="<?php echo ($this->session->userdata('id_guest') != '') ? $id_cart : $key; ?>" data-room="<?php echo $package_rooms[0]->id_package; ?>" id="increment-room-<?php echo $package_rooms[0]->id_package; ?>" onClick="stepper_package(this);"><i class="fa-solid fa-circle-plus fa-lg" style="color: #000000;"></i></button>
+												<button class="btn_stepper_sm" data-max="<?php echo sizeof($package_count); ?>" data-cart-item="<?php echo ($this->session->userdata('id_guest') != '') ? $id_cart : $key; ?>" data-room="<?php echo $package_rooms[0]->id_package; ?>" id="increment-room-<?php echo $package_rooms[0]->id_package; ?>" onClick="stepper_package(this);">
+													<i class="fa-solid fa-circle-plus" style="color: #000000;"></i>
+												</button>
 
 
 											</div>
@@ -369,14 +436,14 @@ $r_date = 0;
 				<div class="col-md p-2 m-0 border-r-10">
 					<div class="row">
 						<div class="col-md-12 m-2 text-center d-flex flex-row justify-content-between">
-							<label style="font-size: 1.2em; font-weight: bold; margin: 8px 5px 5px 5px;"><?php echo $this->lang->line('total'); ?>: </label>
-							<div id="total" style="font-size: 1.2em; font-weight: bold; padding: 8px 20px 5px 0;">0.00</div>
+							<label style="font-size: 1.2em; font-weight: 600; margin: 8px 5px 5px 5px;"><?php echo $this->lang->line('total'); ?>: </label>
+							<div id="total" style="font-size: 1.2em; font-weight: 600; padding: 8px 20px 5px 0;">0.00</div>
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-lg-12 col-sm-12 my-3 text-center">
-							<button class="btn button-secondary" onclick="location.href='<?php echo site_url('/')?>'" id="back_to_cart"><?php echo $this->lang->line('back'); ?></button>
-							<button class="btn button-primary" id="proceed_to_booking"><?php echo $this->lang->line('proceed_to_booking'); ?></button>
+							<button class="btn button-secondary btn-backnext" onclick="location.href='<?php echo site_url('/')?>'" id="back_to_cart"><?php echo $this->lang->line('back'); ?></button>
+							<button class="btn button-primary btn-backnext" id="proceed_to_booking"><?php echo $this->lang->line('proceed_to_booking'); ?></button>
 						</div>
 					</div>
 				</div>

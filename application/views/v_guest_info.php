@@ -63,6 +63,35 @@ $packages = array();
 		top: -8px !important;
 		right: -4px !important;
 	}
+	.price {
+		/*background-color: #2a2a2e;*/
+		background-color: #5392f9;
+		color: white;
+		text-shadow: 2px 2px 4px #000000;
+	}
+	.border-r-10 {
+		/*border: 1px solid #81BB4A;*/
+		border: 1px solid #ccc;
+		border-radius: 10px;
+	}
+	.btn-guest-info {
+		width: auto;
+		height: auto;
+		text-transform: uppercase;
+		line-height: 24px !important;
+		color: #fff !important;
+		font-size: 16px !important;
+		background-color: #5392f9 !important;
+		border-color: #5392f9 !important;
+	}
+	.btn-guest-info:hover {
+        background-color: #fff !important;
+        color: #5392f9 !important; 
+		border-color: #5392f9 !important;
+    }
+	.input-guest-info {
+		height: 40px !important;
+	}
 	
 	@media (min-width: 768px) {
 		.room-detail-sm-r {
@@ -71,6 +100,7 @@ $packages = array();
 			justify-content: center;
 		}
 	}
+	
 </style>
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
@@ -119,38 +149,46 @@ $packages = array();
 											</div>
 
 											<div class="row">
-												<div class="col-md-12 mb-1">
+												<div class="col-md-12 mb-3">
 													<div class="form-outline">
-														<label class="form-label" for="guest_name"><span class="required">*</span><?php echo $this->lang->line('guest_name'); ?></label>
-														<input onchange="bl_name(this.value)" type="text" id="guest_name" name="guest_name" class="form_field form-control " value="<?php echo (isset($guest_info)) ? $guest_info->name: ''; ?>" required />
+														<label class="form-label mb-0" for="guest_name" style="font-weight: 500;">
+															<span class="required">*</span><?php echo $this->lang->line('guest_name'); ?>
+														</label>
+														<input onchange="bl_name(this.value)" type="text" id="guest_name" name="guest_name" class="form_field form-control input-guest-info" value="<?php echo (isset($guest_info)) ? $guest_info->name: ''; ?>" required />
 													</div>
 												</div>
 
-												<div class="col-md-12 mb-1">
+												<div class="col-md-12 mb-3">
 													<div class="form-outline">
-														<label class="form-label" for="guest_address"><span class="required">*</span><?php echo $this->lang->line('guest_address'); ?></label>
+														<label class="form-label mb-0" for="guest_address" style="font-weight: 500;">
+															<span class="required">*</span><?php echo $this->lang->line('guest_address'); ?>
+														</label>
 														<textarea onchange="bl_address(this.value)" id="guest_address" name="guest_address" class="form_field form-control " required><?php echo (isset($guest_info)) ? $guest_info->address : ''; ?></textarea>
 													</div>
 												</div>
 
-												<div class="col-md-12 mb-1">
+												<div class="col-md-12 mb-3">
 													<div class="form-outline">
-														<label class="form-label" for="guest_contact_number"><span class="required">*</span><?php echo $this->lang->line('guest_contact_number'); ?></label>
-														<input onchange="bl_number(this.value)" type="tel" id="guest_contact_number" name="guest_contact_number" class="form_field form-control contact_number" value="<?php echo  (isset($guest_info)) ? $guest_info->contact_number : ''; ?>" required />
+														<label class="form-label mb-0" for="guest_contact_number" style="font-weight: 500;">
+															<span class="required">*</span><?php echo $this->lang->line('guest_contact_number'); ?>
+														</label>
+														<input onchange="bl_number(this.value)" type="tel" id="guest_contact_number" name="guest_contact_number" class="form_field form-control contact_number input-guest-info" value="<?php echo  (isset($guest_info)) ? $guest_info->contact_number : ''; ?>" required />
 													</div>
 												</div>
 
-												<div class="col-md-12 mb-1">
+												<div class="col-md-12 mb-3">
 													<div class="form-outline">
-														<label class="form-label" for="guest_email"><?php echo $this->lang->line('guest_email'); ?></label>
-														<input onchange="bl_email(this.value)" type="email" id="guest_email" name="guest_email" class="form_field form-control email" value="<?php echo  (isset($guest_info)) ? $guest_info->email : ''; ?>" />
+														<label class="form-label mb-0" for="guest_email" style="font-weight: 500;"><?php echo $this->lang->line('guest_email'); ?></label>
+														<input onchange="bl_email(this.value)" type="email" id="guest_email" name="guest_email" class="form_field form-control email input-guest-info" value="<?php echo  (isset($guest_info)) ? $guest_info->email : ''; ?>" />
 													</div>
 												</div>
 
-												<div class="col-md-12 mb-1">
+												<div class="col-md-12 mb-3">
 													<div class="form-outline">
-														<label class="form-label" for="guest_tax_id"><span class="required">*</span><?php echo $this->lang->line('guest_tax_id'); ?></label>
-														<input onchange="bl_tax(this.value)" type="text" id="guest_tax_id" name="guest_tax_id" class="form_field form-control " value="<?php echo  (isset($guest_info)) ? $guest_info->tax_id: ''; ?>" required />
+														<label class="form-label mb-0" for="guest_tax_id" style="font-weight: 500;">
+															<span class="required">*</span><?php echo $this->lang->line('guest_tax_id'); ?>
+														</label>
+														<input onchange="bl_tax(this.value)" type="text" id="guest_tax_id" name="guest_tax_id" class="form_field form-control input-guest-info" value="<?php echo  (isset($guest_info)) ? $guest_info->tax_id: ''; ?>" required />
 													</div>
 												</div>
 
@@ -174,44 +212,54 @@ $packages = array();
 												<div class="section_header"><?php echo $this->lang->line('billing_info'); ?>
 
 												</div>
-												<span style="font-weight: normal; font-style: italic;"><input type="checkbox" class="form_field" name="same_billing_info" id="same_billing_info" style="vertical-align:middle; margin-right: 5px;"><?php echo $this->lang->line('same_guest_info'); ?></span>
+												<span style="font-weight: normal; font-style: italic;">
+													<input type="checkbox" class="form_field" name="same_billing_info" id="same_billing_info" style="vertical-align:middle; margin-right: 5px;"><?php echo $this->lang->line('same_guest_info'); ?>
+												</span>
 												<div class="row">
-													<div class="col-md-12 mb-1">
+													<div class="col-md-12 mb-3">
 														<div class="form-outline">
-															<label class="form-label" for="billing_name"><span class="required">*</span><?php echo $this->lang->line('billing_name'); ?></label>
-															<input type="text" id="billing_name" name="billing_name" class="form_field form-control " value="<?php echo  (isset($guest_info)) ? $guest_info->name : ''; ?>" required />
+															<label class="form-label mb-0" for="billing_name" style="font-weight: 500;">
+																<span class="required">*</span><?php echo $this->lang->line('billing_name'); ?>
+															</label>
+															<input type="text" id="billing_name" name="billing_name" class="form_field form-control input-guest-info" value="<?php echo  (isset($guest_info)) ? $guest_info->name : ''; ?>" required />
 															<!-- <input type="text" id="billing_name" name="billing_name" class="form_field form-control " value="" required /> -->
 														</div>
 													</div>
 
-													<div class="col-md-12 mb-1">
+													<div class="col-md-12 mb-3">
 														<div class="form-outline">
-															<label class="form-label" for="billing_address"><span class="required">*</span><?php echo $this->lang->line('billing_address'); ?></label>
-															<textarea id="billing_address" name="billing_address" class="form_field form-control " required><?php echo  (isset($guest_info)) ? $guest_info->address : ''; ?></textarea>
+															<label class="form-label mb-0" for="billing_address" style="font-weight: 500;">
+																<span class="required">*</span><?php echo $this->lang->line('billing_address'); ?>
+															</label>
+															<textarea id="billing_address" name="billing_address" class="form_field form-control input-guest-info" required><?php echo  (isset($guest_info)) ? $guest_info->address : ''; ?></textarea>
 															<!-- <textarea id="billing_address" name="billing_address" class="form_field form-control " required></textarea> -->
 														</div>
 													</div>
 
-													<div class="col-md-12 mb-1">
+													<div class="col-md-12 mb-3">
 														<div class="form-outline">
-															<label class="form-label" for="billing_contact_number"><span class="required">*</span><?php echo $this->lang->line('billing_contact_number'); ?></label>
-															<input type="tel" id="billing_contact_number" name="billing_contact_number" class="form_field form-control contact_number" value="<?php echo  (isset($guest_info)) ? $guest_info->contact_number : ''; ?>" required />
+															<label class="form-label mb-0" for="billing_contact_number" style="font-weight: 500;">
+																<span class="required">*</span><?php echo $this->lang->line('billing_contact_number'); ?>
+															</label>
+															<input type="tel" id="billing_contact_number" name="billing_contact_number" class="form_field form-control contact_number input-guest-info" value="<?php echo  (isset($guest_info)) ? $guest_info->contact_number : ''; ?>" required />
 															<!-- <input type="tel" id="billing_contact_number" name="billing_contact_number" class="form_field form-control contact_number" value="" required /> -->
 														</div>
 													</div>
 
-													<div class="col-md-12 mb-1">
+													<div class="col-md-12 mb-3">
 														<div class="form-outline">
-															<label class="form-label" for="billing_email"><?php echo $this->lang->line('billing_email'); ?></label>
-															<input type="email" id="billing_email" name="billing_email" class="form_field form-control email" value="<?php echo  (isset($guest_info)) ? $guest_info->email : ''; ?>" />
+															<label class="form-label mb-0" for="billing_email" style="font-weight: 500;"><?php echo $this->lang->line('billing_email'); ?></label>
+															<input type="email" id="billing_email" name="billing_email" class="form_field form-control email input-guest-info" value="<?php echo  (isset($guest_info)) ? $guest_info->email : ''; ?>" />
 															<!-- <input type="email" id="billing_email" name="billing_email" class="form_field form-control email" value="" /> -->
 														</div>
 													</div>
 
-													<div class="col-md-12 mb-1">
+													<div class="col-md-12 mb-3">
 														<div class="form-outline">
-															<label class="form-label" for="billing_tax_id"><span class="required">*</span><?php echo $this->lang->line('billing_tax_id'); ?></label>
-															<input type="text" id="billing_tax_id" name="billing_tax_id" class="form_field form-control " value="<?php echo  (isset($guest_info)) ? $guest_info->tax_id : ''; ?>" required />
+															<label class="form-label mb-0" for="billing_tax_id" style="font-weight: 500;">
+																<span class="required">*</span><?php echo $this->lang->line('billing_tax_id'); ?>
+															</label>
+															<input type="text" id="billing_tax_id" name="billing_tax_id" class="form_field form-control input-guest-info" value="<?php echo  (isset($guest_info)) ? $guest_info->tax_id : ''; ?>" required />
 															<!-- <input type="text" id="billing_tax_id" name="billing_tax_id" class="form_field form-control " value="" required /> -->
 														</div>
 													</div>
@@ -920,7 +968,7 @@ $packages = array();
 																	foreach ($details as $det) {
 																		if($rcount == 1 || $rcount == 3 ){
 																?>
-																<div class="row mb-4">
+																<div class="row mb-4" style="line-height: 20px;">
 																<?php	echo $det;?>
 																</div>
 																<?php
@@ -937,7 +985,12 @@ $packages = array();
 													<div class="row">
 														<div class="col-md-12 text-center">
 															<div class="container text-right">
-																<a data-toggle="modal" data-target="#exampleModal-r<?php echo $rt->id_room_type;?>"><em><?php echo $this->lang->line('more_detail'); ?></em></a>
+																<a data-toggle="modal" data-target="#exampleModal-r<?php echo $rt->id_room_type;?>">
+																	<em>
+																		<i class="fas fa-angle-double-left" style="font-weight: 400;"></i>&nbsp;<?php echo $this->lang->line('more_detail'); ?>&nbsp;
+																		<i class="fas fa-angle-double-right" style="font-weight: 400;"></i>
+																	</em>
+																</a>
 															</div>
 														</div>
 														<!-- Modal -->
@@ -982,12 +1035,12 @@ $packages = array();
 									<div class="col-md-12 mt-3">
 										<div class="row">
 											<div class="col-md-12 mt-3 pr-0 text-left">												
-												<label for="name"><?php echo $this->lang->line('discount_code'); ?></label>
+												<label for="name" class="mb-0" style="font-weight: 500;"><?php echo $this->lang->line('discount_code'); ?></label>
 											</div>
 										</div>
 										<div class="row">
 											<div class="col-md-12 mt-1 pr-0 text-right">												
-												<input type="text" style="height: 34px;" class="form-control search_discount_code" name="discount_code" id="discount_code" placeholder="" value="<?php echo (isset($discount->code)) ? $discount->code : ''; ?>">												
+												<input type="text" style="height: 34px;" class="form-control search_discount_code input-guest-info" name="discount_code" id="discount_code" placeholder="" value="<?php echo (isset($discount->code)) ? $discount->code : ''; ?>">												
 											</div>
 										</div>
 										<div class="row">
@@ -1001,8 +1054,8 @@ $packages = array();
 								<!-- End Code discount -->
 								<div class="row justify-content-end">
 										<div class="col-12 mt-3 p-0 text-right">
-											<button class="btn button-secondary" onclick="location.href='<?php echo site_url('/cart')?>'"><?php echo $this->lang->line('back'); ?></button>
-											<button class="btn button-primary" id="proceed" type="button" disabled><?php echo $this->lang->line('proceed'); ?></button>
+											<button class="btn button-secondary btn-guest-info" onclick="location.href='<?php echo site_url('/cart')?>'"><?php echo $this->lang->line('back'); ?></button>
+											<button class="btn button-primary btn-guest-info" id="proceed" type="button" disabled><?php echo $this->lang->line('proceed'); ?></button>
 										</div>
 									</div>
 								<!-- Total detail -->
@@ -1012,7 +1065,7 @@ $packages = array();
 										
 										<div class="row">
 											<!-- Summary -->
-											<div class="col-md-12" style="padding:2px 17px 2px 17px;">
+											<div class="col-md-12" style="padding:2px 17px 2px 17px; line-height: 20px;">
 												<div class="section_header"><?php echo $this->lang->line('booking_summary'); ?></div>
 
 												<!-- Loop starts here -->

@@ -127,19 +127,35 @@ page[size="A4"][layout="portrait"] {
 	top: -8px !important;
 	right: -4px !important;
 }
+
+.button__badge {
+	margin-right: 0px;
+	font-size: 0.6em !important;
+	position: absolute;
+	top: -8px !important;
+	right: -4px !important;
+}
+.price {
+    /*background-color: #2a2a2e;*/
+	background-color: #5392f9;
+    color: white;
+    text-shadow: 2px 2px 4px #000000;
+}
 </style>
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
-<main class="main-2">
-<div class="container">
+<main class="main-2 ">
+<div class="container " >
 
 
-  <div class="container-fluid" >
+  <div class="container-fluid " >
   	<div class="row">
-  		<div class="col-md-12 price room_type_header m-0" style="text-align: center;">
-			<h4><span><?php echo $this->lang->line('thank_you');?>!</span></h4>
+  		<div class="col-md-12 price room_type_header m-0" style="text-align: center; margin-top: 40px !important;">
+			<h4>
+				<span><?php echo $this->lang->line('thank_you');?>!</span>
+			</h4>
 		</div>
   	</div>
   	<div class="row"> 
@@ -149,11 +165,11 @@ page[size="A4"][layout="portrait"] {
 			
 			<div class="page_content">
 				<div class="row">
-					<div class="col-md-12 message" style="margin: 20px; text-align: center; font-size: 1.1em;">
-			  			<p><?php echo $this->lang->line('thank_you_payment');?></p>
+					<div class="col-md-12 message" style="margin: 20px; text-align: center; font-size: 1.1em; line-height: 20px;">
+			  			<p style="font-size: 1.1em; font-weight: 700; color: #000;"><?php echo $this->lang->line('thank_you_payment');?></p>
 			  			
 			  			<p><?php echo $this->lang->line('message_receive_email');?></p>
-			  			<p><?php echo $this->lang->line('message_go_to_link');?>: <a style="font-weight: bold;" href="<?php echo site_url('booking/booking_details').'?booking_number='.$booking->booking_number;?>"><?php echo $this->lang->line('click_here');?></a></p>
+			  			<p><?php echo $this->lang->line('message_go_to_link');?>: <a style="font-weight: 700; color: #000 !important;" href="<?php echo site_url('booking/booking_details').'?booking_number='.$booking->booking_number;?>"><?php echo $this->lang->line('click_here');?></a></p>
 			  		</div>
 				</div>
 				
@@ -164,7 +180,9 @@ page[size="A4"][layout="portrait"] {
 						<div class="row">
 					
 							<div class="col-md-12">
-								<div class="booking_number" style="font-size: 1.3em; text-align: left; font-weight: bold; padding: 2px 0 2px 10px;"><span><?php echo $this->lang->line('booking_number');?>: <?php echo $booking_number;?></span></div>
+								<div class="booking_number" style="font-size: 1.3em; text-align: left; font-weight: 700; padding: 2px 0 2px 10px; line-height: 20px;">
+									<span><?php echo $this->lang->line('booking_number');?>: <?php echo $booking_number;?></span>
+								</div>
 							</div>
 							
 							<div class="col-md-12">
@@ -172,25 +190,25 @@ page[size="A4"][layout="portrait"] {
 							</div>
 						</div>
 					</div>
-					<div class="col-md-6">
+					<div class="col-md-6" style="line-height: 20px;">
 						<!-- <div class="price" style="color: white; padding: 1px 0 1px 5px;">Invoice No.: </div> -->
 						
-						<div class="row" style="padding: 1px 15px 1px 15px; font-size: 1.1em;">
+						<div class="row" style="padding: 1px 15px 1px 15px; font-size: 1em;">
 							<div class="col-md-6" style="font-weight: bold;"><?php echo $this->lang->line('grand_total');?></div>
 							<div class="col-md-6" style="text-align: right;"><?php echo number_format($booking->grand_total, 2);?></div>
 						</div>											
 						
-						<div class="row mb-2" style="padding: 1px 15px 1px 15px; font-size: 1.1em;">						
+						<div class="row mb-2" style="padding: 1px 15px 1px 15px; font-size: 1em;">						
 							<div class="col-md-6" style="font-weight: bold;"><?php echo $this->lang->line('discount');?></div>
 							<div class="col-md-6" style="text-align: right;"><?php echo number_format($booking->discounted_amount, 2);?></div>
 						</div>
 						
-						<div class="row mb-2" style="padding: 1px 15px 1px 15px; font-size: 1.1em;">						
+						<div class="row mb-2" style="padding: 1px 15px 1px 15px; font-size: 1em;">						
 							<div class="col-md-6" style="font-weight: bold;"><?php echo $this->lang->line('vat');?> (7%)</div>
 							<div class="col-md-6" style="text-align: right;"><?php echo number_format($booking->vat, 2);?></div>
 						</div>
 						
-						<div class="row mb-2" style="padding: 1px 15px 1px 15px; font-size: 1.1em;">						
+						<div class="row mb-2" style="padding: 1px 15px 1px 15px; font-size: 1em;">						
 							<div class="col-md-6" style="font-weight: bold;"><?php echo $this->lang->line('subtotal');?></div>
 							<div class="col-md-6" style="text-align: right;"><?php echo number_format($booking->sub_total, 2);?></div>
 						</div>

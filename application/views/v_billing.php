@@ -77,9 +77,27 @@ $cancellation_policy = $this->m_project_info->get_property_policy($id_project_in
 		top: -8px !important;
 		right: -4px !important;
 	}
+	
+	.price {
+		/*background-color: #2a2a2e;*/
+		background-color: #5392f9;
+		color: white;
+		text-shadow: 2px 2px 4px #000000;
+	}
+	.btn-payment {
+		width: auto;
+		height: auto;
+		text-transform: uppercase;
+		line-height: 30px !important;
+		color: #fff !important;
+		font-size: 16px !important;
+		background-color: #5392f9 !important;
+		border-color: #5392f9 !important;
+	}
 	.btn-payment:hover {
-        background-color: #839287 !important; 
-        color: #fff !important; 
+        background-color: #fff !important;
+        color: #5392f9 !important; 
+		border-color: #5392f9 !important;
     }
 </style>
 
@@ -131,19 +149,19 @@ $cancellation_policy = $this->m_project_info->get_property_policy($id_project_in
 							<div class="row mt-3">
 								<div class="col-md-6 col-sm-6">
 									<div class="row" style="margin-left: 15px; ">
-										<div class="col-md-5 mb-2"><?php echo $this->lang->line('company_name'); ?>: </div>
+										<div class="col-md-5 mb-2" style="font-weight: 500;"><?php echo $this->lang->line('company_name'); ?>: </div>
 										<div class="col-md-7 mb-2"><?php echo ($lang == 'english') ? $project_info->project_name_en : $project_info->project_name_th; ?></div>
-										<div class="col-md-5 mb-2"><?php echo $this->lang->line('company_address'); ?>: </div>
+										<div class="col-md-5 mb-2" style="font-weight: 500;"><?php echo $this->lang->line('company_address'); ?>: </div>
 										<div class="col-md-7 mb-2"><?php echo ($lang == 'english') ? $project_info->whole_address_en : $project_info->whole_address_th; ?></div>
-										<div class="col-md-5 mb-2"><?php echo $this->lang->line('company_tax_id'); ?>: </div>
+										<div class="col-md-5 mb-2" style="font-weight: 500;"><?php echo $this->lang->line('company_tax_id'); ?>: </div>
 										<div class="col-md-7 mb-2"><?php echo $project_info->business_tax_id; ?></div>
-										<div class="col-md-5 mb-2"><?php echo $this->lang->line('contact_number'); ?>: </div>
+										<div class="col-md-5 mb-2" style="font-weight: 500;"><?php echo $this->lang->line('contact_number'); ?>: </div>
 										<div class="col-md-7 mb-2"><?php echo $project_info->phone_number; ?></div>
-										<div class="col-md-5 mb-2"><?php echo $this->lang->line('bank'); ?>: </div>
+										<div class="col-md-5 mb-2" style="font-weight: 500;"><?php echo $this->lang->line('bank'); ?>: </div>
 										<div class="col-md-7 mb-2">Kasikorn Bank</div>
-										<div class="col-md-5 mb-2"><?php echo $this->lang->line('account_name'); ?>: </div>
+										<div class="col-md-5 mb-2" style="font-weight: 500;"><?php echo $this->lang->line('account_name'); ?>: </div>
 										<div class="col-md-7 mb-2">BuilderSmart (Public) Co., Ltd.</div>
-										<div class="col-md-5 mb-2"><?php echo $this->lang->line('account_number'); ?>: </div>
+										<div class="col-md-5 mb-2" style="font-weight: 500;"><?php echo $this->lang->line('account_number'); ?>: </div>
 										<div class="col-md-7 mb-2">145-1-69629-3</div>
 									</div>
 
@@ -192,42 +210,42 @@ $cancellation_policy = $this->m_project_info->get_property_policy($id_project_in
 							<div class="row mt-3">
 								<div <?= @$booking->billing_name ? 'class="col-md-4 col-sm-6"' : 'class="col-md-6 col-sm-6"';  ?>>
 									<div class="row mt-3" style="margin-left: 15px; ">
-										<div class="col-md-5 col-sm-6"><?php echo $this->lang->line('customer_name'); ?>: </div>
+										<div class="col-md-5 col-sm-6" style="font-weight: 500;"><?php echo $this->lang->line('customer_name'); ?>: </div>
 										<div class="col-md-7 col-sm-6"><?php echo $booking->guest_name; ?></div>
 										<!-- <div class="col-md-5 col-sm-6"><?php echo $this->lang->line('address'); ?>: </div>
 										<div class="col-md-7 col-sm-6"><?php echo $booking->guest_address; ?></div>
 										<div class="col-md-5 col-sm-6"><?php echo $this->lang->line('guest_tax_id'); ?>: </div>
 										<div class="col-md-7 col-sm-6"><?php echo $booking->guest_tax_id; ?></div> -->
-										<div class="col-md-5 col-sm-6"><?php echo $this->lang->line('contact_number'); ?>: </div>
+										<div class="col-md-5 col-sm-6" style="font-weight: 500;"><?php echo $this->lang->line('contact_number'); ?>: </div>
 										<div class="col-md-7 col-sm-6"><?php echo $booking->guest_contact_number; ?></div>
 									</div>
 								</div>
 								<?php if (@$booking->billing_name) { ?>
 									<div class="col-md-4 col-sm-6">
 										<div class="row mt-3" style="margin-left: 15px; ">
-											<div class="col-md-5 col-sm-6"><?php echo $this->lang->line('billing_name'); ?>: </div>
+											<div class="col-md-5 col-sm-6" style="font-weight: 500;"><?php echo $this->lang->line('billing_name'); ?>: </div>
 											<div class="col-md-7 col-sm-6"><?php echo $booking->billing_name; ?></div>
-											<div class="col-md-5 col-sm-6"><?php echo $this->lang->line('billing_address'); ?>: </div>
+											<div class="col-md-5 col-sm-6" style="font-weight: 500;"><?php echo $this->lang->line('billing_address'); ?>: </div>
 											<div class="col-md-7 col-sm-6"><?php echo $booking->billing_address; ?></div>
-											<div class="col-md-5 col-sm-6"><?php echo $this->lang->line('billing_tax_id'); ?>: </div>
+											<div class="col-md-5 col-sm-6" style="font-weight: 500;"><?php echo $this->lang->line('billing_tax_id'); ?>: </div>
 											<div class="col-md-7 col-sm-6"><?php echo $booking->billing_tax_id; ?></div>
-											<div class="col-md-5 col-sm-6"><?php echo $this->lang->line('billing_contact_number'); ?>: </div>
+											<div class="col-md-5 col-sm-6" style="font-weight: 500;"><?php echo $this->lang->line('billing_contact_number'); ?>: </div>
 											<div class="col-md-7 col-sm-6"><?php echo $booking->billing_contact_number; ?></div>
 										</div>
 									</div>
 								<?php } ?>
 								<div <?= @$booking->billing_name ? 'class="col-md-4"' : ' class="col-md-6"'  ?>>
 									<div class="row mt-3" style="padding: 0 15px 0 15px; ">
-										<div class="col-md-6 col-sm-6"><?php echo $this->lang->line('check_in_date'); ?>: </div>
+										<div class="col-md-6 col-sm-6" style="font-weight: 500;"><?php echo $this->lang->line('check_in_date'); ?>: </div>
 										<div class="col-md-6 col-sm-6" style="text-align: right;"><?php echo date('M d, Y', strtotime($booking->check_in_date)); ?></div>
-										<div class="col-md-6 col-sm-6"><?php echo $this->lang->line('check_out_date'); ?>: </div>
+										<div class="col-md-6 col-sm-6" style="font-weight: 500;"><?php echo $this->lang->line('check_out_date'); ?>: </div>
 										<div class="col-md-6 col-sm-6" style="text-align: right;"><?php echo date('M d, Y', strtotime($booking->check_out_date)); ?></div>
-										<div class="col-md-6 col-sm-6"><?php echo $this->lang->line('number_of_nights'); ?>: </div>
+										<div class="col-md-6 col-sm-6" style="font-weight: 500;"><?php echo $this->lang->line('number_of_nights'); ?>: </div>
 										<div class="col-md-6 col-sm-6" style="text-align: right;"><?php echo $date_diff; ?></div>
 										<?php if (@$booking->credit_term) { ?>
-											<div class="col-md-6 col-sm-6"><?php echo $this->lang->line('credit_term'); ?>: </div>
+											<div class="col-md-6 col-sm-6" style="font-weight: 500;"><?php echo $this->lang->line('credit_term'); ?>: </div>
 											<div class="col-md-6 col-sm-6" style="text-align: right;"><?php echo $booking->credit_term . " " . $this->lang->line('days'); ?></div>
-											<div class="col-md-6 col-sm-6"><?php echo $this->lang->line('due_date') ?>: </div>
+											<div class="col-md-6 col-sm-6" style="font-weight: 500;"><?php echo $this->lang->line('due_date') ?>: </div>
 											<div class="col-md-6 col-sm-6" style="text-align: right;"><?php echo $booking->credit_due_date; ?></div>
 										<?php } ?>
 									</div>
@@ -301,8 +319,8 @@ $cancellation_policy = $this->m_project_info->get_property_policy($id_project_in
 								</div>
 
 								<div class="col-md-12 col-sm-12 price" style="margin: 0 -5px 0 0">
-									<div style="color: white; font-weight: bold; font-size: 1em; padding: 3px 0 0 10px;"><?php echo $this->lang->line('notes'); ?>:</div>
-									<p style="font-size:1em; padding: 3px 40px 3px 40px;">
+									<div style="color: white; font-weight: 700; font-size: 1em; padding: 3px 0 0 10px;"><?php echo $this->lang->line('notes'); ?>:</div>
+									<p style="font-size:small; padding: 3px 40px 3px 40px;">
 										<!-- This will serve as your invoice . Please settle the amount stated within 2 hours, then proceed to the next step for <br>the confirmation of your booking. Thank you. -->
 										<?php
 										foreach ($cancellation_policy as $cp) {

@@ -32,11 +32,11 @@
         padding: 16px 30px 24px;
         position: relative;
         border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
         width: 400px;
         text-align: center;
         max-width: 100%;
         margin: 0 15px;
-        box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 6px 2px;
     }
 
     h3 {
