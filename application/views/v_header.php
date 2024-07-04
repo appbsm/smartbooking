@@ -213,7 +213,8 @@ if ($id_guest != '') {
 				</a>
             </li>
 			<li class="nav-item" id="nav_contactus">
-                <a class="nav-link" href="#contactus">
+                <!--<a class="nav-link" href="#contactus">-->
+				<a class="nav-link" href="http://192.168.20.22/smartbooking_front_test/contact_us.php" target="_blank">
 					<?php echo $lang == "english" ? 'Contact us' : 'ติดต่อเรา'; ?>
 				</a>
             </li>

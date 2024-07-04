@@ -254,7 +254,7 @@ $CI->load->model('m_room_type');
 		text-transform: uppercase;
 		line-height: 30px;
 		color: #fff !important;
-		font-size: small;
+		font-size: small !important;
 		background-color: #5392f9 !important;
 		border-color: #5392f9 !important;
 	}
@@ -294,16 +294,18 @@ $CI->load->model('m_room_type');
 		background-color: #e9ecef;
 	}
 	.accordion-body {
-		font-size: 1rem;
-		/*color: #6c757d;*/
+		/*font-size: 1rem;
+		color: #6c757d;*/
 		color: #000;
+		font-size: 14px;
 	}	
 	.accordion-button.button-accordion {
         background-color: #fff !important; 
         /*color: #839287 !important; */
 		color: #000 !important;
         border: none !important; 
-		font-size: 16px !important;
+		font-size: 14px !important;
+		padding: 10px 8px;
     }
 	.accordion-item {
 		color: var(--bs-accordion-color);
@@ -313,6 +315,7 @@ $CI->load->model('m_room_type');
 		border-top: none !important;
 		border-bottom: var(--bs-accordion-border-width) solid var(--bs-accordion-border-color);
 	}
+	
 	/*accordion*/
 	.card-roomtype {
 		width: 100%;
@@ -326,11 +329,11 @@ $CI->load->model('m_room_type');
 	.tx-service {
 		/*color: #839287 !important;*/
 		color: #000 !important;
-		font-size: 16px !important;
+		font-size: 14px !important;
 		font-weight: 400;
 	}
 	.location {
-		font-size: 16px !important;
+		font-size: 14px !important;
 		/*color: #839287 !important;*/
 		color: #000 !important;
 		margin: 0 0;
@@ -402,7 +405,7 @@ $CI->load->model('m_room_type');
 		text-transform: uppercase;
 		line-height: 30px;
 		color: #fff !important;
-		font-size: small;
+		font-size: small !important;
 		background-color: #5392f9 !important;
 		border-color: #5392f9 !important;
 	}
@@ -473,6 +476,9 @@ $CI->load->model('m_room_type');
 			width: 100%;
 			/* height:auto; */
 		}
+		.amenities-nearby-column {
+			display: flex;
+		}
 	}
 
 	/* Styles for Large Desktops */
@@ -498,7 +504,16 @@ $CI->load->model('m_room_type');
 		.img-cover {
 			height: 500px !important;
 		}
-	}
+		.amenities-nearby-column {
+			display: flex;
+		}
+		body {
+			width: 100%;
+			max-width: 1500px; /* กำหนดความกว้างสูงสุดที่ body สามารถขยายตามจอได้ */
+			margin: 0 auto; /* จัดตำแหน่งกึ่งกลางของหน้า */
+			
+		}
+		
 </style>
 
 <!-- Package -->
@@ -593,7 +608,11 @@ $CI->load->model('m_room_type');
 							<label class="ml-1" for="name"><?php echo $lang == "english" ? 'Adult' : 'ผู้เข้าพัก'; ?></label>
 							<div class="dropdown">
 								<button class="btn dropdown-toggle w-100 search_input" style="color: #495057; width:100%;" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-									<div class="d-inline-flex"><span id="div_adult">2</span> <?php echo $this->lang->line('adults'); ?>, <span id="div_children">0</span> <?php echo $this->lang->line('children'); ?>, <span id="div_room">1</span></div> <?php echo $this->lang->line('rooms'); ?>
+									<div class="d-inline-flex">
+										<span id="div_adult">2&nbsp;</span> <?php echo $this->lang->line('adults'); ?>, 
+										<span id="div_children">&nbsp;0&nbsp;</span> <?php echo $this->lang->line('children'); ?>, 
+										<span id="div_room">&nbsp;1</span>
+									</div> <?php echo $this->lang->line('rooms'); ?>
 								</button>
 								<div class="dropdown-menu" style="vertical-align: bottom;" aria-labelledby="dropdownMenuButton" style="">
 									<div class="stepper">
@@ -1780,7 +1799,7 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
 						</div>
 					</div>
 				</div>
-				<div class="footer mt-3">
+				<div class="footer mt-3 mb-2">
 					<div class="ml-2 text-right">
 						<button class="btn button-primary-w add_to_cart btn-add_to_cart" data-id="1" data-price="1500" id="" style="margin-right: 5px;" fdprocessedid="t8mt0r">
 							<?php
@@ -2408,7 +2427,7 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
 					</div>
 				</div>
 			</div>
-			<div class="footer mt-3" style="justify-content: flex-start;">
+			<div class="footer mt-3 mb-2" style="justify-content: flex-start;">
 				<div class="ml-2 text-right">
 					<div class="ml-2 text-right">
 						<button class="btn button-primary-w add_to_cart btn-add_to_cart" data-id="1" data-price="1500" id="" style="margin-right: 5px;" fdprocessedid="t8mt0r">
@@ -2681,15 +2700,15 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
 		</div>
 	</div>
 	<div class="row mb-0" id="nav_roomstype">
-		<div class="col-md-12" style="display: flex;">
+		<div class="col-md-12 amenities-nearby-column">
 			<div class="col-md-8">
 			<div class="section_header "id="facilities_amenities">
-				<h5 style="font-weight: 600;">รายละเอียดโครงการ</h5>
+				<h6 style="font-weight: 600;">รายละเอียดโครงการ</h6>
 			</div>		
 			<div class="row mb-2">	
 				<div class="container-fluid mb-4">		
 					<div class="col-md-12">			
-		    			เอส เอ็ม รีสอร์ท โชว์รูม เขาใหญ่		    		
+		    			<span>เอส เอ็ม รีสอร์ท โชว์รูม เขาใหญ่</span>
 		    		</div>
 		    	</div>
 			</div>
@@ -2771,14 +2790,14 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
 				</div>
 				<div class="col-md-4">
 					<div class="section_header ">
-						<h5 style="font-weight: 600;">สถานที่ใกล้เคียง</h5>
+						<h6 style="font-weight: 600;">สถานที่ใกล้เคียง</h6>
 					</div>
 					<div class="row mb4">
 						<div class="col-md-12">		
 							<div class="table-responsive">
-								<table class="table table-bordered">
+								<table class="table table-bordered" style="border-color: #ccc;">
 									<tbody>
-										<tr>
+										<tr style="text-align: center;">
 											<th>ชื่อสถานที่</th>
 											<th>ระยะทาง(km)</th>
 										</tr>
