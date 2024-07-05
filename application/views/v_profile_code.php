@@ -4,103 +4,137 @@ $CI =& get_instance();
 $CI->load->model('m_room_type');
 
 ?>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<link rel="stylesheet" href="https://cdn.datatables.net/1.13.3/css/dataTables.bootstrap.min.css">
 
 <style>
-.nav-link.active {
-	background-color: #81BB4A!important;
-}
+	.nav-link.active {
+		background-color: #81BB4A!important;
+	}
 
-.room_type_header {
-	font-size: 1.4em;
-	font-weight: bold;
-	color: #eee;
-}
+	.room_type_header {
+		font-size: 1.4em;
+		font-weight: bold;
+		color: #eee;
+	}
 
-hr {
-	border: 0;
-	border-top: 1px solid #CCC;
-}
+	hr {
+		border: 0;
+		border-top: 1px solid #CCC;
+	}
 
-.hr3 {
-  border: 0;
-  height: 2px;
-  background-image: linear-gradient(to right, transparent, #CCC, transparent);  
-}
+	.hr3 {
+	  border: 0;
+	  height: 2px;
+	  background-image: linear-gradient(to right, transparent, #CCC, transparent);  
+	}
 
-.section_header {
-	font-weight: bold; 
-	font-size: 1.1em;
-}
+	.section_header {
+		font-weight: bold; 
+		font-size: 1.1em;
+	}
 
-tr > td {
-line-height: 20px;
-padding: 5px;
-}
+	tr > td {
+	line-height: 20px;
+	padding: 5px;
+	}
 
-.booking_expired {
-	background-color: red;
-	color: white;
-}
-
-
-/* Fixed sidenav, full height */
-.sidenav {
-  /* height: 100%; */
-  /* width: 200px; */
-  /* position: fixed; */
-  /* z-index: 1; */
-  /* top: 0; */
-  /* left: 0; */
-  /* background-color: #111; */
-  overflow-x: hidden;
-  padding-top: 20px;
-}
-
-/* Style the sidenav links and the dropdown button */
-.sidenav a, .dropdown-btn {
-  padding: 6px 8px 6px 16px;
-  text-decoration: none;
-  font-size: 16px;
-  color: #818181;
-  display: block;
-  border: none;
-  background: none;
-  /* width: 100%; */
-  text-align: left;
-  cursor: pointer;
-  outline: none;
-}
-
-/* On mouse-over */
-.sidenav a:hover, .dropdown-btn:hover {
-  color: #000000;
-}
+	.booking_expired {
+		background-color: red;
+		color: white;
+	}
 
 
-/* Add an active class to the active dropdown button */
-.active {
-  /* background-color: green; */
-  color: #81BB4A;
-}
+	/* Fixed sidenav, full height */
+	.sidenav {
+	  /* height: 100%; */
+	  /* width: 200px; */
+	  /* position: fixed; */
+	  /* z-index: 1; */
+	  /* top: 0; */
+	  /* left: 0; */
+	  /* background-color: #111; */
+	  overflow-x: hidden;
+	  padding-top: 20px;
+	}
 
-/* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
-.dropdown-container {
-  display: none;
-  /* background-color: #262626; */
-  padding-left: 8px;
-}
+	/* Style the sidenav links and the dropdown button */
+	.sidenav a, .dropdown-btn {
+	  padding: 6px 8px 6px 16px;
+	  text-decoration: none;
+	  font-size: 16px;
+	  color: #818181;
+	  display: block;
+	  border: none;
+	  background: none;
+	  /* width: 100%; */
+	  text-align: left;
+	  cursor: pointer;
+	  outline: none;
+	}
 
-/* Optional: Style the caret down icon */
-.fa-caret-down {
-  float: right;
-  padding-right: 8px;
-}
+	/* On mouse-over */
+	.sidenav a:hover, .dropdown-btn:hover {
+	  color: #000000;
+	}
 
-/* Some media queries for responsiveness */
-@media screen and (max-height: 450px) {
-  .sidenav {padding-top: 15px;}
-  .sidenav a {font-size: 18px;}
-}
+
+	/* Add an active class to the active dropdown button */
+	.active {
+	  /* background-color: green; */
+	  color: #81BB4A;
+	}
+
+	/* Dropdown container (hidden by default). Optional: add a lighter background color and some left padding to change the design of the dropdown content */
+	.dropdown-container {
+	  display: none;
+	  /* background-color: #262626; */
+	  padding-left: 8px;
+	}
+
+	/* Optional: Style the caret down icon */
+	.fa-caret-down {
+	  float: right;
+	  padding-right: 8px;
+	}
+
+	/* Some media queries for responsiveness */
+	@media screen and (max-height: 450px) {
+	  .sidenav {padding-top: 15px;}
+	  .sidenav a {font-size: 16px;}
+	}
+
+	.button__badge {
+		margin-right: 0px;
+		font-size: 0.6em !important;
+		position: absolute;
+		top: -8px !important;
+		right: -4px !important;
+	}
+	.menu-bar {
+		width: 100%;
+		max-width: 100%;
+		display: flex;
+		justify-content: space-around;
+		font-weight: 400;
+	}
+	
+	.price {
+		/*background-color: #2a2a2e;*/
+		background-color: #5392f9;
+		color: white;
+		text-shadow: 2px 2px 4px #000000;
+	}
+	.border-r-10 {
+		/*border: 1px solid #81BB4A;*/
+		border: 1px solid #5392f9;
+		border-radius: 10px;
+	}
+	tr > td {
+		line-height: 28px;
+		padding: 5px;
+	}
 </style>
 
 <?php 
@@ -108,7 +142,7 @@ padding: 5px;
 ?>
 
 
-<div class="main-2">
+<div class="main-2 p-2" style="margin-top: 35px;">
 	<div class="container" >
   		<div class="row" id="profile">
   			<div class="col-md-12 price room_type_header"><span style="margin-left: 10px;"><?php echo $this->lang->line('profile');?></span></div>
@@ -116,18 +150,18 @@ padding: 5px;
 		<div class="row">
 			<div class="col-md-2">
 				<div class="sidenav">
-					<a href="<?php echo site_url('booking/history');?>" class="dropdown-btn"><?php echo _r('Booking History', 'ประวัติการจอง');?>
+					<a style="font-weight: 600;" href="<?php echo site_url('booking/history');?>" class="dropdown-btn"><?php echo _r('Booking History', 'ประวัติการจอง');?>
 					</a>
 					<div class="dropdown-container">
 						<a href="#"><?php echo _r('Booking History', 'ประวัติการจอง');?></a>
 					</div>
-					<a><?php echo _r('Discount Code', 'โค้ดส่วนลด');?>
+					<a style="font-weight: 600;"><?php echo _r('Discount Code', 'โค้ดส่วนลด');?>
 						<i class="fa fa-caret-down"></i>
 					</a>
 					<div>
 						<a href="#" style="color:#81BB4A;margin-left:10px;"><?php echo _r('Discount Code', 'โค้ดส่วนลด');?></a>
 					</div>
-					<a href="<?php echo site_url('profile/edit_profile');?>" class="dropdown-btn"><?php echo $this->lang->line('profile');?>
+					<a style="font-weight: 600;" href="<?php echo site_url('profile/edit_profile');?>" class="dropdown-btn"><?php echo $this->lang->line('profile');?>
 						
 					</a>
 					
@@ -138,7 +172,7 @@ padding: 5px;
 
 
 				
-					<div class="row border-r-10 mt-5 p-5">
+					<div class="row border-r-10 mt-4 p-5">
 						<table class="table-bordered w-100" style="padding: 5px;">
 							<?php if (isset($discount->code)) {
 							$booking_expired = (strtotime(date('Y-m-d')) > strtotime($discount->end_date_booking)) ? 'booking_expired' : '';

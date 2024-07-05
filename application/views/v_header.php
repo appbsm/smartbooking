@@ -134,6 +134,15 @@ if ($id_guest != '') {
         border: #5392f9 !important;
 	}
 	
+	.dropdown-user {
+		border: 1px solid #5392f9;
+		border-radius: 4px;
+		padding: 4px;
+	}
+	.input-group:not(.has-validation)>.dropdown-toggle:nth-last-child(n+3) {
+		background-color: #f8f9fa !important;
+	}
+	
   </style>
 
   <script>
@@ -185,7 +194,7 @@ if ($id_guest != '') {
 	  </span>  
 
 	  <!-- new menu -->
-	  <div class="col-9">
+	  <div class="col-8">
 		<ul class="navbar-nav me-auto mb-2 mb-lg-0 menu-bar">
             <li class="nav-item" id="nav_aboutus">
                 <a class="nav-link" href="#aboutus">
@@ -228,7 +237,7 @@ if ($id_guest != '') {
 		  <?php if ($guest->photo_url != '') { ?>
 		  <a class=""><img src="<?php echo share_folder_path() . $guest->photo_url; ?>" class="rounded-circle mx-auto d-block" style="height:50px;width:50px;" alt=""></a>
 		  <?php } ?>
-		  <div class="input-group d-flex flex-row bg-light" >            
+		  <div class="input-group d-flex flex-row bg-light dropdown-user" >            
 			<a class="nav-link align-text-bottom dropdown-toggle" id="profile_name" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 				<?php echo $guest->firstname . ' ' . substr($guest->lastname, 0, 1). '.'; ?>
 			</a>

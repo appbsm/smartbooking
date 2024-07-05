@@ -3,6 +3,9 @@ $CI = &get_instance();
 $CI->load->model('m_room_type');
 
 ?>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<link rel="stylesheet" href="https://cdn.datatables.net/1.13.3/css/dataTables.bootstrap.min.css">
 
 <style>
 	.nav-link.active {
@@ -100,38 +103,141 @@ $CI->load->model('m_room_type');
 		}
 
 		.sidenav a {
-			font-size: 18px;
+			font-size: 16px;
 		}
 	}
+	
+	.button__badge {
+		margin-right: 0px;
+		font-size: 0.6em !important;
+		position: absolute;
+		top: -8px !important;
+		right: -4px !important;
+	}
+	.menu-bar {
+		width: 100%;
+		max-width: 100%;
+		display: flex;
+		justify-content: space-around;
+		font-weight: 400;
+	}
+	
+	.price {
+		/*background-color: #2a2a2e;*/
+		background-color: #5392f9;
+		color: white;
+		text-shadow: 2px 2px 4px #000000;
+	}
+	/*   
+    .dataTables_wrapper .dataTables_paginate .paginate_button.disabled {
+        background-color: #5392f9 !important;
+        border-color: #5392f9 !important;
+    }
+	*/
+	
+	.paginate_button {
+        width: auto !important;
+        height: auto !important;
+        text-transform: uppercase;
+        line-height: 30px !important;
+        font-size: 14px !important;
+		background-color: #fff !important;
+		color: #5392f9 !important; 
+		border: 1px solid #5392f9 !important;
+        padding: 5px 15px;
+        margin: 0 5px;
+        border-radius: 4px;
+    }
+	.paginate_button:hover {
+		color: #fff !important;
+        background-color: #5392f9 !important;
+        border-color: #5392f9 !important;
+        
+		border-radius: 4px;
+    }	
+	.previous, .next {
+		margin: 0px;
+		padding: 5px 15px;
+		
+		width: auto;
+		height: auto;
+		text-transform: uppercase;
+		line-height: 30px !important;
+		color: #fff !important;
+		font-size: 14px !important;
+		background-color: #5392f9 !important;
+		border: 1px solid #5392f9 !important;
+		border-radius: 5px;
+	}
+	.previous:hover, .next:hover {
+		background-color: #fff !important;
+		color: #5392f9 !important; 
+		border: 1px solid #5392f9 !important;
+		border-radius: 4px;
+	}
+	
+	table.dataTable thead th, table.dataTable thead td, table.dataTable tfoot th, table.dataTable tfoot td {
+		text-align: left;
+		vertical-align: middle;
+	}
+	.table-responsive {
+		display: block;
+		width: 100%;
+		overflow-x: auto;
+		-webkit-overflow-scrolling: touch;
+		-ms-overflow-style: -ms-autohiding-scrollbar;
+	}
+	.table-responsive {
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+		overflow-y: auto; 
+        -webkit-overflow-scrolling: touch;
+    }
+    .table td, .table th {
+        white-space: nowrap;
+    }
+
 </style>
+<script>
+	$(document).ready(function() {
+		$('#booking-history-table').DataTable({
+			"scrollY": "100px", // สามารถปรับความสูงตามที่ต้องการ
+			"scrollCollapse": true,
+			"paging": false // ปิดการแบ่งหน้า
+		});
+	});
+</script>
 
 <?php
 $id_project_info = 1;
 ?>
 
 
-<div class="main-2">
+<div class="main-2 p-2" style="margin-top: 35px;">
 	<div class="container">
 		<div class="row">
-			<div class="col-md-12 price room_type_header"><span style="margin-left: 10px;"><?php echo $this->lang->line('booking_history'); ?></span></div>
+			<div class="col-md-12 price room_type_header">
+				<span style="margin-left: 10px;"><?php echo $this->lang->line('booking_history'); ?></span>
+			</div>
 		</div>
 		<div class="row">
 			<div class="col-md-2">
 				<div class="sidenav">
-					<a><?php echo _r('Booking History', 'ประวัติการจอง'); ?>
+					<a style="font-weight: 600;"><?php echo _r('Booking History', 'ประวัติการจอง'); ?>
 						<i class="fa fa-caret-down"></i>
 					</a>
 					<div class="dropdown">
 						<a href="history" style="color:#81BB4A;margin-left:10px;"><?php echo _r('Booking History', 'ประวัติการจอง'); ?></a>
 					</div>
-					<a href="<?php echo site_url('profile/edit_profile_code'); ?>" class="dropdown-btn"><?php echo _r('Discount Code', 'โค้ดส่วนลด'); ?>
+					<a style="font-weight: 600;" href="<?php echo site_url('profile/edit_profile_code'); ?>" class="dropdown-btn"><?php echo _r('Discount Code', 'โค้ดส่วนลด'); ?>
 					</a>
-					<a href="<?php echo site_url('profile/edit_profile_security'); ?>" class="dropdown-btn"><?php echo _r('Security', 'ความปลอดภัย'); ?>
+					<a style="font-weight: 600;" href="<?php echo site_url('profile/edit_profile_security'); ?>" class="dropdown-btn"><?php echo _r('Security', 'ความปลอดภัย'); ?>
 					</a>
 					<div class="dropdown-container">
 						<a href="#"><?php echo _r('Password', 'รหัสผ่าน'); ?></a>
 					</div>
-					<a href="<?php echo site_url('profile/edit_profile'); ?>" class="dropdown-btn"><?php echo _r('Personal Information', 'ข้อมูลส่วนตัว'); ?>
+					<a style="font-weight: 600;" href="<?php echo site_url('profile/edit_profile'); ?>" class="dropdown-btn"><?php echo _r('Personal Information', 'ข้อมูลส่วนตัว'); ?>
 
 					</a>
 					<!-- <div class="dropdown-container">
@@ -143,8 +249,8 @@ $id_project_info = 1;
 				</div>
 			</div>
 			<div class="col-md-10">
-				<div class="table-responsive mt-5">
-					<table class="table">
+				<div class="table-responsive mt-4">
+					<table class="table" style="width: 100%; font-size: 13px;" id="booking-history-table">
 						<thead>
 							<tr>
 								<th><?php echo $this->lang->line('number'); ?></th>

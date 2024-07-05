@@ -4,31 +4,46 @@ $CI =& get_instance();
 $CI->load->model('m_room_type');
 
 ?>
-
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <style>
 
-.room_type_header {
-	font-size: 1.4em;
-	font-weight: bold;
-	color: #eee;
-}
+	.room_type_header {
+		font-size: 1.4em;
+		font-weight: bold;
+		color: #eee;
+	}
 
-hr {
-	border: 0;
-	border-top: 1px solid #CCC;
-}
+	hr {
+		border: 0;
+		border-top: 1px solid #CCC;
+	}
 
-.hr3 {
-  border: 0;
-  height: 2px;
-  background-image: linear-gradient(to right, transparent, #CCC, transparent);  
-}
+	.hr3 {
+	  border: 0;
+	  height: 2px;
+	  background-image: linear-gradient(to right, transparent, #CCC, transparent);  
+	}
 
 
-.page_content {
-	padding: 20px;
-}
+	.page_content {
+		padding: 20px;
+	}
 
+	button__badge {
+		margin-right: 0px;
+		font-size: 0.6em !important;
+		position: absolute;
+		top: -8px !important;
+		right: -4px !important;
+	}
+	.menu-bar {
+		width: 100%;
+		max-width: 100%;
+		display: flex;
+		justify-content: space-around;
+		font-weight: 400;
+	}
 </style>
 
 <main class="main-2">

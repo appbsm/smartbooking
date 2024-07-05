@@ -436,6 +436,7 @@ $CI->load->model('m_room_type');
 	}
 
 
+
 	/* Styles for Mobile Phones */
 	@media (max-width: 480px) {
 		.content-detail {
@@ -1110,134 +1111,122 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
 		}
 		$photos = $CI->m_room_type->get_room_type_photos($rt->id_room_type);
 
-		if ($index % 2 == 0) {
-		}else{
+		// Determine if current row should be left or right
+		$isLeft = ($index % 2 == 0);
+    ?>
 
-		}
-	?>
-	<div class="row">
-		<div class="col-md-12 ml-2 text-center mt-2">
-			<div class="header">
-				<div class="pl-4 text-center mb-4">
-					<a href="http://192.168.20.22/sm_booking1/detail.php" target="_blank" class="tx-title-sub">
-						<!-- <h5 class="roomtype-tx-title">SM 1 - Standard Room</h5> -->
-						<h5 class="roomtype-tx-title"><?php echo ($lang == 'english') ? $rt->room_type_name_en : $rt->room_type_name_th; ?></h5>
-					</a>
-				</div>
-			</div>
-		</div>
-	</div>
+    <div class="row mb-4">
+        <div class="col-md-6 col-sm-12 <?php echo $isLeft ? '' : 'order-md-2'; ?>" style="border: 1px solid #cccccc52; border-radius: 5px; box-shadow: rgb(0 0 0 / 9%) 0px 1px 4px 1px;">
+            <div class="accordion" id="accordionExample<?php echo $index; ?>">
 
-	<div class="row">
-		<div class="col-md-6 col-sm-12" style="border: 1px solid #cccccc52; border-radius: 5px; box-shadow: rgb(0 0 0 / 9%) 0px 1px 4px 1px;">
-			<div class="accordion" id="accordionExample">
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingOneInfo<?php echo $index; ?>">
+                        <button class="accordion-button collapsed button-accordion" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOneInfo<?php echo $index; ?>" aria-expanded="false" aria-controls="collapseOne">
+                            <?php
+                                if (sizeof($packages) > 0) {
+                                    echo ($lang == 'english') ? 'Room Information' : 'รายละเอียดห้อง';
+                                }
+                            ?>
+                        </button>
+                    </h2>
+                    <div id="collapseOneInfo<?php echo $index; ?>" class="accordion-collapse collapse" aria-labelledby="headingOneInfo<?php echo $index; ?>" data-bs-parent="#accordionExample<?php echo $index; ?>">
+                        <div class="accordion-body">
+                            <div class="col-md-12" style="padding-right: 0;">
+                                <div class="row">
 
-				<div class="accordion-item">
-					<h2 class="accordion-header" id="headingOneInfo">
-						<button class="accordion-button collapsed button-accordion" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOneInfo<? echo $index; ?>" aria-expanded="false" aria-controls="collapseOne">
-							<?php
-								if (sizeof($packages) > 0) {
-									echo ($lang == 'english') ? 'Room Information' : 'รายละเอียดห้อง';
-								}
-							?>
-						</button>
-					</h2>
-					<div id="collapseOneInfo<? echo $index; ?>" class="accordion-collapse collapse" aria-labelledby="headingOneInfo" data-bs-parent="#accordionExample">
-						<div class="accordion-body">
-							<div class="col-md-12" style="padding-right: 0;">
-								<div class="row">
+                                    <div class="row mx-auto mt-2">
+                                        <div class="col-3 mx-auto icon_container">
+                                            <span class="icon-content"><object data="http://192.168.20.22/smartbooking_front_test/images/icons/house.svg" height="20"></object></span>
+                                        </div>
+                                        <div class="col-9 icon_container">
+                                            <span class="icon-content"><?php echo ($lang == 'english') ? 'Area 18 Sq.m' : 'ขนาดพื้นที่ห้อง: 18 ตรม.'; ?></span>
+                                        </div>
+                                    </div>
 
-									<div class="row mx-auto mt-2">
-										<div class="col-3 mx-auto icon_container">
-											<span class="icon-content"><object data="http://192.168.20.22/smartbooking_front_test/images/icons/house.svg" height="20"></object></span>
-										</div>
-										<div class="col-9 icon_container">
-											<span class="icon-content"><? echo ($lang == 'english') ? 'Area 18 Sq.m' : 'ขนาดพื้นที่ห้อง: 18 ตรม.'; ?></span>
-										</div>
-									</div>
+                                    <div class="row mx-auto mt-2">
+                                        <div class="col-3 text-left icon_container">
+                                            <span class="icon-content"><object data="https://sharefolder.buildersmart.com/sms_booking/images/icons/icons8-bedroom-50.png" height="18"></object></span>
+                                        </div>
+                                        <div class="col-9 text-left icon_container">
+                                            <span class="icon-content"><?php echo ($lang == 'english') ? '1 Queen-bed' : 'ห้องนอน: 1 (Queen-Bed)'; ?></span>
+                                            
+                                        </div>
+                                    </div>
 
-									<div class="row mx-auto mt-2">
-										<div class="col-3 text-left icon_container">
-											<span class="icon-content"><object data="https://sharefolder.buildersmart.com/sms_booking/images/icons/icons8-bedroom-50.png" height="18"></object></span>
-										</div>
-										<div class="col-9 text-left icon_container">
-											<span class="icon-content"><? echo ($lang == 'english') ? '1 Queen-bed' : 'ห้องนอน: 1 (Queen-Bed)'; ?></span>
-											
-										</div>
-									</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="headingOne<?php echo $index; ?>">
+                        <button class="accordion-button collapsed button-accordion" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne<?php echo $index; ?>" aria-expanded="false" aria-controls="collapseOne">
+                            <?php
+                                if (sizeof($packages) > 0) {
+                                    echo ($lang == 'english') ? 'Highlights' : 'ไฮไลท์';
+                                }
+                            ?>
+                        </button>
+                    </h2>
+                    <div id="collapseOne<?php echo $index; ?>" class="accordion-collapse collapse" aria-labelledby="headingOne<?php echo $index; ?>" data-bs-parent="#accordionExample<?php echo $index; ?>">
+                        <div class="accordion-body">
+                            <div class="col-md-12" style="padding-right: 0;">
+                                <div class="row">
+                                    <div class="col-sm-3 mb-2 text-center">
+                                        <img src="http://192.168.20.22/sm_booking1/includes/image.php?filename=upload/project_highlight/1_63bb731cd4018.png" class="icon-service"><br>
+                                        <h6 class="mt-1 tx-service">
+                                            <?php
+                                                if (sizeof($packages) > 0) {
+                                                    echo ($lang == 'english') ? 'Wifi' : 'ไวไฟ';
+                                                }
+                                            ?>
+                                        </h6>
+                                    </div>
 
-				<div class="accordion-item">
-					<h2 class="accordion-header" id="headingOne">
-						<button class="accordion-button collapsed button-accordion" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne<? echo $index; ?>" aria-expanded="false" aria-controls="collapseOne">
-							<?php
-								if (sizeof($packages) > 0) {
-									echo ($lang == 'english') ? 'Highlights' : 'ไฮไลท์';
-								}
-							?>
-						</button>
-					</h2>
-					<div id="collapseOne<? echo $index; ?>" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-						<div class="accordion-body">
-							<div class="col-md-12" style="padding-right: 0;">
-								<div class="row">
-									<div class="col-sm-3 mb-2 text-center">
-										<img src="http://192.168.20.22/sm_booking1/includes/image.php?filename=upload/project_highlight/1_63bb731cd4018.png" class="icon-service"><br>
-										<h6 class="mt-1 tx-service">
-											<?php
-												if (sizeof($packages) > 0) {
-													echo ($lang == 'english') ? 'Wifi' : 'ไวไฟ';
-												}
-											?>
-										</h6>
-									</div>
+                                    <div class="col-sm-3 mb-2 text-center">
+                                        <img src="http://192.168.20.22/sm_booking1/includes/image.php?filename=upload/project_highlight/1_63bb7dd7c487e.png" class="icon-service"><br>
+                                        <h6 class="mt-1 tx-service">
+                                            <?php
+                                                if (sizeof($packages) > 0) {
+                                                    echo ($lang == 'english') ? 'Mountain View' : 'วิวภูเขา';
+                                                }
+                                            ?>
+                                        </h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-									<div class="col-sm-3 mb-2 text-center">
-										<img src="http://192.168.20.22/sm_booking1/includes/image.php?filename=upload/project_highlight/1_63bb7dd7c487e.png" class="icon-service"><br>
-										<h6 class="mt-1 tx-service">
-											<?php
-												if (sizeof($packages) > 0) {
-													echo ($lang == 'english') ? 'Mountain View' : 'วิวภูเขา';
-												}
-											?>
-										</h6>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
+            </div>
+        </div>
 
-			</div>
-		</div>
+        <div class="col-md-6 col-sm-12 <?php echo $isLeft ? 'order-md-1' : ''; ?>">
+            <div class="cards-wrapper">
+                <div class="card card-roomtype img-sec">                
+                    <div class="hover-img " style="width: 100%; height: 100%;">
+                        <?php //foreach ($photos as $ctr1 => $photo) { ?>
+                        <a href="javascript:;"> 
+                            <img src="<?php echo share_folder_path() . $photos[0]->room_photo_url; ?>" class="img-fluid" alt="Room Image">
+                            <!-- <img class="room_img img-thumbnail" data-type="<?php echo $ctr; ?>" data-ctr="<?php //echo $ctr1; ?>" src="<?php //echo share_folder_path() . $photo->room_photo_url; ?>" width="100%"> -->
+                        </a>
+                        <?php //} ?>
+                    </div>
 
-		<div class="col-md-6 col-sm-12">
-			<div class="cards-wrapper">
-				<div class="card card-roomtype img-sec">				
-					<div class="hover-img " style="width: 100%; height: 100%;">
-						<?php //foreach ($photos as $ctr1 => $photo) { ?>
-						<a href="javascript:;"> 
-							<img src="<?php echo share_folder_path() . $photos[0]->room_photo_url; ?>" class="img-fluid" alt="Room Image">
-							<!-- <img class="room_img img-thumbnail" data-type="<?php echo $ctr; ?>" data-ctr="<?php //echo $ctr1; ?>" src="<?php //echo share_folder_path() . $photo->room_photo_url; ?>" width="100%"> -->
-						</a>
-						<?php //} ?>
-					</div>
+                    <?php
+                        $price = ($lang == 'english') ? number_format($rate, 0) . '/Night' : 'ราคา ' . number_format($rate, 0) . '/คืน';
+                    ?>
+                    <span style="font-size: smaller;"><?php echo $price; ?></span>                                 
+                </div>
+            </div>
+        </div>
 
-					<?php
-						$price = ($lang == 'english') ? number_format($rate, 0) . '/Night' : 'ราคา ' . number_format($rate, 0) . '/คืน';
-					?>
-					<span style="font-size: smaller;"><?php echo $price; ?></span>								 
-				</div>
-			</div>
-		</div>
+    </div>
+    <?php $index++; } ?>
 
-	</div>
-	<?php $index++; } ?>
+
 
 	<div class="row">
 		<div class="col-md-6 col-sm-12" style="border: 1px solid #cccccc52; border-radius: 5px; box-shadow: rgb(0 0 0 / 9%) 0px 1px 4px 1px;">
