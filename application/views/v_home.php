@@ -8,6 +8,15 @@ $CI->load->model('m_room_type');
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
+	.dropdown-toggle{
+		color: #000 !important;
+		border: 1px solid #ccc;
+		background-color: #fff !important;
+	}
+	.dropdown-item.active, .dropdown-item:active {
+		background-color: #5392f9 !important;
+	}
+
 	.span, .icon-content {
 		color: #000 !important;
 	}
@@ -586,7 +595,6 @@ $CI->load->model('m_room_type');
 									<option value="<?php echo $pj->id_project_info ?>"><?php echo $lang == "english" ? $pj->project_name_en : $pj->project_name_th; ?></option>
 								<?php } ?>
 							</select>
-
 						</div>
 					</div>
 					<div class="col-xl-2 col-lg-2 col-md-6 col-sm-6 col-xs-6">
@@ -607,7 +615,7 @@ $CI->load->model('m_room_type');
 						<div class="col-md-12 mb-2 text-left">
 							<label class="ml-1" for="name"><?php echo $lang == "english" ? 'Adult' : 'ผู้เข้าพัก'; ?></label>
 							<div class="dropdown">
-								<button class="btn dropdown-toggle w-100 search_input" style="color: #495057; width:100%;" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								<button class="btn dropdown-toggle w-100 search_input" style="color: #000 !important; background-color: #fff !important; width:100%;" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 									<div class="d-inline-flex">
 										<span id="div_adult">2&nbsp;</span> <?php echo $this->lang->line('adults'); ?>, 
 										<span id="div_children">&nbsp;0&nbsp;</span> <?php echo $this->lang->line('children'); ?>, 
@@ -1121,7 +1129,7 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
 	</div>
 
 	<div class="row">
-		<div class="col-md-6 col-sm-12">
+		<div class="col-md-6 col-sm-12" style="border: 1px solid #cccccc52; border-radius: 5px; box-shadow: rgb(0 0 0 / 9%) 0px 1px 4px 1px;">
 			<div class="accordion" id="accordionExample">
 
 				<div class="accordion-item">
@@ -1232,7 +1240,7 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
 	<?php $index++; } ?>
 
 	<div class="row">
-		<div class="col-md-6 col-sm-12">
+		<div class="col-md-6 col-sm-12" style="border: 1px solid #cccccc52; border-radius: 5px; box-shadow: rgb(0 0 0 / 9%) 0px 1px 4px 1px;">
 			<div class="accordion" id="accordionExample">
 				<div class="accordion-item">
 					<h2 class="accordion-header" id="headingOneInfo">
@@ -1859,7 +1867,7 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
 				</div>
 			</div>
 		</div>
-		<div class="col-md-6 col-sm-12" style="border: 1px solid #cccccc52; border-radius: 8px; box-shadow: rgb(0 0 0 / 9%) 0px 1px 4px 1px;">
+		<div class="col-md-6 col-sm-12" style="border: 1px solid #cccccc52; border-radius: 5px; box-shadow: rgb(0 0 0 / 9%) 0px 1px 4px 1px;">
 			<div class="accordion" id="accordionExample">
 				<div class="accordion-item">
 					<h2 class="accordion-header" id="headingOneInfo2">
@@ -2688,7 +2696,7 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
 </div>
 
 <!-- facilities & amenities and nearby location-->
-
+<!--
 <div class="container mt-5">
 	<div class="row">
 		<div class="col-md-12 ml-2 text-center mt-4">
@@ -2840,15 +2848,13 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
 	
 	<div class="row text-center mb-0" id="nav_roomstype">
 		<div class="col-md-12">
-			<!-- Google map -->
 			<div id="google-map">
 				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5462.972307432571!2d101.55065412783209!3d14.490156270739496!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x311c3b5927861817%3A0x4ef8dd372f4d0716!2sSMS%20Showroom!5e0!3m2!1sth!2sth!4v1683184985267!5m2!1sth!2sth" width=100% height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 			</div>
-			<!-- End Google map -->
 		</div>
 	</div>
 </div>
-
+-->
 <!-- facilities & amenities and nearby location -->
 
 <!-- <script src="//code.jquery.com/jquery.js"></script> -->
