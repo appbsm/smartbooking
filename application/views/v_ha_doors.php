@@ -6,6 +6,10 @@ $check_in_date = date('d-m-Y');
 $check_out_date = date('d-m-Y', strtotime($check_in_date . '+1 day'));
 ?>
 <meta http-equiv="refresh" content="30">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<link rel="stylesheet" href="https://cdn.datatables.net/1.13.3/css/dataTables.bootstrap.min.css">
+
 <style>
 	.nav-link.active {
 		background-color: #81BB4A !important;
@@ -60,11 +64,32 @@ $check_out_date = date('d-m-Y', strtotime($check_in_date . '+1 day'));
       display: inline-block;
     }
     
+	.button__badge {
+		margin-right: 0px;
+		font-size: 0.6em !important;
+		position: absolute;
+		top: -8px !important;
+		right: -4px !important;
+	}
+	.menu-bar {
+		width: 100%;
+		max-width: 100%;
+		display: flex;
+		justify-content: space-around;
+		font-weight: 400;
+	}
+	
+	.price {
+		/*background-color: #2a2a2e;*/
+		background-color: #5392f9;
+		color: white;
+		text-shadow: 2px 2px 4px #000000;
+	}
    
 </style>
 
 
-<main class="main-2 " style="margin-top: 70px;">
+<main class="main-2 " style="margin-top: 40px;">
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12">
