@@ -139,18 +139,18 @@ $CI->load->model('m_room_type');
 		border-radius: 10px;
 	}
 	.form-control:disabled, .form-control[readonly], .form-control {
-		height: 40px;
+		height: 32px;
 	}
 	.btn-save {
 		width: auto;
 		height: auto;
 		text-transform: uppercase;
-		line-height: 30px !important;
+		/*line-height: 30px !important;*/
 		color: #fff !important;
 		font-size: 14px !important;
 		background-color: #5392f9 !important;
 		border-color: #5392f9 !important;
-		padding: 5px 15px;
+		padding: 6px 12px;
 	}
 	.btn-save:hover {
         background-color: #fff !important;
@@ -166,9 +166,11 @@ $CI->load->model('m_room_type');
 
 <div class="main-2 p-2" style="margin-top: 35px;">
 	<div class="container">
+		<!--
 		<div class="row" id="profile">
 			<div class="col-md-12 price room_type_header"><span style="margin-left: 10px;"><?php echo $this->lang->line('profile'); ?></span></div>
 		</div>
+		-->
 		<div class="row">
 			<div class="col-md-2">
 				<div class="sidenav">
@@ -218,7 +220,7 @@ $CI->load->model('m_room_type');
 								</div>
 								<div class="col-2 mt-4">
 									<a data-toggle="collapse" data-target=".multi-collapse" aria-expanded="false" aria-controls="collapse-name1 collapse-name2">
-										<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="25" height="25" viewBox="0 0 256 256" xml:space="preserve">
+										<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="22" height="22" viewBox="0 0 256 256" xml:space="preserve">
 
 											<defs>
 											</defs>
@@ -297,7 +299,7 @@ $CI->load->model('m_room_type');
 								</div>
 								<div class="col-2 mt-4 pl-0">
 									<a data-toggle="collapse" data-target=".multi-collapse" aria-expanded="false" aria-controls="collapse-name1 collapse-name2">
-										<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="25" height="25" viewBox="0 0 256 256" xml:space="preserve">
+										<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="22" height="22" viewBox="0 0 256 256" xml:space="preserve">
 
 											<defs>
 											</defs>
@@ -326,7 +328,7 @@ $CI->load->model('m_room_type');
 								</div>
 								<div class="col-2 mt-4">
 									<a data-toggle="collapse" data-target=".multi-collapse-email" aria-expanded="false" aria-controls="collapse-email1 collapse-email2">
-										<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="25" height="25" viewBox="0 0 256 256" xml:space="preserve">
+										<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="22" height="22" viewBox="0 0 256 256" xml:space="preserve">
 
 											<defs>
 											</defs>
@@ -360,7 +362,7 @@ $CI->load->model('m_room_type');
 								</div>
 								<div class="col-2 mt-4 pl-0">
 									<a data-toggle="collapse" data-target=".multi-collapse-email" aria-expanded="false" aria-controls="collapse-email1 collapse-email2">
-										<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="25" height="25" viewBox="0 0 256 256" xml:space="preserve">
+										<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="22" height="22" viewBox="0 0 256 256" xml:space="preserve">
 
 											<defs>
 											</defs>
@@ -390,7 +392,7 @@ $CI->load->model('m_room_type');
 								</div>
 								<div class="col-2 mt-4">
 									<a data-toggle="collapse" data-target=".multi-collapse-phone" aria-expanded="false" aria-controls="collapse-phone1 collapse-phone2">
-										<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="25" height="25" viewBox="0 0 256 256" xml:space="preserve">
+										<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="22" height="22" viewBox="0 0 256 256" xml:space="preserve">
 
 											<defs>
 											</defs>
@@ -427,7 +429,7 @@ $CI->load->model('m_room_type');
 
 								<div class="col-2 mt-4 pl-0">
 									<a data-toggle="collapse" data-target=".multi-collapse-phone" aria-expanded="false" aria-controls="collapse-phone1 collapse-phone2">
-										<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="25" height="25" viewBox="0 0 256 256" xml:space="preserve">
+										<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="22" height="22" viewBox="0 0 256 256" xml:space="preserve">
 
 											<defs>
 											</defs>
@@ -457,7 +459,7 @@ $CI->load->model('m_room_type');
 								</div>
 								<div class="col-2 mt-4">
 									<a data-toggle="collapse" data-target=".multi-collapse-address" aria-expanded="false" aria-controls="collapse-address1 collapse-address2">
-										<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="25" height="25" viewBox="0 0 256 256" xml:space="preserve">
+										<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="22" height="22" viewBox="0 0 256 256" xml:space="preserve">
 
 											<defs>
 											</defs>
@@ -492,7 +494,7 @@ $CI->load->model('m_room_type');
 								</div>
 								<div class="col-2 mt-4 pl-0">
 									<a data-toggle="collapse" data-target=".multi-collapse-address" aria-expanded="false" aria-controls="collapse-address1 collapse-address2">
-										<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="25" height="25" viewBox="0 0 256 256" xml:space="preserve">
+										<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="22" height="22" viewBox="0 0 256 256" xml:space="preserve">
 
 											<defs>
 											</defs>

@@ -88,7 +88,7 @@ $cancellation_policy = $this->m_project_info->get_property_policy($id_project_in
 		width: auto;
 		height: auto;
 		text-transform: uppercase;
-		line-height: 30px !important;
+		/*line-height: 30px !important;*/
 		color: #fff !important;
 		font-size: 16px !important;
 		background-color: #5392f9 !important;
@@ -98,6 +98,48 @@ $cancellation_policy = $this->m_project_info->get_property_policy($id_project_in
         background-color: #fff !important;
         color: #5392f9 !important; 
 		border-color: #5392f9 !important;
+    }
+	
+	
+	@media (min-width: 768px) {
+		.room-detail-sm-r {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+		}
+		.progressbar {
+			font-size: 14px !important;
+		}
+	}
+	@media (min-width: 769px) and (max-width: 1024px) {
+		.progressbar {
+			font-size: 14px% !important;
+		}
+	}
+	@media (min-width: 1201px) {
+		.progressbar {
+			font-size: 14px !important;
+		}
+	}
+	@media (min-width: 1024px) {
+		.progressbar {
+			font-size: 14px !important;
+		}
+	}
+	@media (min-width: 1025px) {
+        .progressbar {
+            font-size: 14px !important;
+        }
+    }
+	@media (min-width: 1200px) {
+        .progressbar {
+            font-size: 14px !important;
+        }
+    }
+	
+	
+    .progressbar {
+        font-size: 14px !important; 
     }
 </style>
 

@@ -103,7 +103,7 @@ $CI->load->model('m_room_type');
 	}
 
 	.input-payment {
-		height: 40px !important;
+		/*height: 40px !important;*/
 	}
 	.table-payment-his {
 		font-weight: bold;
@@ -123,7 +123,7 @@ $CI->load->model('m_room_type');
 		width: auto;
 		height: auto;
 		text-transform: uppercase;
-		line-height: 30px !important;
+		/*line-height: 30px !important;*/
 		color: #fff !important;
 		font-size: 14px !important;
 		background-color: #5392f9 !important;
@@ -133,6 +133,47 @@ $CI->load->model('m_room_type');
         background-color: #fff !important;
         color: #5392f9 !important; 
 		border-color: #5392f9 !important;
+    }
+	
+	@media (min-width: 768px) {
+		.room-detail-sm-r {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+		}
+		.progressbar {
+			font-size: 14px !important;
+		}
+	}
+	@media (min-width: 769px) and (max-width: 1024px) {
+		.progressbar {
+			font-size: 14px% !important;
+		}
+	}
+	@media (min-width: 1201px) {
+		.progressbar {
+			font-size: 14px !important;
+		}
+	}
+	@media (min-width: 1024px) {
+		.progressbar {
+			font-size: 14px !important;
+		}
+	}
+	@media (min-width: 1025px) {
+        .progressbar {
+            font-size: 14px !important;
+        }
+    }
+	@media (min-width: 1200px) {
+        .progressbar {
+            font-size: 14px !important;
+        }
+    }
+	
+	
+    .progressbar {
+        font-size: 14px !important; 
     }
 </style>
 

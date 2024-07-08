@@ -139,12 +139,12 @@ $CI->load->model('m_room_type');
         width: auto !important;
         height: auto !important;
         text-transform: uppercase;
-        line-height: 30px !important;
+        /*line-height: 30px !important;*/
         font-size: 14px !important;
 		background-color: #fff !important;
 		color: #5392f9 !important; 
 		border: 1px solid #5392f9 !important;
-        padding: 5px 15px;
+        padding: 6px 12px;
         margin: 0 5px;
         border-radius: 4px;
     }
@@ -162,7 +162,7 @@ $CI->load->model('m_room_type');
 		width: auto;
 		height: auto;
 		text-transform: uppercase;
-		line-height: 30px !important;
+		/*line-height: 30px !important;*/
 		color: #fff !important;
 		font-size: 14px !important;
 		background-color: #5392f9 !important;
@@ -216,11 +216,13 @@ $id_project_info = 1;
 
 <div class="main-2 p-2" style="margin-top: 35px;">
 	<div class="container">
+	<!--
 		<div class="row">
 			<div class="col-md-12 price room_type_header">
 				<span style="margin-left: 10px;"><?php echo $this->lang->line('booking_history'); ?></span>
 			</div>
 		</div>
+	-->
 		<div class="row">
 			<div class="col-md-2">
 				<div class="sidenav">

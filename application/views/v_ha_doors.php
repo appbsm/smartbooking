@@ -91,14 +91,16 @@ $check_out_date = date('d-m-Y', strtotime($check_in_date . '+1 day'));
 
 <main class="main-2 " style="margin-top: 40px;">
 	<div class="container">
+		<!--
 		<div class="row">
 			<div class="col-md-12">
 				<div class="col-md-12 price room_type_header"><span style="margin-left: 10px;">Bathroom Status</span></div>
 			</div>
 		</div>
+		-->
 		
 		<div class="row">
-			<div class="col-md-12 mt-4">
+			<div class="col-md-12 mt-0">
 				<table class="table">
 					<tr>
 						<th>No</th>

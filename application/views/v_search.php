@@ -4,6 +4,8 @@ $CI = &get_instance();
 $CI->load->model('m_room_type');
 
 ?>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
 <style>
 	.slideshow {
@@ -130,6 +132,80 @@ $CI->load->model('m_room_type');
 			/* height: 400px; */
 		}
 	}
+	
+	.button__badge {
+		margin-right: 0px;
+		font-size: 0.6em !important;
+		position: absolute;
+		top: -8px !important;
+		right: -4px !important;
+	}
+	
+	.price {
+		/*background-color: #2a2a2e;*/
+		background-color: #5392f9;
+		color: white;
+		text-shadow: 2px 2px 4px #000000;
+	}
+	.btn-adults {
+		border: 1px solid #dee2e6 !important;
+		background-color: unset !important; 
+		color: #000 !important;
+		/*border: 1px solid #5392f9 !important;
+		background-color: #5392f9 !important; 
+		color: #FFF !important;*/
+		padding: 2px !important;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	.border-r-10 {
+		/*border: 1px solid #81BB4A;*/
+		border: 1px solid #ccc;
+		border-radius: 10px;
+	}
+	.btn-backnext {
+		width: auto;
+		height: auto;
+		text-transform: uppercase;
+		line-height: 1.5 !important;
+		color: #fff !important;
+		font-size: 14px !important;
+		background-color: #5392f9 !important;
+		border-color: #5392f9 !important;
+		padding: 6px 12px !important;
+	}
+	.btn-backnext:hover {
+        background-color: #fff !important;
+        color: #5392f9 !important; 
+		border-color: #5392f9 !important;
+
+    }
+	.dropdown-toggle{
+		color: #000 !important;
+		border: 1px solid #ccc;
+		background-color: #fff !important;
+		height: 32px !important;
+	}
+	.dropdown-item.active, .dropdown-item:active {
+		background-color: #5392f9 !important;
+	}
+	.btn-search {
+		width: auto;
+		height: auto;
+		text-transform: uppercase;
+		/*line-height: 30px !important;*/
+		color: #fff !important;
+		font-size: 16px !important;
+		background-color: #5392f9 !important;
+		border-color: #5392f9 !important;
+		height: 32px;
+	}
+	.btn-search:hover {
+        background-color: #fff !important;
+        color: #5392f9 !important; 
+		border-color: #5392f9 !important;
+    }
 </style>
 <link rel="stylesheet" href="<?= site_url() ?>assets/select-picker/css/bootstrap-select.min.css">
 <main class="main-2">
@@ -175,7 +251,7 @@ $CI->load->model('m_room_type');
 					<div class="col-md-12 mb-2 text-left">
 						<label class="ml-1" for="name"><?php echo $lang == "english" ? 'Adult' : 'ผู้เข้าพัก'; ?></label>
 						<div class="dropdown">
-							<button class="btn dropdown-toggle w-100 search_input" style="color: #495057; width: 100%;" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							<button class="btn dropdown-toggle w-100 search_input btn-adults" style="color: #495057; width: 100%;" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 								<span id="div_adult"><?php echo @$adult ? $adult : 2; ?></span> <?php echo $this->lang->line('adults'); ?>, <span id="div_children"><?php echo @$children ? $children : 0; ?></span> <?php echo $this->lang->line('children'); ?>, <span id="div_room"><?php echo $num_of_room ? $num_of_room : 1; ?></span> <?php echo $this->lang->line('rooms'); ?>
 							</button>
 							<div class="dropdown-menu" style="vertical-align: bottom;" aria-labelledby="dropdownMenuButton" style="">
@@ -241,7 +317,7 @@ $CI->load->model('m_room_type');
 				<div class="col-lg-2 col-md-12 col-sm-12 col-xs-12">
 					<div class="col-md-12 text-left">
 						<label for="name">&nbsp;</label>
-						<button id="search" class="form-control search_input btn-default" data-search-type="search_room" style="cursor: pointer; padding: 0 50px 0 50px;"><?php echo $this->lang->line('search'); ?></button>
+						<button id="search" class="form-control search_input btn-default btn-search" data-search-type="search_room" style="cursor: pointer; padding: 0 50px 0 50px;"><?php echo $this->lang->line('search'); ?></button>
 					</div>
 				</div>
 			</div>

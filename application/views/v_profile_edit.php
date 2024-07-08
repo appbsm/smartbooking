@@ -124,6 +124,22 @@ $CI->load->model('m_room_type');
 		color: white;
 		text-shadow: 2px 2px 4px #000000;
 	}
+	.btn-save {
+		width: auto;
+		height: auto;
+		text-transform: uppercase;
+		/*line-height: 30px !important;*/
+		color: #fff !important;
+		font-size: 14px !important;
+		background-color: #5392f9 !important;
+		border-color: #5392f9 !important;
+		padding: 6px 12px;
+	}
+	.btn-save:hover {
+        background-color: #fff !important;
+        color: #5392f9 !important; 
+		border-color: #5392f9 !important;
+    }
 </style>
 
 <?php 
@@ -133,9 +149,12 @@ $CI->load->model('m_room_type');
 
 <div class="main-2">
 	<div class="container" >
+		<!--
   		<div class="row" id="profile">
   			<div class="col-md-12 price room_type_header"><span style="margin-left: 10px;"><?php echo $this->lang->line('profile');?></span></div>
   		</div>
+		-->
+		
 		<div class="row">
 			<div class="col-md-2">
 				<div class="sidenav">

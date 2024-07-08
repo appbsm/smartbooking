@@ -87,6 +87,7 @@ if ($id_guest != '') {
       /* font-family: arial; */
     }
 	
+	
 	.btn-sign-in:hover {
         background-color: #839287 !important; 
         color: #fff !important; 
@@ -127,6 +128,7 @@ if ($id_guest != '') {
         cursor: pointer;
         font-size: 16px;
         transition: background-color 0.3s;
+		padding: 4px 8px !important;
 	}
 	.btn_sign_in:hover {
         background-color: #5392f9b3 !important;
@@ -216,9 +218,17 @@ if ($id_guest != '') {
 					<?php echo $lang == "english" ? 'Facilities & Amenities' : 'สิ่งอำนวยความสะดวก'; ?>
 				</a>
             </li>
+			<!--
 			<li class="nav-item" id="nav_contactus">
                 <a class="nav-link" href="http://192.168.20.22/smartbooking_front_test/nearby_locations.php" target="_blank">
 					<?php echo $lang == "english" ? 'Nearby Locations' : 'สถานที่ใกล้เคียง'; ?>
+				</a>
+            </li>
+			-->
+			<li class="nav-item" id="nav_contactus">
+                <a class="nav-link" href="http://192.168.20.22/smartbooking_front_test/conditions_policies.php" target="_blank">
+					<?php echo $lang == "english" ? 'Conditions & Policies' : 'เงื่อนไขและข้อกำหนด'; ?>
+				</a>
 				</a>
             </li>
 			<li class="nav-item" id="nav_contactus">

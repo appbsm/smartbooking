@@ -132,8 +132,8 @@ $CI->load->model('m_room_type');
 		border-radius: 10px;
 	}
 	tr > td {
-		line-height: 28px;
-		padding: 5px;
+		/*line-height: 28px;
+		padding: 5px;*/
 	}
 </style>
 
@@ -144,9 +144,12 @@ $CI->load->model('m_room_type');
 
 <div class="main-2 p-2" style="margin-top: 35px;">
 	<div class="container" >
+		<!--
   		<div class="row" id="profile">
   			<div class="col-md-12 price room_type_header"><span style="margin-left: 10px;"><?php echo $this->lang->line('profile');?></span></div>
   		</div>
+		-->
+		
 		<div class="row">
 			<div class="col-md-2">
 				<div class="sidenav">

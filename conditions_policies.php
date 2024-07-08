@@ -977,13 +977,9 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
 <div class="container mt-5">
 	<div class="row">
 		<div class="col-md-12 ml-2 text-center mt-4">
-			<!--<h4 style="text-align: center; padding-bottom: 15px;" id="nav_packagep_promotions">
-				<a id="nearby_locations" href="javascript:;" class="tx-title-header">
-					Facilities &amp; Amenities and Nearby Locations				</a>
-			</h4>-->
 			<h4 style="text-align: center; padding-bottom: 15px;" id="nav_packagep_promotions">
 				<a id="nearby_locations" href="javascript:;" class="tx-title-header">
-					Facilities &amp; Amenities 			</a>
+					Facilities &amp; Amenities and Nearby Locations				</a>
 			</h4>
 		</div>
 	</div>

@@ -151,6 +151,7 @@ page[size="A4"][layout="portrait"] {
 
 
   <div class="container-fluid " >
+	<!--
   	<div class="row">
   		<div class="col-md-12 price room_type_header m-0" style="text-align: center; margin-top: 40px !important;">
 			<h4>
@@ -158,13 +159,14 @@ page[size="A4"][layout="portrait"] {
 			</h4>
 		</div>
   	</div>
+	-->
   	<div class="row"> 
   		
   			
   		<page size="A4">
 			
 			<div class="page_content">
-				<div class="row">
+				<div class="row" style="margin-top: 30px;">
 					<div class="col-md-12 message" style="margin: 20px; text-align: center; font-size: 1.1em; line-height: 20px;">
 			  			<p style="font-size: 1.1em; font-weight: 700; color: #000;"><?php echo $this->lang->line('thank_you_payment');?></p>
 			  			

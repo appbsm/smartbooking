@@ -81,8 +81,8 @@ $check_out_date = date('d-m-Y', strtotime($check_in_date . '+1 day'));
 		right: -4px !important;
 	}
 	.form-control-ckinout {
-		padding: 1.165rem .75rem !important;
-		height: 40px !important;
+		/*padding: 1.165rem .75rem !important;*/
+		height: 18px !important;
 	}
 	.price {
 		/*background-color: #2a2a2e;*/
@@ -91,10 +91,16 @@ $check_out_date = date('d-m-Y', strtotime($check_in_date . '+1 day'));
 		text-shadow: 2px 2px 4px #000000;
 	}
 	.btn-adults {
-		height: 40px !important; 
-		border: 1px solid #5392f9 !important;
+		border: 1px solid #dee2e6 !important;
 		background-color: unset !important; 
 		color: #000 !important;
+		/*border: 1px solid #5392f9 !important;
+		background-color: #5392f9 !important; 
+		color: #FFF !important;*/
+		padding: 2px !important;
+		display: flex;
+		justify-content: center;
+		align-items: center;
 	}
 	.border-r-10 {
 		/*border: 1px solid #81BB4A;*/
@@ -105,16 +111,18 @@ $check_out_date = date('d-m-Y', strtotime($check_in_date . '+1 day'));
 		width: auto;
 		height: auto;
 		text-transform: uppercase;
-		line-height: 24px !important;
+		line-height: 1.5 !important;
 		color: #fff !important;
-		font-size: 16px !important;
+		font-size: 14px !important;
 		background-color: #5392f9 !important;
 		border-color: #5392f9 !important;
+		padding: 6px 12px !important;
 	}
 	.btn-backnext:hover {
         background-color: #fff !important;
         color: #5392f9 !important; 
 		border-color: #5392f9 !important;
+
     }
 	.fa-xl {
 		font-size: 1em;
@@ -160,6 +168,7 @@ $r_date = 0;
 
 <main class="main-2">
 	<div class="container">
+	<!--
 		<div class="row">
 			<div class="col-md-12">
 				<div class="col-md-12 price room_type_header mt-3" style="margin-top: 40px !important;">
@@ -168,19 +177,21 @@ $r_date = 0;
 			</div>
 
 		</div>
-		<div class="row" style=" padding: 20px;">
+		-->
+		
+		<div class="row" style=" padding: 50px 0;">
 			<!-- <div class="col-md-12"> -->
 			<!-- <div style="width: 100%; padding: 10px;"> -->
 
 			<div class="col-md-4">
 				<!-- <div class="group"> -->
 				<label for="name" style="font-weight: 500;" class="mb-0"><?php echo $this->lang->line('check_in_date'); ?></label>
-				<input type='text' class="form-control datepicker search_input form-control-ckinout" name="check_in_date" id="check_in_date" value="<?= $check_in_date; ?>" />
+				<input type='text' class="form-control datepicker search_input " name="check_in_date" id="check_in_date" value="<?= $check_in_date; ?>" />
 				<!-- </div> -->
 			</div>
 			<div class="col-md-4">
 				<label for="name" style="font-weight: 500;" class="mb-0"><?php echo $this->lang->line('check_out_date'); ?></label>
-				<input type='text' class="form-control datepicker search_input form-control-ckinout" name="check_out_date" id="check_out_date" value="<?= $check_out_date; ?>" />
+				<input type='text' class="form-control datepicker search_input " name="check_out_date" id="check_out_date" value="<?= $check_out_date; ?>" />
 			</div>
 
 			<div class="col-md-4">

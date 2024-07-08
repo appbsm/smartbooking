@@ -78,9 +78,9 @@ $packages = array();
 		width: auto;
 		height: auto;
 		text-transform: uppercase;
-		line-height: 24px !important;
+		/*line-height: 24px !important;*/
 		color: #fff !important;
-		font-size: 16px !important;
+		font-size: 14px !important;
 		background-color: #5392f9 !important;
 		border-color: #5392f9 !important;
 	}
@@ -90,7 +90,7 @@ $packages = array();
 		border-color: #5392f9 !important;
     }
 	.input-guest-info {
-		height: 40px !important;
+		/*height: 40px !important;*/
 	}
 	
 	@media (min-width: 768px) {
@@ -99,7 +99,41 @@ $packages = array();
 			flex-direction: column;
 			justify-content: center;
 		}
+		.progressbar {
+			font-size: 14px !important;
+		}
 	}
+	@media (min-width: 769px) and (max-width: 1024px) {
+		.progressbar {
+			font-size: 14px% !important;
+		}
+	}
+	@media (min-width: 1201px) {
+		.progressbar {
+			font-size: 14px !important;
+		}
+	}
+	@media (min-width: 1024px) {
+		.progressbar {
+			font-size: 14px !important;
+		}
+	}
+	@media (min-width: 1025px) {
+        .progressbar {
+            font-size: 14px !important;
+        }
+    }
+	@media (min-width: 1200px) {
+        .progressbar {
+            font-size: 14px !important;
+        }
+    }
+	
+	
+    .progressbar {
+        font-size: 14px !important; 
+    }
+  
 	
 </style>
 
