@@ -165,15 +165,14 @@ $CI->load->model('m_room_type');
 		margin: 0 auto;
 	  }
 	  .image-wrapper img {
-<<<<<<< HEAD
 	  	max-width: 100%;
 	  	max-height: 100%;
 	  }
-=======
-	  max-width: 100%;
-	  max-height: 100%;
+	  .card-roomtype {
+			width: unset !important;
+			max-width: 100%;
+			height: 100%;
 		}
->>>>>>> origin/main
 	}
 	@media screen and (max-width: 777px) {
 	  .card:not(:first-child) {
@@ -445,6 +444,35 @@ $CI->load->model('m_room_type');
 		color: #fff !important;
 		border: #5392f9 !important;
 	}
+	
+		
+	.btn_stepper {
+		background-color: #5392f9 !important;
+		border: none;
+		border-radius: 50%;
+		width: 30px;
+		height: 30px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.btn_stepper:focus {
+		outline: none;
+	}
+
+	.input_number {
+		text-align: center !important;
+		border: 1px solid #CCC;
+		background-color: white;
+		width: 30%;
+		margin: 0 8px;
+	}
+
+	.input_number:focus {
+		outline: none;
+	}
 
 
 
@@ -636,17 +664,17 @@ $CI->load->model('m_room_type');
 										<span id="div_room">&nbsp;1</span>
 									</div> <?php echo $this->lang->line('rooms'); ?>
 								</button>
-								<div class="dropdown-menu" style="vertical-align: bottom;" aria-labelledby="dropdownMenuButton" style="">
+								<div class="dropdown-menu pb-0" style="vertical-align: bottom;" aria-labelledby="dropdownMenuButton" style="">
 									<div class="stepper">
 										<div style="display: flex; justify-content: center;"><?php echo $this->lang->line('adult'); ?></div>
-										<div style="display: flex; justify-content: center; background-color: white; ">
+										<div style="display: flex; justify-content: center; ">
 											<button type="button" class="btn_stepper " id="decrement-adult" onClick="stepper(this);"> - </button>
 											<input class="input_number" type="number" min="0" max="100" step="1" value="2" name="adult" id="adult" readonly>
 											<button type="button" class="btn_stepper " id="increment-adult" onClick="stepper(this);"> + </button>
 										</div>
-										<div class="rounded hr3 mt-2 mb-2"></div>
+										<div class="rounded hr3 mt-1 mb-2"></div>
 										<div style="display: flex; justify-content: center;"><?php echo $this->lang->line('children'); ?></div>
-										<div style="display: flex; justify-content: center;">
+										<div style="display: flex; justify-content: center; ">
 											<button type="button" class="btn_stepper " id="decrement-children" onClick="stepper(this);"> - </button>
 											<input class="input_number" type="number" min="0" max="100" step="1" value="0" name="children" id="children" readonly>
 											<button type="button" class="btn_stepper " id="increment-children" onClick="stepper(this);"> + </button>
@@ -661,13 +689,14 @@ $CI->load->model('m_room_type');
 										</div> <!-- Kids Age -->
 										<div class="rounded hr3 mt-2"></div>
 
-										<div style="display: flex; justify-content: center;"><?php echo $this->lang->line('rooms'); ?></div>
-										<div style="display: flex; justify-content: center; background-color: white; box-shadow: 0 20px 30px rgba(0,0,0,0.1)">
+										<div style="display: flex; justify-content: center; "><?php echo $this->lang->line('rooms'); ?></div>
+										<!--<div style="display: flex; justify-content: center; background-color: white; box-shadow: 0 20px 30px rgba(0,0,0,0.1)">-->
+										<div style="display: flex; justify-content: center; ">
 											<button type="button" class="btn_stepper " id="decrement-room" onClick="stepper(this);"> - </button>
 											<input class="input_number" type="number" min="0" max="100" step="1" value="1" name="room" id="room" readonly>
 											<button type="button" class="btn_stepper " id="increment-room" onClick="stepper(this);"> + </button>
 										</div>
-										<div class="rounded hr3 mt-2" style="padding: 5px; font-size: 0.8em;"><?php echo $this->lang->line('notes'); ?>:
+										<div class="rounded hr3 mt-2" style="padding: 8px; font-size: 0.8em; backdrop-filter: blur(10px); background-color: rgb(189 219 251 / 45%) !important;"><?php echo $this->lang->line('notes'); ?>:
 											<?php if ($lang == 'english') { ?>
 												Please be informed that the maximum age for children is <?php echo app_settings('max_children_age'); ?>
 												years old. Kindly add children aged more than <?php echo app_settings('max_children_age'); ?> years as adult.
@@ -676,6 +705,7 @@ $CI->load->model('m_room_type');
 												เด็กที่จะเข้าพักในโครงการจะต้องเลือกเข้าพักเป็นผู้ใหญ่เท่านั้น
 											<?php } ?>
 										</div>
+										
 									</div>
 								</div>
 							</div>
@@ -838,17 +868,10 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
 					<?php //foreach ($packages as $package) {
 					foreach ($chunk as $package) { ?>
 					<!-- <div class="row col-lg-4 col-md-6 col-sm-12"> -->
-<<<<<<< HEAD
 						<div class="card col-lg-4 p-0">
 						  <div class="image-wrapper" >
 						  	<!-- class="package-img" -->
 							<img src="<?php echo share_folder_path() . $package->package_photo_url; ?>" alt="..."  >
-=======
-						<div class="card col-lg-4">
-						  <div class="image-wrapper" >
-						  	<!-- class="package-img" -->
-							<img  src="<?php echo share_folder_path() . $package->package_photo_url; ?>" alt="..."  >
->>>>>>> origin/main
 						  </div>
 						  <div class="card-body">
 							<h5 class="package-tx-title"><?php echo ($lang == 'english') ? $package->project_name_en : $package->project_name_th; ?></h5>
@@ -1428,7 +1451,7 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
 <!-- -------------------------------End New Room Types------------------------------------- -->
 
 <!-- Room Types -->
-
+<!-- 
 <div class="container mt-1">
 	<div class="header">
 		<div class="pl-4 text-center mt-4 mb-4">
@@ -1494,7 +1517,6 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
 							</div>
 							<div class="row mx-auto mt-2">
 								<div class="col-3 text-left icon_container">
-									<!-- <span class="icon-content"><img class="icon" src="<?php echo share_folder_path(); ?>images/icons/icons8-bedroom-50.png" height="18"></span> -->
 									<span class="icon-content"><object data="<?php echo share_folder_path(); ?>images/icons/icons8-bedroom-50.png" height="18"></object></span>
 								</div>
 								<div class="col-9 text-left icon_container">
@@ -1568,7 +1590,7 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
 		} ?>
 
 	</div>
-</div>
+</div> -->
 
 <form name="frm_room" id="frm_room" method="post" action="<?php echo site_url('room_details'); ?>">
 	<input type="hidden" name="project_id" id="project_id" value="">
@@ -1668,166 +1690,6 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
 	</div>
 </div>
 
-<!-- facilities & amenities and nearby location-->
-<!--
-<div class="container mt-5">
-	<div class="row">
-		<div class="col-md-12 ml-2 text-center mt-4">
-			<h4 style="text-align: center; padding-bottom: 15px;" id="nav_packagep_promotions">
-				<a id="nearby_locations" href="javascript:;" class="tx-title-header">
-					<?php echo $lang == "english" ? 'Facilities & Amenities and Nearby Locations' : 'สิ่งอำนวยความสะดวก และ สถานที่ใกล้เคียง'; ?>
-				</a>
-			</h4>
-		</div>
-	</div>
-	<div class="row mb-0" id="nav_roomstype">
-		<div class="col-md-12 amenities-nearby-column">
-			<div class="col-md-8">
-			<div class="section_header "id="facilities_amenities">
-				<h6 style="font-weight: 600;">รายละเอียดโครงการ</h6>
-			</div>		
-			<div class="row mb-2">	
-				<div class="container-fluid mb-4">		
-					<div class="col-md-12">			
-		    			<span>เอส เอ็ม รีสอร์ท โชว์รูม เขาใหญ่</span>
-		    		</div>
-		    	</div>
-			</div>
-	
-			<div class="section_header "><u>จุดเด่นของโครงการ</u></div>
-			<div class="row mb-2">			
-				<div class="container-fluid mb-4">
-					<div class="col-md-12">		
-						<div class="h_container" style="display: flex; flex-direction: row; ">	
-		    				<div style="bottom: 0; padding-right: 50px;">
-								&nbsp;<img src="https://sharefolder.buildersmart.com/sms_booking/upload/project_highlight/1_63bb731cd4018.png" width="18">
-								<span class="highlights_desc" style="font-size: 1.1em;">ไวไฟ</span>
-		    				</div>
-		    				<div style="bottom: 0; padding-right: 50px;">
-								&nbsp;<img src="https://sharefolder.buildersmart.com/sms_booking/upload/project_highlight/1_63bb7dd7c487e.png" width="18">
-								<span class="highlights_desc" style="font-size: 1.1em;">วิวภูเขา</span>
-		    				</div>
-		    			</div>		
-		    		</div>
-				</div>
-			</div>
-			
-			<div class="section_header "><u>สิ่งอำนวยความสะดวกของโครงการ</u></div>
-				<div class="row">			
-					<div class="container-fluid mb-4">
-						<div class="col-md-12">	
-							<div class="row" id="pj-con">	
-								<div class="col-md-6" style="bottom: 0; ">
-								
-								<input type="checkbox" checked="checked" style="vertical-align:middle; pointer-events:none;">
-								&nbsp;<img src="https://sharefolder.buildersmart.com/sms_booking/upload/facility_icon/24_63bba1a28104f.png" width="18">
-								<span class="highlights_desc" style="font-size: 1.1em;"> สวน</span>
-								</div>
-												<div class="col-md-6" style="bottom: 0; ">
-								
-								<input type="checkbox" checked="checked" style="vertical-align:middle; pointer-events:none;">
-								&nbsp;<img src="https://sharefolder.buildersmart.com/sms_booking/upload/facility_icon/2_63bb9f9e65dcb.png" width="18">
-								<span class="highlights_desc" style="font-size: 1.1em;"> ไวไฟฟรี</span>
-								</div>
-												<div class="col-md-6" style="bottom: 0; ">
-								
-								<input type="checkbox" checked="checked" style="vertical-align:middle; pointer-events:none;">
-								&nbsp;<img src="https://sharefolder.buildersmart.com/sms_booking/upload/facility_icon/21_63bba16c5dc37.png" width="18">
-								<span class="highlights_desc" style="font-size: 1.1em;"> บริการทำความสะอาดรายวัน</span>
-								</div>
-												<div class="col-md-6" style="bottom: 0; ">
-								
-								<input type="checkbox" checked="checked" style="vertical-align:middle; pointer-events:none;">
-								&nbsp;<img src="https://sharefolder.buildersmart.com/sms_booking/upload/facility_icon/1_641d577616c9f.png" width="18">
-								<span class="highlights_desc" style="font-size: 1.1em;"> วิวภูเขา</span>
-								</div>
-							
-							</div>	
-						</div>
-					</div>
-				</div>
-	
-				<div class="section_header "><u>เงื่อนไขและข้อกำหนดในการเข้าพัก</u></div>
-					<div class="row">			
-						<div class="container-fluid mb-4">
-							<div class="col-md-12">			
-								<span>นโยบายการยกเลิกการจอง</span>
-								<ol>		
-									<li>การโอนเงินต้องเสร็จสิ้นภายใน 2 ชั่วโมงหลังการจอง มิฉะนั้นระบบจะยกเลิกการจองโดยอัตโนมัติ</li>			
-								</ol>
-								<span>นโยบายโชว์รูม</span>    			
-								<ol>
-									<li>เวลาเช็คอิน 14.00 น. เวลาเช็คเอ้าท์ 12.00 น. หากเข้าพักก่อน หรือ เช็คเอ้าท์เกิน ชั่วโมงละ 500 บาท ตามเงื่อนไขโชว์รูม</li>				
-									<li>ไม่อนุญาตให้นำสัตว์เลี้ยงเข้าพักภายในบริเวณโชว์รูม</li>					
-									<li>ไม่อนุญาตให้ประกอบอาหารภายในบริเวณที่พัก ยกเว้นเฉพาะพื้นที่ที่ทางโชว์รูมจัดไว้ให้เท่านั้น</li>					
-									<li>ขอความกรุณางดใช้เสียง ตั้งแต่เวลา 22.00 น. - 06.00 น.</li>					
-									<li>ในกรณีทำให้ทรัพย์สินของโชว์รูมเสียหายให้ชดใช้คืนตามมูลค่าของทรัพย์สินนั้น</li>					
-									<li>งดสูบบุหรี่ในห้องพัก และบริเวณโชว์รูม ฝ่าฝืนปรับ 2,000 บาท (ลูกค้าสามารถสูบบุหรี่ในพื้นที่ที่โชว์รูมจัดไว้ให้เท่านั้น)</li>					
-									<li>งดจุดพลุ, ประทัด, ดอกไม้ไฟ หรือ โคมลอย ในบริเวณโชว์รูม ฝ่าฝืนปรับ 2,000 บาท</li>			
-								</ol>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-4">
-					<div class="section_header ">
-						<h6 style="font-weight: 600;">สถานที่ใกล้เคียง</h6>
-					</div>
-					<div class="row mb4">
-						<div class="col-md-12">		
-							<div class="table-responsive">
-								<table class="table table-bordered" style="border-color: #ccc;">
-									<tbody>
-										<tr style="text-align: center;">
-											<th>ชื่อสถานที่</th>
-											<th>ระยะทาง(km)</th>
-										</tr>
-										<tr>
-											<td>ครัวอิ่มแปล้</td>
-											<td style="text-align: center;">0.07</td>
-										</tr>
-										<tr>
-											<td>The Pandora Camp Khaoyai</td>
-											<td style="text-align: center;">10</td>
-										</tr>
-										<tr>
-											<td>Toscana Valley</td>
-											<td style="text-align: center;">10</td>
-										</tr>
-										<tr>
-											<td>เขาใหญ่อาร์ตมิวเซียม</td>
-											<td style="text-align: center;">15</td>
-										</tr>
-										<tr>
-											<td>My Ozone Animal Club</td>
-											<td style="text-align: center;">25</td>
-										</tr>
-										<tr>
-											<td>Scenical World </td>
-											<td style="text-align: center;">30</td>
-										</tr>
-										<tr>
-											<td>Khao Yai National Park</td>
-											<td style="text-align: center;">30</td>
-										</tr>
-									</tbody>
-								</table>  
-							</div>		
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	
-	<div class="row text-center mb-0" id="nav_roomstype">
-		<div class="col-md-12">
-			<div id="google-map">
-				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5462.972307432571!2d101.55065412783209!3d14.490156270739496!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x311c3b5927861817%3A0x4ef8dd372f4d0716!2sSMS%20Showroom!5e0!3m2!1sth!2sth!4v1683184985267!5m2!1sth!2sth" width=100% height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-			</div>
-		</div>
-	</div>
-</div>
--->
 <!-- facilities & amenities and nearby location -->
 
 <!-- <script src="//code.jquery.com/jquery.js"></script> -->
