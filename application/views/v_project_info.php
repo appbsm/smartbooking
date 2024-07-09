@@ -4,6 +4,8 @@ $CI =& get_instance();
 $CI->load->model('m_room_type');
 $CI->load->model('m_project_info');
 ?>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
 <style>
 .nav-link.active {
@@ -25,7 +27,50 @@ $CI->load->model('m_project_info');
   right: 10px; 
   bottom: 10px; 
 }
-
+.btn-add_to_cart {
+		width: auto;
+		height: auto;
+		text-transform: uppercase;
+		line-height: 24px !important;
+		color: #fff !important;
+		font-size: small !important;
+		background-color: #5392f9 !important;
+		border-color: #5392f9 !important;
+	}
+	.btn-add_to_cart:hover {
+        background-color: #fff !important;
+        color: #5392f9 !important; 
+		border-color: #5392f9 !important;
+    }
+	.btn-book_now {
+		width: auto;
+		height: auto;
+		text-transform: uppercase;
+		line-height: 24px !important;
+		color: #fff !important;
+		font-size: small !important;
+		background-color: #5392f9 !important;
+		border-color: #5392f9 !important;
+	}
+	.btn-book_now:hover {
+        background-color: #fff !important;
+        color: #5392f9 !important; 
+		border-color: #5392f9 !important;
+    }
+	.button__badge {
+		margin-right: 0px;
+		font-size: 0.6em !important;
+		position: absolute;
+		top: -8px !important;
+		right: -4px !important;
+	}
+	
+	.price {
+		/*background-color: #2a2a2e;*/
+		background-color: #5392f9;
+		color: white;
+		text-shadow: 2px 2px 4px #000000;
+	}
 </style>
 
 <main class="main-2">
@@ -253,8 +298,8 @@ $CI->load->model('m_project_info');
 				</div>
 				<div class="row">
 					<div class="col-md-12 ml-2 text-right">
-					<button class="btn button-primary-w add_to_cart" data-id="<?php echo $rt->id_room_type;?>" data-price="<?php echo $rt->default_rate;?>" id="" style="margin-right: 5px;"><?php echo $this->lang->line('add_to_cart');?></button>
-						<a href="javascript:;" data-roomtype="<?php echo $rt->id_room_type;?>" class="btn button-primary book_now" id="" style="margin-left: 5px;"><?php echo $this->lang->line('book_now');?></a>
+					<button class="btn button-primary-w add_to_cart btn-add_to_cart" data-id="<?php echo $rt->id_room_type;?>" data-price="<?php echo $rt->default_rate;?>" id="" style="margin-right: 5px;"><?php echo $this->lang->line('add_to_cart');?></button>
+						<a href="javascript:;" data-roomtype="<?php echo $rt->id_room_type;?>" class="btn button-primary book_now  btn-book_now" id="" style="margin-left: 5px;"><?php echo $this->lang->line('book_now');?></a>
 					</div>
 				</div>
 			</div >
@@ -348,7 +393,7 @@ $CI->load->model('m_project_info');
 			<div class="row mb4">
 				<div class="col-md-12">		
 					<div class="table-responsive">
-						<table class="table table-bordered" >
+						<table class="table table-bordered" style="border-color: #dee2e6;">
 							<tr>
 								<th><?php echo $this->lang->line('location');?></th>
 								<th><?php echo $this->lang->line('distance');?>(km)</th>

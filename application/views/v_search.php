@@ -181,12 +181,19 @@ $CI->load->model('m_room_type');
 		border-color: #5392f9 !important;
 
     }
-	.dropdown-toggle{
+	.bootstrap-select>.dropdown-toggle {
 		color: #000 !important;
 		border: 1px solid #ccc;
 		background-color: #fff !important;
 		height: 32px !important;
 	}
+
+	/*.dropdown-toggle{
+		color: #000 !important;
+		border: 1px solid #ccc;
+		background-color: #fff !important;
+		height: 32px !important;
+	}*/
 	.dropdown-item.active, .dropdown-item:active {
 		background-color: #5392f9 !important;
 	}
@@ -206,6 +213,68 @@ $CI->load->model('m_room_type');
         color: #5392f9 !important; 
 		border-color: #5392f9 !important;
     }
+	.btn-projinfo {
+		width: auto;
+		height: auto;
+		text-transform: uppercase;
+		/*line-height: 30px !important;*/
+		color: #fff !important;
+		font-size: 16px !important;
+		background-color: #5392f9 !important;
+		border-color: #5392f9 !important;
+		/*height: 32px;*/
+	}
+	.btn-projinfo:hover {
+        background-color: #fff !important;
+        color: #5392f9 !important; 
+		border-color: #5392f9 !important;
+    }
+	.btn-add_to_cart {
+		width: auto;
+		height: auto;
+		text-transform: uppercase;
+		line-height: 24px !important;
+		color: #fff !important;
+		font-size: small !important;
+		background-color: #5392f9 !important;
+		border-color: #5392f9 !important;
+	}
+	.btn-add_to_cart:hover {
+        background-color: #fff !important;
+        color: #5392f9 !important; 
+		border-color: #5392f9 !important;
+    }
+	.btn-book_now {
+		width: auto;
+		height: auto;
+		text-transform: uppercase;
+		line-height: 24px !important;
+		color: #fff !important;
+		font-size: small !important;
+		background-color: #5392f9 !important;
+		border-color: #5392f9 !important;
+	}
+	.btn-book_now:hover {
+        background-color: #fff !important;
+        color: #5392f9 !important; 
+		border-color: #5392f9 !important;
+    }
+	
+	.button__badge {
+		margin-right: 0px;
+		font-size: 0.6em !important;
+		position: absolute;
+		top: -8px !important;
+		right: -4px !important;
+	}
+	
+	.price {
+		/*background-color: #2a2a2e;*/
+		background-color: #5392f9;
+		color: white;
+		text-shadow: 2px 2px 4px #000000;
+	}
+	
 </style>
 <link rel="stylesheet" href="<?= site_url() ?>assets/select-picker/css/bootstrap-select.min.css">
 <main class="main-2">
@@ -365,7 +434,7 @@ $CI->load->model('m_room_type');
 						<h5><?php echo $lang == ('english') ? $project_details->project_name_en : $project_details->project_name_th; ?></h5>
 					</div>
 					<div class="col-md-6 text-right">
-						<a href="<?php echo site_url('project_info'); ?>" class="btn" id=""><?php echo $this->lang->line('project_info_details'); ?></a>
+						<a href="<?php echo site_url('project_info'); ?>" class="btn btn-projinfo" id=""><?php echo $this->lang->line('project_info_details'); ?></a>
 					</div>
 				</div>
 
@@ -518,8 +587,8 @@ $CI->load->model('m_room_type');
 							</div>
 							<div class="footer">
 								<div class=" ml-2 text-right">
-									<button class="btn button-primary-w add_to_cart" data-id="<?php echo $rt->id_room_type; ?>" data-price="<?php echo $rt->default_rate; ?>" id="" style="margin-right: 5px;"><?php echo $this->lang->line('add_to_cart'); ?></button>
-									<a href="javascript:;" data-roomtype="<?php echo $rt->id_room_type; ?>" class="btn button-primary book_now" id="" style="margin-left: 5px;"><?php echo $this->lang->line('book_now'); ?></a>
+									<button class="btn button-primary-w add_to_cart btn-add_to_cart" data-id="<?php echo $rt->id_room_type; ?>" data-price="<?php echo $rt->default_rate; ?>" id="" style="margin-right: 5px;"><?php echo $this->lang->line('add_to_cart'); ?></button>
+									<a href="javascript:;" data-roomtype="<?php echo $rt->id_room_type; ?>" class="btn button-primary book_now btn-book_now" id="" style="margin-left: 5px;"><?php echo $this->lang->line('book_now'); ?></a>
 								</div>
 							</div>
 
