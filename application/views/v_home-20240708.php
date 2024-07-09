@@ -802,7 +802,6 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
 		<!-- Descripttion -->
 </div>
 
-<?php if (sizeof($packages) > 0) { ?>
 <!-- PROMOTION & PACKAGE -->
 <div class="slider-wrapper slider1-wrapper" style="padding-top: 30px;">
 	<div class="container">
@@ -813,66 +812,153 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
 						<?php echo $lang == "english" ? 'Package & Promotions' : 'แพ็คเกจและโปรโมชั่น'; ?>
 					</a>
 				</h4>
-
 				<div id="carouselExampleControls-Package" class="carousel slide" data-bs-ride="carousel">
-
-				  <?php 
-                        $chunks = array_chunk($packages, 3);
-                        foreach ($chunks as $index => $chunk) { 
-                        ?>
 				  <div class="carousel-inner-packgage">
-					<!-- <div class="carousel-item active"> -->
-					<div class="carousel-item <?php echo $index === 0 ? 'active' : ''; ?>">
+					<div class="carousel-item active">
 					  <div class="cards-wrapper">
-					<?php //foreach ($packages as $package) {
-					foreach ($chunk as $package) { ?>
-					<!-- <div class="row col-lg-4 col-md-6 col-sm-12"> -->
-						<div class="card ">
-							<!-- class="image-wrapper" -->
-						  <div class="image-wrapper" >
-							<!-- <img class="package-img" src="https://sharefolder.buildersmart.com/sms_booking/upload/package_photo/8_648ad3a488cab.jpg" alt="..."> -->
-
-							<img class="package-img" src="<?php echo share_folder_path() . $package->package_photo_url; ?>" alt="..."  >
-				
+						<div class="card">
+						  <div class="image-wrapper">
+							<img class="package-img" src="https://sharefolder.buildersmart.com/sms_booking/upload/package_photo/8_648ad3a488cab.jpg" alt="...">
 						  </div>
 						  <div class="card-body">
-							<h5 class="package-tx-title"><?php echo ($lang == 'english') ? $package->project_name_en : $package->project_name_th; ?></h5>
-							<p class="package-tx-sub"><?php echo $package->name; ?></p>
-							<!-- <p class="package-tx-line mt-2">
-							THB19,800</p> -->
-							<p class="package-tx">
-								<?php echo ($lang == 'english') ? 'Price' : 'ราคา'; ?> <?php echo number_format($package->price); ?> <?php echo ($lang == 'english') ? 'Baht' : 'บาท'; ?>
-							</p>
+							<h5 class="package-tx-title">SM Resort Showroom @ Khaoyai</h5>
+							<p class="package-tx-sub">Promotion package rent out all rooms for @24 Persons (MAX)</p>
+							<p class="package-tx-line mt-2">THB19,800</p>
+							<p class="package-tx">THB19,300</p>
 							<p class="package-period-tt mt-2">
 								<span>Promo period</span>
 								<!--<span style="float: right;">Min. transaction</span>-->
 							</p>
 							<p class="package-period">
-								<i class="far fa-calendar"></i> &nbsp;<span>
-								<!-- 01 AUG 2023 - 31 DEC 2024 -->
-								<?php  $start_date = date('d M Y', strtotime($package->start_date));
-										$end_date = date('d M Y', strtotime($package->end_date)); 
-        								echo $start_date . ' - ' . $end_date; 
-        						?>
-								</span>
+								<i class="far fa-calendar"></i> &nbsp;<span>01 AUG 2023 - 31 DEC 2024</span>
 								<!--<span style="float: right;">THB19,800</span>-->
 							</p>
 							<div class="discount">
 								<p class="discount-title">Discount</p>
 								<p class="discount-no">10%</p>
 							</div>
-							<a href="<?php echo site_url('package/package_details') . '/' . $package->id_package; ?>" class="btn mt-2 btn-more" style="float: right;"><?php echo ($lang == 'english') ? 'Read More' : 'อ่านเพิ่มเติม'; ?></a>
-
+							<a href="#" class="btn mt-2 btn-more" style="float: right;">Read More</a>
 						  </div>
 						</div>
-					<!-- </div> -->
-					<?php } ?>	
+						<div class="card">
+						  <div class="image-wrapper">
+							<img class="package-img" src="https://sharefolder.buildersmart.com/sms_booking/upload/package_photo/8_648ad3a488cab.jpg" alt="...">
+						  </div>
+						  <div class="card-body">
+							<h5 class="package-tx-title">SM Resort Showroom @ Khaoyai</h5>
+							<p class="package-tx-sub">Promotion package rent out all rooms for @24 Persons (MAX)</p>
+							<p class="package-tx-line mt-2">THB19,800</p>
+							<p class="package-tx">THB19,300</p>
+							<p class="package-period-tt mt-2">
+								<span>Promo period</span>
+							</p>
+							<p class="package-period">
+								<i class="far fa-calendar"></i> &nbsp;<span>01 AUG 2023 - 31 DEC 2024</span>
+							</p>
+							<div class="discount">
+								<p class="discount-title">Discount</p>
+								<p class="discount-no">10%</p>
+							</div>
+							<a href="#" class="btn mt-2 btn-more" style="float: right;">Read More</a>
+						  </div>
+						</div>
+						<div class="card">
+						  <div class="image-wrapper">
+							<img class="package-img" src="https://sharefolder.buildersmart.com/sms_booking/upload/package_photo/8_648ad3a488cab.jpg" alt="...">
+						  </div>
+						  <div class="card-body">
+							<h5 class="package-tx-title">SM Resort Showroom @ Khaoyai</h5>
+							<p class="package-tx-sub">Promotion package rent out all rooms for @24 Persons (MAX)</p>
+							<p class="package-tx-line mt-2">THB19,800</p>
+							<p class="package-tx">THB19,300</p>
+							<p class="package-period-tt mt-2">
+								<span>Promo period</span>
+							</p>
+							<p class="package-period">
+								<i class="far fa-calendar"></i> &nbsp;<span>01 AUG 2023 - 31 DEC 2024</span>
+							</p>
+							<div class="discount">
+								<p class="discount-title">Discount</p>
+								<p class="discount-no">10%</p>
+							</div>
+							<a href="#" class="btn mt-2 btn-more" style="float: right;">Read More</a>
+						  </div>
+						</div>
+					  </div>
+					</div>
+					<div class="carousel-item">
+					  <div class="cards-wrapper">
+						<div class="card">
+						  <div class="image-wrapper">
+							<img class="package-img" src="https://sharefolder.buildersmart.com/sms_booking/upload/package_photo/8_648ad3a488cab.jpg" alt="...">
+						  </div>
+						  <div class="card-body">
+							<h5 class="package-tx-title">SM Resort Showroom @ Khaoyai</h5>
+							<p class="package-tx-sub">Promotion package rent out all rooms for @24 Persons (MAX)</p>
+							<p class="package-tx-line mt-2">THB19,800</p>
+							<p class="package-tx">THB19,300</p>
+							<p class="package-period-tt mt-2">
+								<span>Promo period</span>
+								<!--<span style="float: right;">Min. transaction</span>-->
+							</p>
+							<p class="package-period">
+								<i class="far fa-calendar"></i> &nbsp;<span>01 AUG 2023 - 31 DEC 2024</span>
+								<!--<span style="float: right;">THB19,800</span>-->
+							</p>
+							<div class="discount">
+								<p class="discount-title">Discount</p>
+								<p class="discount-no">10%</p>
+							</div>
+							<a href="#" class="btn mt-2 btn-more" style="float: right;">Read More</a>
+						  </div>
+						</div>
+						<div class="card">
+						  <div class="image-wrapper">
+							<img class="package-img" src="https://sharefolder.buildersmart.com/sms_booking/upload/package_photo/8_648ad3a488cab.jpg" alt="...">
+						  </div>
+						  <div class="card-body">
+							<h5 class="package-tx-title">SM Resort Showroom @ Khaoyai</h5>
+							<p class="package-tx-sub">Promotion package rent out all rooms for @24 Persons (MAX)</p>
+							<p class="package-tx-line mt-2">THB19,800</p>
+							<p class="package-tx">THB19,300</p>
+							<p class="package-period-tt mt-2">
+								<span>Promo period</span>
+							</p>
+							<p class="package-period">
+								<i class="far fa-calendar"></i> &nbsp;<span>01 AUG 2023 - 31 DEC 2024</span>
+							</p>
+							<div class="discount">
+								<p class="discount-title">Discount</p>
+								<p class="discount-no">10%</p>
+							</div>
+							<a href="#" class="btn mt-2 btn-more" style="float: right;">Read More</a>
+						  </div>
+						</div>
+						<div class="card">
+						  <div class="image-wrapper">
+							<img class="package-img" src="https://sharefolder.buildersmart.com/sms_booking/upload/package_photo/8_648ad3a488cab.jpg" alt="...">
+						  </div>
+						  <div class="card-body">
+							<h5 class="package-tx-title">SM Resort Showroom @ Khaoyai</h5>
+							<p class="package-tx-sub">Promotion package rent out all rooms for @24 Persons (MAX)</p>
+							<p class="package-tx-line mt-2">THB19,800</p>
+							<p class="package-tx">THB19,300</p>
+							<p class="package-period-tt mt-2">
+								<span>Promo period</span>
+							</p>
+							<p class="package-period">
+								<i class="far fa-calendar"></i> &nbsp;<span>01 AUG 2023 - 31 DEC 2024</span>
+							</p>
+							<div class="discount">
+								<p class="discount-title">Discount</p>
+								<p class="discount-no">10%</p>
+							</div>
+							<a href="#" class="btn mt-2 btn-more" style="float: right;">Read More</a>
+						  </div>
+						</div>
 					  </div>
 					</div>
 				  </div>
-
-				  <?php } ?>
-
 				  <!-- Have a problem prev and next -->
 				  <!--
 				  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls-Package" data-bs-slide="prev">
@@ -885,14 +971,10 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
 				  </button>
 				  -->
 				</div>
-
 			</div> 
 		</div> 
 	</div> 
 </div>
-
-<? } ?>
-
 <script>
 	const multipleItemCarousel = document.querySelector("#carouselExampleControls-Package");
 		if (window.matchMedia("(min-width:576px)").matches) {
