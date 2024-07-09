@@ -151,20 +151,25 @@ $CI->load->model('m_room_type');
 	  width: 1.5rem;
 	  height: 1.5rem;
 	}
-	@media screen and (min-width: 577px) {
+	@media screen and (min-width: 777px) {
 	  .cards-wrapper {
 		display: flex;
 	  }
 	  .card {
-		margin: 0 0.5em;
-		width: calc(100% / 2);
+/*		margin: 0 0.5em;*/
+		margin: 0em;
+		width: calc(100% / 3);
 	  }
 	  .image-wrapper {
 		height: 20vw;
 		margin: 0 auto;
 	  }
+	  .image-wrapper img {
+	  	max-width: 100%;
+	  	max-height: 100%;
+	  }
 	}
-	@media screen and (max-width: 576px) {
+	@media screen and (max-width: 777px) {
 	  .card:not(:first-child) {
 		display: none;
 	  }
@@ -523,7 +528,9 @@ $CI->load->model('m_room_type');
 			margin: 0 auto; 
 			*/
 		}
-		
+	.empty-card {
+        visibility: hidden;
+    }
 </style>
 
 <!-- Package -->
@@ -813,9 +820,7 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
 						<?php echo $lang == "english" ? 'Package & Promotions' : 'แพ็คเกจและโปรโมชั่น'; ?>
 					</a>
 				</h4>
-
 				<div id="carouselExampleControls-Package" class="carousel slide" data-bs-ride="carousel">
-
 				  <?php 
                         $chunks = array_chunk($packages, 3);
                         foreach ($chunks as $index => $chunk) { 
@@ -827,13 +832,10 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
 					<?php //foreach ($packages as $package) {
 					foreach ($chunk as $package) { ?>
 					<!-- <div class="row col-lg-4 col-md-6 col-sm-12"> -->
-						<div class="card ">
-							<!-- class="image-wrapper" -->
+						<div class="card col-lg-4 p-0">
 						  <div class="image-wrapper" >
-							<!-- <img class="package-img" src="https://sharefolder.buildersmart.com/sms_booking/upload/package_photo/8_648ad3a488cab.jpg" alt="..."> -->
-
-							<img class="package-img" src="<?php echo share_folder_path() . $package->package_photo_url; ?>" alt="..."  >
-				
+						  	<!-- class="package-img" -->
+							<img src="<?php echo share_folder_path() . $package->package_photo_url; ?>" alt="..."  >
 						  </div>
 						  <div class="card-body">
 							<h5 class="package-tx-title"><?php echo ($lang == 'english') ? $package->project_name_en : $package->project_name_th; ?></h5>
@@ -862,7 +864,6 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
 								<p class="discount-no">10%</p>
 							</div>
 							<a href="<?php echo site_url('package/package_details') . '/' . $package->id_package; ?>" class="btn mt-2 btn-more" style="float: right;"><?php echo ($lang == 'english') ? 'Read More' : 'อ่านเพิ่มเติม'; ?></a>
-
 						  </div>
 						</div>
 					<!-- </div> -->
@@ -2142,10 +2143,6 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
 			}, 5000); 
 		});
 		*/
-
-		
-		
-
 
 		$(".checkbox-dropdown").click(function() {
 			$(this).toggleClass("is-active");
