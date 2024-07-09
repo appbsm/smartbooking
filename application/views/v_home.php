@@ -562,9 +562,13 @@ $CI->load->model('m_room_type');
 			margin: 0 auto; 
 			*/
 		}
-	.empty-card {
-        visibility: hidden;
-    }
+		.empty-card {
+			visibility: hidden;
+		}
+		.slider-package {
+			padding-right: 40px !important;
+		}
+		
 </style>
 
 <!-- Package -->
@@ -847,7 +851,7 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
 
 <?php if (sizeof($packages) > 0) { ?>
 <!-- PROMOTION & PACKAGE -->
-<div class="slider-wrapper slider1-wrapper" style="padding-top: 30px;">
+<div class="slider-wrapper slider1-wrapper slider-package" style="padding-top: 30px; padding-right: 20px;">
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-12 col-md-12 col-sm-12 col-12"> 
@@ -868,7 +872,7 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
 					<?php //foreach ($packages as $package) {
 					foreach ($chunk as $package) { ?>
 					<!-- <div class="row col-lg-4 col-md-6 col-sm-12"> -->
-						<div class="card col-lg-4 p-0">
+						<div class="card col-lg-4 p-0" style="margin: 0 8px;">
 						  <div class="image-wrapper" >
 						  	<!-- class="package-img" -->
 							<img src="<?php echo share_folder_path() . $package->package_photo_url; ?>" alt="..."  >
