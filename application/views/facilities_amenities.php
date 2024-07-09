@@ -4,7 +4,66 @@ $CI = &get_instance();
 $CI->load->model('m_room_type');
 
 ?>
-<html lang="en"><head>
+
+<script>
+		const link = '<? echo $link_map; ?>';
+        const latitude = '<? echo $latitude; ?>';
+        const longitude = '<? echo $longitude; ?>';
+
+        let coordinates = null;
+        
+        if (link) {
+            coordinates = extractCoordinates(link);
+        } else if (latitude && longitude) {
+            coordinates = {
+                lat: parseFloat(latitude),
+                lng: parseFloat(longitude)
+            };
+        }
+        
+        if (coordinates) {
+            initMap(coordinates.lat, coordinates.lng);
+        }
+
+
+    function extractCoordinates(link) {
+        const regex = /@(-?\d+\.\d+),(-?\d+\.\d+)/;
+        const match = link.match(regex);
+        if (match) {
+            return {
+                lat: parseFloat(match[1]),
+                lng: parseFloat(match[2])
+            };
+        } else {
+            return null;
+        }
+    }
+
+    function initMap(lat, lng) {
+        //document.getElementById('map').style.display = 'block'; // แสดงแผนที่เมื่อมีข้อมูล
+        const location = {lat: lat, lng: lng};
+        map = new google.maps.Map(document.getElementById('google_map'), {
+            zoom: 15,
+            center: location
+        });
+
+        const marker = new google.maps.Marker({
+            position: location,
+            map: map
+        });
+
+        const request = {
+            location: location,
+            radius: '500',
+            type: ['tourist_attraction']
+        };
+
+        service = new google.maps.places.PlacesService(map);
+        service.nearbySearch(request, callback);
+    }
+  </script>
+
+<!-- <html lang="en"><head>
 <title>Smart Booking</title>
   <link rel="icon" type="image/x-icon" href="http://192.168.20.22/smartbooking_front_test/images/10.png">
   <meta charset="utf-8">
@@ -12,13 +71,11 @@ $CI->load->model('m_room_type');
   <meta name="description" content="">
   <link href="https://fonts.googleapis.com/css2?family=Syne&amp;display=swap" rel="stylesheet">  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="http://192.168.20.22/smartbooking_front_test/bootstrap-4.0.0-dist/css/bootstrap.css">
-
-  <!-- icon font-awesome -->
   <link href="http://192.168.20.22/smartbooking_front_test/assets/font-awesome/css/all.min.css" rel="stylesheet">
 
   <link href="http://192.168.20.22/smartbooking_front_test/css/styles.css" rel="stylesheet">
   <link href="http://192.168.20.22/smartbooking_front_test/css/css.css" rel="stylesheet">
-  <link href="http://192.168.20.22/smartbooking_front_test/css/custom_header_en.css" rel="stylesheet">  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css?v=1001">
+  <link href="http://192.168.20.22/smartbooking_front_test/css/custom_header_en.css" rel="stylesheet">  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css?v=1001"> -->
    
    
   <style>
@@ -164,8 +221,7 @@ $CI->load->model('m_room_type');
         }
 </style></head>
 
-
-<body class="" style="">
+<!-- <body class="" style="">
   <header>
     <nav class="navbar navbar-expand-sm navbar-light bg-light fixed-top text-center mr-auto mb-0" style="height: 70px; border-bottom: 1px solid rgb(204, 204, 204); background-color: rgb(255, 255, 255) !important;">
     <div class="container d-flex flex-row">
@@ -174,7 +230,6 @@ $CI->load->model('m_room_type');
 		<a class="logo" href="http://192.168.20.22/smartbooking_front_test/home"><img src="http://192.168.20.22/smartbooking_front_test/images/10.png" width="70"></a>
 	  </span>  
 
-	  <!-- new menu -->
 	  <div class="col-9">
 		<ul class="navbar-nav me-auto mb-2 mb-lg-0 menu-bar">
             <li class="nav-item" id="nav_aboutus">
@@ -198,20 +253,16 @@ $CI->load->model('m_room_type');
             </li>
 			<li class="nav-item" id="nav_contactus">
                 <a class="nav-link" href="#nearby_locations">
-					Nearby Locations				</a>
+						<?php echo $lang == "english" ? 'Conditions & Policies' : 'เงื่อนไขและข้อกำหนด'; ?></a>
             </li>
 			<li class="nav-item" id="nav_contactus">
-                <!--<a class="nav-link" href="#contactus">-->
-                	<!-- target="_blank" -->
 				<a class="nav-link" href="http://192.168.20.22/smartbooking_front_test/contact_us.php" >
 					Contact us				</a>
             </li>
         </ul>
 	</div>
-	  <!-- new menu -->
       <div class="" id="navbarSupportedContent">       
         <div class="navbar navbar-expand d-flex flex-row" style="gap: 0 16px; background-color:#fff !important;">
-          
 		  		  <div class="button mx-1">
                 <a class="btn btn_sign_in" href="http://192.168.20.22/smartbooking_front_test/login" height="20">Sign In</a>
               </div>
@@ -224,15 +275,12 @@ $CI->load->model('m_room_type');
 			<span>&nbsp;|&nbsp;</span>
 			<a href="http://192.168.20.22/smartbooking_front_test/LanguageSwitcher/switchLang/english" title="English" style="font-weight: bold!important;">EN</a>
 		  </div>
-
         </div>
       </div>
       
       </div>
     </nav>
-	
-	
-</header><title>Smart Booking</title>
+</header><title>Smart Booking</title> -->
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
@@ -734,30 +782,19 @@ $CI->load->model('m_room_type');
 		}
 </style>
 
-<!-- Package -->
-<!-- <link rel="stylesheet" href="http://192.168.20.22/smartbooking_front_test//css/style.css"> -->
+
 <link rel="stylesheet" href="http://192.168.20.22/smartbooking_front_test//css/tiny-slider.css">
 <link rel="stylesheet" href="http://192.168.20.22/smartbooking_front_test//css/package.css">
-<!-- <link rel="stylesheet" href="http://192.168.20.22/smartbooking_front_test//css/main.css"> -->
 <link rel="icon" type="image/png" sizes="16x16" href="http://192.168.20.22/smartbooking_front_test//images/10.png">
 <link rel="stylesheet" href="http://192.168.20.22/smartbooking_front_test/assets/select-picker/css/bootstrap-select.min.css">
-
-
 <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
 <div class=" home-p mb-4 mt-2">
-	<!-- Carousel Start -->
 	<div id="carousel carouselExampleIndicators" class="carousel slide carousel-fade" data-ride="carousel">
-		<!-- <ol class="carousel-indicators">
-		<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-		<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-		<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-	</ol> -->
 		<div class="carousel-inner">
 							<div class="carousel-item">
 					<img class="d-block w-100 img-cover" src="https://sharefolder.buildersmart.com/sms_booking/upload/project_photo/1_64880b050bc5d.jpeg" alt="First slide">
@@ -825,20 +862,9 @@ $CI->load->model('m_room_type');
 							<div class="carousel-item">
 					<img class="d-block w-100 img-cover" src="https://sharefolder.buildersmart.com/sms_booking/upload/project_photo/1_64880b0556486.jpeg" alt="First slide">
 				</div>
-					</div>
-		<!-- <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-		<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-		<span class="sr-only">Previous</span>
-	</a>
-	<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-		<span class="carousel-control-next-icon" aria-hidden="true"></span>
-		<span class="sr-only">Next</span>
-	</a> -->
+			</div>
 	</div>
-	<!-- Carousel End -->
 
-
-	<!-- SECTION FOR SEARCH -->
 	<div class="container-fluid text-center search-box">
 		<form name="frm_search" id="frm_search" method="post" action="<?php echo site_url('home/search'); ?>">
 			<input type="hidden" name="s_id_room_type" id="s_id_room_type" value="">
@@ -1064,13 +1090,22 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
 					</div>
 				</div>
 	
-	
+
 				<div class="section_header "><u><? echo ($lang == 'english') ? 'Conditions And Policies' : 'เงื่อนไขและข้อกำหนดในการเข้าพัก'; ?></u></div>
 					<div class="row">			
 						<div class="container-fluid mb-4">
-							<div class="col-md-12">			
-								<span>นโยบายการยกเลิกการจอง</span>
-								<ol>		
+							<div class="col-md-12">	
+								<?php foreach ($project_policy_type as $value) { ?>
+									<span><?php echo $policy_type = ($lang == 'english') ? $value->policy_type_en : $value->policy_type_th; ?></span>
+									<ol>		
+										<?php foreach ($project_policy as $value2) {  ?>	
+											<? if($value->policy_type_en==$value2->policy_type_en){ ?>
+										<li><? echo ($lang == 'english') ? $value2->description_en : $value2->description_th; ?></li>	
+										<?php }} ?>			
+									</ol>
+								<?php } ?>	
+								
+								<!-- <ol>		
 									<li>การโอนเงินต้องเสร็จสิ้นภายใน 2 ชั่วโมงหลังการจอง มิฉะนั้นระบบจะยกเลิกการจองโดยอัตโนมัติ</li>			
 								</ol>
 								<span>นโยบายโชว์รูม</span>    			
@@ -1082,14 +1117,14 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
 									<li>ในกรณีทำให้ทรัพย์สินของโชว์รูมเสียหายให้ชดใช้คืนตามมูลค่าของทรัพย์สินนั้น</li>					
 									<li>งดสูบบุหรี่ในห้องพัก และบริเวณโชว์รูม ฝ่าฝืนปรับ 2,000 บาท (ลูกค้าสามารถสูบบุหรี่ในพื้นที่ที่โชว์รูมจัดไว้ให้เท่านั้น)</li>					
 									<li>งดจุดพลุ, ประทัด, ดอกไม้ไฟ หรือ โคมลอย ในบริเวณโชว์รูม ฝ่าฝืนปรับ 2,000 บาท</li>			
-								</ol>
+								</ol> -->
 							</div>
 						</div>
 					</div>
 				</div>
 				<div class="col-md-4">
 					<div class="section_header ">
-						<h6 style="font-weight: 600;">สถานที่ใกล้เคียง</h6>
+						<h6 style="font-weight: 600;"><? echo ($lang == 'english') ? 'Locations Nearby' : 'สถานที่ใกล้เคียง'; ?></h6>
 					</div>
 					<div class="row mb4">
 						<div class="col-md-12">		
@@ -1097,37 +1132,15 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
 								<table class="table table-bordered" style="border-color: #ccc;">
 									<tbody>
 										<tr style="text-align: center;">
-											<th>ชื่อสถานที่</th>
-											<th>ระยะทาง(km)</th>
+											<th><? echo ($lang == 'english') ? 'Location' : 'ชื่อสถานที่'; ?></th>
+											<th><? echo ($lang == 'english') ? 'Distance(km)' : 'ระยะทาง(km)'; ?></th>
 										</tr>
+										<?php foreach ($point_of_interest as $value) { ?>
 										<tr>
-											<td>ครัวอิ่มแปล้</td>
-											<td style="text-align: center;">0.07</td>
+											<td><?php echo $policy_type = ($lang == 'english') ? $value->location_name_en : $value->location_name_th; ?></td>
+											<td style="text-align: center;"><?php echo $value->distance_km; ?></td>
 										</tr>
-										<tr>
-											<td>The Pandora Camp Khaoyai</td>
-											<td style="text-align: center;">10</td>
-										</tr>
-										<tr>
-											<td>Toscana Valley</td>
-											<td style="text-align: center;">10</td>
-										</tr>
-										<tr>
-											<td>เขาใหญ่อาร์ตมิวเซียม</td>
-											<td style="text-align: center;">15</td>
-										</tr>
-										<tr>
-											<td>My Ozone Animal Club</td>
-											<td style="text-align: center;">25</td>
-										</tr>
-										<tr>
-											<td>Scenical World </td>
-											<td style="text-align: center;">30</td>
-										</tr>
-										<tr>
-											<td>Khao Yai National Park</td>
-											<td style="text-align: center;">30</td>
-										</tr>
+										<? } ?>
 									</tbody>
 								</table>  
 							</div>		
@@ -1154,20 +1167,11 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
 <script src="http://192.168.20.22/smartbooking_front_test/bootstrap-4.0.0-dist/js/bootstrap.bundle.min.js"></script>
 <script src="http://192.168.20.22/smartbooking_front_test/assets/select-picker/js/bootstrap-select.min.js"></script>
 <script src="http://192.168.20.22/smartbooking_front_test/assets/swiper-element/js/swiper-element-bundle.min.js"></script>
-<!-- <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-element-bundle.min.js"></script> -->
-
-
-<!-- package -->
-<!--<script src="http://192.168.20.22/smartbooking_front_test//js/tiny-slider.js"></script>
-<script src="http://192.168.20.22/smartbooking_front_test//js/aos.js"></script>
-<script src="http://192.168.20.22/smartbooking_front_test//js/custom.js"></script>-->
-
 
 <script>
 	$('.carousel').carousel({
 		interval: 15000
 	})
-
 
 	function stepper(dis) {
 		let btn_id = dis.getAttribute('id');
@@ -1415,8 +1419,6 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
 			$('#frm_search').submit();
 		});
 
-
-
 		$('.book_now').click(function() {
 			$('#h_id_room_type').val($(this).attr('data-roomtype'));
 			$('#h_check_in_date').val($('#check_in_date').val());
@@ -1478,7 +1480,7 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
 	}
 </style>
  
-<footer class="mt-3 bg-light" style="background-color: rgb(42, 42, 46) !important; color: rgba(255, 255, 255, 1.00);">
+<!-- <footer class="mt-3 bg-light" style="background-color: rgb(42, 42, 46) !important; color: rgba(255, 255, 255, 1.00);">
 		<div class="footer-top">
 			<div class="container">
 				<div class="row " id="contactus">
@@ -1510,6 +1512,5 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
 			</div>
 		</div>
 	</footer>
-<!--2-->
 
-<div id="ui-datepicker-div" class="ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all"></div><span id="PING_IFRAME_FORM_DETECTION" style="display: none;"></span></body></html>
+<div id="ui-datepicker-div" class="ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all"></div><span id="PING_IFRAME_FORM_DETECTION" style="display: none;"></span></body></html> -->

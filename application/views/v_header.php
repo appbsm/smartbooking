@@ -215,7 +215,7 @@ if ($id_guest != '') {
             </li>
             <!-- target="_blank" -->
             <li class="nav-item" id="nav_contactus">
-                <a class="nav-link" href="facilities" >
+                <a class="nav-link" href="facilities/project_detail/" >
 					<?php echo $lang == "english" ? 'Facilities & Amenities' : 'สิ่งอำนวยความสะดวก'; ?>
 				</a>
             </li>
