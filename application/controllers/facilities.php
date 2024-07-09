@@ -39,7 +39,7 @@ class Facilities extends CI_Controller {
 		// $data['modular_type'] = $modular_type;
 		
 		// $this->load->view('v_header');
-		$this->load->view('facilities_amenities', $data);
+		// $this->load->view('facilities_amenities', $data);
 		// $this->load->view('v_footer');
 	}
 
@@ -52,12 +52,17 @@ class Facilities extends CI_Controller {
 		
 		$data['project_highlights'] = $this->m_project_info->get_project_highlights($id_project);
 		$data['project_facility'] = $this->m_project_info->get_project_facility($id_project);
-		
+
+		$data['project_policy_type'] = $this->m_project_info->get_property_policy_type($id_project);
+		$data['project_policy'] = $this->m_project_info->get_property_policy($id_project,'');
+
+		$data['point_of_interest'] = $this->m_project_info->get_locations_nearby($id_project);
+
 		$data['project_all'] = $this->m_project_info->get_all_project();
 
-		// $this->load->view('v_header');
+		$this->load->view('v_header');
 		$this->load->view('facilities_amenities', $data);
-		// $this->load->view('v_footer');
+		$this->load->view('v_footer');
 	}
 	
 	public function header_page () {

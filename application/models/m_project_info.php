@@ -11,7 +11,7 @@ class M_project_info extends CI_Model{
 		return $result;
 	}
 	
-	function get_project_info($id_project_info) {
+	function get_project_info($id_project_info = 1) {
 		$result = new stdClass();
 		$this->db->select('bi.*, pi.*');
 		$this->db->from('project_info pi');
@@ -26,7 +26,7 @@ class M_project_info extends CI_Model{
 		return $result;
 	}
 
-	function get_project_info_detail($id_project_info) {
+	function get_project_info_detail($id_project_info = 1) {
 		$result = new stdClass();
 		$this->db->select('pi.*');
 		$this->db->from('project_info pi');
@@ -71,7 +71,7 @@ class M_project_info extends CI_Model{
 		return $result;
 	}
 	
-	function get_project_facility($id_project_info) {
+	function get_project_facility($id_project_info = 1) {
 		$result = array();
 		$this->db->select('*');
 		$this->db->from('project_facility');
@@ -113,7 +113,7 @@ class M_project_info extends CI_Model{
 		return $result;
 	}
 	
-	function get_property_policy ($id_project_info = 1, $type = '') {
+	function get_property_policy($id_project_info = 1, $type = '') {
 		$result = array();
 		$this->db->select('*');
 		$this->db->from('project_policy');
