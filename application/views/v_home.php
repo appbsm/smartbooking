@@ -165,9 +165,15 @@ $CI->load->model('m_room_type');
 		margin: 0 auto;
 	  }
 	  .image-wrapper img {
+<<<<<<< HEAD
 	  	max-width: 100%;
 	  	max-height: 100%;
 	  }
+=======
+	  max-width: 100%;
+	  max-height: 100%;
+		}
+>>>>>>> origin/main
 	}
 	@media screen and (max-width: 777px) {
 	  .card:not(:first-child) {
@@ -832,10 +838,17 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
 					<?php //foreach ($packages as $package) {
 					foreach ($chunk as $package) { ?>
 					<!-- <div class="row col-lg-4 col-md-6 col-sm-12"> -->
+<<<<<<< HEAD
 						<div class="card col-lg-4 p-0">
 						  <div class="image-wrapper" >
 						  	<!-- class="package-img" -->
 							<img src="<?php echo share_folder_path() . $package->package_photo_url; ?>" alt="..."  >
+=======
+						<div class="card col-lg-4">
+						  <div class="image-wrapper" >
+						  	<!-- class="package-img" -->
+							<img  src="<?php echo share_folder_path() . $package->package_photo_url; ?>" alt="..."  >
+>>>>>>> origin/main
 						  </div>
 						  <div class="card-body">
 							<h5 class="package-tx-title"><?php echo ($lang == 'english') ? $package->project_name_en : $package->project_name_th; ?></h5>
