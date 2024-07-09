@@ -5,6 +5,9 @@ $CI->load->model('m_room_type');
 
 ?>
 
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
 <style>
 	.slideshow {
 		/* position: absolute; */
@@ -119,6 +122,66 @@ $CI->load->model('m_room_type');
 			/* height: 400px; */
 		}
 	}
+	.button__badge {
+		margin-right: 0px;
+		font-size: 0.6em !important;
+		position: absolute;
+		top: -8px !important;
+		right: -4px !important;
+	}
+	
+	.price {
+		/*background-color: #2a2a2e;*/
+		background-color: #5392f9;
+		color: white;
+		text-shadow: 2px 2px 4px #000000;
+	}
+	.btn-add_to_cart {
+		width: auto;
+		height: auto;
+		text-transform: uppercase;
+		line-height: 24px !important;
+		color: #fff !important;
+		font-size: small !important;
+		background-color: #5392f9 !important;
+		border-color: #5392f9 !important;
+	}
+	.btn-add_to_cart:hover {
+        background-color: #fff !important;
+        color: #5392f9 !important; 
+		border-color: #5392f9 !important;
+    }
+	.btn-book_now {
+		width: auto;
+		height: auto;
+		text-transform: uppercase;
+		line-height: 24px !important;
+		color: #fff !important;
+		font-size: small !important;
+		background-color: #5392f9 !important;
+		border-color: #5392f9 !important;
+	}
+	.btn-book_now:hover {
+        background-color: #fff !important;
+        color: #5392f9 !important; 
+		border-color: #5392f9 !important;
+    }
+	.btn-search {
+		/*width: auto;
+		height: auto;*/
+		text-transform: uppercase;
+		/*line-height: 30px !important;*/
+		color: #fff !important;
+		font-size: 16px !important;
+		background-color: #5392f9 !important;
+		border-color: #5392f9 !important;
+		/*height: 32px;*/
+	}
+	.btn-search:hover {
+        background-color: #fff !important;
+        color: #5392f9 !important; 
+		border-color: #5392f9 !important;
+    }
 </style>
 <main class="main-2 manual-margin-6">
 	<div class="container-fluid">
@@ -209,7 +272,7 @@ $CI->load->model('m_room_type');
 				</div>
 				<div class="col-md-2 col-sm-12 mb-3">
 					<label for="name">&nbsp;</label>
-					<button type="submit" class="form-control  btn btn-secondary"><?= $this->lang->line('search'); ?></button>
+					<button type="submit" class="form-control  btn btn-secondary btn-search"><?= $this->lang->line('search'); ?></button>
 				</div>
 			</div>
 		</form>
@@ -380,9 +443,9 @@ $CI->load->model('m_room_type');
 						} ?>
 					</div>
 					<div class="row">
-						<div class="col-md-12 col-sm-12 mb-2 text-center">
-							<button class="btn button-primary-w add_to_cart" data-id="<?php echo $pr->id_package; ?>" data-price="<?php echo $pr->price; ?>" id="" style="margin-right: 5px;"><?php echo $this->lang->line('add_to_cart'); ?></button>
-							<a href="javascript:;" data-package="<?php echo $pr->id_package; ?>" data-price="<?php echo $pr->price; ?>" class="btn button-primary book_now" id="" style="margin-left: 5px;"><?php echo $this->lang->line('book_now'); ?></a>
+						<div class="col-md-12 col-sm-12 mb-2 text-center mt-3">
+							<button class="btn button-primary-w add_to_cart btn-add_to_cart" data-id="<?php echo $pr->id_package; ?>" data-price="<?php echo $pr->price; ?>" id="" style="margin-right: 5px;"><?php echo $this->lang->line('add_to_cart'); ?></button>
+							<a href="javascript:;" data-package="<?php echo $pr->id_package; ?>" data-price="<?php echo $pr->price; ?>" class="btn button-primary book_now btn-book_now" id="" style="margin-left: 5px;"><?php echo $this->lang->line('book_now'); ?></a>
 						</div>
 					</div>
 				</div>
