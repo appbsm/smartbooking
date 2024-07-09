@@ -32,8 +32,9 @@ class M_package extends CI_Model{
 	
 	function get_all_packages() {
 		$result = array();
-		$this->db->select('*');
+		$this->db->select('*,pi.project_name_en,pi.project_name_th');
 		$this->db->from('package p');
+		$this->db->join('project_info pi', 'pi.id_project_info = p.id_project_info', 'LEFT');
 		$this->db->where('is_active', 1);
 		$query = $this->db->get();
 		if ($query->num_rows() > 0) {
