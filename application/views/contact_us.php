@@ -1,3 +1,12 @@
+<?php
+$lg = ($this->session->userdata('site_lang') !== null) ? $this->session->userdata('site_lang') : 'thai';
+if ($lg == 'thai') {
+  $this->lang->load('content', 'thai');
+} elseif ($lg == 'english') {
+  $this->lang->load('content', 'english');
+}
+$lang  = $lg;
+?>
 <html lang="en"><head>
 <title>Smart Booking</title>
   <link rel="icon" type="image/x-icon" href="http://192.168.20.22/smartbooking_front_test/images/10.png">
@@ -15,11 +24,7 @@
   <link href="http://192.168.20.22/smartbooking_front_test/css/custom_header_en.css" rel="stylesheet">  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css?v=1001">
   <!--<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>-->
 
-  
-   
   <style>
-    
-
     .button {
       color: white;
       display: inline-block;
@@ -174,17 +179,17 @@
 	  <div class="col-9">
 		<ul class="navbar-nav me-auto mb-2 mb-lg-0 menu-bar">
             <li class="nav-item" id="nav_aboutus">
-                <a class="nav-link" href="#aboutus">
+                <a class="nav-link" href="home#aboutus">
 					About us 
 				</a>
             </li>
             <li class="nav-item" id="nav_roomstype">
-                <a class="nav-link" href="#roomtype">
+                <a class="nav-link" href="home#roomtype">
 					Rooms type 
 				</a>
             </li>
             <li class="nav-item" id="nav_packagep_promotions">
-                <a class="nav-link" href="#package">
+                <a class="nav-link" href="home#package">
 					Package &amp; Promotions 
 				</a>
             </li>
@@ -723,7 +728,9 @@
 			margin: 0 auto; /* จัดตำแหน่งกึ่งกลางของหน้า */
 			
 		}
-		
+		html {
+	    scroll-padding-top: 100px; /* Adjust the padding value as needed */
+		}
 </style>
 
 <!-- Package -->
@@ -846,49 +853,54 @@
 				<div class="row search-bg pt-3" style="border: 2px solid #C6C6C7; border-radius: 5px; padding: 5px 0 5px 0; margin: 0 4px 0 4px;">
 					<div class="col-lg-3 ">
 						<div class="col-md-12 text-left">
-							<label class="ml-1" for="name">Location </label>
+							<label class="ml-1" for="name"><?php echo $lang == "english" ? 'Location' : 'สถานที่'; ?> </label>
 							<!-- <input type='text' class=" form-control search_input" value=""/>	 -->
-							<div class="dropdown bootstrap-select form-control search_input"><select class="form-control selectpicker search_input" data-live-search="true" name="project_id" id="project_id" tabindex="-98">
-																	<option value="1">SM Resort Showroom @ Khaoyai</option>
-																	<option value="15">Condo</option>
-															</select><button type="button" class="btn dropdown-toggle btn-light" data-toggle="dropdown" role="combobox" aria-owns="bs-select-1" aria-haspopup="listbox" aria-expanded="false" data-id="project_id" title="SM Resort Showroom @ Khaoyai" fdprocessedid="90me2e"><div class="filter-option"><div class="filter-option-inner"><div class="filter-option-inner-inner">SM Resort Showroom @ Khaoyai</div></div> </div></button><div class="dropdown-menu "><div class="bs-searchbox"><input type="search" class="form-control" autocomplete="off" role="combobox" aria-label="Search" aria-controls="bs-select-1" aria-autocomplete="list"></div><div class="inner show" role="listbox" id="bs-select-1" tabindex="-1"><ul class="dropdown-menu inner show" role="presentation"></ul></div></div></div>
-
+							<select class="form-control selectpicker search_input" data-live-search="true" name="project_id" id="project_id">
+								<?php foreach ($project_all as $pj) { ?>
+									<option value="<?php echo $pj->id_project_info ?>"><?php echo $lang == "english" ? $pj->project_name_en : $pj->project_name_th; ?></option>
+								<?php } ?>
+							</select>
 						</div>
 					</div>
 					<div class="col-xl-2 col-lg-2 col-md-6 col-sm-6 col-xs-6">
 						<div class="col-md-12 text-left">
-							<label class="ml-1" for="name">Check-in Date</label>
+							<label class="ml-1" for="name"><?php echo $this->lang->line('check_in_date'); ?></label>
 
-							<input type="text" class="form-control form-control-ckinout datepicker search_input hasDatepicker" name="check_in_date" id="check_in_date" value="" fdprocessedid="i485j">
+							<input type='text' class=" form-control form-control-ckinout datepicker search_input" name="check_in_date" id="check_in_date" value="" />
 						</div>
 					</div>
 					<div class="col-xl-2 col-lg-2 col-md-6 col-sm-6 col-xs-6">
 						<div class="col-md-12 text-left">
-							<label class="ml-1" for="name">Checkout Date</label>
-							<input type="text" class="form-control form-control-ckinout datepicker search_input hasDatepicker" name="check_out_date" id="check_out_date" value="" fdprocessedid="ouovj">
+							<label class="ml-1" for="name"><?php echo $this->lang->line('check_out_date'); ?></label>
+							<input type='text' class="form-control form-control-ckinout datepicker search_input" name="check_out_date" id="check_out_date" value="" />
 						</div>
 					</div>
 					<div class="col-lg-3 col-md-6">
-						<!-- <div class="col-md-12 mt-2"><b>Search By Room</b></div> -->
+						<!-- <div class="col-md-12 mt-2"><b><?php echo $this->lang->line('search_by_room'); ?></b></div> -->
 						<div class="col-md-12 mb-2 text-left">
-							<label class="ml-1" for="name">Adult</label>
+							<label class="ml-1" for="name"><?php echo $lang == "english" ? 'Adult' : 'ผู้เข้าพัก'; ?></label>
 							<div class="dropdown">
-								<button class="btn dropdown-toggle w-100 search_input" style="color: #495057; width:100%;" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" fdprocessedid="6v1tw">
-									<div class="d-inline-flex"><span id="div_adult">2</span> Adults, <span id="div_children">0</span> Children, <span id="div_room">1</span></div> Rooms								</button>
-								<div class="dropdown-menu" style="vertical-align: bottom;" aria-labelledby="dropdownMenuButton">
+								<button class="btn dropdown-toggle w-100 search_input" style="color: #000 !important; background-color: #fff !important; width:100%;" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+									<div class="d-inline-flex">
+										<span id="div_adult">2&nbsp;</span> <?php echo $this->lang->line('adults'); ?>, 
+										<span id="div_children">&nbsp;0&nbsp;</span> <?php echo $this->lang->line('children'); ?>, 
+										<span id="div_room">&nbsp;1</span>
+									</div> <?php echo $this->lang->line('rooms'); ?>
+								</button>
+								<div class="dropdown-menu" style="vertical-align: bottom;" aria-labelledby="dropdownMenuButton" style="">
 									<div class="stepper">
-										<div style="display: flex; justify-content: center;"></div>
+										<div style="display: flex; justify-content: center;"><?php echo $this->lang->line('adult'); ?></div>
 										<div style="display: flex; justify-content: center; background-color: white; ">
-											<button type="button" class="btn_stepper " id="decrement-adult" onclick="stepper(this);"> - </button>
-											<input class="input_number" type="number" min="0" max="100" step="1" value="2" name="adult" id="adult" readonly="">
-											<button type="button" class="btn_stepper " id="increment-adult" onclick="stepper(this);"> + </button>
+											<button type="button" class="btn_stepper " id="decrement-adult" onClick="stepper(this);"> - </button>
+											<input class="input_number" type="number" min="0" max="100" step="1" value="2" name="adult" id="adult" readonly>
+											<button type="button" class="btn_stepper " id="increment-adult" onClick="stepper(this);"> + </button>
 										</div>
 										<div class="rounded hr3 mt-2 mb-2"></div>
-										<div style="display: flex; justify-content: center;">Children</div>
+										<div style="display: flex; justify-content: center;"><?php echo $this->lang->line('children'); ?></div>
 										<div style="display: flex; justify-content: center;">
-											<button type="button" class="btn_stepper " id="decrement-children" onclick="stepper(this);"> - </button>
-											<input class="input_number" type="number" min="0" max="100" step="1" value="0" name="children" id="children" readonly="">
-											<button type="button" class="btn_stepper " id="increment-children" onclick="stepper(this);"> + </button>
+											<button type="button" class="btn_stepper " id="decrement-children" onClick="stepper(this);"> - </button>
+											<input class="input_number" type="number" min="0" max="100" step="1" value="0" name="children" id="children" readonly>
+											<button type="button" class="btn_stepper " id="increment-children" onClick="stepper(this);"> + </button>
 										</div>
 
 										<div class="kids_age">
@@ -900,15 +912,21 @@
 										</div> <!-- Kids Age -->
 										<div class="rounded hr3 mt-2"></div>
 
-										<div style="display: flex; justify-content: center;">Rooms</div>
+										<div style="display: flex; justify-content: center;"><?php echo $this->lang->line('rooms'); ?></div>
 										<div style="display: flex; justify-content: center; background-color: white; box-shadow: 0 20px 30px rgba(0,0,0,0.1)">
-											<button type="button" class="btn_stepper " id="decrement-room" onclick="stepper(this);"> - </button>
-											<input class="input_number" type="number" min="0" max="100" step="1" value="1" name="room" id="room" readonly="">
-											<button type="button" class="btn_stepper " id="increment-room" onclick="stepper(this);"> + </button>
+											<button type="button" class="btn_stepper " id="decrement-room" onClick="stepper(this);"> - </button>
+											<input class="input_number" type="number" min="0" max="100" step="1" value="1" name="room" id="room" readonly>
+											<button type="button" class="btn_stepper " id="increment-room" onClick="stepper(this);"> + </button>
 										</div>
-										<div class="rounded hr3 mt-2" style="padding: 5px; font-size: 0.8em;">Notes:
-																							Please be informed that the maximum age for children is 0												years old. Kindly add children aged more than 0 years as adult.
-																					</div>
+										<div class="rounded hr3 mt-2" style="padding: 5px; font-size: 0.8em;"><?php echo $this->lang->line('notes'); ?>:
+											<?php if ($lang == 'english') { ?>
+												Please be informed that the maximum age for children is <?php echo app_settings('max_children_age'); ?>
+												years old. Kindly add children aged more than <?php echo app_settings('max_children_age'); ?> years as adult.
+											<?php } else {
+											?>
+												เด็กที่จะเข้าพักในโครงการจะต้องเลือกเข้าพักเป็นผู้ใหญ่เท่านั้น
+											<?php } ?>
+										</div>
 									</div>
 								</div>
 							</div>
@@ -917,260 +935,19 @@
 					<div class="col-lg-2 col-md-6">
 						<div class="col-md-12 mb-2 text-left">
 							<label for="name">&nbsp;</label>
-							<button id="search" class="form-control form-control-btnsearch search_input search_button btn-default btn-search" data-search-type="search_room" style="background-color:#81BB4A;cursor: pointer; display: flex; align-items: center; justify-content: center; " fdprocessedid="h36ztr">
-								Search							</button>
+							<button disabled id="search" class="form-control form-control-btnsearch search_input search_button btn-default btn-search" data-search-type="search_room" style="background-color:#81BB4A;cursor: pointer; display: flex; align-items: center; justify-content: center; ">
+								<?php echo $this->lang->line('search'); ?>
+							</button>
 						</div>
 					</div>
 				</div>
 			</div>
 		</form>
-		
-
-
-
-		<!-- <div class="col-md-6">
-				
-				<div class="row">
-					<div class="col-md-12 mt-2"><b>Search By Package</b></div>
-					<div class="col-md-6 mb-2">
-						<div class="checkbox-dropdown" style="">
-						  						  <ul class="checkbox-dropdown-list">
-														<li>
-							  <label>
-								<input class="package_cbox" type="checkbox" value="
-<div style="border:1px solid #990000;padding-left:20px;margin:0 0 10px 0;">
-
-<h4>A PHP Error was encountered</h4>
-
-<p>Severity: Notice</p>
-<p>Message:  Undefined variable: package</p>
-<p>Filename: views/v_home.php</p>
-<p>Line Number: 686</p>
-
-
-	<p>Backtrace:</p>
-	
-		
-	
-		
-	
-		
-			<p style="margin-left:10px">
-			File: C:\inetpub\wwwroot\smartbooking_front_test\application\views\v_home.php<br />
-			Line: 686<br />
-			Function: _error_handler			</p>
-
-		
-	
-		
-	
-		
-	
-		
-			<p style="margin-left:10px">
-			File: C:\inetpub\wwwroot\smartbooking_front_test\application\controllers\home.php<br />
-			Line: 39<br />
-			Function: view			</p>
-
-		
-	
-		
-	
-		
-	
-		
-			<p style="margin-left:10px">
-			File: C:\inetpub\wwwroot\smartbooking_front_test\index.php<br />
-			Line: 315<br />
-			Function: require_once			</p>
-
-		
-	
-
-</div>
-<div style="border:1px solid #990000;padding-left:20px;margin:0 0 10px 0;">
-
-<h4>A PHP Error was encountered</h4>
-
-<p>Severity: Notice</p>
-<p>Message:  Trying to get property of non-object</p>
-<p>Filename: views/v_home.php</p>
-<p>Line Number: 686</p>
-
-
-	<p>Backtrace:</p>
-	
-		
-	
-		
-	
-		
-			<p style="margin-left:10px">
-			File: C:\inetpub\wwwroot\smartbooking_front_test\application\views\v_home.php<br />
-			Line: 686<br />
-			Function: _error_handler			</p>
-
-		
-	
-		
-	
-		
-	
-		
-			<p style="margin-left:10px">
-			File: C:\inetpub\wwwroot\smartbooking_front_test\application\controllers\home.php<br />
-			Line: 39<br />
-			Function: view			</p>
-
-		
-	
-		
-	
-		
-	
-		
-			<p style="margin-left:10px">
-			File: C:\inetpub\wwwroot\smartbooking_front_test\index.php<br />
-			Line: 315<br />
-			Function: require_once			</p>
-
-		
-	
-
-</div>" name="package" />
-<div style="border:1px solid #990000;padding-left:20px;margin:0 0 10px 0;">
-
-<h4>A PHP Error was encountered</h4>
-
-<p>Severity: Notice</p>
-<p>Message:  Undefined variable: package</p>
-<p>Filename: views/v_home.php</p>
-<p>Line Number: 686</p>
-
-
-	<p>Backtrace:</p>
-	
-		
-	
-		
-	
-		
-			<p style="margin-left:10px">
-			File: C:\inetpub\wwwroot\smartbooking_front_test\application\views\v_home.php<br />
-			Line: 686<br />
-			Function: _error_handler			</p>
-
-		
-	
-		
-	
-		
-	
-		
-			<p style="margin-left:10px">
-			File: C:\inetpub\wwwroot\smartbooking_front_test\application\controllers\home.php<br />
-			Line: 39<br />
-			Function: view			</p>
-
-		
-	
-		
-	
-		
-	
-		
-			<p style="margin-left:10px">
-			File: C:\inetpub\wwwroot\smartbooking_front_test\index.php<br />
-			Line: 315<br />
-			Function: require_once			</p>
-
-		
-	
-
-</div>
-<div style="border:1px solid #990000;padding-left:20px;margin:0 0 10px 0;">
-
-<h4>A PHP Error was encountered</h4>
-
-<p>Severity: Notice</p>
-<p>Message:  Trying to get property of non-object</p>
-<p>Filename: views/v_home.php</p>
-<p>Line Number: 686</p>
-
-
-	<p>Backtrace:</p>
-	
-		
-	
-		
-	
-		
-			<p style="margin-left:10px">
-			File: C:\inetpub\wwwroot\smartbooking_front_test\application\views\v_home.php<br />
-			Line: 686<br />
-			Function: _error_handler			</p>
-
-		
-	
-		
-	
-		
-	
-		
-			<p style="margin-left:10px">
-			File: C:\inetpub\wwwroot\smartbooking_front_test\application\controllers\home.php<br />
-			Line: 39<br />
-			Function: view			</p>
-
-		
-	
-		
-	
-		
-	
-		
-			<p style="margin-left:10px">
-			File: C:\inetpub\wwwroot\smartbooking_front_test\index.php<br />
-			Line: 315<br />
-			Function: require_once			</p>
-
-		
-	
-
-</div></label>
-							</li>
-														
-						  </ul>
-						</div>
-					</div>
-				
-				<div class="col-md-6">
-					<div >
-						<button disabled id="search_package" class="form-control search_input search_button btn-default" data-search-type="search_package" style="cursor: pointer; padding: 0 50px 0 50px;">Search Package</button>
-					</div>
-				</div>
-			</div>
-		</div> -->
-
 	</div>
+
 		<!-- Descripttion -->
 		<script>
-		/*
-			document.addEventListener('DOMContentLoaded', function() {
-				document.getElementById('readMoreBtn').addEventListener('click', function() {
-					var longText = document.querySelector('.long-text');
-					var btn = document.getElementById('readMoreBtn');
-
-					if (longText.style.display === 'none') {
-						longText.style.display = 'block';
-						btn.textContent = 'ซ่อนข้อความ';
-					} else {
-						longText.style.display = 'none';
-						btn.textContent = 'อ่านต่อ';
-					}
-				});
-			});
-		*/
+		
 		document.addEventListener('DOMContentLoaded', function() {
 			document.getElementById('readMoreBtn').addEventListener('click', function() {
 				var longText = document.querySelector('.long-text');
@@ -1212,26 +989,8 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
 		</div>
 		<!-- Descripttion -->
 </div>
-<!--
-<div class="container"> 
-    <div class="row"> 
-        <div class="col-lg-12 col-md-12 col-sm-12 col-12 m-t20" style="font-size:17px;>
-            <nav aria-label=" breadcrumb"="">
-              <ul class="breadcrumb">
-                <li>
-					<svg width="19" height="19" fill="currentColor" class="bi bi-house" viewBox="0 2 16 16">
-					  <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293zM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5z"></path>
-					</svg>
-				</li>
-                <li class="breadcrumb-item"><a href="index.php"><i></i>&nbsp;&nbsp;หน้าหลัก</a></li>
-                <li class="breadcrumb-item active" aria-current="page">ติดต่อเรา</li>
-              </ul> 
-		</div>
-    </div>  
-</div>
-<br/>
--->
-<div class="container mt-5">
+
+<div class="container mt-5" id="contactus">
 	<div class="row">
 		<div class="col-md-12 ml-2 text-center mt-0">
 			<section class="section-full bg-white about-bx1 m-b20 m-t30 m-b90">
@@ -1336,7 +1095,8 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
 			<div class="col-md-6 col-lg-6 col-sm-12">
 				<form class="contact-box dzForm p-a10 border-1">
 					<div id="google-map">
-						<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5462.972307432571!2d101.55065412783209!3d14.490156270739496!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x311c3b5927861817%3A0x4ef8dd372f4d0716!2sSMS%20Showroom!5e0!3m2!1sth!2sth!4v1683184985267!5m2!1sth!2sth" width=100% height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+						<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3876.7150510205365!2d100.5430111!3d13.675082999999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e2a1efa518798f%3A0x3f3e240d8dbb30ac!2sBuilderSmart%20Warehouse!5e0!3m2!1sth!2sth!4v1720518354389!5m2!1sth!2sth" width=100% height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 					</div>
 				</form>
 			</div>
@@ -1671,12 +1431,10 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
 	}
 </style>
 
-
-
 <footer class="mt-3 bg-light" style="background-color: rgb(42, 42, 46) !important; color: rgba(255, 255, 255, 1.00);">
 		<div class="footer-top">
 			<div class="container">
-				<div class="row " id="contactus">
+				<div class="row " >
 					<div class="col-md-6 col-lg-6 footer-about wow fadeInUp mt-3">
 						<div class="d-flex pt-2">
 							<p class=" mt-3">BuilderSmart (Public) Company Limited <br>1055 Rama 3 Road.Chongnonsi, Yannawa, Bangkok 10120 <br><br> SM Resort @ Khaoyai <br> 499 Moo 4 Pong Ta Long, Pak Chong, Nakhon Ratchasima 30130</p>                 

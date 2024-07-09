@@ -1,9 +1,3 @@
-<?php
-$lang = ($this->session->userdata('site_lang') !== null) ? $this->session->userdata('site_lang') : 'thai';
-$CI = &get_instance();
-$CI->load->model('m_room_type');
-
-?>
 <!doctype html>
 <html lang="en">
 <?php
@@ -15,11 +9,9 @@ if ($lg == 'thai') {
 }
 $lang  = $lg;
 
-
 $CI = &get_instance();
 $CI->load->model('m_guest');
 $CI->load->model('m_cart');
-
 
 $id_guest = $this->session->userdata('id_guest');
 $cart_count = 0;
@@ -49,10 +41,7 @@ if ($id_guest != '') {
   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css?v=1001">
   <!--<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>-->
 
-  
-   
   <style>
-    
 
     .button {
       color: white;
@@ -211,13 +200,14 @@ if ($id_guest != '') {
             <li class="nav-item" id="nav_packagep_promotions">
                 <a class="nav-link" href="#package">
 					<?php echo $lang == "english" ? 'Package & Promotions' : 'แพ็คเกจและโปรโมชั่น'; ?> 
-				</a>
+								</a>
             </li>
+
             <!-- target="_blank" -->
             <li class="nav-item" id="nav_contactus">
-                <a class="nav-link" href="facilities/project_detail/" >
+                <a class="nav-link" href="facilities" >
 					<?php echo $lang == "english" ? 'Facilities & Amenities' : 'สิ่งอำนวยความสะดวก'; ?>
-				</a>
+								</a>
             </li>
 			<!--
 			<li class="nav-item" id="nav_contactus">
@@ -234,7 +224,7 @@ if ($id_guest != '') {
             </li>
 			<li class="nav-item" id="nav_contactus">
                 <!--<a class="nav-link" href="#contactus">-->
-				<a class="nav-link" href="http://192.168.20.22/smartbooking_front_test/contact_us.php" >
+				<a class="nav-link" href="contact" >
 					<?php echo $lang == "english" ? 'Contact us' : 'ติดต่อเรา'; ?>
 				</a>
             </li>

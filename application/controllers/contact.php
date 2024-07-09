@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Facilities extends CI_Controller {
+class Contact extends CI_Controller {
 
 	public function __construct(){
 		parent::__construct();
@@ -15,28 +15,12 @@ class Facilities extends CI_Controller {
 		$this->id_project_info = 1;
 	}
 	
-	public function index($id_project='')
+	public function index()
 	{	
-		$data['project_all'] = $this->m_project_info->get_all_project();
-
-		if($id_project==''){
-			$id_project=1;
-		}
-		$data['project_details'] = $this->m_project_info->get_project_info_detail($id_project);
-		
-		$data['project_highlights'] = $this->m_project_info->get_project_highlights($id_project);
-		$data['project_facility'] = $this->m_project_info->get_project_facility($id_project);
-
-		$data['project_policy_type'] = $this->m_project_info->get_property_policy_type($id_project);
-		$data['project_policy'] = $this->m_project_info->get_property_policy($id_project,'');
-
-		$data['point_of_interest'] = $this->m_project_info->get_locations_nearby($id_project);
-
-		$data['project_all'] = $this->m_project_info->get_all_project();
-
-		$this->load->view('v_header');
-		$this->load->view('facilities_amenities', $data);
-		$this->load->view('v_footer');
+		// $this->load->view('v_header');
+		// $this->load->view('facilities_amenities', $data);
+		$this->load->view('contact_us');
+		// $this->load->view('v_footer');
 	}
 
 	public function project_detail($id_project = '')
@@ -56,7 +40,7 @@ class Facilities extends CI_Controller {
 
 		$data['project_all'] = $this->m_project_info->get_all_project();
 
-		$this->load->view('v_header');
+		// $this->load->view('v_header');
 		$this->load->view('facilities_amenities', $data);
 		$this->load->view('v_footer');
 	}

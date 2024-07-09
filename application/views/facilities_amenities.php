@@ -1,69 +1,19 @@
 <?php
-$lang = ($this->session->userdata('site_lang') !== null) ? $this->session->userdata('site_lang') : 'thai';
-$CI = &get_instance();
-$CI->load->model('m_room_type');
-
+$lg = ($this->session->userdata('site_lang') !== null) ? $this->session->userdata('site_lang') : 'thai';
+if ($lg == 'thai') {
+  $this->lang->load('content', 'thai');
+} elseif ($lg == 'english') {
+  $this->lang->load('content', 'english');
+}
+$lang  = $lg;
 ?>
 
-<script>
-		const link = '<? echo $link_map; ?>';
-        const latitude = '<? echo $latitude; ?>';
-        const longitude = '<? echo $longitude; ?>';
+<!-- <script src="https://cdn.jsdelivr.net/npm/moment@2.29.1/moment.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAdcxrCA3fydYz4cKu-Gpqm0MSe6S9voMw&libraries=places"></script>
 
-        let coordinates = null;
-        
-        if (link) {
-            coordinates = extractCoordinates(link);
-        } else if (latitude && longitude) {
-            coordinates = {
-                lat: parseFloat(latitude),
-                lng: parseFloat(longitude)
-            };
-        }
-        
-        if (coordinates) {
-            initMap(coordinates.lat, coordinates.lng);
-        }
-
-
-    function extractCoordinates(link) {
-        const regex = /@(-?\d+\.\d+),(-?\d+\.\d+)/;
-        const match = link.match(regex);
-        if (match) {
-            return {
-                lat: parseFloat(match[1]),
-                lng: parseFloat(match[2])
-            };
-        } else {
-            return null;
-        }
-    }
-
-    function initMap(lat, lng) {
-        //document.getElementById('map').style.display = 'block'; // แสดงแผนที่เมื่อมีข้อมูล
-        const location = {lat: lat, lng: lng};
-        map = new google.maps.Map(document.getElementById('google_map'), {
-            zoom: 15,
-            center: location
-        });
-
-        const marker = new google.maps.Marker({
-            position: location,
-            map: map
-        });
-
-        const request = {
-            location: location,
-            radius: '500',
-            type: ['tourist_attraction']
-        };
-
-        service = new google.maps.places.PlacesService(map);
-        service.nearbySearch(request, callback);
-    }
-  </script>
-
-<!-- <html lang="en"><head>
+<html lang="en"><head>
 <title>Smart Booking</title>
   <link rel="icon" type="image/x-icon" href="http://192.168.20.22/smartbooking_front_test/images/10.png">
   <meta charset="utf-8">
@@ -77,10 +27,7 @@ $CI->load->model('m_room_type');
   <link href="http://192.168.20.22/smartbooking_front_test/css/css.css" rel="stylesheet">
   <link href="http://192.168.20.22/smartbooking_front_test/css/custom_header_en.css" rel="stylesheet">  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css?v=1001"> -->
    
-   
   <style>
-    
-
     .button {
       color: white;
       display: inline-block;
@@ -221,8 +168,8 @@ $CI->load->model('m_room_type');
         }
 </style></head>
 
-<!-- <body class="" style="">
-  <header>
+<body class="" style="">
+  <!-- <header>
     <nav class="navbar navbar-expand-sm navbar-light bg-light fixed-top text-center mr-auto mb-0" style="height: 70px; border-bottom: 1px solid rgb(204, 204, 204); background-color: rgb(255, 255, 255) !important;">
     <div class="container d-flex flex-row">
 		
@@ -233,31 +180,31 @@ $CI->load->model('m_room_type');
 	  <div class="col-9">
 		<ul class="navbar-nav me-auto mb-2 mb-lg-0 menu-bar">
             <li class="nav-item" id="nav_aboutus">
-                <a class="nav-link" href="home#aboutus">
+                <a class="nav-link" href="../../home#aboutus">
 					About us 
 				</a>
             </li>
             <li class="nav-item" id="nav_roomstype">
-                <a class="nav-link" href="home#roomtype">
+                <a class="nav-link" href="../../home#roomtype">
 					Rooms type 
 				</a>
             </li>
             <li class="nav-item" id="nav_packagep_promotions">
-                <a class="nav-link" href="home#package">
+                <a class="nav-link" href="../../home#package">
 					Package &amp; Promotions 
 				</a>
             </li>
             <li class="nav-item" id="nav_contactus">
                 <a class="nav-link" href="#facilities_amenities">
-					Facilities &amp; Amenities				</a>
+					Facilities &amp; Amenities</a>
             </li>
 			<li class="nav-item" id="nav_contactus">
                 <a class="nav-link" href="#nearby_locations">
 						<?php echo $lang == "english" ? 'Conditions & Policies' : 'เงื่อนไขและข้อกำหนด'; ?></a>
             </li>
 			<li class="nav-item" id="nav_contactus">
-				<a class="nav-link" href="http://192.168.20.22/smartbooking_front_test/contact_us.php" >
-					Contact us				</a>
+				<a class="nav-link" href="contact" >
+					Contact us</a>
             </li>
         </ul>
 	</div>
@@ -875,6 +822,7 @@ $CI->load->model('m_room_type');
 			<input type="hidden" name="search_type" id="search_type" value="">
 			<input type="hidden" name="packages" id="packages" value="">
 			<input type="hidden" name="project_id" id="project_id" value="">
+
 			<div class="container mt-5">
 				<div class="row search-bg pt-3" style="border: 2px solid #C6C6C7; border-radius: 5px; padding: 5px 0 5px 0; margin: 0 4px 0 4px;">
 					<div class="col-lg-3 ">
@@ -1153,6 +1101,16 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
 	<div class="row text-center mb-0" id="nav_roomstype">
 		<div class="col-md-12">
 			<!-- Google map -->
+
+			<!-- <div style="width: 100%; height: 500px;">
+        <div class="with-amp">
+          <div class="map-view">
+            <div class="google-map" id="google_map"></div>
+          </div>  
+        </div>
+      </div> -->
+			<!-- <div class="google-map" id="google_map"></div> -->
+
 			<div id="google-map">
 				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5462.972307432571!2d101.55065412783209!3d14.490156270739496!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x311c3b5927861817%3A0x4ef8dd372f4d0716!2sSMS%20Showroom!5e0!3m2!1sth!2sth!4v1683184985267!5m2!1sth!2sth" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 			</div>
@@ -1514,3 +1472,60 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
 	</footer>
 
 <div id="ui-datepicker-div" class="ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all"></div><span id="PING_IFRAME_FORM_DETECTION" style="display: none;"></span></body></html> -->
+
+<script>
+	const link = '<? echo $project_details->link_map; ?>';
+  const latitude = '<? echo $project_details->latitude; ?>';
+  const longitude = '<? echo $project_details->longitude; ?>';
+  
+  let coordinates = null;
+  
+  if (link) {
+      coordinates = extractCoordinates(link);
+  } else if (latitude && longitude) {
+      coordinates = {
+          lat: parseFloat(latitude),
+          lng: parseFloat(longitude)
+      };
+  }
+  if (coordinates) {
+    initMap(coordinates.lat, coordinates.lng);
+  }
+
+  function extractCoordinates(link) {
+      const regex = /@(-?\d+\.\d+),(-?\d+\.\d+)/;
+      const match = link.match(regex);
+      if (match) {
+          return {
+              lat: parseFloat(match[1]),
+              lng: parseFloat(match[2])
+          };
+      } else {
+          return null;
+      }
+  }
+
+  function initMap(lat, lng) {
+        const location = {lat: lat, lng: lng};
+        map = new google.maps.Map(document.getElementById('google_map'), {
+            zoom: 15,
+            center: location
+        });
+
+        const marker = new google.maps.Marker({
+            position: location,
+            map: map
+        });
+
+        const request = {
+            location: location,
+            radius: '500',
+            type: ['tourist_attraction']
+        };
+
+        service = new google.maps.places.PlacesService(map);
+        service.nearbySearch(request, callback);
+   }
+
+
+</script>
