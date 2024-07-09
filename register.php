@@ -343,7 +343,18 @@
         align-items: center;
         user-select: none;
     }
-</style>
+	
+	.password-container input {
+		flex: 1;
+		width: 100%;
+		padding: 10px;
+		margin: 10px 0;
+		font-size: 14px;
+		border: 1px solid #ccc;
+		border-radius: 4px;
+		box-sizing: border-box;
+	}
+	</style>
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         const togglePassword = document.querySelector('.toggle-password');
@@ -378,6 +389,7 @@
                                 <label for="email">Email</label>
                                 <input type="email" id="email" name="email" placeholder="Email" required>
                             </div>
+							<!--
                             <div class="form-group">
                                 <label for="password">Password</label>
                                 <div class="password-container">
@@ -385,6 +397,16 @@
                                     <span class="toggle-password"><i class="fas fa-eye-slash"></i></span>
                                 </div>
                             </div>
+							-->
+							<div class="form-group">
+								<label for="password">Password</label>
+								<div class="password-container">
+									<input type="password" id="password" name="password" placeholder="Password" required pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}">
+									<span class="toggle-password"><i class="fas fa-eye-slash"></i></span>
+								</div>
+								<small>Password must be at least 8 characters, include an uppercase letter, a lowercase letter, a number, and a special character.</small>
+							</div>
+
                             <div class="form-group">
                                 <div style="padding: 8px 0;">
                                     <label class="ck-agree">
@@ -472,6 +494,21 @@
             });
         });
     </script>
+	
+	<script>
+		document.addEventListener('DOMContentLoaded', function() {
+			const togglePassword = document.querySelector('.toggle-password');
+			const passwordField = document.getElementById('password');
+
+			togglePassword.addEventListener('click', function() {
+				const type = passwordField.getAttribute('type') === 'password' ? 'text' : 'password';
+				passwordField.setAttribute('type', type);
+				this.querySelector('i').classList.toggle('fa-eye');
+				this.querySelector('i').classList.toggle('fa-eye-slash');
+			});
+		});
+	</script>
+
 </body>
 
 </html>
