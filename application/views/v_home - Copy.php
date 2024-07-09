@@ -168,18 +168,6 @@ $CI->load->model('m_room_type');
 	  	max-width: 100%;
 	  	max-height: 100%;
 	  }
-	  .card-roomtype {
-<<<<<<< HEAD
-	   width: unset !important;
-	   max-width: 100%;
-	   height: 100%;
-	  }
-=======
-			width: unset !important;
-			max-width: 100%;
-			height: 100%;
-		}
->>>>>>> 2fae5674bf9bba163f4754491a208db26aa4973b
 	}
 	@media screen and (max-width: 777px) {
 	  .card:not(:first-child) {
@@ -451,35 +439,6 @@ $CI->load->model('m_room_type');
 		color: #fff !important;
 		border: #5392f9 !important;
 	}
-	
-		
-	.btn_stepper {
-		background-color: #5392f9 !important;
-		border: none;
-		border-radius: 50%;
-		width: 30px;
-		height: 30px;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		align-items: center;
-	}
-
-	.btn_stepper:focus {
-		outline: none;
-	}
-
-	.input_number {
-		text-align: center !important;
-		border: 1px solid #CCC;
-		background-color: white;
-		width: 30%;
-		margin: 0 8px;
-	}
-
-	.input_number:focus {
-		outline: none;
-	}
 
 
 
@@ -569,22 +528,9 @@ $CI->load->model('m_room_type');
 			margin: 0 auto; 
 			*/
 		}
-<<<<<<< HEAD
 	.empty-card {
         visibility: hidden;
     }
-    html {
-	    scroll-padding-top: 100px; /* Adjust the padding value as needed */
-	}
-=======
-		.empty-card {
-			visibility: hidden;
-		}
-		.slider-package {
-			padding-right: 40px !important;
-		}
-		
->>>>>>> 2fae5674bf9bba163f4754491a208db26aa4973b
 </style>
 
 <!-- Package -->
@@ -684,17 +630,17 @@ $CI->load->model('m_room_type');
 										<span id="div_room">&nbsp;1</span>
 									</div> <?php echo $this->lang->line('rooms'); ?>
 								</button>
-								<div class="dropdown-menu pb-0" style="vertical-align: bottom;" aria-labelledby="dropdownMenuButton" style="">
+								<div class="dropdown-menu" style="vertical-align: bottom;" aria-labelledby="dropdownMenuButton" style="">
 									<div class="stepper">
 										<div style="display: flex; justify-content: center;"><?php echo $this->lang->line('adult'); ?></div>
-										<div style="display: flex; justify-content: center; ">
+										<div style="display: flex; justify-content: center; background-color: white; ">
 											<button type="button" class="btn_stepper " id="decrement-adult" onClick="stepper(this);"> - </button>
 											<input class="input_number" type="number" min="0" max="100" step="1" value="2" name="adult" id="adult" readonly>
 											<button type="button" class="btn_stepper " id="increment-adult" onClick="stepper(this);"> + </button>
 										</div>
-										<div class="rounded hr3 mt-1 mb-2"></div>
+										<div class="rounded hr3 mt-2 mb-2"></div>
 										<div style="display: flex; justify-content: center;"><?php echo $this->lang->line('children'); ?></div>
-										<div style="display: flex; justify-content: center; ">
+										<div style="display: flex; justify-content: center;">
 											<button type="button" class="btn_stepper " id="decrement-children" onClick="stepper(this);"> - </button>
 											<input class="input_number" type="number" min="0" max="100" step="1" value="0" name="children" id="children" readonly>
 											<button type="button" class="btn_stepper " id="increment-children" onClick="stepper(this);"> + </button>
@@ -709,14 +655,13 @@ $CI->load->model('m_room_type');
 										</div> <!-- Kids Age -->
 										<div class="rounded hr3 mt-2"></div>
 
-										<div style="display: flex; justify-content: center; "><?php echo $this->lang->line('rooms'); ?></div>
-										<!--<div style="display: flex; justify-content: center; background-color: white; box-shadow: 0 20px 30px rgba(0,0,0,0.1)">-->
-										<div style="display: flex; justify-content: center; ">
+										<div style="display: flex; justify-content: center;"><?php echo $this->lang->line('rooms'); ?></div>
+										<div style="display: flex; justify-content: center; background-color: white; box-shadow: 0 20px 30px rgba(0,0,0,0.1)">
 											<button type="button" class="btn_stepper " id="decrement-room" onClick="stepper(this);"> - </button>
 											<input class="input_number" type="number" min="0" max="100" step="1" value="1" name="room" id="room" readonly>
 											<button type="button" class="btn_stepper " id="increment-room" onClick="stepper(this);"> + </button>
 										</div>
-										<div class="rounded hr3 mt-2" style="padding: 8px; font-size: 0.8em; backdrop-filter: blur(10px); background-color: rgb(189 219 251 / 45%) !important;"><?php echo $this->lang->line('notes'); ?>:
+										<div class="rounded hr3 mt-2" style="padding: 5px; font-size: 0.8em;"><?php echo $this->lang->line('notes'); ?>:
 											<?php if ($lang == 'english') { ?>
 												Please be informed that the maximum age for children is <?php echo app_settings('max_children_age'); ?>
 												years old. Kindly add children aged more than <?php echo app_settings('max_children_age'); ?> years as adult.
@@ -725,7 +670,6 @@ $CI->load->model('m_room_type');
 												เด็กที่จะเข้าพักในโครงการจะต้องเลือกเข้าพักเป็นผู้ใหญ่เท่านั้น
 											<?php } ?>
 										</div>
-										
 									</div>
 								</div>
 							</div>
@@ -742,7 +686,7 @@ $CI->load->model('m_room_type');
 				</div>
 			</div>
 		</form>
-		<div id="aboutus"></div>
+		
 
 
 
@@ -817,17 +761,11 @@ $CI->load->model('m_room_type');
 				}
 			});
 		});
+
 		</script>
-<<<<<<< HEAD
-		
 		<div class="col-md-12 mb-4 description-banner">
 			<div class="section-heading text-center mb-3">
-				<a href="https://smsmartbooking.buildersmart.com/project_info" target="_blank" class="a-readmore">
-=======
-		<div class="col-md-12 mb-4 description-banner" id="aboutus">
-			<div class="section-heading text-center mb-3">
-				<a href="https://smsmartbooking.buildersmart.com/project_info" target="_blank" class="a-readmore"  >
->>>>>>> origin/main
+				<a href="https://smsmartbooking.buildersmart.com/project_info" target="_blank" class="a-readmore" id="aboutus">
 					<h4 style="font-weight: 600;">
 						<?php
 							if (sizeof($packages) > 0) {
@@ -837,7 +775,6 @@ $CI->load->model('m_room_type');
 					</h4>
 				</a>
 			</div>
-			<div id="package"></div>
 			<div class="row">
 				<div class="col-md-12">
 					<div class="content">
@@ -872,15 +809,14 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
 		<!-- Descripttion -->
 </div>
 
-
 <?php if (sizeof($packages) > 0) { ?>
 <!-- PROMOTION & PACKAGE -->
-<div class="slider-wrapper slider1-wrapper slider-package" style="padding-top: 30px; padding-right: 20px;">
+<div class="slider-wrapper slider1-wrapper" style="padding-top: 30px;">
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-12 col-md-12 col-sm-12 col-12"> 
 				<h4 style="text-align: center; padding-bottom: 15px;" id="nav_packagep_promotions">
-					<a  href="javascript:;" class="tx-title-header">
+					<a id="package" href="javascript:;" class="tx-title-header">
 						<?php echo $lang == "english" ? 'Package & Promotions' : 'แพ็คเกจและโปรโมชั่น'; ?>
 					</a>
 				</h4>
@@ -896,11 +832,7 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
 					<?php //foreach ($packages as $package) {
 					foreach ($chunk as $package) { ?>
 					<!-- <div class="row col-lg-4 col-md-6 col-sm-12"> -->
-<<<<<<< HEAD
 						<div class="card col-lg-4 p-0">
-=======
-						<div class="card col-lg-4 p-0" style="margin: 0 8px;">
->>>>>>> 2fae5674bf9bba163f4754491a208db26aa4973b
 						  <div class="image-wrapper" >
 						  	<!-- class="package-img" -->
 							<img src="<?php echo share_folder_path() . $package->package_photo_url; ?>" alt="..."  >
@@ -1047,21 +979,13 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
 
 <!-- Room Types -->
 
-<<<<<<< HEAD
 
-<div class="row" id="roomtype"></div><br/>
+
 <div class="container mt-5">
 	<div class="row text-center mb-0" id="nav_roomstype">
 		<div class="col-md-12">
 			<h4>
-				<a href="javascript:;" class="tx-title-header"><?php //echo $this->lang->line('room_types'); ?>
-=======
-<div class="container mt-5" id="roomtype">
-	<div class="row text-center mb-0" id="nav_roomstype">
-		<div class="col-md-12">
-			<h4>
-				<a  href="javascript:;" class="tx-title-header"><?php //echo $this->lang->line('room_types'); ?>
->>>>>>> origin/main
+				<a id="roomtype" href="javascript:;" class="tx-title-header"><?php //echo $this->lang->line('room_types'); ?>
 					<?php echo ($lang == 'english') ? "Room Types" : "ประเภทของห้อง" ?>
 				</a>
 			</h4>
@@ -1484,14 +1408,14 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
     </div>
     <?php $index++; } ?>
 
-</div>
+
 
 	
 
 <!-- -------------------------------End New Room Types------------------------------------- -->
 
 <!-- Room Types -->
-<!-- 
+
 <div class="container mt-1">
 	<div class="header">
 		<div class="pl-4 text-center mt-4 mb-4">
@@ -1557,6 +1481,7 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
 							</div>
 							<div class="row mx-auto mt-2">
 								<div class="col-3 text-left icon_container">
+									<!-- <span class="icon-content"><img class="icon" src="<?php echo share_folder_path(); ?>images/icons/icons8-bedroom-50.png" height="18"></span> -->
 									<span class="icon-content"><object data="<?php echo share_folder_path(); ?>images/icons/icons8-bedroom-50.png" height="18"></object></span>
 								</div>
 								<div class="col-9 text-left icon_container">
@@ -1630,7 +1555,7 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
 		} ?>
 
 	</div>
-</div> -->
+</div>
 
 <form name="frm_room" id="frm_room" method="post" action="<?php echo site_url('room_details'); ?>">
 	<input type="hidden" name="project_id" id="project_id" value="">
@@ -1729,7 +1654,7 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
 		</div>
 	</div>
 </div>
-</div>
+
 <!-- facilities & amenities and nearby location -->
 
 <!-- <script src="//code.jquery.com/jquery.js"></script> -->

@@ -213,8 +213,9 @@ if ($id_guest != '') {
 					<?php echo $lang == "english" ? 'Package & Promotions' : 'แพ็คเกจและโปรโมชั่น'; ?> 
 				</a>
             </li>
+            <!-- target="_blank" -->
             <li class="nav-item" id="nav_contactus">
-                <a class="nav-link" href="http://192.168.20.22/smartbooking_front_test/facilities_amenities.php" target="_blank">
+                <a class="nav-link" href="facilities" >
 					<?php echo $lang == "english" ? 'Facilities & Amenities' : 'สิ่งอำนวยความสะดวก'; ?>
 				</a>
             </li>
@@ -226,14 +227,14 @@ if ($id_guest != '') {
             </li>
 			-->
 			<li class="nav-item" id="nav_contactus">
-                <a class="nav-link" href="http://192.168.20.22/smartbooking_front_test/conditions_policies.php" target="_blank">
+                <a class="nav-link" href="http://192.168.20.22/smartbooking_front_test/conditions_policies.php" >
 					<?php echo $lang == "english" ? 'Conditions & Policies' : 'เงื่อนไขและข้อกำหนด'; ?>
 				</a>
 				</a>
             </li>
 			<li class="nav-item" id="nav_contactus">
                 <!--<a class="nav-link" href="#contactus">-->
-				<a class="nav-link" href="http://192.168.20.22/smartbooking_front_test/contact_us.php" target="_blank">
+				<a class="nav-link" href="http://192.168.20.22/smartbooking_front_test/contact_us.php" >
 					<?php echo $lang == "english" ? 'Contact us' : 'ติดต่อเรา'; ?>
 				</a>
             </li>
