@@ -726,7 +726,7 @@ $CI->load->model('m_room_type');
 				</div>
 			</div>
 		</form>
-		
+		<div id="aboutus"></div>
 
 
 
@@ -803,9 +803,10 @@ $CI->load->model('m_room_type');
 		});
 
 		</script>
+		
 		<div class="col-md-12 mb-4 description-banner">
 			<div class="section-heading text-center mb-3">
-				<a href="https://smsmartbooking.buildersmart.com/project_info" target="_blank" class="a-readmore" id="aboutus">
+				<a href="https://smsmartbooking.buildersmart.com/project_info" target="_blank" class="a-readmore">
 					<h4 style="font-weight: 600;">
 						<?php
 							if (sizeof($packages) > 0) {
@@ -815,6 +816,7 @@ $CI->load->model('m_room_type');
 					</h4>
 				</a>
 			</div>
+			<div id="package"></div>
 			<div class="row">
 				<div class="col-md-12">
 					<div class="content">
@@ -849,6 +851,7 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
 		<!-- Descripttion -->
 </div>
 
+
 <?php if (sizeof($packages) > 0) { ?>
 <!-- PROMOTION & PACKAGE -->
 <div class="slider-wrapper slider1-wrapper slider-package" style="padding-top: 30px; padding-right: 20px;">
@@ -856,7 +859,7 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
 		<div class="row">
 			<div class="col-lg-12 col-md-12 col-sm-12 col-12"> 
 				<h4 style="text-align: center; padding-bottom: 15px;" id="nav_packagep_promotions">
-					<a id="package" href="javascript:;" class="tx-title-header">
+					<a  href="javascript:;" class="tx-title-header">
 						<?php echo $lang == "english" ? 'Package & Promotions' : 'แพ็คเกจและโปรโมชั่น'; ?>
 					</a>
 				</h4>
@@ -1020,12 +1023,12 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
 <!-- Room Types -->
 
 
-
+<div class="row" id="roomtype"></div><br/>
 <div class="container mt-5">
 	<div class="row text-center mb-0" id="nav_roomstype">
 		<div class="col-md-12">
 			<h4>
-				<a id="roomtype" href="javascript:;" class="tx-title-header"><?php //echo $this->lang->line('room_types'); ?>
+				<a href="javascript:;" class="tx-title-header"><?php //echo $this->lang->line('room_types'); ?>
 					<?php echo ($lang == 'english') ? "Room Types" : "ประเภทของห้อง" ?>
 				</a>
 			</h4>
@@ -1693,7 +1696,7 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
 		</div>
 	</div>
 </div>
-
+</div>
 <!-- facilities & amenities and nearby location -->
 
 <!-- <script src="//code.jquery.com/jquery.js"></script> -->
