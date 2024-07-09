@@ -11,7 +11,7 @@ class M_project_info extends CI_Model{
 		return $result;
 	}
 	
-	function get_project_info ($id_project_info = 1) {
+	function get_project_info($id_project_info) {
 		$result = new stdClass();
 		$this->db->select('bi.*, pi.*');
 		$this->db->from('project_info pi');
@@ -25,7 +25,25 @@ class M_project_info extends CI_Model{
 		}
 		return $result;
 	}
-	
+
+	function get_project_info_detail($id_project_info) {
+		$result = new stdClass();
+		$this->db->select('pi.*');
+		$this->db->from('project_info pi');
+
+		if (!empty($id_project_info)) {
+        	$this->db->where('pi.id_project_info', $id_project_info);
+    	}
+    	$this->db->limit(1);
+		$query = $this->db->get();
+		//echo $this->db->last_query();
+		if ($query->num_rows() > 0) {
+			$r = $query->result();
+			$result = $r[0];			
+		}
+		return $result;
+	}
+
 	function get_project_photos ($id_project_info = 1) {
 		$result = array();
 		$this->db->select('*');
@@ -53,7 +71,7 @@ class M_project_info extends CI_Model{
 		return $result;
 	}
 	
-	function get_project_facility ($id_project_info = 1) {
+	function get_project_facility($id_project_info) {
 		$result = array();
 		$this->db->select('*');
 		$this->db->from('project_facility');
