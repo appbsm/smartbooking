@@ -140,6 +140,10 @@ $CI->load->model('m_room_type');
 		color: #000 !important;
 		text-shadow: 0px 0px 1px #000
 	}
+	.tx-title-header:hover {
+		color: #000 !important;
+	}
+
 	.tx-title-sub {
 		color: #000 !important;
 	}
@@ -177,7 +181,8 @@ $CI->load->model('m_room_type');
 		width: calc(100% / 3);
 	  }
 	  .image-wrapper {
-		height: 20vw;
+/*		height: 20vw;*/
+		height: 18vw;
 		margin: 0 auto;
 	  }
 	  .image-wrapper img {
@@ -188,6 +193,11 @@ $CI->load->model('m_room_type');
 			width: unset !important;
 			max-width: 100%;
 			height: 100%;
+		}
+	}
+	@media (max-width: 767px) {
+		.fillter-h {
+			margin-top: 16px !important;
 		}
 	}
 	@media screen and (max-width: 777px) {
@@ -201,22 +211,24 @@ $CI->load->model('m_room_type');
 	}
 	.package-tx-title {
 		color: #000 !important;
-		font-size: 18px ;
+		font-size: 16px ;
 		font-weight: 600;
 		cursor: pointer;
+		margin-bottom: 0;
 	}
 	.package-tx-title:hover {
 		color: #000 !important;
-		font-size: 18px ;
+		font-size: 16px ;
 		font-weight: 600;
 		cursor: pointer;
 	}
 	.package-tx-sub {
 		color: #000 !important;
-		font-size: 14px ;
+		font-size: 13px ;
 		cursor: pointer;
 		font-weight: 600;
-		margin-bottom: 8px;
+/*		margin-bottom: 8px;*/
+		margin-bottom: 4px;
 	}
 	.package-tx {
 		-webkit-line-clamp: 2;
@@ -225,7 +237,8 @@ $CI->load->model('m_room_type');
 		font-style: normal;
 		font-size: 14px ;
 		font-weight: 700;
-		margin-bottom: 8px;
+/*		margin-bottom: 8px;*/
+		margin-bottom: 4px;
 	}
 	.package-tx-line {
 		color: rgba(143, 143, 143, 1.00);
@@ -329,7 +342,8 @@ $CI->load->model('m_room_type');
 		cursor: pointer;
 	}
 	.roomtype-tx-title:hover {
-		color: #0d6efd !important;
+/*		color: #0d6efd !important;*/
+		color: #000 !important;
 		font-size: 18px ;
 		font-weight: 500;
 		cursor: pointer;
@@ -470,15 +484,16 @@ $CI->load->model('m_room_type');
 		background-color: #102958 !important;
 		color: #fff !important;
 		border: #102958 !important;
+		padding: .375rem .75rem !important;
 	}
 	
 		
 	.btn_stepper {
-		background-color: #5392f9 !important;
+		background-color: #102958 !important;
 		border: none;
 		border-radius: 50%;
-		width: 30px;
-		height: 30px;
+		width: 25px;
+		height: 25px;
 		display: flex;
 		align-items: center;
 		justify-content: center;
@@ -668,8 +683,8 @@ $CI->load->model('m_room_type');
 			<input type="hidden" name="packages" id="packages" value="">
 			<input type="hidden" name="project_id" id="project_id" value="">
 
-			<div class="container mt-0">
-				<div class="row search-bg pt-3" style="border: 2px solid #C6C6C7; border-radius: 5px; padding: 5px 0 5px 0; margin: 0 4px 0 4px;">
+			<div class="container fillter-h">
+				<div class="row search-bg pt-1" style="border: 2px solid #C6C6C7; border-radius: 5px; padding: 0; margin: 0 4px 0 4px;font-size: 14px !important;">
 					<!--
 					<div class="col-lg-3 ">
 						<div class="col-md-12 text-left">
@@ -707,7 +722,7 @@ $CI->load->model('m_room_type');
 									</div> <?php echo $this->lang->line('rooms'); ?>
 								</button>
 								<div class="dropdown-menu pb-0" style="vertical-align: bottom;" aria-labelledby="dropdownMenuButton" style="">
-									<div class="stepper">
+									<div class="stepper" style="font-size: 14px !important;">
 										<div style="display: flex; justify-content: center;"><?php echo $this->lang->line('adult'); ?></div>
 										<div style="display: flex; justify-content: center; ">
 											<button type="button" class="btn_stepper " id="decrement-adult" onClick="stepper(this);"> - </button>
@@ -936,7 +951,7 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
 							<p class="package-tx">
 								<?php echo ($lang == 'english') ? 'Price' : 'ราคา'; ?> <?php echo number_format($package->price); ?> <?php echo ($lang == 'english') ? 'Baht' : 'บาท'; ?>
 							</p>
-							<p class="package-period-tt mt-2">
+							<p class="package-period-tt mt-1">
 								<span style="color: #000 !important;">Promo period</span>
 								<!--<span style="float: right;">Min. transaction</span>-->
 							</p>
@@ -954,7 +969,7 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
 								<p class="discount-title">Discount</p>
 								<p class="discount-no">10%</p>
 							</div>
-							<a href="<?php echo site_url('package/package_details') . '/' . $package->id_package; ?>" class="btn mt-2 btn-more" style="float: right;"><?php echo ($lang == 'english') ? 'Read More' : 'อ่านเพิ่มเติม'; ?></a>
+							<a href="<?php echo site_url('package/package_details') . '/' . $package->id_package; ?>" class="btn mt-1 btn-more" style="float: right;"><?php echo ($lang == 'english') ? 'Read More' : 'อ่านเพิ่มเติม'; ?></a>
 						  </div>
 						</div>
 					<!-- </div> -->
@@ -1070,7 +1085,9 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
 
 <!-- New Room Types -->
 <div class="row" id="roomtype"></div><br/>
-<div class="container mt-5">
+
+<!-- class="container mt-5" -->
+<div >
 	<div class="row text-center mb-0" id="nav_roomstype">
 		<div class="col-md-12">
 			<h4>
@@ -1105,18 +1122,21 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
     ?>
 
 	<div class="col-md-12 d-flex mt-3" style="flex-wrap: wrap;">
-		<div class="col-lg-1">
-		
+		<div class="col-xl-1">
 		</div>
-		<div class="col-lg-7">
+		<div class="col-lg-6 col-md-12">
 			<div class="content">
-				<img src="https://sharefolder.buildersmart.com/sms_booking/upload/room_type_photo/1_64880eea98d2c.jpeg" style="width: 100%;">
+				<!-- <img src="https://sharefolder.buildersmart.com/sms_booking/upload/room_type_photo/1_64880eea98d2c.jpeg" style="width: 100%;"> -->
+				<img src="<?php echo share_folder_path() . $photos[0]->room_photo_url; ?>" style="width: 100%;min-height: 350px;min-width: 470px;">
 			</div>
+			<!-- max-height: 600px;max-width: 750px; -->
+			<!-- object-fit: cover; -->
 		</div>
-		<div class="col-lg-3">
+		<!-- d-flex justify-content-center align-items-center -->
+		<div class="col-lg-5 col-md-12 ">
 			<div class="form-group">
 				<a href="http://192.168.20.22/sm_booking1/detail.php" target="_blank">
-					<h4 class="roomtype-tx-title"><?php echo ($lang == 'english') ? $room_type_en : $room_type_th; ?></h4>
+					<h4 class="roomtype-tx-title mt-2"><?php echo ($lang == 'english') ? $room_type_en : $room_type_th; ?></h4>
 				</a>
 				<!-- 1,500/Night -->
 				<?php
@@ -1125,66 +1145,90 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
                 <span style="color: #000;"><?php echo $price; ?></span>
 			</div>
 			<div class="form-group">
-				<p><?php echo ($lang == 'english') ? 'Room Information' : 'ข้อมูลห้องพัก'; ?></p>
+				<p class="mb-0" style="font-size: 13px !important;"><?php echo ($lang == 'english') ? 'Room Information' : 'ข้อมูลห้องพัก'; ?></p>
 				<!-- <span style="color: #000; font-size: 12px !important;">xxx</span> -->
+					<div class="row mx-auto mt-2" style="white-space: nowrap;" >
 				<?php foreach ($room_details as $detail) {
                     if ($detail->id_room_type == $rt->id_room_type) { ?>
-                        <div class="row mx-auto mt-2">
-                            <div class="col-2 col-xs-1 text-left icon_container">
+                            <div class="col-1 col-sm-1 col-xxl-1 d-flex align-items-center icon_container">
                                 <span class="icon-content">
-                                    <object data="http://192.168.20.22/smartbooking_front_test/images/icons/house.svg" height="20"></object>
+                                    <object data="http://192.168.20.22/smartbooking_front_test/images/icons/house.svg" height="15"></object>
                                 </span>
                             </div>
-                            <div class="col-10 col-xs-5 text-left icon_container">
-                                <span class="icon-content"><?php echo ($lang == 'english') ? $detail->area_en : $detail->area_th; ?></span>
+                            <div class="col-5 col-sm-3 col-xxl-3 p-0 d-flex align-items-center icon_container">
+                                <span style="font-size: 11px !important;white-space: normal;" class="icon-content"><?php echo ($lang == 'english') ? $detail->area_en : $detail->area_th; ?></span>
                             </div>
 
-                            <div class="col-2 col-xs-1 text-left icon_container">
+                            <div class="col-1 col-sm-1 col-xxl-1 d-flex align-items-center icon_container">
                                 <span class="icon-content">
-                                    <object data="https://sharefolder.buildersmart.com/sms_booking/images/icons/icons8-bedroom-50.png" height="18"></object>
+                                    <object data="https://sharefolder.buildersmart.com/sms_booking/images/icons/icons8-bedroom-50.png" height="15"></object>
                                 </span>
                             </div>
-                            <div class="col-10 col-xs-5 text-left icon_container">
-                                <span class="icon-content"><?php echo ($lang == 'english') ? $detail->room_details_en : $detail->room_details_th; ?></span>
+                            <div class="col-5 col-sm-3 col-xxl-3 p-0 d-flex align-items-center icon_container">
+                                <span style="font-size: 11px !important;white-space: normal;" class="icon-content"><?php echo ($lang == 'english') ? $detail->room_details_en : $detail->room_details_th; ?></span>
                             </div>
-                        </div>
 
-                        <div class="row mx-auto mt-2">
-                            <div class="col-3 text-left icon_container">
+                            <div class="col-1 col-sm-1 col-xxl-1 d-flex align-items-center icon_container">
                                 <span class="icon-content">
-                                    <object data="https://sharefolder.buildersmart.com/sms_booking/images/icons/icons8-bedroom-50.png" height="18"></object>
+                                    <object data="https://sharefolder.buildersmart.com/sms_booking/images/icons/bathroom.png" height="15"></object>
                                 </span>
                             </div>
-                            <div class="col-9 text-left icon_container">
-                                <span class="icon-content"><?php echo ($lang == 'english') ? $detail->room_details_en : $detail->room_details_th; ?></span>
+                            <div class="col-5 col-sm-3 col-xxl-3 p-0 d-flex align-items-center icon_container">
+                                <span style="font-size: 11px !important;white-space: normal;" class="icon-content"><?php echo ($lang == 'english') ? $detail->bathroom_en : $detail->bathroom_th; ?></span>
                             </div>
-                        </div>
-                <?php   }}   ?>         
+
+                            <div class="col-1 col-sm-1 col-xxl-1 d-flex align-items-center icon_container">
+                                <span class="icon-content">
+                                    <object data="https://sharefolder.buildersmart.com/sms_booking/images/icons/person-fill.svg" height="15"></object>
+                                </span>
+                            </div>
+                            <div class="col-5 col-sm-3 col-xxl-3 p-0 d-flex align-items-center icon_container">
+                                <span style="font-size: 11px !important;white-space: normal;" class="icon-content"><?php echo ($lang == 'english') ? $detail->number_of_adults.' Adults' : $detail->number_of_adults.' จำนวนผู้เข้าพัก'; ?></span>
+                            </div>
+
+                            <div class="col-1 col-sm-1 col-xxl-1 d-flex align-items-center icon_container">
+                                <span class="icon-content">
+                                    <object data="https://sharefolder.buildersmart.com/sms_booking/images/icons/tv.svg" height="15"></object>
+                                </span>
+                            </div>
+                            <div class="col-5 col-sm-3 col-xxl-3 p-0 d-flex align-items-center icon_container">
+                                <span style="font-size: 11px !important;white-space: normal;" class="icon-content">TV (Internet)</span>
+                            </div>
+
+                            <div class="col-1 col-sm-1 col-xxl-1 d-flex align-items-center icon_container">
+                                <span class="icon-content">
+                                    <object data="https://sharefolder.buildersmart.com/sms_booking/images/icons/snow.svg" height="15"></object>
+                                </span>
+                            </div>
+                            <div class="col-5 col-sm-3 col-xxl-3 p-0 d-flex align-items-center icon_container">
+                                <span style="font-size: 11px !important;white-space: normal;" class="icon-content"><?php echo $lang == 'english' ? 'Air Conditioning' : 'เครื่องปรับอากาศ'; ?></span>
+                            </div>
+                <?php   }}   ?> 
+            	</div>        
 
 			</div>
 			<div class="form-group">
-				<p>Highlights</p>
+				<p class="mb-0" style="font-size: 13px !important;" ><?php echo ($lang == 'english') ? 'Highlights' : 'ไฮไลท์'; ?></p>
+				<div class="row mx-auto mt-2" style="white-space: nowrap;" >
 				<?php foreach ($highlights as $highlight) { ?>
-				 	<div class="row mx-auto mt-2">
-                        <div class="col-3 mx-auto icon_container">
-                            <span class="icon-content">
-                            	<img src="http://192.168.20.22/sm_booking1/includes/image.php?filename=<?php echo $highlight->icon; ?>" class="icon-service">
-                            </span>
-                        </div>
-                        <div class="col-9 icon_container">
-                            <span class="icon-content"><?php echo ($lang == 'english') ? $highlight->description_en : $highlight->description_th; ?></span>
-                        </div>
+                    <div class="col-1 col-sm-1 col-xxl-1 d-flex align-items-center icon_container">
+                        <span class="icon-content">
+                            <!-- <object data="http://192.168.20.22/smartbooking_front_test/images/icons/house.svg" height="20"></object> -->
+                            <img src="http://192.168.20.22/sm_booking1/includes/image.php?filename=<?php echo $highlight->icon; ?>" height="15" class="icon-service">
+                        </span>
+                    </div>
+                    <div class="col-5 col-sm-3 col-xxl-3 p-0 d-flex align-items-center icon_container">
+                        <span style="font-size: 11px !important;" class="icon-content"><?php echo ($lang == 'english') ? $highlight->description_en : $highlight->description_th; ?></span>
                     </div>
 				<?php } ?>
+				</div>
 				<!-- <span style="color: #000; font-size: 12px !important;">xxx</span> -->
 			</div>
-			<div class="form-group">
-				<p>Facilities & Amenities</p>
-				<span style="color: #000; font-size: 12px !important;">xxx</span>
-			</div>
+			
 			<div class="footer mt-3 mb-2" style="justify-content: flex-start;">
 					<div class="ml-2 text-right">
-						<div class="ml-2 text-right">
+
+						
 							<button class="btn button-primary-w add_to_cart btn-add_to_cart" data-id="1" data-price="1500" id="" style="margin-right: 5px;" fdprocessedid="t8mt0r">
 								<?php
 									if (sizeof($packages) > 0) {
@@ -1199,11 +1243,15 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
 									}
 								?>
 							</a>
-						</div>
+
+						<!-- <div class="ml-2 text-right"> -->
+							&nbsp;&nbsp;<a  href="http://192.168.20.22/sm_booking1/detail.php" style="font-size: 14px;text-decoration: underline !important;" ><?php echo ($lang == 'english') ? 'View details' : 'ดูรายละเอียด'; ?></a>
+
+						<!-- </div> -->
 					</div>
 				</div>
 		</div>
-		<div class="col-lg-1">
+		<div class="col-xl-1">
 		
 		</div>
 	</div>
