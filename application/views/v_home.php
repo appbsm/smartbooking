@@ -169,17 +169,10 @@ $CI->load->model('m_room_type');
 	  	max-height: 100%;
 	  }
 	  .card-roomtype {
-<<<<<<< HEAD
-	   width: unset !important;
-	   max-width: 100%;
-	   height: 100%;
-	  }
-=======
 			width: unset !important;
 			max-width: 100%;
 			height: 100%;
 		}
->>>>>>> 2fae5674bf9bba163f4754491a208db26aa4973b
 	}
 	@media screen and (max-width: 777px) {
 	  .card:not(:first-child) {
@@ -404,6 +397,9 @@ $CI->load->model('m_room_type');
 		right: -4px !important;
 	}
 	
+	.form-control, label, span, h1, h2, h3, h4, h5, h6, a {
+		color: #000;
+	}
 	.form-control-ckinout {
 		padding: 1.165rem .75rem !important;
 	}
@@ -569,22 +565,16 @@ $CI->load->model('m_room_type');
 			margin: 0 auto; 
 			*/
 		}
-<<<<<<< HEAD
-	.empty-card {
-        visibility: hidden;
-    }
-    html {
-	    scroll-padding-top: 100px; /* Adjust the padding value as needed */
-	}
-=======
 		.empty-card {
 			visibility: hidden;
 		}
 		.slider-package {
 			padding-right: 40px !important;
 		}
+		.box-fillter {
+			padding: 0 140px !important;
+		}
 		
->>>>>>> 2fae5674bf9bba163f4754491a208db26aa4973b
 </style>
 
 <!-- Package -->
@@ -635,7 +625,7 @@ $CI->load->model('m_room_type');
 
 
 	<!-- SECTION FOR SEARCH -->
-	<div class="container-fluid text-center search-box">
+	<div class="container-fluid text-center search-box box-fillter">
 		<form name="frm_search" id="frm_search" method="post" action="<?php echo site_url('home/search'); ?>">
 			<input type="hidden" name="s_id_room_type" id="s_id_room_type" value="">
 			<input type="hidden" name="s_num_of_adult" id="s_num_of_adult" value="">
@@ -646,12 +636,12 @@ $CI->load->model('m_room_type');
 			<input type="hidden" name="packages" id="packages" value="">
 			<input type="hidden" name="project_id" id="project_id" value="">
 
-			<div class="container mt-5">
+			<div class="container mt-2">
 				<div class="row search-bg pt-3" style="border: 2px solid #C6C6C7; border-radius: 5px; padding: 5px 0 5px 0; margin: 0 4px 0 4px;">
+					<!--
 					<div class="col-lg-3 ">
 						<div class="col-md-12 text-left">
 							<label class="ml-1" for="name"><?php echo $lang == "english" ? 'Location' : 'สถานที่'; ?> </label>
-							<!-- <input type='text' class=" form-control search_input" value=""/>	 -->
 							<select class="form-control selectpicker search_input" data-live-search="true" name="project_id" id="project_id">
 								<?php foreach ($project_all as $pj) { ?>
 									<option value="<?php echo $pj->id_project_info ?>"><?php echo $lang == "english" ? $pj->project_name_en : $pj->project_name_th; ?></option>
@@ -659,23 +649,23 @@ $CI->load->model('m_room_type');
 							</select>
 						</div>
 					</div>
-					<div class="col-xl-2 col-lg-2 col-md-6 col-sm-6 col-xs-6">
+					-->
+					<div class="col-xl-3 col-lg-2 col-md-6 col-sm-6 col-xs-6">
 						<div class="col-md-12 text-left">
-							<label class="ml-1" for="name"><?php echo $this->lang->line('check_in_date'); ?></label>
-
+							<label class="ml-1 mb-1" for="name" style="font-size: 14px;"><?php echo $this->lang->line('check_in_date'); ?></label>
 							<input type='text' class=" form-control form-control-ckinout datepicker search_input" name="check_in_date" id="check_in_date" value="" />
 						</div>
 					</div>
-					<div class="col-xl-2 col-lg-2 col-md-6 col-sm-6 col-xs-6">
+					<div class="col-xl-3 col-lg-2 col-md-6 col-sm-6 col-xs-6">
 						<div class="col-md-12 text-left">
-							<label class="ml-1" for="name"><?php echo $this->lang->line('check_out_date'); ?></label>
+							<label class="ml-1 mb-1" for="name" style="font-size: 14px;"><?php echo $this->lang->line('check_out_date'); ?></label>
 							<input type='text' class="form-control form-control-ckinout datepicker search_input" name="check_out_date" id="check_out_date" value="" />
 						</div>
 					</div>
-					<div class="col-lg-3 col-md-6">
+					<div class="col-lg-4 col-md-6">
 						<!-- <div class="col-md-12 mt-2"><b><?php echo $this->lang->line('search_by_room'); ?></b></div> -->
 						<div class="col-md-12 mb-2 text-left">
-							<label class="ml-1" for="name"><?php echo $lang == "english" ? 'Adult' : 'ผู้เข้าพัก'; ?></label>
+							<label class="ml-1 mb-1" for="name" style="font-size: 14px;"><?php echo $lang == "english" ? 'Adult' : 'ผู้เข้าพัก'; ?></label>
 							<div class="dropdown">
 								<button class="btn dropdown-toggle w-100 search_input" style="color: #000 !important; background-color: #fff !important; width:100%;" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 									<div class="d-inline-flex">
@@ -733,7 +723,7 @@ $CI->load->model('m_room_type');
 					</div>
 					<div class="col-lg-2 col-md-6">
 						<div class="col-md-12 mb-2 text-left">
-							<label for="name">&nbsp;</label>
+							<label for="name" class="mb-1">&nbsp;</label>
 							<button disabled id="search" class="form-control form-control-btnsearch search_input search_button btn-default btn-search" data-search-type="search_room" style="background-color:#81BB4A;cursor: pointer; display: flex; align-items: center; justify-content: center; ">
 								<?php echo $this->lang->line('search'); ?>
 							</button>
@@ -817,17 +807,12 @@ $CI->load->model('m_room_type');
 				}
 			});
 		});
+
 		</script>
-<<<<<<< HEAD
 		
 		<div class="col-md-12 mb-4 description-banner">
 			<div class="section-heading text-center mb-3">
 				<a href="https://smsmartbooking.buildersmart.com/project_info" target="_blank" class="a-readmore">
-=======
-		<div class="col-md-12 mb-4 description-banner" id="aboutus">
-			<div class="section-heading text-center mb-3">
-				<a href="https://smsmartbooking.buildersmart.com/project_info" target="_blank" class="a-readmore"  >
->>>>>>> origin/main
 					<h4 style="font-weight: 600;">
 						<?php
 							if (sizeof($packages) > 0) {
@@ -896,11 +881,7 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
 					<?php //foreach ($packages as $package) {
 					foreach ($chunk as $package) { ?>
 					<!-- <div class="row col-lg-4 col-md-6 col-sm-12"> -->
-<<<<<<< HEAD
-						<div class="card col-lg-4 p-0">
-=======
 						<div class="card col-lg-4 p-0" style="margin: 0 8px;">
->>>>>>> 2fae5674bf9bba163f4754491a208db26aa4973b
 						  <div class="image-wrapper" >
 						  	<!-- class="package-img" -->
 							<img src="<?php echo share_folder_path() . $package->package_photo_url; ?>" alt="..."  >
@@ -1047,7 +1028,6 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
 
 <!-- Room Types -->
 
-<<<<<<< HEAD
 
 <div class="row" id="roomtype"></div><br/>
 <div class="container mt-5">
@@ -1055,13 +1035,6 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
 		<div class="col-md-12">
 			<h4>
 				<a href="javascript:;" class="tx-title-header"><?php //echo $this->lang->line('room_types'); ?>
-=======
-<div class="container mt-5" id="roomtype">
-	<div class="row text-center mb-0" id="nav_roomstype">
-		<div class="col-md-12">
-			<h4>
-				<a  href="javascript:;" class="tx-title-header"><?php //echo $this->lang->line('room_types'); ?>
->>>>>>> origin/main
 					<?php echo ($lang == 'english') ? "Room Types" : "ประเภทของห้อง" ?>
 				</a>
 			</h4>
@@ -1484,7 +1457,7 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
     </div>
     <?php $index++; } ?>
 
-</div>
+
 
 	
 
