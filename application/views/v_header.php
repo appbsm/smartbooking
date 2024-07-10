@@ -165,6 +165,33 @@ if ($id_guest != '') {
 		color: #000 !important;
 		
 	}
+	
+	.logo-img {
+		width: 70% !important; 
+	}
+
+	@media (min-width: 1024px) {
+		.logo-img {
+			max-width: 70% !important; 
+		}
+	}
+
+	@media (min-width: 1400px) {
+		.logo-img {
+			max-width: 30% !important; 
+		}
+	}
+
+	@media (min-width: 769px) and (max-width: 1024px) {
+		.logo-img {
+			max-width: 50% !important; 
+		}
+	}
+	@media (max-width: 767px) {
+		.logo-img {
+		  width: 20% !important;
+		}
+	}
   </style>
 
   <script>
@@ -212,7 +239,7 @@ if ($id_guest != '') {
     <div class="container d-flex flex-row">
 		
 	  <span class="mx-3">
-		<a class="logo" href="<?php echo site_url('home'); ?>"><img src="<?php echo site_url(); ?>images/logo-SM/SM smart booking_White.png"  width="70%"></a>
+		<a class="logo" href="<?php echo site_url('home'); ?>"><img src="<?php echo site_url(); ?>images/logo-SM/SM smart booking_White.png" class="logo-img"></a>
 	  </span>  
 
 	  <!-- new menu -->
