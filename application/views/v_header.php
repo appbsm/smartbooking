@@ -133,6 +133,16 @@ if ($id_guest != '') {
 	.input-group:not(.has-validation)>.dropdown-toggle:nth-last-child(n+3) {
 		background-color: #f8f9fa !important;
 	}
+
+	@font-face {
+	  font-family: 'Noto_Font';
+	  src: url('NotoSerifThai-VariableFont_wdth,wght.ttf') format('truetype');
+	}
+	body {
+/*    font-family: Manrope,'IBM Plex Sans Thai';*/
+    font-family: 'Noto_Font', 'Helvetica Neue', Arial, sans-serif !important;
+  } 
+
 /*../fonts/font-pfr/*/
   </style>
 
