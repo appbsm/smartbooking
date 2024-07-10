@@ -139,12 +139,38 @@ if ($id_guest != '') {
 	@font-face {
 	  font-family: 'Noto_Font';
 	  src: url('NotoSerifThai-VariableFont_wdth,wght.ttf') format('truetype');
-/*		src: url('NotoSerifThai-Light.ttf') format('truetype');*/
 	}
+	/*body {
+    font-family: 'Helvetica Neue', Arial, sans-serif !important;
+	}*/
+	/*@media (prefers-color-scheme: light) {
+    body[lang="th"] {
+        font-family: 'Noto_Font', 'Helvetica Neue', sans-serif !important;
+       font-family: 'Noto_Font', 'Helvetica Neue', Arial, sans-serif;
+    }
+	}*/
+
 	body {
+    font-family: 'Helvetica Neue', Arial, sans-serif !important;
+	}
+
+	/* For Thai language */
+	body[lang="th"] {
+	    font-family: 'Noto_Font', 'Helvetica Neue', Arial, sans-serif !important;
+	}
+
+/*	body {*/
 /*    font-family: Manrope,'IBM Plex Sans Thai';*/
-    font-family: 'Noto_Font', 'Helvetica Neue', Arial, sans-serif !important;
-  } 
+	
+/*    font-family: 'Noto_Font',Arial,'Helvetica Neue', sans-serif !important;*/
+    /*font-family: 'Helvetica Neue', Arial, sans-serif !important;
+    @media (prefers-color-scheme: light) {
+        body:lang(th) {
+            font-family: 'Noto_Font', 'Helvetica Neue', Arial, sans-serif;
+        }
+    }
+  } */
+
 
 /*../fonts/font-pfr/*/
 

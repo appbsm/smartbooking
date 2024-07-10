@@ -392,19 +392,19 @@ $CI->load->model('m_room_type');
                     <div class="form-content form-email">
                         <form>
                             <div class="form-group">
-                                <label for="email">First name</label>
+                                <label style="color: black;" for="email">First name</label>
                                 <input type="firstname" id="email" name="email" placeholder="First name" required>
                             </div>
                             <div class="form-group">
-                                <label for="Last name">Last name</label>
+                                <label style="color: black;" for="Last name">Last name</label>
                                 <input type="lastname" id="email" name="email" placeholder="Last name" required>
                             </div>
                             <div class="form-group">
-                                <label for="email">Email</label>
+                                <label style="color: black;" for="email">Email</label>
                                 <input type="email" id="email" name="email" placeholder="Email" required>
                             </div>
                             <div class="form-group">
-                                <label for="password">Password</label>
+                                <label style="color: black;" for="password">Password</label>
                                 <div class="password-container">
                                     <input type="password" id="password" name="password" placeholder="Password" required pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}">
                                     <span class="toggle-password"><i class="fas fa-eye-slash"></i></span>
@@ -433,25 +433,26 @@ $CI->load->model('m_room_type');
                 </div>
                 <div class="social-login ">
                     <div class="social-buttons">
-                        <button style="background-color: white !important;border: 1px solid black;" class="google">
-                            <img src="https://cdn6.agoda.net/images/universal-login/google-logo-v2.svg" alt="Google" class="icon-social"><a style="color: black;">Google</a>
+                        <button style="background-color: white !important;color: #5392f9 !important;border: 1px solid black;" class="google">
+                            <img src="https://cdn6.agoda.net/images/universal-login/google-logo-v2.svg" alt="Google" class="icon-social">Google
                         </button>
-                        <button style="background-color: white !important;border: 1px solid black;" class="facebook">
-                            <img src="https://cdn6.agoda.net/images/universal-login/facebook-logo.svg" alt="Facebook" class="icon-social"><a style="color: black;">Facebook</a>
+                        <button style="background-color: white !important;color: #5392f9 !important;border: 1px solid black;" class="facebook">
+                            <img src="https://cdn6.agoda.net/images/universal-login/facebook-logo.svg" alt="Facebook" class="icon-social">Facebook
                         </button>
                     </div>
                 </div>
                 <hr/>
                 <div class="form-group">
-                    <a href="signin.php">
+                    <a href="../login">
                         <button style="background-color: #102958 !important;" type="submit">Already have an account? Sign in</button>
                     </a>
                 </div>
                 <div class="terms-policy">
                     <span style="color: black;" >By signing in, I agree to Smsmartbooking's </span><br/>
                     <span >   
-                        <a style="color: #5392f9 !important;" href="#" target="_blank">Terms of Use</a><span style="color: black;"> and</span>
-                        <a style="color: #5392f9 !important;" href="#" target="_blank">Privacy Policy</a>.
+                        <!-- target="_blank" -->
+                        <a style="color: #5392f9 !important;" href="#" >Terms of Use</a><span style="color: black;"> and</span>
+                        <a style="color: #5392f9 !important;" href="#" >Privacy Policy</a>.
                     </span>
                 </div>
             </div>
