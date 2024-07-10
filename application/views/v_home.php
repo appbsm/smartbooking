@@ -79,6 +79,15 @@ $CI->load->model('m_room_type');
 		font-size: 16px;
 		font-weight: 400;
 	}
+	.aboutus-tx-title {
+		text-align: left ;
+		text-transform: capitalize;
+	}
+	.aboutus-tx-text {
+		font-size: 1em !important;
+		color: #000;
+		text-align: left;
+	}
 	.long-text {
 		display: none; /* ซ่อนข้อความยาวในตอนแรก */
 		font-size: 1em !important;
@@ -89,15 +98,15 @@ $CI->load->model('m_room_type');
 	.short-text {
 		margin: 0;
 		font-size: 1em !important;
-		color: rgba(255, 255, 255, 1.00);
-		text-shadow: 2px 2px 4px #000000;
+		color: #000;
+		/*text-shadow: 2px 2px 4px #000000;*/
 	}
 	.a-readmore {
 		/*color: #839287;
 		color: rgb(215, 215, 219) !important;
 		color: rgb(83 146 249) !important;*/
-		color: #fff !important;
-		text-shadow: 2px 2px 4px #000000;
+		color: #000 !important;
+		/*text-shadow: 2px 2px 4px #000000;*/
 	}
 	.readmore-toggle {
 		display: block;
@@ -117,7 +126,11 @@ $CI->load->model('m_room_type');
 	
 	.em-readmore {
 		/*color: rgb(83 146 249) !important; */
-		color: rgb(215, 215, 219) !important;
+		color: #000 !important;
+	}
+	.em-readmore:hover {
+		/*color: rgb(83 146 249) !important; */
+		color: #000 !important;
 	}
 	
 	.tx-title-header {
@@ -585,6 +598,10 @@ $CI->load->model('m_room_type');
 			padding-right: 4px !important;
 			padding-left: 4px !important;
 		}
+		.aboutus-lr {
+			margin-right: 48px !important;
+			margin-left: 48px !important;
+		}
 </style>
 
 <!-- Package -->
@@ -742,44 +759,13 @@ $CI->load->model('m_room_type');
 				</div>
 			</div>
 		</form>
-		<div id="aboutus"></div>
-
-
-
-		<!-- <div class="col-md-6">
-				
-				<div class="row">
-					<div class="col-md-12 mt-2"><b><?php echo $this->lang->line('search_by_package'); ?></b></div>
-					<div class="col-md-6 mb-2">
-						<div class="checkbox-dropdown" style="">
-						  <?php //echo $this->lang->line('choose_package');
-							?>
-						  <ul class="checkbox-dropdown-list">
-							<?php //foreach ($packages as $package) {
-							?>
-							<li>
-							  <label>
-								<input class="package_cbox" type="checkbox" value="<?php echo $package->id_package; ?>" name="package" /><?php echo $package->name; ?></label>
-							</li>
-							<?php //}
-							?>
-							
-						  </ul>
-						</div>
-					</div>
-				
-				<div class="col-md-6">
-					<div >
-						<button disabled id="search_package" class="form-control search_input search_button btn-default" data-search-type="search_package" style="cursor: pointer; padding: 0 50px 0 50px;"><?php echo $this->lang->line('search_package'); ?></button>
-					</div>
-				</div>
-			</div>
-		</div> -->
 
 	</div>
+	
+	<div class="row" id="aboutus"></div><br/>
 		<!-- Descripttion -->
+		<!--
 		<script>
-		/*
 			document.addEventListener('DOMContentLoaded', function() {
 				document.getElementById('readMoreBtn').addEventListener('click', function() {
 					var longText = document.querySelector('.long-text');
@@ -787,36 +773,21 @@ $CI->load->model('m_room_type');
 
 					if (longText.style.display === 'none') {
 						longText.style.display = 'block';
-						btn.textContent = 'ซ่อนข้อความ';
+						btn.innerHTML = '<?php
+									if (sizeof($packages) > 0) {
+										echo ($lang == 'english') ? 'Read less...' : 'ซ่อนข้อความ...';
+									}
+								?><i class="fas fa-angle-down"></i>';
 					} else {
 						longText.style.display = 'none';
-						btn.textContent = 'อ่านต่อ';
+						btn.innerHTML = '<?php
+									if (sizeof($packages) > 0) {
+										echo ($lang == 'english') ? 'Read more...' : 'อ่านต่อ...';
+									}
+								?><i class="fas fa-angle-up"></i>';
 					}
 				});
 			});
-		*/
-		document.addEventListener('DOMContentLoaded', function() {
-			document.getElementById('readMoreBtn').addEventListener('click', function() {
-				var longText = document.querySelector('.long-text');
-				var btn = document.getElementById('readMoreBtn');
-
-				if (longText.style.display === 'none') {
-					longText.style.display = 'block';
-					btn.innerHTML = '<?php
-								if (sizeof($packages) > 0) {
-									echo ($lang == 'english') ? 'Read less...' : 'ซ่อนข้อความ...';
-								}
-							?><i class="fas fa-angle-down"></i>';
-				} else {
-					longText.style.display = 'none';
-					btn.innerHTML = '<?php
-								if (sizeof($packages) > 0) {
-									echo ($lang == 'english') ? 'Read more...' : 'อ่านต่อ...';
-								}
-							?><i class="fas fa-angle-up"></i>';
-				}
-			});
-		});
 
 		</script>
 		
@@ -851,7 +822,7 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
 								}
 							?>
 						</p>
-						<!--<button id="readMoreBtn" class="mt-3">อ่านต่อ...</button>-->
+						
 						<span id="readMoreBtn" class="readmore-toggle">
 							<?php
 								if (sizeof($packages) > 0) {
@@ -864,9 +835,65 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
 				</div>
 			</div>
 		</div>
+		-->
 		<!-- Descripttion -->
 </div>
-
+<!-- New About Us -->
+	
+	<div class="container mt-2 aboutus-lr">
+		<div class="row text-center mb-0" id="nav_roomstype">
+			<div class="col-md-12 d-flex" style="flex-wrap: wrap;">
+				<div class="col-lg-4">
+					<div class="section-heading text-center mb-3">
+						<a href="https://smsmartbooking.buildersmart.com/project_info" target="_blank" class="a-readmore">
+							<div class="row aboutus-tx-title">
+								<h3 class="header-text" style="color: #000 !important; background-color: #CCC; padding: 10px; margin-bottom: 18px;">
+									<?php
+										if (sizeof($packages) > 0) {
+											echo ($lang == 'english') ? 'Welcome SM Resort' : 'ยินดีต้อนรับสู่ เอสเอ็ม รีสอร์ท';
+										}
+									?>
+								</h3>
+								<br/><br/><br/>
+							</div>
+							<div class="row aboutus-tx-title">
+								<p style="font-size: 18px; color: #000 !important;">
+									<?php
+										if (sizeof($packages) > 0) {
+											echo ($lang == 'english') ? '
+											<b>Relax amidst the stunning scenery</b>, surrounded by nature and fresh air. SM Resort redefines a new style of accommodation with its modern resort collection under the BuildSmart Group. Located in the picturesque Khao Yai area' : '<b>เอสเอ็ม รีสอร์ท</b> คือนิยามของที่พักแนวใหม่ คอลเลคชั่น รีสอร์ททันสมัย ในเครือของบริษัท บิวเดอสมาร์ท พร้อมการพลิกโฉมใหม่อย่างโดดเด่นบนพื้นที่เขาใหญ่';
+										}
+									?>
+								</p>
+							</div>
+						</a>
+					</div>
+				</div>
+				<div class="col-lg-4">
+					<div class="content" style="text-align: left; margin-top: 24px;"><br/><br/>
+						<p class="aboutus-tx-text ">
+							<?php
+								if (sizeof($packages) > 0) {
+									echo ($lang == 'english') ? '
+									<p>SM Resort redefines a new style of accommodation with its modern resort collection under the BuildSmart Group. Located in the picturesque Khao Yai area, SM Resort offers a remarkable transformation to welcome guests. With various activities available, we are ready to provide a new kind of experience for travelers. Additionally, we host a variety of gatherings and events, ensuring to create precious memories for you.</p>
+									<p><a href="https://smsmartbooking.buildersmart.com/project_info" target="_blank" class="em-readmore"><em></i>Read more...</em></a></p>' : '
+									<p> เพื่อต้อนรับแขกผู้มาเยือน พร้อมทั้งมีกิจกรรมต่างๆมากมาย พร้อมแล้วที่จะมอบประสบการณ์ในแบบฉบับใหม่ให้กับนักเดินทาง  รวมถึงงานเลี้ยงสังสรรค์ต่างๆ ที่พร้อมแล้วที่จะสร้างความทรงจำอันล้ำค่าเพื่อคุณ </p>
+									<p><a href="https://smsmartbooking.buildersmart.com/project_info" target="_blank" class="em-readmore"><em>อ่านต่อ...</em></a></p>';
+								}
+							?>
+						</p>
+						
+					</div>
+				</div>
+				<div class="col-lg-4">
+					<div class="content" style="text-align: left; margin-top: 24px;"><br/><br/>
+						<img src="https://sharefolder.buildersmart.com/sms_booking/upload/package_photo/8_648ad3a488cab.jpg" style="width: 100%;">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+<!-- New About Us -->
 
 <?php if (sizeof($packages) > 0) { ?>
 <!-- PROMOTION & PACKAGE -->
