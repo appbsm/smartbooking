@@ -397,8 +397,8 @@ $CI->load->model('m_room_type');
 		right: -4px !important;
 	}
 	
-	.form-control, label, span, h1, h2, h3, h4, h5, h6, a {
-		color: #000;
+	.form-control, label,  a {
+		color: #000 !important;
 	}
 	.form-control-ckinout {
 		padding: 1.165rem .75rem !important;
