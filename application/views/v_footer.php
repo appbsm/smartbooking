@@ -86,14 +86,26 @@ $lang  = $lg;
 
               <div class="col-lg-3 col-sm-6 pb-3 text-center pl-3">
 
+<<<<<<< HEAD
+=======
+                
+>>>>>>> e9b7177b3e3305c665a48424bb3b812fe4530098
                 <div class="footer_set_left footer_set_left2">
 
                 <div class="footer-menu">
                   <img src="http://192.168.20.22/smartbooking_front_test/images/logo_small.png" width="140" alt="logo">
+<<<<<<< HEAD
                 <br><br>
                   <p class="text-light custom-font" style="font-size:18px;font-family: PFR_Font,'PSLxText', sans-serif;">IoT Specialist<br>"Connecting your world, <br>
                     Simplifying your life."
                   </p>
+=======
+          <br><br>
+                  <p class="text-light" style="font-size:18px;font-family: yourFontName,'PSLxText';">IoT Specialist<br>"Connecting your world, <br>
+                    Simplifying your life."
+                  </p>
+
+>>>>>>> e9b7177b3e3305c665a48424bb3b812fe4530098
 <p>
 <a href="https://www.facebook.com/profile.php?id=61551989652981">
             <svg width="16" height="16" fill="#F9FAFA" class="bi bi-facebook" viewBox="0 0 16 16">
