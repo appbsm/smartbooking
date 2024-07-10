@@ -12,6 +12,14 @@ class Login extends CI_Controller {
 	
 	public function index()
 	{		
+		$this->load->view('v_header');
+		// $this->load->view('v_login');
+		$this->load->view('register');
+		$this->load->view('v_footer');
+	}
+
+	public function index_old()
+	{		
 		if (!empty($_POST)) {
 			$username = $this->input->post('username'); //username
 			$password = $this->m_stringlib->useMD5($this->input->post('password'), strtolower($this->input->post('password')));
@@ -58,7 +66,7 @@ class Login extends CI_Controller {
 			//print_r($this->session->userdata('cart_data'));
 			$this->load->view('v_header');
 			$this->load->view('v_login');
-			$this->load->view('v_footer');
+			// $this->load->view('register');
 			//$this->load->view('v_footer');
 		}
 		
