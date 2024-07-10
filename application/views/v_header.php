@@ -133,7 +133,7 @@ if ($id_guest != '') {
 	.input-group:not(.has-validation)>.dropdown-toggle:nth-last-child(n+3) {
 		background-color: #f8f9fa !important;
 	}
-	
+/*../fonts/font-pfr/*/
   </style>
 
   <script>
