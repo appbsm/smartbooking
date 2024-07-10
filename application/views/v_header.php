@@ -124,7 +124,7 @@ if ($id_guest != '') {
         color: #fff !important;
         /*border: #5392f9 !important;*/
 	}
-	
+	 
 	.dropdown-user {
 		/*border: 1px solid #5392f9;*/
 		border-radius: 4px;
@@ -140,39 +140,14 @@ if ($id_guest != '') {
 	  font-family: 'Noto_Font';
 	  src: url('NotoSerifThai-VariableFont_wdth,wght.ttf') format('truetype');
 	}
-	/*body {
-    font-family: 'Helvetica Neue', Arial, sans-serif !important;
-	}*/
-	/*@media (prefers-color-scheme: light) {
-    body[lang="th"] {
-        font-family: 'Noto_Font', 'Helvetica Neue', sans-serif !important;
-       font-family: 'Noto_Font', 'Helvetica Neue', Arial, sans-serif;
-    }
-	}*/
-
-	body {
-    font-family: 'Helvetica Neue', Arial, sans-serif !important;
-	}
-
-	/* For Thai language */
-	body[lang="th"] {
-	    font-family: 'Noto_Font', 'Helvetica Neue', Arial, sans-serif !important;
-	}
-
-/*	body {*/
-/*    font-family: Manrope,'IBM Plex Sans Thai';*/
 	
-/*    font-family: 'Noto_Font',Arial,'Helvetica Neue', sans-serif !important;*/
-    /*font-family: 'Helvetica Neue', Arial, sans-serif !important;
-    @media (prefers-color-scheme: light) {
-        body:lang(th) {
-            font-family: 'Noto_Font', 'Helvetica Neue', Arial, sans-serif;
-        }
-    }
-  } */
+	body {
+    font-family: Arial, sans-serif !important;
+	}
 
-
-/*../fonts/font-pfr/*/
+	.thai-text {
+    font-family: 'Noto_Font', Arial, sans-serif !important;
+  }
 
 	.navbar-light .navbar-nav .nav-link {
 		color: rgba(255, 255, 255, 1.00) !important;

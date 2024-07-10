@@ -298,3 +298,15 @@ $lang  = $lg;
 <!--2-->
 </body>
 </html>
+
+<script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const elements = document.querySelectorAll("p, span, div"); // เลือกทุก p, span, div หรือเพิ่มองค์ประกอบอื่นๆ ที่ต้องการตรวจสอบ
+            const thaiRegex = /[\u0E00-\u0E7F]/; // ช่วง Unicode สำหรับตัวอักษรไทย
+            elements.forEach(function(element) {
+                if (thaiRegex.test(element.textContent)) {
+                    element.classList.add("thai-text");
+                }
+            });
+        });
+    </script>
