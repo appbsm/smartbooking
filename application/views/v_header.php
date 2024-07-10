@@ -124,7 +124,7 @@ if ($id_guest != '') {
         color: #fff !important;
         /*border: #5392f9 !important;*/
 	}
-	
+	 
 	.dropdown-user {
 		/*border: 1px solid #5392f9;*/
 		border-radius: 4px;
@@ -139,14 +139,15 @@ if ($id_guest != '') {
 	@font-face {
 	  font-family: 'Noto_Font';
 	  src: url('NotoSerifThai-VariableFont_wdth,wght.ttf') format('truetype');
-/*		src: url('NotoSerifThai-Light.ttf') format('truetype');*/
 	}
+	
 	body {
-/*    font-family: Manrope,'IBM Plex Sans Thai';*/
-    font-family: 'Noto_Font', 'Helvetica Neue', Arial, sans-serif !important;
-  } 
+    font-family: Arial, sans-serif !important;
+	}
 
-/*../fonts/font-pfr/*/
+	.thai-text {
+    font-family: 'Noto_Font', Arial, sans-serif !important;
+  }
 
 	.navbar-light .navbar-nav .nav-link {
 		color: rgba(255, 255, 255, 1.00) !important;

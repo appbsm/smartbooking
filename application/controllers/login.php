@@ -14,6 +14,14 @@ class Login extends CI_Controller {
 	{		
 		$this->load->view('v_header');
 		// $this->load->view('v_login');
+		// $this->load->view('register');
+		$this->load->view('signin');
+		$this->load->view('v_footer');
+	}
+
+	public function signup()
+	{
+		$this->load->view('v_header');
 		$this->load->view('register');
 		$this->load->view('v_footer');
 	}
