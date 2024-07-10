@@ -184,7 +184,7 @@ $CI->load->model('m_room_type');
 	  max-height: 100%;
 	}
 	.package-tx-title {
-		color: #0d6efd !important;
+		color: #000 !important;
 		font-size: 18px ;
 		font-weight: 600;
 		cursor: pointer;
@@ -263,10 +263,16 @@ $CI->load->model('m_room_type');
 		color: #fff !important;
 		font-size: small !important;
 		/*background-color: #839287;
-		border-color: #839287;*/
-		background-color: #5392f9 !important;
-		border-color: #5392f9 !important;
+		border-color: #102958;*/
+		background-color: #102958 !important;
+		border-color: #102958 !important;
 	}
+	.btn-more:hover {
+        border-color: #102958;
+		background-color: #102958 !important;
+		border-color: #102958 !important;
+		color: #fff !important;
+    }
 	.btn-add_to_cart {
 		width: auto;
 		height: auto;
@@ -274,14 +280,29 @@ $CI->load->model('m_room_type');
 		line-height: 30px;
 		color: #fff !important;
 		font-size: small !important;
-		background-color: #5392f9 !important;
-		border-color: #5392f9 !important;
+		background-color: #102958 !important;
+		border-color: #102958 !important;
 	}
 	.btn-add_to_cart:hover {
-        background-color: #fff !important;
-        color: #5392f9 !important; 
-		border-color: #5392f9 !important;
+        background-color: #102958 !important;
+		border-color: #102958 !important;
+		color: #fff !important;
     }
+	.book_now:hover {
+		background-color: #102958 !important;
+		border-color: #102958 !important;
+		color: #fff !important;
+    }
+	.book_now {
+		width: auto;
+		height: auto;
+		text-transform: uppercase;
+		line-height: 30px;
+		color: #fff !important;
+		font-size: small !important;
+		background-color: #102958 !important;
+		border-color: #102958 !important;
+	}
 	/*PROMOTION & PACKAGE*/
 	
 	/*Room Types*/
@@ -416,21 +437,7 @@ $CI->load->model('m_room_type');
 		background-color: transparent !important;
 		-webkit-text-decoration-skip: objects !important;
 	}
-	.book_now:hover {
-        background-color: #fff !important;
-        color: #5392f9 !important; 
-		border-color: #5392f9 !important;
-    }
-	.book_now {
-		width: auto;
-		height: auto;
-		text-transform: uppercase;
-		line-height: 30px;
-		color: #fff !important;
-		font-size: small !important;
-		background-color: #5392f9 !important;
-		border-color: #5392f9 !important;
-	}
+	
 	
 	.search-bg {
 		/*background-color: #f8f7f9 ;*/
@@ -443,9 +450,9 @@ $CI->load->model('m_room_type');
 		border: #5392f9 !important;
 	}
 	.btn-search {
-		background-color: #5392f9 !important;
+		background-color: #102958 !important;
 		color: #fff !important;
-		border: #5392f9 !important;
+		border: #102958 !important;
 	}
 	
 		
@@ -572,9 +579,12 @@ $CI->load->model('m_room_type');
 			padding-right: 40px !important;
 		}
 		.box-fillter {
-			padding: 0 140px !important;
+			padding: 0 180px !important;
 		}
-		
+		.padd-rl {
+			padding-right: 4px !important;
+			padding-left: 4px !important;
+		}
 </style>
 
 <!-- Package -->
@@ -636,7 +646,7 @@ $CI->load->model('m_room_type');
 			<input type="hidden" name="packages" id="packages" value="">
 			<input type="hidden" name="project_id" id="project_id" value="">
 
-			<div class="container mt-2">
+			<div class="container mt-0">
 				<div class="row search-bg pt-3" style="border: 2px solid #C6C6C7; border-radius: 5px; padding: 5px 0 5px 0; margin: 0 4px 0 4px;">
 					<!--
 					<div class="col-lg-3 ">
@@ -650,19 +660,19 @@ $CI->load->model('m_room_type');
 						</div>
 					</div>
 					-->
-					<div class="col-xl-3 col-lg-2 col-md-6 col-sm-6 col-xs-6">
+					<div class="col-xl-3 col-lg-2 col-md-6 col-sm-6 col-xs-6 padd-rl">
 						<div class="col-md-12 text-left">
 							<label class="ml-1 mb-1" for="name" style="font-size: 14px;"><?php echo $this->lang->line('check_in_date'); ?></label>
 							<input type='text' class=" form-control form-control-ckinout datepicker search_input" name="check_in_date" id="check_in_date" value="" />
 						</div>
 					</div>
-					<div class="col-xl-3 col-lg-2 col-md-6 col-sm-6 col-xs-6">
+					<div class="col-xl-3 col-lg-2 col-md-6 col-sm-6 col-xs-6 padd-rl">
 						<div class="col-md-12 text-left">
 							<label class="ml-1 mb-1" for="name" style="font-size: 14px;"><?php echo $this->lang->line('check_out_date'); ?></label>
 							<input type='text' class="form-control form-control-ckinout datepicker search_input" name="check_out_date" id="check_out_date" value="" />
 						</div>
 					</div>
-					<div class="col-lg-4 col-md-6">
+					<div class="col-lg-4 col-md-6 padd-rl">
 						<!-- <div class="col-md-12 mt-2"><b><?php echo $this->lang->line('search_by_room'); ?></b></div> -->
 						<div class="col-md-12 mb-2 text-left">
 							<label class="ml-1 mb-1" for="name" style="font-size: 14px;"><?php echo $lang == "english" ? 'Adult' : 'ผู้เข้าพัก'; ?></label>
@@ -721,7 +731,7 @@ $CI->load->model('m_room_type');
 							</div>
 						</div>
 					</div>
-					<div class="col-lg-2 col-md-6">
+					<div class="col-lg-2 col-md-6 padd-rl">
 						<div class="col-md-12 mb-2 text-left">
 							<label for="name" class="mb-1">&nbsp;</label>
 							<button disabled id="search" class="form-control form-control-btnsearch search_input search_button btn-default btn-search" data-search-type="search_room" style="background-color:#81BB4A;cursor: pointer; display: flex; align-items: center; justify-content: center; ">
@@ -895,11 +905,11 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
 								<?php echo ($lang == 'english') ? 'Price' : 'ราคา'; ?> <?php echo number_format($package->price); ?> <?php echo ($lang == 'english') ? 'Baht' : 'บาท'; ?>
 							</p>
 							<p class="package-period-tt mt-2">
-								<span>Promo period</span>
+								<span style="color: #000 !important;">Promo period</span>
 								<!--<span style="float: right;">Min. transaction</span>-->
 							</p>
 							<p class="package-period">
-								<i class="far fa-calendar"></i> &nbsp;<span>
+								<i class="far fa-calendar"></i> &nbsp;<span style="color: #000 !important;">
 								<!-- 01 AUG 2023 - 31 DEC 2024 -->
 								<?php  $start_date = date('d M Y', strtotime($package->start_date));
 										$end_date = date('d M Y', strtotime($package->end_date)); 

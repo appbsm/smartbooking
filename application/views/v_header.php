@@ -49,7 +49,6 @@ if ($id_guest != '') {
       /* Inline elements with width and height. TL;DR they make the icon buttons stack from left-to-right instead of top-to-bottom */
       position: relative;
       /* All 'absolute'ly positioned elements are relative to this one */
-
     }
 
     .button__badge {
@@ -108,28 +107,31 @@ if ($id_guest != '') {
 	}
 	
 	.btn_sign_in {
-		width: 100%;
-        padding: 10px;
-        background-color: #5392f9 !important;
+		/*width: 100%;
+        padding: 10px;*/
+        /*background-color: #5392f9 !important;*/
+		background-color: #4891b7 !important;
         color: #fff;
-        border: none;
+       /* border: none;
         border-radius: 4px;
         cursor: pointer;
         font-size: 16px;
         transition: background-color 0.3s;
-		padding: 4px 8px !important;
+		padding: 4px 8px !important;*/
 	}
 	.btn_sign_in:hover {
-        background-color: #5392f9b3 !important;
+        background-color: #4891b7 !important;
         color: #fff !important;
-        border: #5392f9 !important;
+        /*border: #5392f9 !important;*/
 	}
 	
 	.dropdown-user {
-		border: 1px solid #5392f9;
+		/*border: 1px solid #5392f9;*/
 		border-radius: 4px;
 		padding: 4px;
 	}
+	
+	
 	.input-group:not(.has-validation)>.dropdown-toggle:nth-last-child(n+3) {
 		background-color: #f8f9fa !important;
 	}
@@ -137,6 +139,7 @@ if ($id_guest != '') {
 	@font-face {
 	  font-family: 'Noto_Font';
 	  src: url('NotoSerifThai-VariableFont_wdth,wght.ttf') format('truetype');
+/*		src: url('NotoSerifThai-Light.ttf') format('truetype');*/
 	}
 	body {
 /*    font-family: Manrope,'IBM Plex Sans Thai';*/
@@ -144,6 +147,23 @@ if ($id_guest != '') {
   } 
 
 /*../fonts/font-pfr/*/
+
+	.navbar-light .navbar-nav .nav-link {
+		color: rgba(255, 255, 255, 1.00) !important;
+	}
+	.navbar-expand {
+		background-color: #102958 !important;  
+		color: rgba(255, 255, 255, 1.00) !important;
+		gap: 0 16px;
+	}
+	a {
+		color: rgba(255, 255, 255, 1.00) !important;
+		text-decoration: none !important;
+	}
+	.dropdown-item {
+		color: #000 !important;
+		
+	}
   </style>
 
   <script>
@@ -187,19 +207,19 @@ if ($id_guest != '') {
 
 <body>
   <header>
-    <nav class="navbar navbar-expand-sm navbar-light bg-light fixed-top text-center mr-auto mb-0" style="height:70px; background-color:#fff !important; border-bottom: 1px solid #ccc;">
+    <nav class="navbar navbar-expand-sm navbar-light bg-light fixed-top text-center mr-auto mb-0" style="height:60px; background-color:#102958 !important; font-size: 14px;">
     <div class="container d-flex flex-row">
 		
 	  <span class="mx-3">
-		<a class="logo" href="<?php echo site_url('home'); ?>"><img src="<?php echo site_url(); ?>images/10.png" width="70"></a>
+		<a class="logo" href="<?php echo site_url('home'); ?>"><img src="<?php echo site_url(); ?>images/logo-SM/SM smart booking_White.png"  width="70%"></a>
 	  </span>  
 
 	  <!-- new menu -->
 	  <div class="col-8">
-		<ul class="navbar-nav me-auto mb-2 mb-lg-0 menu-bar">
+		<ul class="navbar-nav me-auto mb-2 mb-lg-0 menu-bar" style="font-size: 14px;">
             <li class="nav-item" id="nav_aboutus">
                 <a class="nav-link" href="#aboutus">
-					<?php echo $lang == "english" ? 'About us' : 'เกี่ยวกับเรา'; ?> 
+					<?php echo $lang == "english" ? 'About us' : ' ข้อมูลโครงการ'; ?> 
 				</a>
             </li>
             <li class="nav-item" id="nav_roomstype">
@@ -242,20 +262,20 @@ if ($id_guest != '') {
 	</div>
 	  <!-- new menu -->
       <div class="" id="navbarSupportedContent" >       
-        <div class="navbar navbar-expand d-flex flex-row" style="gap: 0 16px; background-color:#fff !important;">
+        <div class="navbar navbar-expand d-flex flex-row" style="background-color: #102958 !important;">
           
 		  <?php if ($id_guest != '') { ?>
 		  <?php if ($guest->photo_url != '') { ?>
 		  <a class=""><img src="<?php echo share_folder_path() . $guest->photo_url; ?>" class="rounded-circle mx-auto d-block" style="height:50px;width:50px;" alt=""></a>
 		  <?php } ?>
-		  <div class="input-group d-flex flex-row bg-light dropdown-user" >            
-			<a class="nav-link align-text-bottom dropdown-toggle" id="profile_name" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+		  <div class="input-group d-flex flex-row bg-light dropdown-user" style="background-color: #102958 !important;">            
+			<a class="nav-link align-text-bottom dropdown-toggle" id="profile_name" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color: #102958 !important; color: rgba(255, 255, 255, 1.00) !important;">
 				<?php echo $guest->firstname . ' ' . substr($guest->lastname, 0, 1). '.'; ?>
 			</a>
 			<button class="btn btn-outline-default btn-default btn-sm dropdown-toggle" style="display: none; " id="profile_dropdown" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
 		  <div class="input-group-append">
 			
-		  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+		  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="background-color: #fff !important;">
 			<a class="dropdown-item" href="<?php echo site_url('profile'); ?>"><?php echo $this->lang->line('profile'); ?></a>
 			<a class="dropdown-item" href="<?php echo site_url('booking/history'); ?>"><?php echo $this->lang->line('booking_history'); ?></a>
 			<a class="dropdown-item" href="<?php echo site_url('facility'); ?>"><?php echo $this->lang->line('facility'); ?></a>
@@ -271,17 +291,21 @@ if ($id_guest != '') {
               </div>
 		  <?php } ?>
 		  <div class="button">
-            <a class="nav-link" href="<?php echo site_url('cart'); ?>"><span class="button__badge"><?php echo ($cart_count > 0) ? $cart_count : ''; ?></span><object style="pointer-events: none;" data="<?php echo share_folder_path(); ?>images/icons/cart.svg" height="20"> </object></span></a>
+            <a class="nav-link" href="<?php echo site_url('cart'); ?>">
+				<span class="button__badge"><?php echo ($cart_count > 0) ? $cart_count : ''; ?></span>
+				<object style="pointer-events: none;" data="<?php echo share_folder_path(); ?>images/icons/cart-white.svg" height="20"> </object>
+				<!--<object style="pointer-events: none;" data="<?php echo share_folder_path(); ?>images/icons/cart.svg" height="20"> </object>-->
+			</a>
           </div>
 		  
 		<div class="d-flex flex-rows" style="margin-top:3px;padding: 5px; margin-right: 5px;">
 			<?php
-			$switch_en = 'English';
-			$switch_th = 'Thai';
+				$switch_en = 'English';
+				$switch_th = 'Thai';
 			?>
-			<a href="<?php echo site_url() . 'LanguageSwitcher/switchLang/thai'; ?>" title="<?php echo $switch_th; ?>" style="<?php echo ($lang == 'thai') ? 'font-weight: bold!important;' : ''; ?>">TH</a>
-			<span>&nbsp;|&nbsp;</span>
-			<a href="<?php echo site_url() . 'LanguageSwitcher/switchLang/english'; ?>" title="<?php echo $switch_en; ?>" style="<?php echo ($lang == 'english') ? 'font-weight: bold!important;' : ''; ?>">EN</a>
+			<a href="<?php echo site_url() . 'LanguageSwitcher/switchLang/thai'; ?>" title="<?php echo $switch_th; ?>" style="color: rgba(255, 255, 255, 1.00) !important; font-size: 14px !important;" style="<?php echo ($lang == 'thai') ? 'font-weight: bold!important; color: rgba(255, 255, 255, 1.00) !important; font-size: 14px !important;' : ''; ?>">TH</a>
+			<span style="color: rgba(255, 255, 255, 1.00) !important; font-size: 14px !important;">&nbsp;|&nbsp;</span>
+			<a href="<?php echo site_url() . 'LanguageSwitcher/switchLang/english'; ?>" title="<?php echo $switch_en; ?>" style="color: rgba(255, 255, 255, 1.00) !important; font-size: 14px !important;" style="<?php echo ($lang == 'english') ? 'font-weight: bold!important; color: rgba(255, 255, 255, 1.00) !important; font-size: 14px !important;' : ''; ?>">EN</a>
 		  </div>
 
         </div>
