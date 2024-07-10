@@ -8,9 +8,6 @@ $CI->load->model('m_room_type');
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
-	.search_input {
-    	height: 30px !important;
-	}
 	.dropdown-toggle{
 		color: #000 !important;
 		border: 1px solid #ccc;
@@ -438,8 +435,7 @@ $CI->load->model('m_room_type');
 		color: #000 !important;
 	}
 	.form-control-ckinout {
-/*		padding: 1.165rem .75rem !important;*/
-		padding: .375rem .75rem !important;
+		padding: 1.165rem .75rem !important;
 	}
 	.form-control-btnsearch {
 		padding: 1.165rem .75rem !important;
@@ -606,7 +602,6 @@ $CI->load->model('m_room_type');
 			margin-right: 48px !important;
 			margin-left: 48px !important;
 		}
-	
 </style>
 
 <!-- Package -->
@@ -699,7 +694,7 @@ $CI->load->model('m_room_type');
 						<div class="col-md-12 mb-2 text-left">
 							<label class="ml-1 mb-1" for="name" style="font-size: 14px;"><?php echo $lang == "english" ? 'Adult' : 'ผู้เข้าพัก'; ?></label>
 							<div class="dropdown">
-								<button class="btn dropdown-toggle w-100 search_input" style="color: #000 !important; background-color: #fff !important; width:100%;display: flex;align-items: center;" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								<button class="btn dropdown-toggle w-100 search_input" style="color: #000 !important; background-color: #fff !important; width:100%;" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 									<div class="d-inline-flex">
 										<span id="div_adult">2&nbsp;</span> <?php echo $this->lang->line('adults'); ?>, 
 										<span id="div_children">&nbsp;0&nbsp;</span> <?php echo $this->lang->line('children'); ?>, 
@@ -1080,31 +1075,7 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
 			</h4>
 		</div>
 	</div>
-
-	<?php 
-		$date = date('Y-m-d');
-		$CI = &get_instance();
-		$room_types = $CI->db->get('room_type')->result();
-		$room_details = $CI->db->get('room_type')->result();
-		$highlights = $CI->db->get('project_highlights')->result();
-		$amenities = $CI->db->get('room_type_amenities')->result();
-		$point_of_interest = $CI->db->get('point_of_interest')->result();
-		$policies = $CI->db->get('project_policy')->result();
-		
-		$index = 0;
-		foreach ($room_types as $key => $rt) {
-			$rate = $CI->m_room_type->get_day_rate($rt->id_room_type, $date);
-			if ($rate == '') {
-				$rate = $rt->default_rate;
-			}
-			$photos = $CI->m_room_type->get_room_type_photos($rt->id_room_type);
-			$isLeft = ($index % 2 == 0);
-			
-			$room_type_en = $rt->room_type_name_en;
-			$room_type_th = $rt->room_type_name_th;
-    ?>
-
-	<div class="col-md-12 d-flex mt-3" style="flex-wrap: wrap;">
+	<div class="col-md-12 d-flex" style="flex-wrap: wrap;">
 		<div class="col-lg-1">
 		
 		</div>
@@ -1116,67 +1087,17 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
 		<div class="col-lg-3">
 			<div class="form-group">
 				<a href="http://192.168.20.22/sm_booking1/detail.php" target="_blank">
-					<h4 class="roomtype-tx-title"><?php echo ($lang == 'english') ? $room_type_en : $room_type_th; ?></h4>
+					<h4 class="roomtype-tx-title">SM 1 - Standard Room</h4>
 				</a>
-				<!-- 1,500/Night -->
-				<?php
-                    $price = ($lang == 'english') ? number_format($rate, 0) . '/Night' : 'ราคา ' . number_format($rate, 0) . '/คืน';
-                ?>
-                <span style="color: #000;"><?php echo $price; ?></span>
+				<span style="color: #000;">1,500/Night</span>
 			</div>
 			<div class="form-group">
-				<p><?php echo ($lang == 'english') ? 'Room Information' : 'ข้อมูลห้องพัก'; ?></p>
-				<!-- <span style="color: #000; font-size: 12px !important;">xxx</span> -->
-				<?php foreach ($room_details as $detail) {
-                    if ($detail->id_room_type == $rt->id_room_type) { ?>
-                        <div class="row mx-auto mt-2">
-                            <div class="col-2 col-xs-1 text-left icon_container">
-                                <span class="icon-content">
-                                    <object data="http://192.168.20.22/smartbooking_front_test/images/icons/house.svg" height="20"></object>
-                                </span>
-                            </div>
-                            <div class="col-10 col-xs-5 text-left icon_container">
-                                <span class="icon-content"><?php echo ($lang == 'english') ? $detail->area_en : $detail->area_th; ?></span>
-                            </div>
-
-                            <div class="col-2 col-xs-1 text-left icon_container">
-                                <span class="icon-content">
-                                    <object data="https://sharefolder.buildersmart.com/sms_booking/images/icons/icons8-bedroom-50.png" height="18"></object>
-                                </span>
-                            </div>
-                            <div class="col-10 col-xs-5 text-left icon_container">
-                                <span class="icon-content"><?php echo ($lang == 'english') ? $detail->room_details_en : $detail->room_details_th; ?></span>
-                            </div>
-                        </div>
-
-                        <div class="row mx-auto mt-2">
-                            <div class="col-3 text-left icon_container">
-                                <span class="icon-content">
-                                    <object data="https://sharefolder.buildersmart.com/sms_booking/images/icons/icons8-bedroom-50.png" height="18"></object>
-                                </span>
-                            </div>
-                            <div class="col-9 text-left icon_container">
-                                <span class="icon-content"><?php echo ($lang == 'english') ? $detail->room_details_en : $detail->room_details_th; ?></span>
-                            </div>
-                        </div>
-                <?php   }}   ?>         
-
+				<p>Room Information</p>
+				<span style="color: #000; font-size: 12px !important;">xxx</span>
 			</div>
 			<div class="form-group">
 				<p>Highlights</p>
-				<?php foreach ($highlights as $highlight) { ?>
-				 	<div class="row mx-auto mt-2">
-                        <div class="col-3 mx-auto icon_container">
-                            <span class="icon-content">
-                            	<img src="http://192.168.20.22/sm_booking1/includes/image.php?filename=<?php echo $highlight->icon; ?>" class="icon-service">
-                            </span>
-                        </div>
-                        <div class="col-9 icon_container">
-                            <span class="icon-content"><?php echo ($lang == 'english') ? $highlight->description_en : $highlight->description_th; ?></span>
-                        </div>
-                    </div>
-				<?php } ?>
-				<!-- <span style="color: #000; font-size: 12px !important;">xxx</span> -->
+				<span style="color: #000; font-size: 12px !important;">xxx</span>
 			</div>
 			<div class="form-group">
 				<p>Facilities & Amenities</p>
@@ -1207,9 +1128,6 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
 		
 		</div>
 	</div>
-
-	<?php } ?>
-
 </div>
 <!-- New Room Types -->
 
@@ -1228,6 +1146,9 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
 	</div>
 	
 	<!-- New Room Types -->
+	
+	
+	
 	<!--
 	<div class="row">
 		<?php
@@ -1279,7 +1200,6 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
 			$room_type_en = $rt->room_type_name_en;
 			$room_type_th = $rt->room_type_name_th;
     ?>
-	
 	<div class="col-md-12 ml-2 text-center mt-4">
 		<div class="header">
 			<div class="pl-4 text-center mt-4 mb-4">
