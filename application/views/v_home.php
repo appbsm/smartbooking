@@ -1063,6 +1063,74 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
 -->
 <!-- End Package -->
 
+<!-- New Room Types -->
+<div class="row" id="roomtype"></div><br/>
+<div class="container mt-5">
+	<div class="row text-center mb-0" id="nav_roomstype">
+		<div class="col-md-12">
+			<h4>
+				<a href="javascript:;" class="tx-title-header"><?php //echo $this->lang->line('room_types'); ?>
+					<?php echo ($lang == 'english') ? "Room Types" : "ประเภทของห้อง" ?>
+				</a>
+			</h4>
+		</div>
+	</div>
+	<div class="col-md-12 d-flex" style="flex-wrap: wrap;">
+		<div class="col-lg-1">
+		
+		</div>
+		<div class="col-lg-7">
+			<div class="content">
+				<img src="https://sharefolder.buildersmart.com/sms_booking/upload/room_type_photo/1_64880eea98d2c.jpeg" style="width: 100%;">
+			</div>
+		</div>
+		<div class="col-lg-3">
+			<div class="form-group">
+				<a href="http://192.168.20.22/sm_booking1/detail.php" target="_blank">
+					<h4 class="roomtype-tx-title">SM 1 - Standard Room</h4>
+				</a>
+				<span style="color: #000;">1,500/Night</span>
+			</div>
+			<div class="form-group">
+				<p>Room Information</p>
+				<span style="color: #000; font-size: 12px !important;">xxx</span>
+			</div>
+			<div class="form-group">
+				<p>Highlights</p>
+				<span style="color: #000; font-size: 12px !important;">xxx</span>
+			</div>
+			<div class="form-group">
+				<p>Facilities & Amenities</p>
+				<span style="color: #000; font-size: 12px !important;">xxx</span>
+			</div>
+			<div class="footer mt-3 mb-2" style="justify-content: flex-start;">
+					<div class="ml-2 text-right">
+						<div class="ml-2 text-right">
+							<button class="btn button-primary-w add_to_cart btn-add_to_cart" data-id="1" data-price="1500" id="" style="margin-right: 5px;" fdprocessedid="t8mt0r">
+								<?php
+									if (sizeof($packages) > 0) {
+										echo ($lang == 'english') ? 'Add To Cart' : 'เก็บใส่ตะกร้า';
+									}
+								?>
+							</button>
+							<a href="javascript:;" data-roomtype="1" class="btn button-primary book_now book_now:hover" id="" style="margin-left: 5px;">
+								<?php
+									if (sizeof($packages) > 0) {
+										echo ($lang == 'english') ? 'Book Now' : 'จองตอนนี้';
+									}
+								?>
+							</a>
+						</div>
+					</div>
+				</div>
+		</div>
+		<div class="col-lg-1">
+		
+		</div>
+	</div>
+</div>
+<!-- New Room Types -->
+
 <!-- Room Types -->
 
 
@@ -1079,6 +1147,9 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
 	</div>
 	
 	<!-- New Room Types -->
+	
+	
+	
 	<!--
 	<div class="row">
 		<?php
@@ -1137,9 +1208,7 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
 		<div class="header">
 			<div class="pl-4 text-center mt-4 mb-4">
 				<a href="http://192.168.20.22/sm_booking1/detail.php" target="_blank">
-					<!--<h4 class="roomtype-tx-title"><?php echo $room_type_en . " - " . $room_type_th; ?></h4>-->
 					<h4 class="roomtype-tx-title"><?php echo $room_type_en ; ?></h4>
-
 				</a>
 			</div>
 		</div>
