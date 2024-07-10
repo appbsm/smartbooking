@@ -49,7 +49,6 @@ if ($id_guest != '') {
       /* Inline elements with width and height. TL;DR they make the icon buttons stack from left-to-right instead of top-to-bottom */
       position: relative;
       /* All 'absolute'ly positioned elements are relative to this one */
-
     }
 
     .button__badge {
@@ -137,6 +136,7 @@ if ($id_guest != '') {
 	@font-face {
 	  font-family: 'Noto_Font';
 	  src: url('NotoSerifThai-VariableFont_wdth,wght.ttf') format('truetype');
+/*		src: url('NotoSerifThai-Light.ttf') format('truetype');*/
 	}
 	body {
 /*    font-family: Manrope,'IBM Plex Sans Thai';*/

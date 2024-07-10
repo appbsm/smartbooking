@@ -1,30 +1,39 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" sizes="16x16" href="images/10.png">
-    <title>smsmartbooking Sign In</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-</head>
+<?php
+$lang = ($this->session->userdata('site_lang') !== null) ? $this->session->userdata('site_lang') : 'thai';
+$CI = &get_instance();
+$CI->load->model('m_room_type');
+
+?>
+<title>Smart Booking</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="<?= site_url() ?>/css/tiny-slider.css">
+<link rel="stylesheet" href="<?= site_url() ?>/css/package.css">
+<link rel="icon" type="image/png" sizes="16x16" href="<?= site_url() ?>/images/10.png">
+<link rel="stylesheet" href="<?= site_url() ?>assets/select-picker/css/bootstrap-select.min.css">
+
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
 <style>
     body {
         font-family: Arial, sans-serif;
         background-color: #f5f5f5;
-        display: flex;
+        margin: 0;
         justify-content: center;
         align-items: center;
-        margin: 0;
         width: 100%;
         height: 100%;
         max-width: 100%;
         margin-top: 40px;
-        
+/*        display: flex;*/
     }
-
-    .container {
+    .container-login {
         background-color: #fff;
         padding: 16px 30px 24px;
         position: relative;
@@ -34,30 +43,25 @@
         text-align: center;
         max-width: 100%;
         margin: 0 15px;
+        display: flex;
+        flex: none;
     }
 
     h3 {
-        /* margin-bottom: 20px; */
         color: #333;
     }
-
     h6 {
-        /* margin-bottom: 20px; */
         color: #666;
     }
-
     input[type="email"],input[type="firstname"],input[type="lastname"],
     input[type="password"] {
         width: 100%;
         padding: 10px;
-        /* margin: 10px 0; */
         font-size: 14px;
         border: 1px solid #ccc;
         border-radius: 4px;
         box-sizing: border-box;
     }
-
-    /* Adjusting label width to match input width */
     label {
         display: block;
         text-align: left;
@@ -91,7 +95,6 @@
     }
 
     .tabs li {
-        /* margin: 0 10px; */
         margin: 0;
     }
 
@@ -135,7 +138,6 @@
     }
 
     .footer-links {
-        /* display: block; */
         display: flex;
         justify-content: space-between;
         font-size: 14px;
@@ -143,7 +145,6 @@
         font-weight: 400;
     }
     .footer-links a {
-        /* display: block; */
         display: flex !important;
         justify-content: space-between;
         align-items: center;
@@ -171,7 +172,6 @@
         justify-content: center;
         width: 48%;
         padding: 10px;
-        /* margin: 5px 0; */
         background-color: #fff;
         border: 1px solid #ccc;
         border-radius: 4px;
@@ -212,6 +212,7 @@
         font-weight: 500;
         margin: 0px;
         padding-bottom: 16px;
+        color: black;
     }
     .tx-sub-signin {
         font-size: 14px;
@@ -292,7 +293,7 @@
         width: 20px;
         height: 20px;
     }
-
+    
     .icon-flag {
         background-image: url(https://cdn6.agoda.net/images/desktop/bg-sprite-flags.png);
         background-repeat: no-repeat;
@@ -301,6 +302,7 @@
         height: 16px;
         background-position: -176px -122px;
     }
+
     .button-mobile {
         background-color: unset !important;
         color: #000;
@@ -312,6 +314,7 @@
         border-radius: 4px;
         box-sizing: border-box;
     }
+
     .button-mobile:hover {
         color: #000;
     }
@@ -321,11 +324,11 @@
     }
 
     @media (min-width: 1200px) {
-        .container {
+        .container-login {
             width: 40%;
         }
     }
-
+    
     .tx-ck-agree  {
         font-size: 14px;
     }
@@ -340,36 +343,50 @@
         align-items: center;
         user-select: none;
     }
-	
-	.password-container input {
-		flex: 1;
-		width: 100%;
-		padding: 10px;
-		margin: 10px 0;
-		font-size: 14px;
-		border: 1px solid #ccc;
-		border-radius: 4px;
-		box-sizing: border-box;
-	}
-	</style>
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const togglePassword = document.querySelector('.toggle-password');
-        const passwordField = document.getElementById('password');
+    
+    .password-container input {
+        flex: 1;
+        width: 100%;
+        padding: 10px;
+        margin: 10px 0;
+        font-size: 14px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+    .set_center {
+        justify-content: center !important;
+    }
+    .container-login2 {
+        background-color: #fff;
+        padding: 16px 30px 24px;
+        position: relative;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        width: 400px;
+        text-align: center;
+        max-width: 100%;
+        margin: 0 15px;
+    }
+     footer {
+        text-align: center;
+        padding: 10px;
+        background-color: #102958 !important;
+        color: rgba(255, 255, 255, 1.00);
+        margin-top: auto; /* This will push the footer to the bottom */
+    }
+    .footer-top {
+        padding: 20px 0;
+    }
+</style>
 
-        togglePassword.addEventListener('click', function() {
-            const type = passwordField.getAttribute('type') === 'password' ? 'text' : 'password';
-            passwordField.setAttribute('type', type);
-            this.classList.toggle('active');
-        });
-    });
-</script>
-<body>
-    <div class="container">
+<body >
+
+    <div class="container-login mx-auto" >
         <div class="login-panel">
             <div class="login-form">
-                <div class="login-panel-title" style="text-align: left;">
-                    <h3 class="tx-signin">Sign up</h3>
+                <div class="login-panel-title " style="text-align: left;">
+                    <h3 class="tx-signin" style="" >Sign up</h3>
                 </div>
                 <div>
                     <div class="form-content form-email">
@@ -386,73 +403,55 @@
                                 <label for="email">Email</label>
                                 <input type="email" id="email" name="email" placeholder="Email" required>
                             </div>
-							<!--
                             <div class="form-group">
                                 <label for="password">Password</label>
                                 <div class="password-container">
-                                    <input type="password" id="password" name="password" placeholder="Password" required>
+                                    <input type="password" id="password" name="password" placeholder="Password" required pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}">
                                     <span class="toggle-password"><i class="fas fa-eye-slash"></i></span>
                                 </div>
+                                <small>Password must be at least 8 characters, include an uppercase letter, a lowercase letter, a number, and a special character.</small>
                             </div>
-							-->
-							<div class="form-group">
-								<label for="password">Password</label>
-								<div class="password-container">
-									<input type="password" id="password" name="password" placeholder="Password" required pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}">
-									<span class="toggle-password"><i class="fas fa-eye-slash"></i></span>
-								</div>
-								<small>Password must be at least 8 characters, include an uppercase letter, a lowercase letter, a number, and a special character.</small>
-							</div>
 
                             <div class="form-group">
                                 <div style="padding: 8px 0;">
                                     <label class="ck-agree">
                                         <input id="newsLetter" name="newsLetter" data-cy="newsLetter" type="checkbox" class="" checked="">
-                                        <span class="tx-ck-agree">I agree to receive updates and promotions about Smsmartbooking and its affiliates or business&nbsp;partners via various channels, including WhatsApp. Opt out anytime. Read more in the Privacy Policy.</span>
+                                        <span style="color: black;" >I agree to receive updates and promotions about Smsmartbooking and its affiliates or business&nbsp;partners via various channels, including WhatsApp. Opt out anytime. Read more in the Privacy Policy.</span>
                                     </label>
                                 </div>
                             </div>
-                            <button type="submit">Sign up</button>
+                            <button style="background-color: #102958 !important;" type="submit">Sign up</button>
                         </form>
-                        <!-- <div class="footer-links">
-                            <a href="#">Create account</a>
-                            <a href="#">
-                                <svg width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="forget-svg" style="padding-right: 4px;">
-                                    <path d="M5.286 9.143V6.388A6.388 6.388 0 0 1 11.673 0h1.167a6.388 6.388 0 0 1 6.388 6.388 1 1 0 0 1-2 0A4.388 4.388 0 0 0 12.84 2h-1.167a4.388 4.388 0 0 0-4.387 4.388v2.755H19a2 2 0 0 1 2 2v10.714a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V11.143a2 2 0 0 1 2-2h.286zM13 17.829a3.001 3.001 0 1 0-2 0v2.15a1 1 0 1 0 2 0v-2.15zM11 15a1 1 0 1 1 2 0 1 1 0 0 1-2 0z"></path>
-                                </svg>
-                                Forgot password?
-                            </a>
-                        </div> -->
                     </div>
                 </div>
                 <div class="or-signin" style="margin-top: 8px;">
                     <div class="line-or-signin"></div>
                     <div style="margin-top: 8px;">
-                        <span class="sc-fznZeY tx-or-signin">or sign in with</span>
+                        <span style="color: black;" class="sc-fznZeY tx-or-signin">or sign in with</span>
                     </div> 
                     <div class="line-or-signin"></div>
                 </div>
                 <div class="social-login ">
                     <div class="social-buttons">
-                        <button class="google">
-                            <img src="https://cdn6.agoda.net/images/universal-login/google-logo-v2.svg" alt="Google" class="icon-social">Google
+                        <button style="background-color: white !important;border: 1px solid black;" class="google">
+                            <img src="https://cdn6.agoda.net/images/universal-login/google-logo-v2.svg" alt="Google" class="icon-social"><a style="color: black;">Google</a>
                         </button>
-                        <button class="facebook">
-                            <img src="https://cdn6.agoda.net/images/universal-login/facebook-logo.svg" alt="Facebook" class="icon-social">Facebook
+                        <button style="background-color: white !important;border: 1px solid black;" class="facebook">
+                            <img src="https://cdn6.agoda.net/images/universal-login/facebook-logo.svg" alt="Facebook" class="icon-social"><a style="color: black;">Facebook</a>
                         </button>
                     </div>
                 </div>
                 <hr/>
                 <div class="form-group">
                     <a href="signin.php">
-                        <button type="submit">Already have an account? Sign in</button>
+                        <button style="background-color: #102958 !important;" type="submit">Already have an account? Sign in</button>
                     </a>
                 </div>
                 <div class="terms-policy">
-                    <span>By signing in, I agree to Smsmartbooking's </span><br/>
-                    <span>   
-                        <a href="#" target="_blank">Terms of Use</a> and 
-                        <a href="#" target="_blank">Privacy Policy</a>.
+                    <span style="color: black;" >By signing in, I agree to Smsmartbooking's </span><br/>
+                    <span >   
+                        <a style="color: #5392f9 !important;" href="#" target="_blank">Terms of Use</a><span style="color: black;"> and</span>
+                        <a style="color: #5392f9 !important;" href="#" target="_blank">Privacy Policy</a>.
                     </span>
                 </div>
             </div>
@@ -491,22 +490,61 @@
             });
         });
     </script>
-	
-	<script>
-		document.addEventListener('DOMContentLoaded', function() {
-			const togglePassword = document.querySelector('.toggle-password');
-			const passwordField = document.getElementById('password');
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const togglePassword = document.querySelector('.toggle-password');
+            const passwordField = document.getElementById('password');
 
-			togglePassword.addEventListener('click', function() {
-				const type = passwordField.getAttribute('type') === 'password' ? 'text' : 'password';
-				passwordField.setAttribute('type', type);
-				this.querySelector('i').classList.toggle('fa-eye');
-				this.querySelector('i').classList.toggle('fa-eye-slash');
-			});
-		});
-	</script>
+            togglePassword.addEventListener('click', function() {
+                const type = passwordField.getAttribute('type') === 'password' ? 'text' : 'password';
+                passwordField.setAttribute('type', type);
+                this.querySelector('i').classList.toggle('fa-eye');
+                this.querySelector('i').classList.toggle('fa-eye-slash');
+            });
+        });
+    </script>
 
+<!------------------footer---------------------->
+
+<?php 
+$lg = ($this->session->userdata('site_lang') !== null) ? $this->session->userdata('site_lang') : 'thai'; 
+if($lg=='thai'){
+    $this->lang->load('content','thai');
+}
+elseif($lg=='english'){
+    $this->lang->load('content','english');
+}
+$lang  = $lg;
+?>
+
+<link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+<link rel= "stylesheet" href= "https://maxst.icons8.com/vue-static/landings/line-awesome/font-awesome-line-awesome/css/all.min.css" >
+<link rel="stylesheet" href= "https://use.fontawesome.com/releases/v5.11.2/css/all.css" >
+<link rel="stylesheet" href="<?= site_url() ?>/css/icons8.css">
+<link rel="stylesheet" href="<?= site_url() ?>/css/icons8-2.css">
+<link rel="stylesheet" href="<?= site_url() ?>/css/icons8-3.css">
+<style>
+    .footer-social {
+        color: rgb(215, 215, 219) !important;
+    }
+
+    @font-face {
+        font-family: 'PFR_Font';
+        src: url('PFReminderPrMedium.ttf') format('truetype');
+    }
+    .custom-font {
+        font-family: 'PFR_Font', 'PSLxText', sans-serif !important;
+    }
+    .form-control, label, span, h1, h2, h3, h4, h5, h6, a {
+        color: #fff;
+    }
+  
+    @media (max-width: 768px) {
+        .footer_image_mobile {
+            width: 40% !important;
+        }
+    }
+</style>
 </body>
 
-</html>
-</html>
