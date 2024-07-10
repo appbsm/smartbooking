@@ -184,7 +184,7 @@ $CI->load->model('m_room_type');
 	  max-height: 100%;
 	}
 	.package-tx-title {
-		color: #0d6efd !important;
+		color: #000 !important;
 		font-size: 18px ;
 		font-weight: 600;
 		cursor: pointer;
