@@ -36,6 +36,9 @@ $lang  = $lg;
 		.footer_image_mobile {
 			width: 40% !important;
 		}
+		.tx-moblie-left {
+			text-align: left !important;
+		}
 	}
 
 </style>
@@ -85,12 +88,12 @@ $lang  = $lg;
 		<div class="footer-top">
 			<div class="container">
 				<div class="row " id="contactus">
-					<div class="col-md-6 col-lg-6 footer-about wow fadeInUp mt-3">
-						<div class="d-flex pt-2">
+					<div class="col-md-6 col-lg-6 footer-about wow fadeInUp mt-0">
+						<div class="d-flex pt-0">
 							<!--<p class=" mt-3" ><?php echo $lang == 'english' ? 'BuilderSmart (Public) Company Limited <br/>1055 Rama 3 Road.Chongnonsi, Yannawa, Bangkok 10120 <br/><br/> SM Resort @ Khaoyai <br/> 499 Moo 4 Pong Ta Long, Pak Chong, Nakhon Ratchasima 30130': 'บริษัท บิวเดอสมาร์ท จำกัด (มหาชน) <br/>1055 ถนนพระราม 3 แขวงช่องนนทรี เขตยานนาวา กทม 10120 <br/><br/> เอส เอ็ม รีสอร์ท เขาใหญ่<br/> 499 หมู่ 4 ตำบล โป่งตาลอง อำเภอปากช่อง นครราชสีมา 30130';?></p>-->
 						</div>
 					</div>
-					<div class="col-md-6 col-lg-6 text-right mt-3">							
+					<div class="col-md-6 col-lg-6 text-right mt-2 tx-moblie-left">							
 						<p style="font-size: 14px !important;">
 							<?php echo $lang == 'english' ? 'If your interest room rent could you please contact admin via Line or Mobile <span class="footer-phone">065-989-8845</span>' : 'หากท่านสนใจห้องพักกรุณาติดต่อพนักงานผ่าน Line หรือ โทร <span class="footer-phone">065-989-8845</span>'; ?>
 						</p>
@@ -249,7 +252,7 @@ $lang  = $lg;
                 <div class="footer-menu contact-item d-flex justify-content-center">
                   
                   <!-- <h5 class="widget-title  pb-2"><u>QR CODE LINE</u></h5> -->
-                <img class="footer_image" src="http://192.168.20.22/smartbooking_front_test/images/qrcode_s.png" width="60%">
+                <img class="footer_image_mobile" src="http://192.168.20.22/smartbooking_front_test/images/qrcode_s.png" width="60%">
                 </div>
                 </div>
               </div>

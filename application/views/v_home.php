@@ -138,10 +138,12 @@ $CI->load->model('m_room_type');
 	
 	.tx-title-header {
 		color: #000 !important;
-		text-shadow: 0px 0px 1px #000
+		font-weight: 600;
+		/*text-shadow: 0px 0px 1px #000;*/
 	}
 	.tx-title-header:hover {
 		color: #000 !important;
+		font-weight: 600;
 	}
 
 	.tx-title-sub {
@@ -193,6 +195,11 @@ $CI->load->model('m_room_type');
 			width: unset !important;
 			max-width: 100%;
 			height: 100%;
+		}
+		
+		.img-roomtype {
+			min-height: 350px;
+			min-width: 470px;
 		}
 	}
 	@media (max-width: 767px) {
@@ -338,14 +345,14 @@ $CI->load->model('m_room_type');
 	.roomtype-tx-title {
 		color: #000 !important;
 		font-size: 18px ;
-		font-weight: 500;
+		font-weight: 600;
 		cursor: pointer;
 	}
 	.roomtype-tx-title:hover {
 /*		color: #0d6efd !important;*/
 		color: #000 !important;
 		font-size: 18px ;
-		font-weight: 500;
+		font-weight: 600;
 		cursor: pointer;
 	}
 	
@@ -516,7 +523,25 @@ $CI->load->model('m_room_type');
 		outline: none;
 	}
 
-
+	.tx-viewdetail {
+		font-size: small;
+		text-decoration: underline !important;
+		color: #000 !important;
+	}
+	.tx-viewdetail:hover {
+		font-size: small;
+		text-decoration: underline !important;
+		color: #000 !important;
+	}
+	
+	.header-text {
+		color: #000 !important; 
+		background-color: #CCC; 
+		padding: 10px; 
+		margin-bottom: 18px; 
+		font-weight: 600;     
+		box-shadow: 2px 2px 5px 0 rgba(22, 22, 26, 0.18); 
+	}
 
 	/* Styles for Mobile Phones */
 	@media (max-width: 480px) {
@@ -782,7 +807,7 @@ $CI->load->model('m_room_type');
 
 	</div>
 	
-	<div class="row" id="aboutus"></div><br/>
+	<div class="row" id="aboutus"></div><br/><br/>
 		<!-- Descripttion -->
 		<!--
 		<script>
@@ -860,14 +885,21 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
 </div>
 <!-- New About Us -->
 	
-	<div class="container mt-2 aboutus-lr">
+	<div class="container mt-0 aboutus-lr">
 		<div class="row text-center mb-0" id="nav_roomstype">
+			<!--
+			<h4 style="text-align: center; padding-bottom: 15px;" id="nav_packagep_promotions">
+				<a  href="javascript:;" class="tx-title-header">
+					<?php echo $lang == "english" ? 'About us' : 'ข้อมูลโครงการ'; ?>
+				</a>
+			</h4>
+			-->
 			<div class="col-md-12 d-flex" style="flex-wrap: wrap;">
 				<div class="col-lg-4">
 					<div class="section-heading text-center mb-3">
 						<a href="https://smsmartbooking.buildersmart.com/project_info" target="_blank" class="a-readmore">
 							<div class="row aboutus-tx-title">
-								<h3 class="header-text" style="color: #000 !important; background-color: #CCC; padding: 10px; margin-bottom: 18px;">
+								<h3 class="header-text">
 									<?php
 										if (sizeof($packages) > 0) {
 											echo ($lang == 'english') ? 'Welcome SM Resort' : 'ยินดีต้อนรับสู่ เอสเอ็ม รีสอร์ท';
@@ -915,6 +947,7 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
 	</div>
 <!-- New About Us -->
 
+<div class="row" id="package"></div><br/><br/>
 <?php if (sizeof($packages) > 0) { ?>
 <!-- PROMOTION & PACKAGE -->
 <div class="slider-wrapper slider1-wrapper slider-package" style="padding-top: 30px; padding-right: 20px;">
@@ -1084,7 +1117,7 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
 <!-- End Package -->
 
 <!-- New Room Types -->
-<div class="row" id="roomtype"></div><br/>
+<div class="row" id="roomtype"></div><br/><br/><br/>
 
 <!-- class="container mt-5" -->
 <div >
@@ -1124,10 +1157,10 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
 	<div class="col-md-12 d-flex mt-3" style="flex-wrap: wrap;">
 		<div class="col-xl-1">
 		</div>
-		<div class="col-lg-6 col-md-12">
+		<div class="col-lg-6 col-md-12" style="padding: 0 5px;">
 			<div class="content">
-				<!-- <img src="https://sharefolder.buildersmart.com/sms_booking/upload/room_type_photo/1_64880eea98d2c.jpeg" style="width: 100%;"> -->
-				<img src="<?php echo share_folder_path() . $photos[0]->room_photo_url; ?>" style="width: 100%;min-height: 350px;min-width: 470px;">
+				<!--<img class="" src="<?php echo share_folder_path() . $photos[0]->room_photo_url; ?>" style="width: 100%;min-height: 350px;min-width: 470px;">-->
+				<img class="img-roomtype" src="<?php echo share_folder_path() . $photos[0]->room_photo_url; ?>" style="width: 100%;">
 			</div>
 			<!-- max-height: 600px;max-width: 750px; -->
 			<!-- object-fit: cover; -->
@@ -1135,18 +1168,14 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
 		<!-- d-flex justify-content-center align-items-center -->
 		<div class="col-lg-5 col-md-12 ">
 			<div class="form-group">
-				<a href="http://192.168.20.22/sm_booking1/detail.php" target="_blank">
-					<h4 class="roomtype-tx-title mt-2"><?php echo ($lang == 'english') ? $room_type_en : $room_type_th; ?></h4>
-				</a>
-				<!-- 1,500/Night -->
+				<h4 class="roomtype-tx-title mt-3 mb-0"><?php echo ($lang == 'english') ? $room_type_en : $room_type_th; ?></h4>
 				<?php
                     $price = ($lang == 'english') ? number_format($rate, 0) . '/Night' : 'ราคา ' . number_format($rate, 0) . '/คืน';
                 ?>
                 <span style="color: #000;"><?php echo $price; ?></span>
 			</div>
-			<div class="form-group">
-				<p class="mb-0" style="font-size: 13px !important;"><?php echo ($lang == 'english') ? 'Room Information' : 'ข้อมูลห้องพัก'; ?></p>
-				<!-- <span style="color: #000; font-size: 12px !important;">xxx</span> -->
+			<div class="form-group mt-3">
+				<p class="mb-0" style="font-size: 13px !important; color: #000;"><?php echo ($lang == 'english') ? 'Room Information' : 'ข้อมูลห้องพัก'; ?></p>
 					<div class="row mx-auto mt-2" style="white-space: nowrap;" >
 				<?php foreach ($room_details as $detail) {
                     if ($detail->id_room_type == $rt->id_room_type) { ?>
@@ -1207,13 +1236,12 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
             	</div>        
 
 			</div>
-			<div class="form-group">
-				<p class="mb-0" style="font-size: 13px !important;" ><?php echo ($lang == 'english') ? 'Highlights' : 'ไฮไลท์'; ?></p>
+			<div class="form-group mt-3">
+				<p class="mb-0" style="font-size: 13px !important; color: #000;" ><?php echo ($lang == 'english') ? 'Highlights' : 'ไฮไลท์'; ?></p>
 				<div class="row mx-auto mt-2" style="white-space: nowrap;" >
 				<?php foreach ($highlights as $highlight) { ?>
                     <div class="col-1 col-sm-1 col-xxl-1 d-flex align-items-center icon_container">
                         <span class="icon-content">
-                            <!-- <object data="http://192.168.20.22/smartbooking_front_test/images/icons/house.svg" height="20"></object> -->
                             <img src="http://192.168.20.22/sm_booking1/includes/image.php?filename=<?php echo $highlight->icon; ?>" height="15" class="icon-service">
                         </span>
                     </div>
@@ -1222,34 +1250,31 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
                     </div>
 				<?php } ?>
 				</div>
-				<!-- <span style="color: #000; font-size: 12px !important;">xxx</span> -->
 			</div>
-			
+			<br/>
 			<div class="footer mt-3 mb-2" style="justify-content: flex-start;">
-					<div class="ml-2 text-right">
+				<div class="ml-1 text-right">
+					<button class="btn button-primary-w add_to_cart btn-add_to_cart" data-id="1" data-price="1500" id="" style="margin-right: 5px;" fdprocessedid="t8mt0r">
+						<?php
+							if (sizeof($packages) > 0) {
+								echo ($lang == 'english') ? 'Add To Cart' : 'เก็บใส่ตะกร้า';
+							}
+						?>
+					</button>
+					<a href="javascript:;" data-roomtype="1" class="btn button-primary book_now book_now:hover" id="" style="margin-left: 5px;">
+						<?php
+							if (sizeof($packages) > 0) {
+								echo ($lang == 'english') ? 'Book Now' : 'จองตอนนี้';
+							}
+						?>
+					</a>
 
-						
-							<button class="btn button-primary-w add_to_cart btn-add_to_cart" data-id="1" data-price="1500" id="" style="margin-right: 5px;" fdprocessedid="t8mt0r">
-								<?php
-									if (sizeof($packages) > 0) {
-										echo ($lang == 'english') ? 'Add To Cart' : 'เก็บใส่ตะกร้า';
-									}
-								?>
-							</button>
-							<a href="javascript:;" data-roomtype="1" class="btn button-primary book_now book_now:hover" id="" style="margin-left: 5px;">
-								<?php
-									if (sizeof($packages) > 0) {
-										echo ($lang == 'english') ? 'Book Now' : 'จองตอนนี้';
-									}
-								?>
-							</a>
+					<!-- <div class="ml-2 text-right"> -->
+						&nbsp;&nbsp;<a  href="http://192.168.20.22/sm_booking1/detail.php" class="tx-viewdetail" ><?php echo ($lang == 'english') ? 'View details' : 'ดูรายละเอียด'; ?></a>
 
-						<!-- <div class="ml-2 text-right"> -->
-							&nbsp;&nbsp;<a  href="http://192.168.20.22/sm_booking1/detail.php" style="font-size: 14px;text-decoration: underline !important;" ><?php echo ($lang == 'english') ? 'View details' : 'ดูรายละเอียด'; ?></a>
-
-						<!-- </div> -->
-					</div>
+					<!-- </div> -->
 				</div>
+			</div>
 		</div>
 		<div class="col-xl-1">
 		
