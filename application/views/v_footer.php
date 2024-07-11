@@ -303,15 +303,15 @@ $lang  = $lg;
 </html>
 
 <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const elements = document.querySelectorAll("p, span, div"); // เลือกทุก p, span, div หรือเพิ่มองค์ประกอบอื่นๆ ที่ต้องการตรวจสอบ
-            const thaiRegex = /[\u0E00-\u0E7F]/; // ช่วง Unicode สำหรับตัวอักษรไทย
-            elements.forEach(function(element) {
-                if (thaiRegex.test(element.textContent)) {
-                    element.classList.add("thai-text");
-                }
-            });
+    document.addEventListener("DOMContentLoaded", function() {
+        const elements = document.querySelectorAll("h1, h2, h3, h4, h5, h6, b, span, p, table, a, div, label, ul, li, div,button");
+        const thaiRegex = /[\u0E00-\u0E7F]/; // ช่วง Unicode สำหรับตัวอักษรไทย
+        elements.forEach(function(element) {
+            if (thaiRegex.test(element.textContent)) {
+                element.classList.add("thai-text");
+            }
         });
-    </script>
+    });
+</script>
 
     

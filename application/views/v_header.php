@@ -253,8 +253,8 @@ if ($id_guest != '') {
 
 			<!-- class="mx-3" -->
 		 	<!-- <span  style="background-color: #102958 !important;" >  class="logo-img" -->
-				<a class="px-3" href="<?php echo site_url('home'); ?>">
-					<img src="<?php echo site_url(); ?>images/logo-SM/SM smart booking_White.png" style="width: 80px !important;" >
+				<a class="px-5 mb-0 pb-0" href="<?php echo site_url('home'); ?>">
+					<img src="<?php echo site_url(); ?>images/logo-SM/SM smart booking_White.png" style="width: 85px !important;" >
 				</a>
 		  <!-- </span> -->
 
