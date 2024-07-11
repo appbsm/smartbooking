@@ -49,7 +49,6 @@
     button,
     span {
       font-size: 1em !important;
-      /* font-family: arial; */
     }
 	
 	.btn-sign-in:hover {
@@ -130,9 +129,52 @@
 		margin: 0 8px;
 	}
 
+<<<<<<< HEAD
+    function ValidateEmail(mail) {
+      if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(mail)) {
+        return (true)
+      } else {
+        alert("You have entered an invalid email address!")
+        return (false)
+      }
+    }
+
+    function number_add_comma_decimal(num) {
+      num = parseFloat(num).toFixed(2);
+      return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    }
+
+    function number_add_comma(num) {
+      //num = parseFloat(num).toFixed(2);
+      return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    }
+
+    function remove_comma(num) {
+      return num.replace(/\,/g, '');
+    }
+
+    function date_diff(date1, date2) {
+      const diffTime = Math.abs(date2 - date1);
+      const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+      //console.log(diffTime + " milliseconds");
+      //console.log(diffDays + " days");
+      return diffDays;
+    }
+    let width = screen.width;
+    //console.log(width);
+  </script>
+<style>
+
+</style></head>
+
+<body class="" style="">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+=======
 	.input_number:focus {
 		outline: none;
 	}
+>>>>>>> e4e057d3b812786d5604093f4feb55a5372a7fd3
 	.span, .icon-content {
 		color: #000 !important;
 	}

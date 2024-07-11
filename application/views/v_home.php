@@ -651,6 +651,19 @@ $CI->load->model('m_room_type');
 			float:right;
 		}
 	}
+
+	/*@media (min-width: 992px) {	
+		.img-roomtype {
+			width: 100% !important;
+			max-width: 100% !important;
+			float:right;
+		}
+	}*/
+	@media screen and (min-width: 1200px) {
+	  .custom-icon {
+		max-width: 600px;
+	  }
+	}
 </style>
 
 <!-- Package -->
@@ -1211,18 +1224,17 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
     ?>
 
 	<div class="col-md-12 d-flex mt-3" style="flex-wrap: wrap;">
-		<div class="col-xl-1">
-		</div>
+
+		<!-- <div class="col-xl-1">
+		</div> -->
 		<div class="col-lg-6 col-md-12" style="padding: 0 5px; display: flex; justify-content: flex-end;">
 			<div class="content">
 				<!--<img class="" src="<?php echo share_folder_path() . $photos[0]->room_photo_url; ?>" style="width: 100%;min-height: 350px;min-width: 470px;">-->
 				<img class="img-roomtype" src="<?php echo share_folder_path() . $photos[0]->room_photo_url; ?>" style="width: 100%;">
 			</div>
-			<!-- max-height: 600px;max-width: 750px; -->
-			<!-- object-fit: cover; -->
 		</div>
-		<!-- d-flex justify-content-center align-items-center -->
-		<div class="col-lg-4 col-md-12" ">
+
+		<div class="col-lg-6 col-md-12 " >
 			<div class="form-group">
 				<h4 class="roomtype-tx-title mt-3 mb-0"><?php echo ($lang == 'english') ? $room_type_en : $room_type_th; ?></h4>
 				<?php
@@ -1230,12 +1242,14 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
                 ?>
                 <span style="color: #000;"><?php echo $price; ?></span>
 			</div>
+
 			<div class="form-group mt-1">
 				<p class="mb-0" style="font-size: 14px !important; color: #000;"><?php echo ($lang == 'english') ? 'Room Information' : 'ข้อมูลห้องพัก'; ?></p>
-					<div class="row mx-auto mt-2" style="white-space: nowrap;" >
+					<!-- mx-auto mt-2 -->
+					<div class="row mt-2 col-12 custom-icon" style="white-space: nowrap;text-align: left !important;"  >
 				<?php foreach ($room_details as $detail) {
                     if ($detail->id_room_type == $rt->id_room_type) { ?>
-                            <div class="col-1 col-sm-1 col-xxl-1 d-flex align-items-center icon_container">
+                            <div class="col-1 col-sm-1 col-xxl-1 d-flex align-items-center icon_container ">
                                 <span class="icon-content">
                                     <object data="http://192.168.20.22/smartbooking_front_test/images/icons/house.svg" height="15"></object>
                                 </span>
@@ -1290,11 +1304,12 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
                             </div>
                 <?php   }}   ?> 
             	</div>        
-
 			</div>
-			<div class="form-group mt-1">
+
+			<div class="form-group mt-1 custom-icon">
 				<p class="mb-0" style="font-size: 14px !important; color: #000;" ><?php echo ($lang == 'english') ? 'Highlights' : 'ไฮไลท์'; ?></p>
-				<div class="row mx-auto mt-2" style="white-space: nowrap;" >
+				<!-- mx-auto  -->
+				<div class="row mt-2 col-12" style="white-space: nowrap;" >
 				<?php foreach ($highlights as $highlight) { ?>
                     <div class="col-1 col-sm-1 col-xxl-1 d-flex align-items-center icon_container">
                         <span class="icon-content">
@@ -1329,9 +1344,9 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
 				</div>
 			</div>
 		</div>
-		<div class="col-xl-1">
+		<!-- <div class="col-xl-1">
 		
-		</div>
+		</div> -->
 	</div>
 
 	<?php } ?>
