@@ -1,13 +1,3 @@
-<div class="row">
-		<div class="col-md-12 ml-2 text-center mt-4">
-			<h4 style="text-align: center; padding-bottom: 15px;" id="nav_packagep_promotions">
-				<a id="nearby_locations" href="javascript:;" class="tx-title-header">
-					testtest
-				</a>
-			</h4>
-		</div>
-	</div>
-
 <?php
 	$lg = ($this->session->userdata('site_lang') !== null) ? $this->session->userdata('site_lang') : 'thai';
 	if ($lg == 'thai') {
@@ -19,6 +9,25 @@
 ?>
 
   <style>
+	@font-face {
+            font-family: 'NotoSans_online_security'; 
+            src: url(chrome-extension://llbcnfanfmjhpedaedhbcnpgeepdnnok/assets/fonts/noto-sans-regular.woff);
+        }
+
+        @font-face {
+            font-family: 'NotoSans_medium_online_security'; 
+            src: url(chrome-extension://llbcnfanfmjhpedaedhbcnpgeepdnnok/assets/fonts/noto-sans-medium.ttf);
+        }
+
+        @font-face {
+            font-family: 'NotoSans_bold_online_security'; 
+            src: url(chrome-extension://llbcnfanfmjhpedaedhbcnpgeepdnnok/assets/fonts/noto-sans-bold.woff);
+        }
+
+        @font-face {
+            font-family: 'NotoSans_semibold_online_security'; 
+            src: url(chrome-extension://llbcnfanfmjhpedaedhbcnpgeepdnnok/assets/fonts/noto-sans-semibold.ttf);
+        }
     .button {
       color: white;
       display: inline-block;
@@ -673,13 +682,15 @@
       return diffDays;
     }
     let width = screen.width;
-
+    //console.log(width);
   </script>
 
 </head>
 
 <body class="" style="">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
 
 <link rel="stylesheet" href="http://192.168.20.22/smartbooking_front_test//css/tiny-slider.css">
 <link rel="stylesheet" href="http://192.168.20.22/smartbooking_front_test//css/package.css">
@@ -778,6 +789,18 @@
 
 			<div class="container fillter-h">
 				<div class="row search-bg pt-1" style="border: 2px solid #C6C6C7; border-radius: 5px; padding: 0; margin: 0 4px 0 4px;font-size: 14px !important;">
+					<!--
+					<div class="col-lg-3 ">
+						<div class="col-md-12 text-left">
+							<label class="ml-1" for="name"><?php echo $lang == "english" ? 'Location' : 'สถานที่'; ?> </label>
+							<select class="form-control selectpicker search_input" data-live-search="true" name="project_id" id="project_id">
+								<?php foreach ($project_all as $pj) { ?>
+									<option value="<?php echo $pj->id_project_info ?>"><?php echo $lang == "english" ? $pj->project_name_en : $pj->project_name_th; ?></option>
+								<?php } ?>
+							</select>
+						</div>
+					</div>
+					-->
 
 					<div class="col-xl-3 col-lg-2 col-md-6 col-sm-6 col-xs-6 padd-rl">
 						<div class="col-md-12 text-left">
@@ -1015,6 +1038,7 @@
 	</div>
 </div>
 
+<!-- <script src="//code.jquery.com/jquery.js"></script> -->
 <script src="http://192.168.20.22/smartbooking_front_test/js/jquery.min.js"></script>
 <script src="http://192.168.20.22/smartbooking_front_test/js/jquery-ui.min.js"></script>
 <script src="http://192.168.20.22/smartbooking_front_test/bootstrap-4.0.0-dist/js/bootstrap.bundle.min.js"></script>
@@ -1332,6 +1356,41 @@
 		color: rgb(215, 215, 219) !important;
 	}
 </style>
+ 
+<!-- <footer class="mt-3 bg-light" style="background-color: rgb(42, 42, 46) !important; color: rgba(255, 255, 255, 1.00);">
+		<div class="footer-top">
+			<div class="container">
+				<div class="row " id="contactus">
+					<div class="col-md-6 col-lg-6 footer-about wow fadeInUp mt-3">
+						<div class="d-flex pt-2">
+							<p class=" mt-3">BuilderSmart (Public) Company Limited <br>1055 Rama 3 Road.Chongnonsi, Yannawa, Bangkok 10120 <br><br> SM Resort @ Khaoyai <br> 499 Moo 4 Pong Ta Long, Pak Chong, Nakhon Ratchasima 30130</p>                 
+						</div>
+					</div>
+					<div class="col-md-6 col-lg-6 text-right mt-3">							
+						<p>If your interest room rent could you please contact admin via Line or Mobile <span class="footer-phone">065-989-8845</span></p>
+						<img class="logo-footer" src="http://192.168.20.22/smartbooking_front_test//images/line.jpg" alt="qr-code" data-at2x="http://192.168.20.22/smartbooking_front_test//images/line.jpg" width="100" height="100">
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="bottom-footer">
+			<div class="container">
+				<div class="row align-items-center">
+					<div class="col-lg-12 col-md-12 col-sm-12 col-12">
+						<div class="d-flex pt-2" style="justify-content: center;">
+							<a class="btn btn-square me-1 footer-social" href=""><i class="fab fa-twitter"></i></a>
+							<a class="btn btn-square me-1 footer-social" href=""><i class="fab fa-facebook-f"></i></a>
+							<a class="btn btn-square me-1 footer-social" href=""><i class="fab fa-youtube"></i></a>
+							<a class="btn btn-square me-0 footer-social" href=""><i class="fab fa-linkedin-in"></i></a>                  
+						</div>
+						<p class="text-center text-light">© 2021-24 smsmartbooking  | All Rights Reserved. Design by <a class="text-light" href="https://www.installdirect.asia/"><b>InstallDirect</b></a></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+<div id="ui-datepicker-div" class="ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all"></div><span id="PING_IFRAME_FORM_DETECTION" style="display: none;"></span></body></html> -->
 
 <script>
 	const link = '<? echo $project_details->link_map; ?>';
