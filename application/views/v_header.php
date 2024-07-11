@@ -253,7 +253,7 @@ if ($id_guest != '') {
 
 			<!-- class="mx-3" -->
 		 	<!-- <span  style="background-color: #102958 !important;" >  class="logo-img" -->
-				<a  href="<?php echo site_url('home'); ?>">
+				<a class="px-3" href="<?php echo site_url('home'); ?>">
 					<img src="<?php echo site_url(); ?>images/logo-SM/SM smart booking_White.png" style="width: 80px !important;" >
 				</a>
 		  <!-- </span> -->
@@ -271,23 +271,33 @@ if ($id_guest != '') {
 	  <!-- <div class="collapse navbar-collapse col-8" id="navbarNav"> -->
 	  <!-- <div class="container-fluid m-0 p-0 d-flex navbar-collapse" id="navbarNav" style="background-color: #102958 !important;padding-left: 0;padding-right: 0;" > -->
 
+<?php 
+$current_url = $_SERVER['REQUEST_URI'];
+$is_home = (strpos($current_url, 'home') !== false);
+?>
+
 	   <div class="collapse navbar-collapse " id="navbarNav" style="background-color: #102958 !important; padding-left: 0; padding-right: 0; padding-top: 0 !important;">
 	   			<!-- me-auto -->
-					<ul class="navbar-nav mb-2 xl-4 mb-lg-0 " style="font-size: 14px;padding-left: 5% !important;">
+					<ul class="navbar-nav mb-4  mb-lg-0 " style="font-size: 14px;margin: 0 auto !important;">
+						<!-- style="padding-left: 5% !important;" -->
+						<!-- style="margin-right: 5% !important;" -->
 						<li class="nav-item nav-item-custom" id="nav_aboutus" >
-                <a class="nav-link" href="#aboutus">
-					<?php echo $lang == "english" ? 'About us' : ' ข้อมูลโครงการ'; ?> 
-								</a>
+                <!-- <a class="nav-link" href="#aboutus">
+									<?php //echo $lang == "english" ? 'About us' : ' ข้อมูลโครงการ'; ?> 
+								</a> -->
+								<a class="nav-link" href="<?php echo $is_home ? '#aboutus' : 'home#aboutus'; ?>">
+        					<?php echo $lang == "english" ? 'About us' : 'ข้อมูลโครงการ'; ?>
+    						</a>
             </li>
-            <li class="nav-item nav-item-custom" id="nav_roomstype">
-                <a class="nav-link" href="#roomtype">
-					<?php echo $lang == "english" ? 'Rooms type' : 'ประเภทห้อง'; ?> 
-								</a>
+            <li class="nav-item nav-item-custom" id="nav_roomstype" >
+								<a class="nav-link" href="<?php echo $is_home ? '#roomtype' : 'home#roomtype'; ?>">
+        					<?php echo $lang == "english" ? 'Rooms type' : 'ประเภทห้อง'; ?>
+    						</a>
             </li>
             <li class="nav-item nav-item-custom" id="nav_packagep_promotions" >
-                <a class="nav-link" href="#package">
-					<?php echo $lang == "english" ? 'Package & Promotions' : 'แพ็คเกจและโปรโมชั่น'; ?> 
-								</a>
+								<a class="nav-link" href="<?php echo $is_home ? '#package' : 'home#package'; ?>">
+        					<?php echo $lang == "english" ? 'Package & Promotions' : 'แพ็คเกจและโปรโมชั่น'; ?>
+    						</a>
             </li>
 
             <!-- target="_blank" -->
@@ -304,7 +314,7 @@ if ($id_guest != '') {
             </li>
 			-->
 					<li class="nav-item" id="nav_contactus">
-              <a class="nav-link" href="http://192.168.20.22/smartbooking_front_test/conditions_policies.php" >
+              <a class="nav-link" href="conditions" >
 					<?php echo $lang == "english" ? 'Conditions & Policies' : 'เงื่อนไขและข้อกำหนด'; ?>
 							</a>
           </li>

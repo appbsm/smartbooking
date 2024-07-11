@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Facilities extends CI_Controller {
+class Conditions extends CI_Controller {
 
 	public function __construct(){
 		parent::__construct();
@@ -35,7 +35,7 @@ class Facilities extends CI_Controller {
 		$data['project_all'] = $this->m_project_info->get_all_project();
 
 		$this->load->view('v_header');
-		$this->load->view('facilities_amenities',$data);
+		$this->load->view('conditions_policies',$data);
 		$this->load->view('v_footer');
 	}
 
@@ -56,7 +56,7 @@ class Facilities extends CI_Controller {
 
 		$data['project_all'] = $this->m_project_info->get_all_project();
 
-		$this->load->view('v_header');
+		// $this->load->view('v_header');
 		$this->load->view('facilities_amenities', $data);
 		$this->load->view('v_footer');
 	}
