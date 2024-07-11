@@ -197,10 +197,7 @@ $CI->load->model('m_room_type');
 			height: 100%;
 		}
 		
-		.img-roomtype {
-			min-height: 350px;
-			min-width: 470px;
-		}
+		
 	}
 	@media (max-width: 767px) {
 		.fillter-h {
@@ -612,7 +609,7 @@ $CI->load->model('m_room_type');
 			/* height: 400px; */
 		}
 	}
-	@media (min-width: 1024px) {
+	/*@media (min-width: 1024px) {*/
 		.carousel-inner-packgage .carousel-item img {
 			height: 500px;
 			object-fit: cover; /* Optional: This will ensure the image covers the 500px height without distortion */
@@ -647,6 +644,13 @@ $CI->load->model('m_room_type');
 			margin-left: 48px !important;
 		}
 	
+	@media (min-width: 1300px) {	
+		.img-roomtype {
+			width: 90% !important;
+			max-width: 100% !important;
+			float:right;
+		}
+	}
 </style>
 
 <!-- Package -->
@@ -1157,7 +1161,7 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
 	<div class="col-md-12 d-flex mt-3" style="flex-wrap: wrap;">
 		<div class="col-xl-1">
 		</div>
-		<div class="col-lg-6 col-md-12" style="padding: 0 5px;">
+		<div class="col-lg-6 col-md-12" style="padding: 0 5px; display: flex; justify-content: flex-end;">
 			<div class="content">
 				<!--<img class="" src="<?php echo share_folder_path() . $photos[0]->room_photo_url; ?>" style="width: 100%;min-height: 350px;min-width: 470px;">-->
 				<img class="img-roomtype" src="<?php echo share_folder_path() . $photos[0]->room_photo_url; ?>" style="width: 100%;">
@@ -1166,7 +1170,7 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
 			<!-- object-fit: cover; -->
 		</div>
 		<!-- d-flex justify-content-center align-items-center -->
-		<div class="col-lg-5 col-md-12 ">
+		<div class="col-lg-4 col-md-12" ">
 			<div class="form-group">
 				<h4 class="roomtype-tx-title mt-3 mb-0"><?php echo ($lang == 'english') ? $room_type_en : $room_type_th; ?></h4>
 				<?php
@@ -1174,7 +1178,7 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
                 ?>
                 <span style="color: #000;"><?php echo $price; ?></span>
 			</div>
-			<div class="form-group mt-3">
+			<div class="form-group mt-1">
 				<p class="mb-0" style="font-size: 13px !important; color: #000;"><?php echo ($lang == 'english') ? 'Room Information' : 'ข้อมูลห้องพัก'; ?></p>
 					<div class="row mx-auto mt-2" style="white-space: nowrap;" >
 				<?php foreach ($room_details as $detail) {
@@ -1236,7 +1240,7 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
             	</div>        
 
 			</div>
-			<div class="form-group mt-3">
+			<div class="form-group mt-1">
 				<p class="mb-0" style="font-size: 13px !important; color: #000;" ><?php echo ($lang == 'english') ? 'Highlights' : 'ไฮไลท์'; ?></p>
 				<div class="row mx-auto mt-2" style="white-space: nowrap;" >
 				<?php foreach ($highlights as $highlight) { ?>
@@ -1251,7 +1255,7 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
 				<?php } ?>
 				</div>
 			</div>
-			<br/>
+			
 			<div class="footer mt-3 mb-2" style="justify-content: flex-start;">
 				<div class="ml-1 text-right">
 					<button class="btn button-primary-w add_to_cart btn-add_to_cart" data-id="1" data-price="1500" id="" style="margin-right: 5px;" fdprocessedid="t8mt0r">
