@@ -1,33 +1,49 @@
 <?php
-$lg = ($this->session->userdata('site_lang') !== null) ? $this->session->userdata('site_lang') : 'thai';
-if ($lg == 'thai') {
-  $this->lang->load('content', 'thai');
-} elseif ($lg == 'english') {
-  $this->lang->load('content', 'english');
-}
-$lang  = $lg;
+	$lg = ($this->session->userdata('site_lang') !== null) ? $this->session->userdata('site_lang') : 'thai';
+	if ($lg == 'thai') {
+	  $this->lang->load('content', 'thai');
+	} elseif ($lg == 'english') {
+	  $this->lang->load('content', 'english');
+	}
+	$lang  = $lg;
 ?>
 
-<!-- <script src="https://cdn.jsdelivr.net/npm/moment@2.29.1/moment.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAdcxrCA3fydYz4cKu-Gpqm0MSe6S9voMw&libraries=places"></script>
 
-<html lang="en"><head>
-<title>Smart Booking</title>
-  <link rel="icon" type="image/x-icon" href="http://192.168.20.22/smartbooking_front_test/images/10.png">
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="">
-  <link href="https://fonts.googleapis.com/css2?family=Syne&amp;display=swap" rel="stylesheet">  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="http://192.168.20.22/smartbooking_front_test/bootstrap-4.0.0-dist/css/bootstrap.css">
-  <link href="http://192.168.20.22/smartbooking_front_test/assets/font-awesome/css/all.min.css" rel="stylesheet">
-
-  <link href="http://192.168.20.22/smartbooking_front_test/css/styles.css" rel="stylesheet">
-  <link href="http://192.168.20.22/smartbooking_front_test/css/css.css" rel="stylesheet">
-  <link href="http://192.168.20.22/smartbooking_front_test/css/custom_header_en.css" rel="stylesheet">  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css?v=1001"> -->
-   
   <style>
+  .box-fillter {
+			padding: 0 180px !important;
+		}
+			@media (max-width: 767px) {
+			.fillter-h {
+				margin-top: 16px !important;
+			}
+		}
+	.btn_stepper {
+		background-color: #102958 !important;
+		border: none;
+		border-radius: 50%;
+		width: 25px;
+		height: 25px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.btn_stepper:focus {
+		outline: none;
+	}
+	.input_number {
+		text-align: center !important;
+		border: 1px solid #CCC;
+		background-color: white;
+		width: 30%;
+		margin: 0 8px;
+	}
+
+	.input_number:focus {
+		outline: none;
+	}
     .button {
       color: white;
       display: inline-block;
@@ -108,46 +124,7 @@ $lang  = $lg;
         border: #5392f9 !important;
 	}
 	
-  </style>
-
-  <script>
-    const numFor = new Intl.NumberFormat('en-US');
-
-    function ValidateEmail(mail) {
-      if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(mail)) {
-        return (true)
-      } else {
-        alert("You have entered an invalid email address!")
-        return (false)
-      }
-    }
-
-    function number_add_comma_decimal(num) {
-      num = parseFloat(num).toFixed(2);
-      return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-    }
-
-    function number_add_comma(num) {
-      //num = parseFloat(num).toFixed(2);
-      return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-    }
-
-    function remove_comma(num) {
-      return num.replace(/\,/g, '');
-    }
-
-    function date_diff(date1, date2) {
-      const diffTime = Math.abs(date2 - date1);
-      const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-      //console.log(diffTime + " milliseconds");
-      //console.log(diffDays + " days");
-      return diffDays;
-    }
-    let width = screen.width;
-    //console.log(width);
-  </script>
-<style>
-        @font-face {
+	@font-face {
             font-family: 'NotoSans_online_security'; 
             src: url(chrome-extension://llbcnfanfmjhpedaedhbcnpgeepdnnok/assets/fonts/noto-sans-regular.woff);
         }
@@ -166,11 +143,6 @@ $lang  = $lg;
             font-family: 'NotoSans_semibold_online_security'; 
             src: url(chrome-extension://llbcnfanfmjhpedaedhbcnpgeepdnnok/assets/fonts/noto-sans-semibold.ttf);
         }
-</style></head>
-
-<body class="" style="">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<style>
 	.span, .icon-content {
 		color: #000 !important;
 	}
@@ -667,7 +639,49 @@ $lang  = $lg;
 		html {
 	    scroll-padding-top: 150px; /* Adjust the padding value as needed */
 		}
-</style>
+  </style>
+
+  <script>
+    const numFor = new Intl.NumberFormat('en-US');
+
+    function ValidateEmail(mail) {
+      if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(mail)) {
+        return (true)
+      } else {
+        alert("You have entered an invalid email address!")
+        return (false)
+      }
+    }
+
+    function number_add_comma_decimal(num) {
+      num = parseFloat(num).toFixed(2);
+      return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    }
+
+    function number_add_comma(num) {
+      //num = parseFloat(num).toFixed(2);
+      return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    }
+
+    function remove_comma(num) {
+      return num.replace(/\,/g, '');
+    }
+
+    function date_diff(date1, date2) {
+      const diffTime = Math.abs(date2 - date1);
+      const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+      //console.log(diffTime + " milliseconds");
+      //console.log(diffDays + " days");
+      return diffDays;
+    }
+    let width = screen.width;
+    //console.log(width);
+  </script>
+
+</head>
+
+<body class="" style="">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 
 <link rel="stylesheet" href="http://192.168.20.22/smartbooking_front_test//css/tiny-slider.css">
@@ -752,42 +766,7 @@ $lang  = $lg;
 			</div>
 	</div>
 
-<style type="text/css">
-		.box-fillter {
-			padding: 0 180px !important;
-		}
-			@media (max-width: 767px) {
-			.fillter-h {
-				margin-top: 16px !important;
-			}
-		}
-	.btn_stepper {
-		background-color: #102958 !important;
-		border: none;
-		border-radius: 50%;
-		width: 25px;
-		height: 25px;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		align-items: center;
-	}
 
-	.btn_stepper:focus {
-		outline: none;
-	}
-	.input_number {
-		text-align: center !important;
-		border: 1px solid #CCC;
-		background-color: white;
-		width: 30%;
-		margin: 0 8px;
-	}
-
-	.input_number:focus {
-		outline: none;
-	}
-</style>
 
 	<div class="container-fluid text-center search-box box-fillter">
 		<form name="frm_search" id="frm_search" method="post" action="<?php echo site_url('home/search'); ?>">
@@ -802,19 +781,6 @@ $lang  = $lg;
 
 			<div class="container fillter-h">
 				<div class="row search-bg pt-1" style="border: 2px solid #C6C6C7; border-radius: 5px; padding: 0; margin: 0 4px 0 4px;font-size: 14px !important;">
-					<!--
-					<div class="col-lg-3 ">
-						<div class="col-md-12 text-left">
-							<label class="ml-1" for="name"><?php echo $lang == "english" ? 'Location' : 'สถานที่'; ?> </label>
-							<select class="form-control selectpicker search_input" data-live-search="true" name="project_id" id="project_id">
-								<?php foreach ($project_all as $pj) { ?>
-									<option value="<?php echo $pj->id_project_info ?>"><?php echo $lang == "english" ? $pj->project_name_en : $pj->project_name_th; ?></option>
-								<?php } ?>
-							</select>
-						</div>
-					</div>
-					-->
-
 					<div class="col-xl-3 col-lg-2 col-md-6 col-sm-6 col-xs-6 padd-rl">
 						<div class="col-md-12 text-left">
 							<label class="ml-1 mb-1" for="name" style="font-size: 14px;color: black;"><?php echo $this->lang->line('check_in_date'); ?></label>
@@ -928,17 +894,18 @@ $lang  = $lg;
 
 ?>
 
-<div class="container mt-5" id="contactus">
+<div class="row" id="contact"></div>
+<div class="container mt-0" id="contactus">
 	<div class="row">
 		<div class="col-md-12 ml-2 text-center mt-0">
 			<section class="section-full bg-white about-bx1 m-b20 m-t30 m-b90">
                 <div class="container">
           <div class="section-head text-center ">
             <h4 class="">
-				<span style="color: #102958; font-weight: 600;">
+				<span style="color: #000; font-weight: 600;">
 					<?php echo $lang == "english" ? 'Contact us' : 'ติดต่อเรา'; ?>
 					</span>
-				<span style="color: #4590B8;"></span> 
+				<span style="color: #000;"></span> 
 			</h4>
 
           </div>    
@@ -948,13 +915,13 @@ $lang  = $lg;
              <div class="col-md-6 col-lg-6 col-sm-12">
             <div class=" d-flex">
               <div class="icon-box-icon pe-3 pb-3">
-                <svg width="20" height="20" fill="#102958" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+                <svg width="20" height="20" fill="#000" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
                   <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6"></path>
                 </svg>
               </div>
 
               <div class="icon-box-content">
-               	<h6 class="card-title " style="color: #102958; font-weight: 600; text-align: left;">
+               	<h6 class="card-title " style="color: #000; font-weight: 600; text-align: left;">
 									<?php echo $lang == "english" ? 'Address' : 'ที่อยู่'; ?>
 								</h6>
                 <!-- (มหาชน) -->
@@ -971,13 +938,13 @@ $lang  = $lg;
 
             <div class=" d-flex">
               <div class="icon-box-icon pe-3 pb-3">
-                <svg width="20" height="20" fill="#102958" class="bi bi-telephone" viewBox="0 0 16 16">
+                <svg width="20" height="20" fill="#000" class="bi bi-telephone" viewBox="0 0 16 16">
 				  <path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.6 17.6 0 0 0 4.168 6.608 17.6 17.6 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.68.68 0 0 0-.58-.122l-2.19.547a1.75 1.75 0 0 1-1.657-.459L5.482 8.062a1.75 1.75 0 0 1-.46-1.657l.548-2.19a.68.68 0 0 0-.122-.58zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.68.68 0 0 0 .178.643l2.457 2.457a.68.68 0 0 0 .644.178l2.189-.547a1.75 1.75 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.6 18.6 0 0 1-7.01-4.42 18.6 18.6 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877z"></path>
 				</svg>
               </div>
 
               <div class="icon-box-content">
-                <h6 class="card-title " style="color: #102958; font-weight: 600;text-align: left;">
+                <h6 class="card-title " style="color: #000; font-weight: 600;text-align: left;">
 									<?php echo $lang == "english" ? 'Phone' : 'เบอร์โทรศัพท์'; ?>
 								</h6>
                 <p style="font-size:14px; text-align: left;color: black !important;">065-989-8845</p>
@@ -985,10 +952,10 @@ $lang  = $lg;
             </div>
             <div class=" d-flex">
               <div class="icon-box-icon pe-3 pb-3">
-                  <i style="font-size:20px;color:#102958;" class="fa fa-fax"></i>
+                  <i style="font-size:20px;color:#000;" class="fa fa-fax"></i>
               </div>
               <div class="icon-box-content">
-                <h6 class="card-title " style="color: #102958; font-weight: 600;text-align: left;">
+                <h6 class="card-title " style="color: #000; font-weight: 600;text-align: left;">
 					<?php echo $lang == "english" ? 'Fax' : 'เบอร์โทรแฟกซ์'; ?>
 				</h6>
                 <p style="font-size:14px; text-align: left;color: black !important;">0-2683-4949</p>
@@ -997,13 +964,13 @@ $lang  = $lg;
 
             <div class=" d-flex">
               <div class="icon-box-icon pe-3 pb-3">
-                <svg width="20" height="20" fill="#102958" class="bi bi-envelope" viewBox="0 0 16 16">
+                <svg width="20" height="20" fill="#000" class="bi bi-envelope" viewBox="0 0 16 16">
 				  <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z"></path>
 							</svg>
             </div>
 
             <div class="icon-box-content">
-                <h6 class="card-title " style="color: #102958; font-weight: 600; text-align: left;">
+                <h6 class="card-title " style="color: #000; font-weight: 600; text-align: left;">
 									<?php echo $lang == "english" ? 'E-mail' : 'อีเมล'; ?>
 								</h6>
                 <p style="font-size:14px; text-align: left;color: black !important;">customercare@installdirect.asia</p>
@@ -1014,13 +981,13 @@ $lang  = $lg;
             
             <div class=" d-flex">
               <div class="icon-box-icon pe-3 pb-3">
-               <svg width="20" height="20" fill="#102958" class="bi bi-line" viewBox="0 0 16 16">
+               <svg width="20" height="20" fill="#000" class="bi bi-line" viewBox="0 0 16 16">
 				  <path d="M8 0c4.411 0 8 2.912 8 6.492 0 1.433-.555 2.723-1.715 3.994-1.678 1.932-5.431 4.285-6.285 4.645-.83.35-.734-.197-.696-.413l.003-.018.114-.685c.027-.204.055-.521-.026-.723-.09-.223-.444-.339-.704-.395C2.846 12.39 0 9.701 0 6.492 0 2.912 3.59 0 8 0M5.022 7.686H3.497V4.918a.156.156 0 0 0-.155-.156H2.78a.156.156 0 0 0-.156.156v3.486c0 .041.017.08.044.107v.001l.002.002.002.002a.15.15 0 0 0 .108.043h2.242c.086 0 .155-.07.155-.156v-.56a.156.156 0 0 0-.155-.157m.791-2.924a.156.156 0 0 0-.156.156v3.486c0 .086.07.155.156.155h.562c.086 0 .155-.07.155-.155V4.918a.156.156 0 0 0-.155-.156zm3.863 0a.156.156 0 0 0-.156.156v2.07L7.923 4.832l-.013-.015v-.001l-.01-.01-.003-.003-.011-.009h-.001L7.88 4.79l-.003-.002-.005-.003-.008-.005h-.002l-.003-.002-.01-.004-.004-.002-.01-.003h-.002l-.003-.001-.009-.002h-.006l-.003-.001h-.004l-.002-.001h-.574a.156.156 0 0 0-.156.155v3.486c0 .086.07.155.156.155h.56c.087 0 .157-.07.157-.155v-2.07l1.6 2.16a.2.2 0 0 0 .039.038l.001.001.01.006.004.002.008.004.007.003.005.002.01.003h.003a.2.2 0 0 0 .04.006h.56c.087 0 .157-.07.157-.155V4.918a.156.156 0 0 0-.156-.156zm3.815.717v-.56a.156.156 0 0 0-.155-.157h-2.242a.16.16 0 0 0-.108.044h-.001l-.001.002-.002.003a.16.16 0 0 0-.044.107v3.486c0 .041.017.08.044.107l.002.003.002.002a.16.16 0 0 0 .108.043h2.242c.086 0 .155-.07.155-.156v-.56a.156.156 0 0 0-.155-.157H11.81v-.589h1.525c.086 0 .155-.07.155-.156v-.56a.156.156 0 0 0-.155-.157H11.81v-.589h1.525c.086 0 .155-.07.155-.156Z"></path>
 				</svg>
               </div>
 
               <div class="icon-box-content">
-                <h6 class="card-title " style="color: #102958; font-weight: 600; text-align: left;">
+                <h6 class="card-title " style="color: #000; font-weight: 600; text-align: left;">
 					<?php echo $lang == "english" ? 'LINE ID' : 'ไลน์ไอดี'; ?>
 				</h6>
                 <p style="color: black !important;font-size:14px;">@installdirect</p>

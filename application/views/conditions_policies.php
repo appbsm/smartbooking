@@ -1,33 +1,33 @@
 <?php
-$lg = ($this->session->userdata('site_lang') !== null) ? $this->session->userdata('site_lang') : 'thai';
-if ($lg == 'thai') {
-  $this->lang->load('content', 'thai');
-} elseif ($lg == 'english') {
-  $this->lang->load('content', 'english');
-}
-$lang  = $lg;
+	$lg = ($this->session->userdata('site_lang') !== null) ? $this->session->userdata('site_lang') : 'thai';
+	if ($lg == 'thai') {
+	  $this->lang->load('content', 'thai');
+	} elseif ($lg == 'english') {
+	  $this->lang->load('content', 'english');
+	}
+	$lang  = $lg;
 ?>
 
-<!-- <script src="https://cdn.jsdelivr.net/npm/moment@2.29.1/moment.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
-<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAdcxrCA3fydYz4cKu-Gpqm0MSe6S9voMw&libraries=places"></script>
-
-<html lang="en"><head>
-<title>Smart Booking</title>
-  <link rel="icon" type="image/x-icon" href="http://192.168.20.22/smartbooking_front_test/images/10.png">
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="">
-  <link href="https://fonts.googleapis.com/css2?family=Syne&amp;display=swap" rel="stylesheet">  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="http://192.168.20.22/smartbooking_front_test/bootstrap-4.0.0-dist/css/bootstrap.css">
-  <link href="http://192.168.20.22/smartbooking_front_test/assets/font-awesome/css/all.min.css" rel="stylesheet">
-
-  <link href="http://192.168.20.22/smartbooking_front_test/css/styles.css" rel="stylesheet">
-  <link href="http://192.168.20.22/smartbooking_front_test/css/css.css" rel="stylesheet">
-  <link href="http://192.168.20.22/smartbooking_front_test/css/custom_header_en.css" rel="stylesheet">  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css?v=1001"> -->
-   
   <style>
+	@font-face {
+            font-family: 'NotoSans_online_security'; 
+            src: url(chrome-extension://llbcnfanfmjhpedaedhbcnpgeepdnnok/assets/fonts/noto-sans-regular.woff);
+        }
+
+        @font-face {
+            font-family: 'NotoSans_medium_online_security'; 
+            src: url(chrome-extension://llbcnfanfmjhpedaedhbcnpgeepdnnok/assets/fonts/noto-sans-medium.ttf);
+        }
+
+        @font-face {
+            font-family: 'NotoSans_bold_online_security'; 
+            src: url(chrome-extension://llbcnfanfmjhpedaedhbcnpgeepdnnok/assets/fonts/noto-sans-bold.woff);
+        }
+
+        @font-face {
+            font-family: 'NotoSans_semibold_online_security'; 
+            src: url(chrome-extension://llbcnfanfmjhpedaedhbcnpgeepdnnok/assets/fonts/noto-sans-semibold.ttf);
+        }
     .button {
       color: white;
       display: inline-block;
@@ -108,69 +108,40 @@ $lang  = $lg;
         border: #5392f9 !important;
 	}
 	
-  </style>
+	.box-fillter {
+			padding: 0 180px !important;
+		}
+			@media (max-width: 767px) {
+			.fillter-h {
+				margin-top: 16px !important;
+			}
+		}
+	.btn_stepper {
+		background-color: #102958 !important;
+		border: none;
+		border-radius: 50%;
+		width: 25px;
+		height: 25px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		align-items: center;
+	}
 
-  <script>
-    const numFor = new Intl.NumberFormat('en-US');
+	.btn_stepper:focus {
+		outline: none;
+	}
+	.input_number {
+		text-align: center !important;
+		border: 1px solid #CCC;
+		background-color: white;
+		width: 30%;
+		margin: 0 8px;
+	}
 
-    function ValidateEmail(mail) {
-      if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(mail)) {
-        return (true)
-      } else {
-        alert("You have entered an invalid email address!")
-        return (false)
-      }
-    }
-
-    function number_add_comma_decimal(num) {
-      num = parseFloat(num).toFixed(2);
-      return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-    }
-
-    function number_add_comma(num) {
-      //num = parseFloat(num).toFixed(2);
-      return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-    }
-
-    function remove_comma(num) {
-      return num.replace(/\,/g, '');
-    }
-
-    function date_diff(date1, date2) {
-      const diffTime = Math.abs(date2 - date1);
-      const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-      //console.log(diffTime + " milliseconds");
-      //console.log(diffDays + " days");
-      return diffDays;
-    }
-    let width = screen.width;
-    //console.log(width);
-  </script>
-<style>
-        @font-face {
-            font-family: 'NotoSans_online_security'; 
-            src: url(chrome-extension://llbcnfanfmjhpedaedhbcnpgeepdnnok/assets/fonts/noto-sans-regular.woff);
-        }
-
-        @font-face {
-            font-family: 'NotoSans_medium_online_security'; 
-            src: url(chrome-extension://llbcnfanfmjhpedaedhbcnpgeepdnnok/assets/fonts/noto-sans-medium.ttf);
-        }
-
-        @font-face {
-            font-family: 'NotoSans_bold_online_security'; 
-            src: url(chrome-extension://llbcnfanfmjhpedaedhbcnpgeepdnnok/assets/fonts/noto-sans-bold.woff);
-        }
-
-        @font-face {
-            font-family: 'NotoSans_semibold_online_security'; 
-            src: url(chrome-extension://llbcnfanfmjhpedaedhbcnpgeepdnnok/assets/fonts/noto-sans-semibold.ttf);
-        }
-</style></head>
-
-<body class="" style="">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<style>
+	.input_number:focus {
+		outline: none;
+	}
 	.span, .icon-content {
 		color: #000 !important;
 	}
@@ -264,9 +235,17 @@ $lang  = $lg;
 	
 	.tx-title-header {
 		color: #000 !important;
-		text-shadow: 0px 0px 1px #000
+		font-weight: 600;
+		/*text-shadow: 0px 0px 1px #000*/
+	}
+	.tx-title-header:hover {
+		color: #000 !important;
+		/*text-shadow: 0px 0px 1px #000*/
 	}
 	.tx-title-sub {
+		color: #000 !important;
+	}
+	.tx-title-sub:hover {
 		color: #000 !important;
 	}
 	
@@ -667,7 +646,50 @@ $lang  = $lg;
 		html {
 	    scroll-padding-top: 150px; /* Adjust the padding value as needed */
 		}
-</style>
+  </style>
+
+  <script>
+    const numFor = new Intl.NumberFormat('en-US');
+
+    function ValidateEmail(mail) {
+      if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(mail)) {
+        return (true)
+      } else {
+        alert("You have entered an invalid email address!")
+        return (false)
+      }
+    }
+
+    function number_add_comma_decimal(num) {
+      num = parseFloat(num).toFixed(2);
+      return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    }
+
+    function number_add_comma(num) {
+      //num = parseFloat(num).toFixed(2);
+      return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    }
+
+    function remove_comma(num) {
+      return num.replace(/\,/g, '');
+    }
+
+    function date_diff(date1, date2) {
+      const diffTime = Math.abs(date2 - date1);
+      const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+      //console.log(diffTime + " milliseconds");
+      //console.log(diffDays + " days");
+      return diffDays;
+    }
+    let width = screen.width;
+    //console.log(width);
+  </script>
+
+</head>
+
+<body class="" style="">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 
 
 <link rel="stylesheet" href="http://192.168.20.22/smartbooking_front_test//css/tiny-slider.css">
@@ -752,42 +774,7 @@ $lang  = $lg;
 			</div>
 	</div>
 
-<style type="text/css">
-		.box-fillter {
-			padding: 0 180px !important;
-		}
-			@media (max-width: 767px) {
-			.fillter-h {
-				margin-top: 16px !important;
-			}
-		}
-	.btn_stepper {
-		background-color: #102958 !important;
-		border: none;
-		border-radius: 50%;
-		width: 25px;
-		height: 25px;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		align-items: center;
-	}
 
-	.btn_stepper:focus {
-		outline: none;
-	}
-	.input_number {
-		text-align: center !important;
-		border: 1px solid #CCC;
-		background-color: white;
-		width: 30%;
-		margin: 0 8px;
-	}
-
-	.input_number:focus {
-		outline: none;
-	}
-</style>
 
 	<div class="container-fluid text-center search-box box-fillter">
 		<form name="frm_search" id="frm_search" method="post" action="<?php echo site_url('home/search'); ?>">
@@ -928,39 +915,39 @@ $lang  = $lg;
 
 ?>
 
-<div class="container mt-5">
+<div class="container mt-0">
+
 	<div class="row">
 		<div class="col-md-12 ml-2 text-center mt-4">
-			<!--<h4 style="text-align: center; padding-bottom: 15px;" id="nav_packagep_promotions">
-				<a id="nearby_locations" href="javascript:;" class="tx-title-header">
-					Facilities &amp; Amenities and Nearby Locations				</a>
-			</h4>-->
 			<h4 style="text-align: center; padding-bottom: 15px;" id="nav_packagep_promotions">
 				<a id="nearby_locations" href="javascript:;" class="tx-title-header">
+<<<<<<< HEAD
+					<? echo ($lang == 'english') ? 'Conditions & Policies' : 'เงื่อนไขและข้อกำหนดในการเข้าพัก'; ?>
+				</a>
+=======
 					Facilities & Amenities and Nearby Locations		</a>
+>>>>>>> origin/main
 			</h4>
 		</div>
 	</div>
-	<div class="row mb-0" id="nav_roomstype">
+	<div class="row mb-0" id="nav_roomstype" style="color: #000 !important;">
 		<div class="col-md-12 amenities-nearby-column">
 			<div class="col-md-8">
 			<div class="section_header " id="facilities_amenities">
-				<h6 style="font-weight: 600;"><? echo ($lang == 'english') ? 'Project Overview' : 'รายละเอียดโครงการ'; ?></h6>
+				<h6 style="font-weight: 600; color: #000 !important;"><? echo ($lang == 'english') ? 'Project Overview' : 'รายละเอียดโครงการ'; ?></h6>
 			</div>		
 			<div class="row mb-2">	
 				<div class="container-fluid mb-4">
 					<div class="col-md-12">			
 							<? if (!empty($project_details)){ ?>
-							<span><? echo ($lang == 'english') ? $project_details->project_name_en : $project_details->project_name_th; ?></span>
-		    			<?php //echo "value:".count($project_details); 
-		    			//var_dump($project_details); 
+							<span style="color: #000 !important;"><? echo ($lang == 'english') ? $project_details->project_name_en : $project_details->project_name_th; ?></span>
+		    			<?php 
 		    			 }?>
-		    			<!-- <span>เอส เอ็ม รีสอร์ท โชว์รูม เขาใหญ่</span> -->
+		    			
 		    		</div>
 		    	</div>
 			</div>
 	
-			<!-- <div class="section_header "><u>จุดเด่นของโครงการ</u></div> -->
 			<div class="section_header "><u><? echo ($lang == 'english') ? 'Project Highlights' : 'จุดเด่นของโครงการ'; ?></u></div>
 			<div class="row mb-2">			
 				<div class="container-fluid mb-4">
@@ -969,16 +956,12 @@ $lang  = $lg;
 
 								<?php foreach ($project_highlights as $value) { ?>
 		    				<div style="bottom: 0; padding-right: 50px;">
-		    					<!-- upload/project_highlight/1_63bb731cd4018.png -->
 								&nbsp;<img src="https://sharefolder.buildersmart.com/sms_booking/<? echo $value->icon; ?>" width="18">
-								<span class="highlights_desc" style="font-size: 1.1em;"><? echo ($lang == 'english') ? $value->description_en : $value->description_th; ?></span>
+								<span class="highlights_desc" style="font-size: 1.1em; color: #000 !important;"><? echo ($lang == 'english') ? $value->description_en : $value->description_th; ?></span>
 		    				</div>
 		    				<?php } ?>
 
-		    				<!-- <div style="bottom: 0; padding-right: 50px;">
-								&nbsp;<img src="https://sharefolder.buildersmart.com/sms_booking/upload/project_highlight/1_63bb7dd7c487e.png" width="18">
-								<span class="highlights_desc" style="font-size: 1.1em;">วิวภูเขา</span>
-		    				</div> -->
+		    				
 
 		    			</div>		
 		    		</div>
@@ -986,99 +969,75 @@ $lang  = $lg;
 			</div>
 			
 			<div class="section_header "><u><? echo ($lang == 'english') ? 'Project Facility' : 'สิ่งอำนวยความสะดวกของโครงการ'; ?></u></div>
+			<div class="row">			
+				<div class="container-fluid mb-4">
+					<div class="col-md-12">	
+						<div class="row" id="pj-con">
+							<?php foreach ($project_facility as $value) { ?>
+							<div class="col-md-6" style="bottom: 0; ">
+							<input type="checkbox" checked="checked" style="vertical-align:middle; pointer-events:none;">
+							&nbsp;<img src="https://sharefolder.buildersmart.com/sms_booking/<? echo $value->icon; ?>" width="18">
+							<span class="highlights_desc" style="font-size: 1.1em; color: #000 !important;"><? echo ($lang == 'english') ? $value->long_desc_en : $value->long_desc_th; ?></span>
+							</div>
+							<?php } ?>
+						</div>	
+					</div>
+				</div>
+			</div>
+	
+			<div class="row" id="conditions"></div>
+			<div class="section_header "><u><? echo ($lang == 'english') ? 'Conditions And Policies' : 'เงื่อนไขและข้อกำหนดในการเข้าพัก'; ?></u></div>
 				<div class="row">			
 					<div class="container-fluid mb-4">
 						<div class="col-md-12">	
-							<div class="row" id="pj-con">
-								<?php foreach ($project_facility as $value) { ?>
-								<div class="col-md-6" style="bottom: 0; ">
-								<input type="checkbox" checked="checked" style="vertical-align:middle; pointer-events:none;">
-								&nbsp;<img src="https://sharefolder.buildersmart.com/sms_booking/<? echo $value->icon; ?>" width="18">
-								<span class="highlights_desc" style="font-size: 1.1em;"><? echo ($lang == 'english') ? $value->long_desc_en : $value->long_desc_th; ?></span>
-								</div>
-								<?php } ?>
-							</div>	
-						</div>
-					</div>
-				</div>
-	
-
-				<div class="section_header "><u><? echo ($lang == 'english') ? 'Conditions And Policies' : 'เงื่อนไขและข้อกำหนดในการเข้าพัก'; ?></u></div>
-					<div class="row">			
-						<div class="container-fluid mb-4">
-							<div class="col-md-12">	
-								<?php foreach ($project_policy_type as $value) { ?>
-									<span><?php echo $policy_type = ($lang == 'english') ? $value->policy_type_en : $value->policy_type_th; ?></span>
-									<ol>		
-										<?php foreach ($project_policy as $value2) {  ?>	
-											<? if($value->policy_type_en==$value2->policy_type_en){ ?>
-										<li><? echo ($lang == 'english') ? $value2->description_en : $value2->description_th; ?></li>	
-										<?php }} ?>			
-									</ol>
-								<?php } ?>	
-								
-								<!-- <ol>		
-									<li>การโอนเงินต้องเสร็จสิ้นภายใน 2 ชั่วโมงหลังการจอง มิฉะนั้นระบบจะยกเลิกการจองโดยอัตโนมัติ</li>			
+							<?php foreach ($project_policy_type as $value) { ?>
+								<span><?php echo $policy_type = ($lang == 'english') ? $value->policy_type_en : $value->policy_type_th; ?></span>
+								<ol>		
+									<?php foreach ($project_policy as $value2) {  ?>	
+										<? if($value->policy_type_en==$value2->policy_type_en){ ?>
+									<li><? echo ($lang == 'english') ? $value2->description_en : $value2->description_th; ?></li>	
+									<?php }} ?>			
 								</ol>
-								<span>นโยบายโชว์รูม</span>    			
-								<ol>
-									<li>เวลาเช็คอิน 14.00 น. เวลาเช็คเอ้าท์ 12.00 น. หากเข้าพักก่อน หรือ เช็คเอ้าท์เกิน ชั่วโมงละ 500 บาท ตามเงื่อนไขโชว์รูม</li>				
-									<li>ไม่อนุญาตให้นำสัตว์เลี้ยงเข้าพักภายในบริเวณโชว์รูม</li>					
-									<li>ไม่อนุญาตให้ประกอบอาหารภายในบริเวณที่พัก ยกเว้นเฉพาะพื้นที่ที่ทางโชว์รูมจัดไว้ให้เท่านั้น</li>					
-									<li>ขอความกรุณางดใช้เสียง ตั้งแต่เวลา 22.00 น. - 06.00 น.</li>					
-									<li>ในกรณีทำให้ทรัพย์สินของโชว์รูมเสียหายให้ชดใช้คืนตามมูลค่าของทรัพย์สินนั้น</li>					
-									<li>งดสูบบุหรี่ในห้องพัก และบริเวณโชว์รูม ฝ่าฝืนปรับ 2,000 บาท (ลูกค้าสามารถสูบบุหรี่ในพื้นที่ที่โชว์รูมจัดไว้ให้เท่านั้น)</li>					
-									<li>งดจุดพลุ, ประทัด, ดอกไม้ไฟ หรือ โคมลอย ในบริเวณโชว์รูม ฝ่าฝืนปรับ 2,000 บาท</li>			
-								</ol> -->
-							</div>
+							<?php } ?>	
+						
 						</div>
 					</div>
 				</div>
-				<div class="col-md-4">
-					<div class="section_header ">
-						<h6 style="font-weight: 600;"><? echo ($lang == 'english') ? 'Locations Nearby' : 'สถานที่ใกล้เคียง'; ?></h6>
-					</div>
-					<div class="row mb4">
-						<div class="col-md-12">		
-							<div class="table-responsive">
-								<table class="table table-bordered" style="border-color: #ccc;">
-									<tbody>
-										<tr style="text-align: center;">
-											<th><? echo ($lang == 'english') ? 'Location' : 'ชื่อสถานที่'; ?></th>
-											<th><? echo ($lang == 'english') ? 'Distance(km)' : 'ระยะทาง(km)'; ?></th>
-										</tr>
-										<?php foreach ($point_of_interest as $value) { ?>
-										<tr>
-											<td><?php echo $policy_type = ($lang == 'english') ? $value->location_name_en : $value->location_name_th; ?></td>
-											<td style="text-align: center;"><?php echo $value->distance_km; ?></td>
-										</tr>
-										<? } ?>
-									</tbody>
-								</table>  
-							</div>		
-						</div>
+			</div>
+			
+			<div class="col-md-4">
+				<div class="section_header ">
+					<h6 style="font-weight: 600;"><? echo ($lang == 'english') ? 'Locations Nearby' : 'สถานที่ใกล้เคียง'; ?></h6>
+				</div>
+				<div class="row mb4">
+					<div class="col-md-12">		
+						<div class="table-responsive">
+							<table class="table table-bordered" style="border-color: #ccc; color: #000 !important;">
+								<tbody>
+									<tr style="text-align: center;">
+										<th><? echo ($lang == 'english') ? 'Location' : 'ชื่อสถานที่'; ?></th>
+										<th><? echo ($lang == 'english') ? 'Distance(km)' : 'ระยะทาง(km)'; ?></th>
+									</tr>
+									<?php foreach ($point_of_interest as $value) { ?>
+									<tr>
+										<td style="color: #000 !important;"><?php echo $policy_type = ($lang == 'english') ? $value->location_name_en : $value->location_name_th; ?></td>
+										<td style="text-align: center; color: #000 !important;"><?php echo $value->distance_km; ?></td>
+									</tr>
+									<? } ?>
+								</tbody>
+							</table>  
+						</div>		
 					</div>
 				</div>
 			</div>
 		</div>
+	</div>
 	
 	<div class="row text-center mb-0" id="nav_roomstype">
 		<div class="col-md-12">
-			<!-- Google map -->
-
-			<!-- <div style="width: 100%; height: 500px;">
-        <div class="with-amp">
-          <div class="map-view">
-            <div class="google-map" id="google_map"></div>
-          </div>  
-        </div>
-      </div> -->
-			<!-- <div class="google-map" id="google_map"></div> -->
-
 			<div id="google-map">
 				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5462.972307432571!2d101.55065412783209!3d14.490156270739496!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x311c3b5927861817%3A0x4ef8dd372f4d0716!2sSMS%20Showroom!5e0!3m2!1sth!2sth!4v1683184985267!5m2!1sth!2sth" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 			</div>
-			<!-- End Google map -->
 		</div>
 	</div>
 </div>
