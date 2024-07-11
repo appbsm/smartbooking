@@ -921,8 +921,12 @@
 		<div class="col-md-12 ml-2 text-center mt-4">
 			<h4 style="text-align: center; padding-bottom: 15px;" id="nav_packagep_promotions">
 				<a id="nearby_locations" href="javascript:;" class="tx-title-header">
+<<<<<<< HEAD
 					<? echo ($lang == 'english') ? 'Conditions & Policies' : 'เงื่อนไขและข้อกำหนดในการเข้าพัก'; ?>
 				</a>
+=======
+					Facilities & Amenities and Nearby Locations		</a>
+>>>>>>> origin/main
 			</h4>
 		</div>
 	</div>
