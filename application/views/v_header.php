@@ -167,29 +167,34 @@ if ($id_guest != '') {
 	}
 	
 	.logo-img {
-		width: 70% !important; 
+/*		width: 70% !important; */
+		width: 100px !important;
 	}
 
 	@media (min-width: 1024px) {
 		.logo-img {
-			max-width: 70% !important; 
+/*			max-width: 70% !important; */
+			width: 100px !important;
 		}
 	}
 
 	@media (min-width: 1400px) {
 		.logo-img {
-			max-width: 30% !important; 
+/*			max-width: 30% !important; */
+			width: 100px !important;
 		}
 	}
 
 	@media (min-width: 769px) and (max-width: 1024px) {
 		.logo-img {
-			max-width: 50% !important; 
+/*			max-width: 50% !important; */
+			width: 100px !important;
 		}
 	}
 	@media (max-width: 767px) {
 		.logo-img {
-		  width: 20% !important;
+/*		  width: 20% !important;*/
+		  width: 100px !important;
 		}
 	}
   </style>
@@ -232,35 +237,72 @@ if ($id_guest != '') {
   </script>
 </head>
 
+<style type="text/css">
+	.navbar-toggler {
+  border: none; /* ลบเส้นขอบออก ถ้าไม่ต้องการ */
+}
+
+.navbar-toggler:focus, .navbar-toggler:hover {
+  background-color: rgba(255, 255, 255, 0.1) !important; /* เปลี่ยนสีพื้นหลังเมื่อ hover หรือ focus */
+  outline: none; /* ลบกรอบเส้นประออก */
+}
+
+.navbar-toggler.collapsed .navbar-toggler-icon {
+  background-color: rgba(255, 255, 255, 0.3) !important; /* เปลี่ยนสีพื้นหลังเมื่อปุ่มถูกกด */
+}
+
+	.navbar-nav .nav-item {
+    margin-left: 5px !important; /* ปรับระยะห่างด้านซ้ายของแต่ละ nav-item */
+    margin-right: 5px !important; /* ปรับระยะห่างด้านขวาของแต่ละ nav-item */
+  }
+
+  .navbar-nav .nav-item .nav-link {
+    padding: 0.5rem 0.75rem !important; /* ปรับ padding ของ nav-link เพื่อให้ดูดีขึ้น */
+  }
+
+  .nav-item-custom {
+    margin-left: 5px !important;
+    margin-right: 5px !important;
+  }
+</style>
 
 <body>
   <header>
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top text-center mr-auto mb-0" style="height:60px; background-color:#102958 !important; font-size: 14px;">
-    	<div class="container d-flex flex-row">
-		
-		 <!--  <span class="mx-3">
-				<a class="logo" href="<?php echo site_url('home'); ?>"><img src="<?php echo site_url(); ?>images/logo-SM/SM smart booking_White.png" class="logo-img"></a>
-		  </span> -->
+    	<!-- <div class="container d-flex flex-row"> -->
+    	<div class="container d-flex justify-content-between align-items-center">
 
-		   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+			<!-- class="mx-3" -->
+		 	<!-- <span  style="background-color: #102958 !important;" >  class="logo-img" -->
+				<a  href="<?php echo site_url('home'); ?>">
+					<img src="<?php echo site_url(); ?>images/logo-SM/SM smart booking_White.png" style="width: 100px !important;" >
+				</a>
+		  <!-- </span> -->
+
+		  <!-- <div class="button mx-1">
+	        <a class="btn btn_sign_in"  href="<?php echo site_url('login'); ?>" height="20">Sign In</a>
+	      </div> -->
+
+		   <button class="navbar-toggler ml-auto"  style="background-color: #4891b7 !important;" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
       </button>
 
 	  <!-- new menu -->
 	  <!-- collapse navbar-collapse -->
-	  <div class="collapse navbar-collapse col-8" id="navbarNav">
+	  <!-- <div class="collapse navbar-collapse col-8" id="navbarNav"> -->
+	  <div class="collapse navbar-collapse " id="navbarNav"  style="background-color: #102958 !important;" >
 					<ul class="navbar-nav me-auto mb-2 mb-lg-0 menu-bar" style="font-size: 14px;">
-            <li class="nav-item" id="nav_aboutus">
+            <li class="nav-item nav-item-custom" id="nav_aboutus" style="margin-left: 5px !important; margin-right: 5px !important;">
                 <a class="nav-link" href="#aboutus">
 					<?php echo $lang == "english" ? 'About us' : ' ข้อมูลโครงการ'; ?> 
 								</a>
             </li>
-            <li class="nav-item" id="nav_roomstype">
+            <li class="nav-item nav-item-custom" id="nav_roomstype" style="margin-left: 5px !important; margin-right: 5px !important;">
                 <a class="nav-link" href="#roomtype">
 					<?php echo $lang == "english" ? 'Rooms type' : 'ประเภทห้อง'; ?> 
 								</a>
             </li>
-            <li class="nav-item" id="nav_packagep_promotions">
+            <li class="nav-item nav-item-custom" id="nav_packagep_promotions" style="margin-left: 5px !important; margin-right: 5px !important;">
                 <a class="nav-link" href="#package">
 					<?php echo $lang == "english" ? 'Package & Promotions' : 'แพ็คเกจและโปรโมชั่น'; ?> 
 								</a>
@@ -293,9 +335,10 @@ if ($id_guest != '') {
             </li>
         </ul>
 		</div>
-		<!-- new menu -->
 
-      <div class="" id="navbarSupportedContent" >       
+		<!-- new menu -->
+			<!-- style="background-color: #102958 !important;" -->
+      <div class="navbar-expand d-flex flex-row" id="navbarSupportedContent" >       
         <div class="navbar navbar-expand d-flex flex-row" style="background-color: #102958 !important;"> 
 		  <?php if ($id_guest != '') { ?>
 		  <?php if ($guest->photo_url != '') { ?>
@@ -315,14 +358,15 @@ if ($id_guest != '') {
 				<a class="dropdown-item" href="<?php echo site_url('login/logout'); ?>"><?php echo $this->lang->line('logout'); ?></a>
 			  </div>
 		  </div>
+
 		</div>
 
 		  <?php } 
 		  else {
 		  ?>
-		  <div class="button mx-1">
-                <a class="btn btn_sign_in"  href="<?php echo site_url('login'); ?>" height="20">Sign In</a>
-              </div>
+			  <div class="button mx-1">
+	        <a class="btn btn_sign_in"  href="<?php echo site_url('login'); ?>" height="20">Sign In</a>
+	      </div>
 		  <?php } ?>
 		  <div class="button">
             <a class="nav-link" href="<?php echo site_url('cart'); ?>">
@@ -340,13 +384,13 @@ if ($id_guest != '') {
 			<a href="<?php echo site_url() . 'LanguageSwitcher/switchLang/thai'; ?>" title="<?php echo $switch_th; ?>" style="color: rgba(255, 255, 255, 1.00) !important; font-size: 14px !important;" style="<?php echo ($lang == 'thai') ? 'font-weight: bold!important; color: rgba(255, 255, 255, 1.00) !important; font-size: 14px !important;' : ''; ?>">TH</a>
 			<span style="color: rgba(255, 255, 255, 1.00) !important; font-size: 14px !important;">&nbsp;|&nbsp;</span>
 			<a href="<?php echo site_url() . 'LanguageSwitcher/switchLang/english'; ?>" title="<?php echo $switch_en; ?>" style="color: rgba(255, 255, 255, 1.00) !important; font-size: 14px !important;" style="<?php echo ($lang == 'english') ? 'font-weight: bold!important; color: rgba(255, 255, 255, 1.00) !important; font-size: 14px !important;' : ''; ?>">EN</a>
-		  </div>
+		</div>
 
         </div>
       </div>
       
-      </div>
-    </nav>
+    </div>
+  </nav>
 	
 	
 </header>
