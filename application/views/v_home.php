@@ -738,6 +738,7 @@ $CI->load->model('m_room_type');
 							<input type='text' class="form-control form-control-ckinout datepicker search_input" name="check_out_date" id="check_out_date" value="" />
 						</div>
 					</div>
+					
 					<div class="col-lg-4 col-md-6 padd-rl">
 						<!-- <div class="col-md-12 mt-2"><b><?php echo $this->lang->line('search_by_room'); ?></b></div> -->
 						<div class="col-md-12 mb-2 text-left">

@@ -17,10 +17,10 @@ class Contact extends CI_Controller {
 	
 	public function index()
 	{	
-		// $this->load->view('v_header');
+		$this->load->view('v_header');
 		// $this->load->view('facilities_amenities', $data);
 		$this->load->view('contact_us');
-		// $this->load->view('v_footer');
+		$this->load->view('v_footer');
 	}
 
 	public function project_detail($id_project = '')
