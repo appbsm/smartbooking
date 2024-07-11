@@ -534,7 +534,7 @@ $CI->load->model('m_room_type');
 	.header-text {
 		color: #000 !important; 
 		background-color: #CCC; 
-		padding: 10px; 
+		padding: 12px; 
 		margin-bottom: 18px; 
 		font-weight: 600;     
 		box-shadow: 2px 2px 5px 0 rgba(22, 22, 26, 0.18); 
@@ -640,8 +640,8 @@ $CI->load->model('m_room_type');
 			padding-left: 4px !important;
 		}
 		.aboutus-lr {
-			margin-right: 48px !important;
-			margin-left: 48px !important;
+			/*margin-right: 48px !important;
+			margin-left: 48px !important;*/
 		}
 	
 	@media (min-width: 1300px) {	
@@ -950,6 +950,57 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
 			</div>
 		</div>
 	</div>
+	
+	<br/><br/>
+	<div class="container mt-0 aboutus-lr">
+		<div class="row text-center mb-0" id="nav_roomstype">
+			<div class="col-md-12 d-flex" style="flex-wrap: wrap;">
+				<div class="col-lg-6">
+					<div class="section-heading text-center mb-3">
+						<!--<a href="https://smsmartbooking.buildersmart.com/project_info" target="_blank" class="a-readmore">-->
+							<div class="row aboutus-tx-title">
+								<h4 class="header-text">
+									<?php
+										if (sizeof($packages) > 0) {
+											echo ($lang == 'english') ? 'Welcome SM Resort' : 'ยินดีต้อนรับสู่ เอสเอ็ม รีสอร์ท';
+										}
+									?>
+								</h4>
+								<br/><br/><br/>
+							</div>
+							<div class="row aboutus-tx-title">
+								<p style=" color: #000 !important; margin-bottom: 0;">
+									<?php
+										if (sizeof($packages) > 0) {
+											echo ($lang == 'english') ? '
+											<b>Relax amidst the stunning scenery</b>, surrounded by nature and fresh air. SM Resort redefines a new style of accommodation with its modern resort collection under the BuildSmart Group. Located in the picturesque Khao Yai area' : '<b>เอสเอ็ม รีสอร์ท</b> คือนิยามของที่พักแนวใหม่ คอลเลคชั่น รีสอร์ททันสมัย ในเครือของบริษัท บิวเดอสมาร์ท พร้อมการพลิกโฉมใหม่อย่างโดดเด่นบนพื้นที่เขาใหญ่';
+										}
+									?>
+								</p>
+							
+								<p style="color: #000 !important;">
+									<?php
+										if (sizeof($packages) > 0) {
+											echo ($lang == 'english') ? '
+											<p>SM Resort redefines a new style of accommodation with its modern resort collection under the BuildSmart Group. Located in the picturesque Khao Yai area, SM Resort offers a remarkable transformation to welcome guests. With various activities available, we are ready to provide a new kind of experience for travelers. Additionally, we host a variety of gatherings and events, ensuring to create precious memories for you.</p>
+											<p><a href="https://smsmartbooking.buildersmart.com/project_info" target="_blank" class="em-readmore"><em></i>Read more...</em></a></p>' : '
+											<p> เพื่อต้อนรับแขกผู้มาเยือน พร้อมทั้งมีกิจกรรมต่างๆมากมาย พร้อมแล้วที่จะมอบประสบการณ์ในแบบฉบับใหม่ให้กับนักเดินทาง  รวมถึงงานเลี้ยงสังสรรค์ต่างๆ ที่พร้อมแล้วที่จะสร้างความทรงจำอันล้ำค่าเพื่อคุณ </p>
+											<p><a href="https://smsmartbooking.buildersmart.com/project_info" target="_blank" class="em-readmore"><em>อ่านต่อ...</em></a></p>';
+										}
+									?>
+								</p>
+							</div>
+						<!--</a>-->
+					</div>
+				</div>
+				<div class="col-lg-6">
+					<div class="content" style="text-align: left; margin-top: 24px;"><br/><br/>
+						<img src="https://sharefolder.buildersmart.com/sms_booking/upload/package_photo/8_648ad3a488cab.jpg" style="width: 100%;">
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 <!-- New About Us -->
 
 <div class="row" id="package"></div><br/><br/>
@@ -1180,7 +1231,7 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
                 <span style="color: #000;"><?php echo $price; ?></span>
 			</div>
 			<div class="form-group mt-1">
-				<p class="mb-0" style="font-size: 13px !important; color: #000;"><?php echo ($lang == 'english') ? 'Room Information' : 'ข้อมูลห้องพัก'; ?></p>
+				<p class="mb-0" style="font-size: 14px !important; color: #000;"><?php echo ($lang == 'english') ? 'Room Information' : 'ข้อมูลห้องพัก'; ?></p>
 					<div class="row mx-auto mt-2" style="white-space: nowrap;" >
 				<?php foreach ($room_details as $detail) {
                     if ($detail->id_room_type == $rt->id_room_type) { ?>
@@ -1242,12 +1293,12 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
 
 			</div>
 			<div class="form-group mt-1">
-				<p class="mb-0" style="font-size: 13px !important; color: #000;" ><?php echo ($lang == 'english') ? 'Highlights' : 'ไฮไลท์'; ?></p>
+				<p class="mb-0" style="font-size: 14px !important; color: #000;" ><?php echo ($lang == 'english') ? 'Highlights' : 'ไฮไลท์'; ?></p>
 				<div class="row mx-auto mt-2" style="white-space: nowrap;" >
 				<?php foreach ($highlights as $highlight) { ?>
                     <div class="col-1 col-sm-1 col-xxl-1 d-flex align-items-center icon_container">
                         <span class="icon-content">
-                            <img src="http://192.168.20.22/sm_booking1/includes/image.php?filename=<?php echo $highlight->icon; ?>" height="15" class="icon-service">
+                            <img src="http://192.168.20.22/sm_booking1/includes/image.php?filename=<?php echo $highlight->icon; ?>" height="15">
                         </span>
                     </div>
                     <div class="col-5 col-sm-3 col-xxl-3 p-0 d-flex align-items-center icon_container">
@@ -1256,8 +1307,10 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
 				<?php } ?>
 				</div>
 			</div>
-			
-			<div class="footer mt-3 mb-2" style="justify-content: flex-start;">
+			<div class="form-group mt-1 mb-0">
+				&nbsp;&nbsp;<a  href="http://192.168.20.22/sm_booking1/detail.php" class="tx-viewdetail" ><?php echo ($lang == 'english') ? 'View details' : 'ดูรายละเอียด'; ?></a>
+			</div>
+			<div class="footer mt-1 mb-2" style="justify-content: flex-start;">
 				<div class="ml-1 text-right">
 					<button class="btn button-primary-w add_to_cart btn-add_to_cart" data-id="1" data-price="1500" id="" style="margin-right: 5px;" fdprocessedid="t8mt0r">
 						<?php
@@ -1273,11 +1326,6 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
 							}
 						?>
 					</a>
-
-					<!-- <div class="ml-2 text-right"> -->
-						&nbsp;&nbsp;<a  href="http://192.168.20.22/sm_booking1/detail.php" class="tx-viewdetail" ><?php echo ($lang == 'english') ? 'View details' : 'ดูรายละเอียด'; ?></a>
-
-					<!-- </div> -->
 				</div>
 			</div>
 		</div>
