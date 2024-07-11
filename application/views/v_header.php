@@ -238,159 +238,94 @@ if ($id_guest != '') {
 </head>
 
 <style type="text/css">
-	.navbar-toggler {
-  border: none; /* ลบเส้นขอบออก ถ้าไม่ต้องการ */
-}
 
-.navbar-toggler:focus, .navbar-toggler:hover {
-  background-color: rgba(255, 255, 255, 0.1) !important; /* เปลี่ยนสีพื้นหลังเมื่อ hover หรือ focus */
-  outline: none; /* ลบกรอบเส้นประออก */
-}
-
-.navbar-toggler.collapsed .navbar-toggler-icon {
-  background-color: rgba(255, 255, 255, 0.3) !important; /* เปลี่ยนสีพื้นหลังเมื่อปุ่มถูกกด */
-}
-
-	.navbar-nav .nav-item {
-    margin-left: 5px !important; /* ปรับระยะห่างด้านซ้ายของแต่ละ nav-item */
-    margin-right: 5px !important; /* ปรับระยะห่างด้านขวาของแต่ละ nav-item */
-  }
-
-  .navbar-nav .nav-item .nav-link {
-    padding: 0.5rem 0.75rem !important; /* ปรับ padding ของ nav-link เพื่อให้ดูดีขึ้น */
-  }
-
-  .nav-item-custom {
-    margin-left: 5px !important;
-    margin-right: 5px !important;
-  }
 </style>
 
 <body>
   <header>
+
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top text-center mr-auto mb-0" style="height:60px; background-color:#102958 !important; font-size: 14px;">
-    	<!-- <div class="container d-flex flex-row"> -->
-    	<div class="container d-flex justify-content-between align-items-center">
+        <div class="container d-flex justify-content-between align-items-center">
+            <a href="<?php echo site_url('home'); ?>">
+                <img src="<?php echo site_url(); ?>images/logo-SM/SM smart booking_White.png" style="width: 100px !important;" >
+            </a>
 
-			<!-- class="mx-3" -->
-		 	<!-- <span  style="background-color: #102958 !important;" >  class="logo-img" -->
-				<a  href="<?php echo site_url('home'); ?>">
-					<img src="<?php echo site_url(); ?>images/logo-SM/SM smart booking_White.png" style="width: 100px !important;" >
-				</a>
-		  <!-- </span> -->
+ 						<button class="navbar-toggler ml-auto" style="background-color: #4891b7 !important;" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
 
-		  <!-- <div class="button mx-1">
-	        <a class="btn btn_sign_in"  href="<?php echo site_url('login'); ?>" height="20">Sign In</a>
-	      </div> -->
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav" style="background-color: #102958 !important;">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 menu-bar" style="font-size: 14px;">
+                    <li class="nav-item nav-item-custom" id="nav_aboutus" style="margin-left: 5px !important; margin-right: 5px !important;">
+                        <a class="nav-link" href="#aboutus">
+                            <?php echo $lang == "english" ? 'About us' : ' ข้อมูลโครงการ'; ?> 
+                        </a>
+                    </li>
+                    <li class="nav-item nav-item-custom" id="nav_roomstype">
+                        <a class="nav-link" href="#roomtype">
+                            <?php echo $lang == "english" ? 'Rooms type' : 'ประเภทห้อง'; ?> 
+                        </a>
+                    </li>
+                    <li class="nav-item nav-item-custom" id="nav_packagep_promotions">
+                        <a class="nav-link" href="#package">
+                            <?php echo $lang == "english" ? 'Package & Promotions' : 'แพ็คเกจและโปรโมชั่น'; ?> 
+                        </a>
+                    </li>
+                    <li class="nav-item" id="nav_contactus">
+                        <a class="nav-link" href="facilities">
+                            <?php echo $lang == "english" ? 'Facilities & Amenities' : 'สิ่งอำนวยความสะดวก'; ?>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="http://192.168.20.22/smartbooking_front_test/conditions_policies.php">
+                            <?php echo $lang == "english" ? 'Conditions & Policies' : 'เงื่อนไขและข้อกำหนด'; ?>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact">
+                            <?php echo $lang == "english" ? 'Contact us' : 'ติดต่อเรา'; ?>
+                        </a>
+                    </li>
+                </ul>
+            </div>
 
-		   <button class="navbar-toggler ml-auto"  style="background-color: #4891b7 !important;" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-      </button>
+            <?php if ($id_guest != '') { ?>
+                <div class="dropdown ml-auto">
+                    <a class="nav-link dropdown-toggle" id="profile_name" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color: #102958 !important; color: rgba(255, 255, 255, 1.00) !important;">
+                        <?php echo $guest->firstname . ' ' . substr($guest->lastname, 0, 1) . '.'; ?>
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="profile_name" style="background-color: #fff !important;">
+                        <a class="dropdown-item" href="<?php echo site_url('profile'); ?>"><?php echo $this->lang->line('profile'); ?></a>
+                        <a class="dropdown-item" href="<?php echo site_url('booking/history'); ?>"><?php echo $this->lang->line('booking_history'); ?></a>
+                        <a class="dropdown-item" href="<?php echo site_url('facility'); ?>"><?php echo $this->lang->line('facility'); ?></a>
+                        <a class="dropdown-item" href="<?php echo site_url('login/logout'); ?>"><?php echo $this->lang->line('logout'); ?></a>
+                    </div>
+                </div>
+            <?php } else { ?>
+                <div class="ml-auto">
+                    <div class="button mx-1">
+                        <a class="btn btn_sign_in" href="<?php echo site_url('login'); ?>" height="20">Sign In</a>
+                    </div>
+                </div>
+            <?php } ?>
 
-	  <!-- new menu -->
-	  <!-- collapse navbar-collapse -->
-	  <!-- <div class="collapse navbar-collapse col-8" id="navbarNav"> -->
-	  <div class="collapse navbar-collapse " id="navbarNav"  style="background-color: #102958 !important;" >
-					<ul class="navbar-nav me-auto mb-2 mb-lg-0 menu-bar" style="font-size: 14px;">
-            <li class="nav-item nav-item-custom" id="nav_aboutus" style="margin-left: 5px !important; margin-right: 5px !important;">
-                <a class="nav-link" href="#aboutus">
-					<?php echo $lang == "english" ? 'About us' : ' ข้อมูลโครงการ'; ?> 
-								</a>
-            </li>
-            <li class="nav-item nav-item-custom" id="nav_roomstype" style="margin-left: 5px !important; margin-right: 5px !important;">
-                <a class="nav-link" href="#roomtype">
-					<?php echo $lang == "english" ? 'Rooms type' : 'ประเภทห้อง'; ?> 
-								</a>
-            </li>
-            <li class="nav-item nav-item-custom" id="nav_packagep_promotions" style="margin-left: 5px !important; margin-right: 5px !important;">
-                <a class="nav-link" href="#package">
-					<?php echo $lang == "english" ? 'Package & Promotions' : 'แพ็คเกจและโปรโมชั่น'; ?> 
-								</a>
-            </li>
+            <div class="button">
+                <a class="nav-link" href="<?php echo site_url('cart'); ?>">
+                    <span class="button__badge"><?php echo ($cart_count > 0) ? $cart_count : ''; ?></span>
+                    <object style="pointer-events: none;" data="<?php echo share_folder_path(); ?>images/icons/cart-white.svg" height="20"> </object>
+                </a>
+            </div>
 
-            <!-- target="_blank" -->
-            <li class="nav-item" id="nav_contactus">
-                <a class="nav-link" href="facilities" >
-					<?php echo $lang == "english" ? 'Facilities & Amenities' : 'สิ่งอำนวยความสะดวก'; ?>
-								</a>
-            </li>
-			<!--
-			<li class="nav-item" id="nav_contactus">
-                <a class="nav-link" href="http://192.168.20.22/smartbooking_front_test/nearby_locations.php" target="_blank">
-					<?php echo $lang == "english" ? 'Nearby Locations' : 'สถานที่ใกล้เคียง'; ?>
-				</a>
-            </li>
-			-->
-					<li class="nav-item" id="nav_contactus">
-              <a class="nav-link" href="http://192.168.20.22/smartbooking_front_test/conditions_policies.php" >
-					<?php echo $lang == "english" ? 'Conditions & Policies' : 'เงื่อนไขและข้อกำหนด'; ?>
-							</a>
-          </li>
-
-				<li class="nav-item" id="nav_contactus">
-                <!--<a class="nav-link" href="#contactus">-->
-				<a class="nav-link" href="contact" >
-					<?php echo $lang == "english" ? 'Contact us' : 'ติดต่อเรา'; ?>
-				</a>
-            </li>
-        </ul>
-		</div>
-
-		<!-- new menu -->
-			<!-- style="background-color: #102958 !important;" -->
-      <div class="navbar-expand d-flex flex-row" id="navbarSupportedContent" >       
-        <div class="navbar navbar-expand d-flex flex-row" style="background-color: #102958 !important;"> 
-		  <?php if ($id_guest != '') { ?>
-		  <?php if ($guest->photo_url != '') { ?>
-		  <a class=""><img src="<?php echo share_folder_path() . $guest->photo_url; ?>" class="rounded-circle mx-auto d-block" style="height:50px;width:50px;" alt=""></a>
-		  <?php } ?>
-		  <div class="input-group d-flex flex-row bg-light dropdown-user" style="background-color: #102958 !important;">            
-			<a class="nav-link align-text-bottom dropdown-toggle" id="profile_name" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color: #102958 !important; color: rgba(255, 255, 255, 1.00) !important;">
-				<?php echo $guest->firstname . ' ' . substr($guest->lastname, 0, 1). '.'; ?>
-			</a>
-			<button class="btn btn-outline-default btn-default btn-sm dropdown-toggle" style="display: none; " id="profile_dropdown" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
-
-		  <div class="input-group-append">
-			  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="background-color: #fff !important;">
-				<a class="dropdown-item" href="<?php echo site_url('profile'); ?>"><?php echo $this->lang->line('profile'); ?></a>
-				<a class="dropdown-item" href="<?php echo site_url('booking/history'); ?>"><?php echo $this->lang->line('booking_history'); ?></a>
-				<a class="dropdown-item" href="<?php echo site_url('facility'); ?>"><?php echo $this->lang->line('facility'); ?></a>
-				<a class="dropdown-item" href="<?php echo site_url('login/logout'); ?>"><?php echo $this->lang->line('logout'); ?></a>
-			  </div>
-		  </div>
-
-		</div>
-
-		  <?php } 
-		  else {
-		  ?>
-			  <div class="button mx-1">
-	        <a class="btn btn_sign_in"  href="<?php echo site_url('login'); ?>" height="20">Sign In</a>
-	      </div>
-		  <?php } ?>
-		  <div class="button">
-            <a class="nav-link" href="<?php echo site_url('cart'); ?>">
-				<span class="button__badge"><?php echo ($cart_count > 0) ? $cart_count : ''; ?></span>
-				<object style="pointer-events: none;" data="<?php echo share_folder_path(); ?>images/icons/cart-white.svg" height="20"> </object>
-				<!--<object style="pointer-events: none;" data="<?php echo share_folder_path(); ?>images/icons/cart.svg" height="20"> </object>-->
-			</a>
-          </div>
-		  
-		<div class="d-flex flex-rows" style="margin-top:3px;padding: 5px; margin-right: 5px;">
-			<?php
-				$switch_en = 'English';
-				$switch_th = 'Thai';
-			?>
-			<a href="<?php echo site_url() . 'LanguageSwitcher/switchLang/thai'; ?>" title="<?php echo $switch_th; ?>" style="color: rgba(255, 255, 255, 1.00) !important; font-size: 14px !important;" style="<?php echo ($lang == 'thai') ? 'font-weight: bold!important; color: rgba(255, 255, 255, 1.00) !important; font-size: 14px !important;' : ''; ?>">TH</a>
-			<span style="color: rgba(255, 255, 255, 1.00) !important; font-size: 14px !important;">&nbsp;|&nbsp;</span>
-			<a href="<?php echo site_url() . 'LanguageSwitcher/switchLang/english'; ?>" title="<?php echo $switch_en; ?>" style="color: rgba(255, 255, 255, 1.00) !important; font-size: 14px !important;" style="<?php echo ($lang == 'english') ? 'font-weight: bold!important; color: rgba(255, 255, 255, 1.00) !important; font-size: 14px !important;' : ''; ?>">EN</a>
-		</div>
+            <div class="d-flex flex-rows" style="margin-top:3px;padding: 5px; margin-right: 5px;">
+                <?php
+                $switch_en = 'English';
+                $switch_th = 'Thai';
+                ?>
+                <a href="<?php echo site_url() . 'LanguageSwitcher/switchLang/thai'; ?>" title="<?php echo $switch_th; ?>" style="color: rgba(255, 255, 255, 1.00) !important; font-size: 14px !important;"><?php echo ($lang == 'thai') ? 'TH' : 'TH'; ?></a>
+                <span style="color: rgba(255, 255, 255, 1.00) !important; font-size: 14px !important;">&nbsp;|&nbsp;</span>
+                <a href="<?php echo site_url() . 'LanguageSwitcher/switchLang/english'; ?>" title="<?php echo $switch_en; ?>" style="color: rgba(255, 255, 255, 1.00) !important; font-size: 14px !important;"><?php echo ($lang == 'english') ? 'EN' : 'EN'; ?></a>
+            </div>
 
         </div>
-      </div>
-      
-    </div>
-  </nav>
-	
-	
+    </nav>
 </header>
