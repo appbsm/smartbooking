@@ -235,25 +235,30 @@ if ($id_guest != '') {
 
 <body>
   <header>
-    <nav class="navbar navbar-expand-sm navbar-light bg-light fixed-top text-center mr-auto mb-0" style="height:60px; background-color:#102958 !important; font-size: 14px;">
-    <div class="container d-flex flex-row">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top text-center mr-auto mb-0" style="height:60px; background-color:#102958 !important; font-size: 14px;">
+    	<div class="container d-flex flex-row">
 		
-	  <span class="mx-3">
-		<a class="logo" href="<?php echo site_url('home'); ?>"><img src="<?php echo site_url(); ?>images/logo-SM/SM smart booking_White.png" class="logo-img"></a>
-	  </span>  
+		 <!--  <span class="mx-3">
+				<a class="logo" href="<?php echo site_url('home'); ?>"><img src="<?php echo site_url(); ?>images/logo-SM/SM smart booking_White.png" class="logo-img"></a>
+		  </span> -->
+
+		   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
 
 	  <!-- new menu -->
-	  <div class="col-8">
-		<ul class="navbar-nav me-auto mb-2 mb-lg-0 menu-bar" style="font-size: 14px;">
+	  <!-- collapse navbar-collapse -->
+	  <div class="collapse navbar-collapse col-8" id="navbarNav">
+					<ul class="navbar-nav me-auto mb-2 mb-lg-0 menu-bar" style="font-size: 14px;">
             <li class="nav-item" id="nav_aboutus">
                 <a class="nav-link" href="#aboutus">
 					<?php echo $lang == "english" ? 'About us' : ' ข้อมูลโครงการ'; ?> 
-				</a>
+								</a>
             </li>
             <li class="nav-item" id="nav_roomstype">
                 <a class="nav-link" href="#roomtype">
 					<?php echo $lang == "english" ? 'Rooms type' : 'ประเภทห้อง'; ?> 
-				</a>
+								</a>
             </li>
             <li class="nav-item" id="nav_packagep_promotions">
                 <a class="nav-link" href="#package">
@@ -274,24 +279,24 @@ if ($id_guest != '') {
 				</a>
             </li>
 			-->
-			<li class="nav-item" id="nav_contactus">
-                <a class="nav-link" href="http://192.168.20.22/smartbooking_front_test/conditions_policies.php" >
+					<li class="nav-item" id="nav_contactus">
+              <a class="nav-link" href="http://192.168.20.22/smartbooking_front_test/conditions_policies.php" >
 					<?php echo $lang == "english" ? 'Conditions & Policies' : 'เงื่อนไขและข้อกำหนด'; ?>
-				</a>
-				</a>
-            </li>
-			<li class="nav-item" id="nav_contactus">
+							</a>
+          </li>
+
+				<li class="nav-item" id="nav_contactus">
                 <!--<a class="nav-link" href="#contactus">-->
 				<a class="nav-link" href="contact" >
 					<?php echo $lang == "english" ? 'Contact us' : 'ติดต่อเรา'; ?>
 				</a>
             </li>
         </ul>
-	</div>
-	  <!-- new menu -->
+		</div>
+		<!-- new menu -->
+
       <div class="" id="navbarSupportedContent" >       
-        <div class="navbar navbar-expand d-flex flex-row" style="background-color: #102958 !important;">
-          
+        <div class="navbar navbar-expand d-flex flex-row" style="background-color: #102958 !important;"> 
 		  <?php if ($id_guest != '') { ?>
 		  <?php if ($guest->photo_url != '') { ?>
 		  <a class=""><img src="<?php echo share_folder_path() . $guest->photo_url; ?>" class="rounded-circle mx-auto d-block" style="height:50px;width:50px;" alt=""></a>
@@ -301,16 +306,17 @@ if ($id_guest != '') {
 				<?php echo $guest->firstname . ' ' . substr($guest->lastname, 0, 1). '.'; ?>
 			</a>
 			<button class="btn btn-outline-default btn-default btn-sm dropdown-toggle" style="display: none; " id="profile_dropdown" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+
 		  <div class="input-group-append">
-			
-		  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="background-color: #fff !important;">
-			<a class="dropdown-item" href="<?php echo site_url('profile'); ?>"><?php echo $this->lang->line('profile'); ?></a>
-			<a class="dropdown-item" href="<?php echo site_url('booking/history'); ?>"><?php echo $this->lang->line('booking_history'); ?></a>
-			<a class="dropdown-item" href="<?php echo site_url('facility'); ?>"><?php echo $this->lang->line('facility'); ?></a>
-			<a class="dropdown-item" href="<?php echo site_url('login/logout'); ?>"><?php echo $this->lang->line('logout'); ?></a>
-		  </div>
+			  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="background-color: #fff !important;">
+				<a class="dropdown-item" href="<?php echo site_url('profile'); ?>"><?php echo $this->lang->line('profile'); ?></a>
+				<a class="dropdown-item" href="<?php echo site_url('booking/history'); ?>"><?php echo $this->lang->line('booking_history'); ?></a>
+				<a class="dropdown-item" href="<?php echo site_url('facility'); ?>"><?php echo $this->lang->line('facility'); ?></a>
+				<a class="dropdown-item" href="<?php echo site_url('login/logout'); ?>"><?php echo $this->lang->line('logout'); ?></a>
+			  </div>
 		  </div>
 		</div>
+
 		  <?php } 
 		  else {
 		  ?>
