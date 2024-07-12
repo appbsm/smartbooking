@@ -10,44 +10,126 @@ if ($rate == '') {
 
 ?>
 
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
 <style>
-.price {
-	margin: 10px 0 0 0!important;
-}
+	.form-control, label, a {
+		color: #000 !important;
+	}
+	a:hover {
+		color: #000 !important;
+	}
+	.price {
+		margin: 10px 0 0 0!important;
+		background-color: #102958;
+		color: white;
+		text-shadow: 2px 2px 4px #000000;
+	}
 
-.nav-link.active {
-	background-color: #81BB4A!important;
-}
+	.nav-link.active {
+		background-color: #81BB4A!important;
+	}
 
-.room_type_header {
-	font-size: 1.4em;
-	font-weight: bold;
-	color: #eee;
-	
-}
+	.room_type_header {
+		font-size: 1.4em;
+		font-weight: bold;
+		color: #eee;
+		
+	}
 
-hr {
-	border: 0;
-	border-top: 1px solid #CCC;
-}
+	hr {
+		border: 0;
+		border-top: 1px solid #CCC;
+	}
 
-.hr3 {
-  border: 0;
-  height: 2px;
-  background-image: linear-gradient(to right, transparent, #CCC, transparent);  
-}
+	.hr3 {
+	  border: 0;
+	  height: 2px;
+	  background-image: linear-gradient(to right, transparent, #CCC, transparent);  
+	}
 
-.section_header {
-	font-weight: bold; 
-	font-size: 1.1em;
-}
+	.section_header {
+		font-weight: bold; 
+		font-size: 1.1em;
+	}
+
+	.btn-adults {
+		border: 1px solid #dee2e6 !important;
+		background-color: unset !important; 
+		color: #000 !important;
+		/*border: 1px solid #5392f9 !important;
+		background-color: #5392f9 !important; 
+		color: #FFF !important;*/
+		padding: 2px !important;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	.btn_stepper {
+		background-color: #102958 !important;
+		border: none;
+		border-radius: 50%;
+		width: 25px;
+		height: 25px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.btn_stepper:focus {
+		outline: none;
+	}
+
+	.input_number {
+		text-align: center !important;
+		border: 1px solid #CCC;
+		background-color: white;
+		width: 30%;
+		margin: 0 8px;
+	}
+
+	.input_number:focus {
+		outline: none;
+	}
+	.btn-add_to_cart {
+		/*width: auto;
+		height: auto;*/
+		text-transform: uppercase;
+		/*line-height: 30px;*/
+		color: #fff !important;
+		font-size: small !important;
+		background-color: #102958 !important;
+		border-color: #102958 !important;
+	}
+	.btn-add_to_cart:hover {
+        background-color: #102958 !important;
+		border-color: #102958 !important;
+		color: #fff !important;
+    }
+	.book_now:hover {
+		background-color: #102958 !important;
+		border-color: #102958 !important;
+		color: #fff !important;
+    }
+	.book_now {
+		/*width: auto;
+		height: auto;*/
+		text-transform: uppercase;
+		/*line-height: 30px;*/
+		color: #fff !important;
+		font-size: small !important;
+		background-color: #102958 !important;
+		border-color: #102958 !important;
+	}
 </style>
 
 <?php 
 
 ?>
 
-<main class="main-2">
+<main class="main-2" style="margin-top: 35px;">
  
   	<div class="row">
   		<!-- <div class="col-md-12">
@@ -62,9 +144,11 @@ hr {
   </section>
   
 	<div class="container">
+		<!--
 		<div class="row">
 			<div class="col-md-12 price room_type_header"><span style="margin-left: 10px;"><?php echo ($lang == 'english') ? $room_type->room_type_name_en : $room_type->room_type_name_th;?></span><?php echo $lang=='english' ?' Price ':' ราคา ';?><span id="hdr_room_rate"><?php echo number_format($rate,2);?></span> / <?php echo $this->lang->line('night');?></div>
 		</div>
+		-->
 		<div class="row">
 			<div class="col-md-7 mt-2">
 				<div class="row">
@@ -230,7 +314,8 @@ hr {
 			</div>
 			<div class="col-md-5 mt-2">
 				<div class="col-md-12 ">
-				<div class="row mb-4 ml-4 mt-2" style="width: 100%; border: 1px solid #81BB4A; border-radius: 10px; ">
+				<!--<div class="row mb-4 ml-4 mt-2" style="width: 100%; border: 1px solid #81BB4A; border-radius: 10px; ">-->
+				<div class="row mb-4 ml-4 mt-2" style="width: 100%; border: 1px solid #CCC; border-radius: 10px; ">
 				<!-- <div class="row mb-4" style="width: 100%;"> -->
 					<div class="col-md-12" style="font-size: 1.2em; font-weight: bold; text-align: center; width: 80%;">
 					
@@ -251,13 +336,15 @@ hr {
 					
 					<div class="col-md-12 mb-3">
 						<div class="dropdown" >
-							<button class="btn dropdown-toggle w-100 search_input" style="width: 100%; padding: 0 30px 0 0" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-								<span id="div_adult"><?php echo $num_of_adult;?></span> <?php echo $this->lang->line('adults');?>, <span id="div_children"><?php echo $num_of_children;?></span> <?php echo $this->lang->line('children');?>, <span id="div_room"><?php echo $num_of_room;?></span> <?php echo $this->lang->line('rooms');?>
+							<button class="btn dropdown-toggle w-100 search_input btn-adults" style="width: 100%; padding: 0 30px 0 0" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								<span id="div_adult" style="color: #000 !important;"><?php echo $num_of_adult;?></span> <?php echo $this->lang->line('adults');?>, 
+								<span id="div_children" style="color: #000 !important;"><?php echo $num_of_children;?></span> <?php echo $this->lang->line('children');?>, 
+								<span id="div_room" style="color: #000 !important;"><?php echo $num_of_room;?></span> <?php echo $this->lang->line('rooms');?>
 							</button>
 							<div class="dropdown-menu" style="vertical-align: bottom; background: white; z-index: 1;" aria-labelledby="dropdownMenuButton">
 									<div class="stepper">
 									<div style="display: flex; justify-content: center;"><?php echo $this->lang->line('adult');?></div>
-									<div style="display: flex; justify-content: center; background-color: white; ">							    
+									<div style="display: flex; justify-content: center;  ">							    
 									<button class="btn_stepper " id="decrement-adult" onClick="stepper(this);"> - </button>
 									<input class="input_number" type="number" min="0" max="<?php echo $room_type->number_of_adults;?>" step="1" value="<?php echo $num_of_adult;?>" id ="adult" readonly>
 									<button class="btn_stepper " id="increment-adult" onClick="stepper(this);" datat-min="0" data-max="<?php echo $room_type->number_of_adults;?>"> + </button>
@@ -301,13 +388,14 @@ hr {
 								<div class="rounded hr3 mt-2"></div>
 									
 									<div style="display: flex; justify-content: center;"><?php echo $this->lang->line('rooms');?></div>
-									<div style="display: flex; justify-content: center; background-color: white; box-shadow: 0 20px 30px rgba(0,0,0,0.1)">							    
+									<div style="display: flex; justify-content: center;  box-shadow: 0 20px 30px rgba(0,0,0,0.1)">							    
 									<button class="btn_stepper " id="decrement-room" onClick="stepper(this);"> - </button>
 									<input class="input_number" type="number" min="0" max="100" step="1" value="1" id ="room" readonly>
 									<button class="btn_stepper " id="increment-room" onClick="stepper(this);"> + </button>							  							   
 									</div>
 
-									<div style="display: flex; justify-content: center; padding: 5px; font-size: 0.8em; background-color: #F8F8F9;">
+									<!--<div style="display: flex; justify-content: center; padding: 5px; font-size: 0.8em; background-color: #F8F8F9;">-->
+									<div class="mt-2 mb-0" style="display: flex; justify-content: center; padding: 8px; font-size: 0.8em; backdrop-filter: blur(10px); background-color: rgb(189 219 251 / 45%) !important;">
 									<?php if ($lang == 'english') {?>
 									Please be informed that the maximum age for children is <?php echo app_settings('max_children_age');?> 
 									years old. Kindly add children aged more than <?php echo app_settings('max_children_age');?> years as adult.
@@ -376,10 +464,10 @@ hr {
 				</div>
 						<div class="row mt-3 ml-5">	
 							<div class="col-md-6 mb-2 text-right" > 
-								<button class="btn button-primary-w form-control add_to_cart" data-id="<?php echo $rt->id_room_type;?>" data-price="<?php echo $rt->default_rate;?>" id="add_to_cart"><?php echo $this->lang->line('add_to_cart');?></button>
+								<button class="btn button-primary-w form-control add_to_cart btn-add_to_cart" data-id="<?php echo $rt->id_room_type;?>" data-price="<?php echo $rt->default_rate;?>" id="add_to_cart"><?php echo $this->lang->line('add_to_cart');?></button>
 							</div>
 							<div class="col-md-6 mb-2 text-left"> 
-								<button class="btn button-primary form-control" id="book_now"><?php echo $this->lang->line('book_now');?></button>
+								<button class="btn button-primary form-control book_now" id="book_now"><?php echo $this->lang->line('book_now');?></button>
 							</div>
 						</div>
 			</div>

@@ -132,7 +132,7 @@ $CI->load->model('m_room_type');
 	
 	.price {
 		/*background-color: #2a2a2e;*/
-		background-color: #5392f9;
+		background-color: #102958;
 		color: white;
 		text-shadow: 2px 2px 4px #000000;
 	}
@@ -143,13 +143,13 @@ $CI->load->model('m_room_type');
 		line-height: 24px !important;
 		color: #fff !important;
 		font-size: small !important;
-		background-color: #5392f9 !important;
-		border-color: #5392f9 !important;
+		background-color: #102958 !important;
+		border-color: #102958 !important;
 	}
 	.btn-add_to_cart:hover {
-        background-color: #fff !important;
-        color: #5392f9 !important; 
-		border-color: #5392f9 !important;
+        background-color: #102958 !important;
+        color: #fff !important; 
+		border-color: #102958 !important;
     }
 	.btn-book_now {
 		width: auto;
@@ -158,13 +158,13 @@ $CI->load->model('m_room_type');
 		line-height: 24px !important;
 		color: #fff !important;
 		font-size: small !important;
-		background-color: #5392f9 !important;
-		border-color: #5392f9 !important;
+		background-color: #102958 !important;
+		border-color: #102958 !important;
 	}
 	.btn-book_now:hover {
-        background-color: #fff !important;
-        color: #5392f9 !important; 
-		border-color: #5392f9 !important;
+        background-color: #102958 !important;
+        color: #fff !important; 
+		border-color: #102958 !important;
     }
 	.btn-search {
 		/*width: auto;
@@ -173,15 +173,22 @@ $CI->load->model('m_room_type');
 		/*line-height: 30px !important;*/
 		color: #fff !important;
 		font-size: 16px !important;
-		background-color: #5392f9 !important;
-		border-color: #5392f9 !important;
+		background-color: #102958 !important;
+		border-color: #102958 !important;
 		/*height: 32px;*/
 	}
 	.btn-search:hover {
-        background-color: #fff !important;
-        color: #5392f9 !important; 
-		border-color: #5392f9 !important;
+        background-color: #102958 !important;
+        color: #fff !important; 
+		border-color: #102958 !important;
     }
+	
+	.form-control, label, a {
+		color: #000 !important;
+	}
+	a:hover {
+		color: #000 !important;
+	}
 </style>
 <main class="main-2 manual-margin-6">
 	<div class="container-fluid">

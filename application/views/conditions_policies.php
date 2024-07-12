@@ -889,31 +889,8 @@
 			</div>
 		</form>
 	</div>
-		<!-- Descripttion -->
-		<script>
-			document.addEventListener('DOMContentLoaded', function() {
-				document.getElementById('readMoreBtn').addEventListener('click', function() {
-					var longText = document.querySelector('.long-text');
-					var btn = document.getElementById('readMoreBtn');
-
-					if (longText.style.display === 'none') {
-						longText.style.display = 'block';
-						btn.innerHTML = 'Read less...<i class="fas fa-angle-down"></i>';
-					} else {
-						longText.style.display = 'none';
-						btn.innerHTML = 'Read more...<i class="fas fa-angle-up"></i>';
-					}
-				});
-			});
-		</script>
-
-		<!-- Descripttion -->
 </div>
 
-<?php  
-	// $rate = $CI->m_room_type->get_day_rate($_GET, $date);
-
-?>
 
 <div class="container mt-0">
 
@@ -921,26 +898,22 @@
 		<div class="col-md-12 ml-2 text-center mt-4">
 			<h4 style="text-align: center; padding-bottom: 15px;" id="nav_packagep_promotions">
 				<a id="nearby_locations" href="javascript:;" class="tx-title-header">
-<<<<<<< HEAD
 					<? echo ($lang == 'english') ? 'Conditions & Policies' : 'เงื่อนไขและข้อกำหนดในการเข้าพัก'; ?>
 				</a>
-=======
-					Facilities & Amenities and Nearby Locations		</a>
->>>>>>> origin/main
 			</h4>
 		</div>
 	</div>
 	<div class="row mb-0" id="nav_roomstype" style="color: #000 !important;">
 		<div class="col-md-12 amenities-nearby-column">
-			<div class="col-md-8">
+			<div class="col-md-12">
 			<div class="section_header " id="facilities_amenities">
-				<h6 style="font-weight: 600; color: #000 !important;"><? echo ($lang == 'english') ? 'Project Overview' : 'รายละเอียดโครงการ'; ?></h6>
+				<h6 style="font-weight: 600; color: #000 !important; margin-bottom: 0;"><? echo ($lang == 'english') ? 'Project Overview' : 'รายละเอียดโครงการ'; ?></h6>
 			</div>		
 			<div class="row mb-2">	
 				<div class="container-fluid mb-4">
 					<div class="col-md-12">			
 							<? if (!empty($project_details)){ ?>
-							<span style="color: #000 !important;"><? echo ($lang == 'english') ? $project_details->project_name_en : $project_details->project_name_th; ?></span>
+							<span style="color: #000 !important; font-size: 14px !important;"><? echo ($lang == 'english') ? $project_details->project_name_en : $project_details->project_name_th; ?></span>
 		    			<?php 
 		    			 }?>
 		    			
@@ -952,7 +925,7 @@
 			<div class="row mb-2">			
 				<div class="container-fluid mb-4">
 					<div class="col-md-12">		
-						<div class="h_container" style="display: flex; flex-direction: row; ">
+						<div class="h_container" style="display: flex; flex-direction: row; font-size: 14px !important;">
 
 								<?php foreach ($project_highlights as $value) { ?>
 		    				<div style="bottom: 0; padding-right: 50px;">
@@ -968,13 +941,13 @@
 				</div>
 			</div>
 			
-			<div class="section_header "><u><? echo ($lang == 'english') ? 'Project Facility' : 'สิ่งอำนวยความสะดวกของโครงการ'; ?></u></div>
+			
 			<div class="row">			
 				<div class="container-fluid mb-4">
 					<div class="col-md-12">	
 						<div class="row" id="pj-con">
 							<?php foreach ($project_facility as $value) { ?>
-							<div class="col-md-6" style="bottom: 0; ">
+							<div class="col-5 col-sm-3 col-xxl-3 " style="bottom: 0; ">
 							<input type="checkbox" checked="checked" style="vertical-align:middle; pointer-events:none;">
 							&nbsp;<img src="https://sharefolder.buildersmart.com/sms_booking/<? echo $value->icon; ?>" width="18">
 							<span class="highlights_desc" style="font-size: 1.1em; color: #000 !important;"><? echo ($lang == 'english') ? $value->long_desc_en : $value->long_desc_th; ?></span>
@@ -991,8 +964,8 @@
 					<div class="container-fluid mb-4">
 						<div class="col-md-12">	
 							<?php foreach ($project_policy_type as $value) { ?>
-								<span><?php echo $policy_type = ($lang == 'english') ? $value->policy_type_en : $value->policy_type_th; ?></span>
-								<ol>		
+								<span style="color: #000 !important;"><?php echo $policy_type = ($lang == 'english') ? $value->policy_type_en : $value->policy_type_th; ?></span>
+								<ol style="font-size: 14px !important;">		
 									<?php foreach ($project_policy as $value2) {  ?>	
 										<? if($value->policy_type_en==$value2->policy_type_en){ ?>
 									<li><? echo ($lang == 'english') ? $value2->description_en : $value2->description_th; ?></li>	
@@ -1004,42 +977,9 @@
 					</div>
 				</div>
 			</div>
-			
-			<div class="col-md-4">
-				<div class="section_header ">
-					<h6 style="font-weight: 600;"><? echo ($lang == 'english') ? 'Locations Nearby' : 'สถานที่ใกล้เคียง'; ?></h6>
-				</div>
-				<div class="row mb4">
-					<div class="col-md-12">		
-						<div class="table-responsive">
-							<table class="table table-bordered" style="border-color: #ccc; color: #000 !important;">
-								<tbody>
-									<tr style="text-align: center;">
-										<th><? echo ($lang == 'english') ? 'Location' : 'ชื่อสถานที่'; ?></th>
-										<th><? echo ($lang == 'english') ? 'Distance(km)' : 'ระยะทาง(km)'; ?></th>
-									</tr>
-									<?php foreach ($point_of_interest as $value) { ?>
-									<tr>
-										<td style="color: #000 !important;"><?php echo $policy_type = ($lang == 'english') ? $value->location_name_en : $value->location_name_th; ?></td>
-										<td style="text-align: center; color: #000 !important;"><?php echo $value->distance_km; ?></td>
-									</tr>
-									<? } ?>
-								</tbody>
-							</table>  
-						</div>		
-					</div>
-				</div>
-			</div>
 		</div>
 	</div>
-	
-	<div class="row text-center mb-0" id="nav_roomstype">
-		<div class="col-md-12">
-			<div id="google-map">
-				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5462.972307432571!2d101.55065412783209!3d14.490156270739496!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x311c3b5927861817%3A0x4ef8dd372f4d0716!2sSMS%20Showroom!5e0!3m2!1sth!2sth!4v1683184985267!5m2!1sth!2sth" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-			</div>
-		</div>
-	</div>
+
 </div>
 
 <!-- <script src="//code.jquery.com/jquery.js"></script> -->
