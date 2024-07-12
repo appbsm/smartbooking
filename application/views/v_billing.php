@@ -80,7 +80,7 @@ $cancellation_policy = $this->m_project_info->get_property_policy($id_project_in
 	
 	.price {
 		/*background-color: #2a2a2e;*/
-		background-color: #5392f9;
+		background-color: #102958;
 		color: white;
 		text-shadow: 2px 2px 4px #000000;
 	}
@@ -91,13 +91,13 @@ $cancellation_policy = $this->m_project_info->get_property_policy($id_project_in
 		/*line-height: 30px !important;*/
 		color: #fff !important;
 		font-size: 16px !important;
-		background-color: #5392f9 !important;
-		border-color: #5392f9 !important;
+		background-color: #102958 !important;
+		border-color: #102958 !important;
 	}
 	.btn-payment:hover {
-        background-color: #fff !important;
-        color: #5392f9 !important; 
-		border-color: #5392f9 !important;
+        background-color: #102958 !important;
+        color: #fff !important; 
+		border-color: #102958 !important;
     }
 	
 	
@@ -141,6 +141,10 @@ $cancellation_policy = $this->m_project_info->get_property_policy($id_project_in
     .progressbar {
         font-size: 14px !important; 
     }
+	
+	.form-control, label {
+		color: #000 !important;
+	}
 </style>
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
@@ -165,7 +169,7 @@ $cancellation_policy = $this->m_project_info->get_property_policy($id_project_in
 
 		<div class="container-fluid">
 			<div class="row">
-				<div class="col-md-12 price room_type_header m-0">
+				<div class="col-md-12 price room_type_header m-0" style="background-color: #102958;">
 					<h5><span style="margin-left: 10px;"><?php echo $this->lang->line('step_2'); ?></span></h5>
 				</div>
 			</div>

@@ -114,14 +114,14 @@ $check_out_date = date('d-m-Y', strtotime($check_in_date . '+1 day'));
 		line-height: 1.5 !important;
 		color: #fff !important;
 		font-size: 14px !important;
-		background-color: #5392f9 !important;
-		border-color: #5392f9 !important;
+		background-color: #102958 !important;
+		border-color: #102958 !important;
 		padding: 6px 12px !important;
 	}
 	.btn-backnext:hover {
-        background-color: #fff !important;
-        color: #5392f9 !important; 
-		border-color: #5392f9 !important;
+        background-color: #102958 !important;
+        color: #fff !important; 
+		border-color: #102958 !important;
 
     }
 	.fa-xl {
@@ -151,6 +151,9 @@ $check_out_date = date('d-m-Y', strtotime($check_in_date . '+1 day'));
 		font-size: 20px;
 		cursor: pointer;
 		outline: 0 !important;
+	}
+	.form-control, label {
+		color: #000 !important;
 	}
 </style>
 
@@ -186,19 +189,23 @@ $r_date = 0;
 			<div class="col-md-4">
 				<!-- <div class="group"> -->
 				<label for="name" style="font-weight: 500;" class="mb-0"><?php echo $this->lang->line('check_in_date'); ?></label>
-				<input type='text' class="form-control datepicker search_input " name="check_in_date" id="check_in_date" value="<?= $check_in_date; ?>" />
+				<input type='text' class="form-control datepicker search_input " style="color: #000; !important" name="check_in_date" id="check_in_date" value="<?= $check_in_date; ?>" />
 				<!-- </div> -->
 			</div>
 			<div class="col-md-4">
 				<label for="name" style="font-weight: 500;" class="mb-0"><?php echo $this->lang->line('check_out_date'); ?></label>
-				<input type='text' class="form-control datepicker search_input " name="check_out_date" id="check_out_date" value="<?= $check_out_date; ?>" />
+				<input type='text' class="form-control datepicker search_input " style="color: #000; !important" name="check_out_date" id="check_out_date" value="<?= $check_out_date; ?>" />
 			</div>
 
 			<div class="col-md-4">
-				<label class="ml-1 mb-0" for="name" style="font-weight: 500;"><?php echo $lang == "english" ? 'Adult' : 'ผู้เข้าพัก'; ?></label>
+				<label class="ml-1 mb-0" for="name" style="font-weight: 500; color: #000; !important"><?php echo $lang == "english" ? 'Adult' : 'ผู้เข้าพัก'; ?></label>
 				<div class="dropdown">
 					<button class="btn dropdown-toggle w-100 search_input btn-adults" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-						<span id="div_adult"><?php echo @$search_data['adult'] ? $search_data['adult'] : 2; ?></span> <?php echo $this->lang->line('adults'); ?>, <span id="div_children"><?php echo @$search_data['children'] ? $search_data['children'] : 0; ?></span> <?php echo $this->lang->line('children'); ?> <!-- , <span id="div_room">1</span> Rooms -->
+						<span id="div_adult">
+							<?php echo @$search_data['adult'] ? $search_data['adult'] : 2; ?>
+						</span> <?php echo $this->lang->line('adults'); ?>, 
+						<span id="div_children"><?php echo @$search_data['children'] ? $search_data['children'] : 0; ?></span> 
+						<?php echo $this->lang->line('children'); ?> <!-- , <span id="div_room">1</span> Rooms -->
 					</button>
 					<div class="dropdown-menu" style="vertical-align: bottom;" aria-labelledby="dropdownMenuButton">
 						<div class="stepper">
@@ -256,7 +263,7 @@ $r_date = 0;
 		<div class="row">
 			<div class="col-md-12 ">
 				<input type="checkbox" style="height:15px; width:15px; margin-left: 8px;" class="select_all cb" onClick="toggle(this);">
-				<p class="ml-2 mt-0" style="font-weight: 500;"><?php echo $lang == "english" ? 'Select All' : 'เลือกทั้งหมด'; ?></p>
+				<p class="ml-2 mt-0" style="font-weight: 500; color: #000; !important"><?php echo $lang == "english" ? 'Select All' : 'เลือกทั้งหมด'; ?></p>
 			</div>
 			<div class="col-md-9">
 				<!-- package or room -->
@@ -299,7 +306,7 @@ $r_date = 0;
 													<img class="img-thumbnail mw-300"  src="<?php echo share_folder_path() . $first_photo->room_photo_url; ?>" />
 												</div>
 												<div class="col-md-5 align-self-center text-center">
-													<h6><?php echo $lang == 'english' ? $room_type->room_type_name_en : $room_type->room_type_name_th; ?></h6>
+													<h6 style="color: #000; !important"><?php echo $lang == 'english' ? $room_type->room_type_name_en : $room_type->room_type_name_th; ?></h6>
 												</div>
 
 											</div>
