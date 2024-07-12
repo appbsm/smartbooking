@@ -1,23 +1,14 @@
-<html lang="en"><head>
-<title>Smart Booking</title>
-  <link rel="icon" type="image/x-icon" href="http://192.168.20.22/smartbooking_front_test/images/10.png">
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="">
-  <link href="https://fonts.googleapis.com/css2?family=Syne&amp;display=swap" rel="stylesheet">  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="http://192.168.20.22/smartbooking_front_test/bootstrap-4.0.0-dist/css/bootstrap.css">
+<?php
+	$lg = ($this->session->userdata('site_lang') !== null) ? $this->session->userdata('site_lang') : 'thai';
+	if ($lg == 'thai') {
+	  $this->lang->load('content', 'thai');
+	} elseif ($lg == 'english') {
+	  $this->lang->load('content', 'english');
+	}
+	$lang  = $lg;
+?>
 
-  <!-- icon font-awesome -->
-  <link href="http://192.168.20.22/smartbooking_front_test/assets/font-awesome/css/all.min.css" rel="stylesheet">
-
-  <link href="http://192.168.20.22/smartbooking_front_test/css/styles.css" rel="stylesheet">
-  <link href="http://192.168.20.22/smartbooking_front_test/css/css.css" rel="stylesheet">
-  <link href="http://192.168.20.22/smartbooking_front_test/css/custom_header_en.css" rel="stylesheet">  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css?v=1001">
-   
-   
   <style>
-    
-
     .button {
       color: white;
       display: inline-block;
@@ -98,137 +89,40 @@
         border: #5392f9 !important;
 	}
 	
-  </style>
+	.box-fillter {
+			padding: 0 180px !important;
+		}
+			@media (max-width: 767px) {
+			.fillter-h {
+				margin-top: 16px !important;
+			}
+		}
+	.btn_stepper {
+		background-color: #102958 !important;
+		border: none;
+		border-radius: 50%;
+		width: 25px;
+		height: 25px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		align-items: center;
+	}
 
-  <script>
-    const numFor = new Intl.NumberFormat('en-US');
+	.btn_stepper:focus {
+		outline: none;
+	}
+	.input_number {
+		text-align: center !important;
+		border: 1px solid #CCC;
+		background-color: white;
+		width: 30%;
+		margin: 0 8px;
+	}
 
-    function ValidateEmail(mail) {
-      if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(mail)) {
-        return (true)
-      } else {
-        alert("You have entered an invalid email address!")
-        return (false)
-      }
-    }
-
-    function number_add_comma_decimal(num) {
-      num = parseFloat(num).toFixed(2);
-      return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-    }
-
-    function number_add_comma(num) {
-      //num = parseFloat(num).toFixed(2);
-      return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-    }
-
-    function remove_comma(num) {
-      return num.replace(/\,/g, '');
-    }
-
-    function date_diff(date1, date2) {
-      const diffTime = Math.abs(date2 - date1);
-      const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-      //console.log(diffTime + " milliseconds");
-      //console.log(diffDays + " days");
-      return diffDays;
-    }
-    let width = screen.width;
-    //console.log(width);
-  </script>
-<style>
-        @font-face {
-            font-family: 'NotoSans_online_security'; 
-            src: url(chrome-extension://llbcnfanfmjhpedaedhbcnpgeepdnnok/assets/fonts/noto-sans-regular.woff);
-        }
-
-        @font-face {
-            font-family: 'NotoSans_medium_online_security'; 
-            src: url(chrome-extension://llbcnfanfmjhpedaedhbcnpgeepdnnok/assets/fonts/noto-sans-medium.ttf);
-        }
-
-        @font-face {
-            font-family: 'NotoSans_bold_online_security'; 
-            src: url(chrome-extension://llbcnfanfmjhpedaedhbcnpgeepdnnok/assets/fonts/noto-sans-bold.woff);
-        }
-
-        @font-face {
-            font-family: 'NotoSans_semibold_online_security'; 
-            src: url(chrome-extension://llbcnfanfmjhpedaedhbcnpgeepdnnok/assets/fonts/noto-sans-semibold.ttf);
-        }
-</style></head>
-
-
-<body class="" style="">
-  <header>
-    <nav class="navbar navbar-expand-sm navbar-light bg-light fixed-top text-center mr-auto mb-0" style="height: 70px; border-bottom: 1px solid rgb(204, 204, 204); background-color: rgb(255, 255, 255) !important;">
-    <div class="container d-flex flex-row">
-		
-	  <span class="mx-3">
-		<a class="logo" href="http://192.168.20.22/smartbooking_front_test/home"><img src="http://192.168.20.22/smartbooking_front_test/images/10.png" width="70"></a>
-	  </span>  
-
-	  <!-- new menu -->
-	  <div class="col-9">
-		<ul class="navbar-nav me-auto mb-2 mb-lg-0 menu-bar">
-            <li class="nav-item" id="nav_aboutus">
-                <a class="nav-link" href="#aboutus">
-					About us 
-				</a>
-            </li>
-            <li class="nav-item" id="nav_roomstype">
-                <a class="nav-link" href="#roomtype">
-					Rooms type 
-				</a>
-            </li>
-            <li class="nav-item" id="nav_packagep_promotions">
-                <a class="nav-link" href="#package">
-					Package &amp; Promotions 
-				</a>
-            </li>
-            <li class="nav-item" id="nav_contactus">
-                <a class="nav-link" href="#facilities_amenities">
-					Facilities &amp; Amenities				</a>
-            </li>
-			<li class="nav-item" id="nav_contactus">
-                <a class="nav-link" href="#nearby_locations">
-					Nearby Locations				</a>
-            </li>
-			<li class="nav-item" id="nav_contactus">
-                <!--<a class="nav-link" href="#contactus">-->
-				<a class="nav-link" href="http://192.168.20.22/smartbooking_front_test/contact_us.php" target="_blank">
-					Contact us				</a>
-            </li>
-        </ul>
-	</div>
-	  <!-- new menu -->
-      <div class="" id="navbarSupportedContent">       
-        <div class="navbar navbar-expand d-flex flex-row" style="gap: 0 16px; background-color:#fff !important;">
-          
-		  		  <div class="button mx-1">
-                <a class="btn btn_sign_in" href="http://192.168.20.22/smartbooking_front_test/login" height="20">Sign In</a>
-              </div>
-		  		  <div class="button">
-            <a class="nav-link" href="http://192.168.20.22/smartbooking_front_test/cart"><span class="button__badge">1</span><object style="pointer-events: none;" data="https://sharefolder.buildersmart.com/sms_booking/images/icons/cart.svg" height="20"> </object></a>
-          </div>
-		  
-		<div class="d-flex flex-rows" style="margin-top:3px;padding: 5px; margin-right: 5px;">
-						<a href="http://192.168.20.22/smartbooking_front_test/LanguageSwitcher/switchLang/thai" title="Thai" style="">TH</a>
-			<span>&nbsp;|&nbsp;</span>
-			<a href="http://192.168.20.22/smartbooking_front_test/LanguageSwitcher/switchLang/english" title="English" style="font-weight: bold!important;">EN</a>
-		  </div>
-
-        </div>
-      </div>
-      
-      </div>
-    </nav>
-	
-	
-</header><title>Smart Booking</title>
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<style>
+	.input_number:focus {
+		outline: none;
+	}
 	.span, .icon-content {
 		color: #000 !important;
 	}
@@ -322,9 +216,17 @@
 	
 	.tx-title-header {
 		color: #000 !important;
-		text-shadow: 0px 0px 1px #000
+		font-weight: 600;
+		/*text-shadow: 0px 0px 1px #000*/
+	}
+	.tx-title-header:hover {
+		color: #000 !important;
+		/*text-shadow: 0px 0px 1px #000*/
 	}
 	.tx-title-sub {
+		color: #000 !important;
+	}
+	.tx-title-sub:hover {
 		color: #000 !important;
 	}
 	
@@ -722,33 +624,67 @@
 			margin: 0 auto; 
 			*/
 		}
-		
-</style>
+		html {
+	    scroll-padding-top: 150px; /* Adjust the padding value as needed */
+		}
+  </style>
 
-<!-- Package -->
-<!-- <link rel="stylesheet" href="http://192.168.20.22/smartbooking_front_test//css/style.css"> -->
+  <script>
+    const numFor = new Intl.NumberFormat('en-US');
+
+    function ValidateEmail(mail) {
+      if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(mail)) {
+        return (true)
+      } else {
+        alert("You have entered an invalid email address!")
+        return (false)
+      }
+    }
+
+    function number_add_comma_decimal(num) {
+      num = parseFloat(num).toFixed(2);
+      return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    }
+
+    function number_add_comma(num) {
+      //num = parseFloat(num).toFixed(2);
+      return num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    }
+
+    function remove_comma(num) {
+      return num.replace(/\,/g, '');
+    }
+
+    function date_diff(date1, date2) {
+      const diffTime = Math.abs(date2 - date1);
+      const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+      //console.log(diffTime + " milliseconds");
+      //console.log(diffDays + " days");
+      return diffDays;
+    }
+    let width = screen.width;
+    //console.log(width);
+  </script>
+
+</head>
+
+<body class="" style="">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
 <link rel="stylesheet" href="http://192.168.20.22/smartbooking_front_test//css/tiny-slider.css">
 <link rel="stylesheet" href="http://192.168.20.22/smartbooking_front_test//css/package.css">
-<!-- <link rel="stylesheet" href="http://192.168.20.22/smartbooking_front_test//css/main.css"> -->
 <link rel="icon" type="image/png" sizes="16x16" href="http://192.168.20.22/smartbooking_front_test//images/10.png">
 <link rel="stylesheet" href="http://192.168.20.22/smartbooking_front_test/assets/select-picker/css/bootstrap-select.min.css">
-
-
 <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
 <div class=" home-p mb-4 mt-2">
-	<!-- Carousel Start -->
 	<div id="carousel carouselExampleIndicators" class="carousel slide carousel-fade" data-ride="carousel">
-		<!-- <ol class="carousel-indicators">
-		<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-		<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-		<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-	</ol> -->
 		<div class="carousel-inner">
 							<div class="carousel-item">
 					<img class="d-block w-100 img-cover" src="https://sharefolder.buildersmart.com/sms_booking/upload/project_photo/1_64880b050bc5d.jpeg" alt="First slide">
@@ -816,22 +752,13 @@
 							<div class="carousel-item">
 					<img class="d-block w-100 img-cover" src="https://sharefolder.buildersmart.com/sms_booking/upload/project_photo/1_64880b0556486.jpeg" alt="First slide">
 				</div>
-					</div>
-		<!-- <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-		<span class="carousel-control-prev-icon" aria-hidden="true"></span>
-		<span class="sr-only">Previous</span>
-	</a>
-	<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-		<span class="carousel-control-next-icon" aria-hidden="true"></span>
-		<span class="sr-only">Next</span>
-	</a> -->
+			</div>
 	</div>
-	<!-- Carousel End -->
 
 
-	<!-- SECTION FOR SEARCH -->
-	<div class="container-fluid text-center search-box">
-		<form name="frm_search" id="frm_search" method="post" action="http://192.168.20.22/smartbooking_front_test/home/search">
+
+	<div class="container-fluid text-center search-box box-fillter">
+		<form name="frm_search" id="frm_search" method="post" action="<?php echo site_url('home/search'); ?>">
 			<input type="hidden" name="s_id_room_type" id="s_id_room_type" value="">
 			<input type="hidden" name="s_num_of_adult" id="s_num_of_adult" value="">
 			<input type="hidden" name="s_num_of_room" id="s_num_of_room" value="">
@@ -841,57 +768,61 @@
 			<input type="hidden" name="packages" id="packages" value="">
 			<input type="hidden" name="project_id" id="project_id" value="">
 
-			<div class="container mt-5">
-				<div class="row search-bg pt-3" style="border: 2px solid #C6C6C7; border-radius: 5px; padding: 5px 0 5px 0; margin: 0 4px 0 4px;">
+			<div class="container fillter-h">
+				<div class="row search-bg pt-1" style="border: 2px solid #C6C6C7; border-radius: 5px; padding: 0; margin: 0 4px 0 4px;font-size: 14px !important;">
+					<!--
 					<div class="col-lg-3 ">
 						<div class="col-md-12 text-left">
-							<label class="ml-1" for="name">Location </label>
-							<!-- <input type='text' class=" form-control search_input" value=""/>	 -->
-							<div class="dropdown bootstrap-select form-control search_input"><select class="form-control selectpicker search_input" data-live-search="true" name="project_id" id="project_id" tabindex="-98">
-																	<option value="1">SM Resort Showroom @ Khaoyai</option>
-																	<option value="15">Condo</option>
-															</select><button type="button" class="btn dropdown-toggle btn-light" data-toggle="dropdown" role="combobox" aria-owns="bs-select-1" aria-haspopup="listbox" aria-expanded="false" data-id="project_id" title="SM Resort Showroom @ Khaoyai" fdprocessedid="4ztg2d"><div class="filter-option"><div class="filter-option-inner"><div class="filter-option-inner-inner">SM Resort Showroom @ Khaoyai</div></div> </div></button><div class="dropdown-menu "><div class="bs-searchbox"><input type="search" class="form-control" autocomplete="off" role="combobox" aria-label="Search" aria-controls="bs-select-1" aria-autocomplete="list"></div><div class="inner show" role="listbox" id="bs-select-1" tabindex="-1"><ul class="dropdown-menu inner show" role="presentation"></ul></div></div></div>
+							<label class="ml-1" for="name"><?php echo $lang == "english" ? 'Location' : 'สถานที่'; ?> </label>
+							<select class="form-control selectpicker search_input" data-live-search="true" name="project_id" id="project_id">
+								<?php foreach ($project_all as $pj) { ?>
+									<option value="<?php echo $pj->id_project_info ?>"><?php echo $lang == "english" ? $pj->project_name_en : $pj->project_name_th; ?></option>
+								<?php } ?>
+							</select>
+						</div>
+					</div>
+					-->
 
+					<div class="col-xl-3 col-lg-2 col-md-6 col-sm-6 col-xs-6 padd-rl">
+						<div class="col-md-12 text-left">
+							<label class="ml-1 mb-1" for="name" style="font-size: 14px;color: black;"><?php echo $this->lang->line('check_in_date'); ?></label>
+							<input type='text' style="color: black;" class=" form-control form-control-ckinout datepicker search_input" name="check_in_date" id="check_in_date" value="" />
 						</div>
 					</div>
-					<div class="col-xl-2 col-lg-2 col-md-6 col-sm-6 col-xs-6">
-						<div class="col-md-12 text-left">
-							<label class="ml-1" for="name">Check-in Date</label>
 
-							<input type="text" class="form-control form-control-ckinout datepicker search_input hasDatepicker" name="check_in_date" id="check_in_date" value="" fdprocessedid="g3t4de">
-						</div>
-					</div>
-					<div class="col-xl-2 col-lg-2 col-md-6 col-sm-6 col-xs-6">
+					<div class="col-xl-3 col-lg-2 col-md-6 col-sm-6 col-xs-6 padd-rl">
 						<div class="col-md-12 text-left">
-							<label class="ml-1" for="name">Checkout Date</label>
-							<input type="text" class="form-control form-control-ckinout datepicker search_input hasDatepicker" name="check_out_date" id="check_out_date" value="" fdprocessedid="uhr9z">
+							<label class="ml-1 mb-1" for="name" style="font-size: 14px;color: black;"><?php echo $this->lang->line('check_out_date'); ?></label>
+							<input type='text' style="color: black;" class="form-control form-control-ckinout datepicker search_input" name="check_out_date" id="check_out_date" value="" />
 						</div>
 					</div>
-					<div class="col-lg-3 col-md-6">
-						<!-- <div class="col-md-12 mt-2"><b>Search By Room</b></div> -->
+					
+					<div class="col-lg-4 col-md-6 padd-rl">
+						<!-- <div class="col-md-12 mt-2"><b><?php echo $this->lang->line('search_by_room'); ?></b></div> -->
 						<div class="col-md-12 mb-2 text-left">
-							<label class="ml-1" for="name">Adult</label>
+							<label class="ml-1 mb-1" for="name" style="font-size: 14px;color: black;"><?php echo $lang == "english" ? 'Adult' : 'ผู้เข้าพัก'; ?></label>
 							<div class="dropdown">
-								<button class="btn dropdown-toggle w-100 search_input" style="background-color: #fff !important; color: #000 !important; border: 1px solid #ccc; width:100%;" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" fdprocessedid="j0j7gd">
+								<button class="btn dropdown-toggle w-100 search_input" style="color: #000 !important; background-color: #fff !important; width:100%;display: flex;align-items: center;" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 									<div class="d-inline-flex">
-										<span id="div_adult">2&nbsp;</span> Adults, 
-										<span id="div_children">&nbsp;0&nbsp;</span> Children, 
+										<span id="div_adult">2&nbsp;</span> <?php echo $this->lang->line('adults'); ?>, 
+										<span id="div_children">&nbsp;0&nbsp;</span> <?php echo $this->lang->line('children'); ?>, 
 										<span id="div_room">&nbsp;1</span>
-									</div> Rooms								</button>
-								<div class="dropdown-menu" style="vertical-align: bottom;" aria-labelledby="dropdownMenuButton">
-									<div class="stepper">
-										<div style="display: flex; justify-content: center;"></div>
-										<div style="display: flex; justify-content: center; background-color: white; ">
-											<button type="button" class="btn_stepper " id="decrement-adult" onclick="stepper(this);"> - </button>
-											<input class="input_number" type="number" min="0" max="100" step="1" value="2" name="adult" id="adult" readonly="">
-											<button type="button" class="btn_stepper " id="increment-adult" onclick="stepper(this);"> + </button>
+									</div> <?php echo $this->lang->line('rooms'); ?>
+								</button>
+								<div class="dropdown-menu pb-0" style="vertical-align: bottom;" aria-labelledby="dropdownMenuButton" style="">
+									<div class="stepper" style="font-size: 14px !important;">
+										<div style="display: flex; justify-content: center;"><?php echo $this->lang->line('adult'); ?></div>
+										<div style="display: flex; justify-content: center; ">
+											<button type="button" class="btn_stepper " id="decrement-adult" onClick="stepper(this);"> - </button>
+											<input class="input_number" type="number" min="0" max="100" step="1" value="2" name="adult" id="adult" readonly>
+											<button type="button" class="btn_stepper " id="increment-adult" onClick="stepper(this);"> + </button>
 										</div>
-										<div class="rounded hr3 mt-2 mb-2"></div>
-										<div style="display: flex; justify-content: center;">Children</div>
-										<div style="display: flex; justify-content: center;">
-											<button type="button" class="btn_stepper " id="decrement-children" onclick="stepper(this);"> - </button>
-											<input class="input_number" type="number" min="0" max="100" step="1" value="0" name="children" id="children" readonly="">
-											<button type="button" class="btn_stepper " id="increment-children" onclick="stepper(this);"> + </button>
+										<div class="rounded hr3 mt-1 mb-2"></div>
+										<div style="display: flex; justify-content: center;"><?php echo $this->lang->line('children'); ?></div>
+										<div style="display: flex; justify-content: center; ">
+											<button type="button" class="btn_stepper " id="decrement-children" onClick="stepper(this);"> - </button>
+											<input class="input_number" type="number" min="0" max="100" step="1" value="0" name="children" id="children" readonly>
+											<button type="button" class="btn_stepper " id="increment-children" onClick="stepper(this);"> + </button>
 										</div>
 
 										<div class="kids_age">
@@ -903,27 +834,38 @@
 										</div> <!-- Kids Age -->
 										<div class="rounded hr3 mt-2"></div>
 
-										<div style="display: flex; justify-content: center;">Rooms</div>
-										<div style="display: flex; justify-content: center; background-color: white; box-shadow: 0 20px 30px rgba(0,0,0,0.1)">
-											<button type="button" class="btn_stepper " id="decrement-room" onclick="stepper(this);"> - </button>
-											<input class="input_number" type="number" min="0" max="100" step="1" value="1" name="room" id="room" readonly="">
-											<button type="button" class="btn_stepper " id="increment-room" onclick="stepper(this);"> + </button>
+										<div style="display: flex; justify-content: center; "><?php echo $this->lang->line('rooms'); ?></div>
+										<!--<div style="display: flex; justify-content: center; background-color: white; box-shadow: 0 20px 30px rgba(0,0,0,0.1)">-->
+										<div style="display: flex; justify-content: center; ">
+											<button type="button" class="btn_stepper " id="decrement-room" onClick="stepper(this);"> - </button>
+											<input class="input_number" type="number" min="0" max="100" step="1" value="1" name="room" id="room" readonly>
+											<button type="button" class="btn_stepper " id="increment-room" onClick="stepper(this);"> + </button>
 										</div>
-										<div class="rounded hr3 mt-2" style="padding: 5px; font-size: 0.8em;">Notes:
-																							Please be informed that the maximum age for children is 0												years old. Kindly add children aged more than 0 years as adult.
-																					</div>
+										<div class="rounded hr3 mt-2" style="padding: 8px; font-size: 0.8em; backdrop-filter: blur(10px); background-color: rgb(189 219 251 / 45%) !important;"><?php echo $this->lang->line('notes'); ?>:
+											<?php if ($lang == 'english') { ?>
+												Please be informed that the maximum age for children is <?php echo app_settings('max_children_age'); ?>
+												years old. Kindly add children aged more than <?php echo app_settings('max_children_age'); ?> years as adult.
+											<?php } else {
+											?>
+												เด็กที่จะเข้าพักในโครงการจะต้องเลือกเข้าพักเป็นผู้ใหญ่เท่านั้น
+											<?php } ?>
+										</div>
+										
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
-					<div class="col-lg-2 col-md-6">
+
+					<div class="col-lg-2 col-md-6 padd-rl">
 						<div class="col-md-12 mb-2 text-left">
-							<label for="name">&nbsp;</label>
-							<button id="search" class="form-control form-control-btnsearch search_input search_button btn-default btn-search" data-search-type="search_room" style="background-color:#81BB4A;cursor: pointer; display: flex; align-items: center; justify-content: center; " fdprocessedid="hxozen">
-								Search							</button>
+							<label for="name" class="mb-1">&nbsp;</label>
+							<button disabled id="search" class="form-control form-control-btnsearch search_input search_button btn-default btn-search" data-search-type="search_room" style="background-color:#102958 !important;cursor: pointer; display: flex; align-items: center; justify-content: center; ">
+								<?php echo $this->lang->line('search'); ?>
+							</button>
 						</div>
 					</div>
+
 				</div>
 			</div>
 		</form>
@@ -945,199 +887,137 @@
 				});
 			});
 		</script>
-		<div class="col-md-12 mb-4 description-banner">
-			<div class="section-heading text-center mb-3">
-				<a href="https://smsmartbooking.buildersmart.com/project_info" target="_blank" class="a-readmore" id="aboutus">
-					<h4 style="font-weight: 600;">
-						SM Resort					</h4>
-				</a>
-			</div>
-			<div class="row">
-				<div class="col-md-12">
-					<div class="content">
-						<p class="short-text">
-							Relax amidst the stunning scenery, surrounded by nature and fresh air.
-SM Resort redefines a new style of accommodation with its modern resort collection under the BuildSmart Group. Located in the picturesque Khao Yai area						</p>
-						<p class="long-text" style="display: none;">
-							SM Resort redefines a new style of accommodation with its modern resort collection under the BuildSmart Group. Located in the picturesque Khao Yai area, SM Resort offers a remarkable transformation to welcome guests. With various activities available, we are ready to provide a new kind of experience for travelers. Additionally, we host a variety of gatherings and events, ensuring to create precious memories for you. <a href="https://smsmartbooking.buildersmart.com/project_info" target="_blank" class="em-readmore"><em><i class="fas fa-angle-double-left"></i>Read more...<i class="fas fa-angle-double-right"></i></em></a>						</p>
-						<!--<button id="readMoreBtn" class="mt-3">อ่านต่อ...</button>-->
-						<span id="readMoreBtn" class="readmore-toggle">Read more...<i class="fas fa-angle-up"></i></span>
-					</div>
-				</div>
-			</div>
-		</div>
+
 		<!-- Descripttion -->
 </div>
 
+<?php  
+	// $rate = $CI->m_room_type->get_day_rate($_GET, $date);
 
+?>
 
+<div class="container mt-0">
 
-<!-- facilities & amenities and nearby location-->
-
-<div class="container mt-5">
 	<div class="row">
 		<div class="col-md-12 ml-2 text-center mt-4">
-			<!--<h4 style="text-align: center; padding-bottom: 15px;" id="nav_packagep_promotions">
-				<a id="nearby_locations" href="javascript:;" class="tx-title-header">
-					Facilities &amp; Amenities and Nearby Locations				</a>
-			</h4>-->
 			<h4 style="text-align: center; padding-bottom: 15px;" id="nav_packagep_promotions">
 				<a id="nearby_locations" href="javascript:;" class="tx-title-header">
-					Facilities &amp; Amenities 			</a>
+					<? echo ($lang == 'english') ? 'Facilities & Amenities' : 'สิ่งอำนวยความสะดวก'; ?>
+				</a>
 			</h4>
 		</div>
 	</div>
-	<div class="row mb-0" id="nav_roomstype">
+	<div class="row mb-0" id="nav_roomstype" style="color: #000 !important;">
 		<div class="col-md-12 amenities-nearby-column">
 			<div class="col-md-8">
 			<div class="section_header " id="facilities_amenities">
-				<h6 style="font-weight: 600;">รายละเอียดโครงการ</h6>
+				<h6 style="font-weight: 600; color: #000 !important;"><? echo ($lang == 'english') ? 'Project Overview' : 'รายละเอียดโครงการ'; ?></h6>
 			</div>		
 			<div class="row mb-2">	
-				<div class="container-fluid mb-4">		
+				<div class="container-fluid mb-4">
 					<div class="col-md-12">			
-		    			<span>เอส เอ็ม รีสอร์ท โชว์รูม เขาใหญ่</span>
+							<? if (!empty($project_details)){ ?>
+							<span style="color: #000 !important;"><? echo ($lang == 'english') ? $project_details->project_name_en : $project_details->project_name_th; ?></span>
+		    			<?php 
+		    			 }?>
+		    			
 		    		</div>
 		    	</div>
 			</div>
 	
-			<div class="section_header "><u>จุดเด่นของโครงการ</u></div>
+			<div class="section_header "><u><? echo ($lang == 'english') ? 'Project Highlights' : 'จุดเด่นของโครงการ'; ?></u></div>
 			<div class="row mb-2">			
 				<div class="container-fluid mb-4">
 					<div class="col-md-12">		
-						<div class="h_container" style="display: flex; flex-direction: row; ">	
+						<div class="h_container" style="display: flex; flex-direction: row; ">
+
+								<?php foreach ($project_highlights as $value) { ?>
 		    				<div style="bottom: 0; padding-right: 50px;">
-								&nbsp;<img src="https://sharefolder.buildersmart.com/sms_booking/upload/project_highlight/1_63bb731cd4018.png" width="18">
-								<span class="highlights_desc" style="font-size: 1.1em;">ไวไฟ</span>
+								&nbsp;<img src="https://sharefolder.buildersmart.com/sms_booking/<? echo $value->icon; ?>" width="18">
+								<span class="highlights_desc" style="font-size: 1.1em; color: #000 !important;"><? echo ($lang == 'english') ? $value->description_en : $value->description_th; ?></span>
 		    				</div>
-		    				<div style="bottom: 0; padding-right: 50px;">
-								&nbsp;<img src="https://sharefolder.buildersmart.com/sms_booking/upload/project_highlight/1_63bb7dd7c487e.png" width="18">
-								<span class="highlights_desc" style="font-size: 1.1em;">วิวภูเขา</span>
-		    				</div>
+		    				<?php } ?>
+
+		    				
+
 		    			</div>		
 		    		</div>
 				</div>
 			</div>
 			
-			<div class="section_header "><u>สิ่งอำนวยความสะดวกของโครงการ</u></div>
+			<div class="section_header "><u><? echo ($lang == 'english') ? 'Project Facility' : 'สิ่งอำนวยความสะดวกของโครงการ'; ?></u></div>
+			<div class="row">			
+				<div class="container-fluid mb-4">
+					<div class="col-md-12">	
+						<div class="row" id="pj-con">
+							<?php foreach ($project_facility as $value) { ?>
+							<div class="col-md-6" style="bottom: 0; ">
+							<input type="checkbox" checked="checked" style="vertical-align:middle; pointer-events:none;">
+							&nbsp;<img src="https://sharefolder.buildersmart.com/sms_booking/<? echo $value->icon; ?>" width="18">
+							<span class="highlights_desc" style="font-size: 1.1em; color: #000 !important;"><? echo ($lang == 'english') ? $value->long_desc_en : $value->long_desc_th; ?></span>
+							</div>
+							<?php } ?>
+						</div>	
+					</div>
+				</div>
+			</div>
+	
+			<div class="row" id="facilities"></div>
+			<div class="section_header "><u><? echo ($lang == 'english') ? 'Conditions And Policies' : 'เงื่อนไขและข้อกำหนดในการเข้าพัก'; ?></u></div>
 				<div class="row">			
 					<div class="container-fluid mb-4">
 						<div class="col-md-12">	
-							<div class="row" id="pj-con">	
-								<div class="col-md-6" style="bottom: 0; ">
-								
-								<input type="checkbox" checked="checked" style="vertical-align:middle; pointer-events:none;">
-								&nbsp;<img src="https://sharefolder.buildersmart.com/sms_booking/upload/facility_icon/24_63bba1a28104f.png" width="18">
-								<span class="highlights_desc" style="font-size: 1.1em;"> สวน</span>
-								</div>
-												<div class="col-md-6" style="bottom: 0; ">
-								
-								<input type="checkbox" checked="checked" style="vertical-align:middle; pointer-events:none;">
-								&nbsp;<img src="https://sharefolder.buildersmart.com/sms_booking/upload/facility_icon/2_63bb9f9e65dcb.png" width="18">
-								<span class="highlights_desc" style="font-size: 1.1em;"> ไวไฟฟรี</span>
-								</div>
-												<div class="col-md-6" style="bottom: 0; ">
-								
-								<input type="checkbox" checked="checked" style="vertical-align:middle; pointer-events:none;">
-								&nbsp;<img src="https://sharefolder.buildersmart.com/sms_booking/upload/facility_icon/21_63bba16c5dc37.png" width="18">
-								<span class="highlights_desc" style="font-size: 1.1em;"> บริการทำความสะอาดรายวัน</span>
-								</div>
-												<div class="col-md-6" style="bottom: 0; ">
-								
-								<input type="checkbox" checked="checked" style="vertical-align:middle; pointer-events:none;">
-								&nbsp;<img src="https://sharefolder.buildersmart.com/sms_booking/upload/facility_icon/1_641d577616c9f.png" width="18">
-								<span class="highlights_desc" style="font-size: 1.1em;"> วิวภูเขา</span>
-								</div>
-							
-							</div>	
-						</div>
-					</div>
-				</div>
-	
-				<div class="section_header "><u>เงื่อนไขและข้อกำหนดในการเข้าพัก</u></div>
-					<div class="row">			
-						<div class="container-fluid mb-4">
-							<div class="col-md-12">			
-								<span>นโยบายการยกเลิกการจอง</span>
+							<?php foreach ($project_policy_type as $value) { ?>
+								<span><?php echo $policy_type = ($lang == 'english') ? $value->policy_type_en : $value->policy_type_th; ?></span>
 								<ol>		
-									<li>การโอนเงินต้องเสร็จสิ้นภายใน 2 ชั่วโมงหลังการจอง มิฉะนั้นระบบจะยกเลิกการจองโดยอัตโนมัติ</li>			
+									<?php foreach ($project_policy as $value2) {  ?>	
+										<? if($value->policy_type_en==$value2->policy_type_en){ ?>
+									<li><? echo ($lang == 'english') ? $value2->description_en : $value2->description_th; ?></li>	
+									<?php }} ?>			
 								</ol>
-								<span>นโยบายโชว์รูม</span>    			
-								<ol>
-									<li>เวลาเช็คอิน 14.00 น. เวลาเช็คเอ้าท์ 12.00 น. หากเข้าพักก่อน หรือ เช็คเอ้าท์เกิน ชั่วโมงละ 500 บาท ตามเงื่อนไขโชว์รูม</li>				
-									<li>ไม่อนุญาตให้นำสัตว์เลี้ยงเข้าพักภายในบริเวณโชว์รูม</li>					
-									<li>ไม่อนุญาตให้ประกอบอาหารภายในบริเวณที่พัก ยกเว้นเฉพาะพื้นที่ที่ทางโชว์รูมจัดไว้ให้เท่านั้น</li>					
-									<li>ขอความกรุณางดใช้เสียง ตั้งแต่เวลา 22.00 น. - 06.00 น.</li>					
-									<li>ในกรณีทำให้ทรัพย์สินของโชว์รูมเสียหายให้ชดใช้คืนตามมูลค่าของทรัพย์สินนั้น</li>					
-									<li>งดสูบบุหรี่ในห้องพัก และบริเวณโชว์รูม ฝ่าฝืนปรับ 2,000 บาท (ลูกค้าสามารถสูบบุหรี่ในพื้นที่ที่โชว์รูมจัดไว้ให้เท่านั้น)</li>					
-									<li>งดจุดพลุ, ประทัด, ดอกไม้ไฟ หรือ โคมลอย ในบริเวณโชว์รูม ฝ่าฝืนปรับ 2,000 บาท</li>			
-								</ol>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="col-md-4">
-					<div class="section_header ">
-						<h6 style="font-weight: 600;">สถานที่ใกล้เคียง</h6>
-					</div>
-					<div class="row mb4">
-						<div class="col-md-12">		
-							<div class="table-responsive">
-								<table class="table table-bordered" style="border-color: #ccc;">
-									<tbody>
-										<tr style="text-align: center;">
-											<th>ชื่อสถานที่</th>
-											<th>ระยะทาง(km)</th>
-										</tr>
-										<tr>
-											<td>ครัวอิ่มแปล้</td>
-											<td style="text-align: center;">0.07</td>
-										</tr>
-										<tr>
-											<td>The Pandora Camp Khaoyai</td>
-											<td style="text-align: center;">10</td>
-										</tr>
-										<tr>
-											<td>Toscana Valley</td>
-											<td style="text-align: center;">10</td>
-										</tr>
-										<tr>
-											<td>เขาใหญ่อาร์ตมิวเซียม</td>
-											<td style="text-align: center;">15</td>
-										</tr>
-										<tr>
-											<td>My Ozone Animal Club</td>
-											<td style="text-align: center;">25</td>
-										</tr>
-										<tr>
-											<td>Scenical World </td>
-											<td style="text-align: center;">30</td>
-										</tr>
-										<tr>
-											<td>Khao Yai National Park</td>
-											<td style="text-align: center;">30</td>
-										</tr>
-									</tbody>
-								</table>  
-							</div>		
+							<?php } ?>	
+						
 						</div>
 					</div>
 				</div>
 			</div>
+			
+			<div class="col-md-4">
+				<div class="section_header ">
+					<h6 style="font-weight: 600;"><? echo ($lang == 'english') ? 'Locations Nearby' : 'สถานที่ใกล้เคียง'; ?></h6>
+				</div>
+				<div class="row mb4">
+					<div class="col-md-12">		
+						<div class="table-responsive">
+							<table class="table table-bordered" style="border-color: #ccc; color: #000 !important;">
+								<tbody>
+									<tr style="text-align: center;">
+										<th><? echo ($lang == 'english') ? 'Location' : 'ชื่อสถานที่'; ?></th>
+										<th><? echo ($lang == 'english') ? 'Distance(km)' : 'ระยะทาง(km)'; ?></th>
+									</tr>
+									<?php foreach ($point_of_interest as $value) { ?>
+									<tr>
+										<td style="color: #000 !important;"><?php echo $policy_type = ($lang == 'english') ? $value->location_name_en : $value->location_name_th; ?></td>
+										<td style="text-align: center; color: #000 !important;"><?php echo $value->distance_km; ?></td>
+									</tr>
+									<? } ?>
+								</tbody>
+							</table>  
+						</div>		
+					</div>
+				</div>
+			</div>
 		</div>
+	</div>
 	
 	<div class="row text-center mb-0" id="nav_roomstype">
 		<div class="col-md-12">
-			<!-- Google map -->
 			<div id="google-map">
 				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5462.972307432571!2d101.55065412783209!3d14.490156270739496!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x311c3b5927861817%3A0x4ef8dd372f4d0716!2sSMS%20Showroom!5e0!3m2!1sth!2sth!4v1683184985267!5m2!1sth!2sth" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 			</div>
-			<!-- End Google map -->
 		</div>
 	</div>
 </div>
-
-<!-- facilities & amenities and nearby location -->
 
 <!-- <script src="//code.jquery.com/jquery.js"></script> -->
 <script src="http://192.168.20.22/smartbooking_front_test/js/jquery.min.js"></script>
@@ -1145,20 +1025,11 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
 <script src="http://192.168.20.22/smartbooking_front_test/bootstrap-4.0.0-dist/js/bootstrap.bundle.min.js"></script>
 <script src="http://192.168.20.22/smartbooking_front_test/assets/select-picker/js/bootstrap-select.min.js"></script>
 <script src="http://192.168.20.22/smartbooking_front_test/assets/swiper-element/js/swiper-element-bundle.min.js"></script>
-<!-- <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-element-bundle.min.js"></script> -->
-
-
-<!-- package -->
-<!--<script src="http://192.168.20.22/smartbooking_front_test//js/tiny-slider.js"></script>
-<script src="http://192.168.20.22/smartbooking_front_test//js/aos.js"></script>
-<script src="http://192.168.20.22/smartbooking_front_test//js/custom.js"></script>-->
-
 
 <script>
 	$('.carousel').carousel({
 		interval: 15000
 	})
-
 
 	function stepper(dis) {
 		let btn_id = dis.getAttribute('id');
@@ -1406,8 +1277,6 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
 			$('#frm_search').submit();
 		});
 
-
-
 		$('.book_now').click(function() {
 			$('#h_id_room_type').val($(this).attr('data-roomtype'));
 			$('#h_check_in_date').val($('#check_in_date').val());
@@ -1469,7 +1338,7 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
 	}
 </style>
  
-<footer class="mt-3 bg-light" style="background-color: rgb(42, 42, 46) !important; color: rgba(255, 255, 255, 1.00);">
+<!-- <footer class="mt-3 bg-light" style="background-color: rgb(42, 42, 46) !important; color: rgba(255, 255, 255, 1.00);">
 		<div class="footer-top">
 			<div class="container">
 				<div class="row " id="contactus">
@@ -1501,6 +1370,62 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
 			</div>
 		</div>
 	</footer>
-<!--2-->
 
-<div id="ui-datepicker-div" class="ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all"></div><span id="PING_IFRAME_FORM_DETECTION" style="display: none;"></span></body></html>
+<div id="ui-datepicker-div" class="ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all"></div><span id="PING_IFRAME_FORM_DETECTION" style="display: none;"></span></body></html> -->
+
+<script>
+	const link = '<? echo $project_details->link_map; ?>';
+  const latitude = '<? echo $project_details->latitude; ?>';
+  const longitude = '<? echo $project_details->longitude; ?>';
+  
+  let coordinates = null;
+  
+  if (link) {
+      coordinates = extractCoordinates(link);
+  } else if (latitude && longitude) {
+      coordinates = {
+          lat: parseFloat(latitude),
+          lng: parseFloat(longitude)
+      };
+  }
+  if (coordinates) {
+    initMap(coordinates.lat, coordinates.lng);
+  }
+
+  function extractCoordinates(link) {
+      const regex = /@(-?\d+\.\d+),(-?\d+\.\d+)/;
+      const match = link.match(regex);
+      if (match) {
+          return {
+              lat: parseFloat(match[1]),
+              lng: parseFloat(match[2])
+          };
+      } else {
+          return null;
+      }
+  }
+
+  function initMap(lat, lng) {
+        const location = {lat: lat, lng: lng};
+        map = new google.maps.Map(document.getElementById('google_map'), {
+            zoom: 15,
+            center: location
+        });
+
+        const marker = new google.maps.Marker({
+            position: location,
+            map: map
+        });
+
+        const request = {
+            location: location,
+            radius: '500',
+            type: ['tourist_attraction']
+        };
+
+        service = new google.maps.places.PlacesService(map);
+        service.nearbySearch(request, callback);
+   }
+
+
+</script>
