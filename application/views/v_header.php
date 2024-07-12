@@ -329,8 +329,8 @@ $is_home = (strpos($current_url, 'home') !== false);
 
 	<!-- new menu -->
 		<!-- style="background-color: #102958 !important;" -->
-      <div class="navbar-expand d-flex flex-row" id="navbarSupportedContent" >       
-        <div class="navbar navbar-expand d-flex flex-row" style="background-color: #102958 !important;"> 
+      <div class="navbar-expand d-flex flex-row ml-auto" id="navbarSupportedContent" >       
+        <div class="navbar navbar-expand d-flex flex-row ml-auto" style="background-color: #102958 !important;"> 
 		  <?php if ($id_guest != '') { ?>
 		  <?php if ($guest->photo_url != '') { ?>
 		  <a class=""><img src="<?php echo share_folder_path() . $guest->photo_url; ?>" class="rounded-circle mx-auto d-block" style="height:50px;width:50px;" alt=""></a>
@@ -358,19 +358,19 @@ $is_home = (strpos($current_url, 'home') !== false);
 		  else {
 		  ?>
 
-		   <div class="navbar-expand ml-auto d-flex flex-row" id="navbarSupportedContent" style="background-color: #102958 !important; padding-left: 0; padding-right: 20px;">
+		   <!-- <div class="navbar-expand ml-auto d-flex flex-row" id="navbarSupportedContent" style="background-color: #102958 !important; padding-left: 0; padding-right: 20px;">
             <div class="navbar navbar-expand d-flex flex-row" style="background-color: #102958 !important;">
                 <div class="button ml-auto">
-                    <a class="btn btn_sign_in" href="<?php echo site_url('login'); ?>" height="20">Sign In</a>
+                    <a  class="btn btn_sign_in" href="<?php echo site_url('login'); ?>" height="20">Sign In</a>
                 </div>
             </div>
-        </div>
-			  <!-- <div class="button mx-1 ">
-	        <a class="btn btn_sign_in"  href="<?php echo site_url('login'); ?>" height="20">Sign In</a>
+        </div> -->
+			  <div class="button mx-1 ">
+	        <a id="signin_button" class="btn btn_sign_in" href="<?php echo site_url('login'); ?>" height="20">Sign In</a>
 	      </div>
- -->
+
 		  <?php } ?>
-		  <div class="button">
+		  <div class="button ">
         <a class="nav-link" href="<?php echo site_url('cart'); ?>">
 					<span class="button__badge"><?php echo ($cart_count > 0) ? $cart_count : ''; ?></span>
 					<object style="pointer-events: none;" data="<?php echo share_folder_path(); ?>images/icons/cart-white.svg" height="20"> </object>
@@ -387,6 +387,8 @@ $is_home = (strpos($current_url, 'home') !== false);
 			<a href="<?php echo site_url() . 'LanguageSwitcher/switchLang/english'; ?>" title="<?php echo $switch_en; ?>" style="color: rgba(255, 255, 255, 1.00) !important; font-size: 14px !important;" style="<?php echo ($lang == 'english') ? 'font-weight: bold!important; color: rgba(255, 255, 255, 1.00) !important; font-size: 14px !important;' : ''; ?>">EN</a>
 		</div>
 
+
+
         </div>
       </div>
 
@@ -399,3 +401,9 @@ $is_home = (strpos($current_url, 'home') !== false);
 	
 	
 </header>
+
+<script>
+    document.getElementById('dropdown_menu').addEventListener('click', function() {
+        document.getElementById('signin_button').classList.toggle('ml-auto');
+    });
+</script>
