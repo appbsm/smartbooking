@@ -403,14 +403,13 @@ $CI->load->model('m_room_type');
                     </div>
                 </div>
                 <div>
-					<!--
                     <div class="tabs">
                         <ul class="tab-signin">
                             <li class="tab-email active"><div><span>EMAIL</span></div></li>
                             <li class="tab-mobile"><div><span>MOBILE</span></div></li>
                         </ul>
                     </div>
-					-->
+
                     <!-- tab email-->
                     <div class="form-content form-email">
                         <form>
