@@ -8,6 +8,12 @@ $CI->load->model('m_room_type');
 <link rel="stylesheet" href="https://cdn.datatables.net/1.13.3/css/dataTables.bootstrap.min.css">
 
 <style>
+	.form-control, label, a {
+		color: #000 !important;
+	}
+	a:hover {
+		color: #000 !important;
+	}
 	.nav-link.active {
 		background-color: #81BB4A !important;
 	}
@@ -124,14 +130,14 @@ $CI->load->model('m_room_type');
 	
 	.price {
 		/*background-color: #2a2a2e;*/
-		background-color: #5392f9;
+		background-color: #102958;
 		color: white;
 		text-shadow: 2px 2px 4px #000000;
 	}
 	/*   
     .dataTables_wrapper .dataTables_paginate .paginate_button.disabled {
-        background-color: #5392f9 !important;
-        border-color: #5392f9 !important;
+        background-color: #102958 !important;
+        border-color: #102958 !important;
     }
 	*/
 	
@@ -142,16 +148,16 @@ $CI->load->model('m_room_type');
         /*line-height: 30px !important;*/
         font-size: 14px !important;
 		background-color: #fff !important;
-		color: #5392f9 !important; 
-		border: 1px solid #5392f9 !important;
+		color: #102958 !important; 
+		border: 1px solid #102958 !important;
         padding: 6px 12px;
         margin: 0 5px;
         border-radius: 4px;
     }
 	.paginate_button:hover {
-		color: #fff !important;
-        background-color: #5392f9 !important;
-        border-color: #5392f9 !important;
+		color: #000 !important;
+        background-color: #fff !important;
+        border-color: #102958 !important;
         
 		border-radius: 4px;
     }	
@@ -165,20 +171,21 @@ $CI->load->model('m_room_type');
 		/*line-height: 30px !important;*/
 		color: #fff !important;
 		font-size: 14px !important;
-		background-color: #5392f9 !important;
-		border: 1px solid #5392f9 !important;
+		background-color: #102958 !important;
+		border: 1px solid #102958 !important;
 		border-radius: 5px;
 	}
 	.previous:hover, .next:hover {
-		background-color: #fff !important;
-		color: #5392f9 !important; 
-		border: 1px solid #5392f9 !important;
+		background-color: #102958 !important;
+		color: #fff !important; 
+		border: 1px solid #102958 !important;
 		border-radius: 4px;
 	}
 	
 	table.dataTable thead th, table.dataTable thead td, table.dataTable tfoot th, table.dataTable tfoot td {
 		text-align: left;
 		vertical-align: middle;
+		color: #000 !important;
 	}
 	.table-responsive {
 		display: block;
@@ -196,8 +203,11 @@ $CI->load->model('m_room_type');
     }
     .table td, .table th {
         white-space: nowrap;
+		color: #000 !important;
     }
-
+	div.dataTables_wrapper div.dataTables_info {
+		color: #000 !important;
+	}
 </style>
 <script>
 	$(document).ready(function() {

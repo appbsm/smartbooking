@@ -9,6 +9,12 @@ $CI->load->model('m_room_type');
 <link rel="stylesheet" href="https://cdn.datatables.net/1.13.3/css/dataTables.bootstrap.min.css">
 
 <style>
+	.form-control, label, a {
+		color: #000 !important;
+	}
+	a:hover {
+		color: #000 !important;
+	}
 	.nav-link.active {
 		background-color: #81BB4A!important;
 	}
@@ -122,13 +128,13 @@ $CI->load->model('m_room_type');
 	
 	.price {
 		/*background-color: #2a2a2e;*/
-		background-color: #5392f9;
+		background-color: #102958;
 		color: white;
 		text-shadow: 2px 2px 4px #000000;
 	}
 	.border-r-10 {
 		/*border: 1px solid #81BB4A;*/
-		border: 1px solid #5392f9;
+		border: 1px solid #102958;
 		border-radius: 10px;
 	}
 	tr > td {

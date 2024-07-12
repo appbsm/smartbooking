@@ -121,13 +121,13 @@ $CI->load->model('m_room_type');
 	
 	.price {
 		/*background-color: #2a2a2e;*/
-		background-color: #5392f9;
+		background-color: #102958;
 		color: white;
 		text-shadow: 2px 2px 4px #000000;
 	}
 	.border-r-10 {
 		/*border: 1px solid #81BB4A;*/
-		border: 1px solid #5392f9;
+		border: 1px solid #102958;
 		border-radius: 10px;
 	}
 	.form-control:disabled, .form-control[readonly], .form-control {
@@ -140,15 +140,22 @@ $CI->load->model('m_room_type');
 		/*line-height: 30px !important;*/
 		color: #fff !important;
 		font-size: 14px !important;
-		background-color: #5392f9 !important;
-		border-color: #5392f9 !important;
+		background-color: #102958 !important;
+		border-color: #102958 !important;
 		padding: 6px 12px;
 	}
 	.btn-save:hover {
-        background-color: #fff !important;
-        color: #5392f9 !important; 
-		border-color: #5392f9 !important;
+        background-color: #102958 !important;
+        color: #fff !important; 
+		border-color: #102958 !important;
     }
+	
+	.form-control, label, a {
+		color: #000 !important;
+	}
+	a:hover {
+		color: #000 !important;
+	}
 </style>
 
 <?php 
@@ -156,11 +163,13 @@ $CI->load->model('m_room_type');
 ?>
 
 
-<div class="main-2">
+<div class="main-2"  style="margin-top: 35px;">
 	<div class="container" >
+		<!--
   		<div class="row" id="profile">
   			<div class="col-md-12 price room_type_header"><span style="margin-left: 10px;"><?php echo $this->lang->line('profile');?></span></div>
   		</div>
+		-->
 		<div class="row">
 			<div class="col-md-2">
 				<div class="sidenav">
@@ -213,7 +222,7 @@ $CI->load->model('m_room_type');
 											<defs>
 											</defs>
 											<g style="stroke: none; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: none; fill-rule: nonzero; opacity: 1;" transform="translate(1.4065934065934016 1.4065934065934016) scale(2.81 2.81)" >
-												<circle cx="45" cy="45" r="45" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(32,143,232); fill-rule: nonzero; opacity: 1;" transform="  matrix(1 0 0 1 0 0) "/>
+												<circle cx="45" cy="45" r="45" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(16,41,88); fill-rule: nonzero; opacity: 1;" transform="  matrix(1 0 0 1 0 0) "/>
 												<path d="M 69.913 67.417 l -5.059 -16.592 c -0.007 -0.022 -0.021 -0.041 -0.028 -0.063 c -0.035 -0.102 -0.08 -0.201 -0.132 -0.297 c -0.02 -0.038 -0.037 -0.077 -0.06 -0.114 c -0.079 -0.126 -0.169 -0.247 -0.279 -0.357 L 37.047 22.685 c -3.574 -3.574 -9.39 -3.574 -12.964 0 l -1.398 1.398 c -3.574 3.574 -3.574 9.39 0 12.964 l 27.309 27.309 c 0.11 0.11 0.231 0.2 0.357 0.279 c 0.037 0.023 0.076 0.039 0.114 0.06 c 0.097 0.052 0.195 0.097 0.297 0.132 c 0.022 0.008 0.041 0.021 0.063 0.028 l 16.592 5.059 C 67.608 69.972 67.805 70 68 70 c 0.522 0 1.033 -0.205 1.414 -0.586 C 69.937 68.892 70.129 68.124 69.913 67.417 z M 25.513 26.911 l 1.398 -1.398 c 2.016 -2.015 5.293 -2.014 7.308 0 l 25.895 25.895 l -8.705 8.705 L 25.513 34.219 C 23.499 32.204 23.499 28.926 25.513 26.911 z M 55.178 62 L 62 55.178 l 2.992 9.814 L 55.178 62 z" style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-linejoin: miter; stroke-miterlimit: 10; fill: rgb(255,255,255); fill-rule: nonzero; opacity: 1;" transform=" matrix(1 0 0 1 0 0) " stroke-linecap="round" />
 											</g>
 										</svg>
