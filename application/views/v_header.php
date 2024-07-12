@@ -253,18 +253,76 @@ if ($id_guest != '') {
 
 			<!-- class="mx-3" -->
 		 	<!-- <span  style="background-color: #102958 !important;" >  class="logo-img" -->
-				<a class="px-5 mb-0 pb-0" href="<?php echo site_url('home'); ?>">
+				<a class="px-3 mb-0 pb-0" href="<?php echo site_url('home'); ?>">
 					<img src="<?php echo site_url(); ?>images/logo-SM/SM smart booking_White.png" style="width: 85px !important;" >
 				</a>
 		  <!-- </span> -->
 
-		  <!-- <div class="button mx-1">
-	        <a class="btn btn_sign_in"  href="<?php echo site_url('login'); ?>" height="20">Sign In</a>
-	      </div> -->
-	      <!-- font-size: 1.5rem; padding: 0.4rem 1rem; -->
-		   <button class="navbar-toggler ml-auto"  style="background-color: #4891b7 !important;padding: 0.4rem 0.7rem;" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+		  <!-- <button id="dropdown_menu" class="navbar-toggler ml-auto"  style="background-color: #4891b7 !important;padding: 0.4rem 0.7rem;" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
       </button>&nbsp;&nbsp;
+ -->
+  <!-- new menu -->
+		<!-- style="background-color: #102958 !important;" -->
+      <div id="menu_t1" class="navbar-expand d-flex flex-row ml-auto navbar-toggler d-lg-none" >
+        <div class="navbar navbar-expand d-flex flex-row ml-auto " style="background-color: #102958 !important;"> 
+
+       <button id="dropdown_menu"style="background-color: #5392f9 !important;padding: 0.1rem 0.5rem;border-radius: 0.25rem; border: none;" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+
+		  <?php if ($id_guest != '') { ?>
+		  <?php if ($guest->photo_url != '') { ?>
+		  <a class=""><img src="<?php echo share_folder_path() . $guest->photo_url; ?>" class="rounded-circle mx-auto d-block" style="height:50px;width:50px;" alt=""></a>
+		  <?php } ?>
+
+		  <div class="input-group d-flex flex-row bg-light dropdown-user" style="background-color: #102958 !important;">            
+			<a class="nav-link align-text-bottom dropdown-toggle" id="profile_name" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color: #102958 !important; color: rgba(255, 255, 255, 1.00) !important;">
+				<?php echo $guest->firstname . ' ' . substr($guest->lastname, 0, 1). '.'; ?>
+			</a>
+
+			<button class="btn btn-outline-default btn-default btn-sm dropdown-toggle" style="display: none; " id="profile_dropdown" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+
+		  <div class="input-group-append">
+			  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" style="background-color: #fff !important;">
+				<a class="dropdown-item" href="<?php echo site_url('profile'); ?>"><?php echo $this->lang->line('profile'); ?></a>
+				<a class="dropdown-item" href="<?php echo site_url('booking/history'); ?>"><?php echo $this->lang->line('booking_history'); ?></a>
+				<a class="dropdown-item" href="<?php echo site_url('facility'); ?>"><?php echo $this->lang->line('facility'); ?></a>
+				<a class="dropdown-item" href="<?php echo site_url('login/logout'); ?>"><?php echo $this->lang->line('logout'); ?></a>
+			  </div>
+		  </div>
+
+		</div>
+
+		  <?php } 
+		  else {
+		  ?>
+			  <div class="button mx-1 ">
+	        <a id="signin_button" class="btn btn_sign_in" href="<?php echo site_url('login'); ?>"  style="font-size: 14px !important;padding: 0.3rem 0.9rem !important;border-radius: 0.3rem !important;" >Sign In</a>
+	      </div>
+
+		  <?php } ?>
+		  <div class="button ">
+        <a class="nav-link" href="<?php echo site_url('cart'); ?>">
+					<span class="button__badge"><?php echo ($cart_count > 0) ? $cart_count : ''; ?></span>
+					<object style="pointer-events: none;" data="<?php echo share_folder_path(); ?>images/icons/cart-white.svg" height="20"> </object>
+				</a>
+      </div>
+		  
+		<div class="d-flex flex-rows" style="margin-top:3px;padding: 5px; margin-right: 5px;">
+			<?php
+				$switch_en = 'English';
+				$switch_th = 'Thai';
+			?>
+			<a href="<?php echo site_url() . 'LanguageSwitcher/switchLang/thai'; ?>" title="<?php echo $switch_th; ?>" style="color: rgba(255, 255, 255, 1.00) !important; font-size: 14px !important;" style="<?php echo ($lang == 'thai') ? 'font-weight: bold!important; color: rgba(255, 255, 255, 1.00) !important; font-size: 14px !important;' : ''; ?>">TH</a>
+			<span style="color: rgba(255, 255, 255, 1.00) !important; font-size: 14px !important;">&nbsp;|&nbsp;</span>
+			<a href="<?php echo site_url() . 'LanguageSwitcher/switchLang/english'; ?>" title="<?php echo $switch_en; ?>" style="color: rgba(255, 255, 255, 1.00) !important; font-size: 14px !important;" style="<?php echo ($lang == 'english') ? 'font-weight: bold!important; color: rgba(255, 255, 255, 1.00) !important; font-size: 14px !important;' : ''; ?>">EN</a>
+		</div>
+        </div>
+      </div>
+
+     <!------------- end sign ------->
+    
 
 	  <!-- new menu -->
 	  <!-- collapse navbar-collapse -->
@@ -328,8 +386,7 @@ $is_home = (strpos($current_url, 'home') !== false);
         </ul>
 
 	<!-- new menu -->
-		<!-- style="background-color: #102958 !important;" -->
-      <div class="navbar-expand d-flex flex-row ml-auto" id="navbarSupportedContent" >       
+      <div id="menu_t2" class="navbar-expand d-flex flex-row ml-auto d-lg-block d-none" >       
         <div class="navbar navbar-expand d-flex flex-row ml-auto" style="background-color: #102958 !important;"> 
 		  <?php if ($id_guest != '') { ?>
 		  <?php if ($guest->photo_url != '') { ?>
@@ -357,14 +414,6 @@ $is_home = (strpos($current_url, 'home') !== false);
 		  <?php } 
 		  else {
 		  ?>
-
-		   <!-- <div class="navbar-expand ml-auto d-flex flex-row" id="navbarSupportedContent" style="background-color: #102958 !important; padding-left: 0; padding-right: 20px;">
-            <div class="navbar navbar-expand d-flex flex-row" style="background-color: #102958 !important;">
-                <div class="button ml-auto">
-                    <a  class="btn btn_sign_in" href="<?php echo site_url('login'); ?>" height="20">Sign In</a>
-                </div>
-            </div>
-        </div> -->
 			  <div class="button mx-1 ">
 	        <a id="signin_button" class="btn btn_sign_in" href="<?php echo site_url('login'); ?>" height="20">Sign In</a>
 	      </div>
@@ -386,9 +435,6 @@ $is_home = (strpos($current_url, 'home') !== false);
 			<span style="color: rgba(255, 255, 255, 1.00) !important; font-size: 14px !important;">&nbsp;|&nbsp;</span>
 			<a href="<?php echo site_url() . 'LanguageSwitcher/switchLang/english'; ?>" title="<?php echo $switch_en; ?>" style="color: rgba(255, 255, 255, 1.00) !important; font-size: 14px !important;" style="<?php echo ($lang == 'english') ? 'font-weight: bold!important; color: rgba(255, 255, 255, 1.00) !important; font-size: 14px !important;' : ''; ?>">EN</a>
 		</div>
-
-
-
         </div>
       </div>
 

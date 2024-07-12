@@ -413,10 +413,11 @@ $CI->load->model('m_room_type');
 					-->
                     <!-- tab email-->
                     <div class="form-content form-email">
-                        <form>
+                        <form name="frm_login" id="frm_login" class="user" method="post" action="<?php echo site_url('login');?>">
                             <div class="form-group">
                                 <label style="color: black;" for="email">Email</label>
-                                <input type="email" id="email" name="email" placeholder="Email" required>
+                                <!-- type="email" -->
+                                <input type="email" id="email" name="username" placeholder="Email" required>
                             </div>
                             <div class="form-group">
                                 <label style="color: black;" for="password">Password</label>
@@ -425,7 +426,8 @@ $CI->load->model('m_room_type');
                                     <span class="toggle-password"><i class="fas fa-eye-slash"></i></span>
                                 </div>
                             </div>
-                            <button style="background-color: #102958 !important;" type="submit">Sign in</button>
+                            <button style="background-color: #102958 !important;" type="submit"><?php echo $lang == "english" ? 'sign in' : 'ลงชื่อเข้าใช้งาน'; ?></button>
+
                         </form>
                         <div class="footer-links">
                             <a style="color: #5392f9 !important;" href="login/signup">Create account</a>
