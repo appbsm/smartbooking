@@ -327,8 +327,6 @@ $is_home = (strpos($current_url, 'home') !== false);
             </li>
         </ul>
 
-		</div>
-
 	<!-- new menu -->
 		<!-- style="background-color: #102958 !important;" -->
       <div class="navbar-expand d-flex flex-row" id="navbarSupportedContent" >       
@@ -337,10 +335,12 @@ $is_home = (strpos($current_url, 'home') !== false);
 		  <?php if ($guest->photo_url != '') { ?>
 		  <a class=""><img src="<?php echo share_folder_path() . $guest->photo_url; ?>" class="rounded-circle mx-auto d-block" style="height:50px;width:50px;" alt=""></a>
 		  <?php } ?>
+
 		  <div class="input-group d-flex flex-row bg-light dropdown-user" style="background-color: #102958 !important;">            
 			<a class="nav-link align-text-bottom dropdown-toggle" id="profile_name" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color: #102958 !important; color: rgba(255, 255, 255, 1.00) !important;">
 				<?php echo $guest->firstname . ' ' . substr($guest->lastname, 0, 1). '.'; ?>
 			</a>
+
 			<button class="btn btn-outline-default btn-default btn-sm dropdown-toggle" style="display: none; " id="profile_dropdown" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
 
 		  <div class="input-group-append">
@@ -357,10 +357,18 @@ $is_home = (strpos($current_url, 'home') !== false);
 		  <?php } 
 		  else {
 		  ?>
-			  <div  class="button mx-1 ">
+
+		   <div class="navbar-expand ml-auto d-flex flex-row" id="navbarSupportedContent" style="background-color: #102958 !important; padding-left: 0; padding-right: 20px;">
+            <div class="navbar navbar-expand d-flex flex-row" style="background-color: #102958 !important;">
+                <div class="button ml-auto">
+                    <a class="btn btn_sign_in" href="<?php echo site_url('login'); ?>" height="20">Sign In</a>
+                </div>
+            </div>
+        </div>
+			  <!-- <div class="button mx-1 ">
 	        <a class="btn btn_sign_in"  href="<?php echo site_url('login'); ?>" height="20">Sign In</a>
 	      </div>
-
+ -->
 		  <?php } ?>
 		  <div class="button">
         <a class="nav-link" href="<?php echo site_url('cart'); ?>">
@@ -381,6 +389,9 @@ $is_home = (strpos($current_url, 'home') !== false);
 
         </div>
       </div>
+
+     <!------------- end sign ------->
+     </div>
       
     </div>
 
