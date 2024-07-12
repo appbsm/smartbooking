@@ -30,6 +30,9 @@ $packages = array();
 ?>
 
 <style>
+	.form-control, label {
+		color: #000 !important;
+	}
 	.nav-link.active {
 		background-color: #81BB4A !important;
 	}
@@ -81,13 +84,13 @@ $packages = array();
 		/*line-height: 24px !important;*/
 		color: #fff !important;
 		font-size: 14px !important;
-		background-color: #5392f9 !important;
-		border-color: #5392f9 !important;
+		background-color: #102958 !important;
+		border-color: #102958 !important;
 	}
 	.btn-guest-info:hover {
-        background-color: #fff !important;
-        color: #5392f9 !important; 
-		border-color: #5392f9 !important;
+        background-color: #102958 !important;
+        color: #fff !important; 
+		border-color: #102958 !important;
     }
 	.input-guest-info {
 		/*height: 40px !important;*/
@@ -152,7 +155,7 @@ $packages = array();
 		</div>
 
 		<div class="row">
-			<div class="col-md-12 price room_type_header m-0">
+			<div class="col-md-12 price room_type_header m-0" style="background-color: #102958;">
 				<h5><span style="margin-left: 10px;"><?php echo $this->lang->line('step_1'); ?></span></h5>
 			</div>
 		</div>
@@ -195,7 +198,7 @@ $packages = array();
 												<div class="col-md-12 mb-3">
 													<div class="form-outline">
 														<label class="form-label mb-0" for="guest_address" style="font-weight: 500;">
-															<span class="required">*</span><?php echo $this->lang->line('guest_address'); ?>
+															<span class="required" >*</span><?php echo $this->lang->line('guest_address'); ?>
 														</label>
 														<textarea onchange="bl_address(this.value)" id="guest_address" name="guest_address" class="form_field form-control " required><?php echo (isset($guest_info)) ? $guest_info->address : ''; ?></textarea>
 													</div>
@@ -794,11 +797,11 @@ $packages = array();
 											$details[] = '
 	    					
 									<div class="col-md-2 col-sm-2 icon_container">
-										<span class="icon-content"><object data="' . share_folder_path() . 'images/icons/house.svg" height="20"></object></span> 
+										<span class="icon-content" style="color: #000 !important;"><object data="' . share_folder_path() . 'images/icons/house.svg" height="20"></object></span> 
 									</div>
 									
 									<div class="col-md-9 col-sm-9 icon_container">
-										<span class="">' . (($lang == 'english') ? $rt->area_en : $rt->area_th) . '</span>
+										<span class="" style="color: #000 !important;">' . (($lang == 'english') ? $rt->area_en : $rt->area_th) . '</span>
 									</div>
 									
 	    					';
@@ -806,10 +809,10 @@ $packages = array();
 											$details[] = '
 	    							
 										<div class="col-md-2 col-sm-2 icon_container" >
-											<span class="icon-content" style="margin-left:1px; margin-top:-3px;"><object data="' . share_folder_path() . 'images/icons/icons8-bedroom-50.png" height="18"></object></span>
+											<span class="icon-content" style="margin-left:1px; margin-top:-3px; color: #000 !important;"><object data="' . share_folder_path() . 'images/icons/icons8-bedroom-50.png" height="18"></object></span>
 										</div>
 										<div class="col-md-9 col-sm-9 icon_container">
-											<span class="">' . (($lang == 'english') ? $rt->room_details_en : $rt->room_details_th) . ' ' . (($rt->is_big_room == 1) ? '(Can add 1 bed for 1 person)' : '') . '</span>
+											<span class="" style="color: #000 !important;">' . (($lang == 'english') ? $rt->room_details_en : $rt->room_details_th) . ' ' . (($rt->is_big_room == 1) ? '(Can add 1 bed for 1 person)' : '') . '</span>
 										</div>
 									
 	    					';
@@ -817,10 +820,10 @@ $packages = array();
 											$details[] = '
 	    					
 									<div class="col-md-2 col-sm-2 icon_container" >
-										<span class="icon-content" style="margin-left:4px; margin-top:-1px;"><object data="' . share_folder_path() . 'images/icons/bathroom.png" height="18"></object></span>
+										<span class="icon-content" style="margin-left:4px; margin-top:-1px; color: #000 !important;"><object data="' . share_folder_path() . 'images/icons/bathroom.png" height="18"></object></span>
 									</div>
 									<div class="col-md-9 col-sm-9 icon_container">
-										<span class="">' . (($lang == 'english') ? $rt->bathroom_en : $rt->bathroom_th) . '</span>
+										<span class="" style="color: #000 !important;">' . (($lang == 'english') ? $rt->bathroom_en : $rt->bathroom_th) . '</span>
 									</div>
 									
 							';
@@ -828,10 +831,10 @@ $packages = array();
 											$details[] = '
 	    					
 									<div class="col-md-2 col-sm-2 icon_container" >
-										<span class="icon-content" style="margin-left:1px;"><object data="' . share_folder_path() . 'images/icons/person-fill.svg" height="18"></object></span>
+										<span class="icon-content" style="margin-left:1px; color: #000 !important;"><object data="' . share_folder_path() . 'images/icons/person-fill.svg" height="18"></object></span>
 									</div>
 									<div class="col-md-9 col-sm-9 icon_container">
-										<span class="">' . (($lang == 'english') ? $rt->number_of_adults . ' Adults' : 'จำนวนผู้เข้าพัก: ' . $rt->number_of_adults) . '</span>
+										<span class="" style="color: #000 !important;">' . (($lang == 'english') ? $rt->number_of_adults . ' Adults' : 'จำนวนผู้เข้าพัก: ' . $rt->number_of_adults) . '</span>
 									</div>		
 									
 							';
@@ -842,7 +845,7 @@ $packages = array();
 										<object data="' . share_folder_path() . 'images/icons/tv.svg" height="20"> </object>
 									</div>
 									<div class="col-md-9 col-sm-9 icon_container">
-										<span class="">TV (Internet)</span>
+										<span class=""  style="color: #000 !important;">TV (Internet)</span>
 									</div>						
 									
 	    					';
@@ -850,10 +853,10 @@ $packages = array();
 											$details[] = '
 	    					
 									<div class="col-md-2 col-sm-2 icon_container">
-										<span class="icon-content"><object data="' . site_url() . 'images/icons/snow.svg" height="20"> </object></span>
+										<span class="icon-content" style="color: #000 !important;"><object data="' . site_url() . 'images/icons/snow.svg" height="20"> </object></span>
 									</div>
 									<div class="col-md-9 col-sm-9 icon_container">
-										<span class="icon-content">' . (($lang == 'english') ? 'Air Conditioning' : 'เครื่องปรับอากาศ') . '</span>
+										<span class="icon-content" style="color: #000 !important;">' . (($lang == 'english') ? 'Air Conditioning' : 'เครื่องปรับอากาศ') . '</span>
 									</div>
 									
 	    					';
@@ -862,12 +865,12 @@ $packages = array();
 												$details[] = '
 	    					
 									<div class="col-md-2 col-sm-2 icon_container">
-										<span class="icon-content" style="font-size:16px; margin-top:-2px;">
+										<span class="icon-content" style="font-size:16px; margin-top:-2px; color: #000 !important;">
 											<object data="' . share_folder_path() . 'images/icons/sofa.png" height="14"></object>
 										</span>
 									</div>
 									<div class="col-md-9 col-sm-9 icon_container">
-										<span class="icon-content">' . (($lang == 'english') ? $rt->sofa_en : $rt->sofa_th) . '</span>
+										<span class="icon-content" style="color: #000 !important;">' . (($lang == 'english') ? $rt->sofa_en : $rt->sofa_th) . '</span>
 									</div>						
 									
 	    					';

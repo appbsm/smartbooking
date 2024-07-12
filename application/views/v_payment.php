@@ -115,7 +115,7 @@ $CI->load->model('m_room_type');
 	}
 	.price {
 		/*background-color: #2a2a2e;*/
-		background-color: #5392f9;
+		background-color: #102958;
 		color: white;
 		text-shadow: 2px 2px 4px #000000;
 	}
@@ -126,13 +126,13 @@ $CI->load->model('m_room_type');
 		/*line-height: 30px !important;*/
 		color: #fff !important;
 		font-size: 14px !important;
-		background-color: #5392f9 !important;
-		border-color: #5392f9 !important;
+		background-color: #102958 !important;
+		border-color: #102958 !important;
 	}
 	.btn-payment:hover {
-        background-color: #fff !important;
-        color: #5392f9 !important; 
-		border-color: #5392f9 !important;
+        background-color: #102958 !important;
+        color: #fff !important; 
+		border-color: #102958 !important;
     }
 	
 	@media (min-width: 768px) {
@@ -175,6 +175,9 @@ $CI->load->model('m_room_type');
     .progressbar {
         font-size: 14px !important; 
     }
+	.form-control, label {
+		color: #000 !important;
+	}
 </style>
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
@@ -198,7 +201,7 @@ $CI->load->model('m_room_type');
   <input type="hidden" name="id_booking" id="id_booking" value="<?php echo $booking->id_booking;?>">
   <div class="container-fluid" >
   	<div class="row">
-  		<div class="col-md-12 price room_type_header m-0">
+  		<div class="col-md-12 price room_type_header m-0" style="background-color: #102958;">
 			<h4>
 				<span><?php echo $this->lang->line('step_3');?></span>
 			</h4>

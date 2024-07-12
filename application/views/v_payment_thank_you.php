@@ -6,6 +6,9 @@ setlocale(LC_ALL, 'th_TH');
 ?>
 
 <style>
+.form-control, label {
+		color: #000 !important;
+	}
 .nav-link.active {
 	background-color: #81BB4A!important;
 }
@@ -183,12 +186,14 @@ page[size="A4"][layout="portrait"] {
 					
 							<div class="col-md-12">
 								<div class="booking_number" style="font-size: 1.3em; text-align: left; font-weight: 700; padding: 2px 0 2px 10px; line-height: 20px;">
-									<span><?php echo $this->lang->line('booking_number');?>: <?php echo $booking_number;?></span>
+									<span style="color: #000 !important;"><?php echo $this->lang->line('booking_number');?>: <?php echo $booking_number;?></span>
 								</div>
 							</div>
 							
 							<div class="col-md-12">
-								<div class="status" style=" font-size: 1.3em; font-weight: bold; color: green; padding: 2px 0 2px 10px;"><span><?php echo $this->lang->line('status');?>: <?php echo $booking->status;?></span></div>
+								<div class="status" style=" font-size: 1.3em; font-weight: bold; color: green; padding: 2px 0 2px 10px;">
+									<span style="color: #000 !important;"><?php echo $this->lang->line('status');?>: <?php echo $booking->status;?></span>
+								</div>
 							</div>
 						</div>
 					</div>
