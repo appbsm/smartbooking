@@ -27,7 +27,11 @@ class M_guest extends CI_Model{
 		$this->db->select('*');
 		$this->db->from('guest_info');
 		$this->db->where('is_active',1);
-		$this->db->where('username',$email);
+		// $this->db->where('username',$email);
+		$this->db->group_start()
+         ->where('username', $email)
+         ->or_where('email', $email)
+         ->group_end();
 		$this->db->where('password',$pass_md5);
 		$query = $this->db->get();
 		//echo $this->db->last_query();

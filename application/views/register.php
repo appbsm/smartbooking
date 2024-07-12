@@ -390,21 +390,25 @@ $CI->load->model('m_room_type');
                 </div>
                 <div>
                     <div class="form-content form-email">
-                        <form>
+                        <form name="frm_save" id="frm_save" method="post" action="<?php echo site_url('profile').'/save_profile';?>" enctype="multipart/form-data">
                             <div class="form-group">
-                                <label style="color: black;" for="email">First name</label>
-                                <input type="firstname" id="email" name="email" placeholder="First name" required>
+                                <label style="color: black;" for="email"><span class="required">*</span>First name</label>
+                                <input type="firstname" id="firstname" name="firstname" placeholder="First name" required>
                             </div>
                             <div class="form-group">
-                                <label style="color: black;" for="Last name">Last name</label>
-                                <input type="lastname" id="email" name="email" placeholder="Last name" required>
+                                <label style="color: black;" for="Last name"><span class="required">*</span>Last name</label>
+                                <input type="lastname" id="lastname" name="lastname" placeholder="Last name" required>
                             </div>
                             <div class="form-group">
-                                <label style="color: black;" for="email">Email</label>
+                                <label style="color: black;" for="email"><span class="required">*</span>Email</label>
                                 <input type="email" id="email" name="email" placeholder="Email" required>
                             </div>
                             <div class="form-group">
-                                <label style="color: black;" for="password">Password</label>
+                                <label style="color: black;" for="email"><span class="required">*</span>Username</label>
+                                <input type="firstname" id="username" name="username" placeholder="Username" required>
+                            </div>
+                            <div class="form-group">
+                                <label style="color: black;" for="password"><span class="required">*</span>Password</label>
                                 <div class="password-container">
                                     <input type="password" id="password" name="password" placeholder="Password" required pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}">
                                     <span class="toggle-password"><i class="fas fa-eye-slash"></i></span>
@@ -420,7 +424,9 @@ $CI->load->model('m_room_type');
                                     </label>
                                 </div>
                             </div>
+
                             <button style="background-color: #102958 !important;" type="submit">Sign up</button>
+                            
                         </form>
                     </div>
                 </div>

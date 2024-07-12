@@ -45,6 +45,8 @@ class Login extends CI_Controller {
 				//echo "4";
 				$this->session->set_flashdata('login_error', $this->lang->line('message_login_incorrect'));
 				header('Location: ' . $_SERVER['HTTP_REFERER']);
+				// $this->session->set_flashdata('login_error', 'รหัสผ่านหรือชื่อผู้ใช้ไม่ถูกต้อง');
+            	// redirect('login');  
 			}
 		}	
 		else {			
@@ -54,7 +56,8 @@ class Login extends CI_Controller {
 			//echo "LOGIN CART";
 			//print_r($this->session->userdata('cart_data'));
 			$this->load->view('v_header');
-			$this->load->view('v_login');
+			// $this->load->view('v_login');
+			$this->load->view('signin');
 			$this->load->view('v_footer');
 			//$this->load->view('v_footer');
 		}

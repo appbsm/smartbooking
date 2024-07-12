@@ -392,7 +392,24 @@ $CI->load->model('m_room_type');
     }
 </style>
 
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10/dist/sweetalert2.min.css">
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10/dist/sweetalert2.min.js"></script>
 <body>
+
+    <?php if($this->session->flashdata('login_error')): ?>
+    <script type="text/javascript">
+        // alert("<?php echo $this->session->flashdata('login_error'); ?>");
+        Swal.fire({
+            position: 'top',
+            icon: 'error',
+            // title: 'Username or password is incorrect'
+            text : 'Username or password is incorrect',
+            // text: "<?php echo $this->session->flashdata('login_error'); ?>"
+            timer: 3000 // Popup จะปิดอัตโนมัติหลังจาก 3 วินาที
+        });
+    </script>
+    <?php endif; ?>
+
     <div class="container-login mx-auto">
         <div class="login-panel">
             <div class="login-form">
@@ -415,17 +432,19 @@ $CI->load->model('m_room_type');
                     <div class="form-content form-email">
                         <form name="frm_login" id="frm_login" class="user" method="post" action="<?php echo site_url('login');?>">
                             <div class="form-group">
-                                <label style="color: black;" for="email">Email</label>
+                                <label style="color: black;" for="email"><span class="required">*</span>Email or Username</label>
                                 <!-- type="email" -->
-                                <input type="email" id="email" name="username" placeholder="Email" required>
+                                <input type="firstname" id="email" name="username" placeholder="Email or Username" required>
                             </div>
+
                             <div class="form-group">
-                                <label style="color: black;" for="password">Password</label>
+                                <label style="color: black;" for="password"><span class="required">*</span>Password</label>
                                 <div class="password-container">
                                     <input type="password" id="password" name="password" placeholder="Password" required>
                                     <span class="toggle-password"><i class="fas fa-eye-slash"></i></span>
                                 </div>
                             </div>
+
                             <button style="background-color: #102958 !important;" type="submit"><?php echo $lang == "english" ? 'sign in' : 'ลงชื่อเข้าใช้งาน'; ?></button>
 
                         </form>
