@@ -50,12 +50,12 @@ class Login extends CI_Controller {
 			}
 		}	
 		else {			
-			//$this->load->view('v_header');			
+			//$this->load->view('v_header');
 			//echo "5";
 			//print_r($_SESSION);
 			//echo "LOGIN CART";
 			//print_r($this->session->userdata('cart_data'));
-			
+
 			$this->load->view('v_header');
 			// $this->load->view('v_login');
 			$this->load->view('signin');

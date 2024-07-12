@@ -426,7 +426,7 @@ $CI->load->model('m_room_type');
                             </div>
 
                             <button style="background-color: #102958 !important;" type="submit">Sign up</button>
-                            
+
                         </form>
                     </div>
                 </div>
@@ -464,6 +464,12 @@ $CI->load->model('m_room_type');
             </div>
         </div>
     </div>
+
+    <script src="http://192.168.20.22/smartbooking_front_test/js/jquery.min.js"></script>
+    <script src="http://192.168.20.22/smartbooking_front_test/js/jquery-ui.min.js"></script>
+    <script src="http://192.168.20.22/smartbooking_front_test/bootstrap-4.0.0-dist/js/bootstrap.bundle.min.js"></script>
+    <script src="http://192.168.20.22/smartbooking_front_test/assets/select-picker/js/bootstrap-select.min.js"></script>
+    <script src="http://192.168.20.22/smartbooking_front_test/assets/swiper-element/js/swiper-element-bundle.min.js"></script>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {

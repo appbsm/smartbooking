@@ -188,17 +188,22 @@ class Profile extends CI_Controller {
 		}
 	}
 	
-	function send_temp_password () {
+	function send_temp_password(){
+		// require_once('PHPMailer/PHPMailerAutoload.php');
+		// require_once(APPPATH.'third_party/PHPMailer/PHPMailerAutoload.php');
+		require_once(APPPATH.'third_party/PHPMailer/PHPMailerAutoload.php');
+		$mail = new PHPMailer\PHPMailer\PHPMailer();
 		if (!empty($_POST)) {
 			$user_email = $this->input->post('reset_email');
 			//$user_name = $this->input->post('reset_username');
 			//$user_email = 'mychelle@buildersmart.com';
 			//$user_name = 'jaz';
-			$temp_pass = $this->m_stringlib->uniqueAlphaNum8 ();
+			$temp_pass = $this->m_stringlib->uniqueAlphaNum8();
 			$password = $this->m_stringlib->useMD5($temp_pass, strtolower($temp_pass));
 			$data = array ('password' => $password);
 			//$this->m_guest->update_temp_password($data, $user_email, $user_name);
 			$this->m_guest->update_temp_password($data, $user_email);
+
 			$subject = 'Smart Modular System Password Reset)';
 			$message = '';
 			if ($this->language == 'thai') {
@@ -219,9 +224,53 @@ class Profile extends CI_Controller {
 					   . '<br><p>This is auto-generated email. Please do not reply to this email.</p>'
 					   ;
 			}
-			//echo $message;
+
+
+
+
+			$user_email = $this->input->post('reset_email');
+			$post_data = $this->session->userdata('post_data');
+
+			echo $message;
 			email($user_email, $subject, $message, '');
 			//redirect ('login');
+
+			require_once('PHPMailer/PHPMailerAutoload.php');
+			// $this->load->view('PHPMailer/PHPMailerAutoload.php');
+			// require_once APPPATH . 'libraries/PHPMailer/PHPMailerAutoload.php';
+
+			// $sender = $_POST['email'];
+
+			$sender = $user_email;
+		    $smtp_user = 'info@installdirect.asia';
+		    $smtp_pass = 'Bsm@2024';
+		    $mail = new PHPMailer();
+		    $mail->IsSMTP();
+		    $mail->SMTPAutoTLS = false;
+		    $mail->SMTPAuth    = true;
+		    $mail->SMTPSecure  = "tls";
+		    $mail->Host        = "smtp-legacy.office365.com";
+		    $mail->Mailer      = "smtp";
+		    $mail->Port        = "587";
+		    $mail->Username    = $smtp_user;
+		    $mail->Password    = $smtp_pass;
+
+		    $mail->SetFrom('info@installdirect.asia', 'installdirect');
+		    $mail->isHTML(true);
+		    $mail->CharSet = "utf-8";
+		    $mail->Subject = "Request change password for SmartBroker system.";
+		    $mail->AddAddress($sender, "Receiver");
+
+		    $requester_details ="requester_details";
+		    $issue_data = "issue_data";
+		    $assign_to  = "assign_to";
+		    $msg = "detail msg";
+		    if (!$mail->send()) {
+		        // echo 'Mailer Error: ' . $mail->ErrorInfo;
+		    } else {
+		        // echo 'successfully';
+		    }
+			// redirect('home');
 		}
 	}
 	

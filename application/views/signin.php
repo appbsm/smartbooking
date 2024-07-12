@@ -396,6 +396,45 @@ $CI->load->model('m_room_type');
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10/dist/sweetalert2.min.js"></script>
 <body>
 
+<!-- Modal -->
+<div class="modal " id="myModal" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+
+    <div class="modal-content">
+      <div class="modal-header" style="text-align: center; margin: auto; border-bottom: none !important;"> 
+        <h4 style="color: black;" >Get Password Reset via Email</h4>
+      </div>
+        
+        <!-- action="<?php //echo site_url('profile/send_temp_password');?>" forgot_password.php -->
+      <div class="modal-body" style="text-align: center; margin: auto;">
+       <form name="frm_reset" id="frm_reset" method="post" action="<?php echo site_url('profile/send_temp_password');?>">
+       <div class="row">
+   
+           <div class="col-md-12">
+                <div class="row" style="align-items: center;">
+                    <div class="col-md-3" style="text-align: right;">
+                    <label style="color: black;" class="form-label" for="reset_email"><span class="required">*</span><?php echo $lang == "english" ? 'Email' : 'อีเมล์'; ?>
+                    </label>
+                    </div>
+                    <div class="col-md-8">
+                    <input style="color: black;" type="text" id="reset_email" name="reset_email" class="form-control form-control-email" value="" required />
+                    </div>
+                </div>
+           </div>
+           <div class="col-md-12 mt-4 mb-2 text-center"> 
+                <button class="btn button-primary " id="send_to_email"><?php echo $this->lang->line('send_temporary_password');?></button>
+           </div>
+        </div>
+       </form>
+       
+       
+      </div>
+      
+    </div>
+  </div>
+</div>
+<!-- End Modal -->
+
     <?php if($this->session->flashdata('login_error')): ?>
     <script type="text/javascript">
         // alert("<?php echo $this->session->flashdata('login_error'); ?>");
@@ -448,17 +487,66 @@ $CI->load->model('m_room_type');
                             <button style="background-color: #102958 !important;" type="submit"><?php echo $lang == "english" ? 'sign in' : 'ลงชื่อเข้าใช้งาน'; ?></button>
 
                         </form>
+
                         <div class="footer-links">
                             <a style="color: #5392f9 !important;" href="login/signup">Create account</a>
-                            <a style="color: #5392f9 !important;" href="#">
+
+                            <a style="color: #5392f9 !important;" class="forgot_pass" href="javascript:;" >
                                 <svg width="1em" height="1em" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="forget-svg" style="padding-right: 4px;">
                                     <path d="M5.286 9.143V6.388A6.388 6.388 0 0 1 11.673 0h1.167a6.388 6.388 0 0 1 6.388 6.388 1 1 0 0 1-2 0A4.388 4.388 0 0 0 12.84 2h-1.167a4.388 4.388 0 0 0-4.387 4.388v2.755H19a2 2 0 0 1 2 2v10.714a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V11.143a2 2 0 0 1 2-2h.286zM13 17.829a3.001 3.001 0 1 0-2 0v2.15a1 1 0 1 0 2 0v-2.15zM11 15a1 1 0 1 1 2 0 1 1 0 0 1-2 0z"></path>
                                 </svg>
                                 Forgot password?
                             </a>
                         </div>
+
                     </div>
                     <!-- end tab email-->
+
+<script>
+    $(".forgot_pass").on('click', function(e){
+        var mymodal = document.getElementById("myModal");
+        
+        var self = $(this);
+        //var name = self.data('name'); // or src = self.attr('src');
+        //var src = self.attr('src');
+        //console.log(mymodal);
+        //var modalImg = document.getElementById("img01");
+        //var captionText = document.getElementById("caption");
+        //modalImg.style.display = "block";
+        
+        //modalImg.src = src;
+        // captionText.innerHTML = this.alt;
+        $('#myModal').modal('show');
+    });
+
+    $('#send_to_email').click(function(){
+        if ($('#reset_username').val() == '' || $('#reset_email').val() == '') {
+            alert('<?php echo $this->lang->line('message_required_fields');?>');
+        }
+        else {
+            alert('<?php echo $this->lang->line('message_checkmail_temp_password');?>')
+            $('#frm_reset').submit();
+
+            /*
+            var _url = "<?php echo site_url('profile/send_temp_password');?>";
+            //console.log($('#reset_username').val()+' '+$('#reset_email').val());
+            $.ajax({
+                method: "POST",
+                url: _url,
+                data: {
+                    reset_username: $('#reset_username').val(),
+                    reset_email: $('#reset_email').val()
+                    }
+            })
+            .done(function (result){
+                //console.log(result);
+                $('#myModal').modal('hide');
+                alert('<?php echo $this->lang->line('message_checkmail_temp_password');?>')
+            });*/
+        }
+    });
+    
+    </script>
 
                     <!-- tab mobile-->
                     <div class="form-content form-mobile" style="display: none;">
@@ -529,6 +617,12 @@ $CI->load->model('m_room_type');
             </div>
         </div>
     </div>
+
+    <script src="http://192.168.20.22/smartbooking_front_test/js/jquery.min.js"></script>
+    <script src="http://192.168.20.22/smartbooking_front_test/js/jquery-ui.min.js"></script>
+    <script src="http://192.168.20.22/smartbooking_front_test/bootstrap-4.0.0-dist/js/bootstrap.bundle.min.js"></script>
+    <script src="http://192.168.20.22/smartbooking_front_test/assets/select-picker/js/bootstrap-select.min.js"></script>
+    <script src="http://192.168.20.22/smartbooking_front_test/assets/swiper-element/js/swiper-element-bundle.min.js"></script>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
