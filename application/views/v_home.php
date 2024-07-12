@@ -1225,16 +1225,20 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
 
 	<div class="col-md-12 d-flex mt-3" style="flex-wrap: wrap;">
 
-		<!-- <div class="col-xl-1">
-		</div> -->
-		<div class="col-lg-6 col-md-12" style="padding: 0 5px; display: flex; justify-content: flex-end;">
+		<div class="col-lg-1">
+		</div>
+		 <!-- mr-md-5 -->
+		<div class="col-lg-5 col-md-11 ml-md-0" style="padding: 0 5px; display: flex; justify-content: flex-end;">
 			<div class="content">
 				<!--<img class="" src="<?php echo share_folder_path() . $photos[0]->room_photo_url; ?>" style="width: 100%;min-height: 350px;min-width: 470px;">-->
-				<img class="img-roomtype" src="<?php echo share_folder_path() . $photos[0]->room_photo_url; ?>" style="width: 100%;">
+				<img class="img-roomtype" src="<?php echo share_folder_path() . $photos[0]->room_photo_url; ?>" style="width: 100%;min-height: 310px !important;min-width: 470px !important;">
 			</div>
 		</div>
+		<!-- class="col-md-1 col-lg-0" -->
+		<div class="col-md-0 col-xs-1" >
+		</div>
 
-		<div class="col-lg-6 col-md-12 " >
+		<div class="col-lg-6 col-md-12 pl-lg-5" >
 			<div class="form-group">
 				<h4 class="roomtype-tx-title mt-3 mb-0"><?php echo ($lang == 'english') ? $room_type_en : $room_type_th; ?></h4>
 				<?php
