@@ -80,12 +80,14 @@ $lang  = $lg;
 				</div>
 			</div>
 			
-
+			<!-- sign in -->
 			<div class="row d-flex justify-content-center">
 				<div class="col-sm-12 col-md-6 text-center">
-                    <button name="login_btn" class="btn button-primary btn-user btn-block"><?php echo $this->lang->line('login');?></button>
+                    <button name="login_btn" class="btn button-primary btn-user btn-block">
+                    	<?php echo $lang == "english" ? 'sign in' : 'ลงชื่อเข้าใช้งาน'; ?></button>
 				</div>
 			</div>
+
 			<div class="row d-flex justify-content-center mt-3">
 				<div class="col-sm-12 col-md-6 text-center">
 					<a href="login_with_facebook.php" id="link-login-facebook" class="text-primary">

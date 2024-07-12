@@ -87,7 +87,7 @@ class Profile extends CI_Controller {
 			);
 			$insert_id = $this->m_guest->insert_profile($data);	
 			
-			if (isset($_FILES['guest_photo']) && $_FILES['guest_photo']['name'] != '') {									        		        		
+			if (isset($_FILES['guest_photo']) && $_FILES['guest_photo']['name'] != '') {	        		        		
 					$doc_link = '';
 					$target_dir = 'upload/guest_photo/'; 					
 					$old_file_1 = basename($_FILES["guest_photo"]["name"]);

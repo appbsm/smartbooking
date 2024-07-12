@@ -42,6 +42,7 @@ hr {
 <main class="main-2">
 	
 	<div class="container">
+		
 		<form name="frm_save" id="frm_save" method="post" action="<?php echo site_url('profile').'/save_profile';?>" enctype="multipart/form-data">
 				<div style="height:50px">
 				</div>
