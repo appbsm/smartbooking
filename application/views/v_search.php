@@ -8,6 +8,12 @@ $CI->load->model('m_room_type');
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
 <style>
+	.form-control, label, a {
+		color: #000 !important;
+	}
+	a:hover {
+		color: #000 !important;
+	}
 	.slideshow {
 		/* position: absolute; */
 		/* display: flex;
@@ -143,7 +149,7 @@ $CI->load->model('m_room_type');
 	
 	.price {
 		/*background-color: #2a2a2e;*/
-		background-color: #5392f9;
+		background-color: #102958;
 		color: white;
 		text-shadow: 2px 2px 4px #000000;
 	}
@@ -151,8 +157,8 @@ $CI->load->model('m_room_type');
 		border: 1px solid #dee2e6 !important;
 		background-color: unset !important; 
 		color: #000 !important;
-		/*border: 1px solid #5392f9 !important;
-		background-color: #5392f9 !important; 
+		/*border: 1px solid #102958 !important;
+		background-color: #102958 !important; 
 		color: #FFF !important;*/
 		padding: 2px !important;
 		display: flex;
@@ -171,14 +177,14 @@ $CI->load->model('m_room_type');
 		line-height: 1.5 !important;
 		color: #fff !important;
 		font-size: 14px !important;
-		background-color: #5392f9 !important;
-		border-color: #5392f9 !important;
+		background-color: #102958 !important;
+		border-color: #102958 !important;
 		padding: 6px 12px !important;
 	}
 	.btn-backnext:hover {
-        background-color: #fff !important;
-        color: #5392f9 !important; 
-		border-color: #5392f9 !important;
+        background-color: #102958 !important;
+        color: #fff !important; 
+		border-color: #102958 !important;
 
     }
 	.bootstrap-select>.dropdown-toggle {
@@ -195,7 +201,7 @@ $CI->load->model('m_room_type');
 		height: 32px !important;
 	}*/
 	.dropdown-item.active, .dropdown-item:active {
-		background-color: #5392f9 !important;
+		background-color: #102958 !important;
 	}
 	.btn-search {
 		width: auto;
@@ -204,14 +210,14 @@ $CI->load->model('m_room_type');
 		/*line-height: 30px !important;*/
 		color: #fff !important;
 		font-size: 16px !important;
-		background-color: #5392f9 !important;
-		border-color: #5392f9 !important;
+		background-color: #102958 !important;
+		border-color: #102958 !important;
 		height: 32px;
 	}
 	.btn-search:hover {
-        background-color: #fff !important;
-        color: #5392f9 !important; 
-		border-color: #5392f9 !important;
+        background-color: #102958 !important;
+        color: #fff !important; 
+		border-color: #102958 !important;
     }
 	.btn-projinfo {
 		width: auto;
@@ -220,14 +226,14 @@ $CI->load->model('m_room_type');
 		/*line-height: 30px !important;*/
 		color: #fff !important;
 		font-size: 16px !important;
-		background-color: #5392f9 !important;
-		border-color: #5392f9 !important;
+		background-color: #102958 !important;
+		border-color: #102958 !important;
 		/*height: 32px;*/
 	}
 	.btn-projinfo:hover {
-        background-color: #fff !important;
-        color: #5392f9 !important; 
-		border-color: #5392f9 !important;
+        background-color: #102958 !important;
+        color: #fff !important; 
+		border-color: #102958 !important;
     }
 	.btn-add_to_cart {
 		width: auto;
@@ -236,13 +242,13 @@ $CI->load->model('m_room_type');
 		line-height: 24px !important;
 		color: #fff !important;
 		font-size: small !important;
-		background-color: #5392f9 !important;
-		border-color: #5392f9 !important;
+		background-color: #102958 !important;
+		border-color: #102958 !important;
 	}
 	.btn-add_to_cart:hover {
-        background-color: #fff !important;
-        color: #5392f9 !important; 
-		border-color: #5392f9 !important;
+        background-color: #102958 !important;
+        color: #fff !important; 
+		border-color: #102958 !important;
     }
 	.btn-book_now {
 		width: auto;
@@ -251,13 +257,13 @@ $CI->load->model('m_room_type');
 		line-height: 24px !important;
 		color: #fff !important;
 		font-size: small !important;
-		background-color: #5392f9 !important;
-		border-color: #5392f9 !important;
+		background-color: #102958 !important;
+		border-color: #102958 !important;
 	}
 	.btn-book_now:hover {
-        background-color: #fff !important;
-        color: #5392f9 !important; 
-		border-color: #5392f9 !important;
+        background-color: #102958 !important;
+        color: #fff !important; 
+		border-color: #102958 !important;
     }
 	
 	.button__badge {
@@ -270,7 +276,7 @@ $CI->load->model('m_room_type');
 	
 	.price {
 		/*background-color: #2a2a2e;*/
-		background-color: #5392f9;
+		background-color: #102958;
 		color: white;
 		text-shadow: 2px 2px 4px #000000;
 	}
@@ -431,7 +437,7 @@ $CI->load->model('m_room_type');
 			<div class="col-md-12 mt-1 mb-3">
 				<div class="row">
 					<div class="col-md-6 text-left">
-						<h5><?php echo $lang == ('english') ? $project_details->project_name_en : $project_details->project_name_th; ?></h5>
+						<h5 style="color: #000 !important;"><?php echo $lang == ('english') ? $project_details->project_name_en : $project_details->project_name_th; ?></h5>
 					</div>
 					<div class="col-md-6 text-right">
 						<a href="<?php echo site_url('project_info'); ?>" class="btn btn-projinfo" id=""><?php echo $this->lang->line('project_info_details'); ?></a>
@@ -457,7 +463,7 @@ $CI->load->model('m_room_type');
 		<div class="container mt-5">
 			<div class="row">
 				<div class="col-md-12 ml-2 text-left">
-					<h5><?php echo $this->lang->line('room_types'); ?></h5>
+					<h5 style="color: #000 !important;"><?php echo $this->lang->line('room_types'); ?></h5>
 				</div>
 			</div>
 			<div class="row">
@@ -476,7 +482,7 @@ $CI->load->model('m_room_type');
 						<div class="product-card">
 							<div class="header">
 								<div class="col-md-12 pl-4 text-left">
-									<h6>
+									<h6 style="color: #000 !important;">
 										<div class="room-type-name"><?php echo ($lang == 'english') ? $rt->room_type_name_en : $rt->room_type_name_th; ?></div>
 									</h6>
 								</div>
@@ -508,36 +514,36 @@ $CI->load->model('m_room_type');
 
 										<div class="row mx-auto mt-2">
 											<div class="col-3 text-left icon_container">
-												<span class="icon-content"><object data="<?php echo site_url(); ?>images/icons/house.svg" height="20"></object></span>
+												<span class="icon-content"style="color: #000 !important;"><object data="<?php echo site_url(); ?>images/icons/house.svg" height="20"></object></span>
 											</div>
 											<div class="col-9 text-left icon_container">
-												<span class="icon-content"><?php echo $lang == 'english' ? $rt->area_en : $rt->area_th; ?></span>
+												<span class="icon-content" style="color: #000 !important;"><?php echo $lang == 'english' ? $rt->area_en : $rt->area_th; ?></span>
 											</div>
 										</div>
 
 										<div class="row mx-auto mt-2">
 											<div class="col-3 text-left icon_container">
 												<!-- <span class="icon-content"><img class="icon" src="<?php echo share_folder_path(); ?>images/icons/icons8-bedroom-50.png" height="18"></span> -->
-												<span class="icon-content"><object data="<?php echo share_folder_path(); ?>images/icons/icons8-bedroom-50.png" height="18"></object></span>
+												<span class="icon-content" style="color: #000 !important;"><object data="<?php echo share_folder_path(); ?>images/icons/icons8-bedroom-50.png" height="18"></object></span>
 											</div>
 											<div class="col-9 text-left icon_container">
-												<span class="icon-content"><?php echo $lang == 'english' ? $rt->room_details_en : $rt->room_details_th; ?></span>
+												<span class="icon-content" style="color: #000 !important;"><?php echo $lang == 'english' ? $rt->room_details_en : $rt->room_details_th; ?></span>
 											</div>
 										</div>
 										<div class="row mx-auto mt-2">
 											<div class="col-3 text-left icon_container">
-												<span class="icon-content  ml-1"><object data="<?php echo share_folder_path(); ?>images/icons/bathroom.png" height="18"></object></span>
+												<span class="icon-content  ml-1" style="color: #000 !important;"><object data="<?php echo share_folder_path(); ?>images/icons/bathroom.png" height="18"></object></span>
 											</div>
 											<div class="col-9 text-left icon_container">
-												<span class="icon-content"><?php echo $lang == 'english' ? $rt->bathroom_en : $rt->bathroom_th; ?></span>
+												<span class="icon-content" style="color: #000 !important;"><?php echo $lang == 'english' ? $rt->bathroom_en : $rt->bathroom_th; ?></span>
 											</div>
 										</div>
 										<div class="row mx-auto mt-2">
 											<div class="col-3 text-left icon_container">
-												<span class="icon-content" style="margin-left:1px;"><object data="<?php echo share_folder_path(); ?>images/icons/person-fill.svg" height="18"></object></span>
+												<span class="icon-content" style="margin-left:1px; color: #000 !important;"><object data="<?php echo share_folder_path(); ?>images/icons/person-fill.svg" height="18"></object></span>
 											</div>
 											<div class="col-9 text-left icon_container">
-												<span class="icon-content"><?php echo $lang == 'english' ? $rt->number_of_adults . ' Adults' : 'จำนวนผู้เข้าพัก: ' . $rt->number_of_adults; ?></span>
+												<span class="icon-content" style="color: #000 !important;"><?php echo $lang == 'english' ? $rt->number_of_adults . ' Adults' : 'จำนวนผู้เข้าพัก: ' . $rt->number_of_adults; ?></span>
 											</div>
 										</div>
 
@@ -546,36 +552,36 @@ $CI->load->model('m_room_type');
 												<object data="<?php echo share_folder_path(); ?>images/icons/tv.svg" height="20"> </object>
 											</div>
 											<div class="col-9 text-left icon_container">
-												<span class="icon-content">TV (Internet)</span>
+												<span class="icon-content" style="color: #000 !important;">TV (Internet)</span>
 											</div>
 										</div>
 
 										<div class="row mx-auto mt-2">
 											<div class="col-3 text-left icon_container">
-												<span class="icon-content"><object data="<?php echo share_folder_path(); ?>images/icons/snow.svg" height="20"> </object></span>
+												<span class="icon-content" style="color: #000 !important;"><object data="<?php echo share_folder_path(); ?>images/icons/snow.svg" height="20"> </object></span>
 											</div>
 											<div class="col-9 text-left icon_container">
-												<span class="icon-content"><?php echo $lang == 'english' ? 'Air Conditioning' : 'เครื่องปรับอากาศ'; ?></span>
+												<span class="icon-content" style="color: #000 !important;"><?php echo $lang == 'english' ? 'Air Conditioning' : 'เครื่องปรับอากาศ'; ?></span>
 											</div>
 										</div>
 
 										<div class="row mx-auto mt-2">
 											<div class="col-3 text-left icon_container">
-												<span class="icon-content"><object data="<?php echo share_folder_path(); ?>images/icons/wifi.svg" height="20"> </object></span>
+												<span class="icon-content" style="color: #000 !important;"><object data="<?php echo share_folder_path(); ?>images/icons/wifi.svg" height="20"> </object></span>
 											</div>
 											<div class="col-9 text-left icon_container">
-												<span class="icon-content">Free WIFI</span>
+												<span class="icon-content" style="color: #000 !important;">Free WIFI</span>
 											</div>
 										</div>
 										<?php if ($rt->sofa_en != '') { ?>
 											<div class="row mx-auto mt-2">
 												<div class="col-3 text-left icon_container">
-													<span class="icon-content" style="font-size:16px; margin-top:-2px;">
+													<span class="icon-content" style="font-size:16px; margin-top:-2px; color: #000 !important">
 														<object data="<?php echo share_folder_path(); ?>images/icons/sofa.png" height="14"></object>
 													</span>
 												</div>
 												<div class="col-9 text-left icon_container">
-													<span class="icon-content"><?php echo $lang == 'english' ? $rt->sofa_en : $rt->sofa_th; ?></span>
+													<span class="icon-content" style="color: #000 !important;"><?php echo $lang == 'english' ? $rt->sofa_en : $rt->sofa_th; ?></span>
 												</div>
 											</div>
 										<?php } ?>

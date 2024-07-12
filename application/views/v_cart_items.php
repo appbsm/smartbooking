@@ -155,6 +155,33 @@ $check_out_date = date('d-m-Y', strtotime($check_in_date . '+1 day'));
 	.form-control, label {
 		color: #000 !important;
 	}
+	.btn_stepper {
+		background-color: #102958 !important;
+		border: none;
+		border-radius: 50%;
+		width: 25px;
+		height: 25px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.btn_stepper:focus {
+		outline: none;
+	}
+
+	.input_number {
+		text-align: center !important;
+		border: 1px solid #CCC;
+		background-color: white;
+		width: 30%;
+		margin: 0 8px;
+	}
+
+	.input_number:focus {
+		outline: none;
+	}
 </style>
 
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
@@ -201,16 +228,16 @@ $r_date = 0;
 				<label class="ml-1 mb-0" for="name" style="font-weight: 500; color: #000; !important"><?php echo $lang == "english" ? 'Adult' : 'ผู้เข้าพัก'; ?></label>
 				<div class="dropdown">
 					<button class="btn dropdown-toggle w-100 search_input btn-adults" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-						<span id="div_adult">
+						<span id="div_adult" style="color: #000 !important;">
 							<?php echo @$search_data['adult'] ? $search_data['adult'] : 2; ?>
 						</span> <?php echo $this->lang->line('adults'); ?>, 
-						<span id="div_children"><?php echo @$search_data['children'] ? $search_data['children'] : 0; ?></span> 
+						<span id="div_children" style="color: #000 !important;"><?php echo @$search_data['children'] ? $search_data['children'] : 0; ?></span> 
 						<?php echo $this->lang->line('children'); ?> <!-- , <span id="div_room">1</span> Rooms -->
 					</button>
 					<div class="dropdown-menu" style="vertical-align: bottom;" aria-labelledby="dropdownMenuButton">
 						<div class="stepper">
 							<div style="display: flex; justify-content: center;"><?php echo $this->lang->line('adult'); ?></div>
-							<div style="display: flex; justify-content: center; background-color: white; ">
+							<div style="display: flex; justify-content: center;  ">
 								<button class="btn_stepper " id="decrement-adult" onClick="stepper(this);"> - </button>
 								<input class="input_number" type="number" min="0" max="100" step="1" value="<?= @$search_data['adult'] ? $search_data['adult'] : 2; ?>" id="adult" readonly>
 								<button class="btn_stepper " id="increment-adult" onClick="stepper(this);"> + </button>

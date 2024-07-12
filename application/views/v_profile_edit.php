@@ -126,7 +126,7 @@ $CI->load->model('m_room_type');
 	
 	.price {
 		/*background-color: #2a2a2e;*/
-		background-color: #5392f9;
+		background-color: #102958;
 		color: white;
 		text-shadow: 2px 2px 4px #000000;
 	}
@@ -137,14 +137,14 @@ $CI->load->model('m_room_type');
 		/*line-height: 30px !important;*/
 		color: #fff !important;
 		font-size: 14px !important;
-		background-color: #5392f9 !important;
-		border-color: #5392f9 !important;
+		background-color: #102958 !important;
+		border-color: #102958 !important;
 		padding: 6px 12px;
 	}
 	.btn-save:hover {
-        background-color: #fff !important;
-        color: #5392f9 !important; 
-		border-color: #5392f9 !important;
+        background-color: #102958 !important;
+        color: #fff !important; 
+		border-color: #102958 !important;
     }
 </style>
 
