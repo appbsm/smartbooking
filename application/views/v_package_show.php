@@ -268,7 +268,7 @@ $CI->load->model('m_room_type');
 		</div>
 		<form id="form-search" action="" method="post">
 			<input type="hidden" name="package_id" value="<?= $package_id ?>" />
-			<div class="row">
+			<div class="row" style="font-size: 14px;">
 				<div class="col-lg-5 col-sm-12 mb-3">
 					<label for="name"><?php echo $this->lang->line('check_in_date'); ?></label>
 					<input type='text' class="form-control datepicker search_input" name="check_in_date" id="check_in_date" value="" />
@@ -279,7 +279,7 @@ $CI->load->model('m_room_type');
 				</div>
 				<div class="col-md-2 col-sm-12 mb-3">
 					<label for="name">&nbsp;</label>
-					<button type="submit" class="form-control  btn btn-secondary btn-search" style="color: #FFF !important;"><?= $this->lang->line('search'); ?></button>
+					<button type="submit" class="form-control  btn btn-secondary btn-search" style="color: #FFF !important; font-size: 14px !important;"><?= $this->lang->line('search'); ?></button>
 				</div>
 			</div>
 		</form>
@@ -293,7 +293,7 @@ $CI->load->model('m_room_type');
 			$package_price = ($lang == 'english') ? number_format($pr->price, 0) . '/Night' : 'ราคา ' . number_format($pr->price, 0) . '/คืน';
 		?>
 
-			<div class="row">
+			<div class="row" style="font-size: 0.8rem !important;">
 				<!-- <div class="col-lg-5 col-sm-12 mb-3">
 							<label for="name"><?php echo $this->lang->line('check_in_date'); ?></label>
 							<input type='text' class="form-control datepicker search_input" name="check_in_date" id="check_in_date" value="" />

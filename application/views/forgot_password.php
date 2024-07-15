@@ -1,45 +1,16 @@
-
 <?php
-
-require_once('PHPMailer/PHPMailerAutoload.php');
-// echo "email:".$_POST['reset_email'];
-
-// include('connect_sql.php');
-// $password = '1234';
-// $reset_email = 'thanawat@installdirect.asia';
-// $sql ="update guest_info set password='".$password."' where email ='".$reset_email."' ";
-// $stmt = sqlsrv_query($conn,$sql);
-// if ($stmt === false) {
-//     // กรณีเกิดข้อผิดพลาดในการ execute query
-//     die(print_r(sqlsrv_errors(), true));
-// } else {
-//     // กรณี execute query สำเร็จ
-//     echo "Update successful!";
-// }
-// sqlsrv_close($conn);
-
+// require_once($_SERVER['DOCUMENT_ROOT'] . '/smartbooking_front_test/PHPMailer/PHPMailerAutoload.php');
+// require_once('PHPMailer/PHPMailerAutoload.php');
 if($_SERVER["REQUEST_METHOD"] == "POST"){
+    require_once('PHPMailer/PHPMailerAutoload.php');
 
-    $temp_pass = uniqueAlphaNum8();
-    $password  = md5($temp_pass);
-
-    include('connect_sql.php');
-    // $sql ="update modular_icon set password='".$password."' where email ='".$_POST['reset_email']."' ";
-    // $stmt = sqlsrv_query($conn,$sql);
-
-    // $reset_email = $_POST['reset_email'];
-    // $sql = "UPDATE modular_icon SET password = ? WHERE email = ?";
-    // $params = array($password, $reset_email);
-    // $stmt = sqlsrv_query($conn, $sql, $params);
-    // sqlsrv_close($conn);
-
+    require_once('connect_sql.php');
     $sql ="update guest_info set password='".$password."' where email ='".$_POST['reset_email']."' ";
     $stmt = sqlsrv_query($conn,$sql);
     sqlsrv_close($conn);
 
-    $stmt = sqlsrv_query($conn,$sql);
 
-    $subject = 'Smart Booking System Password Reset)';
+    $subject = 'Smart Booking System Password Reset';
     $message = '';
     if ($_POST['lang'] != 'english') {
         $message = '<p>เราส่งอีเมลนี้ถึงคุณเนื่องจากมีการร้องขอเปลี่ยนรหัสผ่าน โปรดใช้รหัสผ่านชั่วคราวด้านล่างเพื่อเข้าสู่ระบบ หลังจากที่คุณเข้าสู่ระบบ โปรดไปที่โปรไฟล์ของคุณเพื่อเปลี่ยนรหัสผ่านอีกครั้ง</p><br>'
@@ -77,16 +48,16 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     $mail->SetFrom('info@installdirect.asia', 'installdirect');
     $mail->isHTML(true);
     $mail->CharSet = "utf-8";
-    // $mail->Subject = "Request change password for SmartBroker system.";
-    $mail->Subject = $Subject;
+    
+    if (isset($Subject)) {
+        $mail->Subject = $Subject;
+    }
     $mail->AddAddress($sender, "Receiver");
 
     $requester_details ="requester_details";
     $issue_data = "issue_data";
     $assign_to  = "assign_to";
 
-    // $msg = "detail msg";
-    // $mail->Body = $msg;
     $mail->Body = $message;
     if (!$mail->send()) {
         // echo 'Mailer Error: '.$mail->ErrorInfo;
@@ -101,11 +72,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     'sent_mail' => 'success',
     );
     $query_string = http_build_query($data);
-    header('Location: login?' . $query_string);
+    // header('Location: login?' . $query_string);
 
+    $this->session->set_flashdata('message', 'Login successful!');
+    redirect ('login');
     /////////////////////////////////////////////////
-
-
 ?>
 
 <?php

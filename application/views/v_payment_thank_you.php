@@ -170,8 +170,8 @@ page[size="A4"][layout="portrait"] {
 			
 			<div class="page_content">
 				<div class="row" style="margin-top: 30px;">
-					<div class="col-md-12 message" style="margin: 20px; text-align: center; font-size: 1.1em; line-height: 20px;">
-			  			<p style="font-size: 1.1em; font-weight: 700; color: #000;"><?php echo $this->lang->line('thank_you_payment');?></p>
+					<div class="col-md-12 message" style="margin: 20px; text-align: center; font-size: 1rem !important;; line-height: 20px;">
+			  			<p style="font-size: 1rem !important;; font-weight: 700; color: #000;"><?php echo $this->lang->line('thank_you_payment');?></p>
 			  			
 			  			<p><?php echo $this->lang->line('message_receive_email');?></p>
 			  			<p><?php echo $this->lang->line('message_go_to_link');?>: <a style="font-weight: 700; color: #000 !important;" href="<?php echo site_url('booking/booking_details').'?booking_number='.$booking->booking_number;?>"><?php echo $this->lang->line('click_here');?></a></p>
@@ -185,19 +185,19 @@ page[size="A4"][layout="portrait"] {
 						<div class="row">
 					
 							<div class="col-md-12">
-								<div class="booking_number" style="font-size: 1.3em; text-align: left; font-weight: 700; padding: 2px 0 2px 10px; line-height: 20px;">
+								<div class="booking_number" style="font-size: 1.04em; text-align: left; font-weight: 700; padding: 2px 0 2px 10px; line-height: 20px;">
 									<span style="color: #000 !important;"><?php echo $this->lang->line('booking_number');?>: <?php echo $booking_number;?></span>
 								</div>
 							</div>
 							
 							<div class="col-md-12">
-								<div class="status" style=" font-size: 1.3em; font-weight: bold; color: green; padding: 2px 0 2px 10px;">
+								<div class="status" style=" font-size: 1.04em; font-weight: bold; color: green; padding: 2px 0 2px 10px;">
 									<span style="color: #000 !important;"><?php echo $this->lang->line('status');?>: <?php echo $booking->status;?></span>
 								</div>
 							</div>
 						</div>
 					</div>
-					<div class="col-md-6" style="line-height: 20px;">
+					<div class="col-md-6" style="line-height: 20px; font-size: 1rem !important;">
 						<!-- <div class="price" style="color: white; padding: 1px 0 1px 5px;">Invoice No.: </div> -->
 						
 						<div class="row" style="padding: 1px 15px 1px 15px; font-size: 1em;">

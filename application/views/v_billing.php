@@ -90,7 +90,7 @@ $cancellation_policy = $this->m_project_info->get_property_policy($id_project_in
 		text-transform: uppercase;
 		/*line-height: 30px !important;*/
 		color: #fff !important;
-		font-size: 16px !important;
+		font-size: 14px !important;
 		background-color: #102958 !important;
 		border-color: #102958 !important;
 	}
@@ -184,15 +184,15 @@ $cancellation_policy = $this->m_project_info->get_property_policy($id_project_in
 							<div class="row">
 								<div class="col-md-6 col-sm-6 d-flex flex-row">
 									<img src="<?php echo site_url(); ?>images/sm_resort.png" style="max-width: 80px; height: fit-content;">
-									<span style="margin-left:10px;display: block; margin-top: auto; padding-bottom: 10px; font-size: 1.3em!important; font-weight: bold;"><?php echo ($lang == 'english') ? $project_info->project_name_en : $project_info->project_name_th; ?></span>
+									<span style="color: #000 !important; margin-left:10px; display: block; margin-top: auto; padding-bottom: 10px; font-size: 1.04em!important; font-weight: bold;"><?php echo ($lang == 'english') ? $project_info->project_name_en : $project_info->project_name_th; ?></span>
 								</div>
 
 								<div class="col-md-6">
-									<div class="price" style="margin-top: 40px; font-size: 1.3em; text-align: center; font-style: italic; font-weight: bold; color: white; padding: 2px 0 2px 0;"><span><?php echo $this->lang->line('booking_number'); ?>: <?php echo $booking_number; ?></span></div>
+									<div class="price" style="margin-top: 40px; font-size: 1.04em; text-align: center; font-style: italic; font-weight: bold; color: white; padding: 2px 0 2px 0;"><span><?php echo $this->lang->line('booking_number'); ?>: <?php echo $booking_number; ?></span></div>
 								</div>
 							</div>
 
-							<div class="row mt-3">
+							<div class="row mt-3" style="font-size: 0.8rem !important;">
 								<div class="col-md-6 col-sm-6">
 									<div class="row" style="margin-left: 15px; ">
 										<div class="col-md-5 mb-2" style="font-weight: 500;"><?php echo $this->lang->line('company_name'); ?>: </div>
@@ -253,7 +253,7 @@ $cancellation_policy = $this->m_project_info->get_property_policy($id_project_in
 								</div>
 							</div>
 
-							<div class="row mt-3">
+							<div class="row mt-3" style="font-size: 0.8rem !important;">
 								<div <?= @$booking->billing_name ? 'class="col-md-4 col-sm-6"' : 'class="col-md-6 col-sm-6"';  ?>>
 									<div class="row mt-3" style="margin-left: 15px; ">
 										<div class="col-md-5 col-sm-6" style="font-weight: 500;"><?php echo $this->lang->line('customer_name'); ?>: </div>
@@ -381,7 +381,7 @@ $cancellation_policy = $this->m_project_info->get_property_policy($id_project_in
 					</page>
 					<!-- <page size="A4" layout="portrait">A4 portrait</page> -->
 
-					<div class="row mt-3">
+					<div class="row mt-3" style="font-size: 0.8rem !important;" >
 						<!-- 
 					<div class="col-md-6 mb-2 text-right" > 
 						<a href="<?php echo site_url('booking/billing') . '?number=' . $booking_number; ?>" class="btn button-primary" id="">Back</a>

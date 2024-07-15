@@ -82,7 +82,7 @@ $check_out_date = date('d-m-Y', strtotime($check_in_date . '+1 day'));
 	}
 	.form-control-ckinout {
 		/*padding: 1.165rem .75rem !important;*/
-		height: 18px !important;
+		padding: .375rem .75rem !important;
 	}
 	.price {
 		/*background-color: #2a2a2e;*/
@@ -209,7 +209,7 @@ $r_date = 0;
 		</div>
 		-->
 		
-		<div class="row" style=" padding: 50px 0;">
+		<div class="row" style=" padding: 20px; margin-top: 20px; font-size: 14px !important;">
 			<!-- <div class="col-md-12"> -->
 			<!-- <div style="width: 100%; padding: 10px;"> -->
 
@@ -290,7 +290,7 @@ $r_date = 0;
 		<div class="row">
 			<div class="col-md-12 ">
 				<input type="checkbox" style="height:15px; width:15px; margin-left: 8px;" class="select_all cb" onClick="toggle(this);">
-				<p class="ml-2 mt-0" style="font-weight: 500; color: #000; !important"><?php echo $lang == "english" ? 'Select All' : 'เลือกทั้งหมด'; ?></p>
+				<p class="ml-2 mt-0" style="font-weight: 500; color: #000; !important; font-size: 14px !important;"><?php echo $lang == "english" ? 'Select All' : 'เลือกทั้งหมด'; ?></p>
 			</div>
 			<div class="col-md-9">
 				<!-- package or room -->
@@ -360,7 +360,7 @@ $r_date = 0;
 											</div>
 										</div>
 										<div class="col-6 text-right">
-											<div class="row">
+											<div class="row"  style="font-size: 0.8rem !important;">
 												<div class="col-12" id="changed_date_rate">
 													<?php echo number_format($rate * $item->quantity, 2); ?>
 												</div>
@@ -458,7 +458,7 @@ $r_date = 0;
 											</div>
 										</div>
 										<div class="col-6 text-right">
-											<div class="row">
+											<div class="row"  style="font-size: 0.8rem !important;">
 												<div class="col-12">
 													<?php echo number_format($package_rooms[0]->price, 2); ?>
 												</div>
@@ -481,8 +481,8 @@ $r_date = 0;
 				<div class="col-md p-2 m-0 border-r-10">
 					<div class="row">
 						<div class="col-md-12 m-2 text-center d-flex flex-row justify-content-between">
-							<label style="font-size: 1.2em; font-weight: 600; margin: 8px 5px 5px 5px;"><?php echo $this->lang->line('total'); ?>: </label>
-							<div id="total" style="font-size: 1.2em; font-weight: 600; padding: 8px 20px 5px 0;">0.00</div>
+							<label style="font-size: 1em !important; font-weight: bold; margin: 8px 5px 5px 5px;"><?php echo $this->lang->line('total'); ?>: </label>
+							<div id="total" style="font-size: 1em !important; font-weight: bold; padding: 8px 20px 5px 0;">0.00</div>
 						</div>
 					</div>
 					<div class="row">

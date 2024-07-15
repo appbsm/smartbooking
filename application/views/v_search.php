@@ -218,6 +218,7 @@ $CI->load->model('m_room_type');
         background-color: #102958 !important;
         color: #fff !important; 
 		border-color: #102958 !important;
+		padding: .375rem .75rem !important;
     }
 	.btn-projinfo {
 		width: auto;
@@ -295,7 +296,7 @@ $CI->load->model('m_room_type');
 			<input type="hidden" name="search_type" id="search_type" value="">
 			<input type="hidden" name="project_id" id="project_id" value="">
 
-			<div class="row search_room_header">
+			<div class="row search_room_header" style="font-size: 14px !important;">
 				<div class="col-lg-3 col-sm-12">
 					<div class="col-md-12 col-sm-12 text-left">
 						<label class="ml-1" for="name"><?php echo $lang == "english" ? 'Location' : 'สถานที่'; ?> </label>
@@ -392,7 +393,7 @@ $CI->load->model('m_room_type');
 				<div class="col-lg-2 col-md-12 col-sm-12 col-xs-12">
 					<div class="col-md-12 text-left">
 						<label for="name">&nbsp;</label>
-						<button id="search" class="form-control search_input btn-default btn-search" data-search-type="search_room" style="cursor: pointer; padding: 0 50px 0 50px;"><?php echo $this->lang->line('search'); ?></button>
+						<button id="search" class="form-control search_input btn-default btn-search" data-search-type="search_room" style="cursor: pointer; padding: 0 50px 0 50px; font-size: 14px !important;"><?php echo $this->lang->line('search'); ?></button>
 					</div>
 				</div>
 			</div>
@@ -512,7 +513,7 @@ $CI->load->model('m_room_type');
 											</div>
 										</div>
 
-										<div class="row mx-auto mt-2">
+										<div class="row mx-auto mt-2" style="font-size: 0.8rem !important;">
 											<div class="col-3 text-left icon_container">
 												<span class="icon-content"style="color: #000 !important;"><object data="<?php echo site_url(); ?>images/icons/house.svg" height="20"></object></span>
 											</div>
@@ -521,7 +522,7 @@ $CI->load->model('m_room_type');
 											</div>
 										</div>
 
-										<div class="row mx-auto mt-2">
+										<div class="row mx-auto mt-2" style="font-size: 0.8rem !important;">
 											<div class="col-3 text-left icon_container">
 												<!-- <span class="icon-content"><img class="icon" src="<?php echo share_folder_path(); ?>images/icons/icons8-bedroom-50.png" height="18"></span> -->
 												<span class="icon-content" style="color: #000 !important;"><object data="<?php echo share_folder_path(); ?>images/icons/icons8-bedroom-50.png" height="18"></object></span>
@@ -530,7 +531,7 @@ $CI->load->model('m_room_type');
 												<span class="icon-content" style="color: #000 !important;"><?php echo $lang == 'english' ? $rt->room_details_en : $rt->room_details_th; ?></span>
 											</div>
 										</div>
-										<div class="row mx-auto mt-2">
+										<div class="row mx-auto mt-2" style="font-size: 0.8rem !important;">
 											<div class="col-3 text-left icon_container">
 												<span class="icon-content  ml-1" style="color: #000 !important;"><object data="<?php echo share_folder_path(); ?>images/icons/bathroom.png" height="18"></object></span>
 											</div>
@@ -538,7 +539,7 @@ $CI->load->model('m_room_type');
 												<span class="icon-content" style="color: #000 !important;"><?php echo $lang == 'english' ? $rt->bathroom_en : $rt->bathroom_th; ?></span>
 											</div>
 										</div>
-										<div class="row mx-auto mt-2">
+										<div class="row mx-auto mt-2" style="font-size: 0.8rem !important;">
 											<div class="col-3 text-left icon_container">
 												<span class="icon-content" style="margin-left:1px; color: #000 !important;"><object data="<?php echo share_folder_path(); ?>images/icons/person-fill.svg" height="18"></object></span>
 											</div>
@@ -547,7 +548,7 @@ $CI->load->model('m_room_type');
 											</div>
 										</div>
 
-										<div class="row mx-auto mt-2">
+										<div class="row mx-auto mt-2" style="font-size: 0.8rem !important;">
 											<div class="col-3 text-left icon_container">
 												<object data="<?php echo share_folder_path(); ?>images/icons/tv.svg" height="20"> </object>
 											</div>
@@ -556,7 +557,7 @@ $CI->load->model('m_room_type');
 											</div>
 										</div>
 
-										<div class="row mx-auto mt-2">
+										<div class="row mx-auto mt-2" style="font-size: 0.8rem !important;">
 											<div class="col-3 text-left icon_container">
 												<span class="icon-content" style="color: #000 !important;"><object data="<?php echo share_folder_path(); ?>images/icons/snow.svg" height="20"> </object></span>
 											</div>
@@ -565,7 +566,7 @@ $CI->load->model('m_room_type');
 											</div>
 										</div>
 
-										<div class="row mx-auto mt-2">
+										<div class="row mx-auto mt-2" style="font-size: 0.8rem !important;">
 											<div class="col-3 text-left icon_container">
 												<span class="icon-content" style="color: #000 !important;"><object data="<?php echo share_folder_path(); ?>images/icons/wifi.svg" height="20"> </object></span>
 											</div>
@@ -574,7 +575,7 @@ $CI->load->model('m_room_type');
 											</div>
 										</div>
 										<?php if ($rt->sofa_en != '') { ?>
-											<div class="row mx-auto mt-2">
+											<div class="row mx-auto mt-2" style="font-size: 0.8rem !important;">
 												<div class="col-3 text-left icon_container">
 													<span class="icon-content" style="font-size:16px; margin-top:-2px; color: #000 !important">
 														<object data="<?php echo share_folder_path(); ?>images/icons/sofa.png" height="14"></object>
