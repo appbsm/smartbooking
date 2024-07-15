@@ -1,13 +1,3 @@
-<div class="row">
-		<div class="col-md-12 ml-2 text-center mt-4">
-			<h4 style="text-align: center; padding-bottom: 15px;" id="nav_packagep_promotions">
-				<a id="nearby_locations" href="javascript:;" class="tx-title-header">
-					testtest
-				</a>
-			</h4>
-		</div>
-	</div>
-
 <?php
 	$lg = ($this->session->userdata('site_lang') !== null) ? $this->session->userdata('site_lang') : 'thai';
 	if ($lg == 'thai') {
@@ -19,6 +9,25 @@
 ?>
 
   <style>
+	@font-face {
+            font-family: 'NotoSans_online_security'; 
+            src: url(chrome-extension://llbcnfanfmjhpedaedhbcnpgeepdnnok/assets/fonts/noto-sans-regular.woff);
+        }
+
+        @font-face {
+            font-family: 'NotoSans_medium_online_security'; 
+            src: url(chrome-extension://llbcnfanfmjhpedaedhbcnpgeepdnnok/assets/fonts/noto-sans-medium.ttf);
+        }
+
+        @font-face {
+            font-family: 'NotoSans_bold_online_security'; 
+            src: url(chrome-extension://llbcnfanfmjhpedaedhbcnpgeepdnnok/assets/fonts/noto-sans-bold.woff);
+        }
+
+        @font-face {
+            font-family: 'NotoSans_semibold_online_security'; 
+            src: url(chrome-extension://llbcnfanfmjhpedaedhbcnpgeepdnnok/assets/fonts/noto-sans-semibold.ttf);
+        }
     .button {
       color: white;
       display: inline-block;
@@ -58,7 +67,8 @@
     }
 	
 	.form-control-ckinout {
-		padding: 1.165rem .75rem !important;
+		/*padding: 1.165rem .75rem !important;*/
+		padding: .375rem .75rem !important;
 	}
 	.form-control-btnsearch {
 		padding: 1.165rem .75rem !important;
@@ -500,7 +510,8 @@
 	}
 	
 	.form-control-ckinout {
-		padding: 1.165rem .75rem !important;
+		/*padding: 1.165rem .75rem !important;*/.
+		padding: .375rem .75rem !important;
 	}
 	.form-control-btnsearch {
 		padding: 1.165rem .75rem !important;
@@ -545,6 +556,7 @@
 		background-color: #5392f9 !important;
 		color: #fff !important;
 		border: #5392f9 !important;
+		padding: .375rem .75rem !important;
 	}
 
 
@@ -673,13 +685,15 @@
       return diffDays;
     }
     let width = screen.width;
-
+    //console.log(width);
   </script>
 
 </head>
 
 <body class="" style="">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
 
 <link rel="stylesheet" href="http://192.168.20.22/smartbooking_front_test//css/tiny-slider.css">
 <link rel="stylesheet" href="http://192.168.20.22/smartbooking_front_test//css/package.css">
@@ -778,6 +792,18 @@
 
 			<div class="container fillter-h">
 				<div class="row search-bg pt-1" style="border: 2px solid #C6C6C7; border-radius: 5px; padding: 0; margin: 0 4px 0 4px;font-size: 14px !important;">
+					<!--
+					<div class="col-lg-3 ">
+						<div class="col-md-12 text-left">
+							<label class="ml-1" for="name"><?php echo $lang == "english" ? 'Location' : 'สถานที่'; ?> </label>
+							<select class="form-control selectpicker search_input" data-live-search="true" name="project_id" id="project_id">
+								<?php foreach ($project_all as $pj) { ?>
+									<option value="<?php echo $pj->id_project_info ?>"><?php echo $lang == "english" ? $pj->project_name_en : $pj->project_name_th; ?></option>
+								<?php } ?>
+							</select>
+						</div>
+					</div>
+					-->
 
 					<div class="col-xl-3 col-lg-2 col-md-6 col-sm-6 col-xs-6 padd-rl">
 						<div class="col-md-12 text-left">
@@ -980,12 +1006,12 @@
 			
 			<div class="col-md-4">
 				<div class="section_header ">
-					<h6 style="font-weight: 600;"><? echo ($lang == 'english') ? 'Locations Nearby' : 'สถานที่ใกล้เคียง'; ?></h6>
+					<h6 style="font-weight: 600; color: #000 !important;"><? echo ($lang == 'english') ? 'Locations Nearby' : 'สถานที่ใกล้เคียง'; ?></h6>
 				</div>
 				<div class="row mb4">
 					<div class="col-md-12">		
 						<div class="table-responsive">
-							<table class="table table-bordered" style="border-color: #ccc; color: #000 !important;">
+							<table class="table table-bordered" style="border-color: #ccc; color: #000 !important; font-size: 14px !important;">
 								<tbody>
 									<tr style="text-align: center;">
 										<th><? echo ($lang == 'english') ? 'Location' : 'ชื่อสถานที่'; ?></th>
@@ -1015,6 +1041,7 @@
 	</div>
 </div>
 
+<!-- <script src="//code.jquery.com/jquery.js"></script> -->
 <script src="http://192.168.20.22/smartbooking_front_test/js/jquery.min.js"></script>
 <script src="http://192.168.20.22/smartbooking_front_test/js/jquery-ui.min.js"></script>
 <script src="http://192.168.20.22/smartbooking_front_test/bootstrap-4.0.0-dist/js/bootstrap.bundle.min.js"></script>
@@ -1332,6 +1359,7 @@
 		color: rgb(215, 215, 219) !important;
 	}
 </style>
+ 
 
 <script>
 	const link = '<? echo $project_details->link_map; ?>';

@@ -23,7 +23,9 @@ if ($id_guest != '') {
 }
 ?>
 <head>
+
 <title>Smart Booking</title>
+
   <link rel="icon" type="image/x-icon" href="<?php echo site_url(); ?>images/10.png">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -174,6 +176,9 @@ if ($id_guest != '') {
 /*			max-width: 70% !important; */
 			width: 100px !important;
 		}
+		.menu-gap {
+			gap: 40px !important;
+		}
 	}
 
 	@media (min-width: 1400px) {
@@ -181,6 +186,14 @@ if ($id_guest != '') {
 /*			max-width: 30% !important; */
 			width: 100px !important;
 		}
+		.navbar-expand-lg .navbar-collapse {
+			display: flex !important;
+			flex-basis: auto;
+		}
+		.menu-gap {
+			gap: 50px !important;
+		}
+		
 	}
 
 	@media (min-width: 769px) and (max-width: 1024px) {
@@ -188,11 +201,21 @@ if ($id_guest != '') {
 /*			max-width: 50% !important; */
 			width: 100px !important;
 		}
+		
 	}
 	@media (max-width: 767px) {
 		.logo-img {
 /*		  width: 20% !important;*/
 		  width: 100px !important;
+		}
+	}
+	@media (min-width: 992px) {
+		.navbar-expand-lg .navbar-collapse {
+			display: flex !important;
+			flex-basis: auto;
+		}
+		.menu-gap {
+			gap: 30px !important;
 		}
 	}
   </style>
@@ -298,7 +321,7 @@ if ($id_guest != '') {
 		  else {
 		  ?>
 			  <div class="button mx-1 ">
-	        <a id="signin_button" class="btn btn_sign_in" href="<?php echo site_url('login'); ?>"  style="font-size: 14px !important;padding: 0.3rem 0.9rem !important;border-radius: 0.3rem !important;" >Sign In</a>
+	        <a id="signin_button" class="btn btn_sign_in" href="<?php echo site_url('login'); ?>"  style="font-size: 14px !important;padding: 0.3rem 0.9rem !important;border-radius: 0.3rem !important;background-color: #5392f9 !important;" >Sign In</a>
 	      </div>
 
 		  <?php } ?>
@@ -336,7 +359,7 @@ $is_home = (strpos($current_url, 'home') !== false);
 
 	   <div class="collapse navbar-collapse " id="navbarNav" style="background-color: #102958 !important; padding-left: 0; padding-right: 0; padding-top: 0 !important;">
 	   			<!-- me-auto -->
-					<ul class="navbar-nav mb-4  mb-lg-0 " style="font-size: 14px;margin: 0 auto !important;">
+					<ul class="navbar-nav mb-4  mb-lg-0  menu-gap" style="font-size: 14px;margin: 0 auto !important;">
 						<!-- style="padding-left: 5% !important;" -->
 						<!-- style="margin-right: 5% !important;" -->
 						<li class="nav-item nav-item-custom" id="nav_aboutus" >
@@ -415,7 +438,7 @@ $is_home = (strpos($current_url, 'home') !== false);
 		  else {
 		  ?>
 			  <div class="button mx-1 ">
-	        <a id="signin_button" class="btn btn_sign_in" href="<?php echo site_url('login'); ?>" height="20">Sign In</a>
+	        <a id="signin_button" class="btn btn_sign_in" href="<?php echo site_url('login'); ?>" height="20" style="background-color: #5392f9 !important;" >Sign In</a>
 	      </div>
 
 		  <?php } ?>
@@ -426,7 +449,7 @@ $is_home = (strpos($current_url, 'home') !== false);
 				</a>
       </div>
 		  
-		<div class="d-flex flex-rows" style="margin-top:3px;padding: 5px; margin-right: 5px;">
+					<div class="d-flex flex-rows" style="margin-top:3px;padding: 5px; margin-right: 5px;">
 			<?php
 				$switch_en = 'English';
 				$switch_th = 'Thai';
@@ -434,7 +457,7 @@ $is_home = (strpos($current_url, 'home') !== false);
 			<a href="<?php echo site_url() . 'LanguageSwitcher/switchLang/thai'; ?>" title="<?php echo $switch_th; ?>" style="color: rgba(255, 255, 255, 1.00) !important; font-size: 14px !important;" style="<?php echo ($lang == 'thai') ? 'font-weight: bold!important; color: rgba(255, 255, 255, 1.00) !important; font-size: 14px !important;' : ''; ?>">TH</a>
 			<span style="color: rgba(255, 255, 255, 1.00) !important; font-size: 14px !important;">&nbsp;|&nbsp;</span>
 			<a href="<?php echo site_url() . 'LanguageSwitcher/switchLang/english'; ?>" title="<?php echo $switch_en; ?>" style="color: rgba(255, 255, 255, 1.00) !important; font-size: 14px !important;" style="<?php echo ($lang == 'english') ? 'font-weight: bold!important; color: rgba(255, 255, 255, 1.00) !important; font-size: 14px !important;' : ''; ?>">EN</a>
-		</div>
+					</div>
         </div>
       </div>
 
