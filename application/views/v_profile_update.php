@@ -207,7 +207,7 @@ $CI->load->model('m_room_type');
 					<input type="hidden" name="id_guest" id="id_guest" value="<?php echo $guest_info->id_guest; ?>">
 					<div class="row border-r-10 mt-5">
 						<div class="col-12 collapse multi-collapse show" id="collapse-name1">
-							<div class="row" style="height:200px;">
+							<div class="row" style="height:200px; font-size: 0.875rem !important;">
 								<div class="col-2"></div>
 								<div class="col-8 mt-5">
 									<div class="row">
@@ -224,7 +224,7 @@ $CI->load->model('m_room_type');
 										</div>
 									</div>
 								</div>
-								<div class="col-2 mt-4">
+								<div class="col-2 mt-4" style="font-size: 0.875rem !important;">
 									<a data-toggle="collapse" data-target=".multi-collapse" aria-expanded="false" aria-controls="collapse-name1 collapse-name2">
 										<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="22" height="22" viewBox="0 0 256 256" xml:space="preserve">
 
@@ -276,21 +276,21 @@ $CI->load->model('m_room_type');
 										</div>
 									</div>
 									<div class="row">
-										<div class="col-sm-4">
+										<div class="col-sm-4" style="font-size: 0.875rem !important;">
 											<div class="form-outline">
 												<label class="form-label mb-0" for="guest_photo" style="font-weight: 500;"><?php echo $this->lang->line('upload_photo'); ?></label>
 
 												<input type="file" id="guest_photo" name="guest_photo" class="form-control" />
 											</div>
 										</div>
-										<div class="col-sm-3">
+										<div class="col-sm-3" style="font-size: 0.875rem !important;">
 											<div class="form-outline">
 												<label class="form-label mb-0" for="firstname" style="font-weight: 500;"><span class="required">*</span><?php echo $this->lang->line('firstname'); ?></label>
 												<input type="text" id="firstname" name="firstname" class="form-control" value="<?php echo $guest_info->firstname; ?>" required />
 											</div>
 
 										</div>
-										<div class="col-sm-3">
+										<div class="col-sm-3" style="font-size: 0.875rem !important;">
 
 											<div class="form-outline">
 												<label class="form-label mb-0" for="lastname" style="font-weight: 500;"><span class="required">*</span><?php echo $this->lang->line('lastname'); ?></label>
@@ -303,7 +303,7 @@ $CI->load->model('m_room_type');
 										</div>
 									</div>
 								</div>
-								<div class="col-2 mt-4 pl-0">
+								<div class="col-2 mt-4 pl-0" style="font-size: 0.875rem !important;">
 									<a data-toggle="collapse" data-target=".multi-collapse" aria-expanded="false" aria-controls="collapse-name1 collapse-name2">
 										<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="22" height="22" viewBox="0 0 256 256" xml:space="preserve">
 
@@ -324,7 +324,7 @@ $CI->load->model('m_room_type');
 
 					<div class="row border-r-10 mt-5">
 						<div class="col collapse multi-collapse-email show" id="collapse-email1">
-							<div class="row" style="height:200px;">
+							<div class="row" style="height:200px; font-size: 0.875rem !important;">
 								<div class="col-2"></div>
 								<div class="col-8 mt-5">
 									<div class="form-outline">
@@ -332,7 +332,7 @@ $CI->load->model('m_room_type');
 										<input type="email" id="email" name="email" class="form-control" value="<?php echo $guest_info->email; ?>" required disabled />
 									</div>
 								</div>
-								<div class="col-2 mt-4">
+								<div class="col-2 mt-4" style="font-size: 0.875rem !important;">
 									<a data-toggle="collapse" data-target=".multi-collapse-email" aria-expanded="false" aria-controls="collapse-email1 collapse-email2">
 										<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="22" height="22" viewBox="0 0 256 256" xml:space="preserve">
 
@@ -355,7 +355,7 @@ $CI->load->model('m_room_type');
 									<div class="row">
 										<div class="col-md-2 mb-4">
 										</div>
-										<div class="col-md-8">
+										<div class="col-md-8" style="font-size: 0.875rem !important;">
 											<div class="form-outline">
 												<label class="form-label mb-0" for="email" style="font-weight: 500;"><span class="required">*</span><?php echo $this->lang->line('email'); ?></label>
 												<input type="email" id="email" name="email" class="form-control" value="<?php echo $guest_info->email; ?>" required />
@@ -366,7 +366,7 @@ $CI->load->model('m_room_type');
 										</div>
 									</div>
 								</div>
-								<div class="col-2 mt-4 pl-0">
+								<div class="col-2 mt-4 pl-0" style="font-size: 0.875rem !important;">
 									<a data-toggle="collapse" data-target=".multi-collapse-email" aria-expanded="false" aria-controls="collapse-email1 collapse-email2">
 										<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="22" height="22" viewBox="0 0 256 256" xml:space="preserve">
 
@@ -388,7 +388,7 @@ $CI->load->model('m_room_type');
 
 					<div class="row border-r-10 mt-5">
 						<div class="col collapse multi-collapse-phone show" id="collapse-phone1">
-							<div class="row" style="height:200px;">
+							<div class="row" style="height:200px; font-size: 0.875rem !important;">
 								<div class="col-2"></div>
 								<div class="col-8 mt-5">
 									<div class="form-outline">
@@ -396,7 +396,7 @@ $CI->load->model('m_room_type');
 										<input type="tel" id="contact_number" name="contact_number" class="form-control" value="<?php echo $guest_info->contact_number; ?>" disabled />
 									</div>
 								</div>
-								<div class="col-2 mt-4">
+								<div class="col-2 mt-4" style="font-size: 0.875rem !important;">
 									<a data-toggle="collapse" data-target=".multi-collapse-phone" aria-expanded="false" aria-controls="collapse-phone1 collapse-phone2">
 										<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="22" height="22" viewBox="0 0 256 256" xml:space="preserve">
 
@@ -421,7 +421,7 @@ $CI->load->model('m_room_type');
 									<div class="row">
 										<div class="col-md-2 mb-4">
 										</div>
-										<div class="col-md-8">
+										<div class="col-md-8" style="font-size: 0.875rem !important;">
 											<div class="form-outline">
 												<label class="form-label mb-0" for="contact_number" style="font-weight: 500;"><span class="required">*</span><?php echo $this->lang->line('contact_number'); ?></label>
 												<input type="tel" id="contact_number" name="contact_number" class="form-control" value="<?php echo $guest_info->contact_number; ?>" />
@@ -433,7 +433,7 @@ $CI->load->model('m_room_type');
 									</div>
 								</div>
 
-								<div class="col-2 mt-4 pl-0">
+								<div class="col-2 mt-4 pl-0" style="font-size: 0.875rem !important;">
 									<a data-toggle="collapse" data-target=".multi-collapse-phone" aria-expanded="false" aria-controls="collapse-phone1 collapse-phone2">
 										<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="22" height="22" viewBox="0 0 256 256" xml:space="preserve">
 
@@ -455,7 +455,7 @@ $CI->load->model('m_room_type');
 					</div>
 					<div class="row border-r-10 mt-5">
 						<div class="col collapse multi-collapse-address show" id="collapse-address">
-							<div class="row" style="height:200px;">
+							<div class="row" style="height:200px; font-size: 0.875rem !important;">
 								<div class="col-2"></div>
 								<div class="col-8 mt-5">
 									<div class="form-outline">
@@ -463,7 +463,7 @@ $CI->load->model('m_room_type');
 										<input type="text" id="address" name="address" class="form-control" value="<?php echo $guest_info->address; ?>" disabled></input>
 									</div>
 								</div>
-								<div class="col-2 mt-4">
+								<div class="col-2 mt-4" style="font-size: 0.875rem !important;">
 									<a data-toggle="collapse" data-target=".multi-collapse-address" aria-expanded="false" aria-controls="collapse-address1 collapse-address2">
 										<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="22" height="22" viewBox="0 0 256 256" xml:space="preserve">
 
@@ -481,13 +481,13 @@ $CI->load->model('m_room_type');
 						</div>
 						<div class="col collapse multi-collapse-address" id="collapse-address">
 							<div class="row" style="height:250px;">
-								<div class="col-2 mt-4"></div>
-								<div class="col-8 mt-4">
+								<div class="col-2 mt-4" style="font-size: 0.875rem !important;"></div>
+								<div class="col-8 mt-4" style="font-size: 0.875rem !important;">
 									<br><br>
 									<div class="row">
 										<div class="col-md-2 mb-4">
 										</div>
-										<div class="col-md-8">
+										<div class="col-md-8" style="font-size: 0.875rem !important;">
 											<div class="form-outline">
 												<label class="form-label mb-0" for="address" style="font-weight: 500;"><?php echo $this->lang->line('address'); ?></label>
 												<input type="text" id="address" name="address" class="form-control" value="<?php echo $guest_info->address; ?>"></input>
@@ -498,7 +498,7 @@ $CI->load->model('m_room_type');
 										</div>
 									</div>
 								</div>
-								<div class="col-2 mt-4 pl-0">
+								<div class="col-2 mt-4 pl-0" style="font-size: 0.875rem !important;">
 									<a data-toggle="collapse" data-target=".multi-collapse-address" aria-expanded="false" aria-controls="collapse-address1 collapse-address2">
 										<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="22" height="22" viewBox="0 0 256 256" xml:space="preserve">
 
@@ -518,7 +518,7 @@ $CI->load->model('m_room_type');
 					</div>
 					<div class="row border-r-10 mt-5">
 						<div class="col collapse multi-collapse-credit_term show" id="collapse-credit_term">
-							<div class="row" style="height:200px;">
+							<div class="row" style="height:200px; font-size: 0.875rem !important;">
 								<div class="col-2"></div>
 								<div class="col-8 mt-5">
 									<div class="form-outline">

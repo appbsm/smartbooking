@@ -207,6 +207,13 @@ $CI->load->model('m_room_type');
     }
 	div.dataTables_wrapper div.dataTables_info {
 		color: #000 !important;
+		font-size: 13px !important;
+	}
+	div.dataTables_wrapper div.dataTables_length label {
+		font-size: 13px !important;
+	}
+	div.dataTables_wrapper div.dataTables_filter label {
+		font-size: 13px !important;
 	}
 </style>
 <script>
