@@ -13,7 +13,8 @@ $CI->load->model('m_project_info');
 	}
 
 	.section_header {
-		font-size: 1.4em;
+		/*font-size: 1.4em;*/
+		font-size: 1.12em;
 		font-weight: bold;
 		/*color: #515A5A;*/
 		color: #000;
@@ -133,7 +134,7 @@ $CI->load->model('m_project_info');
 				<div class="col-md-4 text-left">
 					<h5 style="color: #000 !important;"><?php echo $lang==('english')? $project_details->project_name_en : $project_details->project_name_th;?></h5>
 				</div>
-				<div class="col-md-8 text-right">	
+				<div class="col-md-8 text-right" style="font-size: 0.875rem !important;">	
 				<!-- <nav class="navbar sticky-top navbar-light bg-light">				 -->
 					<ul class="nav sticky-top justify-content-end">
 						<li class="nav-item">
@@ -172,7 +173,7 @@ $CI->load->model('m_project_info');
 
 	 <div  class="container mt-5">
 		<div class="row">
-			<div class="col-md-12 ml-2 text-left">
+			<div class="col-md-12 ml-2 text-left"  style="font-size: 0.875rem !important;">
 				<h5 style="color: #000 !important;"><?php echo $this->lang->line('room_types'); ?></h5>
 			</div>
 		</div>
@@ -201,7 +202,7 @@ $CI->load->model('m_project_info');
 					</div>
 				</div>
 				<div class="row">
-					<div class="col-md-12">
+					<div class="col-md-12" style="font-size: 0.875rem !important;">
 						<div class="row">
 							<div class="col-md-7" style="background-color:;height:300px">
 								<div class="slideshow" id="slideshow-<?php echo $key;?>">
@@ -217,7 +218,7 @@ $CI->load->model('m_project_info');
 							</div>
 							<div class="col-md-5" style="background-color:;height:300px">
 								<div class="row mb-3 mt-2 price">
-									<div class="col-md-12 mx-0 text-center">
+									<div class="col-md-12 mx-0 text-center" style="font-size: 0.875rem !important;">
 									<?php 
 									$price = ($lang == 'english') ? number_format($rt->default_rate,0).'/Night' : 'ราคา '.number_format($rate,0).'/คืน';
 									?>
@@ -230,7 +231,7 @@ $CI->load->model('m_project_info');
 										<span class="icon-content" style="color: #000 !important;"><object data="<?php echo site_url();?>images/icons/house.svg" height="20"></object></span> 
 									</div>
 									<div class="col-md-9 text-left col-sm-9 icon_container">
-										<span class="icon-content" style="color: #000 !important;"><?php echo $lang == 'english' ? $rt->area_en : $rt->area_th; ?></span>
+										<span class="icon-content" style="color: #000 !important; font-size: 0.875rem !important;"><?php echo $lang == 'english' ? $rt->area_en : $rt->area_th; ?></span>
 									</div>
 								</div>
 			
@@ -240,7 +241,7 @@ $CI->load->model('m_project_info');
 											<span class="icon-content" style="color: #000 !important;"><object data="<?php echo share_folder_path();?>images/icons/icons8-bedroom-50.png" height="18"></object></span>
 										</div>
 										<div class="col-9 text-left icon_container">
-											<span class="icon-content" style="color: #000 !important;"><?php echo $lang == 'english' ? $rt->room_details_en : $rt->room_details_th; ?></span>
+											<span class="icon-content" style="color: #000 !important; font-size: 0.875rem !important;"><?php echo $lang == 'english' ? $rt->room_details_en : $rt->room_details_th; ?></span>
 										</div>
 								</div>
 								<div class="row">
@@ -248,7 +249,7 @@ $CI->load->model('m_project_info');
 										<span class="icon-content  ml-1" style="color: #000 !important;"><object data="<?php echo share_folder_path();?>images/icons/bathroom.png" height="18"></object></span>
 									</div>
 									<div class="col-9 text-left icon_container">
-										<span class="icon-content" style="color: #000 !important;"><?php echo $lang == 'english' ? $rt->bathroom_en : $rt->bathroom_th; ?></span>
+										<span class="icon-content" style="color: #000 !important; font-size: 0.875rem !important;"><?php echo $lang == 'english' ? $rt->bathroom_en : $rt->bathroom_th; ?></span>
 									</div>
 								</div>		
 								<div class="row">
@@ -256,7 +257,7 @@ $CI->load->model('m_project_info');
 										<span class="icon-content" style="margin-left:1px; color: #000 !important;"><object data="<?php echo share_folder_path();?>images/icons/person-fill.svg" height="18"></object></span>
 									</div>
 									<div class="col-md-9 text-left col-sm-9 icon_container">
-										<span class="icon-content" style="color: #000 !important;"><?php echo $lang == 'english' ? $rt->number_of_adults.' Adults' : 'จำนวนผู้เข้าพัก: '.$rt->number_of_adults ;?></span>
+										<span class="icon-content" style="color: #000 !important; font-size: 0.875rem !important;"><?php echo $lang == 'english' ? $rt->number_of_adults.' Adults' : 'จำนวนผู้เข้าพัก: '.$rt->number_of_adults ;?></span>
 									</div>		
 								</div>
 								
@@ -265,7 +266,7 @@ $CI->load->model('m_project_info');
 										<object data="<?php echo share_folder_path();?>images/icons/tv.svg" height="20"> </object>
 									</div>
 									<div class="col-md-9 text-left col-sm-9 icon_container">
-										<span class="icon-content"style="color: #000 !important;">TV (Internet)</span>
+										<span class="icon-content"style="color: #000 !important; font-size: 0.875rem !important;">TV (Internet)</span>
 									</div>						
 								</div>
 								
@@ -274,7 +275,7 @@ $CI->load->model('m_project_info');
 										<span class="icon-content"style="color: #000 !important;"><object data="<?php echo share_folder_path();?>images/icons/snow.svg" height="20"> </object></span>
 									</div>
 									<div class="col-md-9 text-left col-sm-9 icon_container">
-										<span class="icon-content"style="color: #000 !important;"><?php echo $lang == 'english' ? 'Air Conditioning' : 'เครื่องปรับอากาศ'; ?></span>
+										<span class="icon-content"style="color: #000 !important; font-size: 0.875rem !important;"><?php echo $lang == 'english' ? 'Air Conditioning' : 'เครื่องปรับอากาศ'; ?></span>
 									</div>
 								</div>
 
@@ -283,7 +284,7 @@ $CI->load->model('m_project_info');
 										<span class="icon-content"style="color: #000 !important;"><object data="<?php echo share_folder_path();?>images/icons/wifi.svg" height="20"> </object></span>
 									</div>
 									<div class="col-md-9 text-left col-sm-9 icon_container">
-										<span class="icon-content"style="color: #000 !important;">Free WIFI</span>
+										<span class="icon-content"style="color: #000 !important; font-size: 0.875rem !important;">Free WIFI</span>
 									</div>						
 								</div>
 								<?php if ($rt->sofa_en != '') {?>
@@ -294,7 +295,7 @@ $CI->load->model('m_project_info');
 										</span>
 									</div>
 									<div class="col-md-9 text-left col-sm-9 icon_container">
-										<span class="icon-content"style="color: #000 !important;"><?php echo $lang == 'english' ? $rt->sofa_en : $rt->sofa_th; ?></span>
+										<span class="icon-content"style="color: #000 !important; font-size: 0.875rem !important;"><?php echo $lang == 'english' ? $rt->sofa_en : $rt->sofa_th; ?></span>
 									</div>						
 								</div>
 								<?php }?>
@@ -305,7 +306,7 @@ $CI->load->model('m_project_info');
 					</div>
 				</div>
 				<div class="row">
-					<div class="col-md-12 ml-2 text-right">
+					<div class="col-md-12 ml-2 text-right" style="font-size: 0.875rem !important;">
 					<button class="btn button-primary-w add_to_cart btn-add_to_cart" data-id="<?php echo $rt->id_room_type;?>" data-price="<?php echo $rt->default_rate;?>" id="" style="margin-right: 5px;"><?php echo $this->lang->line('add_to_cart');?></button>
 						<a href="javascript:;" data-roomtype="<?php echo $rt->id_room_type;?>" class="btn button-primary book_now  btn-book_now" id="" style="margin-left: 5px;"><?php echo $this->lang->line('book_now');?></a>
 					</div>
@@ -326,7 +327,7 @@ $CI->load->model('m_project_info');
 			<div class="section_header "><?php echo $this->lang->line('project_overview');?></div>		
 			<div class="row mb-2">	
 				<div class="container-fluid mb-4">		
-					<div class="col-md-12">			
+					<div class="col-md-12" style="font-size: 0.875rem !important;">			
 		    			<?php echo ($lang == 'english') ? $project_details->overview_en : $project_details->overview_th;;?>
 		    		
 		    		</div>
@@ -336,7 +337,7 @@ $CI->load->model('m_project_info');
 			<div class="section_header "><?php echo $this->lang->line('project_highlights');?></div>
 			<div class="row mb-2">			
 				<div class="container-fluid mb-4">
-					<div class="col-md-12">		
+					<div class="col-md-12" style="font-size: 0.875rem !important;">		
 						<div class="h_container" style="display: flex; flex-direction: row; ">	
 		    			<?php foreach ($project_highlights as $h) {?>
 		    				<div style="bottom: 0; padding-right: 50px;">
@@ -361,7 +362,7 @@ $CI->load->model('m_project_info');
     			<?php 
     			
     			foreach ($property_facility as $f) {?>
-    				<div class="col-md-6" style="bottom: 0; ">
+    				<div class="col-md-6" style="bottom: 0; font-size: 0.875rem !important;">
     				
     				<input type="checkbox" <?php echo (in_array($f->long_desc_en, $project_facility)) ? 'checked="checked"' : ''?> style="vertical-align:middle; pointer-events:none;">
     				&nbsp;<img src="<?php echo share_folder_path().$f->icon;?>" width="18">
@@ -377,7 +378,7 @@ $CI->load->model('m_project_info');
 	<div class="section_header "><?php echo $this->lang->line('conditions_and_policies');?></div>
 	<div class="row">			
 		<div class="container-fluid mb-4">
-			<div class="col-md-12">			
+			<div class="col-md-12" style="font-size: 0.875rem !important;">			
     			
     			<?php 
     			//print_r($project_policy);
@@ -401,7 +402,7 @@ $CI->load->model('m_project_info');
 			<div class="row mb4">
 				<div class="col-md-12">		
 					<div class="table-responsive">
-						<table class="table table-bordered" style="border-color: #dee2e6; color: #000 !important;">
+						<table class="table table-bordered" style="border-color: #dee2e6; color: #000 !important; font-size: 0.875rem !important;">
 							<tr>
 								<th><?php echo $this->lang->line('location');?></th>
 								<th><?php echo $this->lang->line('distance');?>(km)</th>
