@@ -509,7 +509,8 @@
 	}
 	
 	.form-control-ckinout {
-		padding: 1.165rem .75rem !important;
+		/*padding: 1.165rem .75rem !important;*/
+		padding: .375rem .75rem !important;
 	}
 	.form-control-btnsearch {
 		padding: 1.165rem .75rem !important;
@@ -554,6 +555,7 @@
 		background-color: #5392f9 !important;
 		color: #fff !important;
 		border: #5392f9 !important;
+		padding: .375rem .75rem !important;
 	}
 
 

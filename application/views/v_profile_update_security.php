@@ -196,7 +196,7 @@ $CI->load->model('m_room_type');
 
 
 				<form name="frm_update" id="frm_update" method="post" action="<?php echo site_url('profile').'/update_password';?>">
-					<div class="row border-r-10 mt-4">
+					<div class="row border-r-10 mt-4" style="font-size: 0.875em !important;">
     					<input type="hidden" name="id_guest_p" id="id_guest_p" value="<?php echo $guest_info->id_guest;?>">   
 						<div class="col collapse multi-collapse-security show" id="collapse-security1">
 							<div class="row" style="height:200px;">
@@ -259,7 +259,7 @@ $CI->load->model('m_room_type');
 							</div>
 							<div class="col-2 mt-4 text-center">
 								<div class="row">
-									<div class="col-12">
+									<div class="col-12" style="font-size: 0.875em !important;">
 										<a data-toggle="collapse" data-target=".multi-collapse-security" aria-expanded="false" aria-controls="collapse-security1 collapse-security2">
 											<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="22" height="22" viewBox="0 0 256 256" xml:space="preserve">
 

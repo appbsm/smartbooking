@@ -10,9 +10,17 @@ $date = date('Y-m-d');
 
 ?>
 
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
 <style>
 
-
+.form-control, label, a {
+		color: #000 !important;
+	}
+	a:hover {
+		color: #000 !important;
+	}
 .nav-link.active {
 	background-color: #81BB4A!important;
 }
@@ -49,6 +57,12 @@ hr {
   right: 10px; 
   bottom: 10px; 
 }
+.btn-search {
+		background-color: #102958 !important;
+		color: #fff !important;
+		border: #102958 !important;
+		padding: .375rem .75rem !important;
+	}
 </style>
 
 <?php 

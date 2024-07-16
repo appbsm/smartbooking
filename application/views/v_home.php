@@ -902,16 +902,9 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
 		<!-- Descripttion -->
 </div>
 <!-- New About Us -->
-	
+	<!--
 	<div class="container mt-0 aboutus-lr">
 		<div class="row text-center mb-0" id="nav_roomstype">
-			<!--
-			<h4 style="text-align: center; padding-bottom: 15px;" id="nav_packagep_promotions">
-				<a  href="javascript:;" class="tx-title-header">
-					<?php echo $lang == "english" ? 'About us' : 'ข้อมูลโครงการ'; ?>
-				</a>
-			</h4>
-			-->
 			<div class="col-md-12 d-flex" style="flex-wrap: wrap;">
 				<div class="col-lg-4">
 					<div class="section-heading text-center mb-3">
@@ -946,9 +939,9 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
 								if (sizeof($packages) > 0) {
 									echo ($lang == 'english') ? '
 									<p>SM Resort redefines a new style of accommodation with its modern resort collection under the BuildSmart Group. Located in the picturesque Khao Yai area, SM Resort offers a remarkable transformation to welcome guests. With various activities available, we are ready to provide a new kind of experience for travelers. Additionally, we host a variety of gatherings and events, ensuring to create precious memories for you.</p>
-									<p><a href="https://smsmartbooking.buildersmart.com/project_info" target="_blank" class="em-readmore"><em></i>Read more...</em></a></p>' : '
+									<p><a href="http://192.168.20.22/smartbooking_front_test/project_info" target="_blank" class="em-readmore"><em></i>Read more...</em></a></p>' : '
 									<p> เพื่อต้อนรับแขกผู้มาเยือน พร้อมทั้งมีกิจกรรมต่างๆมากมาย พร้อมแล้วที่จะมอบประสบการณ์ในแบบฉบับใหม่ให้กับนักเดินทาง  รวมถึงงานเลี้ยงสังสรรค์ต่างๆ ที่พร้อมแล้วที่จะสร้างความทรงจำอันล้ำค่าเพื่อคุณ </p>
-									<p><a href="https://smsmartbooking.buildersmart.com/project_info" target="_blank" class="em-readmore"><em>อ่านต่อ...</em></a></p>';
+									<p><a href="http://192.168.20.22/smartbooking_front_test/project_info" target="_blank" class="em-readmore"><em>อ่านต่อ...</em></a></p>';
 								}
 							?>
 						</p>
@@ -963,14 +956,13 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
 			</div>
 		</div>
 	</div>
+	-->
 	
-	<br/><br/>
 	<div class="container mt-0 aboutus-lr">
 		<div class="row text-center mb-0" id="nav_roomstype">
 			<div class="col-md-12 d-flex" style="flex-wrap: wrap;">
 				<div class="col-lg-6">
 					<div class="section-heading text-center mb-3">
-						<!--<a href="https://smsmartbooking.buildersmart.com/project_info" target="_blank" class="a-readmore">-->
 							<div class="row aboutus-tx-title">
 								<h4 class="header-text">
 									<?php
@@ -986,7 +978,7 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
 									<?php
 										if (sizeof($packages) > 0) {
 											echo ($lang == 'english') ? '
-											<b>Relax amidst the stunning scenery</b>, surrounded by nature and fresh air. SM Resort redefines a new style of accommodation with its modern resort collection under the BuildSmart Group. Located in the picturesque Khao Yai area' : '<b>เอสเอ็ม รีสอร์ท</b> คือนิยามของที่พักแนวใหม่ คอลเลคชั่น รีสอร์ททันสมัย ในเครือของบริษัท บิวเดอสมาร์ท พร้อมการพลิกโฉมใหม่อย่างโดดเด่นบนพื้นที่เขาใหญ่';
+											<b>Relax amidst the stunning scenery</b>, surrounded by nature and fresh air. SM Resort redefines a new style of accommodation with its modern resort collection under the BuildSmart Group. Located in the picturesque Khao Yai area' : '<b>เอสเอ็ม รีสอร์ท</b> คือนิยามของที่พักแนวใหม่ คอลเลคชั่น รีสอร์ททันสมัย ในเครือของบริษัท  &nbsp;&nbsp; บิวเดอสมาร์ท พร้อมการพลิกโฉมใหม่อย่างโดดเด่นบนพื้นที่เขาใหญ่';
 										}
 									?>
 								</p>
@@ -996,9 +988,9 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
 										if (sizeof($packages) > 0) {
 											echo ($lang == 'english') ? '
 											<p>SM Resort redefines a new style of accommodation with its modern resort collection under the BuildSmart Group. Located in the picturesque Khao Yai area, SM Resort offers a remarkable transformation to welcome guests. With various activities available, we are ready to provide a new kind of experience for travelers. Additionally, we host a variety of gatherings and events, ensuring to create precious memories for you.</p>
-											<p><a href="https://smsmartbooking.buildersmart.com/project_info" target="_blank" class="em-readmore"><em></i>Read more...</em></a></p>' : '
+											<p><a href="http://192.168.20.22/smartbooking_front_test/project_info" target="_blank" class="em-readmore"><em></i>Read more...</em></a></p>' : '
 											<p> เพื่อต้อนรับแขกผู้มาเยือน พร้อมทั้งมีกิจกรรมต่างๆมากมาย พร้อมแล้วที่จะมอบประสบการณ์ในแบบฉบับใหม่ให้กับนักเดินทาง  รวมถึงงานเลี้ยงสังสรรค์ต่างๆ ที่พร้อมแล้วที่จะสร้างความทรงจำอันล้ำค่าเพื่อคุณ </p>
-											<p><a href="https://smsmartbooking.buildersmart.com/project_info" target="_blank" class="em-readmore"><em>อ่านต่อ...</em></a></p>';
+											<p><a href="http://192.168.20.22/smartbooking_front_test/project_info" target="_blank" class="em-readmore"><em>อ่านต่อ...</em></a></p>';
 										}
 									?>
 								</p>

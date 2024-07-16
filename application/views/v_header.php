@@ -176,6 +176,9 @@ if ($id_guest != '') {
 /*			max-width: 70% !important; */
 			width: 100px !important;
 		}
+		.menu-gap {
+			gap: 40px !important;
+		}
 	}
 
 	@media (min-width: 1400px) {
@@ -183,6 +186,14 @@ if ($id_guest != '') {
 /*			max-width: 30% !important; */
 			width: 100px !important;
 		}
+		.navbar-expand-lg .navbar-collapse {
+			display: flex !important;
+			flex-basis: auto;
+		}
+		.menu-gap {
+			gap: 50px !important;
+		}
+		
 	}
 
 	@media (min-width: 769px) and (max-width: 1024px) {
@@ -190,11 +201,21 @@ if ($id_guest != '') {
 /*			max-width: 50% !important; */
 			width: 100px !important;
 		}
+		
 	}
 	@media (max-width: 767px) {
 		.logo-img {
 /*		  width: 20% !important;*/
 		  width: 100px !important;
+		}
+	}
+	@media (min-width: 992px) {
+		.navbar-expand-lg .navbar-collapse {
+			display: flex !important;
+			flex-basis: auto;
+		}
+		.menu-gap {
+			gap: 30px !important;
 		}
 	}
   </style>
@@ -338,7 +359,7 @@ $is_home = (strpos($current_url, 'home') !== false);
 
 	   <div class="collapse navbar-collapse " id="navbarNav" style="background-color: #102958 !important; padding-left: 0; padding-right: 0; padding-top: 0 !important;">
 	   			<!-- me-auto -->
-					<ul class="navbar-nav mb-4  mb-lg-0 " style="font-size: 14px;margin: 0 auto !important;">
+					<ul class="navbar-nav mb-4  mb-lg-0  menu-gap" style="font-size: 14px;margin: 0 auto !important;">
 						<!-- style="padding-left: 5% !important;" -->
 						<!-- style="margin-right: 5% !important;" -->
 						<li class="nav-item nav-item-custom" id="nav_aboutus" >

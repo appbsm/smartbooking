@@ -182,7 +182,7 @@ $CI->load->model('m_room_type');
 
 				
 					<div class="row border-r-10 mt-4 p-5">
-						<table class="table-bordered w-100" style="padding: 5px;">
+						<table class="table-bordered w-100" style="padding: 5px; font-size: 0.875em !important;">
 							<?php if (isset($discount->code)) {
 							$booking_expired = (strtotime(date('Y-m-d')) > strtotime($discount->end_date_booking)) ? 'booking_expired' : '';
 							?>

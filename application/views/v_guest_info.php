@@ -30,6 +30,7 @@ $packages = array();
 ?>
 
 <style>
+	
 	.form-control, label {
 		color: #000 !important;
 	}
@@ -56,7 +57,8 @@ $packages = array();
 
 	.section_header {
 		font-weight: bold;
-		font-size: 1.1em;
+		/*font-size: 1.1em;*/
+		font-size: 14px !important;
 	}
 	
 	.button__badge {
@@ -185,7 +187,7 @@ $packages = array();
 												</div>
 											</div>
 
-											<div class="row">
+											<div class="row" style="font-size: 0.8rem !important;">
 												<div class="col-md-12 mb-3">
 													<div class="form-outline">
 														<label class="form-label mb-0" for="guest_name" style="font-weight: 500;">
@@ -252,7 +254,7 @@ $packages = array();
 												<span style="font-weight: normal; font-style: italic;">
 													<input type="checkbox" class="form_field" name="same_billing_info" id="same_billing_info" style="vertical-align:middle; margin-right: 5px;"><?php echo $this->lang->line('same_guest_info'); ?>
 												</span>
-												<div class="row">
+												<div class="row" style="font-size: 0.8rem !important;">
 													<div class="col-md-12 mb-3">
 														<div class="form-outline">
 															<label class="form-label mb-0" for="billing_name" style="font-weight: 500;">
@@ -428,7 +430,7 @@ $packages = array();
 
 									if ($extra->is_bed == 0) {
 								?>
-										<div class="row" style="margin: 10px 10px 10px 10px;">
+										<div class="row" style="margin: 10px 10px 10px 10px; font-size: 0.8rem !important;">
 											<div class="col-md-6"><input type="checkbox" class="form_field chk_extras <?php echo ucfirst($extra_name); ?>" style="vertical-align: middle;" data-id="<?php echo $extra->id_extras; ?>" data-price="<?php echo $extra->price; ?>" data-name="<?php echo ucfirst($extra->title_en); ?>" name="c_<?php echo $extra_name; ?>" id="c_<?php echo $extra_name; ?>" value="1">&nbsp;<?php echo ucfirst($extra->title_en); ?></div>
 											<div class="col-md-6"><?php echo $this->lang->line('quantity'); ?> (max of <?php echo $extra->max_qty; ?>): <input type="text" disabled class="form_field val_extras" min="0" max="<?php echo $extra->max_qty; ?>" name="inp_<?php echo $extra_name; ?>" data-bed="<?php echo $extra->is_bed; ?>" data-price="<?php echo $extra->price; ?>" data-name="<?php echo ucfirst($extra->title_en); ?>" id="inp_<?php echo $extra_name; ?>" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');"></div>
 										</div>
@@ -442,7 +444,7 @@ $packages = array();
 											$max_bed = intval($room_w_extra_bed) * intval($extra_bed);
 
 										?>
-											<div class="row" style="margin: 10px 10px 10px 10px;">
+											<div class="row" style="margin: 10px 10px 10px 10px; font-size: 0.8rem !important; ">
 												<div class="col-md-6"><input type="checkbox" class="form_field chk_extras bed" style="vertical-align: middle;" data-id="<?php echo $extra->id_extras; ?>" data-price="<?php echo $extra->price; ?>" data-name="<?php echo ucfirst($extra->title_en); ?>" name="c_bed" id="c_bed">&nbsp;<?php echo ucfirst($extra->title_en); ?></div>
 												<div class="col-md-6"><?php echo $this->lang->line('quantity'); ?> (max of <?php echo $max_bed; ?>): <input type="text" disabled class="form_field val_extras bed" min="0" max="<?php echo $max_bed; ?>" name="inp_bed" data-bed="<?php echo $extra->is_bed; ?>" data-price="<?php echo $extra->price; ?>" data-name="<?php echo ucfirst($extra->title_en); ?>" id="inp_bed" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');"></div>
 											</div>
@@ -468,7 +470,7 @@ $packages = array();
 
 					<div class="col-md-5 pl-4">
 								<!-- item room or package detail -->
-								<div class="row justify-content-end">
+								<div class="row justify-content-end" style="font-size: 0.8rem !important;">
 									<div class="col-md-12 border-r-10 mt-3">
 										<!-- <div class="section_header"><?php echo $this->lang->line('room_info'); ?></div> -->
 
@@ -1068,7 +1070,7 @@ $packages = array();
 								<!-- End room or package detail -->
 
 								<!-- Code discount -->
-								<div class="row justify-content-end">
+								<div class="row justify-content-end" style="font-size: 0.8rem !important;">
 									<div class="col-md-12 mt-3">
 										<div class="row">
 											<div class="col-md-12 mt-3 pr-0 text-left">												
@@ -1089,14 +1091,14 @@ $packages = array();
 									
 								</div>
 								<!-- End Code discount -->
-								<div class="row justify-content-end">
+								<div class="row justify-content-end" style="font-size: 0.8rem !important;">
 										<div class="col-12 mt-3 p-0 text-right">
 											<button class="btn button-secondary btn-guest-info" onclick="location.href='<?php echo site_url('/cart')?>'"><?php echo $this->lang->line('back'); ?></button>
 											<button class="btn button-primary btn-guest-info" id="proceed" type="button" disabled><?php echo $this->lang->line('proceed'); ?></button>
 										</div>
 									</div>
 								<!-- Total detail -->
-								<div class="row justify-content-end">
+								<div class="row justify-content-end" style="font-size: 0.8rem !important;">
 									<div class="col-md-12 border-r-10 mt-3">
 
 										
