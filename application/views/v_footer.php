@@ -84,7 +84,10 @@ $lang  = $lg;
 -->
 <!--2-->
 <!--<footer class="mt-3 bg-light" style="background-color: rgb(42, 42, 46) !important; color: rgba(255, 255, 255, 1.00);">-->
+
+
 <footer class="mt-3 bg-light" style="background-color: #102958 !important; color: rgba(255, 255, 255, 1.00);">
+
 		<div class="footer-top">
 			<div class="container">
 				<div class="row " id="contactus">
@@ -102,53 +105,34 @@ $lang  = $lg;
 				</div>
 			</div>
 		</div>
+
 		<div>
-        <div class="row">
-          <div class="footer-top-area">
-            <div class="row d-flex flex-wrap justify-content-between">
+			<!-- class="row" -->
+        <div >
+        	<!-- class="footer-top-area" -->
+          <div class="footer-top-area" >
+          	<!-- class="row d-flex flex-wrap justify-content-between" -->
+            <div class="d-flex flex-wrap justify-content-between" >
 
               <div class="col-lg-3 col-sm-6 pb-3 text-center pl-3">
                 <div class="footer_set_left footer_set_left2">
 
-					<div class="footer-menu">
-					  <img src="http://192.168.20.22/smartbooking_front_test/images/logo_small.png" width="140" alt="logo">
+									<div class="footer-menu">
+									  <img src="http://192.168.20.22/smartbooking_front_test/images/logo_small.png" width="140" alt="logo">
 
-						<br><br>
-						  <p class="text-light custom-font" style="font-size:18px;font-family: PFR_Font,'PSLxText', sans-serif;">IoT Specialist<br>"Connecting your world, <br> Simplifying your life."
-						  </p>
-						<!--
-						<p>
-						<a href="https://www.facebook.com/profile.php?id=61551989652981">
-									<svg width="16" height="16" fill="#F9FAFA" class="bi bi-facebook" viewBox="0 0 16 16">
-						  <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951"></path>
-						  <use xlink:href="#facebook"></use>
-						</svg>
-						</a>
-						&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+										<br><br>
+										  <p class="text-light custom-font" style="font-size:18px;font-family: PFR_Font,'PSLxText', sans-serif;">IoT Specialist<br>"Connecting your world, <br> Simplifying your life."
+										  </p>
+									</div>
 
-						<a href="#">
-						 <svg width="16" height="16" fill="#F9FAFA" class="bi bi-line" viewBox="0 0 16 16">
-								<path d="M8 0c4.411 0 8 2.912 8 6.492 0 1.433-.555 2.723-1.715 3.994-1.678 1.932-5.431 4.285-6.285 4.645-.83.35-.734-.197-.696-.413l.003-.018.114-.685c.027-.204.055-.521-.026-.723-.09-.223-.444-.339-.704-.395C2.846 12.39 0 9.701 0 6.492 0 2.912 3.59 0 8 0M5.022 7.686H3.497V4.918a.156.156 0 0 0-.155-.156H2.78a.156.156 0 0 0-.156.156v3.486c0 .041.017.08.044.107v.001l.002.002.002.002a.15.15 0 0 0 .108.043h2.242c.086 0 .155-.07.155-.156v-.56a.156.156 0 0 0-.155-.157m.791-2.924a.156.156 0 0 0-.156.156v3.486c0 .086.07.155.156.155h.562c.086 0 .155-.07.155-.155V4.918a.156.156 0 0 0-.155-.156zm3.863 0a.156.156 0 0 0-.156.156v2.07L7.923 4.832l-.013-.015v-.001l-.01-.01-.003-.003-.011-.009h-.001L7.88 4.79l-.003-.002-.005-.003-.008-.005h-.002l-.003-.002-.01-.004-.004-.002-.01-.003h-.002l-.003-.001-.009-.002h-.006l-.003-.001h-.004l-.002-.001h-.574a.156.156 0 0 0-.156.155v3.486c0 .086.07.155.156.155h.56c.087 0 .157-.07.157-.155v-2.07l1.6 2.16a.2.2 0 0 0 .039.038l.001.001.01.006.004.002.008.004.007.003.005.002.01.003h.003a.2.2 0 0 0 .04.006h.56c.087 0 .157-.07.157-.155V4.918a.156.156 0 0 0-.156-.156zm3.815.717v-.56a.156.156 0 0 0-.155-.157h-2.242a.16.16 0 0 0-.108.044h-.001l-.001.002-.002.003a.16.16 0 0 0-.044.107v3.486c0 .041.017.08.044.107l.002.003.002.002a.16.16 0 0 0 .108.043h2.242c.086 0 .155-.07.155-.156v-.56a.156.156 0 0 0-.155-.157H11.81v-.589h1.525c.086 0 .155-.07.155-.156v-.56a.156.156 0 0 0-.155-.157H11.81v-.589h1.525c.086 0 .155-.07.155-.156Z"></path>
-							  </svg>
-							</a>
-							&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-							 <a href="mailto:customercare@buildersmart.com">
-								   <svg width="16" height="16" fill="#F9FAFA" class="bi bi-envelope" viewBox="0 0 16 16">
-									<path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z"></path>
-								  </svg>
-								</a>
-							</p>
-						-->
-					</div>
                 </div>
-
               </div>
 
-      <div class="col-lg-3 col-sm-6 pb-2">
+      	<div class="col-lg-3 col-sm-6 pb-2">
               <!-- footer-title -->
-        <h5 class="text-center mb-0" style="font-size:17px;">
-			<?php echo $lang == 'english' ? 'WEBSITE MENU' : 'เมนูเว็บไซต์'; ?>
-		</h5>
+		        <h5 class="text-center mb-0" style="font-size:17px;">
+							<?php echo $lang == 'english' ? 'WEBSITE MENU' : 'เมนูเว็บไซต์'; ?>
+						</h5>
         <br>
               
                 <div class="footer-menu d-flex justify-content-center">
@@ -237,23 +221,20 @@ $lang  = $lg;
               <span style="font-size:14px !important; font-family: Arial, sans-serif !important;">&nbsp;&nbsp;Tiktok :</strong>&nbsp;&nbsp;installdirect</span>
                 </div>
 
-
               </div>
             </div>
 
-
               <div class="col-lg-2 col-sm-6 pb-2 p-0">
-                <!-- <div style="float: right !important;"> -->
                 <div class="footer_set_right footer_set_right2">
                 <h5 class="text-center mb-0" style="font-size:17px;">
 					<?php echo $lang == 'english' ? 'ADD LINE' : 'แอดไลน์'; ?>
-				</h5>
+								</h5>
                 <br>
+
                 <div class="footer-menu contact-item d-flex justify-content-center">
-                  
-                  <!-- <h5 class="widget-title  pb-2"><u>QR CODE LINE</u></h5> -->
-                <img class="footer_image_mobile" src="http://192.168.20.22/smartbooking_front_test/images/qrcode_s.png" width="60%">
+                	<img class="footer_image_mobile" src="http://192.168.20.22/smartbooking_front_test/images/qrcode_s.png" width="60%">
                 </div>
+
                 </div>
               </div>
 

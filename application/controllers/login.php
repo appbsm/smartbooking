@@ -65,6 +65,89 @@ class Login extends CI_Controller {
 		
 	}
 
+	function uniqueAlphaNum8() {
+	    // กำหนดตัวอักษรและตัวเลขที่สามารถใช้ได้
+	    $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+	    $charactersLength = strlen($characters);
+	    $randomString = '';
+	    for ($i = 0; $i < 8; $i++) {
+	        $randomString .= $characters[rand(0, $charactersLength - 1)];
+	    }
+	    return $randomString;
+	}
+
+	public function forgot_password(){
+		require_once('PHPMailer/PHPMailerAutoload.php');
+		// require_once(APPPATH.'third_party/PHPMailer/PHPMailerAutoload.php');
+		// $temp_pass = uniqueAlphaNum8();
+		$temp_pass = $this->m_stringlib->uniqueAlphaNum8();
+    	$password = $this->m_stringlib->useMD5($temp_pass, strtolower($temp_pass));
+
+    	$data['temp_pass'] = $temp_pass;
+    	$data['password'] = $password;
+		// $this->load->view('v_header');
+		$this->load->view('forgot_password',$data);
+		// $this->load->view('v_footer');
+
+		//////////////////////////
+    	// $subject = 'Smart Booking System Password Reset';
+	    // $message = '';
+	    // if ($_POST['lang'] != 'english') {
+	    //     $message = '<p>เราส่งอีเมลนี้ถึงคุณเนื่องจากมีการร้องขอเปลี่ยนรหัสผ่าน โปรดใช้รหัสผ่านชั่วคราวด้านล่างเพื่อเข้าสู่ระบบ หลังจากที่คุณเข้าสู่ระบบ โปรดไปที่โปรไฟล์ของคุณเพื่อเปลี่ยนรหัสผ่านอีกครั้ง</p><br>'
+	    //            . '<b>รหัสผ่าน: </b>'.$temp_pass
+	    //            . '<br><p>ขอขอบพระคุณ'
+	    //            . '<br><p>Smart Booking Management</p>'
+	    //            . '<br><p>นี่คืออีเมลที่สร้างขึ้นโดยระบบอัตโนมัติ โปรดอย่าตอบกลับอีเมลฉบับนี้</p>'
+	    //            ;
+	    // }
+	    // else {
+	    //     $message = '<p>We are sending you this email because you requested a password reset. '
+	    //            . 'Please use the temporary password below to login. '
+	    //            . 'After you login, please go to your profile to change the temporary password.</p><br>'
+	    //            . '<b>Password: </b>'.$temp_pass
+	    //            . '<br><p>Thank you.'
+	    //            . '<br><p>Smart Booking Management</p>'
+	    //            . '<br><p>This is auto-generated email. Please do not reply to this email.</p>'
+	    //            ;
+	    // }
+
+		// $sender = $_POST['reset_email'];
+	    // $smtp_user = 'info@installdirect.asia';
+	    // $smtp_pass = 'Bsm@2024';
+	    // $mail = new PHPMailer();
+	    // $mail->IsSMTP();
+	    // $mail->SMTPAutoTLS = false;
+	    // $mail->SMTPAuth    = true;
+	    // $mail->SMTPSecure  = "tls";
+	    // $mail->Host        = "smtp-legacy.office365.com";
+	    // $mail->Mailer      = "smtp";
+	    // $mail->Port        = "587";
+	    // $mail->Username    = $smtp_user;
+	    // $mail->Password    = $smtp_pass;
+
+	    // $mail->SetFrom('info@installdirect.asia', 'installdirect');
+	    // $mail->isHTML(true);
+	    // $mail->CharSet = "utf-8";
+	    // // $mail->Subject = "Request change password for SmartBroker system.";
+	    // $mail->Subject = $Subject;
+	    // $mail->AddAddress($sender, "Receiver");
+
+	    // $requester_details ="requester_details";
+	    // $issue_data = "issue_data";
+	    // $assign_to  = "assign_to";
+
+	    // // $msg = "detail msg";
+	    // // $mail->Body = $msg;
+	    // $mail->Body = $message;
+	    // if (!$mail->send()) {
+	    //     // echo 'Mailer Error: '.$mail->ErrorInfo;
+	    // } else {
+	    //     // echo 'successfully';
+	    // }
+	    // echo "end >>";
+
+	}
+
 	public function index2()
 	{		
 		if (!empty($_POST)) {

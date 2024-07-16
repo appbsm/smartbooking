@@ -1189,8 +1189,10 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
 <div class="row" id="roomtype"></div><br/><br/><br/>
 
 <!-- class="container mt-5" -->
-<div >
-	<div class="row text-center mb-0" id="nav_roomstype">
+<div>
+	
+	<!-- row mb-0 -->
+	<div class="text-center " id="nav_roomstype">
 		<div class="col-md-12">
 			<h4>
 				<a href="javascript:;" class="tx-title-header"><?php //echo $this->lang->line('room_types'); ?>

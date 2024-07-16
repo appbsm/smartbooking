@@ -402,14 +402,27 @@ $CI->load->model('m_room_type');
 
     <div class="modal-content">
       <div class="modal-header" style="text-align: center; margin: auto; border-bottom: none !important;"> 
-        <h4 style="color: black;" >Get Password Reset via Email</h4>
+        <h4 style="color: black;" ><?php echo $lang == "english" ? 'Get Password Reset via Email' : 'รับการรีเซ็ตรหัสผ่านทางอีเมล์'; ?></h4>
       </div>
-        
         <!-- action="<?php //echo site_url('profile/send_temp_password');?>" forgot_password.php -->
+        <!-- echo site_url('forgot_password.php') -->
       <div class="modal-body" style="text-align: center; margin: auto;">
-       <form name="frm_reset" id="frm_reset" method="post" action="<?php echo site_url('profile/send_temp_password');?>">
+       <form name="frm_reset" id="frm_reset" method="post" action="<?php echo site_url('/login/forgot_password');?>">
        <div class="row">
-   
+        <!-- hidden="true" -->
+         <input hidden="true" type="text" name="lang" value="<? echo $lang; ?>" required />
+            <div class="col-md-12 mb-4">
+                <div class="row">
+                    <div class="col-md-3" style="text-align: right;">
+                    <label  style="color: black;"class="form-label" for="reset_username"><span class="required">*</span><?php echo $this->lang->line('username');?></label>
+                    </div>
+                    <div class="col-md-8">
+                    <input style="color: black;" type="text" id="reset_username" name="reset_username" class="form-control" value="" required />
+                    </div>
+                
+                </div>
+           </div>
+
            <div class="col-md-12">
                 <div class="row" style="align-items: center;">
                     <div class="col-md-3" style="text-align: right;">
@@ -422,14 +435,12 @@ $CI->load->model('m_room_type');
                 </div>
            </div>
            <div class="col-md-12 mt-4 mb-2 text-center"> 
-                <button class="btn button-primary " id="send_to_email"><?php echo $this->lang->line('send_temporary_password');?></button>
+                <button style="background-color: #102958 !important;" class="btn button-primary " id="send_to_email"><?php echo $this->lang->line('send_temporary_password');?></button>
            </div>
         </div>
        </form>
-       
-       
+
       </div>
-      
     </div>
   </div>
 </div>
@@ -501,8 +512,15 @@ $CI->load->model('m_room_type');
 
                     </div>
                     <!-- end tab email-->
+<?php
+if ($this->session->flashdata('message')) {
+    // echo '<div class="alert alert-success">' . $this->session->flashdata('message') . '</div>';
+    echo '<script>alert("ระบบได้ส่งรหัสใหม่ไปที่อีเมล์ของคุณ กรุณาตรวจสอบอีเมล์ของคุณสำหรับรหัสผ่านใหม่ชั่วคราว")</script>';
+}
+?>
 
 <script>
+
     $(".forgot_pass").on('click', function(e){
         var mymodal = document.getElementById("myModal");
         
@@ -524,29 +542,60 @@ $CI->load->model('m_room_type');
             alert('<?php echo $this->lang->line('message_required_fields');?>');
         }
         else {
-            alert('<?php echo $this->lang->line('message_checkmail_temp_password');?>')
+            // alert('<?php echo $this->lang->line('message_checkmail_temp_password');?>')
+            $('#loading').show();
             $('#frm_reset').submit();
 
-            /*
-            var _url = "<?php echo site_url('profile/send_temp_password');?>";
+            
+            // var _url = "<?php echo site_url('profile/send_temp_password');?>";
             //console.log($('#reset_username').val()+' '+$('#reset_email').val());
-            $.ajax({
-                method: "POST",
-                url: _url,
-                data: {
-                    reset_username: $('#reset_username').val(),
-                    reset_email: $('#reset_email').val()
-                    }
-            })
-            .done(function (result){
-                //console.log(result);
-                $('#myModal').modal('hide');
-                alert('<?php echo $this->lang->line('message_checkmail_temp_password');?>')
-            });*/
+            // $.ajax({
+            //     method: "POST",
+            //     url: _url,
+            //     data: {
+            //         reset_username: $('#reset_username').val(),
+            //         reset_email: $('#reset_email').val()
+            //         }
+            // })
+            // .done(function (result){
+            //     //console.log(result);
+            //     $('#myModal').modal('hide');
+            //     alert('<?php echo $this->lang->line('message_checkmail_temp_password');?>')
+            // });
         }
     });
     
     </script>
+
+<style>
+        /* CSS สำหรับการแสดง loading overlay */
+        #loading {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        #loading img {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100px; /* กำหนดความกว้างของ GIF */
+            height: auto; /* ให้รักษาสัดส่วน */
+        }
+    </style>
+    <!-- <div id="loading" style="display:none;">
+    <p>กำลังโหลด...</p>
+    </div> -->
+<div id="loading">
+    <img src="loading.gif" alt="Loading...">
+</div>
+
 
                     <!-- tab mobile-->
                     <div class="form-content form-mobile" style="display: none;">

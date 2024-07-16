@@ -48,7 +48,8 @@ class Home extends CI_Controller {
 	
 	public function search () {
 
-		$this->id_project_info = $this->input->post('project_id');
+		// $this->id_project_info = $this->input->post('project_id');
+		$this->id_project_info = '1';
 		$data = array();
 
 		if (!empty($_POST)) {

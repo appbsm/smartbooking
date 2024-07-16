@@ -23,9 +23,7 @@ if ($id_guest != '') {
 }
 ?>
 <head>
-
 <title>Smart Booking</title>
-
   <link rel="icon" type="image/x-icon" href="<?php echo site_url(); ?>images/10.png">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -300,7 +298,7 @@ if ($id_guest != '') {
 		  else {
 		  ?>
 			  <div class="button mx-1 ">
-	        <a id="signin_button" class="btn btn_sign_in" href="<?php echo site_url('login'); ?>"  style="font-size: 14px !important;padding: 0.3rem 0.9rem !important;border-radius: 0.3rem !important;background-color: #5392f9 !important;" >Sign In</a>
+	        <a id="signin_button" class="btn btn_sign_in" href="<?php echo site_url('login'); ?>"  style="font-size: 14px !important;padding: 0.3rem 0.9rem !important;border-radius: 0.3rem !important;" >Sign In</a>
 	      </div>
 
 		  <?php } ?>
@@ -417,7 +415,7 @@ $is_home = (strpos($current_url, 'home') !== false);
 		  else {
 		  ?>
 			  <div class="button mx-1 ">
-	        <a id="signin_button" class="btn btn_sign_in" href="<?php echo site_url('login'); ?>" height="20" style="background-color: #5392f9 !important;" >Sign In</a>
+	        <a id="signin_button" class="btn btn_sign_in" href="<?php echo site_url('login'); ?>" height="20">Sign In</a>
 	      </div>
 
 		  <?php } ?>
