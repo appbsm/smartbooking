@@ -668,12 +668,12 @@ $CI->load->model('m_room_type');
 
 <!-- Package -->
 <!-- <link rel="stylesheet" href="<?= site_url() ?>/css/style.css"> -->
+<!-- <link rel="stylesheet" href="<?= site_url() ?>/css/main.css"> -->
+
 <link rel="stylesheet" href="<?= site_url() ?>/css/tiny-slider.css">
 <link rel="stylesheet" href="<?= site_url() ?>/css/package.css">
-<!-- <link rel="stylesheet" href="<?= site_url() ?>/css/main.css"> -->
 <link rel="icon" type="image/png" sizes="16x16" href="<?= site_url() ?>/images/10.png">
 <link rel="stylesheet" href="<?= site_url() ?>assets/select-picker/css/bootstrap-select.min.css">
-
 
 <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -1940,11 +1940,13 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
 <!-- facilities & amenities and nearby location -->
 
 <!-- <script src="//code.jquery.com/jquery.js"></script> -->
+
 <script src="<?php echo site_url(); ?>js/jquery.min.js"></script>
 <script src="<?php echo site_url(); ?>js/jquery-ui.min.js"></script>
 <script src="<?php echo site_url(); ?>bootstrap-4.0.0-dist/js/bootstrap.bundle.min.js"></script>
 <script src="<?php echo site_url(); ?>assets/select-picker/js/bootstrap-select.min.js"></script>
 <script src="<?php echo site_url(); ?>assets/swiper-element/js/swiper-element-bundle.min.js"></script>
+
 <!-- <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-element-bundle.min.js"></script> -->
 
 
@@ -2288,3 +2290,4 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
 	});
 	sessionStorage.clear();
 </script>
+

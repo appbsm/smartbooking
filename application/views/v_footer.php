@@ -16,6 +16,12 @@ $lang  = $lg;
 <link rel="stylesheet" href="<?= site_url() ?>/css/icons8.css">
 <link rel="stylesheet" href="<?= site_url() ?>/css/icons8-2.css">
 <link rel="stylesheet" href="<?= site_url() ?>/css/icons8-3.css">
+
+<!-- ปฏิทิน -->
+<script src="https://cdn.jsdelivr.net/npm/moment@2.29.1/moment.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+<!-- ปฏิทิน --> 
+
 <style>
 	.footer-social {
 		color: rgb(215, 215, 219) !important;

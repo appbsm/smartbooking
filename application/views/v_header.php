@@ -38,10 +38,29 @@ if ($id_guest != '') {
   <link href="<?php echo site_url(); ?>css/styles.css" rel="stylesheet">
   <link href="<?php echo site_url(); ?>css/css.css" rel="stylesheet">
   <?php echo $lang=='english'?'<link href="'.site_url().'css/custom_header_en.css" rel="stylesheet">':'<link href="'.site_url().'css/custom_header_th.css" rel="stylesheet">';?>
+
   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css?v=1001">
-  <!--<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>-->
+
+  <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.0/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css"> -->
 
   <style>
+  	.ui-button {
+      background-color: #0275d8;
+      color: white;
+    }
+
+    /* Adjust modal styles */
+    .modal-dialog {
+      max-width: 800px; /* Adjust modal width */
+    }
+
+    /* Customize form inputs */
+    .form-control {
+      border-color: #0275d8; /* Adjust input border color */
+    }
 
     .button {
       color: white;
@@ -355,6 +374,11 @@ if ($id_guest != '') {
 <?php 
 $current_url = $_SERVER['REQUEST_URI'];
 $is_home = (strpos($current_url, 'home') !== false);
+
+function add_trailing_slash($url) {
+    return rtrim($url, '/') . '/';
+}
+
 ?>
 
 	   <div class="collapse navbar-collapse " id="navbarNav" style="background-color: #102958 !important; padding-left: 0; padding-right: 0; padding-top: 0 !important;">
@@ -363,27 +387,26 @@ $is_home = (strpos($current_url, 'home') !== false);
 						<!-- style="padding-left: 5% !important;" -->
 						<!-- style="margin-right: 5% !important;" -->
 						<li class="nav-item nav-item-custom" id="nav_aboutus" >
-                <!-- <a class="nav-link" href="#aboutus">
-									<?php //echo $lang == "english" ? 'About us' : ' ข้อมูลโครงการ'; ?> 
-								</a> -->
-								<a class="nav-link" href="<?php echo $is_home ? '#aboutus' : 'home#aboutus'; ?>">
+								<a class="nav-link" href="<?php echo site_url('home#aboutus'); ?>">
         					<?php echo $lang == "english" ? 'About us' : 'ข้อมูลโครงการ'; ?>
     						</a>
             </li>
-            <li class="nav-item nav-item-custom" id="nav_roomstype" >
-								<a class="nav-link" href="<?php echo $is_home ? '#roomtype' : 'home#roomtype'; ?>">
+
+				    <li class="nav-item nav-item-custom" id="nav_roomstype" >
+								<a class="nav-link" href="<?php echo site_url('home#roomtype'); ?>"> 
         					<?php echo $lang == "english" ? 'Rooms type' : 'ประเภทห้อง'; ?>
     						</a>
             </li>
+
             <li class="nav-item nav-item-custom" id="nav_packagep_promotions" >
-								<a class="nav-link" href="<?php echo $is_home ? '#package' : 'home#package'; ?>">
+								<a class="nav-link" href="<?php echo site_url('home#package'); ?>">
         					<?php echo $lang == "english" ? 'Package & Promotions' : 'แพ็คเกจและโปรโมชั่น'; ?>
     						</a>
             </li>
 
             <!-- target="_blank" -->
             <li class="nav-item" id="nav_contactus">
-                <a class="nav-link" href="facilities" >
+                <a class="nav-link" href="<?php echo site_url('facilities'); ?>" >
 					<?php echo $lang == "english" ? 'Facilities & Amenities' : 'สิ่งอำนวยความสะดวก'; ?>
 								</a>
             </li>
@@ -395,17 +418,19 @@ $is_home = (strpos($current_url, 'home') !== false);
             </li>
 			-->
 					<li class="nav-item" id="nav_contactus">
-              <a class="nav-link" href="conditions" >
+              <a class="nav-link" href="<?php echo site_url('conditions'); ?>" >
 					<?php echo $lang == "english" ? 'Conditions & Policies' : 'เงื่อนไขและข้อกำหนด'; ?>
 							</a>
           </li>
 
-				<li class="nav-item" id="nav_contactus">
+					<li class="nav-item" id="nav_contactus">
                 <!--<a class="nav-link" href="#contactus">-->
-				<a class="nav-link" href="contact" >
-					<?php echo $lang == "english" ? 'Contact us' : 'ติดต่อเรา'; ?>
-				</a>
-            </li>
+						<a class="nav-link" href="<?php echo site_url('contact'); ?>" >
+							<?php echo $lang == "english" ? 'Contact us' : 'ติดต่อเรา'; ?>
+						</a>
+          </li>
+
+          <?php //echo site_url('contact'); ?>">
         </ul>
 
 	<!-- new menu -->

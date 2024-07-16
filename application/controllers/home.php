@@ -48,8 +48,22 @@ class Home extends CI_Controller {
 	
 	public function search () {
 
-		// $this->id_project_info = $this->input->post('project_id');
+		// $this->db->select('id_project_info');
+		// $this->db->from('project_info');
+		// $this->db->order_by('id_project_info', 'ASC');
+		// $this->db->limit(1); 
+
+		// $this->m_project_info->get_project_photos($this->id_project_info);
+		// $top_project_info = $this->m_project_info->get_project_info_limit();
+		// if ($top_project_info) {
+		//     $this->id_project_info = $top_project_info;
+		// }else{
+		// 	$this->id_project_info = '1';
+		// }
 		$this->id_project_info = '1';
+		// $this->id_project_info = $this->input->post('project_id');
+		// $this->id_project_info = '1';
+		// echo '<script>alert("id_project_info: '.$this->id_project_info .'")</script>'; 
 		$data = array();
 
 		if (!empty($_POST)) {

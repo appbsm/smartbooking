@@ -26,6 +26,27 @@ class M_project_info extends CI_Model{
 		return $result;
 	}
 
+	function get_project_info_limit() {
+		$result = new stdClass();
+		$this->db->select('id_project_info');
+		$this->db->from('project_info');
+		$this->db->order_by('id_project_info', 'ASC');
+    	$this->db->limit(1);
+		$query = $this->db->get();
+		// if ($query->num_rows() > 0) {
+		// 	$r = $query->result();
+		// 	$result = $r[0];			
+		// }
+		// return $result;
+
+		if ($query->num_rows() > 0) {
+            return $query->row(); // ส่งคืนแถวแรกของข้อมูล
+        } else {
+            return null; // ไม่มีข้อมูล
+        }
+	}
+
+
 	function get_project_info_detail($id_project_info = 1) {
 		$result = new stdClass();
 		$this->db->select('pi.*');
