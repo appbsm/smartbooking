@@ -664,6 +664,33 @@ $CI->load->model('m_room_type');
 		max-width: 600px;
 	  }
 	}
+	
+	@media (min-width: 576px) {
+		.modal-img {
+			width: 100% !important; 
+			max-width: 60% !important;
+		}
+		.carousel-control-prev, .carousel-control-next {
+			height: 10vh !important;
+			background-color: rgba(0, 0, 0, 0.5); 
+			border: none; 
+		}
+
+		.carousel-control-prev-icon, .carousel-control-next-icon {
+				width: 2rem !important;
+				height: 2rem !important;
+				background-color: #08142c;
+				border-radius: 50%;
+				border: 2px solid #08142c;
+		}
+
+		.carousel-control-prev-icon:after, .carousel-control-next-icon:after {
+			font-size: 2rem !important; 
+			font-weight: bold !important; 
+			color: white !important; 
+		}
+
+	}
 </style>
 
 <!-- <style>
@@ -697,7 +724,7 @@ $CI->load->model('m_room_type');
 <link rel="stylesheet" href="<?= site_url() ?>/css/package.css">
 <!-- <link rel="stylesheet" href="<?= site_url() ?>/css/main.css"> -->
 <link rel="icon" type="image/png" sizes="16x16" href="<?= site_url() ?>/images/10.png">
-<link rel="stylesheet" href="<?= site_url() ?>assets/select-picker/css/bootstrap-select.min.css">
+<!--<link rel="stylesheet" href="<?= site_url() ?>assets/select-picker/css/bootstrap-select.min.css">-->
 
 
 <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
@@ -706,6 +733,15 @@ $CI->load->model('m_room_type');
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+
+<!-- picker-->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css">
+<script src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script> 
+
+
+
+<!-- picker -->
 
 <div class=" home-p mb-4 mt-2">
 	<!-- Carousel Start -->
@@ -776,6 +812,7 @@ $CI->load->model('m_room_type');
 							<input type='text' class="form-control form-control-ckinout datepicker search_input" name="check_out_date" id="check_out_date" value="" />
 						</div>
 					</div>
+					
 					
 					<div class="col-lg-4 col-md-6 padd-rl">
 						<!-- <div class="col-md-12 mt-2"><b><?php echo $this->lang->line('search_by_room'); ?></b></div> -->
@@ -1304,7 +1341,7 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
 		</div>
 
 <div class="modal fade" id="imageModal<?php echo $key; ?>" tabindex="-1" role="dialog" aria-labelledby="imageModalLabel<?php echo $key; ?>" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-dialog modal-dialog-centered modal-img" role="document">
         <div class="modal-content bg-transparent border-0">
             <div class="modal-body p-0">
                 <div id="carouselExample<?php echo $key; ?>" class="carousel slide" data-ride="carousel">
@@ -2377,6 +2414,7 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
 					.appendTo('#slideshow-' + i);
 			}, 3000); // 3 seconds
 		});
+		
 
 		/*
 		$('.slideshow').each(function(i, obj) {
