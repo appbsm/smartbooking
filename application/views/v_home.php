@@ -797,7 +797,7 @@ $CI->load->model('m_room_type');
 									<option value="<?php echo $pj->id_project_info ?>"><?php echo $lang == "english" ? $pj->project_name_en : $pj->project_name_th; ?></option>
 								<?php } ?>
 							</select>
-						</div>
+						</div>	
 					</div>
 					-->
 					<div class="col-xl-3 col-lg-2 col-md-6 col-sm-6 col-xs-6 padd-rl">

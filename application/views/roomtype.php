@@ -6,6 +6,9 @@
 	  $this->lang->load('content', 'english');
 	}
 	$lang  = $lg;
+	
+	$CI = &get_instance();
+	$CI->load->model('m_room_type');
 ?> 
 
   <style>
@@ -778,7 +781,8 @@
 	</div>
 
 
-
+	
+	
 	<div class="container-fluid text-center search-box box-fillter">
 		<form name="frm_search" id="frm_search" method="post" action="<?php echo site_url('home/search'); ?>">
 			<input type="hidden" name="s_id_room_type" id="s_id_room_type" value="">
@@ -792,19 +796,6 @@
 
 			<div class="container fillter-h">
 				<div class="row search-bg pt-1" style="border: 2px solid #C6C6C7; border-radius: 5px; padding: 0; margin: 0 4px 0 4px;font-size: 14px !important;">
-					<!--
-					<div class="col-lg-3 ">
-						<div class="col-md-12 text-left">
-							<label class="ml-1" for="name"><?php echo $lang == "english" ? 'Location' : 'สถานที่'; ?> </label>
-							<select class="form-control selectpicker search_input" data-live-search="true" name="project_id" id="project_id">
-								<?php foreach ($project_all as $pj) { ?>
-									<option value="<?php echo $pj->id_project_info ?>"><?php echo $lang == "english" ? $pj->project_name_en : $pj->project_name_th; ?></option>
-								<?php } ?>
-							</select>
-						</div>
-					</div>
-					-->
-
 					<div class="col-xl-3 col-lg-2 col-md-6 col-sm-6 col-xs-6 padd-rl">
 						<div class="col-md-12 text-left">
 							<label class="ml-1 mb-1" for="name" style="font-size: 14px;color: black;"><?php echo $this->lang->line('check_in_date'); ?></label>
@@ -820,7 +811,6 @@
 					</div>
 					
 					<div class="col-lg-4 col-md-6 padd-rl">
-						<!-- <div class="col-md-12 mt-2"><b><?php echo $this->lang->line('search_by_room'); ?></b></div> -->
 						<div class="col-md-12 mb-2 text-left">
 							<label class="ml-1 mb-1" for="name" style="font-size: 14px;color: black;"><?php echo $lang == "english" ? 'Adult' : 'ผู้เข้าพัก'; ?></label>
 							<div class="dropdown">
@@ -924,33 +914,74 @@
 		<div class="col-md-12 ml-2 text-center mt-4">
 			<h4 style="text-align: center; padding-bottom: 15px;" id="nav_packagep_promotions">
 				<a id="nearby_locations" href="javascript:;" class="tx-title-header">
-					<? echo ($lang == 'english') ? 'Facilities & Amenities' : 'สิ่งอำนวยความสะดวก'; ?>
+					<? echo ($lang == 'english') ? 'Room Types Information' : 'รายละเอียดประเภทของห้อง'; ?>
 				</a>
 			</h4>
 		</div>
 	</div>
+
 	<div class="row mb-0" id="nav_roomstype" style="color: #000 !important;">
 		<div class="col-md-12 amenities-nearby-column">
 			<div class="col-md-8">
-			<div class="section_header " id="facilities_amenities">
-				<h6 style="font-weight: 600; color: #000 !important;"><? echo ($lang == 'english') ? 'Project Overview' : 'รายละเอียดโครงการ'; ?></h6>
-			</div>		
+
+			<div class="row mb-2">	
+				<div class="container-fluid mb-4">
+					<div class="col-md-12">		
+						<img class="img-roomtype img-thumbnail" src="<?php echo share_folder_path().$room_types_photo->room_photo_url; ?>" style="width: 100%; min-height: 310px !important; min-width: 470px !important;"  alt="Room Photo">
+					</div>
+				</div>
+			</div>
+
+			<!-- <div class="section_header "><u><? echo ($lang == 'english') ? 'Room Name' : 'ชื่อห้องพัก'; ?></u></div> -->
+
 			<div class="row mb-2">	
 				<div class="container-fluid mb-4">
 					<div class="col-md-12">			
-							<? if (!empty($project_details)){ ?>
-							<span style="color: #000 !important;"><? echo ($lang == 'english') ? $project_details->project_name_en : $project_details->project_name_th; ?></span>
-		    			<?php 
-		    			 }?>
-		    			
+							<? if (!empty($room_types)){ ?>
+							<span style="color: #000 !important;"><? echo ($lang == 'english') ? $room_types->room_type_name_en : $room_types->room_type_name_th; ?></span>
+		    			<?php } ?>
+		    			<?php
+		    					$date = date('Y-m-d');
+		    					$CI = &get_instance();
+	    						$rate = $CI->m_room_type->get_day_rate($room_types->id_room_type,$date);
+									if ($rate == '') {
+										$rate = $rt->default_rate;
+									}
+                  $price = ($lang == 'english') ? number_format($rate, 0) . '/Night' : 'ราคา ' . number_format($rate, 0) . '/คืน';
+                ?>
+                <span style="color: #000;"><?php echo $price; ?></span>
 		    		</div>
 		    	</div>
 			</div>
-	
-			<div class="section_header "><u><? echo ($lang == 'english') ? 'Project Highlights' : 'จุดเด่นของโครงการ'; ?></u></div>
+
+			<div class="section_header "><u><? echo ($lang == 'english') ? 'Room Information' : 'รายละเอียดห้อง'; ?></u></div>
+			<div class="row">			
+				<div class="container-fluid mb-4">
+					<div class="col-md-12">	
+						<div class="row" id="pj-con">
+
+							<div class="col-md-6" style="bottom: 0; ">
+								<!-- <input type="checkbox" checked="checked" style="vertical-align:middle; pointer-events:none;"> -->
+							&nbsp;<img src="http://192.168.20.22/smartbooking_front_test/images/icons/house.svg" width="18">
+								<span class="highlights_desc" style="font-size: 1.1em; color: #000 !important;"><?php echo ($lang == 'english') ? $room_types->area_en : $room_types->area_th; ?></span>
+							</div>
+
+							<div class="col-md-6" style="bottom: 0; ">
+								<!-- <input type="checkbox" checked="checked" style="vertical-align:middle; pointer-events:none;"> -->
+							&nbsp;<img src="http://192.168.20.22/smartbooking_front_test/images/icons/icons8-bedroom-50.png" width="18">
+								<span class="highlights_desc" style="font-size: 1.1em; color: #000 !important;"><?php echo ($lang == 'english') ? $room_types->room_details_en : $room_types->room_details_th; ?></span>
+							</div>
+
+						</div>	
+					</div>
+				</div>
+			</div>
+
+			<div class="section_header "><u><? echo ($lang == 'english') ? 'Project Highlights' : 'จุดเด่นของโครงการ'; ?></u>
+			</div>
 			<div class="row mb-2">			
 				<div class="container-fluid mb-4">
-					<div class="col-md-12">		
+					<div class="col-md-12">
 						<div class="h_container" style="display: flex; flex-direction: row; ">
 
 								<?php foreach ($project_highlights as $value) { ?>
@@ -959,8 +990,6 @@
 								<span class="highlights_desc" style="font-size: 1.1em; color: #000 !important;"><? echo ($lang == 'english') ? $value->description_en : $value->description_th; ?></span>
 		    				</div>
 		    				<?php } ?>
-
-		    				
 
 		    			</div>		
 		    		</div>
