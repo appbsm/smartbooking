@@ -539,6 +539,9 @@ $CI->load->model('m_room_type');
 		font-weight: 600;     
 		box-shadow: 2px 2px 5px 0 rgba(22, 22, 26, 0.18); 
 	}
+	.navbar-expand {
+		gap: 0 !important;
+	}
 
 	/* Styles for Mobile Phones */
 	@media (max-width: 480px) {
@@ -709,6 +712,7 @@ $CI->load->model('m_room_type');
 			height: 100% !important;
 		}
 	}
+	
 </style>
 
 <!-- <style>

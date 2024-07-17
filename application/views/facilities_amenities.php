@@ -109,14 +109,15 @@
         border: #5392f9 !important;
 	}
 	
-	.box-fillter {
-			padding: 0 180px !important;
+	.navbar-expand {
+		gap: 0 !important;
+	}
+	
+	@media (max-width: 767px) {
+		.fillter-h {
+			margin-top: 16px !important;
 		}
-			@media (max-width: 767px) {
-			.fillter-h {
-				margin-top: 16px !important;
-			}
-		}
+	}
 	.btn_stepper {
 		background-color: #102958 !important;
 		border: none;
@@ -649,6 +650,36 @@
 		html {
 	    scroll-padding-top: 150px; /* Adjust the padding value as needed */
 		}
+		
+		.box-fillter {
+			padding: 0 180px !important;
+		}
+		
+	}
+	@media (max-width: 767px) { 
+		.img-cover {
+			/* height: 500px !important; */
+			/*height: 100% !important;*/
+		}
+	@media (max-width: 820px) { 
+		.box-fillter {
+			padding: 0 !important;
+		}
+		.img-cover {
+			/* height: 500px !important; */
+			height: 100% !important;
+		}
+	}
+	@media (min-width:30em){  {
+		.box-fillter {
+			padding: 0 180px !important;
+		}
+	}
+	@media (min-width:480px){ 
+		.box-fillter {
+			padding: 0 180px !important;
+		}
+	}
   </style>
 
   <script>
