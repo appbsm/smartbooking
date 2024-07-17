@@ -712,6 +712,7 @@ $CI->load->model('m_room_type');
 			height: 100% !important;
 		}
 	}
+	
 </style>
 
 <!-- <style>
@@ -1343,34 +1344,22 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
 		<div class="col-lg-5 col-md-11 ml-md-0" style="padding: 0; display: flex; justify-content: flex-end;">
 			<div class="content content-product">
 				<!--<img class="img-roomtype room_img" src="<?php echo share_folder_path() . $photos[0]->room_photo_url; ?>" style="width: 100%;min-height: 310px !important;min-width: 470px !important;" data-type="<?php echo $ctr; ?>" data-ctr="<?php echo $ctr1; ?>">-->
-				
-
 			</div>
 			
-			
 			<div class="content-image">
-			<!-- /*slide image */
 				<div class="slideshow m-0 p-0" id="slideshow-<?php echo $key; ?>">
 					<?php
 						foreach ($photos as $ctr1 => $photo) {
 					?>
 						<div style="">
 							<a href="#" data-toggle="modal" data-target="#imageModal<?php echo $key; ?>" data-slide-to="<?php echo $ctr1; ?>">
+								<!--<img class="img-roomtype img-thumbnail" src="<?php echo share_folder_path() . $photo->room_photo_url; ?>" style="width: 100%; min-height: 310px !important; min-width: 470px !important;" data-type="<?php echo $ctr; ?>" data-ctr="<?php echo $ctr1; ?>" alt="Room Photo">-->
 								<img class="img-roomtype img-thumbnail" src="<?php echo share_folder_path() . $photo->room_photo_url; ?>" style="width: 100%;  !important;" data-type="<?php echo $ctr; ?>" data-ctr="<?php echo $ctr1; ?>" alt="Room Photo">
 							</a>
 						</div>
 					<?php } ?>
 				</div>
-			-->
-				<?php if (!empty($photos)) { ?>
-					<div class="image-container">
-						<a href="#" data-toggle="modal" data-target="#imageModal<?php echo $key; ?>" data-slide-to="0">
-							<img class="img-roomtype img-thumbnail" src="<?php echo share_folder_path() . $photos[0]->room_photo_url; ?>" style="width: 100%; !important;" alt="Room Photo">
-						</a>
-					</div>
-				<?php } ?>
 			</div>
-			
 		</div>
 
 <div class="modal fade" id="imageModal<?php echo $key; ?>" tabindex="-1" role="dialog" aria-labelledby="imageModalLabel<?php echo $key; ?>" aria-hidden="true">
