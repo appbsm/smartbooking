@@ -15,14 +15,28 @@ class M_room_type extends CI_Model{
 	}
 	
 	function get_room_types ($id_project_info) {
+		// $result = array();
+		// $this->db->where('id_project_info', $id_project_info);
+		// $this->db->order_by('display_sequence', 'ASC');
+		// $query = $this->db->get('room_type');
+		// if ($query->num_rows() > 0) {
+		// 	$result = $query->result();
+		// }
+		// return $result;
+
 		$result = array();
-		$this->db->where('id_project_info', $id_project_info);
-		$this->db->order_by('display_sequence', 'ASC');
-		$query = $this->db->get('room_type');
-		if ($query->num_rows() > 0) {
-			$result = $query->result();
-		}
-		return $result;
+	    $this->db->select('rt.*, rtp.room_photo_url');
+	    $this->db->from('room_type rt');
+	    $this->db->join('room_type_photo rtp', 'rt.id_room_type = rtp.id_room_type');
+	    $this->db->join('(SELECT id_room_type, MIN(display_sequence) AS min_seq FROM room_type_photo GROUP BY id_room_type) rtp_min', 'rtp.id_room_type = rtp_min.id_room_type AND rtp.display_sequence = rtp_min.min_seq', 'inner');
+	    $this->db->where('rt.id_project_info', $id_project_info);
+	    $this->db->order_by('rt.display_sequence', 'ASC');
+	    $query = $this->db->get();
+	    if ($query->num_rows() > 0) {
+	        $result = $query->result();
+	    }
+	    
+	    return $result;
 	}
 	
 	function get_room_type_by_ID ($id_project_info, $id_room_type) {

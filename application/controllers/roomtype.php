@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Home extends CI_Controller {
+class Roomtype extends CI_Controller {
 
 	public function __construct(){
 		parent::__construct();
@@ -15,55 +15,49 @@ class Home extends CI_Controller {
 		$this->id_project_info = 1;
 	}
 	
-	public function index()
-	{
-		$data['project_details'] = $this->m_project_info->get_project_info($this->id_project_info);
+	public function index($id_project='')
+	{	
+		$data['project_all'] = $this->m_project_info->get_all_project();
+
+		if($id_project==''){
+			$id_project=1;
+		}
+		$data['project_details'] = $this->m_project_info->get_project_info_detail($id_project);
+		
+		$data['project_highlights'] = $this->m_project_info->get_project_highlights($id_project);
+		$data['project_facility'] = $this->m_project_info->get_project_facility($id_project);
+
+		$data['project_policy_type'] = $this->m_project_info->get_property_policy_type($id_project);
+		$data['project_policy'] = $this->m_project_info->get_property_policy($id_project,'');
+
+		$data['point_of_interest'] = $this->m_project_info->get_locations_nearby($id_project);
 
 		$data['project_all'] = $this->m_project_info->get_all_project();
-		$data['project_photos'] = $this->m_project_info->get_project_photos($this->id_project_info);
-		$room_types = $this->m_room_type->get_room_types($this->id_project_info);
 
-		$modular_type = array();
-		$types_photos = array();
-		foreach ($room_types as $key => $rt) {
-			array_push($modular_type, $key); 
-			//$this->m_room_type->get_room_type_photos_by_modular($room_types[$key]->id_room_type);
-			array_push($types_photos, $this->m_room_type->get_room_type_photos_by_modular($room_types[$key]->id_room_type));
-		}
-		$data['packages'] = $this->m_package->get_all_packages();
-		$data['types_photos'] = $types_photos;		
-		$data['room_types'] = $room_types;		
-		$data['modular_type'] = $modular_type;
-		
 		$this->load->view('v_header');
-		$this->load->view('v_home', $data);
+		$this->load->view('roomtype', $data);
 		$this->load->view('v_footer');
 	}
 
-	public function home_old()
+	public function project_detail($id_project = '')
 	{
-		$data['project_details'] = $this->m_project_info->get_project_info($this->id_project_info);
+		if($id_project==''){
+			$id_project=1;
+		}
+		$data['project_details'] = $this->m_project_info->get_project_info_detail($id_project);
+		
+		$data['project_highlights'] = $this->m_project_info->get_project_highlights($id_project);
+		$data['project_facility'] = $this->m_project_info->get_project_facility($id_project);
+
+		$data['project_policy_type'] = $this->m_project_info->get_property_policy_type($id_project);
+		$data['project_policy'] = $this->m_project_info->get_property_policy($id_project,'');
+
+		$data['point_of_interest'] = $this->m_project_info->get_locations_nearby($id_project);
 
 		$data['project_all'] = $this->m_project_info->get_all_project();
-		$data['project_photos'] = $this->m_project_info->get_project_photos($this->id_project_info);
-		$room_types = $this->m_room_type->get_room_types($this->id_project_info);
 
-		$modular_type = array();
-		$types_photos = array();
-		foreach ($room_types as $key => $rt) {
-			array_push($modular_type, $key); 
-			//$this->m_room_type->get_room_type_photos_by_modular($room_types[$key]->id_room_type);
-			array_push($types_photos, $this->m_room_type->get_room_type_photos_by_modular($room_types[$key]->id_room_type));
-		}
-		$data['packages'] = $this->m_package->get_all_packages();
-		$data['types_photos'] = $types_photos;		
-		$data['room_types'] = $room_types;		
-		$data['modular_type'] = $modular_type;
-
-		$data['room_types2'] = $room_types;		
-		
 		$this->load->view('v_header');
-		$this->load->view('v_home_old', $data);
+		$this->load->view('facilities_amenities', $data);
 		$this->load->view('v_footer');
 	}
 	
@@ -75,22 +69,7 @@ class Home extends CI_Controller {
 	
 	public function search () {
 
-		// $this->db->select('id_project_info');
-		// $this->db->from('project_info');
-		// $this->db->order_by('id_project_info', 'ASC');
-		// $this->db->limit(1); 
-
-		// $this->m_project_info->get_project_photos($this->id_project_info);
-		// $top_project_info = $this->m_project_info->get_project_info_limit();
-		// if ($top_project_info) {
-		//     $this->id_project_info = $top_project_info;
-		// }else{
-		// 	$this->id_project_info = '1';
-		// }
-		$this->id_project_info = '1';
-		// $this->id_project_info = $this->input->post('project_id');
-		// $this->id_project_info = '1';
-		// echo '<script>alert("id_project_info: '.$this->id_project_info .'")</script>'; 
+		$this->id_project_info = $this->input->post('project_id');
 		$data = array();
 
 		if (!empty($_POST)) {
