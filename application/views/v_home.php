@@ -1514,14 +1514,14 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
 
 			<div class="footer mt-1 mb-2" style="justify-content: flex-start;">
 				<div class="ml-1 text-right">
-					<button class="btn button-primary-w add_to_cart btn-add_to_cart" data-id="1" data-price="1500" id="" style="margin-right: 5px;" fdprocessedid="t8mt0r">
+					<button class="btn button-primary-w add_to_cart btn-add_to_cart" data-id="<?php echo $rt->id_room_type; ?>" data-price="<?php echo $rate; ?>" id="" style="margin-right: 5px;" fdprocessedid="t8mt0r">
 						<?php
 							if (sizeof($packages) > 0) {
 								echo ($lang == 'english') ? 'Add To Cart' : 'เก็บใส่ตะกร้า';
 							}
 						?>
 					</button>
-					<a href="javascript:;" data-roomtype="1" class="btn button-primary book_now book_now:hover" id="" style="margin-left: 5px;">
+					<a href="javascript:;" data-roomtype="<?php echo $rt->id_room_type; ?>" class="btn button-primary book_now book_now:hover" id="" style="margin-left: 5px;">
 						<?php
 							if (sizeof($packages) > 0) {
 								echo ($lang == 'english') ? 'Book Now' : 'จองตอนนี้';

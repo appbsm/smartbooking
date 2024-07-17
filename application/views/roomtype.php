@@ -908,8 +908,18 @@
 
 <?php  
 	// $rate = $CI->m_room_type->get_day_rate($_GET, $date);
-
 ?>
+
+<form name="frm_room" id="frm_room" method="post" action="<?php echo site_url('room_details'); ?>">
+	<input type="hidden" name="project_id" id="project_id" value="">
+	<input type="hidden" name="h_id_room_type" id="h_id_room_type" value="">
+	<input type="hidden" name="h_num_of_adult" id="h_num_of_adult" value="">
+	<input type="hidden" name="h_num_of_room" id="h_num_of_room" value="">
+	<input type="hidden" name="h_num_of_children" id="h_num_of_children" value="">
+	<input type="hidden" name="h_children_ages" id="h_children_ages" value="">
+	<input type="hidden" name="h_check_in_date" id="h_check_in_date" value="">
+	<input type="hidden" name="h_check_out_date" id="h_check_out_date" value="">
+</form>
 
 <div class="container mt-0">
 
@@ -1043,6 +1053,7 @@
 
 			<div class="row" id="facilities"></div>
 			<div class="section_header "><u><? echo ($lang == 'english') ? 'Conditions And Policies' : 'เงื่อนไขและข้อกำหนดในการเข้าพัก'; ?></u></div>
+
 				<div class="row">			
 					<div class="container-fluid mb-4">
 						<div class="col-md-12">	
@@ -1059,8 +1070,30 @@
 						</div>
 					</div>
 				</div>
+
+				<div class="row">
+					<div class="container-fluid mb-4">
+					<div class="col-md-12">	
+						<button class="btn button-primary-w add_to_cart btn-add_to_cart" data-id="<?php echo $room_types->id_room_type; ?>" data-price="<?php echo $rate; ?>" id="" style="margin-right: 5px;background-color: #102958 !important;border: 1px solid #102958 !important;" fdprocessedid="t8mt0r">
+					<?php
+						// if (sizeof($packages) > 0) {
+							echo ($lang == 'english') ? 'Add To Cart' : 'เก็บใส่ตะกร้า';
+						// }
+					?>
+					</button>
+					<a href="javascript:;" data-roomtype="<?php echo $room_types->id_room_type; ?>" class="btn button-primary book_now book_now:hover" id="" style="margin-left: 5px;background-color: #102958 !important;border: 1px solid #102958 !important">
+						<?php
+							// if (sizeof($packages) > 0) {
+								echo ($lang == 'english') ? 'Book Now' : 'จองตอนนี้';
+							// }
+						?>
+					</a>
+						</div>
+					</div>
+				</div>
+
 			</div>
-			
+
 			<div class="col-md-4">
 				<div class="section_header ">
 					<h6 style="font-weight: 600; color: #000 !important;"><? echo ($lang == 'english') ? 'Locations Nearby' : 'สถานที่ใกล้เคียง'; ?></h6>
@@ -1088,7 +1121,7 @@
 			</div>
 		</div>
 	</div>
-	
+
 	<div class="row text-center mb-0" id="nav_roomstype">
 		<div class="col-md-12">
 			<div id="google-map">
