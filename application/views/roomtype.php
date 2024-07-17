@@ -709,6 +709,9 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
+
 <div class=" home-p mb-4 mt-2">
 	<div id="carousel carouselExampleIndicators" class="carousel slide carousel-fade" data-ride="carousel">
 		<div class="carousel-inner">
@@ -1096,32 +1099,19 @@
 	</div>
 </div>
 
-<!-- <script src="http://192.168.20.22/smartbooking_front_test/js/jquery.min.js"></script>
-<script src="http://192.168.20.22/smartbooking_front_test/js/jquery-ui.min.js"></script> -->
-
+<script src="http://192.168.20.22/smartbooking_front_test/js/jquery.min.js"></script>
+<script src="http://192.168.20.22/smartbooking_front_test/js/jquery-ui.min.js"></script>
 <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script> -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
 
-<!-- <script src="http://192.168.20.22/smartbooking_front_test/bootstrap-4.0.0-dist/js/bootstrap.bundle.min.js"></script> -->
+<script src="http://192.168.20.22/smartbooking_front_test/bootstrap-4.0.0-dist/js/bootstrap.bundle.min.js"></script>
 <script src="http://192.168.20.22/smartbooking_front_test/assets/select-picker/js/bootstrap-select.min.js"></script>
 <script src="http://192.168.20.22/smartbooking_front_test/assets/swiper-element/js/swiper-element-bundle.min.js"></script>
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
-
 <!-- /////////////////////////////////////////////////// -->
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+<!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script> -->
 
-<!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
-<!-- <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script> -->
-
-<!-- <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
-<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script> -->
-
-<!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> -->
-
-  <!-- <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script> -->
-  <!-- <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"> -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
 
 <script>
 	$('.carousel').carousel({
@@ -1199,7 +1189,17 @@
 		}
 	}
 
-	$(function() {
+	// $(document).ready(function() {
+  //   // Initialize Bootstrap Datepicker
+  //   $("#check_in_date").datepicker({
+  //     format: 'dd-mm-yyyy', // Date format
+  //     autoclose: true, // Close the datepicker when date is selected
+  //     todayHighlight: true, // Highlight today's date
+  //   });
+  // });
+	
+	// $(function() {
+	$(document).ready(function() {	
 		var today = new Date();
 		var tomorrow = new Date(today);
 		tomorrow.setDate(today.getDate() + 1);
@@ -1223,34 +1223,43 @@
 		}
 
 		$('#check_in_date').datepicker({
-			dateFormat: 'dd-mm-yy',
+			format: 'dd-mm-yyyy',
 			changeMonth: true,
 			changeYear: true,
-			minDate: new Date(), // = today
+			startDate: new Date(), // = today
 			onSelect: function(dateText, inst) {
-				alert('not checked');
-				// var in_date = $(this).val();
+				var in_date = $(this).val();
 				// check_in_date = in_date.split("-");
 
 				// //var d = new Date(check_in_date[2], parseInt(check_in_date[1])-1, check_in_date[0]);
 				// var today = new Date(check_in_date[2], parseInt(check_in_date[1]) - 1, check_in_date[0]);
+
 				// var tomorrow = new Date(today);
 				// tomorrow.setDate(today.getDate() + 1);
 				// tomorrow.toLocaleDateString();
 				// var tomorow_date = ('0' + tomorrow.getDate()).slice(-2) + '-' +
 				// 	('0' + (tomorrow.getMonth() + 1)).slice(-2) + '-' +
 				// 	tomorrow.getFullYear();
+
+				// alert('tomorow_date:'+tomorow_date);
 				// $("#check_out_date").val(tomorow_date);
-				$("#h_check_in_date").val($('#check_in_date').val());
-				$("#h_check_out_date").val($('#check_out_date').val());
+				// $("#h_check_in_date").val($('#check_in_date').val());
+				// $("#h_check_out_date").val($('#check_out_date').val());
 			}
 		}).val();
 
+		$('#check_in_date').on('changeDate', function(e) {
+			var selectedDate = e.format('dd-mm-yyyy');
+      var tomorrow = new Date(e.date);
+      tomorrow.setDate(tomorrow.getDate() + 1);
+      $('#check_out_date').datepicker('setDate', tomorrow);	
+		});
+
 		$('#check_out_date').datepicker({
-			dateFormat: 'dd-mm-yy',
+			format: 'dd-mm-yyyy',
 			changeMonth: true,
 			changeYear: true,
-			minDate: new Date(), // = today		
+			startDate: new Date(), // = today		
 			onSelect: function(dateText, inst) {
 				$("#h_check_in_date").val($('#check_in_date').val());
 				$("#h_check_out_date").val($('#check_out_date').val());

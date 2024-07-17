@@ -41,9 +41,9 @@ class Roomtype extends CI_Controller {
 
 		$data['amenities'] = $this->m_room_type->get_room_facilities($id_room_type);
 		
-		// $this->load->view('v_header');
+		$this->load->view('v_header');
 		$this->load->view('roomtype', $data);
-		// $this->load->view('v_footer');
+		$this->load->view('v_footer');
 	}
 
 	public function project_detail($id_project = '')
