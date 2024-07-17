@@ -2141,12 +2141,14 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
 <script src="<?php echo site_url(); ?>assets/swiper-element/js/swiper-element-bundle.min.js"></script>
 <!-- <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-element-bundle.min.js"></script> -->
 
+<!-- /////////////////////////////////////////////////// -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
 
 <!-- package -->
 <!--<script src="<?= site_url() ?>/js/tiny-slider.js"></script>
 <script src="<?= site_url() ?>/js/aos.js"></script>
 <script src="<?= site_url() ?>/js/custom.js"></script>-->
-
 
 <script>
 	$('.carousel').carousel({
@@ -2250,10 +2252,10 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
 
 
 		$('#check_in_date').datepicker({
-			dateFormat: 'dd-mm-yy',
+			format: 'dd-mm-yyyy',
 			changeMonth: true,
 			changeYear: true,
-			minDate: new Date(), // = today
+			startDate: new Date(), // = today
 			onSelect: function(dateText, inst) {
 
 				var in_date = $(this).val();
@@ -2274,15 +2276,22 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
 		}).val();
 
 		$('#check_out_date').datepicker({
-			dateFormat: 'dd-mm-yy',
+			format: 'dd-mm-yyyy',
 			changeMonth: true,
 			changeYear: true,
-			minDate: new Date(), // = today		
+			startDate: new Date(), // = today
 			onSelect: function(dateText, inst) {
 				$("#h_check_in_date").val($('#check_in_date').val());
 				$("#h_check_out_date").val($('#check_out_date').val());
 			}
 		}).val();
+
+		$('#check_in_date').on('changeDate', function(e) {
+		      var selectedDate = e.format('dd-mm-yyyy');
+		      var tomorrow = new Date(e.date);
+		      tomorrow.setDate(tomorrow.getDate() + 1);
+		      $('#check_out_date').datepicker('setDate', tomorrow);	
+		});
 
 		$('.myImg').click(function() {
 			var id = $(this).attr('data-id');
