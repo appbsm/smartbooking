@@ -20,6 +20,12 @@ $CI->load->model('m_room_type');
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
+
+<meta name="google-signin-scope" content="profile email">
+<meta name="google-signin-client_id" content="914587690606-4tt68kl5i732amq39va44ki024gvmahm.apps.googleusercontent.com">
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+
+
 <style>
     body {
         font-family: Arial, sans-serif;
@@ -647,14 +653,19 @@ if ($this->session->flashdata('message')) {
                 </div>
                 <div class="social-login ">
                     <div class="social-buttons">
-                        <button style="background-color: white !important;color: #5392f9 !important;border: 1px solid black;" class="google">
-                            <img src="https://cdn6.agoda.net/images/universal-login/google-logo-v2.svg" alt="Google" class="icon-social">Google
+                        <button style="background-color: white !important;color: #5392f9 !important;border: 1px solid #ccc;" class="google g-signin2" data-onsuccess="onSignIn" data-theme="dark"alt="Google">
+							<img src="https://cdn6.agoda.net/images/universal-login/google-logo-v2.svg" alt="Google" class="icon-social">Google
                         </button>
-                        <button style="background-color: white !important;color: #5392f9 !important;border: 1px solid black;" class="facebook">
+						
+                        <button style="background-color: white !important;color: #5392f9 !important;border: 1px solid #ccc;" class="facebook">
                             <img src="https://cdn6.agoda.net/images/universal-login/facebook-logo.svg" alt="Facebook" class="icon-social">Facebook
                         </button>
                     </div>
                 </div>
+				
+				
+				
+				
                 <div class="terms-policy">
                     <span style="color: black;">By signing in, I agree to Smsmartbooking's </span><br/>
                     <span>   
@@ -666,6 +677,43 @@ if ($this->session->flashdata('message')) {
             </div>
         </div>
     </div>
+	
+<!--	
+	<div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
+<br>
+Result: <textarea id="result"></textarea>
+-->
+<script>
+  function onSignIn(userInfo) {
+    var result = '';
+    
+    // Useful data for your client-side scripts:
+    var profile = userInfo.getBasicProfile();
+    
+    result+= "ID: "+profile.getId()+"\n";
+    result+= "Full Name:  "+profile.getName()+"\n";
+    result+= "Given Name: "+profile.getGivenName()+"\n";
+    result+= "Family Name: "+profile.getFamilyName()+"\n";
+    result+= "Email: "+profile.getEmail()+"\n";
+    result+= "ID Token: "+userInfo.getAuthResponse().id_token+"\n";
+    
+    document.getElementById("result").value = result;
+  };
+</script>
+
+<!--
+<div class="social-login">
+    <div class="social-buttons">
+        <button style="background-color: white !important;color: #5392f9 !important;border: 1px solid #ccc;" class="google" onclick="startGoogleSignIn()">
+            <img src="https://cdn6.agoda.net/images/universal-login/google-logo-v2.svg" alt="Google" class="icon-social">Google
+        </button>
+        <button style="background-color: white !important;color: #5392f9 !important;border: 1px solid #ccc;" class="facebook">
+            <img src="https://cdn6.agoda.net/images/universal-login/facebook-logo.svg" alt="Facebook" class="icon-social">Facebook
+        </button>
+    </div>
+</div>
+-->
+
 
     <script src="http://192.168.20.22/smartbooking_front_test/js/jquery.min.js"></script>
     <script src="http://192.168.20.22/smartbooking_front_test/js/jquery-ui.min.js"></script>
