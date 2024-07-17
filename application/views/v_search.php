@@ -296,7 +296,8 @@ $CI->load->model('m_room_type');
 			<input type="hidden" name="search_type" id="search_type" value="">
 			<input type="hidden" name="project_id" id="project_id" value="">
 
-			<div class="row search_room_header" style="font-size: 14px !important;">
+			<div class="row search_room_header" style="font-size: 14px !important; display: flex; justify-content: center;">
+				<!--
 				<div class="col-lg-3 col-sm-12">
 					<div class="col-md-12 col-sm-12 text-left">
 						<label class="ml-1" for="name"><?php echo $lang == "english" ? 'Location' : 'สถานที่'; ?> </label>
@@ -310,6 +311,7 @@ $CI->load->model('m_room_type');
 
 					</div>
 				</div>
+				-->
 				<div class="col-xl-2 col-lg-2 col-md-12 col-sm-12 col-xs-12">
 					<div class="col-md-12 text-left">
 						<label for="name" class="ml-1"><?php echo $this->lang->line('check_in_date'); ?></label>
