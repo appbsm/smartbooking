@@ -730,6 +730,11 @@ $CI->load->model('m_room_type');
 <script src="<?php echo site_url(); ?>bootstrap-4.0.0-dist/js/bootstrap.bundle.min.js"></script>
 <script src="<?php echo site_url(); ?>assets/select-picker/js/bootstrap-select.min.js"></script>
 <script src="<?php echo site_url(); ?>assets/swiper-element/js/swiper-element-bundle.min.js"></script>
+
+<!-- /////////////////////////////////////////////////// -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+
 <script>
 	function stepper(dis) {
 		let btn_id = dis.getAttribute('id');
@@ -819,10 +824,10 @@ $CI->load->model('m_room_type');
 		//$("#check_out_date").val(tomorow_date);
 
 		$('#check_in_date').datepicker({
-			dateFormat: 'dd-mm-yy',
+			format: 'dd-mm-yyyy',
 			changeMonth: true,
 			changeYear: true,
-			minDate: new Date(), // = today
+			startDate: new Date(), // = today
 			onSelect: function(dateText, inst) {
 
 				var in_date = $(this).val();
@@ -841,12 +846,18 @@ $CI->load->model('m_room_type');
 		}).val();
 
 		$('#check_out_date').datepicker({
-			dateFormat: 'dd-mm-yy',
+			format: 'dd-mm-yyyy',
 			changeMonth: true,
 			changeYear: true,
-			minDate: new Date() // = today		   
+			startDate: new Date(), // = today
 		}).val();
 
+		$('#check_in_date').on('changeDate', function(e) {
+	      var selectedDate = e.format('dd-mm-yyyy');
+	      var tomorrow = new Date(e.date);
+	      tomorrow.setDate(tomorrow.getDate() + 1);
+	      $('#check_out_date').datepicker('setDate', tomorrow);	
+		});
 
 		//console.log(type_a);
 		$('.myImg').click(function() {

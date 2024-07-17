@@ -1022,6 +1022,10 @@
 <script src="http://192.168.20.22/smartbooking_front_test/assets/select-picker/js/bootstrap-select.min.js"></script>
 <script src="http://192.168.20.22/smartbooking_front_test/assets/swiper-element/js/swiper-element-bundle.min.js"></script>
 
+<!-- /////////////////////////////////////////////////// -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+
 <script>
 	$('.carousel').carousel({
 		interval: 15000
@@ -1123,10 +1127,10 @@
 
 
 		$('#check_in_date').datepicker({
-			dateFormat: 'dd-mm-yy',
+			format: 'dd-mm-yyyy',
 			changeMonth: true,
 			changeYear: true,
-			minDate: new Date(), // = today
+			startDate: new Date(), // = today
 			onSelect: function(dateText, inst) {
 
 				var in_date = $(this).val();
@@ -1147,15 +1151,22 @@
 		}).val();
 
 		$('#check_out_date').datepicker({
-			dateFormat: 'dd-mm-yy',
+			format: 'dd-mm-yyyy',
 			changeMonth: true,
 			changeYear: true,
-			minDate: new Date(), // = today		
+			startDate: new Date(), // = today
 			onSelect: function(dateText, inst) {
 				$("#h_check_in_date").val($('#check_in_date').val());
 				$("#h_check_out_date").val($('#check_out_date').val());
 			}
 		}).val();
+
+		$('#check_in_date').on('changeDate', function(e) {
+      var selectedDate = e.format('dd-mm-yyyy');
+      var tomorrow = new Date(e.date);
+      tomorrow.setDate(tomorrow.getDate() + 1);
+      $('#check_out_date').datepicker('setDate', tomorrow);	
+		});
 
 		$('.myImg').click(function() {
 			var id = $(this).attr('data-id');

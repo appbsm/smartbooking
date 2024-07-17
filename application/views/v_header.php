@@ -47,6 +47,20 @@ if ($id_guest != '') {
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css"> -->
 
   <style>
+  	.datepicker {
+      font-size: 12px; /* กำหนดขนาดตัวอักษรสำหรับ input field */
+    }
+
+    .datepicker-dropdown {
+      font-size: 12px; /* กำหนดขนาดตัวอักษรสำหรับ dropdown ของปฏิทิน */
+    }
+
+    /* กำหนดขนาดตัวอักษรสำหรับ Datepicker โดยตรง */
+    .datepicker table td,
+    .datepicker table th {
+      font-size: 12px;
+    }
+
   	.ui-button {
       background-color: #0275d8;
       color: white;

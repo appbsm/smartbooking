@@ -381,14 +381,6 @@ $CI->load->model('m_room_type');
 	</div>
 	<!-- end Room package			 -->
 
-
-
-
-
-
-
-
-
 </main>
 
 <form name="frm_room" id="frm_room" method="post" action="<?php echo site_url('booking/guest_info');?>">
@@ -492,6 +484,11 @@ $CI->load->model('m_room_type');
 <script src="<?php echo site_url();?>js/jquery.min.js"></script>
 <script src="<?php echo site_url();?>js/jquery-ui.min.js"></script>
 <script src="<?php echo site_url();?>bootstrap-4.0.0-dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- /////////////////////////////////////////////////// -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+
 <script>
 function stepper(dis) {
 	let btn_id = dis.getAttribute('id');
@@ -593,10 +590,10 @@ function stepper(dis) {
 		*/
 		
 		$('#check_in_date').datepicker({ 
-		    dateFormat: 'dd-mm-yy',
-		    changeMonth: true,
-		    changeYear: true,
-		    minDate: new Date(), // = today
+		    format: 'dd-mm-yyyy',
+				changeMonth: true,
+				changeYear: true,
+				startDate: new Date(), // = today
 		    onSelect: function(dateText, inst) {
 				
 		        var in_date = $(this).val();
@@ -617,15 +614,22 @@ function stepper(dis) {
 		  }).val();
 
 		$('#check_out_date').datepicker({ 
-		    dateFormat: 'dd-mm-yy',
-		    changeMonth: true,
-		    changeYear: true,
-		    minDate: new Date(), // = today		
+		    format: 'dd-mm-yyyy',
+				changeMonth: true,
+				changeYear: true,
+				startDate: new Date(), // = today
 		    onSelect: function(dateText, inst) {
 		    	$("#h_check_in_date").val($('#check_in_date').val());
 				$("#h_check_out_date").val($('#check_out_date').val());
 		    }   
-		  }).val();
+		}).val();
+
+		$('#check_in_date').on('changeDate', function(e) {
+      var selectedDate = e.format('dd-mm-yyyy');
+      var tomorrow = new Date(e.date);
+      tomorrow.setDate(tomorrow.getDate() + 1);
+      $('#check_out_date').datepicker('setDate', tomorrow);	
+		});
 
 		$('.myImg').click(function(){
 			var id = $(this).attr('data-id');
