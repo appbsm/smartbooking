@@ -702,12 +702,17 @@
 <link rel="stylesheet" href="http://192.168.20.22/smartbooking_front_test//css/package.css">
 <link rel="icon" type="image/png" sizes="16x16" href="http://192.168.20.22/smartbooking_front_test//images/10.png">
 <link rel="stylesheet" href="http://192.168.20.22/smartbooking_front_test/assets/select-picker/css/bootstrap-select.min.css">
+
 <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
+
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
+
 <div class=" home-p mb-4 mt-2">
 	<div id="carousel carouselExampleIndicators" class="carousel slide carousel-fade" data-ride="carousel">
 		<div class="carousel-inner">
@@ -798,7 +803,7 @@
 				<div class="row search-bg pt-1" style="border: 2px solid #C6C6C7; border-radius: 5px; padding: 0; margin: 0 4px 0 4px;font-size: 14px !important;">
 					<div class="col-xl-3 col-lg-2 col-md-6 col-sm-6 col-xs-6 padd-rl">
 						<div class="col-md-12 text-left">
-							<label class="ml-1 mb-1" for="name" style="font-size: 14px;color: black;"><?php echo $this->lang->line('check_in_date'); ?></label>
+							<label class="ml-1 mb-1" for="name" style="font-size: 14px;color: black;"><?php echo $lang == "english" ? 'Check-in Date' : 'วันที่เข้าพัก'; ?></label>
 							<input type='text' style="color: black;" class=" form-control form-control-ckinout datepicker search_input" name="check_in_date" id="check_in_date" value="" />
 						</div>
 					</div>
@@ -927,7 +932,7 @@
 			<div class="row mb-2">	
 				<div class="container-fluid mb-4">
 					<div class="col-md-12">		
-						<img class="img-roomtype img-thumbnail" src="<?php echo share_folder_path().$room_types_photo->room_photo_url; ?>" style="width: 100%; min-height: 310px !important; min-width: 470px !important;"  alt="Room Photo">
+						<img class="img-roomtype img-thumbnail" src="<?php echo share_folder_path().$room_types_photo->room_photo_url; ?>" style="width: 100%; min-height: 310px !important; min-width: 440px !important;"  alt="Room Photo">
 					</div>
 				</div>
 			</div>
@@ -936,7 +941,8 @@
 
 			<div class="row mb-2">	
 				<div class="container-fluid mb-4">
-					<div class="col-md-12">			
+					<div class="col-md-12">		
+							<h5>
 							<? if (!empty($room_types)){ ?>
 							<span style="color: #000 !important;"><? echo ($lang == 'english') ? $room_types->room_type_name_en : $room_types->room_type_name_th; ?></span>
 		    			<?php } ?>
@@ -950,6 +956,7 @@
                   $price = ($lang == 'english') ? number_format($rate, 0) . '/Night' : 'ราคา ' . number_format($rate, 0) . '/คืน';
                 ?>
                 <span style="color: #000;"><?php echo $price; ?></span>
+                </h5>
 		    		</div>
 		    	</div>
 			</div>
@@ -979,16 +986,19 @@
 
 			<div class="section_header "><u><? echo ($lang == 'english') ? 'Project Highlights' : 'จุดเด่นของโครงการ'; ?></u>
 			</div>
-			<div class="row mb-2">			
+
+			<div class="row ">			
 				<div class="container-fluid mb-4">
 					<div class="col-md-12">
 						<div class="h_container" style="display: flex; flex-direction: row; ">
 
 								<?php foreach ($project_highlights as $value) { ?>
-		    				<div style="bottom: 0; padding-right: 50px;">
-								&nbsp;<img src="https://sharefolder.buildersmart.com/sms_booking/<? echo $value->icon; ?>" width="18">
-								<span class="highlights_desc" style="font-size: 1.1em; color: #000 !important;"><? echo ($lang == 'english') ? $value->description_en : $value->description_th; ?></span>
-		    				</div>
+									<div class="col-md-6" style="bottom: 0; ">
+			    				<div style="bottom: 0; padding-right: 50px;">
+									&nbsp;<img src="https://sharefolder.buildersmart.com/sms_booking/<? echo $value->icon; ?>" width="18">
+									<span class="highlights_desc" style="font-size: 1.1em; color: #000 !important;"><? echo ($lang == 'english') ? $value->description_en : $value->description_th; ?></span>
+			    				</div>
+			    				</div>
 		    				<?php } ?>
 
 		    			</div>		
@@ -996,8 +1006,9 @@
 				</div>
 			</div>
 			
-			<div class="section_header "><u><? echo ($lang == 'english') ? 'Project Facility' : 'สิ่งอำนวยความสะดวกของโครงการ'; ?></u></div>
-			<div class="row">			
+			<div class="section_header "><u><? echo ($lang == 'english') ? 'Facilities & Amenities' : 'สาธารณูปโภค & สิ่งอำนวยความสะดวก'; ?></u></div>
+
+			<!-- <div class="row">			
 				<div class="container-fluid mb-4">
 					<div class="col-md-12">	
 						<div class="row" id="pj-con">
@@ -1011,8 +1022,27 @@
 						</div>	
 					</div>
 				</div>
+			</div> -->
+
+			<div class="row">			
+				<div class="container-fluid mb-4">
+					<div class="col-md-12">	
+						<div class="row" id="pj-con">
+							<?php foreach ($amenities as $value) { ?>
+							<div class="col-sm-6 col-md-4" style="bottom: 0; ">
+							&nbsp;<img src="https://sharefolder.buildersmart.com/sms_booking/<? echo $value->icon; ?>" width="18">
+							<span class="highlights_desc" style="font-size: 1.1em; color: #000 !important;"><? echo ($lang == 'english') ? $value->desc_en : $value->desc_th; ?></span>
+							</div>
+							<?php } ?>
+						</div>	
+					</div>
+				</div>
 			</div>
-	
+
+
+		<!-- <img src="http://192.168.20.22/sm_booking1/includes/image.php?filename=<? echo $amenities->icon; ?>" width="18"> -->
+
+
 			<div class="row" id="facilities"></div>
 			<div class="section_header "><u><? echo ($lang == 'english') ? 'Conditions And Policies' : 'เงื่อนไขและข้อกำหนดในการเข้าพัก'; ?></u></div>
 				<div class="row">			
