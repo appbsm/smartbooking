@@ -630,7 +630,7 @@ $CI->load->model('m_room_type');
 			visibility: hidden;
 		}
 		.slider-package {
-			padding-right: 40px !important;
+			/*padding-right: 40px !important;*/
 		}
 		.box-fillter {
 			padding: 0 180px !important;
@@ -690,6 +690,24 @@ $CI->load->model('m_room_type');
 			color: white !important; 
 		}
 
+	}
+	
+	@media (max-width: 767px) { 
+		.img-cover {
+			/* height: 500px !important; */
+			/*height: 100% !important;*/
+		}
+		
+	}
+	@media (max-width: 820px) { 
+		.box-fillter {
+			/*padding: 0 180px !important;*/
+			padding: 0 !important;
+		}
+		.img-cover {
+			/* height: 500px !important; */
+			height: 100% !important;
+		}
 	}
 </style>
 
@@ -819,7 +837,7 @@ $CI->load->model('m_room_type');
 						<div class="col-md-12 mb-2 text-left">
 							<label class="ml-1 mb-1" for="name" style="font-size: 14px;"><?php echo $lang == "english" ? 'Adult' : 'ผู้เข้าพัก'; ?></label>
 							<div class="dropdown">
-								<button class="btn dropdown-toggle w-100 search_input" style="color: #000 !important; background-color: #fff !important; width:100%;display: flex;align-items: center;" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								<button class="btn dropdown-toggle w-100 search_input" style="color: #000 !important; background-color: #fff !important; width:100%;display: flex;align-items: center; border: 1px solid #ccc;" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 									<div class="d-inline-flex">
 										<span id="div_adult">2&nbsp;</span> <?php echo $this->lang->line('adults'); ?>, 
 										<span id="div_children">&nbsp;0&nbsp;</span> <?php echo $this->lang->line('children'); ?>, 
@@ -1022,7 +1040,7 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
 	
 	<div class="container mt-0 aboutus-lr">
 		<div class="row text-center mb-0" id="nav_roomstype">
-			<div class="col-md-12 d-flex" style="flex-wrap: wrap;">
+			<div class="col-md-12 d-flex p-0" style="flex-wrap: wrap;">
 				<div class="col-lg-6">
 					<div class="section-heading text-center mb-3">
 							<div class="row aboutus-tx-title">
