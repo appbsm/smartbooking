@@ -59,8 +59,6 @@ class Home extends CI_Controller {
 		$data['types_photos'] = $types_photos;		
 		$data['room_types'] = $room_types;		
 		$data['modular_type'] = $modular_type;
-
-		$data['room_types2'] = $room_types;		
 		
 		$this->load->view('v_header');
 		$this->load->view('v_home_old', $data);

@@ -707,61 +707,6 @@ $CI->load->model('m_room_type');
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
-<div class="container mt-5">
-    <div class="row">
-        <div class="col-md-4">
-            <img src="images/Home/Home_1.jpg" class="img-fluid img-thumbnail" data-toggle="modal" data-target="#imageModal" data-slide-to="0">
-        </div>
-        <div class="col-md-4">
-            <img src="images/Home/Home_2.jpg" class="img-fluid img-thumbnail" data-toggle="modal" data-target="#imageModal" data-slide-to="1">
-        </div>
-        <div class="col-md-4">
-            <img src="images/Home/Home_3.jpg" class="img-fluid img-thumbnail" data-toggle="modal" data-target="#imageModal" data-slide-to="2">
-        </div>
-    </div>
-</div>
-
-<div class="modal fade" id="imageModal" tabindex="-1" role="dialog" aria-labelledby="imageModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content bg-transparent border-0">
-            <div class="modal-body p-0">
-                <div id="carouselExample" class="carousel slide" data-ride="carousel">
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <img src="images/Home/Home_1.jpg" class="d-block w-100" alt="Image 1">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="images/Home/Home_2.jpg" class="d-block w-100" alt="Image 2">
-                        </div>
-                        <div class="carousel-item">
-                            <img src="images/Home/Home_3.jpg" class="d-block w-100" alt="Image 3">
-                        </div>
-                    </div>
-
-                    <a class="carousel-control-prev" href="#carouselExample" role="button" data-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Previous</span>
-                    </a>
-
-                    <a class="carousel-control-next" href="#carouselExample" role="button" data-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Next</span>
-                    </a>
-
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
-<script>
-    $('#imageModal').on('show.bs.modal', function (event) {
-        var button = $(event.relatedTarget); // Button that triggered the modal
-        var slideIndex = button.data('slide-to'); // Extract info from data-* attributes
-        $('#carouselExample').carousel(slideIndex);
-    });
-</script> 
-
 <div class=" home-p mb-4 mt-2">
 	<!-- Carousel Start -->
 	<div id="carousel carouselExampleIndicators" class="carousel slide carousel-fade" data-ride="carousel">
@@ -816,12 +761,12 @@ $CI->load->model('m_room_type');
 									<option value="<?php echo $pj->id_project_info ?>"><?php echo $lang == "english" ? $pj->project_name_en : $pj->project_name_th; ?></option>
 								<?php } ?>
 							</select>
-						</div>
+						</div>	
 					</div>
 					-->
 					<div class="col-xl-3 col-lg-2 col-md-6 col-sm-6 col-xs-6 padd-rl">
 						<div class="col-md-12 text-left">
-							<label class="ml-1 mb-1" for="name" style="font-size: 14px;"><?php echo $this->lang->line('check_in_date'); ?></label>
+							<label class="ml-1 mb-1" for="name" style="font-size: 14px;"><?php echo $lang == "english" ? 'Check-in Date' : 'วันที่เข้าพัก'; ?></label>
 							<input type='text' class=" form-control form-control-ckinout datepicker search_input" name="check_in_date" id="check_in_date" value="" />
 						</div>
 					</div>
@@ -1312,7 +1257,7 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
 	<?php 
 		$date = date('Y-m-d');
 		$CI = &get_instance();
-		$room_types = $CI->db->get('room_type')->result();
+		//$room_types = $CI->db->get('room_type')->result();
 		$room_details = $CI->db->get('room_type')->result();
 		$highlights = $CI->db->get('project_highlights')->result();
 		$amenities = $CI->db->get('room_type_amenities')->result();
@@ -1348,20 +1293,58 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
 						foreach ($photos as $ctr1 => $photo) {
 					?>
 						<div style="">
-							<a href="#" data-toggle="modal" data-slide-to="<?php echo $ctr1; ?>">
-								<img class="img-roomtype room_img img-thumbnail" src="<?php echo share_folder_path() . $photo->room_photo_url; ?>" style="width: 100%; min-height: 310px !important; min-width: 470px !important;" data-type="<?php echo $ctr; ?>" data-ctr="<?php echo $ctr1; ?>" alt="Room Photo">
+							<a href="#" data-toggle="modal" data-target="#imageModal<?php echo $key; ?>" data-slide-to="<?php echo $ctr1; ?>">
+								<img class="img-roomtype img-thumbnail" src="<?php echo share_folder_path() . $photo->room_photo_url; ?>" style="width: 100%; min-height: 310px !important; min-width: 470px !important;" data-type="<?php echo $ctr; ?>" data-ctr="<?php echo $ctr1; ?>" alt="Room Photo">
 							</a>
-
-							<!-- <a href="#" data-toggle="modal" data-target="#ModalCarousel" data-slide-to="<?php echo $ctr1; ?>">
-						        <img class="img-roomtype room_img img-thumbnail" src="<?php echo share_folder_path() . $photo->room_photo_url; ?>" style="width: 100%; min-height: 310px !important; min-width: 470px !important;" data-type="<?php echo $ctr; ?>" data-ctr="<?php echo $ctr1; ?>" alt="Room Photo">
-						    </a> -->
-
 						</div>
 					<?php } ?>
 				</div>
 			</div>
 			
 		</div>
+
+<div class="modal fade" id="imageModal<?php echo $key; ?>" tabindex="-1" role="dialog" aria-labelledby="imageModalLabel<?php echo $key; ?>" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content bg-transparent border-0">
+            <div class="modal-body p-0">
+                <div id="carouselExample<?php echo $key; ?>" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner">
+                        <?php 
+                            $isFirst = true;
+                            foreach ($photos as $ctr1 => $photo) {
+                        ?>
+                        <div class="carousel-item <?php echo $isFirst ? 'active' : ''; ?>">
+                            <img src="<?php echo share_folder_path().$photo->room_photo_url; ?>" class="d-block w-100" alt="Image <?php echo $ctr1 + 1; ?>">
+                        </div>
+                        <?php 
+                            $isFirst = false;
+                            } 
+                        ?>
+                    </div>
+
+                    <a class="carousel-control-prev" href="#carouselExample<?php echo $key; ?>" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+
+                    <a class="carousel-control-next" href="#carouselExample<?php echo $key; ?>" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $('#imageModal<?php echo $key; ?>').on('show.bs.modal', function (event) {
+        var button = $(event.relatedTarget);
+        var slideIndex = button.data('slide-to');
+        $('#carouselExample<?php echo $key; ?>').carousel(slideIndex);
+    });
+</script>
+
 		<!-- class="col-md-1 col-lg-0" -->
 		<div class="col-md-0 col-xs-1" >
 		</div>
@@ -1455,7 +1438,7 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
 				</div>
 			</div>
 			<div class="form-group mt-1 mb-0">
-				&nbsp;&nbsp;<a  href="http://192.168.20.22/sm_booking1/detail.php" class="tx-viewdetail" ><?php echo ($lang == 'english') ? 'View details' : 'ดูรายละเอียด'; ?></a>
+				&nbsp;&nbsp;<a  href="<?php echo site_url('roomtype'); ?>" class="tx-viewdetail" ><?php echo ($lang == 'english') ? 'View details' : 'ดูรายละเอียด'; ?></a>
 			</div>
 			<div class="footer mt-1 mb-2" style="justify-content: flex-start;">
 				<div class="ml-1 text-right">

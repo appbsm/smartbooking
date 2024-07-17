@@ -726,6 +726,14 @@ $CI->load->model('m_room_type');
 			<?php $ctr++;
 			} ?>
 		</div>
+		<!-- <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+		<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+		<span class="sr-only">Previous</span>
+	</a>
+	<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+		<span class="carousel-control-next-icon" aria-hidden="true"></span>
+		<span class="sr-only">Next</span>
+	</a> -->
 	</div>
 	<!-- Carousel End -->
 
@@ -753,7 +761,7 @@ $CI->load->model('m_room_type');
 									<option value="<?php echo $pj->id_project_info ?>"><?php echo $lang == "english" ? $pj->project_name_en : $pj->project_name_th; ?></option>
 								<?php } ?>
 							</select>
-						</div>
+						</div>	
 					</div>
 					-->
 					<div class="col-xl-3 col-lg-2 col-md-6 col-sm-6 col-xs-6 padd-rl">

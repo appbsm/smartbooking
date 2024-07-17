@@ -15,8 +15,9 @@ class Roomtype extends CI_Controller {
 		$this->id_project_info = 1;
 	}
 	
-	public function index($id_project='')
+	public function index($id_room_type='',$id_project='')
 	{	
+		
 		$data['project_all'] = $this->m_project_info->get_all_project();
 
 		if($id_project==''){
@@ -33,6 +34,10 @@ class Roomtype extends CI_Controller {
 		$data['point_of_interest'] = $this->m_project_info->get_locations_nearby($id_project);
 
 		$data['project_all'] = $this->m_project_info->get_all_project();
+
+		$data['room_types'] = $this->m_room_type->get_room_type_by_ID($id_project,$id_room_type);
+
+		$data['room_types_photo'] =$this->m_room_type->get_first_photo_room_type($id_room_type);
 
 		$this->load->view('v_header');
 		$this->load->view('roomtype', $data);
@@ -57,7 +62,32 @@ class Roomtype extends CI_Controller {
 		$data['project_all'] = $this->m_project_info->get_all_project();
 
 		$this->load->view('v_header');
-		$this->load->view('facilities_amenities', $data);
+		$this->load->view('roomtype', $data);
+		$this->load->view('v_footer');
+	}
+	
+	public function home_old()
+	{
+		$data['project_details'] = $this->m_project_info->get_project_info($this->id_project_info);
+
+		$data['project_all'] = $this->m_project_info->get_all_project();
+		$data['project_photos'] = $this->m_project_info->get_project_photos($this->id_project_info);
+		$room_types = $this->m_room_type->get_room_types($this->id_project_info);
+
+		$modular_type = array();
+		$types_photos = array();
+		foreach ($room_types as $key => $rt) {
+			array_push($modular_type, $key); 
+			//$this->m_room_type->get_room_type_photos_by_modular($room_types[$key]->id_room_type);
+			array_push($types_photos, $this->m_room_type->get_room_type_photos_by_modular($room_types[$key]->id_room_type));
+		}
+		$data['packages'] = $this->m_package->get_all_packages();
+		$data['types_photos'] = $types_photos;		
+		$data['room_types'] = $room_types;		
+		$data['modular_type'] = $modular_type;
+		
+		$this->load->view('v_header');
+		$this->load->view('v_home_old', $data);
 		$this->load->view('v_footer');
 	}
 	
