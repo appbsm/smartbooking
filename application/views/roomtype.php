@@ -709,8 +709,6 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
-
 <div class=" home-p mb-4 mt-2">
 	<div id="carousel carouselExampleIndicators" class="carousel slide carousel-fade" data-ride="carousel">
 		<div class="carousel-inner">
@@ -802,7 +800,7 @@
 					<div class="col-xl-3 col-lg-2 col-md-6 col-sm-6 col-xs-6 padd-rl">
 						<div class="col-md-12 text-left">
 							<label class="ml-1 mb-1" for="name" style="font-size: 14px;color: black;"><?php echo $lang == "english" ? 'Check-in Date' : 'วันที่เข้าพัก'; ?></label>
-							<input type='text' style="color: black;" class=" form-control form-control-ckinout datepicker search_input" name="check_in_date" id="check_in_date" value="" />
+							<input type='text' style="color: black;" class="form-control form-control-ckinout datepicker search_input" name="check_in_date" id="check_in_date" value="" />
 						</div>
 					</div>
 
@@ -1101,8 +1099,8 @@
 <!-- <script src="http://192.168.20.22/smartbooking_front_test/js/jquery.min.js"></script>
 <script src="http://192.168.20.22/smartbooking_front_test/js/jquery-ui.min.js"></script> -->
 
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+<!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script> -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
 
 <!-- <script src="http://192.168.20.22/smartbooking_front_test/bootstrap-4.0.0-dist/js/bootstrap.bundle.min.js"></script> -->
@@ -1224,26 +1222,25 @@
 			$("#h_check_out_date").val($('#check_out_date').val());
 		}
 
-
 		$('#check_in_date').datepicker({
 			dateFormat: 'dd-mm-yy',
 			changeMonth: true,
 			changeYear: true,
 			minDate: new Date(), // = today
 			onSelect: function(dateText, inst) {
+				alert('not checked');
+				// var in_date = $(this).val();
+				// check_in_date = in_date.split("-");
 
-				var in_date = $(this).val();
-				check_in_date = in_date.split("-");
-
-				//var d = new Date(check_in_date[2], parseInt(check_in_date[1])-1, check_in_date[0]);
-				var today = new Date(check_in_date[2], parseInt(check_in_date[1]) - 1, check_in_date[0]);
-				var tomorrow = new Date(today);
-				tomorrow.setDate(today.getDate() + 1);
-				tomorrow.toLocaleDateString();
-				var tomorow_date = ('0' + tomorrow.getDate()).slice(-2) + '-' +
-					('0' + (tomorrow.getMonth() + 1)).slice(-2) + '-' +
-					tomorrow.getFullYear();
-				$("#check_out_date").val(tomorow_date);
+				// //var d = new Date(check_in_date[2], parseInt(check_in_date[1])-1, check_in_date[0]);
+				// var today = new Date(check_in_date[2], parseInt(check_in_date[1]) - 1, check_in_date[0]);
+				// var tomorrow = new Date(today);
+				// tomorrow.setDate(today.getDate() + 1);
+				// tomorrow.toLocaleDateString();
+				// var tomorow_date = ('0' + tomorrow.getDate()).slice(-2) + '-' +
+				// 	('0' + (tomorrow.getMonth() + 1)).slice(-2) + '-' +
+				// 	tomorrow.getFullYear();
+				// $("#check_out_date").val(tomorow_date);
 				$("#h_check_in_date").val($('#check_in_date').val());
 				$("#h_check_out_date").val($('#check_out_date').val());
 			}
