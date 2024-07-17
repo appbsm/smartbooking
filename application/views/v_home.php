@@ -1337,7 +1337,7 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
 		<div class="col-lg-1">
 		</div>
 		 <!-- mr-md-5 -->
-		<div class="col-lg-5 col-md-11 ml-md-0" style="padding: 0 5px; display: flex; justify-content: flex-end;">
+		<div class="col-lg-5 col-md-11 ml-md-0" style="padding: 0; display: flex; justify-content: flex-end;">
 			<div class="content content-product">
 				<!--<img class="img-roomtype room_img" src="<?php echo share_folder_path() . $photos[0]->room_photo_url; ?>" style="width: 100%;min-height: 310px !important;min-width: 470px !important;" data-type="<?php echo $ctr; ?>" data-ctr="<?php echo $ctr1; ?>">-->
 			</div>
@@ -1349,7 +1349,8 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
 					?>
 						<div style="">
 							<a href="#" data-toggle="modal" data-target="#imageModal<?php echo $key; ?>" data-slide-to="<?php echo $ctr1; ?>">
-								<img class="img-roomtype img-thumbnail" src="<?php echo share_folder_path() . $photo->room_photo_url; ?>" style="width: 100%; min-height: 310px !important; min-width: 470px !important;" data-type="<?php echo $ctr; ?>" data-ctr="<?php echo $ctr1; ?>" alt="Room Photo">
+								<!--<img class="img-roomtype img-thumbnail" src="<?php echo share_folder_path() . $photo->room_photo_url; ?>" style="width: 100%; min-height: 310px !important; min-width: 470px !important;" data-type="<?php echo $ctr; ?>" data-ctr="<?php echo $ctr1; ?>" alt="Room Photo">-->
+								<img class="img-roomtype img-thumbnail" src="<?php echo share_folder_path() . $photo->room_photo_url; ?>" style="width: 100%;  !important;" data-type="<?php echo $ctr; ?>" data-ctr="<?php echo $ctr1; ?>" alt="Room Photo">
 							</a>
 						</div>
 					<?php } ?>
