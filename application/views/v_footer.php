@@ -18,8 +18,8 @@ $lang  = $lg;
 <link rel="stylesheet" href="<?= site_url() ?>/css/icons8-3.css">
 
 <!-- ปฏิทิน -->
-<script src="https://cdn.jsdelivr.net/npm/moment@2.29.1/moment.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+<!-- <script src="https://cdn.jsdelivr.net/npm/moment@2.29.1/moment.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script> -->
 <!-- ปฏิทิน --> 
 
 <style>
@@ -34,9 +34,11 @@ $lang  = $lg;
 	.custom-font {
 		font-family: 'PFR_Font', 'PSLxText', sans-serif !important;
 	}
-	.form-control, label, span, h1, h2, h3, h4, h5, h6, a {
+
+/*	ปิดเพราะทำให้ ผู้เข้าพัก เป็นสีขาวหมดยังแก้ไม่ได้เลยปิด*/
+/*	.form-control, label, span, h1, h2, h3, h4, h5, h6, a {
 		color: #fff;
-	}
+	}*/
   
 	@media (max-width: 768px) {
 		.footer_image_mobile {

@@ -41,10 +41,6 @@ if ($id_guest != '') {
 
   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css?v=1001">
 
-  <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
-  <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.0/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css"> -->
 
   <style>
   	.ui-button {

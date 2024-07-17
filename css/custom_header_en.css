@@ -76,13 +76,13 @@ a {
 	border-radius: 0;
 }
 
-.previous, .next {
+/*.previous, .next {
 	margin: 10px;
 	background-color: #81BB4A;
 	color: white;
 	padding: 5px 15px 5px 15px;
 	text-decoration: none;
-}
+}*/
 
 .paginate_button {
 	margin:10px;
@@ -359,12 +359,10 @@ input {
 	font-size: 1em;
 }
 
-.dropdown-menu {
+/*.dropdown-menu {
 	width: 100%;
 	border: #7F8C8D;
-	/*height: 200px;*/
-	
-}
+}*/
 
 .dropdown-item {
 	font-size: 0.8em!important;
