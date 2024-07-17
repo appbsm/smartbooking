@@ -1355,7 +1355,6 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
 					<?php } ?>
 				</div>
 			</div>
-			
 		</div>
 
 <div class="modal fade" id="imageModal<?php echo $key; ?>" tabindex="-1" role="dialog" aria-labelledby="imageModalLabel<?php echo $key; ?>" aria-hidden="true">
@@ -1472,7 +1471,7 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
                             <div class="col-5 col-sm-3 col-xxl-3 p-0 d-flex align-items-center icon_container">
                                 <span style="font-size: 11px !important;white-space: normal;" class="icon-content"><?php echo $lang == 'english' ? 'Air Conditioning' : 'เครื่องปรับอากาศ'; ?></span>
                             </div>
-                <?php   }}   ?> 
+                <?php }} ?> 
             	</div>        
 			</div>
 
@@ -1492,9 +1491,11 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
 				<?php } ?>
 				</div>
 			</div>
+
 			<div class="form-group mt-1 mb-0">
-				&nbsp;&nbsp;<a  href="<?php echo site_url('roomtype'); ?>" class="tx-viewdetail" ><?php echo ($lang == 'english') ? 'View details' : 'ดูรายละเอียด'; ?></a>
+				&nbsp;&nbsp;<a  href="<?php echo site_url('roomtype/index/').$rt->id_room_type; ?>" class="tx-viewdetail" ><?php echo ($lang == 'english') ? 'View details' : 'ดูรายละเอียด'; ?></a>
 			</div>
+
 			<div class="footer mt-1 mb-2" style="justify-content: flex-start;">
 				<div class="ml-1 text-right">
 					<button class="btn button-primary-w add_to_cart btn-add_to_cart" data-id="1" data-price="1500" id="" style="margin-right: 5px;" fdprocessedid="t8mt0r">
