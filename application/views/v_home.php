@@ -7,6 +7,8 @@ $CI->load->model('m_room_type');
 <title>Smart Booking</title>
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
 <style>
 	.search_input {
     	height: 30px !important;
@@ -738,6 +740,76 @@ $CI->load->model('m_room_type');
             background-size: 100%, 100%;
         }
 </style> -->
+
+<head>
+ 
+</head>
+<body>
+<!-- Facebook Chat Plugin -->
+<!--  
+   <div class="fb-customerchat"
+    attribution="setup_tool"
+    page_id="308940352313858"
+    theme_color="#0084ff"
+    logged_in_greeting="Hi! How can we help you?"
+    logged_out_greeting="Hi! How can we help you?">
+  </div>
+  
+ -->
+ 
+
+  <!-- Messenger ปลั๊กอินแชท Code -->
+  <div id="fb-root"></div>
+
+  <!-- Your ปลั๊กอินแชท code -->
+  <div id="fb-customer-chat" class="fb-customerchat"></div>
+	
+  <script>
+    var chatbox = document.getElementById('fb-customer-chat');
+    chatbox.setAttribute("page_id", "308940352313858"); <!-- ใช้ Page ID ของเพจธุรกิจ -->
+    chatbox.setAttribute("attribution", "biz_inbox");
+  </script>
+  
+  <script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '2110028109370751',
+      xfbml      : true,
+      version    : 'v20.0'
+    });
+    FB.AppEvents.logPageView();
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "https://connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+<div
+  class="fb-like"
+  data-share="true"
+  data-width="450"
+  data-show-faces="true">
+</div>
+ 
+ 
+
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+	var js, fjs = d.getElementsByTagName(s)[0];
+	if (d.getElementById(id)) return;
+	js = d.createElement (s); js.id = id;
+	js.src=
+	'https://connect.facebook.net/th_TH/sdk/xfbml.customerchat.js#xfbml
+	=1&version=v2.12&autoLogAppEvents=1';
+	fjs.parentNode.insertBefore (js, fjs);
+	}(document, 'script', 'facebook-jssdk')); 
+</script>
+
+ <div id="fb-customer-chat" class="fb-customerchat" page_id="308940352313858" theme_color="#44bec7"></div>
 
 <!-- Package -->
 <!-- <link rel="stylesheet" href="<?= site_url() ?>/css/style.css"> -->
@@ -2496,3 +2568,26 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
 	});
 	sessionStorage.clear();
 </script>
+<button type="button" onclick="topFunction()" class="return-to-top btn-returntop" id="returnTopBtn" title="Go to top" style="float: right; background-color: #102958 !important; color: #FFF !important; border: #102958; margin: -16px 2px; ">↑</button>
+
+<script>
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  var mybutton = document.getElementById("returnTopBtn");
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0; // For Safari
+  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+}
+</script>
+
+</body>
