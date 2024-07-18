@@ -21,7 +21,27 @@ class M_guest extends CI_Model{
 		$this->db->update('guest_info', $data);
 		//echo $this->db->last_query();
 	}
-	
+
+	function get_profile_facebook($email) {
+		$result = new stdClass;				
+		$this->db->select('*');
+		$this->db->from('guest_info');
+		$this->db->where('is_active',1);
+		$this->db->where('type','facebook');
+		$this->db->group_start()
+         ->where('email', $email)
+         ->group_end();
+		$query = $this->db->get();
+		//echo $this->db->last_query();
+		if($query->num_rows() > 0){
+			$r = $query->result();
+			$result = $r[0];
+		}else{			
+			$result = false;
+		}
+		return $result;
+	}
+
 	function get_profile_by_username_password($email,$pass_md5) {		
 		$result = new stdClass;				
 		$this->db->select('*');

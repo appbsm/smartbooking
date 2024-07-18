@@ -2,9 +2,10 @@
 // require_once($_SERVER['DOCUMENT_ROOT'] . '/smartbooking_front_test/PHPMailer/PHPMailerAutoload.php');
 // require_once('PHPMailer/PHPMailerAutoload.php');
 if($_SERVER["REQUEST_METHOD"] == "POST"){
-    require_once('PHPMailer/PHPMailerAutoload.php');
+    // require_once('PHPMailer/PHPMailerAutoload.php');
+    require(APPPATH . 'third_party/PHPMailer/PHPMailerAutoload.php');
 
-    require_once('connect_sql.php');
+    require('connect_sql.php');
     $sql ="update guest_info set password='".$password."' where email ='".$_POST['reset_email']."' ";
     $stmt = sqlsrv_query($conn,$sql);
     sqlsrv_close($conn);
