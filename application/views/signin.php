@@ -20,10 +20,14 @@ $CI->load->model('m_room_type');
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
-
-<meta name="google-signin-scope" content="profile email">
-<meta name="google-signin-client_id" content="914587690606-4tt68kl5i732amq39va44ki024gvmahm.apps.googleusercontent.com">
+<!-- ------------------ facebook ------------------ -->
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
 <script src="https://apis.google.com/js/platform.js" async defer></script>
+
+<!-- ------------------ google ------------------ -->
+<meta name="google-signin-scope" content="profile email">
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+<meta name="google-signin-client_id" content="33279337776-0hcru5kaidnskfjcveuvrv82vumvraaa.apps.googleusercontent.com"> 
 
 
 <style>
@@ -644,6 +648,7 @@ if ($this->session->flashdata('message')) {
                     <!-- end tab mobile-->
 
                 </div>
+
                 <div class="or-signin" style="margin-top: 8px;">
                     <div class="line-or-signin"></div>
                     <div>
@@ -651,20 +656,23 @@ if ($this->session->flashdata('message')) {
                     </div> 
                     <div class="line-or-signin"></div>
                 </div>
+
                 <div class="social-login ">
                     <div class="social-buttons">
                         <button style="background-color: white !important;color: #5392f9 !important;border: 1px solid #ccc;" class="google g-signin2" data-onsuccess="onSignIn" data-theme="dark"alt="Google">
 							<img src="https://cdn6.agoda.net/images/universal-login/google-logo-v2.svg" alt="Google" class="icon-social">Google
                         </button>
 						
-                        <button style="background-color: white !important;color: #5392f9 !important;border: 1px solid #ccc;" class="facebook">
+                        <!-- <button style="background-color: white !important;color: #5392f9 !important;border: 1px solid #ccc;" class="facebook">
                             <img src="https://cdn6.agoda.net/images/universal-login/facebook-logo.svg" alt="Facebook" class="icon-social">Facebook
-                        </button>
+                        </button> -->
+
+                        <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+                          Login with Facebook
+                        </fb:login-button>
+
                     </div>
                 </div>
-				
-				
-				
 				
                 <div class="terms-policy">
                     <span style="color: black;">By signing in, I agree to Smsmartbooking's </span><br/>
@@ -683,10 +691,13 @@ if ($this->session->flashdata('message')) {
 <br>
 Result: <textarea id="result"></textarea>
 -->
+
 <script>
   function onSignIn(userInfo) {
     var result = '';
-    
+
+    alert('onSignIn');
+
     // Useful data for your client-side scripts:
     var profile = userInfo.getBasicProfile();
     
@@ -701,25 +712,97 @@ Result: <textarea id="result"></textarea>
   };
 </script>
 
-<!--
-<div class="social-login">
-    <div class="social-buttons">
-        <button style="background-color: white !important;color: #5392f9 !important;border: 1px solid #ccc;" class="google" onclick="startGoogleSignIn()">
-            <img src="https://cdn6.agoda.net/images/universal-login/google-logo-v2.svg" alt="Google" class="icon-social">Google
-        </button>
-        <button style="background-color: white !important;color: #5392f9 !important;border: 1px solid #ccc;" class="facebook">
-            <img src="https://cdn6.agoda.net/images/universal-login/facebook-logo.svg" alt="Facebook" class="icon-social">Facebook
-        </button>
-    </div>
-</div>
--->
-
-
     <script src="http://192.168.20.22/smartbooking_front_test/js/jquery.min.js"></script>
     <script src="http://192.168.20.22/smartbooking_front_test/js/jquery-ui.min.js"></script>
     <script src="http://192.168.20.22/smartbooking_front_test/bootstrap-4.0.0-dist/js/bootstrap.bundle.min.js"></script>
     <script src="http://192.168.20.22/smartbooking_front_test/assets/select-picker/js/bootstrap-select.min.js"></script>
     <script src="http://192.168.20.22/smartbooking_front_test/assets/swiper-element/js/swiper-element-bundle.min.js"></script>
+
+    <script>
+        window.fbAsyncInit = function() {
+            FB.init({
+              appId      : '2110028109370751',
+              cookie     : true,
+              xfbml      : true,
+              version    : 'v20.0'
+            });
+
+            // FB.getLoginStatus(function(response) {
+            //   statusChangeCallback(response);
+            // });
+            FB.AppEvents.logPageView();   
+        };
+
+         (function(d, s, id){
+           var js, fjs = d.getElementsByTagName(s)[0];
+           if (d.getElementById(id)) {return;}
+           js = d.createElement(s); js.id = id;
+           js.src = "https://connect.facebook.net/en_US/sdk.js";
+           fjs.parentNode.insertBefore(js, fjs);
+         }(document, 'script', 'facebook-jssdk'));
+
+        function statusChangeCallback(response) {
+            if (response.status === 'connected') {
+              statusAPI();
+            } else {
+              // document.getElementById('status').innerHTML = 'Please log into this webpage.';
+            }
+        }
+
+        function checkLoginState() {
+            FB.getLoginStatus(function(response) {
+              statusChangeCallback(response);
+            });
+        }
+
+        document.getElementById('custom-fb-button').onclick = function() {
+            checkLoginState();
+        }
+
+        function statusAPI() {
+            FB.api('/me', { fields: 'name,email' }, function(response) {
+              if (response && !response.error) {
+                // document.getElementById('status').innerHTML =
+                // 'Thanks for logging in, ' + response.name + '!';
+                alert('Login successful!');
+                // window.location.href = "<?php echo site_url('login');?>?name=" + response.name + "&email=" + response.email;
+
+                // alert('response.name:'+response.name);
+                // alert('response.email:'+response.email);
+
+                var form = document.createElement('form');
+                form.method = 'POST';
+                form.action = "<?php echo site_url('login');?>";
+
+                // Create hidden input fields for name and email
+                var nameInput = document.createElement('input');
+                nameInput.type = 'hidden';
+                nameInput.name = 'name';
+                nameInput.value = response.name;
+                form.appendChild(nameInput);
+
+                var emailInput = document.createElement('input');
+                emailInput.type = 'hidden';
+                emailInput.name = 'email';
+                emailInput.value = response.email;
+                form.appendChild(emailInput);
+
+                var typeInput = document.createElement('input');
+                typeInput.type = 'hidden';
+                typeInput.name = 'type';
+                typeInput.value = 'facebook';
+                form.appendChild(typeInput);
+
+                // Append form to document body and submit
+                document.body.appendChild(form);
+                form.submit();
+                
+              }else{
+                alert('Failed to login facebook.');
+              }
+            });
+        }
+    </script>  
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
