@@ -284,6 +284,7 @@ class M_room_type extends CI_Model{
 				. "b.check_in_date < '". $check_out_date ."' AND "
 				. "b.status != 'Expired' AND b.status != 'Checked-out' AND b.status != 'Cancel'"
 				. ")";
+		// print_r($select);
 		$query = $this->db->query($select);
 		// echo $this->db->last_query();die;
 		if ($query->num_rows() > 0) {

@@ -94,7 +94,6 @@ class Booking extends MY_Controller
 
 				$guest = $this->m_guest->get_profile_by_guestID($id_guest);
 				$data['guest_info'] = $guest;
-				//print_r('Test');
 				
 			} else {
 				redirect('home');
@@ -248,7 +247,7 @@ class Booking extends MY_Controller
 	           );
 	           $id_guest = $this->m_guest->insert_profile($data_guest);	
 	       }
-	    
+	    	
 			$booking_num = $this->m_booking->generate_booking_number();
 			$id_project_project_info = 1;
 			$next_day = date('d-m-Y', strtotime("+1 day", strtotime(date('d-m-Y'))));
@@ -291,17 +290,17 @@ class Booking extends MY_Controller
 				'booking_date' => date('Y-m-d H:i:s'),
 				'check_in_date' => $check_in_date,
 				'check_out_date' => $check_out_date,
-				'number_of_adults' => $this->input->post('h_num_of_adult'),
-				'number_of_children' => $this->input->post('h_num_of_children'),
-				'children_age' => ($this->input->post('h_num_of_children') > 0) ? $this->input->post('h_children_ages') : '',
+				'number_of_adults' => intval(trim($this->input->post('h_num_of_adult'))),
+				'number_of_children' => intval(trim($this->input->post('h_num_of_children'))),
+				'children_age' => ($this->input->post('h_num_of_children') > 0) ? trim($this->input->post('h_children_ages')) : '',
 				'number_of_rooms' => sizeof($rooms),
 				'id_discount_code' => $id_discount,
 				'discount_code' => empty($discount->code) ? '' : $discount->code,
-				'discounted_amount' => $this->input->post('h_discount'), //str_replace(',', '', $this->input->post('h_discount')) ,
-				'sub_total' => $this->input->post('h_subtotal'), //str_replace(',', '', $this->input->post('h_subtotal')),
-				'vat' => $this->input->post('h_vat'), //str_replace(',', '', $this->input->post('h_vat')),
-				'grand_total' => $this->input->post('h_grand_total'), //str_replace(',', '', $this->input->post('h_grand_total')),
-				'balance_amount' => $this->input->post('h_grand_total'),
+				'discounted_amount' => floatval(str_replace(',', '', trim($this->input->post('h_discount')))), //str_replace(',', '', $this->input->post('h_discount')) ,
+				'sub_total' => floatval(str_replace(',', '', trim($this->input->post('h_subtotal')))), //str_replace(',', '', $this->input->post('h_subtotal')),
+				'vat' => floatval(str_replace(',', '', trim($this->input->post('h_vat')))), //str_replace(',', '', $this->input->post('h_vat')),
+				'grand_total' => floatval(str_replace(',', '', trim($this->input->post('h_grand_total')))), //str_replace(',', '', $this->input->post('h_grand_total')),
+				'balance_amount' => floatval(str_replace(',', '', trim($this->input->post('h_grand_total')))),
 				'status' => $booking_status,
 				'discount_type' => (isset($discount->discount_type)) ? $discount->discount_type : '',
 				'discount_value' => (isset($discount->discount_value)) ? $discount->discount_value : '',
