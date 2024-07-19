@@ -452,6 +452,7 @@ $CI->load->model('m_room_type');
 					<div class="row">
 						<div class="col-md-12 col-sm-12 mb-2 text-center mt-3">
 							<button class="btn button-primary-w add_to_cart btn-add_to_cart" data-id="<?php echo $pr->id_package; ?>" data-price="<?php echo $pr->price; ?>" id="" style="margin-right: 5px;"><?php echo $this->lang->line('add_to_cart'); ?></button>
+
 							<a href="javascript:;" data-package="<?php echo $pr->id_package; ?>" data-price="<?php echo $pr->price; ?>" class="btn button-primary book_now btn-book_now" id="" style="margin-left: 5px;"><?php echo $this->lang->line('book_now'); ?></a>
 						</div>
 					</div>
@@ -470,6 +471,7 @@ $CI->load->model('m_room_type');
 </main>
 
 <form name="frm_room" id="frm_room" method="post" action="<?php echo site_url('booking/guest_info'); ?>">
+<!-- <form name="frm_room" id="frm_room" method="post" action="<?php //echo site_url('room_details'); ?>"> -->
 	<input type="hidden" name="h_id_package" id="h_id_package" value="">
 	<input type="hidden" name="h_num_of_adult" id="h_num_of_adult" value="">
 	<input type="hidden" name="h_num_of_children" id="h_num_of_children" value="">
