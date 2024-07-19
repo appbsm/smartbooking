@@ -21,7 +21,8 @@ $CI->load->model('m_room_type');
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
 <!-- ------------------ facebook ------------------ -->
-<script async defer crossorigin="anonymous" src="https://connect.facebook.net/th_TH/sdk.js#xfbml=1&version=v20.0&appId=2110028109370751" nonce="bBD1lqRL"></script>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
+<script src="https://apis.google.com/js/platform.js" async defer></script>
 
 <!-- ------------------ google ------------------ -->
 <meta name="google-signin-scope" content="profile email">
@@ -403,6 +404,7 @@ $CI->load->model('m_room_type');
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10/dist/sweetalert2.min.css">
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10/dist/sweetalert2.min.js"></script>
+
 <body>
 
 <!-- Modal -->
@@ -660,20 +662,15 @@ if ($this->session->flashdata('message')) {
                         <button style="background-color: white !important;color: #5392f9 !important;border: 1px solid #ccc;" class="google g-signin2" data-onsuccess="onSignIn" data-theme="dark"alt="Google">
 							<img src="https://cdn6.agoda.net/images/universal-login/google-logo-v2.svg" alt="Google" class="icon-social">Google
                         </button>
+						
+                        <!-- <button style="background-color: white !important;color: #5392f9 !important;border: 1px solid #ccc;" class="facebook">
+                            <img src="https://cdn6.agoda.net/images/universal-login/facebook-logo.svg" alt="Facebook" class="icon-social">Facebook
+                        </button> -->
 
-                        <style>
-                          .fb-login-button {
-                            transform: scale(1.5) !important; /* เพิ่มขนาดของปุ่ม 1.5 เท่า */
-                            transform-origin: 0 0 !important; /* กำหนดจุดเริ่มต้นของการขยาย */
-                          }
-                        </style>		          
-                        <button style="background-color: white !important;color: #5392f9 !important;border: 1px solid #ccc;" >	
-                            <div class="fb-login-button" data-width="" data-size="" data-button-type="" data-layout="" data-auto-logout-link="false" data-use-continue-as="false" onlogin="checkLoginState();"  ></div>
-                        </button>	
-
-                        <!-- <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+                        <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
                           Login with Facebook
-                        </fb:login-button> -->
+                        </fb:login-button>
+
                     </div>
                 </div>
 				
@@ -688,7 +685,12 @@ if ($this->session->flashdata('message')) {
             </div>
         </div>
     </div>
-	
+
+<!-- <div id="fb-root"></div>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/th_TH/sdk.js#xfbml=1&version=v20.0&appId=201791747250732" nonce="wugYohAg"></script>
+
+<div class="fb-login-button" data-width="50" data-size="" data-button-type="" data-layout="" data-auto-logout-link="false" data-use-continue-as="false"></div>
+	 -->
 <!--	
 	<div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
 <br>
@@ -714,22 +716,35 @@ Result: <textarea id="result"></textarea>
     document.getElementById("result").value = result;
   };
 </script>
-
-    <script src="http://192.168.20.22/smartbooking_front_test/js/jquery.min.js"></script>
-    <script src="http://192.168.20.22/smartbooking_front_test/js/jquery-ui.min.js"></script>
-    <script src="http://192.168.20.22/smartbooking_front_test/bootstrap-4.0.0-dist/js/bootstrap.bundle.min.js"></script>
-    <script src="http://192.168.20.22/smartbooking_front_test/assets/select-picker/js/bootstrap-select.min.js"></script>
-    <script src="http://192.168.20.22/smartbooking_front_test/assets/swiper-element/js/swiper-element-bundle.min.js"></script>
+    
+    <script src="<?= site_url() ?>/js/jquery.min.js"></script>
+    <script src="<?= site_url() ?>/js/jquery-ui.min.js"></script>
+    <script src="<?= site_url() ?><?= site_url() ?>/bootstrap-4.0.0-dist/js/bootstrap.bundle.min.js"></script>
+    <script src="<?= site_url() ?>/assets/select-picker/js/bootstrap-select.min.js"></script>
+    <script src="<?= site_url() ?>/assets/swiper-element/js/swiper-element-bundle.min.js"></script>
 
     <script>
-        
-         // (function(d, s, id){
-         //   var js, fjs = d.getElementsByTagName(s)[0];
-         //   if (d.getElementById(id)) {return;}
-         //   js = d.createElement(s); js.id = id;
-         //   js.src = "https://connect.facebook.net/en_US/sdk.js";
-         //   fjs.parentNode.insertBefore(js, fjs);
-         // }(document, 'script', 'facebook-jssdk'));
+        window.fbAsyncInit = function() {
+            FB.init({
+              appId      : '2110028109370751',
+              cookie     : true,
+              xfbml      : true,
+              version    : 'v20.0'
+            });
+
+            FB.getLoginStatus(function(response) {
+              statusChangeCallback(response);
+            });
+            // FB.AppEvents.logPageView();   
+        };
+
+         (function(d, s, id){
+           var js, fjs = d.getElementsByTagName(s)[0];
+           if (d.getElementById(id)) {return;}
+           js = d.createElement(s); js.id = id;
+           js.src = "https://connect.facebook.net/en_US/sdk.js";
+           fjs.parentNode.insertBefore(js, fjs);
+         }(document, 'script', 'facebook-jssdk'));
 
         function statusChangeCallback(response) {
             if (response.status === 'connected') {

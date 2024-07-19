@@ -457,7 +457,16 @@ function add_trailing_slash($url) {
 
 		  <div class="input-group d-flex flex-row bg-light dropdown-user" style="background-color: #102958 !important;">            
 			<a class="nav-link align-text-bottom dropdown-toggle" id="profile_name" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color: #102958 !important; color: rgba(255, 255, 255, 1.00) !important;">
-				<?php echo $guest->firstname . ' ' . substr($guest->lastname, 0, 1). '.'; ?>
+				<?php //echo $guest->firstname . ' ' . substr($guest->lastname, 0, 1). '.'; ?>
+				<?php
+				if (empty($guest->firstname)) {
+				    // ถ้า $guest->firstname เป็นค่าว่างหรือ ''
+				    echo $guest->name . '.';
+				} else {
+				    // ถ้า $guest->firstname มีค่า
+				    echo $guest->firstname . ' ' . substr($guest->lastname, 0, 1) . '.';
+				}
+				?>
 			</a>
 
 			<button class="btn btn-outline-default btn-default btn-sm dropdown-toggle" style="display: none; " id="profile_dropdown" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>

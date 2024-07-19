@@ -836,7 +836,7 @@ $CI->load->model('m_room_type');
 
 <!-- picker -->
 
-<div class=" home-p mb-4 mt-2">
+<div class=" home-p mb-4 mt-0">
 	<!-- Carousel Start -->
 	<div id="carousel carouselExampleIndicators" class="carousel slide carousel-fade" data-ride="carousel">
 		<!-- <ol class="carousel-indicators">
@@ -869,7 +869,8 @@ $CI->load->model('m_room_type');
 
 	<!-- SECTION FOR SEARCH -->
 	<div class="container-fluid text-center search-box box-fillter">
-		<form name="frm_search" id="frm_search" method="post" action="<?php echo site_url('home/search'); ?>">
+		<!--<form name="frm_search" id="frm_search" method="post" action="<?php echo site_url('home/search'); ?>">-->
+		<form name="frm_search" id="frm_search" method="post" action="<?php echo 'https://smartbooking.installdirect.asia/home/search'; ?>">
 			<input type="hidden" name="s_id_room_type" id="s_id_room_type" value="">
 			<input type="hidden" name="s_num_of_adult" id="s_num_of_adult" value="">
 			<input type="hidden" name="s_num_of_room" id="s_num_of_room" value="">
@@ -1094,9 +1095,9 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
 								if (sizeof($packages) > 0) {
 									echo ($lang == 'english') ? '
 									<p>SM Resort redefines a new style of accommodation with its modern resort collection under the BuildSmart Group. Located in the picturesque Khao Yai area, SM Resort offers a remarkable transformation to welcome guests. With various activities available, we are ready to provide a new kind of experience for travelers. Additionally, we host a variety of gatherings and events, ensuring to create precious memories for you.</p>
-									<p><a href="http://192.168.20.22/smartbooking_front_test/project_info" target="_blank" class="em-readmore"><em></i>Read more...</em></a></p>' : '
+									<p><a href="https://smartbooking.installdirect.asia/smartbooking_front_test/project_info" target="_blank" class="em-readmore"><em></i>Read more...</em></a></p>' : '
 									<p> เพื่อต้อนรับแขกผู้มาเยือน พร้อมทั้งมีกิจกรรมต่างๆมากมาย พร้อมแล้วที่จะมอบประสบการณ์ในแบบฉบับใหม่ให้กับนักเดินทาง  รวมถึงงานเลี้ยงสังสรรค์ต่างๆ ที่พร้อมแล้วที่จะสร้างความทรงจำอันล้ำค่าเพื่อคุณ </p>
-									<p><a href="http://192.168.20.22/smartbooking_front_test/project_info" target="_blank" class="em-readmore"><em>อ่านต่อ...</em></a></p>';
+									<p><a href="https://smartbooking.installdirect.asia/smartbooking_front_test/project_info" target="_blank" class="em-readmore"><em>อ่านต่อ...</em></a></p>';
 								}
 							?>
 						</p>
@@ -1143,9 +1144,9 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
 										if (sizeof($packages) > 0) {
 											echo ($lang == 'english') ? '
 											<p>SM Resort redefines a new style of accommodation with its modern resort collection under the BuildSmart Group. Located in the picturesque Khao Yai area, SM Resort offers a remarkable transformation to welcome guests. With various activities available, we are ready to provide a new kind of experience for travelers. Additionally, we host a variety of gatherings and events, ensuring to create precious memories for you.</p>
-											<p><a href="http://192.168.20.22/smartbooking_front_test/project_info" target="_blank" class="em-readmore"><em></i>Read more...</em></a></p>' : '
+											<p><a href="https://smartbooking.installdirect.asia/smartbooking_front_test/project_info" target="_blank" class="em-readmore"><em></i>Read more...</em></a></p>' : '
 											<p> เพื่อต้อนรับแขกผู้มาเยือน พร้อมทั้งมีกิจกรรมต่างๆมากมาย พร้อมแล้วที่จะมอบประสบการณ์ในแบบฉบับใหม่ให้กับนักเดินทาง  รวมถึงงานเลี้ยงสังสรรค์ต่างๆ ที่พร้อมแล้วที่จะสร้างความทรงจำอันล้ำค่าเพื่อคุณ </p>
-											<p><a href="http://192.168.20.22/smartbooking_front_test/project_info" target="_blank" class="em-readmore"><em>อ่านต่อ...</em></a></p>';
+											<p><a href="https://smartbooking.installdirect.asia/smartbooking_front_test/project_info" target="_blank" class="em-readmore"><em>อ่านต่อ...</em></a></p>';
 										}
 									?>
 								</p>
@@ -1508,7 +1509,7 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
                     if ($detail->id_room_type == $rt->id_room_type) { ?>
                             <div class="col-1 col-sm-1 col-xxl-1 d-flex align-items-center icon_container ">
                                 <span class="icon-content">
-                                    <object data="http://192.168.20.22/smartbooking_front_test/images/icons/house.svg" height="15"></object>
+                                    <object data="https://sharefolder.buildersmart.com/sms_booking/images/icons/house.svg" height="15"></object>           
                                 </span>
                             </div>
                             <div class="col-5 col-sm-3 col-xxl-3 p-0 d-flex align-items-center icon_container">
@@ -1570,7 +1571,8 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
 				<?php foreach ($highlights as $highlight) { ?>
                     <div class="col-1 col-sm-1 col-xxl-1 d-flex align-items-center icon_container">
                         <span class="icon-content">
-                            <img src="http://192.168.20.22/sm_booking1/includes/image.php?filename=<?php echo $highlight->icon; ?>" height="15">
+                        	<img src="<?php echo share_folder_path() .$highlight->icon; ?>" height="15">
+                            <!-- <img src="https://smartbooking.installdirect.asia/sm_booking1/includes/image.php?filename=<?php //echo $highlight->icon; ?>" height="15"> -->
                         </span>
                     </div>
                     <div class="col-5 col-sm-3 col-xxl-3 p-0 d-flex align-items-center icon_container">
@@ -1654,7 +1656,7 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
 	<div class="col-md-12 ml-2 text-center mt-4">
 		<div class="header">
 			<div class="pl-4 text-center mt-4 mb-4">
-				<a href="http://192.168.20.22/sm_booking1/detail.php" target="_blank">
+				<a href="https://smartbooking.installdirect.asia/sm_booking1/detail.php" target="_blank">
 					<h4 class="roomtype-tx-title"><?php echo $room_type_en ; ?></h4>
 				</a>
 			</div>
@@ -1684,7 +1686,7 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
                                             <div class="row mx-auto mt-2">
                                                 <div class="col-3 mx-auto icon_container">
                                                     <span class="icon-content">
-                                                        <object data="http://192.168.20.22/smartbooking_front_test/images/icons/house.svg" height="20"></object>
+                                                        <object data="https://smartbooking.installdirect.asia/smartbooking_front_test/images/icons/house.svg" height="20"></object>
                                                     </span>
                                                 </div>
                                                 <div class="col-9 icon_container">
@@ -1727,7 +1729,7 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
                                 <div class="row">
 									<?php foreach ($highlights as $highlight) { ?>
 										<div class="col-sm-3 mb-2 text-center">
-											<img src="http://192.168.20.22/sm_booking1/includes/image.php?filename=<?php echo $highlight->icon; ?>" class="icon-service"><br>
+											<img src="https://smartbooking.installdirect.asia/sm_booking1/includes/image.php?filename=<?php echo $highlight->icon; ?>" class="icon-service"><br>
 											<h6 class="mt-1 tx-service">
 												<?php
 													echo ($lang == 'english') ? $highlight->description_en : $highlight->description_th;
@@ -1758,7 +1760,7 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
                                     <?php foreach ($amenities as $amenity) {
                                             if ($amenity->id_room_type == $rt->id_room_type) { ?>
                                                 <div class="col-sm-3 mb-4 text-center">
-                                                    <img src="http://192.168.20.22/sm_booking1/includes/image.php?filename=<?php echo $amenity->icon; ?>" class="icon-service">
+                                                    <img src="https://smartbooking.installdirect.asia/sm_booking1/includes/image.php?filename=<?php echo $amenity->icon; ?>" class="icon-service">
                                                     <h6 class="mt-1 tx-service"><?php echo ($lang == 'english') ? $amenity->desc_en : $amenity->desc_th; ?></h6>
                                                 </div>
                                         <?php }
@@ -1963,7 +1965,7 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
 <div class="container mt-1">
 	<div class="header">
 		<div class="pl-4 text-center mt-4 mb-4">
-			<a href="http://192.168.20.22/sm_booking1/detail.php" target="_blank">
+			<a href="https://smartbooking.installdirect.asia/sm_booking1/detail.php" target="_blank">
 				<h4 class="roomtype-tx-title">
 					<?php echo ($lang == 'english') ? $rt->room_type_name_en : $rt->room_type_name_th; ?>
 				</h4>
@@ -1989,7 +1991,7 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
 				<div class="product-card">
 					<div class="header">
 						<div class="pl-4 text-left">
-							<a href="http://192.168.20.22/sm_booking1/detail.php" target="_blank">
+							<a href="https://smartbooking.installdirect.asia/sm_booking1/detail.php" target="_blank">
 								<h5 class="roomtype-tx-title"><?php echo ($lang == 'english') ? $rt->room_type_name_en : $rt->room_type_name_th; ?></h5>
 							</a>
 						</div>
