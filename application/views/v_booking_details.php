@@ -44,6 +44,14 @@ $CI->load->model('m_room_type');
 		justify-content: space-around;
 		font-weight: 400;
 	}
+	
+	.button__badge {
+		margin-right: 0px;
+		font-size: 0.6em !important;
+		position: absolute;
+		top: -8px !important;
+		right: -4px !important;
+	}
 </style>
 
 <main class="main-2">
