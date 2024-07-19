@@ -191,7 +191,8 @@ $packages = array();
 												<div class="col-md-12 mb-3">
 													<div class="form-outline">
 														<label class="form-label mb-0" for="guest_name" style="font-weight: 500;">
-															<span class="required">*</span><?php echo $this->lang->line('guest_name'); ?>
+															<span class="required">*</span><?php //echo $this->lang->line('guest_name'); ?>
+															<?php echo $lang == "english" ? 'Name' : 'ชื่อ'; ?>
 														</label>
 														<input onchange="bl_name(this.value)" type="text" id="guest_name" name="guest_name" class="form_field form-control input-guest-info" value="<?php echo (isset($guest_info)) ? $guest_info->name: ''; ?>" required />
 													</div>
@@ -252,7 +253,8 @@ $packages = array();
 
 												</div>
 												<span style="font-weight: normal; font-style: italic;">
-													<input type="checkbox" class="form_field" name="same_billing_info" id="same_billing_info" style="vertical-align:middle; margin-right: 5px;"><?php echo $this->lang->line('same_guest_info'); ?>
+													<input type="checkbox" class="form_field" name="same_billing_info" id="same_billing_info" style="vertical-align:middle; margin-right: 5px;"><?php //echo $this->lang->line('same_guest_info'); ?>
+													<?php echo $lang == "english" ? 'Same Guest Information' : 'ใช้ข้อมูลเดียวกับลูกค้า'; ?>
 												</span>
 												<div class="row" style="font-size: 0.8rem !important;">
 													<div class="col-md-12 mb-3">
@@ -1619,6 +1621,7 @@ $packages = array();
 
 
 		$('#same_billing_info').click(function() {
+			alert('checked:'+$(this).is(':checked'));
 			if ($(this).is(':checked')) {
 				//alert('checked')
 				$('#billing_name').val($('#guest_name').val());

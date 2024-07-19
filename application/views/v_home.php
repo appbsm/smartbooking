@@ -791,12 +791,12 @@ $CI->load->model('m_room_type');
      fjs.parentNode.insertBefore(js, fjs);
    }(document, 'script', 'facebook-jssdk'));
 </script>
-<div
+<!-- <div
   class="fb-like"
   data-share="true"
   data-width="450"
   data-show-faces="true">
-</div>
+</div> -->
  
  
 
@@ -1121,6 +1121,7 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
 		<div class="row text-center mb-0" id="nav_roomstype">
 			<div class="col-md-12 d-flex p-0" style="flex-wrap: wrap;">
 				<div class="col-lg-6">
+
 					<div class="section-heading text-center mb-3">
 							<div class="row aboutus-tx-title">
 								<h4 class="header-text">
@@ -1132,6 +1133,7 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
 								</h4>
 								<br/><br/><br/>
 							</div>
+
 							<div class="row aboutus-tx-title">
 								<p style=" color: #000 !important; margin-bottom: 0;">
 									<?php
@@ -1170,10 +1172,11 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
 <div class="row" id="package"></div><br/><br/>
 <?php if (sizeof($packages) > 0) { ?>
 <!-- PROMOTION & PACKAGE -->
-<div class="slider-wrapper slider1-wrapper slider-package" style="padding-top: 30px; padding-right: 20px;">
+<div class="slider-wrapper slider1-wrapper slider-package" style="padding-top: 30px; padding-right: 20px;background-color: white;">
+
 	<div class="container">
 		<div class="row">
-			<div class="col-lg-12 col-md-12 col-sm-12 col-12"> 
+			<div class="col-lg-12 col-md-12 col-sm-12 col-12" > 
 				<h4 style="text-align: center; padding-bottom: 15px;" id="nav_packagep_promotions">
 					<a  href="javascript:;" class="tx-title-header">
 						<?php echo $lang == "english" ? 'Package & Promotions' : 'แพ็คเกจและโปรโมชั่น'; ?>
@@ -1248,7 +1251,8 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
 
 			</div> 
 		</div> 
-	</div> 
+	</div>
+	
 </div>
 
 <? } ?>
@@ -1441,7 +1445,7 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
 				<?php if (!empty($photos)) { ?>
 					<div class="image-container">
 						<a href="#" data-toggle="modal" data-target="#imageModal<?php echo $key; ?>" data-slide-to="0">
-							<img class="img-roomtype img-thumbnail" src="<?php echo share_folder_path() . $photos[0]->room_photo_url; ?>" style="width: 100%; !important;min-width: 430px; min-height: 320px;" alt="Room Photo">
+							<img class="img-roomtype img-thumbnail" src="<?php echo share_folder_path() . $photos[0]->room_photo_url; ?>" style="width: 100%; !important;min-width: 330px; min-height: 320px;" alt="Room Photo">
 						</a>
 					</div>
 				<?php } ?>
