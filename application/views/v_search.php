@@ -218,7 +218,6 @@ $CI->load->model('m_room_type');
         background-color: #102958 !important;
         color: #fff !important; 
 		border-color: #102958 !important;
-		padding: .375rem .75rem !important;
     }
 	.btn-projinfo {
 		width: auto;
@@ -594,7 +593,7 @@ $CI->load->model('m_room_type');
 
 								</div>
 							</div>
-							<div class="footer mb-4 mt-2" style="justify-content: center;">
+							<div class="footer mb-4 mt-2">
 								<div class=" ml-2 text-right">
 									<button class="btn button-primary-w add_to_cart btn-add_to_cart" data-id="<?php echo $rt->id_room_type; ?>" data-price="<?php echo $rt->default_rate; ?>" id="" style="margin-right: 5px;"><?php echo $this->lang->line('add_to_cart'); ?></button>
 									<a href="javascript:;" data-roomtype="<?php echo $rt->id_room_type; ?>" class="btn button-primary book_now btn-book_now" id="" style="margin-left: 5px;"><?php echo $this->lang->line('book_now'); ?></a>

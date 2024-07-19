@@ -109,7 +109,7 @@ $CI->load->model('m_project_info');
     	
     	
     	
-    	<div class="col-md-3" style="padding-right: 30px;">
+    	<div class="col-md-3" style="padding-right: 25px;">
     		
     			<?php 
     			foreach ($project_photos as $key => $photo) {
@@ -173,7 +173,7 @@ $CI->load->model('m_project_info');
 
 	 <div  class="container mt-5">
 		<div class="row">
-			<div class="col-md-12 ml-2 text-left"  style="font-size: 0.875rem !important;">
+			<div class="col-md-12 ml-2 text-center"  style="font-size: 0.875rem !important;">
 				<h5 style="color: #000 !important;"><?php echo $this->lang->line('room_types'); ?></h5>
 			</div>
 		</div>
