@@ -310,6 +310,7 @@ $packages = array();
 									<!-- END OF BILLING INFO  -->
 
 									<script>
+										document.getElementById("cbx").checked=false;
 										function check_bx(){
 											var x = document.getElementById("cbx").checked;
 											if(x == true){
@@ -1098,7 +1099,9 @@ $packages = array();
 								<div class="row justify-content-end" style="font-size: 0.8rem !important;">
 										<div class="col-12 mt-3 p-0 text-right">
 											<button class="btn button-secondary btn-guest-info" onclick="location.href='<?php echo site_url('/cart')?>'"><?php echo $this->lang->line('back'); ?></button>
-											<button class="btn button-primary btn-guest-info" id="proceed" type="button" disabled><?php echo $this->lang->line('proceed'); ?></button>
+											<button class="btn button-primary btn-guest-info" id="proceed" type="button" disabled><?php //echo $this->lang->line('proceed'); ?>
+												<?php echo $lang == "english" ? 'PROCEED' : 'ยืนยันการจอง'; ?>
+											</button>
 										</div>
 									</div>
 								<!-- Total detail -->
@@ -1496,6 +1499,7 @@ $packages = array();
 				var bed_needed = $('#h_bed_needed').val();
 				var bed_added = ($('#inp_bed').val() != '') ? $('#inp_bed').val() : 0;
 				//console.log("Bed Needed and Bed Added "+parseInt(bed_needed)+'-'+parseInt(bed_added));
+
 				if (parseInt(bed_needed) <= parseInt(bed_added)) {
 					//console.log('CHECKED');
 					$('#proceed').attr('disabled', false);
@@ -1719,6 +1723,13 @@ $packages = array();
 
 			//console.log("Sum Adult Capacity and Extra Bed Left: " +sum_adult_capacity + '-' + extra_bed_left);
 			//console.log("Total Req to Book and Max Room Capacity " + total_req_to_book + '-' + max_room_capacity);
+
+			// alert('total_req_to_book:'+total_req_to_book);
+			// alert('max_room_capacity:'+max_room_capacity);
+			if (total_req_to_book === '' || total_req_to_book === null || total_req_to_book === undefined || isNaN(total_req_to_book)) {
+			    total_req_to_book = 0;
+			}
+
 			if (total_req_to_book < max_room_capacity) {
 				// GOOD - 
 				var adult_plus_ = sum_adult_capacity + extra_bed_needed;

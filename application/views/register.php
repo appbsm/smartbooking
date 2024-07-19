@@ -430,7 +430,8 @@ $CI->load->model('m_room_type');
                         </form>
                     </div>
                 </div>
-                <div class="or-signin" style="margin-top: 8px;">
+                
+               <!--  <div class="or-signin" style="margin-top: 8px;">
                     <div class="line-or-signin"></div>
                     <div style="margin-top: 8px;">
                         <span style="color: black;" class="sc-fznZeY tx-or-signin">or sign in with</span>
@@ -446,7 +447,7 @@ $CI->load->model('m_room_type');
                             <img src="https://cdn6.agoda.net/images/universal-login/facebook-logo.svg" alt="Facebook" class="icon-social">Facebook
                         </button>
                     </div>
-                </div>
+                </div> -->
                 <hr/>
                 <div class="form-group">
                     <a href="../login">

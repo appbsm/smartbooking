@@ -94,7 +94,6 @@ class Booking extends MY_Controller
 
 				$guest = $this->m_guest->get_profile_by_guestID($id_guest);
 				$data['guest_info'] = $guest;
-				//print_r('Test');
 				
 			} else {
 				redirect('home');
@@ -248,7 +247,7 @@ class Booking extends MY_Controller
 	           );
 	           $id_guest = $this->m_guest->insert_profile($data_guest);	
 	       }
-	    
+	    	
 			$booking_num = $this->m_booking->generate_booking_number();
 			$id_project_project_info = 1;
 			$next_day = date('d-m-Y', strtotime("+1 day", strtotime(date('d-m-Y'))));
@@ -310,9 +309,10 @@ class Booking extends MY_Controller
 				'credit_term' => $this->input->post('credit_term') ? $this->input->post('credit_term') : null,
 				'credit_description' =>  $this->input->post('credit_term') ?  $this->input->post('credit_term')." Days" : null
 			);
-
-			$this->m_booking->insert_booking($data);
-
+			echo "id_guest".$id_guest."\n";
+			echo "insert_booking"."\n";
+			// $this->m_booking->insert_booking($data);
+			echo "end";
 			// ROOMS AND PACKAGE
 			$total_package_item_price = 0;
 			$package_room_details = array();
