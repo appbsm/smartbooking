@@ -58,9 +58,11 @@ $CI->load->model('m_room_type');
       </ul>
     </div>
  -->
+	<!--
   	<div class="row">
   		<div class="col-md-12 price room_type_header" style="text-align: center;"><?php echo $this->lang->line('booking_details');?></div>
   	</div>
+	-->
   	<div class="row"> 
   		<div class="col-md-12">
   			
@@ -75,11 +77,15 @@ $CI->load->model('m_room_type');
 					</div>
 					-->
 					<div class="col-md-6">
-						<div class="booking_number" style="margin-top: 40px; font-size: 1.3em; text-align: left; font-style: italic; font-weight: bold; padding: 2px 0 2px 10px;"><span><?php echo $this->lang->line('booking_number');?>: <?php echo $booking_number;?></span></div>
+						<div class="booking_number" style="margin-top: 40px; font-size: 1.3em; text-align: left; font-style: italic; font-weight: bold; padding: 2px 0 2px 10px;">
+							<span><?php echo $this->lang->line('booking_number');?>: <?php echo $booking_number;?></span>
+						</div>
 					</div>
 					
 					<div class="col-md-6">
-						<div class="status" style="margin-top: 40px; font-size: 1.3em; text-align: right; font-style: italic; font-weight: bold; color: green; padding: 2px 0 2px 0;"><span style="color: <?php echo ($booking->status == 'Expired') ? 'red' : (($booking->status == 'Closed') ? 'blue' : 'green');?>;"><?php echo $this->lang->line('status');?>: <?php echo $booking->status;?></span></div>
+						<div class="status" style="margin-top: 40px; font-size: 1.3em; text-align: right; font-style: italic; font-weight: bold; color: green; padding: 2px 0 2px 0;">
+							<span style="color: <?php echo ($booking->status == 'Expired') ? 'red' : (($booking->status == 'Closed') ? 'blue' : 'green');?>;"><?php echo $this->lang->line('status');?>: <?php echo $booking->status;?></span>
+						</div>
 					</div>
 				</div>
 				
@@ -137,7 +143,7 @@ $CI->load->model('m_room_type');
 				</div>
 				
 				<div class="row mt-3" style="margin: 1px 0 1px 15px;">
-					<div class="col-md-12 price" style="color: white; font-weight: bold; font-size: 1.2em; padding: 3px 15px 3px 15px;"><?php echo $this->lang->line('booking_items');?>:</div>
+					<div class="col-md-12 price" style="color: white; font-weight: bold; font-size: 1.2em; padding: 3px 15px 3px 15px; background-color: #102958; width: 98%;"><?php echo $this->lang->line('booking_items');?>:</div>
 					<div class="col-md-12">
 						<div class = "table-responsive">
 					         <table class = "table table-bordered">
@@ -172,8 +178,8 @@ $CI->load->model('m_room_type');
       					</div>
 					</div>
 					
-					<div class="col-md-12 price" >
-					<div style="color: white; font-weight: bold; font-size: 1.2em; padding: 1px 0 0 0;"></div>
+					<div class="col-md-12 price" style="background-color: #102958; width: 98%;">
+					<div style="color: white; font-weight: bold; font-size: 1.2em; padding: 1px 0 0 0; background-color: #102958;"></div>
 					
 					</div>
 				</div>
