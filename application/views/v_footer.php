@@ -240,7 +240,7 @@ $lang  = $lg;
                 <br>
 
                 <div class="footer-menu contact-item d-flex justify-content-center">
-                	<img class="footer_image_mobile" src="http://192.168.20.22/smartbooking_front_test/images/qrcode_s.png" width="60%">
+                	<img class="footer_image_mobile" src="https://smartbooking.installdirect.asia/images/qrcode_s.png" width="60%">
                 </div>
 
                 </div>
