@@ -729,10 +729,10 @@
 
 
 
-<link rel="stylesheet" href="http://192.168.20.22/smartbooking_front_test//css/tiny-slider.css">
-<link rel="stylesheet" href="http://192.168.20.22/smartbooking_front_test//css/package.css">
-<link rel="icon" type="image/png" sizes="16x16" href="http://192.168.20.22/smartbooking_front_test//images/10.png">
-<link rel="stylesheet" href="http://192.168.20.22/smartbooking_front_test/assets/select-picker/css/bootstrap-select.min.css">
+<link rel="stylesheet" href="https://smartbooking.installdirect.asia/css/tiny-slider.css">
+<link rel="stylesheet" href="https://smartbooking.installdirect.asia/css/package.css">
+<link rel="icon" type="image/png" sizes="16x16" href="https://smartbooking.installdirect.asia/images/10.png">
+<link rel="stylesheet" href="https://smartbooking.installdirect.asia/assets/select-picker/css/bootstrap-select.min.css">
 <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
@@ -967,13 +967,13 @@
 		<div class="col-md-12 amenities-nearby-column">
 			<div class="col-md-8">
 			<div class="section_header " id="facilities_amenities">
-				<h6 style="font-weight: 600; color: #000 !important;"><? echo ($lang == 'english') ? 'Project Overview' : 'รายละเอียดโครงการ'; ?></h6>
+				<h6 style="font-weight: 600; color: #000 !important;" class="mb-0"><? echo ($lang == 'english') ? 'Project Overview' : 'รายละเอียดโครงการ'; ?></h6>
 			</div>		
 			<div class="row mb-2">	
 				<div class="container-fluid mb-4">
 					<div class="col-md-12">			
 							<? if (!empty($project_details)){ ?>
-							<span style="color: #000 !important;"><? echo ($lang == 'english') ? $project_details->project_name_en : $project_details->project_name_th; ?></span>
+							<span style="color: #000 !important; font-size: 14px !important;"><? echo ($lang == 'english') ? $project_details->project_name_en : $project_details->project_name_th; ?></span>
 		    			<?php 
 		    			 }?>
 		    			
@@ -990,7 +990,7 @@
 								<?php foreach ($project_highlights as $value) { ?>
 		    				<div style="bottom: 0; padding-right: 50px;">
 								&nbsp;<img src="https://sharefolder.buildersmart.com/sms_booking/<? echo $value->icon; ?>" width="18">
-								<span class="highlights_desc" style="font-size: 1.1em; color: #000 !important;"><? echo ($lang == 'english') ? $value->description_en : $value->description_th; ?></span>
+								<span class="highlights_desc" style="font-size: 0.875em !important; color: #000 !important;"><? echo ($lang == 'english') ? $value->description_en : $value->description_th; ?></span>
 		    				</div>
 		    				<?php } ?>
 
@@ -1010,7 +1010,7 @@
 							<div class="col-md-6" style="bottom: 0; ">
 							<input type="checkbox" checked="checked" style="vertical-align:middle; pointer-events:none;">
 							&nbsp;<img src="https://sharefolder.buildersmart.com/sms_booking/<? echo $value->icon; ?>" width="18">
-							<span class="highlights_desc" style="font-size: 1.1em; color: #000 !important;"><? echo ($lang == 'english') ? $value->long_desc_en : $value->long_desc_th; ?></span>
+							<span class="highlights_desc" style="font-size: 0.875em !important; color: #000 !important;"><? echo ($lang == 'english') ? $value->long_desc_en : $value->long_desc_th; ?></span>
 							</div>
 							<?php } ?>
 						</div>	
@@ -1025,7 +1025,7 @@
 						<div class="col-md-12">	
 							<?php foreach ($project_policy_type as $value) { ?>
 								<span><?php echo $policy_type = ($lang == 'english') ? $value->policy_type_en : $value->policy_type_th; ?></span>
-								<ol>		
+								<ol style="font-size: 14px !important;">		
 									<?php foreach ($project_policy as $value2) {  ?>	
 										<? if($value->policy_type_en==$value2->policy_type_en){ ?>
 									<li><? echo ($lang == 'english') ? $value2->description_en : $value2->description_th; ?></li>	
@@ -1076,11 +1076,11 @@
 </div>
 
 <!-- <script src="//code.jquery.com/jquery.js"></script> -->
-<script src="http://192.168.20.22/smartbooking_front_test/js/jquery.min.js"></script>
-<script src="http://192.168.20.22/smartbooking_front_test/js/jquery-ui.min.js"></script>
-<script src="http://192.168.20.22/smartbooking_front_test/bootstrap-4.0.0-dist/js/bootstrap.bundle.min.js"></script>
-<script src="http://192.168.20.22/smartbooking_front_test/assets/select-picker/js/bootstrap-select.min.js"></script>
-<script src="http://192.168.20.22/smartbooking_front_test/assets/swiper-element/js/swiper-element-bundle.min.js"></script>
+<script src="https://smartbooking.installdirect.asia/js/jquery.min.js"></script>
+<script src="https://smartbooking.installdirect.asia/js/jquery-ui.min.js"></script>
+<script src="https://smartbooking.installdirect.asia/bootstrap-4.0.0-dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://smartbooking.installdirect.asia/assets/select-picker/js/bootstrap-select.min.js"></script>
+<script src="https://smartbooking.installdirect.asia/assets/swiper-element/js/swiper-element-bundle.min.js"></script>
 
 <!-- /////////////////////////////////////////////////// -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
@@ -1298,7 +1298,7 @@
 			var room_rate = $(this).attr('data-price');
 
 			//alert(id_room_type)
-			var _url = "http://192.168.20.22/smartbooking_front_test/cart/add_to_cart";
+			var _url = "https://smartbooking.installdirect.asia/cart/add_to_cart";
 
 			$.ajax({
 					method: "POST",

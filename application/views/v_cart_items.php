@@ -234,10 +234,10 @@ $r_date = 0;
 						<span id="div_children" style="color: #000 !important;"><?php echo @$search_data['children'] ? $search_data['children'] : 0; ?></span> 
 						<?php echo $this->lang->line('children'); ?> <!-- , <span id="div_room">1</span> Rooms -->
 					</button>
-					<div class="dropdown-menu" style="vertical-align: bottom;" aria-labelledby="dropdownMenuButton">
-						<div class="stepper">
+					<div class="dropdown-menu" style="vertical-align: bottom; width: 100%;" aria-labelledby="dropdownMenuButton">
+						<div class="stepper" style="font-size: 14px;">
 							<div style="display: flex; justify-content: center;"><?php echo $this->lang->line('adult'); ?></div>
-							<div style="display: flex; justify-content: center;  ">
+							<div style="display: flex; justify-content: center;">
 								<button class="btn_stepper " id="decrement-adult" onClick="stepper(this);"> - </button>
 								<input class="input_number" type="number" min="0" max="100" step="1" value="<?= @$search_data['adult'] ? $search_data['adult'] : 2; ?>" id="adult" readonly>
 								<button class="btn_stepper " id="increment-adult" onClick="stepper(this);"> + </button>

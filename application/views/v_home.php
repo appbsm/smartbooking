@@ -504,6 +504,7 @@ $CI->load->model('m_room_type');
 		align-items: center;
 		justify-content: center;
 		align-items: center;
+		color: #fff !important;
 	}
 
 	.btn_stepper:focus {
@@ -639,6 +640,7 @@ $CI->load->model('m_room_type');
 		}
 		.box-fillter {
 			padding: 0 180px !important;
+			margin-top: -15px;
 		}
 		.padd-rl {
 			padding-right: 4px !important;
@@ -708,6 +710,7 @@ $CI->load->model('m_room_type');
 		.box-fillter {
 			/*padding: 0 180px !important;*/
 			padding: 0 !important;
+			margin-top: 0px !important;
 		}
 		.img-cover {
 			/* height: 500px !important; */
@@ -813,10 +816,10 @@ $CI->load->model('m_room_type');
 
 <!-- Package -->
 <!-- <link rel="stylesheet" href="<?= site_url() ?>/css/style.css"> -->
-<link rel="stylesheet" href="<?= site_url() ?>/css/tiny-slider.css">
-<link rel="stylesheet" href="<?= site_url() ?>/css/package.css">
+<link rel="stylesheet" href="https://smartbooking.installdirect.asia/css/tiny-slider.css">
+<link rel="stylesheet" href="https://smartbooking.installdirect.asia//css/package.css">
 <!-- <link rel="stylesheet" href="<?= site_url() ?>/css/main.css"> -->
-<link rel="icon" type="image/png" sizes="16x16" href="<?= site_url() ?>/images/10.png">
+<link rel="icon" type="image/png" sizes="16x16" href="<https://smartbooking.installdirect.asia/images/10.png">
 <!--<link rel="stylesheet" href="<?= site_url() ?>assets/select-picker/css/bootstrap-select.min.css">-->
 
 
@@ -2019,7 +2022,7 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
 							</div>
 							<div class="row mx-auto mt-2">
 								<div class="col-3 mx-auto icon_container">
-									<span class="icon-content"><object data="<?php echo site_url(); ?>images/icons/house.svg" height="20"></object></span>
+									<span class="icon-content"><object data="https://smartbooking.installdirect.asia/images/icons/house.svg" height="20"></object></span>
 								</div>
 								<div class="col-9 icon_container">
 									<span class="icon-content"><?php echo $lang == 'english' ? $rt->area_en : $rt->area_th; ?></span>
@@ -2208,11 +2211,11 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
 <!-- facilities & amenities and nearby location -->
 
 <!-- <script src="//code.jquery.com/jquery.js"></script> -->
-<script src="<?php echo site_url(); ?>js/jquery.min.js"></script>
-<script src="<?php echo site_url(); ?>js/jquery-ui.min.js"></script>
-<script src="<?php echo site_url(); ?>bootstrap-4.0.0-dist/js/bootstrap.bundle.min.js"></script>
-<script src="<?php echo site_url(); ?>assets/select-picker/js/bootstrap-select.min.js"></script>
-<script src="<?php echo site_url(); ?>assets/swiper-element/js/swiper-element-bundle.min.js"></script>
+<script src="https://smartbooking.installdirect.asia/js/jquery.min.js"></script>
+<script src="https://smartbooking.installdirect.asia/js/jquery-ui.min.js"></script>
+<script src="https://smartbooking.installdirect.asia/bootstrap-4.0.0-dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://smartbooking.installdirect.asia/assets/select-picker/js/bootstrap-select.min.js"></script>
+<script src="https://smartbooking.installdirect.asia/assets/swiper-element/js/swiper-element-bundle.min.js"></script>
 <!-- <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-element-bundle.min.js"></script> -->
 
 <!-- /////////////////////////////////////////////////// -->

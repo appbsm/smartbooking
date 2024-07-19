@@ -126,7 +126,7 @@ $lang  = $lg;
                 <div class="footer_set_left footer_set_left2">
 
 									<div class="footer-menu">
-									  <img src="http://192.168.20.22/smartbooking_front_test/images/logo_small.png" width="140" alt="logo">
+									  <img src="https://smartbooking.installdirect.asia/images/logo_small.png" width="140" alt="logo">
 
 										<br><br>
 										  <p class="text-light custom-font" style="font-size:18px;font-family: PFR_Font,'PSLxText', sans-serif;">IoT Specialist<br>"Connecting your world, <br> Simplifying your life."
@@ -240,7 +240,7 @@ $lang  = $lg;
                 <br>
 
                 <div class="footer-menu contact-item d-flex justify-content-center">
-                	<img class="footer_image_mobile" src="http://192.168.20.22/smartbooking_front_test/images/qrcode_s.png" width="60%">
+                	<img class="footer_image_mobile" src="https://smartbooking.installdirect.asia/images/qrcode_s.png" width="60%">
                 </div>
 
                 </div>
