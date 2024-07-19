@@ -365,7 +365,7 @@ if ($id_guest != '') {
 		  else {
 		  ?>
 			  <div class="button mx-1 ">
-	        <a id="signin_button" class="btn btn_sign_in" href="<?php echo site_url('login'); ?>"  style="font-size: 14px !important;padding: 0.3rem 0.9rem !important;border-radius: 0.3rem !important;background-color: #5392f9 !important;" >Sign In</a>
+	        <a id="signin_button" class="btn btn_sign_in" href="<?php echo site_url('login'); ?>"  style="font-size: 14px !important;padding: 0.3rem 0.9rem !important;border-radius: 0.3rem !important;background-color: #5392f9 !important;" >Sign In  test</a>
 	      </div>
 
 		  <?php } ?>
