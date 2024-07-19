@@ -31,7 +31,7 @@ if ($id_guest != '') {
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="">
   <?php echo $lang=='english'?'<link href="https://fonts.googleapis.com/css2?family=Syne&display=swap" rel="stylesheet">':'<link href="https://fonts.googleapis.com/css2?family=Prompt&family=Syne&display=swap" rel="stylesheet">';?>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="<?php echo site_url(); ?>bootstrap-4.0.0-dist/css/bootstrap.css">
 
   <link href="<?php echo site_url(); ?>assets/font-awesome/css/all.min.css" rel="stylesheet">
@@ -39,7 +39,8 @@ if ($id_guest != '') {
   <link href="<?php echo site_url(); ?>css/css.css" rel="stylesheet">
   <?php echo $lang=='english'?'<link href="'.site_url().'css/custom_header_en.css" rel="stylesheet">':'<link href="'.site_url().'css/custom_header_th.css" rel="stylesheet">';?>
 
-  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css?v=1001">
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css?v=1001"> -->
+
 
   <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
@@ -305,6 +306,7 @@ if ($id_guest != '') {
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top text-center mr-auto mb-0 m-0 p-0" style="height:60px; background-color:#102958 !important; font-size: 14px;">
     	<!-- <div class="container d-flex flex-row"> -->
 
+    	<!-- class="container-fluid m-0 p-0 d-flex justify-content-between align-items-center"	 -->
     	<div class="container-fluid m-0 p-0 d-flex justify-content-between align-items-center" >
 
 			<!-- class="mx-3" -->
@@ -332,7 +334,7 @@ if ($id_guest != '') {
 		  <a class=""><img src="<?php echo share_folder_path() . $guest->photo_url; ?>" class="rounded-circle mx-auto d-block" style="height:50px;width:50px;" alt=""></a>
 		  <?php } ?>
 
-		  <div class="input-group d-flex flex-row bg-light dropdown-user" style="background-color: #102958 !important;">            
+		  <div class="input-group d-flex flex-row bg-light dropdown-user" style="background-color: #102958 !important;">
 			<a class="nav-link align-text-bottom dropdown-toggle" id="profile_name" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color: #102958 !important; color: rgba(255, 255, 255, 1.00) !important;font-size: 14px;">
 				<?php //echo $guest->firstname . ' ' . substr($guest->lastname, 0, 1). '.'; ?>
 				<?php
@@ -367,7 +369,7 @@ if ($id_guest != '') {
 	      </div>
 
 		  <?php } ?>
-		  <div class="button ">
+		  <div class="button">
         <a class="nav-link" href="<?php echo site_url('cart'); ?>">
 					<span class="button__badge"><?php echo ($cart_count > 0) ? $cart_count : ''; ?></span>
 					<object style="pointer-events: none;" data="<?php echo share_folder_path(); ?>images/icons/cart-white.svg" height="20"> </object>
@@ -487,16 +489,17 @@ function add_trailing_slash($url) {
 			  <div class="button mx-1 ">
 	        <a id="signin_button" class="btn btn_sign_in" href="<?php echo site_url('login'); ?>" height="20" style="background-color: #5392f9 !important;" >Sign In</a>
 	      </div>
-
+	      <!-- &nbsp;&nbsp;&nbsp;&nbsp; -->
 		  <?php } ?>
-		  <div class="button ">
+		  <div class="button pl-lg-4 mr-lg-4 pl-sm-0 mr-sm-0d">
         <a class="nav-link" href="<?php echo site_url('cart'); ?>">
 					<span class="button__badge"><?php echo ($cart_count > 0) ? $cart_count : ''; ?></span>
 					<object style="pointer-events: none;" data="<?php echo share_folder_path(); ?>images/icons/cart-white.svg" height="20"> </object>
 				</a>
       </div>
-		  
-					<div class="d-flex flex-rows" style="margin-top:3px;padding: 5px; margin-right: 5px;">
+		   <!-- &nbsp;&nbsp;&nbsp;&nbsp; -->
+
+			<div class="d-flex flex-rows" style="margin-top:3px;padding: 5px; margin-right: 5px;">
 			<?php
 				$switch_en = 'English';
 				$switch_th = 'Thai';
