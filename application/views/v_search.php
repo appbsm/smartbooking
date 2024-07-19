@@ -465,7 +465,7 @@ $CI->load->model('m_room_type');
 
 		<div class="container mt-5">
 			<div class="row">
-				<div class="col-md-12 ml-2 text-left">
+				<div class="col-md-12 ml-2 text-center">
 					<h5 style="color: #000 !important;"><?php echo $this->lang->line('room_types'); ?></h5>
 				</div>
 			</div>
@@ -594,7 +594,7 @@ $CI->load->model('m_room_type');
 
 								</div>
 							</div>
-							<div class="footer">
+							<div class="footer mb-4 mt-2" style="justify-content: center;">
 								<div class=" ml-2 text-right">
 									<button class="btn button-primary-w add_to_cart btn-add_to_cart" data-id="<?php echo $rt->id_room_type; ?>" data-price="<?php echo $rt->default_rate; ?>" id="" style="margin-right: 5px;"><?php echo $this->lang->line('add_to_cart'); ?></button>
 									<a href="javascript:;" data-roomtype="<?php echo $rt->id_room_type; ?>" class="btn button-primary book_now btn-book_now" id="" style="margin-left: 5px;"><?php echo $this->lang->line('book_now'); ?></a>
@@ -608,18 +608,6 @@ $CI->load->model('m_room_type');
 				} ?>
 			</div>
 		</div>
-
-
-
-
-
-
-
-
-
-
-
-
 		<div>
 			<hr>
 		</div>
@@ -1045,3 +1033,4 @@ function topFunction() {
   document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 }
 </script>
+<br/>

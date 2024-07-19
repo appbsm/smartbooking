@@ -8,6 +8,28 @@ $CI->load->model('m_room_type');
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<link rel="stylesheet" href="<?= site_url() ?>/css/tiny-slider.css">
+<link rel="stylesheet" href="<?= site_url() ?>/css/package.css">
+<link rel="icon" type="image/png" sizes="16x16" href="<?= site_url() ?>/images/10.png">
+<link rel="stylesheet" href="<?= site_url() ?>assets/select-picker/css/bootstrap-select.min.css">
+
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- ------------------ facebook ------------------ -->
+<!-- <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script> -->
+<!-- <script src="https://apis.google.com/js/platform.js" async defer></script> -->
+
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/th_TH/sdk.js#xfbml=1&version=v20.0&appId=2110028109370751" nonce="bBD1lqRL"></script>
+
+<!-- ------------------ google ------------------ -->
+<meta name="google-signin-scope" content="profile email">
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+<meta name="google-signin-client_id" content="33279337776-0hcru5kaidnskfjcveuvrv82vumvraaa.apps.googleusercontent.com"> 
 
 
 <style>
@@ -382,6 +404,8 @@ $CI->load->model('m_room_type');
     }
 </style>
 
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10/dist/sweetalert2.min.css">
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10/dist/sweetalert2.min.js"></script>
 <body>
 
 <!-- Modal -->
@@ -506,7 +530,53 @@ if ($this->session->flashdata('message')) {
 }
 ?>
 
+<script>
 
+    $(".forgot_pass").on('click', function(e){
+        var mymodal = document.getElementById("myModal");
+        
+        var self = $(this);
+        //var name = self.data('name'); // or src = self.attr('src');
+        //var src = self.attr('src');
+        //console.log(mymodal);
+        //var modalImg = document.getElementById("img01");
+        //var captionText = document.getElementById("caption");
+        //modalImg.style.display = "block";
+        
+        //modalImg.src = src;
+        // captionText.innerHTML = this.alt;
+        $('#myModal').modal('show');
+    });
+
+    $('#send_to_email').click(function(){
+        if ($('#reset_username').val() == '' || $('#reset_email').val() == '') {
+            alert('<?php echo $this->lang->line('message_required_fields');?>');
+        }
+        else {
+            // alert('<?php echo $this->lang->line('message_checkmail_temp_password');?>')
+            $('#loading').show();
+            $('#frm_reset').submit();
+
+            
+            // var _url = "<?php echo site_url('profile/send_temp_password');?>";
+            //console.log($('#reset_username').val()+' '+$('#reset_email').val());
+            // $.ajax({
+            //     method: "POST",
+            //     url: _url,
+            //     data: {
+            //         reset_username: $('#reset_username').val(),
+            //         reset_email: $('#reset_email').val()
+            //         }
+            // })
+            // .done(function (result){
+            //     //console.log(result);
+            //     $('#myModal').modal('hide');
+            //     alert('<?php echo $this->lang->line('message_checkmail_temp_password');?>')
+            // });
+        }
+    });
+    
+    </script>
 
 <style>
         /* CSS สำหรับการแสดง loading overlay */
@@ -536,6 +606,8 @@ if ($this->session->flashdata('message')) {
 <div id="loading">
     <img src="loading.gif" alt="Loading...">
 </div>
+
+
                     <!-- tab mobile-->
                     <div class="form-content form-mobile" style="display: none;">
                         <form>
@@ -588,7 +660,20 @@ if ($this->session->flashdata('message')) {
 
                 <div class="social-login ">
                     <div class="social-buttons">
-                        
+                        <button style="background-color: white !important;color: #5392f9 !important;border: 1px solid #ccc;" class="google g-signin2" data-onsuccess="onSignIn" data-theme="dark"alt="Google">
+							<img src="https://cdn6.agoda.net/images/universal-login/google-logo-v2.svg" alt="Google" class="icon-social">Google
+                        </button>
+						
+                        <!-- <button style="background-color: white !important;color: #5392f9 !important;border: 1px solid #ccc;" class="facebook">
+                            <img src="https://cdn6.agoda.net/images/universal-login/facebook-logo.svg" alt="Facebook" class="icon-social">Facebook
+                        </button> -->
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/th_TH/sdk.js#xfbml=1&version=v20.0&appId=2110028109370751" nonce="bBD1lqRL"></script>
+
+<div class="fb-login-button" data-width="" data-size="" data-button-type="" data-layout="" data-auto-logout-link="false" data-use-continue-as="false" onlogin="checkLoginState();"></div>
+
+                        <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+                          Login with Facebook
+                        </fb:login-button>
 
                     </div>
                 </div>
@@ -604,17 +689,157 @@ if ($this->session->flashdata('message')) {
             </div>
         </div>
     </div>
-
-<!-- <div id="fb-root"></div>
-<script async defer crossorigin="anonymous" src="https://connect.facebook.net/th_TH/sdk.js#xfbml=1&version=v20.0&appId=201791747250732" nonce="wugYohAg"></script>
-
-<div class="fb-login-button" data-width="50" data-size="" data-button-type="" data-layout="" data-auto-logout-link="false" data-use-continue-as="false"></div>
-	 -->
+	
 <!--	
 	<div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
 <br>
 Result: <textarea id="result"></textarea>
 -->
 
+<script>
+  function onSignIn(userInfo) {
+    var result = '';
+
+    alert('onSignIn');
+
+    // Useful data for your client-side scripts:
+    var profile = userInfo.getBasicProfile();
     
-  
+    result+= "ID: "+profile.getId()+"\n";
+    result+= "Full Name:  "+profile.getName()+"\n";
+    result+= "Given Name: "+profile.getGivenName()+"\n";
+    result+= "Family Name: "+profile.getFamilyName()+"\n";
+    result+= "Email: "+profile.getEmail()+"\n";
+    result+= "ID Token: "+userInfo.getAuthResponse().id_token+"\n";
+    
+    document.getElementById("result").value = result;
+  };
+</script>
+
+    <script src="http://192.168.20.22/smartbooking_front_test/js/jquery.min.js"></script>
+    <script src="http://192.168.20.22/smartbooking_front_test/js/jquery-ui.min.js"></script>
+    <script src="http://192.168.20.22/smartbooking_front_test/bootstrap-4.0.0-dist/js/bootstrap.bundle.min.js"></script>
+    <script src="http://192.168.20.22/smartbooking_front_test/assets/select-picker/js/bootstrap-select.min.js"></script>
+    <script src="http://192.168.20.22/smartbooking_front_test/assets/swiper-element/js/swiper-element-bundle.min.js"></script>
+
+    <script>
+        
+         // (function(d, s, id){
+         //   var js, fjs = d.getElementsByTagName(s)[0];
+         //   if (d.getElementById(id)) {return;}
+         //   js = d.createElement(s); js.id = id;
+         //   js.src = "https://connect.facebook.net/en_US/sdk.js";
+         //   fjs.parentNode.insertBefore(js, fjs);
+         // }(document, 'script', 'facebook-jssdk'));
+
+        function statusChangeCallback(response) {
+            if (response.status === 'connected') {
+              statusAPI();
+            } else {
+              // document.getElementById('status').innerHTML = 'Please log into this webpage.';
+            }
+        }
+
+        function checkLoginState() {
+            FB.getLoginStatus(function(response) {
+              statusChangeCallback(response);
+            });
+        }
+
+        document.getElementById('custom-fb-button').onclick = function() {
+            checkLoginState();
+        }
+
+        function statusAPI() {
+            FB.api('/me', { fields: 'name,email' }, function(response) {
+              if (response && !response.error) {
+                // document.getElementById('status').innerHTML =
+                // 'Thanks for logging in, ' + response.name + '!';
+                alert('Login successful!');
+                // window.location.href = "<?php echo site_url('login');?>?name=" + response.name + "&email=" + response.email;
+
+                // alert('response.name:'+response.name);
+                // alert('response.email:'+response.email);
+
+                var form = document.createElement('form');
+                form.method = 'POST';
+                form.action = "<?php echo site_url('login');?>";
+
+                // Create hidden input fields for name and email
+                var nameInput = document.createElement('input');
+                nameInput.type = 'hidden';
+                nameInput.name = 'name';
+                nameInput.value = response.name;
+                form.appendChild(nameInput);
+
+                var emailInput = document.createElement('input');
+                emailInput.type = 'hidden';
+                emailInput.name = 'email';
+                emailInput.value = response.email;
+                form.appendChild(emailInput);
+
+                var typeInput = document.createElement('input');
+                typeInput.type = 'hidden';
+                typeInput.name = 'type';
+                typeInput.value = 'facebook';
+                form.appendChild(typeInput);
+
+                // Append form to document body and submit
+                document.body.appendChild(form);
+                form.submit();
+                
+              }else{
+                alert('Failed to login facebook.');
+              }
+            });
+        }
+    </script>  
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const tabs = document.querySelectorAll('.tab-signin li');
+            const forms = document.querySelectorAll('.form-content');
+
+            tabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    tabs.forEach(t => t.classList.remove('active'));
+                    this.classList.add('active');
+
+                    const tabName = this.classList.contains('tab-email') ? 'email' : 'mobile';
+
+                    forms.forEach(form => {
+                        if (form.classList.contains(`form-${tabName}`)) {
+                            form.style.display = 'block';
+                        } else {
+                            form.style.display = 'none';
+                        }
+                    });
+                });
+            });
+
+            const togglePassword = document.querySelector('.toggle-password');
+            const passwordField = document.getElementById('password');
+
+            togglePassword.addEventListener('click', function() {
+                const type = passwordField.getAttribute('type') === 'password' ? 'text' : 'password';
+                passwordField.setAttribute('type', type);
+                this.classList.toggle('active');
+            });
+        });
+    </script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const togglePassword = document.querySelector('.toggle-password');
+            const passwordField = document.getElementById('password');
+
+            togglePassword.addEventListener('click', function() {
+                const type = passwordField.getAttribute('type') === 'password' ? 'text' : 'password';
+                passwordField.setAttribute('type', type);
+                this.querySelector('i').classList.toggle('fa-eye');
+                this.querySelector('i').classList.toggle('fa-eye-slash');
+            });
+        });
+    </script>
+
+

@@ -696,10 +696,10 @@
 <body class="" style="">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<link rel="stylesheet" href="http://192.168.20.22/smartbooking_front_test//css/tiny-slider.css">
-<link rel="stylesheet" href="http://192.168.20.22/smartbooking_front_test//css/package.css">
-<link rel="icon" type="image/png" sizes="16x16" href="http://192.168.20.22/smartbooking_front_test//images/10.png">
-<link rel="stylesheet" href="http://192.168.20.22/smartbooking_front_test/assets/select-picker/css/bootstrap-select.min.css">
+<link rel="stylesheet" href="https://smartbooking.installdirect.asia/css/tiny-slider.css">
+<link rel="stylesheet" href="https://smartbooking.installdirect.asia/css/package.css">
+<link rel="icon" type="image/png" sizes="16x16" href="https://smartbooking.installdirect.asia/images/10.png">
+<link rel="stylesheet" href="https://smartbooking.installdirect.asia/assets/select-picker/css/bootstrap-select.min.css">
 
 <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
 
@@ -922,7 +922,6 @@
 </form>
 
 <div class="container mt-0">
-
 	<div class="row">
 		<div class="col-md-12 ml-2 text-center mt-4">
 			<h4 style="text-align: center; padding-bottom: 15px;" id="nav_packagep_promotions">
@@ -935,131 +934,135 @@
 
 	<div class="row mb-0" id="nav_roomstype" style="color: #000 !important;">
 		<div class="col-md-12 amenities-nearby-column">
+			<div class="col-md-12">
+				<div class="row mb-2">	
+					<div class="container-fluid mb-4">
+						<div class="col-md-12">		
+							<img class="img-roomtype img-thumbnail" src="<?php echo share_folder_path().$room_types_photo->room_photo_url; ?>" style="width: 100%; min-height: 310px !important; min-width: 440px !important;"  alt="Room Photo">
+						</div>
+					</div>
+				</div>
+
+				<!-- <div class="section_header "><u><? echo ($lang == 'english') ? 'Room Name' : 'ชื่อห้องพัก'; ?></u></div> -->
+
+				
+			</div>
+		</div>
+		<div class="col-md-12 amenities-nearby-column">
 			<div class="col-md-8">
-
-			<div class="row mb-2">	
-				<div class="container-fluid mb-4">
-					<div class="col-md-12">		
-						<img class="img-roomtype img-thumbnail" src="<?php echo share_folder_path().$room_types_photo->room_photo_url; ?>" style="width: 100%; min-height: 310px !important; min-width: 440px !important;"  alt="Room Photo">
-					</div>
-				</div>
-			</div>
-
-			<!-- <div class="section_header "><u><? echo ($lang == 'english') ? 'Room Name' : 'ชื่อห้องพัก'; ?></u></div> -->
-
-			<div class="row mb-2">	
-				<div class="container-fluid mb-4">
-					<div class="col-md-12">		
-							<h5>
-							<? if (!empty($room_types)){ ?>
-							<span style="color: #000 !important;"><? echo ($lang == 'english') ? $room_types->room_type_name_en : $room_types->room_type_name_th; ?></span>
-		    			<?php } ?>
-		    			<?php
-		    					$date = date('Y-m-d');
-		    					$CI = &get_instance();
-	    						$rate = $CI->m_room_type->get_day_rate($room_types->id_room_type,$date);
-									if ($rate == '') {
-										$rate = $rt->default_rate;
-									}
-                  $price = ($lang == 'english') ? number_format($rate, 0) . '/Night' : 'ราคา ' . number_format($rate, 0) . '/คืน';
-                ?>
-                <span style="color: #000;"><?php echo $price; ?></span>
-                </h5>
-		    		</div>
-		    	</div>
-			</div>
-
-			<div class="section_header "><u><? echo ($lang == 'english') ? 'Room Information' : 'รายละเอียดห้อง'; ?></u></div>
-			<div class="row">			
-				<div class="container-fluid mb-4">
-					<div class="col-md-12">	
-						<div class="row" id="pj-con">
-
-							<div class="col-md-6" style="bottom: 0; ">
-								<!-- <input type="checkbox" checked="checked" style="vertical-align:middle; pointer-events:none;"> -->
-							&nbsp;<img src="http://192.168.20.22/smartbooking_front_test/images/icons/house.svg" width="18">
-								<span class="highlights_desc" style="font-size: 1.1em; color: #000 !important;"><?php echo ($lang == 'english') ? $room_types->area_en : $room_types->area_th; ?></span>
-							</div>
-
-							<div class="col-md-6" style="bottom: 0; ">
-								<!-- <input type="checkbox" checked="checked" style="vertical-align:middle; pointer-events:none;"> -->
-							&nbsp;<img src="http://192.168.20.22/smartbooking_front_test/images/icons/icons8-bedroom-50.png" width="18">
-								<span class="highlights_desc" style="font-size: 1.1em; color: #000 !important;"><?php echo ($lang == 'english') ? $room_types->room_details_en : $room_types->room_details_th; ?></span>
-							</div>
-
-						</div>	
-					</div>
-				</div>
-			</div>
-
-			<div class="section_header "><u><? echo ($lang == 'english') ? 'Project Highlights' : 'จุดเด่นของโครงการ'; ?></u>
-			</div>
-
-			<div class="row ">			
-				<div class="container-fluid mb-4">
-					<div class="col-md-12">
-						<div class="h_container" style="display: flex; flex-direction: row; ">
-
-								<?php foreach ($project_highlights as $value) { ?>
-									<div class="col-md-6" style="bottom: 0; ">
-			    				<div style="bottom: 0; padding-right: 50px;">
-									&nbsp;<img src="https://sharefolder.buildersmart.com/sms_booking/<? echo $value->icon; ?>" width="18">
-									<span class="highlights_desc" style="font-size: 1.1em; color: #000 !important;"><? echo ($lang == 'english') ? $value->description_en : $value->description_th; ?></span>
-			    				</div>
-			    				</div>
-		    				<?php } ?>
-
-		    			</div>		
-		    		</div>
-				</div>
-			</div>
-			
-			<div class="section_header "><u><? echo ($lang == 'english') ? 'Facilities & Amenities' : 'สาธารณูปโภค & สิ่งอำนวยความสะดวก'; ?></u></div>
-
-			<!-- <div class="row">			
-				<div class="container-fluid mb-4">
-					<div class="col-md-12">	
-						<div class="row" id="pj-con">
-							<?php foreach ($project_facility as $value) { ?>
-							<div class="col-md-6" style="bottom: 0; ">
-							<input type="checkbox" checked="checked" style="vertical-align:middle; pointer-events:none;">
-							&nbsp;<img src="https://sharefolder.buildersmart.com/sms_booking/<? echo $value->icon; ?>" width="18">
-							<span class="highlights_desc" style="font-size: 1.1em; color: #000 !important;"><? echo ($lang == 'english') ? $value->long_desc_en : $value->long_desc_th; ?></span>
-							</div>
+				<div class="row mb-2">	
+					<div class="container-fluid mb-0">
+						<div class="col-md-12">		
+								<h5>
+								<? if (!empty($room_types)){ ?>
+								<span style="color: #000 !important;"><? echo ($lang == 'english') ? $room_types->room_type_name_en : $room_types->room_type_name_th; ?></span>
 							<?php } ?>
-						</div>	
+							<?php
+									$date = date('Y-m-d');
+									$CI = &get_instance();
+									$rate = $CI->m_room_type->get_day_rate($room_types->id_room_type,$date);
+										if ($rate == '') {
+											$rate = $rt->default_rate;
+										}
+					  $price = ($lang == 'english') ? number_format($rate, 0) . '/Night' : 'ราคา ' . number_format($rate, 0) . '/คืน';
+					?>
+					<span style="color: #000;"><?php echo $price; ?></span>
+					</h5>
+						</div>
 					</div>
 				</div>
-			</div> -->
 
-			<div class="row">			
-				<div class="container-fluid mb-4">
-					<div class="col-md-12">	
-						<div class="row" id="pj-con">
-							<?php foreach ($amenities as $value) { ?>
-							<div class="col-sm-6 col-md-4" style="bottom: 0; ">
-							&nbsp;<img src="https://sharefolder.buildersmart.com/sms_booking/<? echo $value->icon; ?>" width="18">
-							<span class="highlights_desc" style="font-size: 1.1em; color: #000 !important;"><? echo ($lang == 'english') ? $value->desc_en : $value->desc_th; ?></span>
-							</div>
-							<?php } ?>
-						</div>	
+				<div class="section_header "><u><? echo ($lang == 'english') ? 'Room Information' : 'รายละเอียดห้อง'; ?></u></div>
+				<div class="row">			
+					<div class="container-fluid mb-4">
+						<div class="col-md-12">	
+							<div class="row" id="pj-con">
+
+								<div class="col-md-6" style="bottom: 0; ">
+									<!-- <input type="checkbox" checked="checked" style="vertical-align:middle; pointer-events:none;"> -->
+								&nbsp;<img src="https://smartbooking.installdirect.asia/images/icons/house.svg" width="18">
+									<span class="highlights_desc" style="font-size: 0.875em !important; color: #000 !important;"><?php echo ($lang == 'english') ? $room_types->area_en : $room_types->area_th; ?></span>
+								</div>
+
+								<div class="col-md-6" style="bottom: 0; ">
+									<!-- <input type="checkbox" checked="checked" style="vertical-align:middle; pointer-events:none;"> -->
+								&nbsp;<img src="https://smartbooking.installdirect.asia/images/icons/icons8-bedroom-50.png" width="18">
+									<span class="highlights_desc" style="font-size: 0.875em !important; color: #000 !important;"><?php echo ($lang == 'english') ? $room_types->room_details_en : $room_types->room_details_th; ?></span>
+								</div>
+
+							</div>	
+						</div>
 					</div>
 				</div>
-			</div>
+
+				<div class="section_header "><u><? echo ($lang == 'english') ? 'Project Highlights' : 'จุดเด่นของโครงการ'; ?></u>
+				</div>
+
+				<div class="row ">			
+					<div class="container-fluid mb-4">
+						<div class="col-md-12">
+							<div class="h_container" style="display: flex; flex-direction: row; ">
+
+									<?php foreach ($project_highlights as $value) { ?>
+										<div class="col-md-6" style="bottom: 0; ">
+									<div style="bottom: 0; padding-right: 50px;">
+										&nbsp;<img src="https://sharefolder.buildersmart.com/sms_booking/<? echo $value->icon; ?>" width="18">
+										<span class="highlights_desc" style="font-size: 0.875em !important; color: #000 !important;"><? echo ($lang == 'english') ? $value->description_en : $value->description_th; ?></span>
+									</div>
+									</div>
+								<?php } ?>
+
+							</div>		
+						</div>
+					</div>
+				</div>
+				
+				<div class="section_header "><u><? echo ($lang == 'english') ? 'Facilities & Amenities' : 'สาธารณูปโภค & สิ่งอำนวยความสะดวก'; ?></u></div>
+
+				<!-- <div class="row">			
+					<div class="container-fluid mb-4">
+						<div class="col-md-12">	
+							<div class="row" id="pj-con">
+								<?php foreach ($project_facility as $value) { ?>
+								<div class="col-md-6" style="bottom: 0; ">
+								<input type="checkbox" checked="checked" style="vertical-align:middle; pointer-events:none;">
+								&nbsp;<img src="https://sharefolder.buildersmart.com/sms_booking/<? echo $value->icon; ?>" width="18">
+								<span class="highlights_desc" style="font-size: 1.1em; color: #000 !important;"><? echo ($lang == 'english') ? $value->long_desc_en : $value->long_desc_th; ?></span>
+								</div>
+								<?php } ?>
+							</div>	
+						</div>
+					</div>
+				</div> -->
+
+				<div class="row">			
+					<div class="container-fluid mb-4">
+						<div class="col-md-12">	
+							<div class="row" id="pj-con">
+								<?php foreach ($amenities as $value) { ?>
+								<div class="col-sm-6 col-md-4" style="bottom: 0; ">
+								&nbsp;<img src="https://sharefolder.buildersmart.com/sms_booking/<? echo $value->icon; ?>" width="18">
+								<span class="highlights_desc" style="font-size: 0.875em !important; color: #000 !important;"><? echo ($lang == 'english') ? $value->desc_en : $value->desc_th; ?></span>
+								</div>
+								<?php } ?>
+							</div>	
+						</div>
+					</div>
+				</div>
 
 
-		<!-- <img src="http://192.168.20.22/sm_booking1/includes/image.php?filename=<? echo $amenities->icon; ?>" width="18"> -->
+				<!-- <img src="http://192.168.20.22/sm_booking1/includes/image.php?filename=<? echo $amenities->icon; ?>" width="18"> -->
 
 
-			<div class="row" id="facilities"></div>
-			<div class="section_header "><u><? echo ($lang == 'english') ? 'Conditions And Policies' : 'เงื่อนไขและข้อกำหนดในการเข้าพัก'; ?></u></div>
+				<div class="row" id="facilities"></div>
+				<div class="section_header "><u><? echo ($lang == 'english') ? 'Conditions And Policies' : 'เงื่อนไขและข้อกำหนดในการเข้าพัก'; ?></u></div>
 
 				<div class="row">			
 					<div class="container-fluid mb-4">
 						<div class="col-md-12">	
 							<?php foreach ($project_policy_type as $value) { ?>
 								<span><?php echo $policy_type = ($lang == 'english') ? $value->policy_type_en : $value->policy_type_th; ?></span>
-								<ol>		
+								<ol style="font-size: 0.875em !important;">		
 									<?php foreach ($project_policy as $value2) {  ?>	
 										<? if($value->policy_type_en==$value2->policy_type_en){ ?>
 									<li><? echo ($lang == 'english') ? $value2->description_en : $value2->description_th; ?></li>	
@@ -1071,29 +1074,8 @@
 					</div>
 				</div>
 
-				<div class="row">
-					<div class="container-fluid mb-4">
-					<div class="col-md-12">	
-						<button class="btn button-primary-w add_to_cart btn-add_to_cart" data-id="<?php echo $room_types->id_room_type; ?>" data-price="<?php echo $rate; ?>" id="" style="margin-right: 5px;background-color: #102958 !important;border: 1px solid #102958 !important;" fdprocessedid="t8mt0r">
-					<?php
-						// if (sizeof($packages) > 0) {
-							echo ($lang == 'english') ? 'Add To Cart' : 'เก็บใส่ตะกร้า';
-						// }
-					?>
-					</button>
-					<a href="javascript:;" data-roomtype="<?php echo $room_types->id_room_type; ?>" class="btn button-primary book_now book_now:hover" id="" style="margin-left: 5px;background-color: #102958 !important;border: 1px solid #102958 !important">
-						<?php
-							// if (sizeof($packages) > 0) {
-								echo ($lang == 'english') ? 'Book Now' : 'จองตอนนี้';
-							// }
-						?>
-					</a>
-						</div>
-					</div>
-				</div>
-
+				
 			</div>
-
 			<div class="col-md-4">
 				<div class="section_header ">
 					<h6 style="font-weight: 600; color: #000 !important;"><? echo ($lang == 'english') ? 'Locations Nearby' : 'สถานที่ใกล้เคียง'; ?></h6>
@@ -1121,7 +1103,30 @@
 			</div>
 		</div>
 	</div>
-
+	
+	<div class="col-md-12">
+		<div class="row">
+			<div class="container-fluid mb-4">
+			<div class="col-md-12" style="display: flex; justify-content: center;">	
+				<button class="btn button-primary-w add_to_cart btn-add_to_cart" data-id="<?php echo $room_types->id_room_type; ?>" data-price="<?php echo $rate; ?>" id="" style="margin-right: 5px;background-color: #102958 !important;border: 1px solid #102958 !important;" fdprocessedid="t8mt0r">
+			<?php
+				// if (sizeof($packages) > 0) {
+					echo ($lang == 'english') ? 'Add To Cart' : 'เก็บใส่ตะกร้า';
+				// }
+			?>
+			</button>
+			<a href="javascript:;" data-roomtype="<?php echo $room_types->id_room_type; ?>" class="btn button-primary book_now book_now:hover" id="" style="margin-left: 5px;background-color: #102958 !important;border: 1px solid #102958 !important">
+				<?php
+					// if (sizeof($packages) > 0) {
+						echo ($lang == 'english') ? 'Book Now' : 'จองตอนนี้';
+					// }
+				?>
+			</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	
 	<div class="row text-center mb-0" id="nav_roomstype">
 		<div class="col-md-12">
 			<div id="google-map">
@@ -1131,14 +1136,14 @@
 	</div>
 </div>
 
-<script src="http://192.168.20.22/smartbooking_front_test/js/jquery.min.js"></script>
-<script src="http://192.168.20.22/smartbooking_front_test/js/jquery-ui.min.js"></script>
+<script src="https://smartbooking.installdirect.asia/js/jquery.min.js"></script>
+<script src="https://smartbooking.installdirect.asia/js/jquery-ui.min.js"></script>
 <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script> -->
 
-<script src="http://192.168.20.22/smartbooking_front_test/bootstrap-4.0.0-dist/js/bootstrap.bundle.min.js"></script>
-<script src="http://192.168.20.22/smartbooking_front_test/assets/select-picker/js/bootstrap-select.min.js"></script>
-<script src="http://192.168.20.22/smartbooking_front_test/assets/swiper-element/js/swiper-element-bundle.min.js"></script>
+<script src="https://smartbooking.installdirect.asia/bootstrap-4.0.0-dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://smartbooking.installdirect.asia/assets/select-picker/js/bootstrap-select.min.js"></script>
+<script src="https://smartbooking.installdirect.asia/assets/swiper-element/js/swiper-element-bundle.min.js"></script>
 
 <!-- /////////////////////////////////////////////////// -->
 <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script> -->
@@ -1368,7 +1373,7 @@
 			var room_rate = $(this).attr('data-price');
 
 			//alert(id_room_type)
-			var _url = "http://192.168.20.22/smartbooking_front_test/cart/add_to_cart";
+			var _url = "https://smartbooking.installdirect.asia/cart/add_to_cart";
 
 			$.ajax({
 					method: "POST",

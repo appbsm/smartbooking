@@ -1,55 +1,22 @@
 <?php
-// require_once($_SERVER['DOCUMENT_ROOT'] . '/smartbooking_front_test/PHPMailer/PHPMailerAutoload.php');
-// require_once('PHPMailer/PHPMailerAutoload.php');
+
 if($_SERVER["REQUEST_METHOD"] == "POST"){
-    // require_once('PHPMailer/PHPMailerAutoload.php');
-    // require(APPPATH . 'third_party/PHPMailer/PHPMailerAutoload.php');
+    // $file_path = 'C:/inetpub/wwwroot/smartbooking_front_test/PHPMailer/class.phpmailer.php';
+    // $smtp_path = 'C:/inetpub/wwwroot/smartbooking_front_test/PHPMailer/class.smtp.php';
+    // $pop3_path = 'C:/inetpub/wwwroot/smartbooking_front_test/PHPMailer/class.pop3.php';
 
-    $max_attempts = 3;
-    $attempt = 0;
-    $loaded = false;
-    $file_path = APPPATH . 'third_party/PHPMailer/PHPMailerAutoload.php';
-
-    while ($attempt < $max_attempts && !$loaded) {
-        if (file_exists($file_path)) {
-            require_once($file_path);
-            if (class_exists('PHPMailer')) {
-                try {
-                    $mail = new PHPMailer();
-                    $loaded = true;
-                    echo '<script>alert("file_path: '.$file_path.'")</script>';
-                    // echo '<script>alert("try attempt: '.$attempt.' :loaded: '.$loaded.'")</script>';
-                } catch (Exception $e) {
-                    echo '<script>alert("PHPMailer initiation failed on attempt: '.$attempt.' :loaded: '.$loaded.'")</script>';
-                    $attempt++;
-                    if ($attempt >= $max_attempts) {
-                        // Handle the error, log it, or display a message
-                        echo '<script>alert("Failed to load PHPMailerAutoload.php or initiate PHPMailer after ' . $max_attempts . ' attempts.")</script>';
-                    }
-                }
-            } else {
-                echo '<script>alert("PHPMailer class does not exist after require_once on attempt: '.$attempt.' :loaded: '.$loaded.'")</script>';
-                $attempt++;
-                if ($attempt >= $max_attempts) {
-                    // Handle the error, log it, or display a message
-                    echo '<script>alert("Failed to load PHPMailerAutoload.php after ' . $max_attempts . ' attempts.")</script>';
-                }
-            }
-        } else {
-            echo '<script>alert("File does not exist on attempt: '.$attempt.' :loaded: '.$loaded.'")</script>';
-            $attempt++;
-            if ($attempt >= $max_attempts) {
-                // Handle the error, log it, or display a message
-                echo '<script>alert("Failed to load PHPMailerAutoload.php after ' . $max_attempts . ' attempts.")</script>';
-            }
-        }
-    }
+    // if (file_exists($file_path)) {
+        require_once(APPPATH.'third_party/PHPMailer/class.phpmailer.php');
+        require_once(APPPATH.'third_party/PHPMailer/class.smtp.php');
+        require_once(APPPATH.'third_party/PHPMailer/class.pop3.php');
+        // require_once($smtp_path);
+        // require_once($pop3_path);
+    // }
 
     // require('connect_sql.php');
     // $sql ="update guest_info set password='".$password."' where email ='".$_POST['reset_email']."' ";
     // $stmt = sqlsrv_query($conn,$sql);
     // sqlsrv_close($conn);
-
 
     $subject = 'Smart Booking System Password Reset';
     $message = '';
