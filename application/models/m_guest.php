@@ -13,12 +13,12 @@ class M_guest extends CI_Model{
 		//echo $this->db->last_query();
 	}
 	
-
-	//function update_temp_password($data, $email, $user_name) {
-	function update_temp_password($data, $email) {
+	// function update_temp_password($data, $email) {
+	function update_temp_password($data, $email, $user_name) {
 		$this->db->where('email', $email);
-		//$this->db->where('username', $user_name);
+		$this->db->where('username', $user_name);
 		$this->db->update('guest_info', $data);
+
 		//echo $this->db->last_query();
 	}
 

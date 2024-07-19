@@ -8,7 +8,7 @@ class Login extends CI_Controller {
 		date_default_timezone_set("Asia/Bangkok");
 		$this->load->model('m_stringlib');
 		$this->load->model('m_guest');
-		require(APPPATH . 'third_party/PHPMailer/PHPMailerAutoload.php');
+		// require(APPPATH . 'third_party/PHPMailer/PHPMailerAutoload.php');
 	}
 	
 	public function index()
@@ -19,12 +19,12 @@ class Login extends CI_Controller {
 				$user_login = $this->m_guest->get_profile_facebook($email);
 				if($user_login){
 					$this->session->set_userdata('id_guest',$user_login->id_guest);
-					$this->session->set_userdata('guest_name',$user_login->firstname.' '.$user_login->lastname);
+					$this->session->set_userdata('guest_name',$user_login->name);
 					if ($this->session->userdata('booking_items')) {
-						// redirect('booking/guest_info');
+						redirect('booking/guest_info');
 					}
 					else {
-						// redirect('home');
+						redirect('home');
 					}
 				}else{
 					$data = array(
@@ -38,17 +38,18 @@ class Login extends CI_Controller {
 						'password' => '',
 						'photo_url' => '',
 						'tax_id' => '',
-						'is_active' => 1,	
+						'is_active' => 1,
+						'type' => 'facebook',
 						'date_created' => date('Y-m-d H:i:s')
 					);
 					$insert_id = $this->m_guest->insert_profile($data);
 					$this->session->set_userdata('id_guest',$insert_id);
 					$this->session->set_userdata('guest_name',$this->input->post('name'));
 					if ($this->session->userdata('booking_items')) {
-						// redirect('booking/guest_info');
+						redirect('booking/guest_info');
 					}
 					else {
-						// redirect('home');
+						redirect('home');
 					}
 				}
 
@@ -116,17 +117,23 @@ class Login extends CI_Controller {
 	    return $randomString;
 	}
 
-	public function forgot_password(){
-		require(APPPATH . 'third_party/PHPMailer/PHPMailerAutoload.php');
+	public function index3()
+	{
+		$this->load->view('test_f2');
+	}
+
+	public function forget_password(){
 		// require_once(APPPATH.'third_party/PHPMailer/PHPMailerAutoload.php');
-		// $temp_pass = uniqueAlphaNum8();
 		$temp_pass = $this->m_stringlib->uniqueAlphaNum8();
     	$password = $this->m_stringlib->useMD5($temp_pass, strtolower($temp_pass));
 
     	$data['temp_pass'] = $temp_pass;
     	$data['password'] = $password;
-		// $this->load->view('v_header');
-		$this->load->view('forgot_password',$data);
+
+    	$data_update = array ('password' => $password);
+    	$this->m_guest->update_temp_password($data_update,$_POST['reset_email'],$_POST['reset_username']);
+
+		$this->load->view('forget_password',$data);
 		// $this->load->view('v_footer');
 
 		//////////////////////////
