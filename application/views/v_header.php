@@ -333,8 +333,17 @@ if ($id_guest != '') {
 		  <?php } ?>
 
 		  <div class="input-group d-flex flex-row bg-light dropdown-user" style="background-color: #102958 !important;">            
-			<a class="nav-link align-text-bottom dropdown-toggle" id="profile_name" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color: #102958 !important; color: rgba(255, 255, 255, 1.00) !important;">
-				<?php echo $guest->firstname . ' ' . substr($guest->lastname, 0, 1). '.'; ?>
+			<a class="nav-link align-text-bottom dropdown-toggle" id="profile_name" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color: #102958 !important; color: rgba(255, 255, 255, 1.00) !important;font-size: 14px;">
+				<?php //echo $guest->firstname . ' ' . substr($guest->lastname, 0, 1). '.'; ?>
+				<?php
+				if (empty($guest->firstname)) {
+				    // ถ้า $guest->firstname เป็นค่าว่างหรือ ''
+				    echo $guest->name . '.';
+				} else {
+				    // ถ้า $guest->firstname มีค่า
+				    echo $guest->firstname . ' ' . substr($guest->lastname, 0, 1) . '.';
+				}
+				?>
 			</a>
 
 			<button class="btn btn-outline-default btn-default btn-sm dropdown-toggle" style="display: none; " id="profile_dropdown" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
@@ -418,19 +427,12 @@ function add_trailing_slash($url) {
     						</a>
             </li>
 
-            <!-- target="_blank" -->
             <li class="nav-item" id="nav_contactus">
                 <a class="nav-link" href="<?php echo site_url('facilities'); ?>" >
 					<?php echo $lang == "english" ? 'Facilities & Amenities' : 'สิ่งอำนวยความสะดวก'; ?>
 								</a>
             </li>
-			<!--
-			<li class="nav-item" id="nav_contactus">
-                <a class="nav-link" href="http://192.168.20.22/smartbooking_front_test/nearby_locations.php" target="_blank">
-					<?php echo $lang == "english" ? 'Nearby Locations' : 'สถานที่ใกล้เคียง'; ?>
-				</a>
-            </li>
-			-->
+
 					<li class="nav-item" id="nav_contactus">
               <a class="nav-link" href="<?php echo site_url('conditions'); ?>" >
 					<?php echo $lang == "english" ? 'Conditions & Policies' : 'เงื่อนไขและข้อกำหนด'; ?>
@@ -438,13 +440,10 @@ function add_trailing_slash($url) {
           </li>
 
 					<li class="nav-item" id="nav_contactus">
-                <!--<a class="nav-link" href="#contactus">-->
 						<a class="nav-link" href="<?php echo site_url('contact'); ?>" >
 							<?php echo $lang == "english" ? 'Contact us' : 'ติดต่อเรา'; ?>
 						</a>
           </li>
-
-          <?php //echo site_url('contact'); ?>">
         </ul>
 
 	<!-- new menu -->

@@ -163,10 +163,11 @@ if ($rate == '') {
 				<div class="row mb-5">
 					<div class="col-md-12">
 						<div class="col-md-12 section_header" style="display: flex; flex-direction: row; padding: 10px; ">
-						<span style=""><?php echo $room_type->number_of_adults;?> <?php echo $this->lang->line('guests');?></span>
-						<span style="padding: 0 10px 0 10px; ">|</span>
-						<span><?php echo ($lang == 'english') ? $room_type->room_details_en : $room_type->room_details_th;?></span>
+							<span style=""><?php echo $room_type->number_of_adults;?> <?php echo $this->lang->line('guests');?></span>
+							<span style="padding: 0 10px 0 10px; ">|</span>
+							<span><?php echo ($lang == 'english') ? $room_type->room_details_en : $room_type->room_details_th;?></span>
 						</div>
+						
 						
 						<!-- <div class="col-md-12">
 							<div class="row">
@@ -464,13 +465,17 @@ if ($rate == '') {
 				</div>
 						<div class="row mt-3 ml-5">	
 							<div class="col-md-6 mb-2 text-right" > 
-								<button class="btn button-primary-w form-control add_to_cart btn-add_to_cart" data-id="<?php echo $rt->id_room_type;?>" data-price="<?php echo $rt->default_rate;?>" id="add_to_cart"><?php echo $this->lang->line('add_to_cart');?></button>
+								<button class="btn button-primary-w form-control add_to_cart btn-add_to_cart" data-id="<?php echo $rt->id_room_type;?>" data-price="<?php echo $rt->default_rate;?>" id="add_to_cart"><?php //echo $this->lang->line('add_to_cart');?><?php echo $lang == "english" ? 'ADD TO CART' : 'เก็บใส่ตะกร้า'; ?></button>
 							</div>
 							<div class="col-md-6 mb-2 text-left"> 
-								<button class="btn button-primary form-control book_now" id="book_now"><?php echo $this->lang->line('book_now');?></button>
+								<button class="btn button-primary form-control book_now" id="book_now"><?php //echo $this->lang->line('book_now');?><?php echo $lang == "english" ? 'BOOK NOW' : 'จองตอนนี้'; ?></button>
+
 							</div>
 						</div>
-			</div>
+				</div>
+				<div id="room_available" class="col-md-12 section_header" style="display: flex; flex-direction: row; padding: 10px; font-size: 14px; color: #a6a6a6; justify-content: flex-end;">
+							<span style=""><?php echo $lang == "english" ? 'There is a room that is not available on the date selected.' : 'ห้องพักนี้ไม่ว่างในวันที่คุณเลือก'; ?></span>
+				</div>
 			</div>
 		</div>
 	</div>		
@@ -544,13 +549,15 @@ if ($rate == '') {
 </div>
 
 
-
-
-
 <!-- <script src="//code.jquery.com/jquery.js"></script> -->
 <script src="<?php echo site_url();?>js/jquery.min.js"></script>
 <script src="<?php echo site_url();?>js/jquery-ui.min.js"></script>
 <script src="<?php echo site_url();?>bootstrap-4.0.0-dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- /////////////////////////////////////////////////// -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+
 <script>
 
 function stepper(dis) {
@@ -660,15 +667,13 @@ function stepper(dis) {
 		$("#h_check_in_date").val($('#check_in_date').val());
 		$("#h_check_out_date").val($('#check_out_date').val());
 
-
-		/*
-		$('.datepicker').datepicker({ 
-		    dateFormat: 'dd-mm-yy',
-		    changeMonth: true,
-		    changeYear: true,
-		    minDate: new Date(), // = today
-		    onSelect: function(dateText, inst) {
-				
+		$('#check_in_date').datepicker({
+		    format: 'dd-mm-yyyy',
+			changeMonth: true,
+			changeYear: true,
+			startDate: new Date(), // = today
+			autoclose: true
+		}).on('changeDate', function(e) {
 		        var in_date = $(this).val();
 				check_in_date = in_date.split("-");
 
@@ -681,51 +686,49 @@ function stepper(dis) {
 	             + ('0' + (tomorrow.getMonth()+1)).slice(-2) + '-'
 	             + tomorrow.getFullYear();         
 				$("#check_out_date").val(tomorow_date);
-
-				
-		    }
-		  }).val();
-		  */
-
-		//$('.datepicker').on('focusout',focusHandler);
-
-
-		
-		$('#check_in_date').datepicker({ 
-		    dateFormat: 'dd-mm-yy',
-		    changeMonth: true,
-		    changeYear: true,
-		    minDate: new Date(), // = today
-		    onSelect: function(dateText, inst) {
-				
-		        var in_date = $(this).val();
-				check_in_date = in_date.split("-");
-
-		        //var d = new Date(check_in_date[2], parseInt(check_in_date[1])-1, check_in_date[0]);
-		        var today = new Date(check_in_date[2], parseInt(check_in_date[1])-1, check_in_date[0]);
-		        var tomorrow = new Date(today);
-		        tomorrow.setDate(today.getDate()+1);
-		        tomorrow.toLocaleDateString();
-				var tomorow_date = ('0' + tomorrow.getDate()).slice(-2) + '-'
-	             + ('0' + (tomorrow.getMonth()+1)).slice(-2) + '-'
-	             + tomorrow.getFullYear();         
-				$("#check_out_date").val(tomorow_date);
-				
 				change_date_calc();
-				
-		    }
-		  }).val();
+				check_room();
+		});
 
-		$('#check_out_date').datepicker({ 
-		    dateFormat: 'dd-mm-yy',
+		$('#check_out_date').datepicker({
+		    format: 'dd-mm-yyyy',
 		    changeMonth: true,
 		    changeYear: true,
-		    minDate: new Date(), // = today
+		    startDate: new Date(), // = today
 		    onSelect: function(dateText, inst) {
 		    	change_date_calc();
+		    	check_room();
 		    }
-		  }).val();
-		
+		}).val();
+
+		function check_room() {
+			var id_room = "<?php echo $room_type->id_room_type;?>";
+			var rooms_to_check = [];
+			rooms_to_check.push(id_room);
+
+			var _url = "<?php echo site_url('room_details/room_available');?>";
+			$.ajax({
+	               method: "POST",
+	               url: _url,
+	               data: {
+	                   'rooms': rooms_to_check.toString(),
+	                   'check_in_date': $('#check_in_date').val(),
+	                   'check_out_date': $('#check_out_date').val()               
+	               }
+	       })
+	       .done(function(res) {
+	       		var obj = eval('('+res+')');
+	       		// alert('done'+obj.length);
+	    	   	if(obj.length > 0) {
+	    	   		$('#room_available').show();
+	    	   	}else{
+	    	   		$('#room_available').hide();
+	    	   	}
+	       });
+		}
+
+		check_room();
+
 		//console.log(type_a);
 		$('.myImg').click(function(){
 			var id = $(this).attr('data-id');
@@ -768,7 +771,12 @@ function stepper(dis) {
 	       .done(function( res ) {
 	    	   var obj = eval('('+res+')');
 	    	   if(obj.length > 0) {
-					alert ("There is a room that is not available on the date selected")
+	    	   		var lang = '<?php echo $lang; ?>';
+	    	   		if(lang == 'english'){
+						alert ("There is a room that is not available on the date selected");
+					}else{
+						alert ("ห้องพักนี้ไม่ว่างในวันที่คุณเลือก");
+					}
 			   }
 		       else {
 		    	   //rooms.push(id_room+':'+room_rate);

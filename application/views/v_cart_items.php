@@ -215,12 +215,12 @@ $r_date = 0;
 
 			<div class="col-md-4">
 				<!-- <div class="group"> -->
-				<label for="name" style="font-weight: 500;" class="mb-0"><?php echo $this->lang->line('check_in_date'); ?></label>
+				<label for="name" style="font-weight: 500;" class="mb-0"><?php //echo $this->lang->line('check_in_date'); ?><?php echo $lang == "english" ? 'Check-in Date' : 'วันที่เข้าพัก'; ?></label>
 				<input type='text' class="form-control datepicker search_input " style="color: #000; !important" name="check_in_date" id="check_in_date" value="<?= $check_in_date; ?>" />
 				<!-- </div> -->
 			</div>
 			<div class="col-md-4">
-				<label for="name" style="font-weight: 500;" class="mb-0"><?php echo $this->lang->line('check_out_date'); ?></label>
+				<label for="name" style="font-weight: 500;" class="mb-0"><?php //echo $this->lang->line('check_out_date'); ?><?php echo $lang == "english" ? 'Checkout Date' : 'วันที่ออก'; ?></label>
 				<input type='text' class="form-control datepicker search_input " style="color: #000; !important" name="check_out_date" id="check_out_date" value="<?= $check_out_date; ?>" />
 			</div>
 
@@ -318,26 +318,38 @@ $r_date = 0;
 
 										</div>
 										<div class="col-2 text-right mt-3">
-											<a class="delete-item" data-id="<?php echo ($this->session->userdata('id_guest') != '') ? $item->id_cart_item : $key; ?>"><i class="fa-solid fa-trash-can fa-xl" style="color: #030303;"></i><?php //echo $this->lang->line('delete');
-																																																											?></a>
+											<a class="delete-item" data-id="<?php echo ($this->session->userdata('id_guest') != '') ? $item->id_cart_item : $key; ?>"><i class="fa-solid fa-trash-can fa-xl" style="color: #030303;"></i><?php //echo $this->lang->line('delete');?></a>
 										</div>
 									</div>
+
 									<div class="row">
+										<div class="col-md-12">
+											<div class="row">
+												<div class="col-1 text-left">
+												</div>
+										<div id="id_text_room_<?php echo $item->id_room_type ?>" class="col-md-11 section_header" style="display: flex; flex-direction: row; padding: 10px; font-size: 14px; color: #a6a6a6; justify-content: flex-start;">
+											<span style=""><?php echo $lang == "english" ? 'There is a room that is not available on the date selected.' : 'ห้องพักนี้ไม่ว่างในวันที่คุณเลือก'; ?></span>
+										</div>
+											</div>
+										</div>
 
 										<div class="col-md-10">
 											<div class="row">
 												<div class="col-1 text-right">
 													<input <?php echo ($room_count == 0) ? 'disabled' : ''; ?> style="height:15px;width:15px;" type="checkbox" class="chk_item cb room" id="id_room_<?php echo $item->id_room_type ?>" data-id="room_<?php echo $item->id_room_type ?>" data-item-type="room" data-item="<?php echo $item->id_room_type ?>" data-price="<?php echo $rate; ?>">
 												</div>
+
 												<div class="col-md-6 text-center">
 													<img class="img-thumbnail mw-300"  src="<?php echo share_folder_path() . $first_photo->room_photo_url; ?>" />
 												</div>
+												
 												<div class="col-md-5 align-self-center text-center">
 													<h6 style="color: #000; !important"><?php echo $lang == 'english' ? $room_type->room_type_name_en : $room_type->room_type_name_th; ?></h6>
 												</div>
 
 											</div>
 										</div>
+
 										<div class="col-md-2 align-self-center pl-0">
 											<div style="display: flex; justify-content: center; background-color: white; vertical-align: bottom; font-size: 12px!important;">
 												<button class="btn_stepper_sm" data-max="<?php echo $room_count; ?>" data-cart-item="<?php echo ($this->session->userdata('id_guest') != '') ? $item->id_cart_item : $key; ?>" data-room="<?php echo $item->id_room_type; ?>" id="decrement-room-<?php echo $item->id_room_type; ?>" onClick="stepper_room(this);"><i class="fa-solid fa-circle-minus fa-lg" style="color: #000000;"></i></button>
@@ -388,6 +400,17 @@ $r_date = 0;
 
 							<div class="row mx-1 mb-2">
 								<div class="col-12 border-r-10">
+
+									<div class="row mt-3">
+										<div class="row">
+											<div class="col-1 text-left">
+											</div>
+											<div id="id_text_package_<?php echo $package_rooms[0]->id_package; ?>" class="col-md-11 section_header" style="display: flex; flex-direction: row; padding: 10px; font-size: 14px; color: #a6a6a6; justify-content: flex-start;">
+												<span style=""><?php echo $lang == "english" ? 'There is a package that is not available on the date selected.' : 'แพ็คเกจพักนี้ไม่ว่างในวันที่คุณเลือก'; ?></span>
+											</div>
+										</div>
+									</div>
+
 									<div class="row mt-3">
 										<div class="col-1 text-right">
 											<input <?php echo ($is_package_available == 0) ? 'disabled' : ''; ?> style="height:15px; width:15px;" type="checkbox" class="chk_item cb package" data-id="package_<?php echo $package_rooms[0]->id_package; ?>" id="id_package_<?php echo $package_rooms[0]->id_package; ?>" data-item-type="package" data-item="<?php echo $package_rooms[0]->id_package; ?>" data-price="<?php echo $package_rooms[0]->price; ?>">
@@ -731,16 +754,21 @@ $r_date = 0;
 						var obj = eval('(' + res + ')');
 						console.log("RooM: " + obj.id_room_type + ' = ' + obj.room_count);
 						console.log(obj);
+
 						if (obj.room_count == 0) {
 							console.log('red');
+
 							$('#tr_' + obj._id_item).addClass('red_color');
 							$('.cb').prop('checked', false);
 							$('#id_' + obj._id_item).attr('disabled', true);
+							$('#id_text_' + obj._id_item).show();
 						} else {
 							//console.log('test');
 							$('#tr_' + obj._id_item).removeClass('red_color');
 
 							$('#id_' + obj._id_item).prop('disabled', false);
+							$('#id_text_' + obj._id_item).hide();
+
 							// set data-max 
 						}
 						//$('#room_'+obj.id_room_type).val(obj.room_count);
@@ -771,10 +799,12 @@ $r_date = 0;
 							$('#tr_' + obj._id_item).addClass('red_color');
 							$('.cb').prop('checked', false);
 							$('#id_' + obj._id_item).attr('disabled', true);
+							$('#id_text_' + obj._id_item).show();
 						} else {
 							//console.log('test');
 							$('#tr_' + obj._id_item).removeClass('red_color');
 							$('#id_' + obj._id_item).prop('disabled', false);
+							$('#id_text_' + obj._id_item).hide();
 							// set data-max 
 						}
 						//$('#'+obj._id_item).val(obj.package_count);
@@ -838,8 +868,8 @@ $r_date = 0;
 			changeMonth: true,
 			changeYear: true,
 			startDate: new Date(), // = today
-			onSelect: function(dateText, inst) {
-
+			autoclose: true
+		}).on('changeDate', function(e) {
 				var in_date = $(this).val();
 				check_in_date = in_date.split("-");
 
@@ -860,9 +890,14 @@ $r_date = 0;
 				var total = 0;
 				$('#total').text(number_add_comma_decimal(total));
 				get_room_count_on_change_date();
-
-			}
-		}).val();
+		});
+		
+		$('#check_in_date').on('changeDate', function(e) {
+	      var selectedDate = e.format('dd-mm-yyyy');
+	      var tomorrow = new Date(e.date);
+	      tomorrow.setDate(tomorrow.getDate() + 1);
+	      $('#check_out_date').datepicker('setDate', tomorrow);	
+		});
 
 		$('#check_out_date').datepicker({
 			format: 'dd-mm-yyyy',
@@ -878,13 +913,6 @@ $r_date = 0;
 				get_room_count_on_change_date();
 			}
 		}).val();
-
-		$('#check_in_date').on('changeDate', function(e) {
-	      var selectedDate = e.format('dd-mm-yyyy');
-	      var tomorrow = new Date(e.date);
-	      tomorrow.setDate(tomorrow.getDate() + 1);
-	      $('#check_out_date').datepicker('setDate', tomorrow);	
-		});
 
 		var today = new Date();
 		var tomorrow = new Date(today);

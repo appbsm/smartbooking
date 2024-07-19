@@ -184,7 +184,8 @@ $CI->load->model('m_room_type');
 
     .social-buttons {
         display: flex;
-        justify-content: space-between;
+        /*justify-content: space-between;*/
+		justify-content: space-evenly;
     }
 
     .social-buttons button {
@@ -226,7 +227,16 @@ $CI->load->model('m_room_type');
     .forget-svg * {
         fill: rgb(83, 146, 249);
     }
-
+	
+	.tx-forgetPW {
+        font-size: 24px ;
+        line-height: 24px;
+        font-weight: 500;
+        margin: 0px;
+        padding-bottom: 16px;
+        color: black;
+    }
+	
     .tx-signin {
         font-size: 24px ;
         line-height: 24px;
@@ -397,8 +407,86 @@ $CI->load->model('m_room_type');
         margin-top: auto; /* This will push the footer to the bottom */
     }
     .footer-top {
-        padding: 20px 0;
+        /*padding: 20px 0;*/
     }
+	
+	.button__badge {
+		margin-right: 0px;
+		font-size: 0.6em !important;
+		position: absolute;
+		top: -8px !important;
+		right: -4px !important;
+	}
+	
+	
+	.social-buttons {
+		display: flex;
+		align-items: center;
+	}
+
+	.g-signin2, .fb-login-button {
+		width: 200px; 
+		height: 40px; 
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	.abcRioButtonBlue {
+		background-color: #4285f4;
+		border: none;
+		color: #fff;
+		width: 150px !important;
+		height: 40px !important;
+	}
+	.abcRioButtonBlue .abcRioButtonIcon {
+		background-color: #fff;
+		border-radius: 1px;
+		padding: 10px !important;
+	}
+	.abcRioButtonContents {
+		line-height: 38px !important;
+	}
+
+	.fb-login-button {
+		background-color: #445fad; /* Facebook blue */
+		color: white;
+		font-size: 14px;
+		font-weight: 600;
+		border: none;
+		/*border-radius: 5px;*/
+		cursor: pointer;
+		border-top: 1px solid #879ac0;
+	}
+
+	.fb-login-button div {
+		display: flex;
+		align-items: center;
+	}
+
+	.fb-login-button div span {
+		margin-left: 10px;
+	}
+	@media (max-width: 768px) { 
+		.fb-login-button div span {
+			margin-left: 2px !important;
+		}
+		.navbar-expand {
+			background-color: #102958 !important;
+			color: rgba(255, 255, 255, 1.00) !important;
+			gap: 0px !important; 
+		}
+	}
+	@media (min-width: 992px) {
+		.modal-dialog {
+		  max-width: 35%; 
+		}
+	  }
+
+
+	.fb-login-button:hover {
+		background-color: #445fad; /* Darker Facebook blue for hover */
+		border-top: 1px solid #879ac0;
+	}
 </style>
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10/dist/sweetalert2.min.css">
@@ -409,9 +497,9 @@ $CI->load->model('m_room_type');
 <div class="modal " id="myModal" tabindex="-1" role="dialog" aria-hidden="true">
   <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
 
-    <div class="modal-content">
+    <div class="modal-content" style="padding: 16px;">
       <div class="modal-header" style="text-align: center; margin: auto; border-bottom: none !important;"> 
-        <h4 style="color: black;" ><?php echo $lang == "english" ? 'Get Password Reset via Email' : 'รับการรีเซ็ตรหัสผ่านทางอีเมล์'; ?></h4>
+        <h3 class="tx-forgetPW" style="color: black;" ><?php echo $lang == "english" ? 'Get Password Reset via Email' : 'รับการรีเซ็ตรหัสผ่านทางอีเมล์'; ?></h3>
       </div>
       <div class="modal-body" style="text-align: center; margin: auto;">
        <form name="frm_reset" id="frm_reset" method="post" action="<?php echo site_url('/login/forget_password');?>">
@@ -654,9 +742,19 @@ if ($this->session->flashdata('message')) {
                     </div> 
                     <div class="line-or-signin"></div>
                 </div>
-
+			
                 <div class="social-login ">
-                    <div class="social-buttons">
+					<div class="social-buttons">
+						<div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
+						
+						<fb:login-button scope="public_profile,email" onlogin="checkLoginState();" class="fb-login-button">
+							<span>Login with Facebook</span>
+						</fb:login-button>
+						
+					</div>
+			
+					<div class="social-buttons">
+						<!--
                         <button style="background-color: white !important;color: #5392f9 !important;border: 1px solid #ccc;" class="google g-signin2" data-onsuccess="onSignIn" data-theme="dark"alt="Google">
 							<img src="https://cdn6.agoda.net/images/universal-login/google-logo-v2.svg" alt="Google" class="icon-social">Google
                         </button>
@@ -670,7 +768,7 @@ if ($this->session->flashdata('message')) {
                         <button style="background-color: white !important;color: #5392f9 !important;border: 1px solid #ccc;" >	
                             <div class="fb-login-button" data-width="" data-size="" data-button-type="" data-layout="" data-auto-logout-link="false" data-use-continue-as="false" onlogin="checkLoginState();"  ></div>
                         </button>	
-
+						-->
                         <!-- <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
                           Login with Facebook
                         </fb:login-button> -->
@@ -678,7 +776,7 @@ if ($this->session->flashdata('message')) {
                 </div>
 				
                 <div class="terms-policy">
-                    <span style="color: black;">By signing in, I agree to Smsmartbooking's </span><br/>
+                    <span style="color: black;">By signing in, I agree to Smartbooking's </span><br/>
                     <span>   
                         <!-- target="_blank" -->
                         <a style="color: #5392f9 !important;" href="#" >Terms of Use</a><span style="color: black;"> and</span>
@@ -793,7 +891,7 @@ Result: <textarea id="result"></textarea>
             });
         }
     </script>  
-
+<!--
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const tabs = document.querySelectorAll('.tab-signin li');
@@ -826,7 +924,7 @@ Result: <textarea id="result"></textarea>
             });
         });
     </script>
-    
+ -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const togglePassword = document.querySelector('.toggle-password');
@@ -840,5 +938,4 @@ Result: <textarea id="result"></textarea>
             });
         });
     </script>
-
-
+	

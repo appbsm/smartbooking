@@ -335,15 +335,26 @@ $CI->load->model('m_room_type');
     input[type=checkbox], input[type=radio] {
         margin: 4px 4px 0;
     }
-    .ck-agree {
+    /*.ck-agree {
         width: 100%;
         display: flex;
         position: relative;
         -webkit-box-align: center;
         align-items: center;
         user-select: none;
-    }
-    
+    }*/
+	.ck-agree {
+		display: flex;
+		/*align-items: center;*/
+		user-select: none;
+		color: black;
+	  }
+
+	  .ck-agree input {
+		margin-right: 8px; 
+		margin-top: -5px;
+	  }
+		
     .password-container input {
         flex: 1;
         width: 100%;
@@ -413,14 +424,14 @@ $CI->load->model('m_room_type');
                                     <input type="password" id="password" name="password" placeholder="Password" required pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}">
                                     <span class="toggle-password"><i class="fas fa-eye-slash"></i></span>
                                 </div>
-                                <small>Password must be at least 8 characters, include an uppercase letter, a lowercase letter, a number, and a special character.</small>
+                                <small style="font-size: 12px;">Password must be at least 8 characters, include an uppercase letter, a lowercase letter, a number, and a special character.</small>
                             </div>
-
+							
                             <div class="form-group">
                                 <div style="padding: 8px 0;">
                                     <label class="ck-agree">
                                         <input id="newsLetter" name="newsLetter" data-cy="newsLetter" type="checkbox" class="" checked="">
-                                        <span style="color: black;" >I agree to receive updates and promotions about Smsmartbooking and its affiliates or business&nbsp;partners via various channels, including WhatsApp. Opt out anytime. Read more in the Privacy Policy.</span>
+                                        <span style="color: black; font-size: 14px !important;" >I agree to receive updates and promotions about Smartbooking and its affiliates or business&nbsp;partners via various channels. Opt out anytime. Read more in the Privacy Policy.</span>
                                     </label>
                                 </div>
                             </div>
@@ -430,7 +441,8 @@ $CI->load->model('m_room_type');
                         </form>
                     </div>
                 </div>
-                <div class="or-signin" style="margin-top: 8px;">
+                
+               <!--  <div class="or-signin" style="margin-top: 8px;">
                     <div class="line-or-signin"></div>
                     <div style="margin-top: 8px;">
                         <span style="color: black;" class="sc-fznZeY tx-or-signin">or sign in with</span>
@@ -446,7 +458,7 @@ $CI->load->model('m_room_type');
                             <img src="https://cdn6.agoda.net/images/universal-login/facebook-logo.svg" alt="Facebook" class="icon-social">Facebook
                         </button>
                     </div>
-                </div>
+                </div> -->
                 <hr/>
                 <div class="form-group">
                     <a href="../login">
@@ -454,7 +466,7 @@ $CI->load->model('m_room_type');
                     </a>
                 </div>
                 <div class="terms-policy">
-                    <span style="color: black;" >By signing in, I agree to Smsmartbooking's </span><br/>
+                    <span style="color: black;" >By signing in, I agree to Smartbooking's </span><br/>
                     <span >   
                         <!-- target="_blank" -->
                         <a style="color: #5392f9 !important;" href="#" >Terms of Use</a><span style="color: black;"> and</span>
@@ -470,7 +482,7 @@ $CI->load->model('m_room_type');
     <script src="http://192.168.20.22/smartbooking_front_test/bootstrap-4.0.0-dist/js/bootstrap.bundle.min.js"></script>
     <script src="http://192.168.20.22/smartbooking_front_test/assets/select-picker/js/bootstrap-select.min.js"></script>
     <script src="http://192.168.20.22/smartbooking_front_test/assets/swiper-element/js/swiper-element-bundle.min.js"></script>
-
+	<!--
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const tabs = document.querySelectorAll('.tab-signin li');
@@ -503,7 +515,7 @@ $CI->load->model('m_room_type');
             });
         });
     </script>
-    
+    -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const togglePassword = document.querySelector('.toggle-password');

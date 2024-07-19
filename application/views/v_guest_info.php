@@ -1417,7 +1417,13 @@ $packages = array();
 					.done(function(res) {
 						var obj = eval('(' + res + ')');
 						if (obj.length > 0 && rooms_to_check != '') {
-							alert("There is a room that is not available on the date selected")
+							// alert("There is a room that is not available on the date selected")
+							var lang = '<?php echo $lang; ?>';
+							if(lang == 'english'){
+								alert ("There is a room that is not available on the date selected");
+							}else{
+								alert ("ห้องพักนี้ไม่ว่างในวันที่คุณเลือก");
+							}
 						} else {
 							var extras = [];
 							$('#h_check_in_date').val($('#check_in_date').val());

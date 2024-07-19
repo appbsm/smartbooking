@@ -1441,7 +1441,7 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
 				<?php if (!empty($photos)) { ?>
 					<div class="image-container">
 						<a href="#" data-toggle="modal" data-target="#imageModal<?php echo $key; ?>" data-slide-to="0">
-							<img class="img-roomtype img-thumbnail" src="<?php echo share_folder_path() . $photos[0]->room_photo_url; ?>" style="width: 100%; !important;" alt="Room Photo">
+							<img class="img-roomtype img-thumbnail" src="<?php echo share_folder_path() . $photos[0]->room_photo_url; ?>" style="width: 100%; !important;min-width: 430px; min-height: 320px;" alt="Room Photo">
 						</a>
 					</div>
 				<?php } ?>
@@ -1483,13 +1483,13 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
     </div>
 </div>
 
-<script>
-    $('#imageModal<?php echo $key; ?>').on('show.bs.modal', function (event) {
-        var button = $(event.relatedTarget);
-        var slideIndex = button.data('slide-to');
-        $('#carouselExample<?php echo $key; ?>').carousel(slideIndex);
-    });
-</script>
+		<script>
+		    $('#imageModal<?php echo $key; ?>').on('show.bs.modal', function (event) {
+		        var button = $(event.relatedTarget);
+		        var slideIndex = button.data('slide-to');
+		        $('#carouselExample<?php echo $key; ?>').carousel(slideIndex);
+		    });
+		</script>
 
 		<!-- class="col-md-1 col-lg-0" -->
 		<div class="col-md-0 col-xs-1" >
