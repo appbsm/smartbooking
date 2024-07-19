@@ -424,7 +424,6 @@ $r_date = 0;
 											</a>
 										</div>
 									</div>
-									
 									<div class="row">
 										<div class="col-md-10"></div>
 										<div class="col-md-2 pl-0 align-self-center">

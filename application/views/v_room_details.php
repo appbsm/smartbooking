@@ -323,19 +323,19 @@ if ($rate == '') {
 					
 					</div>
 					
-					<div class="col-md-12" style="display: flex; flex-direction: row; padding: 10px;">
+					<div class="col-md-12" style="display: flex; flex-direction: row; padding: 10px; font-size: 14px;">
 						<div class="group">
-							<label for="name"><?php echo $this->lang->line('check_in_date');?></label>
+							<label for="name" class="mb-0"><?php echo $this->lang->line('check_in_date');?></label>
 							<input type='text' class=" datepicker" name="check_in_date" id="check_in_date" value="<?php echo $check_in_date;?>"/>
 						</div>
 						<div class="group">
-							<label for="name"><?php echo $this->lang->line('check_out_date');?></label>
+							<label for="name" class="mb-0"><?php echo $this->lang->line('check_out_date');?></label>
 							<input type='text' class=" datepicker" name="chec_out_date" id="check_out_date" value="<?php echo $check_out_date;?>"/>
 						</div>
 					</div>
 					
 					
-					<div class="col-md-12 mb-3">
+					<div class="col-md-12 mb-3" style="font-size: 14px;">
 						<div class="dropdown" >
 							<button class="btn dropdown-toggle w-100 search_input btn-adults" style="width: 100%; padding: 0 30px 0 0" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 								<span id="div_adult" style="color: #000 !important;"><?php echo $num_of_adult;?></span> <?php echo $this->lang->line('adults');?>, 
@@ -436,7 +436,7 @@ if ($rate == '') {
 									</tr>
 								</tbody>	
 								</table>
-								<div style="margin: auto; font-size: 1em; text-align:right;"><em>(<?php echo $this->lang->line('vary_price');?>)</em></div>
+								<div style="margin: auto; font-size: 1em; text-align:right; margin-right: 5px;"><em>(<?php echo $this->lang->line('vary_price');?>)</em></div>
 								</div>
 							</div>
 						</div>

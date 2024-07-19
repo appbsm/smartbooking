@@ -314,6 +314,7 @@ if ($id_guest != '') {
   <header class="header-wrapper row">
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top text-center mr-auto mb-0 m-0 p-0" style="height:60px; background-color:#102958 !important; font-size: 14px;">
 
+    	<!-- class="container-fluid m-0 p-0 d-flex justify-content-between align-items-center"	 -->
     	<div class="container-fluid m-0 p-0 d-flex justify-content-between align-items-center" >
 				<a class="px-3 mb-0 pb-0" href="<?php echo site_url('home'); ?>">
 					<img src="<?php echo site_url(); ?>images/logo-SM/SM smart booking_White.png" style="width: 85px !important;" >

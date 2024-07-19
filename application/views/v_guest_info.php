@@ -1624,11 +1624,11 @@ $packages = array();
 			alert('checked:'+$(this).is(':checked'));
 			if ($(this).is(':checked')) {
 				//alert('checked')
-				$('#billing_name').val($('#guest_name').val());
-				$('#billing_address').val($('#guest_address').val());
-				$('#billing_contact_number').val($('#guest_contact_number').val());
-				$('#billing_email').val($('#guest_email').val());
-				$('#billing_tax_id').val($('#guest_tax_id').val());
+				// $('#billing_name').val($('#guest_name').val());
+				// $('#billing_address').val($('#guest_address').val());
+				// $('#billing_contact_number').val($('#guest_contact_number').val());
+				// $('#billing_email').val($('#guest_email').val());
+				// $('#billing_tax_id').val($('#guest_tax_id').val());
 				//console.log('>>>>');
 				get_form_fields();
 				load_sessionStorage();
