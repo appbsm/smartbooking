@@ -21,9 +21,6 @@ $CI->load->model('m_room_type');
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
 <!-- ------------------ facebook ------------------ -->
-<!-- <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script> -->
-<!-- <script src="https://apis.google.com/js/platform.js" async defer></script> -->
-
 <script async defer crossorigin="anonymous" src="https://connect.facebook.net/th_TH/sdk.js#xfbml=1&version=v20.0&appId=2110028109370751" nonce="bBD1lqRL"></script>
 
 <!-- ------------------ google ------------------ -->
@@ -663,18 +660,20 @@ if ($this->session->flashdata('message')) {
                         <button style="background-color: white !important;color: #5392f9 !important;border: 1px solid #ccc;" class="google g-signin2" data-onsuccess="onSignIn" data-theme="dark"alt="Google">
 							<img src="https://cdn6.agoda.net/images/universal-login/google-logo-v2.svg" alt="Google" class="icon-social">Google
                         </button>
-						
-                        <!-- <button style="background-color: white !important;color: #5392f9 !important;border: 1px solid #ccc;" class="facebook">
-                            <img src="https://cdn6.agoda.net/images/universal-login/facebook-logo.svg" alt="Facebook" class="icon-social">Facebook
-                        </button> -->
-<script async defer crossorigin="anonymous" src="https://connect.facebook.net/th_TH/sdk.js#xfbml=1&version=v20.0&appId=2110028109370751" nonce="bBD1lqRL"></script>
 
-<div class="fb-login-button" data-width="" data-size="" data-button-type="" data-layout="" data-auto-logout-link="false" data-use-continue-as="false" onlogin="checkLoginState();"></div>
+                        <style>
+                          .fb-login-button {
+                            transform: scale(1.5) !important; /* เพิ่มขนาดของปุ่ม 1.5 เท่า */
+                            transform-origin: 0 0 !important; /* กำหนดจุดเริ่มต้นของการขยาย */
+                          }
+                        </style>		          
+                        <button style="background-color: white !important;color: #5392f9 !important;border: 1px solid #ccc;" >	
+                            <div class="fb-login-button" data-width="" data-size="" data-button-type="" data-layout="" data-auto-logout-link="false" data-use-continue-as="false" onlogin="checkLoginState();"  ></div>
+                        </button>	
 
-                        <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+                        <!-- <fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
                           Login with Facebook
-                        </fb:login-button>
-
+                        </fb:login-button> -->
                     </div>
                 </div>
 				

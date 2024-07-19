@@ -231,8 +231,8 @@ $packages = array();
 													</div>
 												</div>
 
-												<div class="col-md-12 mb-1 mt-3 text-right">
-													<div class="form-group">
+												<div class="col-md-12 mb-0 mt-1 text-right">
+													<div class="form-group mb-0">
 														<div style="margin:0;">
 															<label data-toggle="collapse" data-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
 																<input onclick="check_bx()" type="checkbox" id="cbx" class="form_field" style="vertical-align:middle; margin-right: 5px;"/><?php echo $this->lang->line('booking_for_someone_else'); ?>
@@ -431,8 +431,10 @@ $packages = array();
 									if ($extra->is_bed == 0) {
 								?>
 										<div class="row" style="margin: 10px 10px 10px 10px; font-size: 0.8rem !important;">
-											<div class="col-md-6"><input type="checkbox" class="form_field chk_extras <?php echo ucfirst($extra_name); ?>" style="vertical-align: middle;" data-id="<?php echo $extra->id_extras; ?>" data-price="<?php echo $extra->price; ?>" data-name="<?php echo ucfirst($extra->title_en); ?>" name="c_<?php echo $extra_name; ?>" id="c_<?php echo $extra_name; ?>" value="1">&nbsp;<?php echo ucfirst($extra->title_en); ?></div>
-											<div class="col-md-6"><?php echo $this->lang->line('quantity'); ?> (max of <?php echo $extra->max_qty; ?>): <input type="text" disabled class="form_field val_extras" min="0" max="<?php echo $extra->max_qty; ?>" name="inp_<?php echo $extra_name; ?>" data-bed="<?php echo $extra->is_bed; ?>" data-price="<?php echo $extra->price; ?>" data-name="<?php echo ucfirst($extra->title_en); ?>" id="inp_<?php echo $extra_name; ?>" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');"></div>
+											<div class="col-md-6 d-flex align-items-center"><input type="checkbox" class="form_field chk_extras <?php echo ucfirst($extra_name); ?>" style="vertical-align: middle;" data-id="<?php echo $extra->id_extras; ?>" data-price="<?php echo $extra->price; ?>" data-name="<?php echo ucfirst($extra->title_en); ?>" name="c_<?php echo $extra_name; ?>" id="c_<?php echo $extra_name; ?>" value="1">&nbsp;<?php echo ucfirst($extra->title_en); ?></div>
+											<!--<div class="col-md-6"><?php //echo $this->lang->line('quantity'); ?> (max of <?php //echo $extra->max_qty; ?>): <input type="text" disabled class="form_field val_extras" min="0" max="<?php //echo $extra->max_qty; ?>" name="inp_<?php //echo $extra_name; ?>" data-bed="<?php //echo $extra->is_bed; ?>" data-price="<?php //echo $extra->price; ?>" data-name="<?php //echo ucfirst($extra->title_en); ?>" id="inp_<?php //echo $extra_name; ?>" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');"></div>-->
+											<div class="col-md-3 "><?php echo $this->lang->line('quantity'); ?> (max of <?php echo $extra->max_qty; ?>): </div>
+											<div class="col-md-3 d-flex align-items-center"><input type="text" disabled class="form_field val_extras" min="0" max="<?php echo $extra->max_qty; ?>" name="inp_<?php echo $extra_name; ?>" data-bed="<?php echo $extra->is_bed; ?>" data-price="<?php echo $extra->price; ?>" data-name="<?php echo ucfirst($extra->title_en); ?>" id="inp_<?php echo $extra_name; ?>" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');"></div>
 										</div>
 										<?php
 									}	//if ($extra->is_bed == 0) {	
@@ -445,8 +447,10 @@ $packages = array();
 
 										?>
 											<div class="row" style="margin: 10px 10px 10px 10px; font-size: 0.8rem !important; ">
-												<div class="col-md-6"><input type="checkbox" class="form_field chk_extras bed" style="vertical-align: middle;" data-id="<?php echo $extra->id_extras; ?>" data-price="<?php echo $extra->price; ?>" data-name="<?php echo ucfirst($extra->title_en); ?>" name="c_bed" id="c_bed">&nbsp;<?php echo ucfirst($extra->title_en); ?></div>
-												<div class="col-md-6"><?php echo $this->lang->line('quantity'); ?> (max of <?php echo $max_bed; ?>): <input type="text" disabled class="form_field val_extras bed" min="0" max="<?php echo $max_bed; ?>" name="inp_bed" data-bed="<?php echo $extra->is_bed; ?>" data-price="<?php echo $extra->price; ?>" data-name="<?php echo ucfirst($extra->title_en); ?>" id="inp_bed" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');"></div>
+												<div class="col-md-6 d-flex align-items-center"><input type="checkbox" class="form_field chk_extras bed" style="vertical-align: middle;" data-id="<?php echo $extra->id_extras; ?>" data-price="<?php echo $extra->price; ?>" data-name="<?php echo ucfirst($extra->title_en); ?>" name="c_bed" id="c_bed">&nbsp;<?php echo ucfirst($extra->title_en); ?></div>
+												<!--<div class="col-md-6"><?php echo $this->lang->line('quantity'); ?> (max of <?php echo $max_bed; ?>): <input type="text" disabled class="form_field val_extras bed" min="0" max="<?php echo $max_bed; ?>" name="inp_bed" data-bed="<?php echo $extra->is_bed; ?>" data-price="<?php echo $extra->price; ?>" data-name="<?php echo ucfirst($extra->title_en); ?>" id="inp_bed" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');"></div>-->
+												<div class="col-md-3"><?php echo $this->lang->line('quantity'); ?> (max of <?php echo $max_bed; ?>):</div>
+												<div class="col-md-3"><input type="text" disabled class="form_field val_extras bed" min="0" max="<?php echo $max_bed; ?>" name="inp_bed" data-bed="<?php echo $extra->is_bed; ?>" data-price="<?php echo $extra->price; ?>" data-name="<?php echo ucfirst($extra->title_en); ?>" id="inp_bed" oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*?)\..*/g, '$1');"></div>
 											</div>
 								<?php
 										} //if ($room_w_extra_bed > 0)
@@ -470,7 +474,7 @@ $packages = array();
 
 					<div class="col-md-5 pl-4">
 								<!-- item room or package detail -->
-								<div class="row justify-content-end" style="font-size: 0.8rem !important;">
+								<div class="row justify-content-end mt-2" style="font-size: 0.8rem !important;">
 									<div class="col-md-12 border-r-10 mt-3">
 										<!-- <div class="section_header"><?php echo $this->lang->line('room_info'); ?></div> -->
 
@@ -1007,7 +1011,7 @@ $packages = array();
 																	foreach ($details as $det) {
 																		if($rcount == 1 || $rcount == 3 ){
 																?>
-																<div class="row mb-4" style="line-height: 20px;">
+																<div class="row mb-0" style="line-height: 20px;">
 																<?php	echo $det;?>
 																</div>
 																<?php
@@ -1110,7 +1114,7 @@ $packages = array();
 												<!-- Loop starts here -->
 												<div class="row p-2">
 
-													<div class="col-md-12" style="display: flex; flex-direction: row; padding: 10px;">
+													<div class="col-md-12" style="display: flex; flex-direction: row; padding: 0px;">
 														<div class="group">
 															<!-- <label for="name"><?php echo $this->lang->line('check_in_date'); ?></label> -->
 															<input type='hidden' class="form_field datepicker" name="check_in_date" id="check_in_date" value="<?php echo $check_in_date; ?>" />
@@ -1158,7 +1162,7 @@ $packages = array();
 															</div>
 														</div>
 													</div>
-													<div class="col-md-12 mt-3">
+													<div class="col-md-12 mt-2">
 														<div class="d-flex align-items-start" style="float: left; font-weight: bold;"> <?php echo $this->lang->line('total'); ?>:</div>
 														<div class="flex-row" style="">
 															<div class="col-md-12">
@@ -1170,7 +1174,7 @@ $packages = array();
 													//print_r($discount);
 													if (isset($discount->id_discount) != '') {
 													?>
-														<div class="col-md-12 mt-3" id="div_computed_discount">
+														<div class="col-md-12 mt-2" id="div_computed_discount">
 															<div class="d-flex align-items-start" style="float: left; font-weight: bold;"> <?php echo $this->lang->line('discount'); ?>&nbsp;(<span id="discount_desc"></span>): </div>
 															<div class="flex-row" style="">
 																<div class="col-md-12">
@@ -1180,7 +1184,7 @@ $packages = array();
 														</div>
 													<?php } ?>
 
-													<div class="col-md-12 mt-3">
+													<div class="col-md-12 mt-2">
 														<div class="d-flex align-items-start" style="float: left; font-weight: bold;"><?php echo $this->lang->line('grand_total'); ?>:</div>
 														<div class="flex-row" style="">
 															<div class="col-md-12">
@@ -1189,7 +1193,7 @@ $packages = array();
 														</div>
 													</div>
 
-													<div class="col-md-12 mt-3">
+													<div class="col-md-12 mt-2">
 														<div class="d-flex align-items-start" style="float: left; font-weight: bold;"><?php echo $this->lang->line('vat'); ?> (7%):</div>
 														<div class="flex-row" style="">
 															<div class="col-md-12">
@@ -1198,7 +1202,7 @@ $packages = array();
 														</div>
 													</div>
 
-													<div class="col-md-12 mt-3">
+													<div class="col-md-12 mt-2">
 														<div class="d-flex align-items-start" style="float: left; font-weight: bold;"><?php echo $this->lang->line('subtotal'); ?>:</div>
 														<div class="flex-row" style="">
 															<div class="col-md-12">

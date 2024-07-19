@@ -26,17 +26,17 @@ if ($id_guest != '') {
 
 <title>Smart Booking</title>
 
-  <link rel="icon" type="image/x-icon" href="https://smartbooking.installdirect.asia/images/10.png">
+  <link rel="icon" type="image/x-icon" href="<?php echo site_url(); ?>images/10.png">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="">
   <?php echo $lang=='english'?'<link href="https://fonts.googleapis.com/css2?family=Syne&display=swap" rel="stylesheet">':'<link href="https://fonts.googleapis.com/css2?family=Prompt&family=Syne&display=swap" rel="stylesheet">';?>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link rel="stylesheet" href="https://smartbooking.installdirect.asia/bootstrap-4.0.0-dist/css/bootstrap.css">
+  <link rel="stylesheet" href="<?php echo site_url(); ?>bootstrap-4.0.0-dist/css/bootstrap.css">
 
-  <link href="https://smartbooking.installdirect.asia/assets/font-awesome/css/all.min.css" rel="stylesheet">
-  <link href="https://smartbooking.installdirect.asia/css/styles.css" rel="stylesheet">
-  <link href="https://smartbooking.installdirect.asia/css/css.css" rel="stylesheet">
+  <link href="<?php echo site_url(); ?>assets/font-awesome/css/all.min.css" rel="stylesheet">
+  <link href="<?php echo site_url(); ?>css/styles.css" rel="stylesheet">
+  <link href="<?php echo site_url(); ?>css/css.css" rel="stylesheet">
   <?php echo $lang=='english'?'<link href="'.site_url().'css/custom_header_en.css" rel="stylesheet">':'<link href="'.site_url().'css/custom_header_th.css" rel="stylesheet">';?>
 
   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css?v=1001">
@@ -144,7 +144,7 @@ if ($id_guest != '') {
         padding: 10px;*/
         /*background-color: #5392f9 !important;*/
 		background-color: #4891b7 !important;
-        color: #fff !important;
+        color: #fff;
        /* border: none;
         border-radius: 4px;
         cursor: pointer;
@@ -457,7 +457,16 @@ function add_trailing_slash($url) {
 
 		  <div class="input-group d-flex flex-row bg-light dropdown-user" style="background-color: #102958 !important;">            
 			<a class="nav-link align-text-bottom dropdown-toggle" id="profile_name" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background-color: #102958 !important; color: rgba(255, 255, 255, 1.00) !important;">
-				<?php echo $guest->firstname . ' ' . substr($guest->lastname, 0, 1). '.'; ?>
+				<?php //echo $guest->firstname . ' ' . substr($guest->lastname, 0, 1). '.'; ?>
+				<?php
+				if (empty($guest->firstname)) {
+				    // ถ้า $guest->firstname เป็นค่าว่างหรือ ''
+				    echo $guest->name . '.';
+				} else {
+				    // ถ้า $guest->firstname มีค่า
+				    echo $guest->firstname . ' ' . substr($guest->lastname, 0, 1) . '.';
+				}
+				?>
 			</a>
 
 			<button class="btn btn-outline-default btn-default btn-sm dropdown-toggle" style="display: none; " id="profile_dropdown" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
