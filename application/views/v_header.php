@@ -312,6 +312,8 @@ if ($id_guest != '') {
 <body>
 	<!-- class="navbar navbar-expand-lg navbar-light bg-light fixed-top text-center mr-auto mb-0 m-0 p-0" -->
   <header class="header-wrapper row">
+
+
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top text-center mr-auto mb-0 m-0 p-0" style="height:60px; background-color:#102958 !important; font-size: 14px;">
 
     	<!-- class="container-fluid m-0 p-0 d-flex justify-content-between align-items-center"	 -->
@@ -320,10 +322,7 @@ if ($id_guest != '') {
 					<img src="<?php echo site_url(); ?>images/logo-SM/SM smart booking_White.png" style="width: 85px !important;" >
 				</a>
 
-  <!-- new menu -->
-		<!-- style="background-color: #102958 !important;" -->
-
-      <div id="menu_t1" class="navbar-expand d-flex flex-row ml-auto navbar-toggler d-lg-none" >
+      <div id="menu_t1" class="navbar-expand d-flex flex-row ml-auto navbar-toggler d-lg-none" style="margin-left: auto !important;text-align: right !important;" >
         <!-- <div class="navbar navbar-expand d-flex flex-row ml-auto " style="background-color: #102958 !important;">  -->
 
        <button id="dropdown_menu"style="background-color: #5392f9 !important;padding: 0.1rem 0.5rem;border-radius: 0.25rem; border: none;" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -386,8 +385,8 @@ if ($id_guest != '') {
 			<span style="color: rgba(255, 255, 255, 1.00) !important; font-size: 14px !important;">&nbsp;|&nbsp;</span>
 			<a href="<?php echo site_url() . 'LanguageSwitcher/switchLang/english'; ?>" title="<?php echo $switch_en; ?>" style="color: rgba(255, 255, 255, 1.00) !important; font-size: 14px !important;" style="<?php echo ($lang == 'english') ? 'font-weight: bold!important; color: rgba(255, 255, 255, 1.00) !important; font-size: 14px !important;' : ''; ?>">EN</a>
 		</div>
-        <!-- </div> -->
-      </div>
+
+  	</div>
 
      <!------------- end sign ------->
     

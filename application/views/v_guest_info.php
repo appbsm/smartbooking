@@ -156,13 +156,13 @@ $packages = array();
 			</ul>
 		</div>
 
-		<div class="row">
+		<div class="row m-0">
 			<div class="col-md-12 price room_type_header m-0" style="background-color: #102958;">
 				<h5><span style="margin-left: 10px;"><?php echo $this->lang->line('step_1'); ?></span></h5>
 			</div>
 		</div>
 
-		<div class="row">
+		<div class="row m-0">
 			<div class="col-md-12">
 				<div class="row">
 					<div class="col-md-7">
@@ -475,7 +475,7 @@ $packages = array();
 
 
 
-					<div class="col-md-5 pl-4">
+					<div class="col-md-5 pl-3">
 								<!-- item room or package detail -->
 								<div class="row justify-content-end mt-2" style="font-size: 0.8rem !important;">
 									<div class="col-md-12 border-r-10 mt-3">
@@ -892,7 +892,7 @@ $packages = array();
 
 												<div class="col-md-6">
 													<div class="row">
-														<div class="col-md-12 imgThumbnail_sm ml-3"><img src="<?php echo share_folder_path() . $room_type_photos[0]; ?>" style="max-width: 100%;"></div>
+														<div class="col-md-12 imgThumbnail_sm ml-0"><img src="<?php echo share_folder_path() . $room_type_photos[0]; ?>" style="max-width: 100%;"></div>
 													</div>
 													<div class="row mt-1">
 														<div class="col-md-12">
@@ -1167,8 +1167,8 @@ $packages = array();
 															</div>
 														</div>
 													</div>
-													<div class="col-md-12 mt-2">
-														<div class="d-flex align-items-start" style="float: left; font-weight: bold;"> <?php echo $this->lang->line('total'); ?>:</div>
+													<div class="col-md-12 mt-2" style="padding-right: 4px;">
+														<div class="d-flex align-items-start" style="float: left; font-weight: bold; padding-left: 8px;"> <?php echo $this->lang->line('total'); ?>:</div>
 														<div class="flex-row" style="">
 															<div class="col-md-12">
 																<div class="total" style="float: right;">0</div>
@@ -1189,8 +1189,8 @@ $packages = array();
 														</div>
 													<?php } ?>
 
-													<div class="col-md-12 mt-2">
-														<div class="d-flex align-items-start" style="float: left; font-weight: bold;"><?php echo $this->lang->line('grand_total'); ?>:</div>
+													<div class="col-md-12 mt-2" style="padding-right: 4px;">
+														<div class="d-flex align-items-start" style="float: left; font-weight: bold; padding-left: 8px;"><?php echo $this->lang->line('grand_total'); ?>:</div>
 														<div class="flex-row" style="">
 															<div class="col-md-12">
 																<div class="grand_total" style="float: right;">0</div>
@@ -1198,8 +1198,8 @@ $packages = array();
 														</div>
 													</div>
 
-													<div class="col-md-12 mt-2">
-														<div class="d-flex align-items-start" style="float: left; font-weight: bold;"><?php echo $this->lang->line('vat'); ?> (7%):</div>
+													<div class="col-md-12 mt-2" style="padding-right: 4px;">
+														<div class="d-flex align-items-start" style="float: left; font-weight: bold; padding-left: 8px;"><?php echo $this->lang->line('vat'); ?> (7%):</div>
 														<div class="flex-row" style="">
 															<div class="col-md-12">
 																<div class="vat" style="float: right;">0</div>
@@ -1207,8 +1207,8 @@ $packages = array();
 														</div>
 													</div>
 
-													<div class="col-md-12 mt-2">
-														<div class="d-flex align-items-start" style="float: left; font-weight: bold;"><?php echo $this->lang->line('subtotal'); ?>:</div>
+													<div class="col-md-12 mt-2" style="padding-right: 4px;">
+														<div class="d-flex align-items-start" style="float: left; font-weight: bold; padding-left: 8px;"><?php echo $this->lang->line('subtotal'); ?>:</div>
 														<div class="flex-row" style="">
 															<div class="col-md-12">
 																<div class="subtotal" style="float: right;">0</div>
@@ -1621,7 +1621,7 @@ $packages = array();
 
 
 		$('#same_billing_info').click(function() {
-			alert('checked:'+$(this).is(':checked'));
+			// alert('checked:'+$(this).is(':checked'));
 			if ($(this).is(':checked')) {
 				//alert('checked')
 				// $('#billing_name').val($('#guest_name').val());
