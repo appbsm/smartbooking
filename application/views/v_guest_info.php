@@ -1119,6 +1119,11 @@ $packages = array();
 													
 													<?php if (empty($check_in_date)) {
 															$check_in_date = '21-07-2024';
+															$date = DateTime::createFromFormat('d-m-Y', $check_in_date);
+															$date->modify('+1 day');
+															$check_out_date = $date->format('d-m-Y');
+															$id_credit="";
+															$credit_term="";
 														}
 													?>
 
