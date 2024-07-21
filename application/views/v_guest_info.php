@@ -428,6 +428,7 @@ $packages = array();
 							?>
     						 -->
 								<?php
+								if (!empty($extras)) {
 								foreach ($extras as $extra) {
 									$extra_name = str_replace(" ", "_", $extra->title_en);
 
@@ -459,12 +460,9 @@ $packages = array();
 										} //if ($room_w_extra_bed > 0)
 									} // else if ($extra->is_bed == 0) {
 								} //foreach ($extras as $extra)
+								
+								}
 								?>
-
-
-
-
-
 
 
 							</div>
@@ -1014,7 +1012,7 @@ $packages = array();
 																	foreach ($details as $det) {
 																		if($rcount == 1 || $rcount == 3 ){
 																?>
-																<div class="row mb-0" style="line-height: 20px;">
+																<div class="row mb-0 mt-4" style="line-height: 20px;">
 																<?php	echo $det;?>
 																</div>
 																<?php
@@ -1118,6 +1116,11 @@ $packages = array();
 
 												<!-- Loop starts here -->
 												<div class="row p-2">
+													
+													<?php if (empty($check_in_date)) {
+															$check_in_date = '21-07-2024';
+														}
+													?>
 
 													<div class="col-md-12" style="display: flex; flex-direction: row; padding: 0px;">
 														<div class="group">

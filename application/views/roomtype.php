@@ -936,7 +936,7 @@
 		<div class="col-md-12 amenities-nearby-column">
 			<div class="col-md-12">
 				<div class="row mb-2">	
-					<div class="container-fluid mb-4">
+					<div class="container-fluid mb-4" style="padding: 0;">
 						<div class="col-md-12">		
 							<img class="img-roomtype img-thumbnail" src="<?php echo share_folder_path().$room_types_photo->room_photo_url; ?>" style="width: 100%; min-height: 310px !important; min-width: 440px !important;"  alt="Room Photo">
 						</div>
@@ -951,7 +951,7 @@
 		<div class="col-md-12 amenities-nearby-column">
 			<div class="col-md-8">
 				<div class="row mb-2">	
-					<div class="container-fluid mb-0">
+					<div class="container-fluid mb-0" style="padding: 0;">
 						<div class="col-md-12">		
 								<h5>
 								<? if (!empty($room_types)){ ?>
