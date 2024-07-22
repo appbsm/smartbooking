@@ -935,122 +935,137 @@
 				<h4 class="">
 					<span style="color: #000; font-weight: 600;">
 						<?php echo $lang == "english" ? 'Cookie Policy' : 'นโยบายการใช้คุ้กกี้'; ?>
-						</span>
+					</span>
 					<span style="color: #000;"></span> 
 				</h4>
 			 </div> 
 			 <br/><br/>
 			
-      <div class="col-md-12">
-        <div class="icon-box d-flex">
-          <div class="icon-box-content">
-                <h3 class="card-title  " style="color: #102958;font-size:23px;">นโยบายการใช้คุ้กกี้</h3>
-                <p class="text-muted">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        นโยบายการใช้คุกกี้นี้ จะอธิบายถึงความหมาย ประเภท ลักษณะการใช้งานคุกกี้และระยะเวลาการจัดเก็บคุกกี้ของเว็บไซต์ของบริษัทในเครือเจริญโภคภัณฑ์อาหาร 1 (ในที่นี้รวมเรียกว่า “บริษัทฯ”) เว็บไซต์นี้ใช้คุกกี้เพื่อช่วยให้เว็บไซต์ของบริษัทฯ ทำงานได้อย่างถูกต้อง แสดงเนื้อหาและโฆษณาที่ตรงกับความสนใจของผู้ใช้
-                </p>
+			  <div class="col-md-12">
+				<div class="icon-box d-flex">
+				  <div class="icon-box-content">
+						<h6 class="card-title " style="color: #000; font-weight: 600; text-align: left;">
+							<?php echo $lang == "english" ? 'Cookie Policy' : 'นโยบายการใช้คุ้กกี้'; ?>
+						</h6>
+						<p style="color: black !important;font-size:14px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							<?php echo $lang == "english" ? 'This cookie policy explains the meaning, types, usage characteristics, and retention period of cookies on the websites of Charoen Pokphand Foods affiliates (hereinafter referred to as "the Company"). This website uses cookies to help the Company is website function correctly and to display content and advertisements that match users interests.' : 'นโยบายการใช้คุกกี้นี้ จะอธิบายถึงความหมาย ประเภท ลักษณะการใช้งานคุกกี้และระยะเวลาการจัดเก็บคุกกี้ของเว็บไซต์ของบริษัทในเครือเจริญโภคภัณฑ์อาหาร 1 (ในที่นี้รวมเรียกว่า “บริษัทฯ”) เว็บไซต์นี้ใช้คุกกี้เพื่อช่วยให้เว็บไซต์ของบริษัทฯ ทำงานได้อย่างถูกต้อง แสดงเนื้อหาและโฆษณาที่ตรงกับความสนใจของผู้ใช้'; ?>
+						</p>
 
-          </div>
-        </div>
-      </div>
+				  </div>
+				</div>
+			  </div>
 
-      <div class="col-md-12">
-        <div class="icon-box d-flex">
-          <div class="icon-box-content">
-                <h3 class="card-title  " style="color: #102958;font-size:23px;">1. คุกกี้คืออะไร?</h3>
-                <p class="text-muted">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        คุกกี้เป็นไฟล์แบบตัวอักษรที่ส่งจากเว็บเบราว์เซอร์ของท่านโดยเว็บไซต์ที่เข้าเยี่ยมชม ไฟล์คุกกี้จะถูกติดตั้งหรือบันทึกลงบนคอมพิวเตอร์หรืออุปกรณ์อิเล็กทรอนิกส์ของท่านเมื่อเข้าชมเว็บไซต์ คุกกี้จะจดจำข้อมูลการใช้งานเว็บไซต์ และทำให้การเยี่ยมชมครั้งต่อไปของท่านง่ายขึ้นและบริการมีประโยชน์มากขึ้น
-                </p>
-          </div>
-        </div>
-      </div>
+			  <div class="col-md-12">
+				<div class="icon-box d-flex">
+				  <div class="icon-box-content">
+						<h6 class="card-title " style="color: #000; font-weight: 600; text-align: left;">
+							<?php echo $lang == "english" ? '1. What are cookies?' : '1. คุกกี้คืออะไร?'; ?>
+						</h6>
+						<p style="color: black !important;font-size:14px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							<?php echo $lang == "english" ? 'Cookies are text files sent by the websites you visit to your browser. The cookie files are installed or stored on your computer or electronic devices when you visit the website. Cookies remember your website usage information, making your next visit easier and the services more useful.' : 'คุกกี้เป็นไฟล์แบบตัวอักษรที่ส่งจากเว็บเบราว์เซอร์ของท่านโดยเว็บไซต์ที่เข้าเยี่ยมชม ไฟล์คุกกี้จะถูกติดตั้งหรือบันทึกลงบนคอมพิวเตอร์หรืออุปกรณ์อิเล็กทรอนิกส์ของท่านเมื่อเข้าชมเว็บไซต์ คุกกี้จะจดจำข้อมูลการใช้งานเว็บไซต์ และทำให้การเยี่ยมชมครั้งต่อไปของท่านง่ายขึ้นและบริการมีประโยชน์มากขึ้น'; ?>
+						</p>
+				  </div>
+				</div>
+			  </div>
 
-      <div class="col-md-12">
-        <div class="icon-box d-flex">
-          <div class="icon-box-content">
-                <h3 class="card-title  " style="color: #102958;font-size:23px;">2. การใช้งานคุกกี้</h3>
-                <p class="text-muted">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        ประเภทของคุกกี้ที่บริษัทฯ ใช้และในการใช้งานคุกกี้ดังกล่าว ประกอบด้วย แต่ไม่จำกัดเพียง รายการต่อไปนี้
-                </p>
-          </div>
-        </div>
-      </div>
+			  <div class="col-md-12">
+				<div class="icon-box d-flex">
+				  <div class="icon-box-content">
+						<h6 class="card-title " style="color: #000; font-weight: 600; text-align: left;">
+							<?php echo $lang == "english" ? '2. The use of cookies' : '2. การใช้งานคุกกี้'; ?>
+						</h6>
+						<p style="color: black !important;font-size:14px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							<?php echo $lang == "english" ? 'The types of cookies used by the company and their usage include, but are not limited to, the following:' : 'ประเภทของคุกกี้ที่บริษัทฯ ใช้และในการใช้งานคุกกี้ดังกล่าว ประกอบด้วย แต่ไม่จำกัดเพียง รายการต่อไปนี้'; ?>
+						</p>
+				  </div>
+				</div>
+			  </div>
 
         
-          <div class="icon-box d-flex">
-            <div class="pe-2 pb-3">
-                <svg width="40" height="40" fill="#102958" class="bi bi-dot" viewBox="0 2 16 16">
-                  <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3"></path>
-                </svg>
-            </div>
-            <div class="icon-box-content">
-                <p class="text-muted">คุกกี้ที่จำเป็น (Strictly Necessary Cookies)<br>
-                คุกกี้ที่จำเป็น คือ คุกกี้ที่ใช้สำหรับการทำงานที่จำเป็นของเว็บไซต์ และท่านไม่สามารถปิดการใช้งานในระหว่างการเข้าหน้าเว็บไซต์ของบริษัทฯ ได้ ซึ่งคุกกี้ประเภทนี้จะมีไว้เพื่อการจัดเก็บข้อมูลของท่านและตอบสนองต่อความต้องการที่ได้รับการร้องขอจากท่าน เช่น การตั้งค่าความเป็นส่วนตัว การเข้าสู่ระบบ หรือการกรอกแบบฟอร์ม เป็นต้น</p>
-            </div>
-          </div>
+			  <div class="icon-box d-flex">
+				<div class="pe-2 pb-3">
+					<svg width="40" height="40" fill="#102958" class="bi bi-dot" viewBox="0 2 16 16">
+					  <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3"></path>
+					</svg>
+				</div>
+				<div class="icon-box-content">
+					<p style="color: black !important;font-size:14px;"><?php echo $lang == "english" ? 'Strictly Necessary Cookies' : 'คุกกี้ที่จำเป็น (Strictly Necessary Cookies)'; ?><br>
+						<?php echo $lang == "english" ? 'Strictly Necessary Cookies are cookies used for essential website functions, and you cannot disable them while browsing the Company is website. These cookies are used to store your information and respond to your requests, such as privacy settings, logging in, or filling out forms.' : 'คุกกี้ที่จำเป็น คือ คุกกี้ที่ใช้สำหรับการทำงานที่จำเป็นของเว็บไซต์ และท่านไม่สามารถปิดการใช้งานในระหว่างการเข้าหน้าเว็บไซต์ของบริษัทฯ ได้ ซึ่งคุกกี้ประเภทนี้จะมีไว้เพื่อการจัดเก็บข้อมูลของท่านและตอบสนองต่อความต้องการที่ได้รับการร้องขอจากท่าน เช่น การตั้งค่าความเป็นส่วนตัว การเข้าสู่ระบบ หรือการกรอกแบบฟอร์ม เป็นต้น'; ?>
+					</p>
+				</div>
+			  </div>
         
 
-          <div class="icon-box d-flex">
-            <div class="pe-2 pb-3">
-                <svg width="40" height="40" fill="#102958" class="bi bi-dot" viewBox="0 0 16 16">
-                  <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3"></path>
-                </svg>
-            </div>
-            <div class="icon-box-content">
-                <p class="text-muted">คุกกี้การใช้งาน (Functional Cookies)<br>
-                คุกกี้ที่ใช้สำหรับการทำงานกับเว็บไซต์และการปรับเปลี่ยนรูปแบบการใช้งานหน้าเว็บไซต์ของบริษัทฯ ตามความต้องการของท่าน เช่น การตั้งค่าปุ่มทางลัด หากท่านไม่อนุญาตให้คุกกี้ประเภทนี้ทำงาน อาจส่งผลต่อการใช้งานของท่านบนเว็บไซต์</p>
-            </div>
-          </div>
+			  <div class="icon-box d-flex">
+				<div class="pe-2 pb-3">
+					<svg width="40" height="40" fill="#102958" class="bi bi-dot" viewBox="0 0 16 16">
+					  <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3"></path>
+					</svg>
+				</div>
+				<div class="icon-box-content">
+					<p style="color: black !important;font-size:14px;"><?php echo $lang == "english" ? 'Functional Cookies' : 'คุกกี้การใช้งาน (Functional Cookies)'; ?><br>
+						<?php echo $lang == "english" ? 'Functional Cookies are used to work with the website and to adjust the layout of the Company is website according to your preferences, such as shortcut button settings. If you do not allow these cookies to function, it may affect your experience on the website.' : 'คุกกี้ที่ใช้สำหรับการทำงานกับเว็บไซต์และการปรับเปลี่ยนรูปแบบการใช้งานหน้าเว็บไซต์ของบริษัทฯ ตามความต้องการของท่าน เช่น การตั้งค่าปุ่มทางลัด หากท่านไม่อนุญาตให้คุกกี้ประเภทนี้ทำงาน อาจส่งผลต่อการใช้งานของท่านบนเว็บไซต์'; ?>
+					</p>
+				</div>
+			  </div>
 
-          <div class="icon-box d-flex">
-            <div class="pe-2 pb-3">
-                <svg width="40" height="40" fill="#102958" class="bi bi-dot" viewBox="0 0 16 16">
-                  <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3"></path>
-                </svg>
-            </div>
-            <div class="icon-box-content">
-                <p class="text-muted">คุกกี้กำหนดเป้าหมาย (Targeting Cookies)<br>
-                คุกกี้กำหนดเป้าหมาย คือ คุกกี้ที่ใช้สำหรับการสื่อสาร ประชาสัมพันธ์ หรือโฆษณาของบริษัทฯ โดยคุกกี้ประเภทนี้จะสร้างเป็นโปรไฟล์ เพื่อระบุว่าท่านสนใจหรือชอบในสิ่งใดเป็นพิเศษบนเว็บไซต์ของบริษัทฯ คุกกี้เหล่านี้ทำงานโดยการระบุแต่ละเบราว์เซอร์และรหัสอ้างอิงของอุปกรณ์ท่าน ทั้งนี้ หากท่านไม่อนุญาตให้คุกกี้ประเภทนี้ทำงาน ท่านจะไม่ได้รับข้อมูลการสื่อสาร ประชาสัมพันธ์ หรือโฆษณาของบริษัทฯ บนเว็บไซต์</p>
-            </div>
-          </div>
+			  <div class="icon-box d-flex">
+				<div class="pe-2 pb-3">
+					<svg width="40" height="40" fill="#102958" class="bi bi-dot" viewBox="0 0 16 16">
+					  <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3"></path>
+					</svg>
+				</div>
+				<div class="icon-box-content">
+					<p style="color: black !important;font-size:14px;"><?php echo $lang == "english" ? 'Targeting Cookies' : 'คุกกี้กำหนดเป้าหมาย (Targeting Cookies)'; ?><br>
+						<?php echo $lang == "english" ? 'Targeting Cookies are used for the communication, public relations, or advertising of the Company. These cookies create a profile to identify what you are particularly interested in or like on the Company is website. They work by identifying each browser and device reference code. If you do not allow these cookies to function, you will not receive the Company’s communication, public relations, or advertising information on the website.' : 'คุกกี้กำหนดเป้าหมาย คือ คุกกี้ที่ใช้สำหรับการสื่อสาร ประชาสัมพันธ์ หรือโฆษณาของบริษัทฯ โดยคุกกี้ประเภทนี้จะสร้างเป็นโปรไฟล์ เพื่อระบุว่าท่านสนใจหรือชอบในสิ่งใดเป็นพิเศษบนเว็บไซต์ของบริษัทฯ คุกกี้เหล่านี้ทำงานโดยการระบุแต่ละเบราว์เซอร์และรหัสอ้างอิงของอุปกรณ์ท่าน ทั้งนี้ หากท่านไม่อนุญาตให้คุกกี้ประเภทนี้ทำงาน ท่านจะไม่ได้รับข้อมูลการสื่อสาร ประชาสัมพันธ์ หรือโฆษณาของบริษัทฯ บนเว็บไซต์'; ?>
+					</p>
+				</div>
+			  </div>
 
-          <div class="icon-box d-flex">
-            <div class="pe-2 pb-3">
-                <svg width="40" height="40" fill="#102958" class="bi bi-dot" viewBox="0 0 16 16">
-                  <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3"></path>
-                </svg>
-            </div>
-            <div class="icon-box-content">
-                <p class="text-muted">คุกกี้วัดผลการทำงานของเว็บไซต์ (Performance Cookies)<br>
-                คุกกี้วัดผลการทำงานของเว็บไซต์ คือคุกกี้ที่ใช้สำหรับจดจำและนับจำนวนผู้เข้าเยี่ยมชมเว็บไซต์ รวมถึงพฤติกรรมในการเยี่ยมชมเว็บไซต์ เพื่อเป็นข้อมูลในการปรับปรุงการทำงานของเว็บไซต์ อีกทั้งใช้สำหรับรวบรวมข้อมูลทางสถิติเกี่ยวกับวิธีการเข้าและพฤติกรรมการเยี่ยมชมเว็บไซต์ ซึ่งจะช่วยปรับปรุงการทำงานของเว็บไซต์ หากท่านไม่อนุญาตให้บริษัทฯ ใช้คุกกี้ประเภทนี้ บริษัทฯ จะไม่สามารถวัดผลการทำงานและปรับปรุงประสิทธิภาพของเว็บไซต์บริษัทฯ ได้</p>
-            </div>
-          </div>
-
-      </div>
-
-      <div class="col-md-12">
-        <div class="icon-box d-flex">
-          <div class="icon-box-content">
-                <h3 class="card-title  " style="color: #102958;font-size:23px;">3. การใช้คุกกี้โดยบุคคลที่สาม (Third-Party Cookies)</h3>
-                <p class="text-muted">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        เว็บไซต์ของบริษัทฯ มีการใช้คุกกี้โดยบุคคลที่สาม เช่น Google Twitter Line YouTube และ/หรือ Facebook เป็นต้น ท่านไม่สามารถควบคุมการใช้งานคุกกี้โดยบุคคลที่สามผ่านหน้าเว็บไซต์ของบริษัทฯ ได้ บริษัทฯ จึงขอให้ท่านพิจารณานโยบายการใช้คุกกี้และการทำงานอื่นๆ ตามแต่ละเว็บไซต์ของบุคคลที่สามนั้นๆ ที่ท่านได้เข้าเยี่ยมชม
-                </p>
-          </div>
-        </div>
-      </div>
-
-       <div class="col-md-12">
-        <div class="icon-box d-flex">
-          <div class="icon-box-content">
-                <h3 class="card-title  " style="color: #102958;font-size:23px;">4. ระยะเวลาการจัดเก็บคุกกี้</h3>
-                <p class="text-muted">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        บริษัทฯ จะจัดเก็บคุกกี้ของท่าน (ผู้เข้าเยี่ยมหน้าเว็บไซต์) ไว้ตามความเหมาะสมของการใช้งานคุกกี้ซึ่งอาจแตกต่างกันไปตามแต่ละประเภท อย่างไรก็ตามท่านสามารถปรับแต่งการตั้งค่าคุกกี้ได้เองผ่านทางเว็บบราวเซอร์ที่ใช้งานอยู่นี้
-                </p>
-          </div>
-        </div>
-      </div>
-
+			  <div class="icon-box d-flex">
+				<div class="pe-2 pb-3">
+					<svg width="40" height="40" fill="#102958" class="bi bi-dot" viewBox="0 0 16 16">
+					  <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3"></path>
+					</svg>
+				</div>
+				<div class="icon-box-content">
+					<p style="color: black !important;font-size:14px;"><?php echo $lang == "english" ? 'Performance Cookies' : 'คุกกี้วัดผลการทำงานของเว็บไซต์ (Performance Cookies)'; ?><br>
+						<?php echo $lang == "english" ? 'Performance Cookies are used to remember and count the number of visitors to the website, including their behavior during visits, to provide data for improving website functionality. They are also used to collect statistical information about how the website is accessed and user behavior, which helps in enhancing website performance. If you do not allow the Company to use these cookies, the Company will not be able to measure performance and improve the efficiency of the website.' : 'คุกกี้วัดผลการทำงานของเว็บไซต์ คือคุกกี้ที่ใช้สำหรับจดจำและนับจำนวนผู้เข้าเยี่ยมชมเว็บไซต์ รวมถึงพฤติกรรมในการเยี่ยมชมเว็บไซต์ เพื่อเป็นข้อมูลในการปรับปรุงการทำงานของเว็บไซต์ อีกทั้งใช้สำหรับรวบรวมข้อมูลทางสถิติเกี่ยวกับวิธีการเข้าและพฤติกรรมการเยี่ยมชมเว็บไซต์ ซึ่งจะช่วยปรับปรุงการทำงานของเว็บไซต์ หากท่านไม่อนุญาตให้บริษัทฯ ใช้คุกกี้ประเภทนี้ บริษัทฯ จะไม่สามารถวัดผลการทำงานและปรับปรุงประสิทธิภาพของเว็บไซต์บริษัทฯ ได้'; ?>
+					</p>
+				</div>
+			  </div>
 
       </div>
+
+		  <div class="col-md-12">
+			<div class="icon-box d-flex">
+			  <div class="icon-box-content">
+					<h6 class="card-title " style="color: #000; font-weight: 600; text-align: left;">
+						<?php echo $lang == "english" ? '3. The use of third-party cookies (Third-Party Cookies)' : '3. การใช้คุกกี้โดยบุคคลที่สาม (Third-Party Cookies)'; ?>
+					</h6>
+					<p style="color: black !important;font-size:14px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<?php echo $lang == "english" ? 'The Company is website uses third-party cookies from sources such as Google, Twitter, Line, YouTube, and/or Facebook. You cannot control the use of third-party cookies through the Company is website. Therefore, we recommend that you review the cookie policies and other practices of each third-party website you visit.' : 'เว็บไซต์ของบริษัทฯ มีการใช้คุกกี้โดยบุคคลที่สาม เช่น Google Twitter Line YouTube และ/หรือ Facebook เป็นต้น ท่านไม่สามารถควบคุมการใช้งานคุกกี้โดยบุคคลที่สามผ่านหน้าเว็บไซต์ของบริษัทฯ ได้ บริษัทฯ จึงขอให้ท่านพิจารณานโยบายการใช้คุกกี้และการทำงานอื่นๆ ตามแต่ละเว็บไซต์ของบุคคลที่สามนั้นๆ ที่ท่านได้เข้าเยี่ยมชม'; ?>
+					</p>
+			  </div>
+			</div>
+		  </div>
+
+		   <div class="col-md-12">
+			<div class="icon-box d-flex">
+			  <div class="icon-box-content">
+					<h6 class="card-title " style="color: #000; font-weight: 600; text-align: left;">
+						<?php echo $lang == "english" ? '4. Cookie retention period' : '4. ระยะเวลาการจัดเก็บคุกกี้'; ?>
+					</h6>
+					<p style="color: black !important;font-size:14px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<?php echo $lang == "english" ? 'The Company will store your cookies (website visitors) according to the appropriateness of cookie usage, which may vary by type. However, you can adjust your cookie settings yourself through your current web browser.' : 'บริษัทฯ จะจัดเก็บคุกกี้ของท่าน (ผู้เข้าเยี่ยมหน้าเว็บไซต์) ไว้ตามความเหมาะสมของการใช้งานคุกกี้ซึ่งอาจแตกต่างกันไปตามแต่ละประเภท อย่างไรก็ตามท่านสามารถปรับแต่งการตั้งค่าคุกกี้ได้เองผ่านทางเว็บบราวเซอร์ที่ใช้งานอยู่นี้'; ?>
+					</p>
+			  </div>
+			</div>
+		  </div>
+
+
+      </div>
+	  
 	  
 	<br/><br/>
 

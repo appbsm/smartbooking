@@ -38,14 +38,16 @@ if ($id_guest != '') {
   <link href="<?php echo site_url(); ?>css/styles.css" rel="stylesheet">
   <link href="<?php echo site_url(); ?>css/css.css" rel="stylesheet">
   <?php echo $lang=='english'?'<link href="'.site_url().'css/custom_header_en.css" rel="stylesheet">':'<link href="'.site_url().'css/custom_header_th.css" rel="stylesheet">';?>
+<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css?v=1001">
 
-  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css?v=1001">
-
-
-  <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
-  <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.0/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css"> -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@v2.8.6/dist/cookieconsent.css">
+<script defer src="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@v2.8.6/dist/cookieconsent.js"></script>
+<script defer src="<?php echo site_url(); ?>assets/cookie/cc-init.js" ></script>
+	<? if($lang=='english'){  ?>
+		<!-- <script defer src="<?php echo site_url(); ?>assets/cookie/cc-init.js" ></script> -->
+	<? }else{ ?>
+		<!-- d<script defer src="<?php echo site_url(); ?>assets/cookie/cc-init-en.js" ></script> -->
+	<? } ?>
 
   <style>
   	.datepicker {
