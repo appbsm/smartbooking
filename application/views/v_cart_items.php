@@ -437,7 +437,7 @@ $r_date = 0;
 
 
 												<button class="btn_stepper_sm" data-max="<?php echo sizeof($package_count); ?>" data-cart-item="<?php echo ($this->session->userdata('id_guest') != '') ? $id_cart : $key; ?>" data-room="<?php echo $package_rooms[0]->id_package; ?>" id="increment-room-<?php echo $package_rooms[0]->id_package; ?>" onClick="stepper_package(this);">
-													<i class="fa-solid fa-circle-plus" style="color: #000000;"></i>
+													<i class="fa-solid fa-circle-plus fa-lg" style="color: #000000;"></i>
 												</button>
 
 
@@ -445,7 +445,7 @@ $r_date = 0;
 
 										</div>
 									</div>
-
+									<div class="col-md-10">
 									<?php
 									$i_show = 1;
 									foreach ($package_rooms as $item) {
@@ -453,13 +453,13 @@ $r_date = 0;
 										$room_type = $CI->m_room_type->get_room_type_by_ID($id_project_info, $item->id_room_type);
 
 									?>
-
+									
 										<div class="row mb-2">
 											<div class="col-1 text-right"></div>
-											<div class="col-sm-5 text-center">
-												<img src="<?php echo share_folder_path() . $first_photo->room_photo_url; ?>" class="mw-300"/>
+											<div class="col-md-6 text-center">
+												<img src="<?php echo share_folder_path() . $first_photo->room_photo_url; ?>" class="img-thumbnail mw-300"/>
 											</div>
-											<div class="col-sm-6 align-self-center text-center">
+											<div class="col-md-5 align-self-center text-center">
 												<h6><?php echo $lang == 'english' ? $room_type->room_type_name_en : $room_type->room_type_name_th; ?></h6>
 											</div>
 
@@ -467,7 +467,9 @@ $r_date = 0;
 
 									<?php $i_show++;
 									} ?>
-
+									</div>
+									<div class="col-md-2 align-self-center pl-0"></div>
+									
 									<div class="row ml-5 my-2">
 										<div class="col-6">
 											<div class="row">
@@ -1178,6 +1180,9 @@ $r_date = 0;
 	});
 	sessionStorage.clear();
 </script>
+
+
+<br/><br/>
 
 <button type="button" onclick="topFunction()" class="return-to-top btn-returntop" id="returnTopBtn" title="Go to top" style="float: right; background-color: #102958 !important; color: #FFF !important; border: #102958; margin: -16px 2px; ">↑</button>
 

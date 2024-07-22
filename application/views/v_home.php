@@ -871,7 +871,7 @@ $CI->load->model('m_room_type');
 
 
 	<!-- SECTION FOR SEARCH -->
-	<div class="container-fluid text-center search-box box-fillter">
+	<div class="container-fluid text-center search-box box-fillter" style="    margin-top: 8px;">
 		<!--<form name="frm_search" id="frm_search" method="post" action="<?php echo site_url('home/search'); ?>">-->
 		<form name="frm_search" id="frm_search" method="post" action="<?php echo 'https://smartbooking.installdirect.asia/home/search'; ?>">
 			<input type="hidden" name="s_id_room_type" id="s_id_room_type" value="">
@@ -1193,7 +1193,7 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
 					<?php //foreach ($packages as $package) {
 					foreach ($chunk as $package) { ?>
 					<!-- <div class="row col-lg-4 col-md-6 col-sm-12"> -->
-						<div class="card col-lg-4 p-0" style="margin: 0 8px;">
+						<div class="card col-lg-4 p-0" style="margin: 0 4px;">
 						  <div class="image-wrapper" >
 						  	<!-- class="package-img" -->
 							<img src="<?php echo share_folder_path() . $package->package_photo_url; ?>" alt="..."  >

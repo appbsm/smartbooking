@@ -158,7 +158,7 @@ $packages = array();
 
 		<div class="row m-0">
 			<div class="col-md-12 price room_type_header m-0" style="background-color: #102958;">
-				<h5><span style="margin-left: 10px;"><?php echo $this->lang->line('step_1'); ?></span></h5>
+				<h5 style="margin-bottom: 0; padding: 8px 0;"><span style="margin-left: 10px;"><?php echo $this->lang->line('step_1'); ?></span></h5>
 			</div>
 		</div>
 
@@ -475,7 +475,7 @@ $packages = array();
 
 					<div class="col-md-5 pl-3">
 								<!-- item room or package detail -->
-								<div class="row justify-content-end mt-2" style="font-size: 0.8rem !important;">
+								<div class="row justify-content-end mt-0" style="font-size: 0.8rem !important;">
 									<div class="col-md-12 border-r-10 mt-3">
 										<!-- <div class="section_header"><?php echo $this->lang->line('room_info'); ?></div> -->
 
@@ -1105,7 +1105,7 @@ $packages = array();
 										</div>
 									</div>
 								<!-- Total detail -->
-								<div class="row justify-content-end" style="font-size: 0.8rem !important;">
+								<div class="row justify-content-end mt-2" style="font-size: 0.8rem !important;">
 									<div class="col-md-12 border-r-10 mt-3">
 
 										
@@ -2107,6 +2107,8 @@ $packages = array();
 	});
 </script>
 
+
+<br/><br/>
 <button type="button" onclick="topFunction()" class="return-to-top btn-returntop" id="returnTopBtn" title="Go to top" style="float: right; background-color: #102958 !important; color: #FFF !important; border: #102958; margin: -16px 2px; ">↑</button>
 
 <script>
