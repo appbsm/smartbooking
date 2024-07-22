@@ -799,7 +799,7 @@ $CI->load->model('m_room_type');
 </div> -->
  
  
-
+<!--
 <div id="fb-root"></div>
 <script>(function(d, s, id) {
 	var js, fjs = d.getElementsByTagName(s)[0];
@@ -813,7 +813,7 @@ $CI->load->model('m_room_type');
 </script>
 
  <div id="fb-customer-chat" class="fb-customerchat" page_id="308940352313858" theme_color="#44bec7"></div>
-
+-->
 <!-- Package -->
 <!-- <link rel="stylesheet" href="<?= site_url() ?>/css/style.css"> -->
 <link rel="stylesheet" href="https://smartbooking.installdirect.asia/css/tiny-slider.css">
@@ -1116,9 +1116,9 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
 		</div>
 	</div>
 	-->
-	<!-- class="row text-center mb-0" -->
+	
 	<div class="container mt-0 aboutus-lr">
-		<div  id="nav_roomstype">
+		<div class="row text-center mb-0" id="nav_roomstype">
 			<div class="col-md-12 d-flex p-0" style="flex-wrap: wrap;">
 				<div class="col-lg-6">
 
@@ -1173,7 +1173,6 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
 <?php if (sizeof($packages) > 0) { ?>
 <!-- PROMOTION & PACKAGE -->
 <div class="slider-wrapper slider1-wrapper slider-package" style="padding-top: 30px; padding-right: 20px;background-color: white;">
-
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-12 col-md-12 col-sm-12 col-12" > 
@@ -1251,8 +1250,7 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
 
 			</div> 
 		</div> 
-	</div>
-	
+	</div> 
 </div>
 
 <? } ?>
@@ -2214,11 +2212,13 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
 </div>
 <!-- facilities & amenities and nearby location -->
 
-<!-- <script src="https://smartbooking.installdirect.asia/js/jquery.min.js"></script>
+<!-- <script src="//code.jquery.com/jquery.js"></script> -->
+<script src="https://smartbooking.installdirect.asia/js/jquery.min.js"></script>
 <script src="https://smartbooking.installdirect.asia/js/jquery-ui.min.js"></script>
 <script src="https://smartbooking.installdirect.asia/bootstrap-4.0.0-dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://smartbooking.installdirect.asia/assets/select-picker/js/bootstrap-select.min.js"></script>
-<script src="https://smartbooking.installdirect.asia/assets/swiper-element/js/swiper-element-bundle.min.js"></script> -->
+<script src="https://smartbooking.installdirect.asia/assets/swiper-element/js/swiper-element-bundle.min.js"></script>
+<!-- <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-element-bundle.min.js"></script> -->
 
 <!-- /////////////////////////////////////////////////// -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">

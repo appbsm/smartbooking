@@ -39,7 +39,7 @@ if ($id_guest != '') {
   <link href="<?php echo site_url(); ?>css/css.css" rel="stylesheet">
   <?php echo $lang=='english'?'<link href="'.site_url().'css/custom_header_en.css" rel="stylesheet">':'<link href="'.site_url().'css/custom_header_th.css" rel="stylesheet">';?>
 
-  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css?v=1001">
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css?v=1001"> -->
 
 
   <!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -309,12 +309,9 @@ if ($id_guest != '') {
       background-color: lightcoral;
     }
   </style>
-  
 <body>
 	<!-- class="navbar navbar-expand-lg navbar-light bg-light fixed-top text-center mr-auto mb-0 m-0 p-0" -->
   <header class="header-wrapper row">
-
-
     <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top text-center mr-auto mb-0 m-0 p-0" style="height:60px; background-color:#102958 !important; font-size: 14px;">
 
     	<!-- class="container-fluid m-0 p-0 d-flex justify-content-between align-items-center"	 -->
@@ -323,7 +320,10 @@ if ($id_guest != '') {
 					<img src="<?php echo site_url(); ?>images/logo-SM/SM smart booking_White.png" style="width: 85px !important;" >
 				</a>
 
-      <div  id="menu_t1" class="navbar-expand d-flex flex-row ml-auto navbar-toggler d-lg-none" style="margin-left: auto !important;text-align: right !important;" >
+  <!-- new menu -->
+		<!-- style="background-color: #102958 !important;" -->
+
+      <div id="menu_t1" class="navbar-expand d-flex flex-row ml-auto navbar-toggler d-lg-none" >
         <!-- <div class="navbar navbar-expand d-flex flex-row ml-auto " style="background-color: #102958 !important;">  -->
 
        <button id="dropdown_menu"style="background-color: #5392f9 !important;padding: 0.1rem 0.5rem;border-radius: 0.25rem; border: none;" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -365,7 +365,7 @@ if ($id_guest != '') {
 		  <?php } 
 		  else {
 		  ?>
-		 <div class="button mx-1 ">
+			  <div class="button mx-1 ">
 	        <a id="signin_button" class="btn btn_sign_in" href="<?php echo site_url('login'); ?>"  style="font-size: 14px !important;padding: 0.3rem 0.9rem !important;border-radius: 0.3rem !important;background-color: #5392f9 !important;" >Sign In</a>
 	      </div>
 
@@ -386,8 +386,8 @@ if ($id_guest != '') {
 			<span style="color: rgba(255, 255, 255, 1.00) !important; font-size: 14px !important;">&nbsp;|&nbsp;</span>
 			<a href="<?php echo site_url() . 'LanguageSwitcher/switchLang/english'; ?>" title="<?php echo $switch_en; ?>" style="color: rgba(255, 255, 255, 1.00) !important; font-size: 14px !important;" style="<?php echo ($lang == 'english') ? 'font-weight: bold!important; color: rgba(255, 255, 255, 1.00) !important; font-size: 14px !important;' : ''; ?>">EN</a>
 		</div>
-
-  	</div>
+        <!-- </div> -->
+      </div>
 
      <!------------- end sign ------->
     
@@ -490,6 +490,7 @@ function add_trailing_slash($url) {
 			  <div class="button mx-1 ">
 	        <a id="signin_button" class="btn btn_sign_in" href="<?php echo site_url('login'); ?>" height="20" style="background-color: #5392f9 !important;" >Sign In</a>
 	      </div>
+	      <!-- &nbsp;&nbsp;&nbsp;&nbsp; -->
 		  <?php } ?>
 		  <div class="button pl-lg-4 mr-lg-4 pl-sm-0 mr-sm-0d">
         <a class="nav-link" href="<?php echo site_url('cart'); ?>">
@@ -497,6 +498,8 @@ function add_trailing_slash($url) {
 					<object style="pointer-events: none;" data="<?php echo share_folder_path(); ?>images/icons/cart-white.svg" height="20"> </object>
 				</a>
       </div>
+		   <!-- &nbsp;&nbsp;&nbsp;&nbsp; -->
+
 			<div class="d-flex flex-rows" style="margin-top:3px;padding: 5px; margin-right: 5px;">
 			<?php
 				$switch_en = 'English';

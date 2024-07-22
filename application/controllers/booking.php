@@ -309,9 +309,10 @@ class Booking extends MY_Controller
 				'credit_term' => $this->input->post('credit_term') ? $this->input->post('credit_term') : null,
 				'credit_description' =>  $this->input->post('credit_term') ?  $this->input->post('credit_term')." Days" : null
 			);
-
+			echo "id_guest".$id_guest.'<br>';
+			echo "insert_booking".'<br>';
 			$this->m_booking->insert_booking($data);
-
+			echo "end";
 			// ROOMS AND PACKAGE
 			$total_package_item_price = 0;
 			$package_room_details = array();
@@ -379,8 +380,13 @@ class Booking extends MY_Controller
 
 			foreach ($items as $i) {
 				$item = explode(':', $i);
-
-				if ($item[4] == 'package') {
+				
+				echo "<br> item:".$i;
+				if (!isset($item)) {
+					echo "<br> null";
+				}
+				if (count($item) > 3 && $item[4] == 'package'){
+				//isset($item[4]) && $item[4] == 'package'	
 					$package_rooms = $package_room_details[$item[3]];
 					$this->db->where('booking_number', $booking_num);
 					$booking_result = $this->db->get('booking')->result_array();
@@ -418,11 +424,11 @@ class Booking extends MY_Controller
 						$id_booking_item = $this->m_booking->insert_booking_item($data_item);
 						$this->save_item_date($id_booking_item, $check_in_date, $check_out_date);
 					}
-				} else {
+				}else if(count($item) > 3){
 					$cost = 0;
-
+					//echo "<br> booking_num:".$booking_num;
 					// Save Booking Items
-					$this->db->where('booking_number', $booking_num);
+					$this->db->where('booking_number',$booking_num);
 					$booking_result = $this->db->get('booking')->result_array();
 					$booking = $booking_result[0];
 

@@ -299,9 +299,9 @@ $cancellation_policy = $this->m_project_info->get_property_policy($id_project_in
 							</div>
 
 							<div class="row mt-3" style="margin: 1px 0 1px 15px;">
-								<div class="col-md-12 col-sm-12 mb-3 price" style="margin: 0 -5px 0 0; color: white; font-weight: bold; font-size: 1em; padding: 3px 15px 3px 15px;"><?php echo $this->lang->line('booking_items'); ?>:</div>
+								<div class="col-md-12 col-sm-12 mb-3 price" style="margin: 0 -5px 0 0; color: white; font-weight: bold; font-size: 1em; padding: 3px 15px 3px 15px; width: 98%;"><?php echo $this->lang->line('booking_items'); ?>:</div>
 								<div class="col-md-12 col-sm-12">
-									<div class="table-responsive">
+									<div class="table-responsive" style="font-size: 0.8rem;">
 										<table class="table table-bordered" style="border-color: var(--bs-border-color);">
 											<thead>
 												<tr style="text-align: center;">
@@ -364,7 +364,7 @@ $cancellation_policy = $this->m_project_info->get_property_policy($id_project_in
 									</div>
 								</div>
 
-								<div class="col-md-12 col-sm-12 price" style="margin: 0 -5px 0 0">
+								<div class="col-md-12 col-sm-12 price" style="margin: 0 -5px 0 0; width: 98%;">
 									<div style="color: white; font-weight: 700; font-size: 1em; padding: 3px 0 0 10px;"><?php echo $this->lang->line('notes'); ?>:</div>
 									<p style="font-size:small; padding: 3px 40px 3px 40px;">
 										<!-- This will serve as your invoice . Please settle the amount stated within 2 hours, then proceed to the next step for <br>the confirmation of your booking. Thank you. -->

@@ -6,31 +6,45 @@
 	  $this->lang->load('content', 'english');
 	}
 	$lang  = $lg;
-	
-	$CI = &get_instance();
-	$CI->load->model('m_room_type');
-?> 
+?>
 
   <style>
-	@font-face {
-            font-family: 'NotoSans_online_security'; 
-            src: url(chrome-extension://llbcnfanfmjhpedaedhbcnpgeepdnnok/assets/fonts/noto-sans-regular.woff);
-        }
+	.navbar-expand {
+		gap: 0 !important;
+		    
+	}
+	
+	@media (max-width: 767px) {
+		.fillter-h {
+			margin-top: 16px !important;
+		}
+	}
+	.btn_stepper {
+		background-color: #102958 !important;
+		border: none;
+		border-radius: 50%;
+		width: 25px;
+		height: 25px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		align-items: center;
+	}
 
-        @font-face {
-            font-family: 'NotoSans_medium_online_security'; 
-            src: url(chrome-extension://llbcnfanfmjhpedaedhbcnpgeepdnnok/assets/fonts/noto-sans-medium.ttf);
-        }
+	.btn_stepper:focus {
+		outline: none;
+	}
+	.input_number {
+		text-align: center !important;
+		border: 1px solid #CCC;
+		background-color: white;
+		width: 30%;
+		margin: 0 8px;
+	}
 
-        @font-face {
-            font-family: 'NotoSans_bold_online_security'; 
-            src: url(chrome-extension://llbcnfanfmjhpedaedhbcnpgeepdnnok/assets/fonts/noto-sans-bold.woff);
-        }
-
-        @font-face {
-            font-family: 'NotoSans_semibold_online_security'; 
-            src: url(chrome-extension://llbcnfanfmjhpedaedhbcnpgeepdnnok/assets/fonts/noto-sans-semibold.ttf);
-        }
+	.input_number:focus {
+		outline: none;
+	}
     .button {
       color: white;
       display: inline-block;
@@ -70,8 +84,7 @@
     }
 	
 	.form-control-ckinout {
-		/*padding: 1.165rem .75rem !important;*/
-		padding: .375rem .75rem !important;
+		padding: 1.165rem .75rem !important;
 	}
 	.form-control-btnsearch {
 		padding: 1.165rem .75rem !important;
@@ -112,40 +125,25 @@
         border: #5392f9 !important;
 	}
 	
-	.box-fillter {
-			padding: 0 180px !important;
-		}
-			@media (max-width: 767px) {
-			.fillter-h {
-				margin-top: 16px !important;
-			}
-		}
-	.btn_stepper {
-		background-color: #102958 !important;
-		border: none;
-		border-radius: 50%;
-		width: 25px;
-		height: 25px;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		align-items: center;
-	}
+	@font-face {
+            font-family: 'NotoSans_online_security'; 
+            src: url(chrome-extension://llbcnfanfmjhpedaedhbcnpgeepdnnok/assets/fonts/noto-sans-regular.woff);
+        }
 
-	.btn_stepper:focus {
-		outline: none;
-	}
-	.input_number {
-		text-align: center !important;
-		border: 1px solid #CCC;
-		background-color: white;
-		width: 30%;
-		margin: 0 8px;
-	}
+        @font-face {
+            font-family: 'NotoSans_medium_online_security'; 
+            src: url(chrome-extension://llbcnfanfmjhpedaedhbcnpgeepdnnok/assets/fonts/noto-sans-medium.ttf);
+        }
 
-	.input_number:focus {
-		outline: none;
-	}
+        @font-face {
+            font-family: 'NotoSans_bold_online_security'; 
+            src: url(chrome-extension://llbcnfanfmjhpedaedhbcnpgeepdnnok/assets/fonts/noto-sans-bold.woff);
+        }
+
+        @font-face {
+            font-family: 'NotoSans_semibold_online_security'; 
+            src: url(chrome-extension://llbcnfanfmjhpedaedhbcnpgeepdnnok/assets/fonts/noto-sans-semibold.ttf);
+        }
 	.span, .icon-content {
 		color: #000 !important;
 	}
@@ -239,17 +237,9 @@
 	
 	.tx-title-header {
 		color: #000 !important;
-		font-weight: 600;
-		/*text-shadow: 0px 0px 1px #000*/
-	}
-	.tx-title-header:hover {
-		color: #000 !important;
-		/*text-shadow: 0px 0px 1px #000*/
+		text-shadow: 0px 0px 1px #000
 	}
 	.tx-title-sub {
-		color: #000 !important;
-	}
-	.tx-title-sub:hover {
 		color: #000 !important;
 	}
 	
@@ -513,7 +503,7 @@
 	}
 	
 	.form-control-ckinout {
-		/*padding: 1.165rem .75rem !important;*/.
+		/*padding: 1.165rem .75rem !important;*/
 		padding: .375rem .75rem !important;
 	}
 	.form-control-btnsearch {
@@ -652,6 +642,36 @@
 		html {
 	    scroll-padding-top: 150px; /* Adjust the padding value as needed */
 		}
+		
+		.box-fillter {
+			padding: 0 180px !important;
+		}
+		
+	}
+	@media (max-width: 767px) { 
+		.img-cover {
+			/* height: 500px !important; */
+			/*height: 100% !important;*/
+		}
+	@media (max-width: 820px) { 
+		.box-fillter {
+			padding: 0 !important;
+		}
+		.img-cover {
+			/* height: 500px !important; */
+			height: 100% !important;
+		}
+	}
+	@media (min-width:30em){  {
+		.box-fillter {
+			padding: 0 180px !important;
+		}
+	}
+	@media (min-width:480px){ 
+		.box-fillter {
+			padding: 0 180px !important;
+		}
+	}
   </style>
 
   <script>
@@ -696,21 +716,17 @@
 <body class="" style="">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+
 <link rel="stylesheet" href="https://smartbooking.installdirect.asia/css/tiny-slider.css">
 <link rel="stylesheet" href="https://smartbooking.installdirect.asia/css/package.css">
 <link rel="icon" type="image/png" sizes="16x16" href="https://smartbooking.installdirect.asia/images/10.png">
 <link rel="stylesheet" href="https://smartbooking.installdirect.asia/assets/select-picker/css/bootstrap-select.min.css">
-
 <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
-
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
-
 <div class=" home-p mb-4 mt-2">
 	<div id="carousel carouselExampleIndicators" class="carousel slide carousel-fade" data-ride="carousel">
 		<div class="carousel-inner">
@@ -784,8 +800,7 @@
 	</div>
 
 
-	
-	
+
 	<div class="container-fluid text-center search-box box-fillter">
 		<form name="frm_search" id="frm_search" method="post" action="<?php echo site_url('home/search'); ?>">
 			<input type="hidden" name="s_id_room_type" id="s_id_room_type" value="">
@@ -801,8 +816,8 @@
 				<div class="row search-bg pt-1" style="border: 2px solid #C6C6C7; border-radius: 5px; padding: 0; margin: 0 4px 0 4px;font-size: 14px !important;">
 					<div class="col-xl-3 col-lg-2 col-md-6 col-sm-6 col-xs-6 padd-rl">
 						<div class="col-md-12 text-left">
-							<label class="ml-1 mb-1" for="name" style="font-size: 14px;color: black;"><?php echo $lang == "english" ? 'Check-in Date' : 'วันที่เข้าพัก'; ?></label>
-							<input type='text' style="color: black;" class="form-control form-control-ckinout datepicker search_input" name="check_in_date" id="check_in_date" value="" />
+							<label class="ml-1 mb-1" for="name" style="font-size: 14px;color: black;"><?php echo $this->lang->line('check_in_date'); ?></label>
+							<input type='text' style="color: black;" class=" form-control form-control-ckinout datepicker search_input" name="check_in_date" id="check_in_date" value="" />
 						</div>
 					</div>
 
@@ -814,6 +829,7 @@
 					</div>
 					
 					<div class="col-lg-4 col-md-6 padd-rl">
+						<!-- <div class="col-md-12 mt-2"><b><?php echo $this->lang->line('search_by_room'); ?></b></div> -->
 						<div class="col-md-12 mb-2 text-left">
 							<label class="ml-1 mb-1" for="name" style="font-size: 14px;color: black;"><?php echo $lang == "english" ? 'Adult' : 'ผู้เข้าพัก'; ?></label>
 							<div class="dropdown">
@@ -908,247 +924,261 @@
 
 <?php  
 	// $rate = $CI->m_room_type->get_day_rate($_GET, $date);
+
 ?>
 
-<form name="frm_room" id="frm_room" method="post" action="<?php echo site_url('room_details'); ?>">
-	<input type="hidden" name="project_id" id="project_id" value="">
-	<input type="hidden" name="h_id_room_type" id="h_id_room_type" value="">
-	<input type="hidden" name="h_num_of_adult" id="h_num_of_adult" value="">
-	<input type="hidden" name="h_num_of_room" id="h_num_of_room" value="">
-	<input type="hidden" name="h_num_of_children" id="h_num_of_children" value="">
-	<input type="hidden" name="h_children_ages" id="h_children_ages" value="">
-	<input type="hidden" name="h_check_in_date" id="h_check_in_date" value="">
-	<input type="hidden" name="h_check_out_date" id="h_check_out_date" value="">
-</form>
-
-<div class="container mt-0">
+<div class="row" id="contact"></div>
+<div class="container mt-0" id="contactus">
 	<div class="row">
-		<div class="col-md-12 ml-2 text-center mt-4">
-			<h4 style="text-align: center; padding-bottom: 15px;" id="nav_packagep_promotions">
-				<a id="nearby_locations" href="javascript:;" class="tx-title-header">
-					<? echo ($lang == 'english') ? 'Room Types Information' : 'รายละเอียดประเภทของห้อง'; ?>
-				</a>
+		 <div class="display-header  text-dark  pb-3"> 
+			<div class="section-head text-center ">
+				<h4 class="">
+					<span style="color: #000; font-weight: 600;">
+						<?php echo $lang == "english" ? 'Cookie Policy' : 'นโยบายการใช้คุ้กกี้'; ?>
+						</span>
+					<span style="color: #000;"></span> 
+				</h4>
+			 </div> 
+			 <br/><br/>
+			
+      <div class="col-md-12">
+        <div class="icon-box d-flex">
+          <div class="icon-box-content">
+                <h3 class="card-title  " style="color: #102958;font-size:23px;">นโยบายการใช้คุ้กกี้</h3>
+                <p class="text-muted">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        นโยบายการใช้คุกกี้นี้ จะอธิบายถึงความหมาย ประเภท ลักษณะการใช้งานคุกกี้และระยะเวลาการจัดเก็บคุกกี้ของเว็บไซต์ของบริษัทในเครือเจริญโภคภัณฑ์อาหาร 1 (ในที่นี้รวมเรียกว่า “บริษัทฯ”) เว็บไซต์นี้ใช้คุกกี้เพื่อช่วยให้เว็บไซต์ของบริษัทฯ ทำงานได้อย่างถูกต้อง แสดงเนื้อหาและโฆษณาที่ตรงกับความสนใจของผู้ใช้
+                </p>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-12">
+        <div class="icon-box d-flex">
+          <div class="icon-box-content">
+                <h3 class="card-title  " style="color: #102958;font-size:23px;">1. คุกกี้คืออะไร?</h3>
+                <p class="text-muted">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        คุกกี้เป็นไฟล์แบบตัวอักษรที่ส่งจากเว็บเบราว์เซอร์ของท่านโดยเว็บไซต์ที่เข้าเยี่ยมชม ไฟล์คุกกี้จะถูกติดตั้งหรือบันทึกลงบนคอมพิวเตอร์หรืออุปกรณ์อิเล็กทรอนิกส์ของท่านเมื่อเข้าชมเว็บไซต์ คุกกี้จะจดจำข้อมูลการใช้งานเว็บไซต์ และทำให้การเยี่ยมชมครั้งต่อไปของท่านง่ายขึ้นและบริการมีประโยชน์มากขึ้น
+                </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-12">
+        <div class="icon-box d-flex">
+          <div class="icon-box-content">
+                <h3 class="card-title  " style="color: #102958;font-size:23px;">2. การใช้งานคุกกี้</h3>
+                <p class="text-muted">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        ประเภทของคุกกี้ที่บริษัทฯ ใช้และในการใช้งานคุกกี้ดังกล่าว ประกอบด้วย แต่ไม่จำกัดเพียง รายการต่อไปนี้
+                </p>
+          </div>
+        </div>
+      </div>
+
+        
+          <div class="icon-box d-flex">
+            <div class="pe-2 pb-3">
+                <svg width="40" height="40" fill="#102958" class="bi bi-dot" viewBox="0 2 16 16">
+                  <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3"></path>
+                </svg>
+            </div>
+            <div class="icon-box-content">
+                <p class="text-muted">คุกกี้ที่จำเป็น (Strictly Necessary Cookies)<br>
+                คุกกี้ที่จำเป็น คือ คุกกี้ที่ใช้สำหรับการทำงานที่จำเป็นของเว็บไซต์ และท่านไม่สามารถปิดการใช้งานในระหว่างการเข้าหน้าเว็บไซต์ของบริษัทฯ ได้ ซึ่งคุกกี้ประเภทนี้จะมีไว้เพื่อการจัดเก็บข้อมูลของท่านและตอบสนองต่อความต้องการที่ได้รับการร้องขอจากท่าน เช่น การตั้งค่าความเป็นส่วนตัว การเข้าสู่ระบบ หรือการกรอกแบบฟอร์ม เป็นต้น</p>
+            </div>
+          </div>
+        
+
+          <div class="icon-box d-flex">
+            <div class="pe-2 pb-3">
+                <svg width="40" height="40" fill="#102958" class="bi bi-dot" viewBox="0 0 16 16">
+                  <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3"></path>
+                </svg>
+            </div>
+            <div class="icon-box-content">
+                <p class="text-muted">คุกกี้การใช้งาน (Functional Cookies)<br>
+                คุกกี้ที่ใช้สำหรับการทำงานกับเว็บไซต์และการปรับเปลี่ยนรูปแบบการใช้งานหน้าเว็บไซต์ของบริษัทฯ ตามความต้องการของท่าน เช่น การตั้งค่าปุ่มทางลัด หากท่านไม่อนุญาตให้คุกกี้ประเภทนี้ทำงาน อาจส่งผลต่อการใช้งานของท่านบนเว็บไซต์</p>
+            </div>
+          </div>
+
+          <div class="icon-box d-flex">
+            <div class="pe-2 pb-3">
+                <svg width="40" height="40" fill="#102958" class="bi bi-dot" viewBox="0 0 16 16">
+                  <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3"></path>
+                </svg>
+            </div>
+            <div class="icon-box-content">
+                <p class="text-muted">คุกกี้กำหนดเป้าหมาย (Targeting Cookies)<br>
+                คุกกี้กำหนดเป้าหมาย คือ คุกกี้ที่ใช้สำหรับการสื่อสาร ประชาสัมพันธ์ หรือโฆษณาของบริษัทฯ โดยคุกกี้ประเภทนี้จะสร้างเป็นโปรไฟล์ เพื่อระบุว่าท่านสนใจหรือชอบในสิ่งใดเป็นพิเศษบนเว็บไซต์ของบริษัทฯ คุกกี้เหล่านี้ทำงานโดยการระบุแต่ละเบราว์เซอร์และรหัสอ้างอิงของอุปกรณ์ท่าน ทั้งนี้ หากท่านไม่อนุญาตให้คุกกี้ประเภทนี้ทำงาน ท่านจะไม่ได้รับข้อมูลการสื่อสาร ประชาสัมพันธ์ หรือโฆษณาของบริษัทฯ บนเว็บไซต์</p>
+            </div>
+          </div>
+
+          <div class="icon-box d-flex">
+            <div class="pe-2 pb-3">
+                <svg width="40" height="40" fill="#102958" class="bi bi-dot" viewBox="0 0 16 16">
+                  <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3"></path>
+                </svg>
+            </div>
+            <div class="icon-box-content">
+                <p class="text-muted">คุกกี้วัดผลการทำงานของเว็บไซต์ (Performance Cookies)<br>
+                คุกกี้วัดผลการทำงานของเว็บไซต์ คือคุกกี้ที่ใช้สำหรับจดจำและนับจำนวนผู้เข้าเยี่ยมชมเว็บไซต์ รวมถึงพฤติกรรมในการเยี่ยมชมเว็บไซต์ เพื่อเป็นข้อมูลในการปรับปรุงการทำงานของเว็บไซต์ อีกทั้งใช้สำหรับรวบรวมข้อมูลทางสถิติเกี่ยวกับวิธีการเข้าและพฤติกรรมการเยี่ยมชมเว็บไซต์ ซึ่งจะช่วยปรับปรุงการทำงานของเว็บไซต์ หากท่านไม่อนุญาตให้บริษัทฯ ใช้คุกกี้ประเภทนี้ บริษัทฯ จะไม่สามารถวัดผลการทำงานและปรับปรุงประสิทธิภาพของเว็บไซต์บริษัทฯ ได้</p>
+            </div>
+          </div>
+
+      </div>
+
+      <div class="col-md-12">
+        <div class="icon-box d-flex">
+          <div class="icon-box-content">
+                <h3 class="card-title  " style="color: #102958;font-size:23px;">3. การใช้คุกกี้โดยบุคคลที่สาม (Third-Party Cookies)</h3>
+                <p class="text-muted">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        เว็บไซต์ของบริษัทฯ มีการใช้คุกกี้โดยบุคคลที่สาม เช่น Google Twitter Line YouTube และ/หรือ Facebook เป็นต้น ท่านไม่สามารถควบคุมการใช้งานคุกกี้โดยบุคคลที่สามผ่านหน้าเว็บไซต์ของบริษัทฯ ได้ บริษัทฯ จึงขอให้ท่านพิจารณานโยบายการใช้คุกกี้และการทำงานอื่นๆ ตามแต่ละเว็บไซต์ของบุคคลที่สามนั้นๆ ที่ท่านได้เข้าเยี่ยมชม
+                </p>
+          </div>
+        </div>
+      </div>
+
+       <div class="col-md-12">
+        <div class="icon-box d-flex">
+          <div class="icon-box-content">
+                <h3 class="card-title  " style="color: #102958;font-size:23px;">4. ระยะเวลาการจัดเก็บคุกกี้</h3>
+                <p class="text-muted">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        บริษัทฯ จะจัดเก็บคุกกี้ของท่าน (ผู้เข้าเยี่ยมหน้าเว็บไซต์) ไว้ตามความเหมาะสมของการใช้งานคุกกี้ซึ่งอาจแตกต่างกันไปตามแต่ละประเภท อย่างไรก็ตามท่านสามารถปรับแต่งการตั้งค่าคุกกี้ได้เองผ่านทางเว็บบราวเซอร์ที่ใช้งานอยู่นี้
+                </p>
+          </div>
+        </div>
+      </div>
+
+
+      </div>
+	  
+	<div class="row">
+		<div class="col-md-12 ml-2 text-center mt-0">
+			<section class="section-full bg-white about-bx1 m-b20 m-t30 m-b90">
+                <div class="container">
+          <div class="section-head text-center ">
+            <h4 class="">
+				<span style="color: #000; font-weight: 600;">
+					<?php echo $lang == "english" ? 'Contact us' : 'ติดต่อเรา'; ?>
+					</span>
+				<span style="color: #000;"></span> 
 			</h4>
-		</div>
-	</div>
 
-	<div class="row mb-0" id="nav_roomstype" style="color: #000 !important;">
-		<div class="col-md-12 amenities-nearby-column">
-			<div class="col-md-12">
-				<div class="row mb-2">	
-					<div class="container-fluid mb-4" style="padding: 0;">
-						<div class="col-md-12">		
-							<img class="img-roomtype img-thumbnail" src="<?php echo share_folder_path().$room_types_photo->room_photo_url; ?>" style="width: 100%; min-height: 310px !important; min-width: 440px !important;"  alt="Room Photo">
-						</div>
+          </div>    
+          <br><br>
+          <div class="row">
+
+             <div class="col-md-6 col-lg-6 col-sm-12">
+            <div class=" d-flex">
+              <div class="icon-box-icon pe-3 pb-3">
+                <svg width="20" height="20" fill="#000" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
+                  <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6"></path>
+                </svg>
+              </div>
+
+              <div class="icon-box-content">
+               	<h6 class="card-title " style="color: #000; font-weight: 600; text-align: left;">
+									<?php echo $lang == "english" ? 'Address' : 'ที่อยู่'; ?>
+								</h6>
+                <!-- (มหาชน) -->
+                <p style="font-size:14px; text-align: left;color: black !important;">
+					<span style="color: black !important;" >
+						<?php echo $lang == "english" ? 'InstallDirect Co., Ltd.' : 'บริษัท อินสตอลไดเรค จำกัด'; ?>
+					</span><br/>
+					<span style="color: black !important;" >
+						<?php echo $lang == "english" ? '905/7 Rama 3 Road Bangpongpang Yannawa, Bangkok, Thailand 10120' : '905/7 ถนนพระราม 3 แขวงบางโพงพาง เขตยานนาวา จ.กรุงเทพฯ 10120'; ?>
+					</span>
+				</p>
+              </div>
+            </div>
+
+            <div class=" d-flex">
+              <div class="icon-box-icon pe-3 pb-3">
+                <svg width="20" height="20" fill="#000" class="bi bi-telephone" viewBox="0 0 16 16">
+				  <path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.6 17.6 0 0 0 4.168 6.608 17.6 17.6 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.68.68 0 0 0-.58-.122l-2.19.547a1.75 1.75 0 0 1-1.657-.459L5.482 8.062a1.75 1.75 0 0 1-.46-1.657l.548-2.19a.68.68 0 0 0-.122-.58zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.68.68 0 0 0 .178.643l2.457 2.457a.68.68 0 0 0 .644.178l2.189-.547a1.75 1.75 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.6 18.6 0 0 1-7.01-4.42 18.6 18.6 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877z"></path>
+				</svg>
+              </div>
+
+              <div class="icon-box-content">
+                <h6 class="card-title " style="color: #000; font-weight: 600;text-align: left;">
+									<?php echo $lang == "english" ? 'Phone' : 'เบอร์โทรศัพท์'; ?>
+								</h6>
+                <p style="font-size:14px; text-align: left;color: black !important;">065-989-8845</p>
+              </div>
+            </div>
+            <div class=" d-flex">
+              <div class="icon-box-icon pe-3 pb-3">
+                  <i style="font-size:20px;color:#000;" class="fa fa-fax"></i>
+              </div>
+              <div class="icon-box-content">
+                <h6 class="card-title " style="color: #000; font-weight: 600;text-align: left;">
+					<?php echo $lang == "english" ? 'Fax' : 'เบอร์โทรแฟกซ์'; ?>
+				</h6>
+                <p style="font-size:14px; text-align: left;color: black !important;">0-2683-4949</p>
+              </div>
+            </div>
+
+            <div class=" d-flex">
+              <div class="icon-box-icon pe-3 pb-3">
+                <svg width="20" height="20" fill="#000" class="bi bi-envelope" viewBox="0 0 16 16">
+				  <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z"></path>
+							</svg>
+            </div>
+
+            <div class="icon-box-content">
+                <h6 class="card-title " style="color: #000; font-weight: 600; text-align: left;">
+									<?php echo $lang == "english" ? 'E-mail' : 'อีเมล'; ?>
+								</h6>
+                <p style="font-size:14px; text-align: left;color: black !important;">customercare@installdirect.asia</p>
+              </div>
+            </div>
+
+            
+            
+            <div class=" d-flex">
+              <div class="icon-box-icon pe-3 pb-3">
+               <svg width="20" height="20" fill="#000" class="bi bi-line" viewBox="0 0 16 16">
+				  <path d="M8 0c4.411 0 8 2.912 8 6.492 0 1.433-.555 2.723-1.715 3.994-1.678 1.932-5.431 4.285-6.285 4.645-.83.35-.734-.197-.696-.413l.003-.018.114-.685c.027-.204.055-.521-.026-.723-.09-.223-.444-.339-.704-.395C2.846 12.39 0 9.701 0 6.492 0 2.912 3.59 0 8 0M5.022 7.686H3.497V4.918a.156.156 0 0 0-.155-.156H2.78a.156.156 0 0 0-.156.156v3.486c0 .041.017.08.044.107v.001l.002.002.002.002a.15.15 0 0 0 .108.043h2.242c.086 0 .155-.07.155-.156v-.56a.156.156 0 0 0-.155-.157m.791-2.924a.156.156 0 0 0-.156.156v3.486c0 .086.07.155.156.155h.562c.086 0 .155-.07.155-.155V4.918a.156.156 0 0 0-.155-.156zm3.863 0a.156.156 0 0 0-.156.156v2.07L7.923 4.832l-.013-.015v-.001l-.01-.01-.003-.003-.011-.009h-.001L7.88 4.79l-.003-.002-.005-.003-.008-.005h-.002l-.003-.002-.01-.004-.004-.002-.01-.003h-.002l-.003-.001-.009-.002h-.006l-.003-.001h-.004l-.002-.001h-.574a.156.156 0 0 0-.156.155v3.486c0 .086.07.155.156.155h.56c.087 0 .157-.07.157-.155v-2.07l1.6 2.16a.2.2 0 0 0 .039.038l.001.001.01.006.004.002.008.004.007.003.005.002.01.003h.003a.2.2 0 0 0 .04.006h.56c.087 0 .157-.07.157-.155V4.918a.156.156 0 0 0-.156-.156zm3.815.717v-.56a.156.156 0 0 0-.155-.157h-2.242a.16.16 0 0 0-.108.044h-.001l-.001.002-.002.003a.16.16 0 0 0-.044.107v3.486c0 .041.017.08.044.107l.002.003.002.002a.16.16 0 0 0 .108.043h2.242c.086 0 .155-.07.155-.156v-.56a.156.156 0 0 0-.155-.157H11.81v-.589h1.525c.086 0 .155-.07.155-.156v-.56a.156.156 0 0 0-.155-.157H11.81v-.589h1.525c.086 0 .155-.07.155-.156Z"></path>
+				</svg>
+              </div>
+
+              <div class="icon-box-content">
+                <h6 class="card-title " style="color: #000; font-weight: 600; text-align: left;">
+					<?php echo $lang == "english" ? 'LINE ID' : 'ไลน์ไอดี'; ?>
+				</h6>
+                <p style="color: black !important;font-size:14px;">@installdirect</p>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- <div class="col-md-5 col-lg-5 col-sm-12"> -->
+			<div class="col-md-6 col-lg-6 col-sm-12">
+				<form class="contact-box dzForm p-a10 border-1">
+					<div id="google-map">
+
+						<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3876.7150510205365!2d100.5430111!3d13.675082999999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e2a1efa518798f%3A0x3f3e240d8dbb30ac!2sBuilderSmart%20Warehouse!5e0!3m2!1sth!2sth!4v1720518354389!5m2!1sth!2sth" width=100% height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 					</div>
-				</div>
-
-				<!-- <div class="section_header "><u><? echo ($lang == 'english') ? 'Room Name' : 'ชื่อห้องพัก'; ?></u></div> -->
-
-				
+				</form>
 			</div>
-		</div>
-		<div class="col-md-12 amenities-nearby-column">
-			<div class="col-md-8">
-				<div class="row mb-2">	
-					<div class="container-fluid mb-0" style="padding: 0;">
-						<div class="col-md-12">		
-								<h5>
-								<? if (!empty($room_types)){ ?>
-								<span style="color: #000 !important;"><? echo ($lang == 'english') ? $room_types->room_type_name_en : $room_types->room_type_name_th; ?></span>
-							<?php } ?>
-							<?php
-									$date = date('Y-m-d');
-									$CI = &get_instance();
-									$rate = $CI->m_room_type->get_day_rate($room_types->id_room_type,$date);
-										if ($rate == '') {
-											$rate = $rt->default_rate;
-										}
-					  $price = ($lang == 'english') ? number_format($rate, 0) . '/Night' : 'ราคา ' . number_format($rate, 0) . '/คืน';
-					?>
-					<span style="color: #000;"><?php echo $price; ?></span>
-					</h5>
-						</div>
-					</div>
-				</div>
-
-				<div class="section_header "><u><? echo ($lang == 'english') ? 'Room Information' : 'รายละเอียดห้อง'; ?></u></div>
-				<div class="row">			
-					<div class="container-fluid mb-4">
-						<div class="col-md-12">	
-							<div class="row" id="pj-con">
-
-								<div class="col-md-6" style="bottom: 0; ">
-									<!-- <input type="checkbox" checked="checked" style="vertical-align:middle; pointer-events:none;"> -->
-								&nbsp;<img src="https://smartbooking.installdirect.asia/images/icons/house.svg" width="18">
-									<span class="highlights_desc" style="font-size: 0.875em !important; color: #000 !important;"><?php echo ($lang == 'english') ? $room_types->area_en : $room_types->area_th; ?></span>
-								</div>
-
-								<div class="col-md-6" style="bottom: 0; ">
-									<!-- <input type="checkbox" checked="checked" style="vertical-align:middle; pointer-events:none;"> -->
-								&nbsp;<img src="https://smartbooking.installdirect.asia/images/icons/icons8-bedroom-50.png" width="18">
-									<span class="highlights_desc" style="font-size: 0.875em !important; color: #000 !important;"><?php echo ($lang == 'english') ? $room_types->room_details_en : $room_types->room_details_th; ?></span>
-								</div>
-
-							</div>	
-						</div>
-					</div>
-				</div>
-
-				<div class="section_header "><u><? echo ($lang == 'english') ? 'Project Highlights' : 'จุดเด่นของโครงการ'; ?></u>
-				</div>
-
-				<div class="row ">			
-					<div class="container-fluid mb-4">
-						<div class="col-md-12">
-							<div class="h_container" style="display: flex; flex-direction: row; ">
-
-									<?php foreach ($project_highlights as $value) { ?>
-										<div class="col-md-6" style="bottom: 0; ">
-									<div style="bottom: 0; padding-right: 50px;">
-										&nbsp;<img src="https://sharefolder.buildersmart.com/sms_booking/<? echo $value->icon; ?>" width="18">
-										<span class="highlights_desc" style="font-size: 0.875em !important; color: #000 !important;"><? echo ($lang == 'english') ? $value->description_en : $value->description_th; ?></span>
-									</div>
-									</div>
-								<?php } ?>
-
-							</div>		
-						</div>
-					</div>
-				</div>
-				
-				<div class="section_header "><u><? echo ($lang == 'english') ? 'Facilities & Amenities' : 'สาธารณูปโภค & สิ่งอำนวยความสะดวก'; ?></u></div>
-
-				<!-- <div class="row">			
-					<div class="container-fluid mb-4">
-						<div class="col-md-12">	
-							<div class="row" id="pj-con">
-								<?php foreach ($project_facility as $value) { ?>
-								<div class="col-md-6" style="bottom: 0; ">
-								<input type="checkbox" checked="checked" style="vertical-align:middle; pointer-events:none;">
-								&nbsp;<img src="https://sharefolder.buildersmart.com/sms_booking/<? echo $value->icon; ?>" width="18">
-								<span class="highlights_desc" style="font-size: 1.1em; color: #000 !important;"><? echo ($lang == 'english') ? $value->long_desc_en : $value->long_desc_th; ?></span>
-								</div>
-								<?php } ?>
-							</div>	
-						</div>
-					</div>
-				</div> -->
-
-				<div class="row">			
-					<div class="container-fluid mb-4">
-						<div class="col-md-12">	
-							<div class="row" id="pj-con">
-								<?php foreach ($amenities as $value) { ?>
-								<div class="col-sm-6 col-md-4" style="bottom: 0; ">
-								&nbsp;<img src="https://sharefolder.buildersmart.com/sms_booking/<? echo $value->icon; ?>" width="18">
-								<span class="highlights_desc" style="font-size: 0.875em !important; color: #000 !important;"><? echo ($lang == 'english') ? $value->desc_en : $value->desc_th; ?></span>
-								</div>
-								<?php } ?>
-							</div>	
-						</div>
-					</div>
-				</div>
-
-
-				<!-- <img src="http://192.168.20.22/sm_booking1/includes/image.php?filename=<? echo $amenities->icon; ?>" width="18"> -->
-
-
-				<div class="row" id="facilities"></div>
-				<div class="section_header "><u><? echo ($lang == 'english') ? 'Conditions And Policies' : 'เงื่อนไขและข้อกำหนดในการเข้าพัก'; ?></u></div>
-
-				<div class="row">			
-					<div class="container-fluid mb-4">
-						<div class="col-md-12">	
-							<?php foreach ($project_policy_type as $value) { ?>
-								<span><?php echo $policy_type = ($lang == 'english') ? $value->policy_type_en : $value->policy_type_th; ?></span>
-								<ol style="font-size: 0.875em !important;">		
-									<?php foreach ($project_policy as $value2) {  ?>	
-										<? if($value->policy_type_en==$value2->policy_type_en){ ?>
-									<li><? echo ($lang == 'english') ? $value2->description_en : $value2->description_th; ?></li>	
-									<?php }} ?>			
-								</ol>
-							<?php } ?>	
-						
-						</div>
-					</div>
-				</div>
-
-				
-			</div>
-			<div class="col-md-4">
-				<div class="section_header ">
-					<h6 style="font-weight: 600; color: #000 !important;"><? echo ($lang == 'english') ? 'Locations Nearby' : 'สถานที่ใกล้เคียง'; ?></h6>
-				</div>
-				<div class="row mb4">
-					<div class="col-md-12">		
-						<div class="table-responsive">
-							<table class="table table-bordered" style="border-color: #ccc; color: #000 !important; font-size: 14px !important;">
-								<tbody>
-									<tr style="text-align: center;">
-										<th><? echo ($lang == 'english') ? 'Location' : 'ชื่อสถานที่'; ?></th>
-										<th><? echo ($lang == 'english') ? 'Distance(km)' : 'ระยะทาง(km)'; ?></th>
-									</tr>
-									<?php foreach ($point_of_interest as $value) { ?>
-									<tr>
-										<td style="color: #000 !important;"><?php echo $policy_type = ($lang == 'english') ? $value->location_name_en : $value->location_name_th; ?></td>
-										<td style="text-align: center; color: #000 !important;"><?php echo $value->distance_km; ?></td>
-									</tr>
-									<? } ?>
-								</tbody>
-							</table>  
-						</div>		
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	
-	<div class="col-md-12">
-		<div class="row">
-			<div class="container-fluid mb-4">
-			<div class="col-md-12" style="display: flex; justify-content: center;">	
-				<button class="btn button-primary-w add_to_cart btn-add_to_cart" data-id="<?php echo $room_types->id_room_type; ?>" data-price="<?php echo $rate; ?>" id="" style="margin-right: 5px;background-color: #102958 !important;border: 1px solid #102958 !important;" fdprocessedid="t8mt0r">
-			<?php
-				// if (sizeof($packages) > 0) {
-					echo ($lang == 'english') ? 'Add To Cart' : 'เก็บใส่ตะกร้า';
-				// }
-			?>
-			</button>
-			<a href="javascript:;" data-roomtype="<?php echo $room_types->id_room_type; ?>" class="btn button-primary book_now book_now:hover" id="" style="margin-left: 5px;background-color: #102958 !important;border: 1px solid #102958 !important">
-				<?php
-					// if (sizeof($packages) > 0) {
-						echo ($lang == 'english') ? 'Book Now' : 'จองตอนนี้';
-					// }
-				?>
-			</a>
-				</div>
-			</div>
-		</div>
-	</div>
-	
-	<div class="row text-center mb-0" id="nav_roomstype">
-		<div class="col-md-12">
-			<div id="google-map">
-				<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5462.972307432571!2d101.55065412783209!3d14.490156270739496!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x311c3b5927861817%3A0x4ef8dd372f4d0716!2sSMS%20Showroom!5e0!3m2!1sth!2sth!4v1683184985267!5m2!1sth!2sth" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-			</div>
+          </div>
+        </div>
+      </section>
 		</div>
 	</div>
 </div>
 
+<!-- <script src="//code.jquery.com/jquery.js"></script> -->
 <script src="https://smartbooking.installdirect.asia/js/jquery.min.js"></script>
 <script src="https://smartbooking.installdirect.asia/js/jquery-ui.min.js"></script>
-<!-- <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script> -->
-
 <script src="https://smartbooking.installdirect.asia/bootstrap-4.0.0-dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://smartbooking.installdirect.asia/assets/select-picker/js/bootstrap-select.min.js"></script>
 <script src="https://smartbooking.installdirect.asia/assets/swiper-element/js/swiper-element-bundle.min.js"></script>
 
 <!-- /////////////////////////////////////////////////// -->
-<!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script> -->
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+
 
 <script>
 	$('.carousel').carousel({
@@ -1226,17 +1256,7 @@
 		}
 	}
 
-	// $(document).ready(function() {
-  //   // Initialize Bootstrap Datepicker
-  //   $("#check_in_date").datepicker({
-  //     format: 'dd-mm-yyyy', // Date format
-  //     autoclose: true, // Close the datepicker when date is selected
-  //     todayHighlight: true, // Highlight today's date
-  //   });
-  // });
-	
-	// $(function() {
-	$(document).ready(function() {	
+	$(function() {
 		var today = new Date();
 		var tomorrow = new Date(today);
 		tomorrow.setDate(today.getDate() + 1);
@@ -1259,49 +1279,48 @@
 			$("#h_check_out_date").val($('#check_out_date').val());
 		}
 
+
 		$('#check_in_date').datepicker({
 			format: 'dd-mm-yyyy',
 			changeMonth: true,
 			changeYear: true,
 			startDate: new Date(), // = today
 			onSelect: function(dateText, inst) {
+
 				var in_date = $(this).val();
-				// check_in_date = in_date.split("-");
+				check_in_date = in_date.split("-");
 
-				// //var d = new Date(check_in_date[2], parseInt(check_in_date[1])-1, check_in_date[0]);
-				// var today = new Date(check_in_date[2], parseInt(check_in_date[1]) - 1, check_in_date[0]);
-
-				// var tomorrow = new Date(today);
-				// tomorrow.setDate(today.getDate() + 1);
-				// tomorrow.toLocaleDateString();
-				// var tomorow_date = ('0' + tomorrow.getDate()).slice(-2) + '-' +
-				// 	('0' + (tomorrow.getMonth() + 1)).slice(-2) + '-' +
-				// 	tomorrow.getFullYear();
-
-				// alert('tomorow_date:'+tomorow_date);
-				// $("#check_out_date").val(tomorow_date);
-				// $("#h_check_in_date").val($('#check_in_date').val());
-				// $("#h_check_out_date").val($('#check_out_date').val());
+				//var d = new Date(check_in_date[2], parseInt(check_in_date[1])-1, check_in_date[0]);
+				var today = new Date(check_in_date[2], parseInt(check_in_date[1]) - 1, check_in_date[0]);
+				var tomorrow = new Date(today);
+				tomorrow.setDate(today.getDate() + 1);
+				tomorrow.toLocaleDateString();
+				var tomorow_date = ('0' + tomorrow.getDate()).slice(-2) + '-' +
+					('0' + (tomorrow.getMonth() + 1)).slice(-2) + '-' +
+					tomorrow.getFullYear();
+				$("#check_out_date").val(tomorow_date);
+				$("#h_check_in_date").val($('#check_in_date').val());
+				$("#h_check_out_date").val($('#check_out_date').val());
 			}
 		}).val();
-
-		$('#check_in_date').on('changeDate', function(e) {
-			var selectedDate = e.format('dd-mm-yyyy');
-      var tomorrow = new Date(e.date);
-      tomorrow.setDate(tomorrow.getDate() + 1);
-      $('#check_out_date').datepicker('setDate', tomorrow);	
-		});
 
 		$('#check_out_date').datepicker({
 			format: 'dd-mm-yyyy',
 			changeMonth: true,
 			changeYear: true,
-			startDate: new Date(), // = today		
+			startDate: new Date(), // = today
 			onSelect: function(dateText, inst) {
 				$("#h_check_in_date").val($('#check_in_date').val());
 				$("#h_check_out_date").val($('#check_out_date').val());
 			}
 		}).val();
+
+		$('#check_in_date').on('changeDate', function(e) {
+      var selectedDate = e.format('dd-mm-yyyy');
+      var tomorrow = new Date(e.date);
+      tomorrow.setDate(tomorrow.getDate() + 1);
+      $('#check_out_date').datepicker('setDate', tomorrow);	
+		});
 
 		$('.myImg').click(function() {
 			var id = $(this).attr('data-id');
@@ -1480,6 +1499,40 @@
 	}
 </style>
  
+<!-- <footer class="mt-3 bg-light" style="background-color: rgb(42, 42, 46) !important; color: rgba(255, 255, 255, 1.00);">
+		<div class="footer-top">
+			<div class="container">
+				<div class="row " id="contactus">
+					<div class="col-md-6 col-lg-6 footer-about wow fadeInUp mt-3">
+						<div class="d-flex pt-2">
+							<p class=" mt-3">BuilderSmart (Public) Company Limited <br>1055 Rama 3 Road.Chongnonsi, Yannawa, Bangkok 10120 <br><br> SM Resort @ Khaoyai <br> 499 Moo 4 Pong Ta Long, Pak Chong, Nakhon Ratchasima 30130</p>                 
+						</div>
+					</div>
+					<div class="col-md-6 col-lg-6 text-right mt-3">							
+						<p>If your interest room rent could you please contact admin via Line or Mobile <span class="footer-phone">065-989-8845</span></p>
+						<img class="logo-footer" src="http://192.168.20.22/smartbooking_front_test//images/line.jpg" alt="qr-code" data-at2x="http://192.168.20.22/smartbooking_front_test//images/line.jpg" width="100" height="100">
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="bottom-footer">
+			<div class="container">
+				<div class="row align-items-center">
+					<div class="col-lg-12 col-md-12 col-sm-12 col-12">
+						<div class="d-flex pt-2" style="justify-content: center;">
+							<a class="btn btn-square me-1 footer-social" href=""><i class="fab fa-twitter"></i></a>
+							<a class="btn btn-square me-1 footer-social" href=""><i class="fab fa-facebook-f"></i></a>
+							<a class="btn btn-square me-1 footer-social" href=""><i class="fab fa-youtube"></i></a>
+							<a class="btn btn-square me-0 footer-social" href=""><i class="fab fa-linkedin-in"></i></a>                  
+						</div>
+						<p class="text-center text-light">© 2021-24 smsmartbooking  | All Rights Reserved. Design by <a class="text-light" href="https://www.installdirect.asia/"><b>InstallDirect</b></a></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+<div id="ui-datepicker-div" class="ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all"></div><span id="PING_IFRAME_FORM_DETECTION" style="display: none;"></span></body></html> -->
 
 <script>
 	const link = '<? echo $project_details->link_map; ?>';
