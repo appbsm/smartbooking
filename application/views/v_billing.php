@@ -387,11 +387,13 @@ $cancellation_policy = $this->m_project_info->get_property_policy($id_project_in
 						<a href="<?php echo site_url('booking/billing') . '?number=' . $booking_number; ?>" class="btn button-primary" id="">Back</a>
 					</div>
 					 -->
-						<?php if ($booking->status == 'Booked' || $booking->status == 'Verifying') { ?>
+						<?php //if ($booking->status == 'Booked' || $booking->status == 'Verifying') { ?>
 							<div class="col-md-12 mb-5 text-center" style="">
-								<a href="<?php echo site_url('booking/payment') . '?number=' . $booking_number; ?>" class="btn button-primary btn-payment" id=""><?php echo $this->lang->line('proceed_to_payment'); ?></a>
+								<a href="<?php echo site_url('booking/payment') . '?number=' . $booking_number; ?>" class="btn button-primary btn-payment" id=""><?php echo $this->lang->line('proceed_to_payment'); ?>
+									<?php //echo $lang == "english" ? 'Location' : 'ดำเนินการจ่ายเงิน'; ?>
+								</a>
 							</div>
-						<?php } ?>
+						<?php //} ?>
 					</div>
 
 				</div>

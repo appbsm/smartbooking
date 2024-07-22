@@ -322,9 +322,9 @@ if ($rate == '') {
 				</div>										
 			</div>
 			<div class="col-md-5 mt-2">
-				<div class="col-md-12 ">
+				<div class="col-md-12 p-0 ">
 				<!--<div class="row mb-4 ml-4 mt-2" style="width: 100%; border: 1px solid #81BB4A; border-radius: 10px; ">-->
-				<div class="row mb-4 ml-4 mt-2" style="width: 100%; border: 1px solid #CCC; border-radius: 10px; ">
+				<div class="row mb-4 ml-0 mt-2" style="width: 100%; border: 1px solid #CCC; border-radius: 10px; ">
 				<!-- <div class="row mb-4" style="width: 100%;"> -->
 					<div class="col-md-12" style="font-size: 1.2em; font-weight: bold; text-align: center; width: 80%;">
 					
@@ -332,11 +332,11 @@ if ($rate == '') {
 					</div>
 					
 					<div class="col-md-12" style="display: flex; flex-direction: row; padding: 10px; font-size: 14px;">
-						<div class="group">
+						<div class="group ml-0 pr-2">
 							<label for="name" class="mb-0"><?php echo $this->lang->line('check_in_date');?></label>
 							<input type='text' class=" datepicker" name="check_in_date" id="check_in_date" value="<?php echo $check_in_date;?>"/>
 						</div>
-						<div class="group">
+						<div class="group ml-0 pr-1">
 							<label for="name" class="mb-0"><?php echo $this->lang->line('check_out_date');?></label>
 							<input type='text' class=" datepicker" name="chec_out_date" id="check_out_date" value="<?php echo $check_out_date;?>"/>
 						</div>
@@ -345,7 +345,7 @@ if ($rate == '') {
 					
 					<div class="col-md-12 mb-3" style="font-size: 14px;">
 						<div class="dropdown" >
-							<button class="btn dropdown-toggle w-100 search_input btn-adults" style="width: 100%; padding: 0 30px 0 0" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+							<button class="btn dropdown-toggle w-100 search_input btn-adults" style="width: 100%; border-radius: 4px; border-color: #CCC !important;" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 								<span id="div_adult" style="color: #000 !important;"><?php echo $num_of_adult;?></span> <?php echo $this->lang->line('adults');?>, 
 								<span id="div_children" style="color: #000 !important;"><?php echo $num_of_children;?></span> <?php echo $this->lang->line('children');?>, 
 								<span id="div_room" style="color: #000 !important;"><?php echo $num_of_room;?></span> <?php echo $this->lang->line('rooms');?>
@@ -471,7 +471,7 @@ if ($rate == '') {
 					</div>
 								
 				</div>
-						<div class="row mt-3 ml-5">	
+						<div class="row mt-3 ml-0">	
 							<div class="col-md-6 mb-2 text-right" > 
 								<button class="btn button-primary-w form-control add_to_cart btn-add_to_cart" data-id="<?php echo $rt->id_room_type;?>" data-price="<?php echo $rt->default_rate;?>" id="add_to_cart"><?php //echo $this->lang->line('add_to_cart');?><?php echo $lang == "english" ? 'ADD TO CART' : 'เก็บใส่ตะกร้า'; ?></button>
 							</div>
@@ -910,6 +910,7 @@ function stepper(dis) {
 	sessionStorage.clear();
 </script>
 
+<br/><br/>
 <button type="button" onclick="topFunction()" class="return-to-top btn-returntop" id="returnTopBtn" title="Go to top" style="float: right; background-color: #102958 !important; color: #FFF !important; border: #102958; margin: -16px 2px; ">↑</button>
 
 <script>
