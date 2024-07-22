@@ -94,7 +94,6 @@ class Booking extends MY_Controller
 
 				$guest = $this->m_guest->get_profile_by_guestID($id_guest);
 				$data['guest_info'] = $guest;
-				//print_r('Test');
 				
 			} else {
 				redirect('home');
@@ -248,7 +247,7 @@ class Booking extends MY_Controller
 	           );
 	           $id_guest = $this->m_guest->insert_profile($data_guest);	
 	       }
-	    
+	    	
 			$booking_num = $this->m_booking->generate_booking_number();
 			$id_project_project_info = 1;
 			$next_day = date('d-m-Y', strtotime("+1 day", strtotime(date('d-m-Y'))));
@@ -275,42 +274,6 @@ class Booking extends MY_Controller
 				$booking_status = 'Confirmed';
 			}
 			$data = array();
-			// $data = array(
-			// 	'booking_number' => $booking_num,
-			//     'id_guest_info' => $id_guest,
-			// 	'guest_name' => $this->input->post('guest_name'),
-			// 	'guest_contact_number' => $this->input->post('guest_contact_number'),
-			// 	'guest_address' => $this->input->post('guest_address'),
-			// 	'guest_email' => $this->input->post('guest_email'),
-			// 	'guest_tax_id' => $this->input->post('guest_tax_id'),
-			// 	'billing_name' => $this->input->post('billing_name'),
-			// 	'billing_contact_number' => $this->input->post('billing_contact_number'),
-			// 	'billing_address' => $this->input->post('billing_address'),
-			// 	'billing_email' => $this->input->post('billing_email'),
-			// 	'billing_tax_id' => $this->input->post('billing_tax_id'),
-			// 	'booking_date' => date('Y-m-d H:i:s'),
-			// 	'check_in_date' => $check_in_date,
-			// 	'check_out_date' => $check_out_date,
-			// 	'number_of_adults' => $this->input->post('h_num_of_adult'),
-			// 	'number_of_children' => $this->input->post('h_num_of_children'),
-			// 	'children_age' => ($this->input->post('h_num_of_children') > 0) ? $this->input->post('h_children_ages') : '',
-			// 	'number_of_rooms' => sizeof($rooms),
-			// 	'id_discount_code' => $id_discount,
-			// 	'discount_code' => empty($discount->code) ? '' : $discount->code,
-			// 	'discounted_amount' => $this->input->post('h_discount'), //str_replace(',', '', $this->input->post('h_discount')) ,
-			// 	'sub_total' => $this->input->post('h_subtotal'), //str_replace(',', '', $this->input->post('h_subtotal')),
-			// 	'vat' => $this->input->post('h_vat'), //str_replace(',', '', $this->input->post('h_vat')),
-			// 	'grand_total' => $this->input->post('h_grand_total'), //str_replace(',', '', $this->input->post('h_grand_total')),
-			// 	'balance_amount' => $this->input->post('h_grand_total'),
-			// 	'status' => $booking_status,
-			// 	'discount_type' => (isset($discount->discount_type)) ? $discount->discount_type : '',
-			// 	'discount_value' => (isset($discount->discount_value)) ? $discount->discount_value : '',
-			// 	'credit_due_date' => $this->input->post('due_date') ? date('Y-m-d' , strtotime($this->input->post('due_date'))) : null,
-			// 	'id_credit' => $this->input->post('id_credit') ? $this->input->post('id_credit') : null,
-			// 	'credit_term' => $this->input->post('credit_term') ? $this->input->post('credit_term') : null,
-			// 	'credit_description' =>  $this->input->post('credit_term') ?  $this->input->post('credit_term')." Days" : null
-			// );
-
 			$data = array(
 				'booking_number' => $booking_num,
 			    'id_guest_info' => $id_guest,
@@ -346,11 +309,10 @@ class Booking extends MY_Controller
 				'credit_term' => $this->input->post('credit_term') ? $this->input->post('credit_term') : null,
 				'credit_description' =>  $this->input->post('credit_term') ?  $this->input->post('credit_term')." Days" : null
 			);
-
+			// echo "id_guest".$id_guest.'<br>';
+			// echo "insert_booking".'<br>';
 			$this->m_booking->insert_booking($data);
-
-			
-
+			// echo "end";
 			// ROOMS AND PACKAGE
 			$total_package_item_price = 0;
 			$package_room_details = array();
@@ -360,12 +322,14 @@ class Booking extends MY_Controller
 					$package_items = $this->m_package->get_package_items_by_id($p[0]);
 					$rd = array();
 					foreach ($package_items as $i) {
+						// echo '<script>alert("id_room_type:'.$i->id_room_type.'")</script>'; 
 						$room_type_details = $this->m_room_type->get_room_by_type($i->id_room_type, $check_in_date, $check_out_date);
-						// if (isset($room_type_details[0]->default_rate)) {
-						$total_package_item_price += floatval($room_type_details[0]->default_rate);
-						// }else{
-						// 	$total_package_item_price += 0;
-						// }
+						// echo '<script>alert("room_type_details:'.$room_type_details[0]->default_rate.'")</script>'; 
+						if (isset($room_type_details[0]->default_rate)) {
+							$total_package_item_price += floatval($room_type_details[0]->default_rate);
+						}else{
+							$total_package_item_price += 0;
+						}
 						$room_to_save = $room_type_details[0]->id_room_details;
 						$data_room = array(
 							'booking_number' => $booking_num,
@@ -422,14 +386,27 @@ class Booking extends MY_Controller
 
 			foreach ($items as $i) {
 				$item = explode(':', $i);
-
-				if ($item[4] == 'package') {
+				
+				echo "<br> item:".$i;
+				if (!isset($item)) {
+					echo "<br> null";
+				}
+				if (count($item) > 3 && $item[4] == 'package'){
+				//isset($item[4]) && $item[4] == 'package'	
 					$package_rooms = $package_room_details[$item[3]];
 					$this->db->where('booking_number', $booking_num);
 					$booking_result = $this->db->get('booking')->result_array();
 					$booking = $booking_result[0];
 					$full_package_cost = floatval($item[2]);
 					$package_price = round($full_package_cost * $booking['grand_total'] / ($booking['grand_total'] + $booking['discounted_amount']), 6);
+
+					$denominator = $booking['grand_total'] + $booking['discounted_amount'];
+					if ($denominator != 0) {
+					    $package_price = round($full_package_cost * $booking['grand_total'] / $denominator, 6);
+					} else {
+					    $package_price = 0;
+					}
+
 					$package_qty = $item[1];
 					foreach ($package_rooms as $val) {
 						$r_room_details = $this->m_room_type->get_room_details_by_id($val->id_room_details);
@@ -461,11 +438,11 @@ class Booking extends MY_Controller
 						$id_booking_item = $this->m_booking->insert_booking_item($data_item);
 						$this->save_item_date($id_booking_item, $check_in_date, $check_out_date);
 					}
-				} else {
+				}else if(count($item) > 3){
 					$cost = 0;
-
+					//echo "<br> booking_num:".$booking_num;
 					// Save Booking Items
-					$this->db->where('booking_number', $booking_num);
+					$this->db->where('booking_number',$booking_num);
 					$booking_result = $this->db->get('booking')->result_array();
 					$booking = $booking_result[0];
 

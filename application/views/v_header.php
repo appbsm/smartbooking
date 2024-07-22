@@ -172,7 +172,8 @@ if ($id_guest != '') {
 
 	@font-face {
 	  font-family: 'Noto_Font';
-	  src: url('NotoSerifThai-VariableFont_wdth,wght.ttf') format('truetype');
+	  src: url('<?= site_url() ?>NotoSerifThai-VariableFont_wdth,wght.ttf') format('truetype');
+	  
 	}
 	
 	body {
@@ -378,7 +379,7 @@ if ($id_guest != '') {
 				</a>
       </div>
 		  
-		<div class="d-flex flex-rows" style="margin-top:3px;padding: 5px; margin-right: 5px;">
+		<div id="language_mini2" class="d-flex flex-rows" style="margin-top:3px;padding: 5px; margin-right: 5px;">
 			<?php
 				$switch_en = 'English';
 				$switch_th = 'Thai';
@@ -407,6 +408,26 @@ function add_trailing_slash($url) {
 }
 
 ?>
+
+<style type="text/css">
+	@media (max-width: 992px) {
+    #language_mini {
+        display: block !important;
+    }
+    #language_mini2 {
+	      display: none !important;
+	   }
+	}
+
+	@media (min-width: 992px) {
+	    #language_mini {
+	       display: none !important;
+	    }
+	    #language_mini2 {
+	    	display: block !important; 
+	    }
+	}
+</style>
 
 	   <div class="collapse navbar-collapse " id="navbarNav" style="background-color: #102958 !important; padding-left: 0; padding-right: 0; padding-top: 0 !important;">
 	   			<!-- me-auto -->
@@ -448,6 +469,19 @@ function add_trailing_slash($url) {
 							<?php echo $lang == "english" ? 'Contact us' : 'ติดต่อเรา'; ?>
 						</a>
           </li>
+
+          <li class="nav-item" id="language_mini">
+          <!-- <div class="d-flex flex-rows" style="margin-top:3px;padding: 5px; margin-right: 5px;"> -->
+						<?php
+							$switch_en = 'English';
+							$switch_th = 'Thai';
+						?>
+						<a href="<?php echo site_url() . 'LanguageSwitcher/switchLang/thai'; ?>" title="<?php echo $switch_th; ?>" style="color: rgba(255, 255, 255, 1.00) !important; font-size: 14px !important;" style="<?php echo ($lang == 'thai') ? 'font-weight: bold!important; color: rgba(255, 255, 255, 1.00) !important; font-size: 14px !important;' : ''; ?>">TH</a>
+						<span style="color: rgba(255, 255, 255, 1.00) !important; font-size: 14px !important;">&nbsp;|&nbsp;</span>
+						<a href="<?php echo site_url() . 'LanguageSwitcher/switchLang/english'; ?>" title="<?php echo $switch_en; ?>" style="color: rgba(255, 255, 255, 1.00) !important; font-size: 14px !important;" style="<?php echo ($lang == 'english') ? 'font-weight: bold!important; color: rgba(255, 255, 255, 1.00) !important; font-size: 14px !important;' : ''; ?>">EN</a>
+					<!-- </div> -->
+					</li>
+
         </ul>
 
 	<!-- new menu -->

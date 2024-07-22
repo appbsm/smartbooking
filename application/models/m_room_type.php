@@ -258,7 +258,7 @@ class M_room_type extends CI_Model{
 	
 	function get_room_by_type ($id_room_type, $check_in_date, $check_out_date) {
 		// old
-		/*$result = new stdClass();
+		$result = new stdClass();
 		$this->db->select('*');
 		$this->db->from('room_details rd');
 		$this->db->join('room_type rt', 'rt.id_room_type= rd.id_room_type', 'LEFT');
@@ -267,9 +267,10 @@ class M_room_type extends CI_Model{
 		if ($query->num_rows() > 0) {
 			$result = $query->result();
 		}
-		return $result;*/
+		return $result;
 
 		// new
+		/*
 		$result = array();
 		$select = "select * from room_details rd "
 				. "left join room_type rt on rt.id_room_type = rd.id_room_type "
@@ -284,13 +285,14 @@ class M_room_type extends CI_Model{
 				. "b.check_in_date < '". $check_out_date ."' AND "
 				. "b.status != 'Expired' AND b.status != 'Checked-out' AND b.status != 'Cancel'"
 				. ")";
-		// print_r($select);
+		print_r("<br>".$select."<br>");
+		// echo '<script>alert("get_room_by_type:'.$select.'")</script>'; 
 		$query = $this->db->query($select);
 		// echo $this->db->last_query();die;
 		if ($query->num_rows() > 0) {
 			$result = $query->result();
 		}
-		return $result;
+		return $result;*/
 	}
 	
 	private function date_array ($check_in_date, $check_out_date) {
