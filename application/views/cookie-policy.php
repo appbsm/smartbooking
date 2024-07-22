@@ -1068,7 +1068,7 @@
 	  
 	  
 	<br/><br/>
-
+</div>
 <!-- <script src="//code.jquery.com/jquery.js"></script> -->
 <script src="https://smartbooking.installdirect.asia/js/jquery.min.js"></script>
 <script src="https://smartbooking.installdirect.asia/js/jquery-ui.min.js"></script>
