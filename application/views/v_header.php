@@ -323,11 +323,8 @@ if ($id_guest != '') {
 					<img src="<?php echo site_url(); ?>images/logo-SM/SM smart booking_White.png" style="width: 85px !important;" >
 				</a>
 
-<<<<<<< HEAD
       <div  id="menu_t1" class="navbar-expand d-flex flex-row ml-auto navbar-toggler d-lg-none" style="margin-left: auto !important;text-align: right !important;" >
-=======
-      <div id="menu_t1" class="navbar-expand d-flex flex-row ml-auto navbar-toggler d-lg-none" style="margin-left: auto !important;text-align: right !important;" >
->>>>>>> 24163b491c239f08534aadfd6b4907c366622748
+
         <!-- <div class="navbar navbar-expand d-flex flex-row ml-auto " style="background-color: #102958 !important;">  -->
 
        <button id="dropdown_menu"style="background-color: #5392f9 !important;padding: 0.1rem 0.5rem;border-radius: 0.25rem; border: none;" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
