@@ -495,6 +495,10 @@ $CI->load->model('m_room_type');
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10/dist/sweetalert2.min.js"></script>
 <body>
 
+<IfModule mod_headers.c>
+    Header set Permissions-Policy "fullscreen=(self), geolocation=(self), camera=(), microphone=()"
+</IfModule>
+
 <!-- Modal -->
 <div class="modal " id="myModal" tabindex="-1" role="dialog" aria-hidden="true">
   <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
