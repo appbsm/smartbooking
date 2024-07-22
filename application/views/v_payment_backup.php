@@ -189,6 +189,7 @@ $CI->load->model('m_room_type');
 <main class="main-2">
 	<div class="container">
 
+
 	<div class="container_progress_bar">
       <ul class="progressbar">
         <li class="active"><?php echo $this->lang->line('guest_info');?></li>
@@ -350,18 +351,22 @@ $CI->load->model('m_room_type');
   </div>
 </div>
 
+
+
+
+<!-- <script src="//code.jquery.com/jquery.js"></script> -->
 <script src="<?php echo site_url();?>js/jquery.min.js"></script>
 <script src="<?php echo site_url();?>js/jquery-ui.min.js"></script>
 <script src="<?php echo site_url();?>bootstrap-4.0.0-dist/js/bootstrap.bundle.min.js"></script>
 
-<!-- //////////////////// -->
+
 <script src="https://cdn.jsdelivr.net/momentjs/2.14.1/moment.min.js"></script>
-<!-- 
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"> -->
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/css/bootstrap-datetimepicker.min.css" />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
-
-
 <script>
 
 
