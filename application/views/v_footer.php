@@ -21,7 +21,7 @@ $lang  = $lg;
 <!-- <script src="https://cdn.jsdelivr.net/npm/moment@2.29.1/moment.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script> -->
 <!-- ปฏิทิน --> 
-
+<?php //echo APPPATH; ?>
 <style>
 	.footer-social {
 		color: rgb(215, 215, 219) !important;
@@ -29,7 +29,7 @@ $lang  = $lg;
 
 	@font-face {
 		font-family: 'PFR_Font';
-		src: url('PFReminderPrMedium.ttf') format('truetype');
+		src: url('<?= site_url() ?>PFReminderPrMedium.ttf') format('truetype');
 	}
 	.custom-font {
 		font-family: 'PFR_Font', 'PSLxText', sans-serif !important;

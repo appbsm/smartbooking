@@ -6,6 +6,9 @@ setlocale(LC_ALL, 'th_TH');
 ?>
 
 <style>
+.custom-font {
+    font-family: 'PFR_Font', 'PSLxText', sans-serif !important;
+}
 .form-control, label {
 		color: #000 !important;
 	}
@@ -254,9 +257,9 @@ page[size="A4"][layout="portrait"] {
 
 
 <!-- <script src="//code.jquery.com/jquery.js"></script> -->
-<script src="<?php echo site_url();?>js/jquery.min.js"></script>
-<script src="<?php echo site_url();?>js/jquery-ui.min.js"></script>
-<script src="<?php echo site_url();?>bootstrap-4.0.0-dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://smartbooking.installdirect.asia/js/jquery.min.js"></script>
+<script src="https://smartbooking.installdirect.asia/js/jquery-ui.min.js"></script>
+<script src="https://smartbooking.installdirect.asia/bootstrap-4.0.0-dist/js/bootstrap.bundle.min.js"></script>
 <script>
 
 

@@ -170,7 +170,7 @@ $cancellation_policy = $this->m_project_info->get_property_policy($id_project_in
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col-md-12 price room_type_header m-0" style="background-color: #102958;">
-					<h5><span style="margin-left: 10px;"><?php echo $this->lang->line('step_2'); ?></span></h5>
+					<h5 style="margin-bottom: 0; padding: 8px 0;"><span style="margin-left: 10px;"><?php echo $this->lang->line('step_2'); ?></span></h5>
 				</div>
 			</div>
 			<div class="row">
@@ -298,8 +298,8 @@ $cancellation_policy = $this->m_project_info->get_property_policy($id_project_in
 								</div>
 							</div>
 
-							<div class="row mt-3" style="margin: 1px 0 1px 15px;">
-								<div class="col-md-12 col-sm-12 mb-3 price" style="margin: 0 -5px 0 0; color: white; font-weight: bold; font-size: 1em; padding: 3px 15px 3px 15px; width: 98%;"><?php echo $this->lang->line('booking_items'); ?>:</div>
+							<div class="row mt-3" style="margin: 1px 0 1px 15px; display: flex; justify-content: center;">
+								<div class="col-md-12 col-sm-12 mb-3 price" style="margin: 0; color: white; font-weight: bold; font-size: 1em; padding: 3px 15px 3px 15px; width: 98%;"><?php echo $this->lang->line('booking_items'); ?>:</div>
 								<div class="col-md-12 col-sm-12">
 									<div class="table-responsive" style="font-size: 0.8rem;">
 										<table class="table table-bordered" style="border-color: var(--bs-border-color);">

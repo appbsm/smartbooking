@@ -28,6 +28,8 @@ $CI->load->model('m_room_type');
 <script src="https://apis.google.com/js/platform.js" async defer></script>
 <meta name="google-signin-client_id" content="33279337776-0hcru5kaidnskfjcveuvrv82vumvraaa.apps.googleusercontent.com"> 
 
+<meta http-equiv="origin-trial" content="TOKEN_HERE">
+<meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=(), fullscreen=(self)">
 
 <style>
     body {
@@ -795,10 +797,8 @@ Result: <textarea id="result"></textarea>
 
 <script>
   function onSignIn(userInfo) {
-    var result = '';
-
     alert('onSignIn');
-
+    var result = '';
     // Useful data for your client-side scripts:
     var profile = userInfo.getBasicProfile();
     

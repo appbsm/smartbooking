@@ -123,6 +123,14 @@ if ($rate == '') {
 		background-color: #102958 !important;
 		border-color: #102958 !important;
 	}
+	
+	.button__badge {
+		margin-right: 0px;
+		font-size: 0.6em !important;
+		position: absolute;
+		top: -8px !important;
+		right: -4px !important;
+	}
 </style>
 
 <?php 

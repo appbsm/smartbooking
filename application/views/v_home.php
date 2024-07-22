@@ -799,7 +799,7 @@ $CI->load->model('m_room_type');
 </div> -->
  
  
-
+<!--
 <div id="fb-root"></div>
 <script>(function(d, s, id) {
 	var js, fjs = d.getElementsByTagName(s)[0];
@@ -813,7 +813,7 @@ $CI->load->model('m_room_type');
 </script>
 
  <div id="fb-customer-chat" class="fb-customerchat" page_id="308940352313858" theme_color="#44bec7"></div>
-
+-->
 <!-- Package -->
 <!-- <link rel="stylesheet" href="<?= site_url() ?>/css/style.css"> -->
 <link rel="stylesheet" href="https://smartbooking.installdirect.asia/css/tiny-slider.css">
