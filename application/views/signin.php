@@ -782,7 +782,7 @@ if ($this->session->flashdata('message')) {
                     <span>   
                         <!-- target="_blank" -->
                         <a style="color: #5392f9 !important;" href="#" >Terms of Use</a><span style="color: black;"> and</span>
-                        <a style="color: #5392f9 !important;" href="#" >Privacy Policy</a>.
+                        <a style="color: #5392f9 !important;" href="https://smartbooking.installdirect.asia/Cookiepolicy" target="_blank" >Privacy Policy</a>.
                     </span>
                 </div>
             </div>

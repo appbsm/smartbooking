@@ -1,0 +1,45 @@
+[v-cloak] {display:none;}
+.sub-menu.active {color:#809f4e; overflow:hidden; white-space:nowrap; cursor:text;}
+.sub-menu {color:#999999; overflow:hidden; white-space:nowrap; cursor:pointer;}
+.sub-menu:hover {color:#809f4e;}
+
+table:not(.table-condensed, .ui-datepicker-calendar) {font-size:14px;}
+table:not(.table-condensed, .ui-datepicker-calendar), table:not(.table-condensed, .ui-datepicker-calendar) td {border: 1px solid #e0e0e0;}
+table:not(.table-condensed, .ui-datepicker-calendar) thead tr {background-color:#dddddd; text-align:center;}
+table:not(.table-condensed, .ui-datepicker-calendar) thead th {border: 1px solid white;}
+table:not(.table-condensed, .ui-datepicker-calendar) tr {height:35px;}
+table:not(.table-condensed, .ui-datepicker-calendar) td {padding-left:12px; padding-right:12px; padding-top:5px !important; padding-bottom:4px !important;}
+table:not(.table-condensed, .ui-datepicker-calendar) tr.sum-row {background-color:#f1f1f1; text-align:right;}
+
+input, textarea, select, option {font-size:13.5px !important;}
+.modal input, .modal textarea, .modal select, .modal option {font-size:13px !important;}
+
+table.dataTable.fixheader ::-webkit-scrollbar {
+    background-color: white;
+    margin-right: -1px;
+    width: 2px;
+}
+table.dataTable.fixheader ::-webkit-scrollbar-thumb {
+    background-color: grey;
+    margin-right: -1px;
+}
+table.dataTable.fixheader tr.odd:has(td.dataTables_empty) {
+    display: block;
+}
+table.dataTable.fixheader td.dataTables_empty {
+    display: block;
+}
+
+table#exportTable, table#exportTable thead, table#exportTable tbody, table#exportTable tr, table#exportTable td {
+    visibility: hidden;
+    border: 0;
+    height: 0;
+    max-height: 0;
+    width: 0;
+    max-width: 0;
+    margin: 0;
+    line-height: 0;
+    font-size: 1px;
+    padding: 0 !important;
+    opacity: 0;
+}

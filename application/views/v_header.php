@@ -42,25 +42,10 @@ if ($id_guest != '') {
 
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@v2.8.6/dist/cookieconsent.css">
 <script defer src="https://cdn.jsdelivr.net/gh/orestbida/cookieconsent@v2.8.6/dist/cookieconsent.js"></script>
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
 	<? if($lang=='english'){  ?>
 		<script defer src="<?php echo site_url(); ?>assets/cookie/cc-init-en.js" ></script>
 	<? }else{ ?>
 		<script defer src="<?php echo site_url(); ?>assets/cookie/cc-init.js" ></script>
-=======
-<script defer src="<?php echo site_url(); ?>assets/cookie/cc-init.js" ></script>
->>>>>>> origin/main
-	<? if($lang=='english'){  ?>
-		<script defer src="<?php echo site_url(); ?>assets/cookie/cc-init-en.js" ></script>
-	<? }else{ ?>
-<<<<<<< HEAD
-		<script defer src="<?php echo site_url(); ?>assets/cookie/cc-init.js" ></script>
-=======
-		<!-- d<script defer src="<?php echo site_url(); ?>assets/cookie/cc-init-en.js" ></script> -->
->>>>>>> d0d7c15431d357585ecbe51d3dffe6e6aac9d7ee
->>>>>>> origin/main
 	<? } ?>
 
   <style>

@@ -234,7 +234,7 @@ $r_date = 0;
 						<span id="div_children" style="color: #000 !important;"><?php echo @$search_data['children'] ? $search_data['children'] : 0; ?></span> 
 						<?php echo $this->lang->line('children'); ?> <!-- , <span id="div_room">1</span> Rooms -->
 					</button>
-					<div class="dropdown-menu" style="vertical-align: bottom; width: 100%;" aria-labelledby="dropdownMenuButton">
+					<div class="dropdown-menu" style="vertical-align: bottom; width: 100%; padding-bottom: 0;" aria-labelledby="dropdownMenuButton">
 						<div class="stepper" style="font-size: 14px;">
 							<div style="display: flex; justify-content: center;"><?php echo $this->lang->line('adult'); ?></div>
 							<div style="display: flex; justify-content: center;">
@@ -271,7 +271,17 @@ $r_date = 0;
 									</div>
 								</div>
 							</div> <!-- Kids Age -->
-							<div class="rounded hr3 mt-2"></div>
+							<div class="rounded hr3 mt-2" style="padding: 24px 8px; font-size: 0.8em; backdrop-filter: blur(10px); background-color: rgb(189 219 251 / 45%) !important; display: flex; align-items: center;"><?php echo $this->lang->line('notes'); ?>:
+								<?php if ($lang == 'english') { ?>
+									Please be informed that the maximum age for children is <?php echo app_settings('max_children_age'); ?>
+									years old. Kindly add children aged more than <?php echo app_settings('max_children_age'); ?> years as adult.
+								<?php } else {
+								?>
+									เด็กที่จะเข้าพักในโครงการจะต้องเลือกเข้าพักเป็นผู้ใหญ่เท่านั้น
+								<?php } ?>
+							</div>
+							<!--<div class="rounded hr3 mt-2"></div>-->
+							
 							<!-- 
 									<div style="display: flex; justify-content: center;">Rooms</div>
 									<div style="display: flex; justify-content: center; background-color: white; box-shadow: 0 20px 30px rgba(0,0,0,0.1)">							    
