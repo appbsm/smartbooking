@@ -39,23 +39,23 @@ const config = {
   languages: {
     en: {
       consent_modal: {
-        title: '<p style="font-size:16px; color: #000;">This website uses cookies</p>',
+        title: '<p style="font-size:14px; color: #000;">This website uses cookies</p>',
         description:
-          '<p style="color: #000; ">This website uses essential cookies to ensure its proper operation and tracking cookies to understand how you interact with it. The latter will be set only after consent. <button type="button" data-cc="c-settings" class="cc-link" style="background-color: #fff !important; color: #000 !important;">Cookie settings</button></p>',
+          '<p style="font-size:0.8rem; color: #000; ">This website uses essential cookies to ensure its proper operation and tracking cookies to understand how you interact with it. The latter will be set only after consent. <button type="button" data-cc="c-settings" class="cc-link" style="background-color: #fff !important; color: #000 !important;">Cookie settings</button></p>',
         primary_btn: {
-          text: '<p style="font-family:manrope;text-align:center; color: #fff;">Accept</p>',
+          text: '<p style="font-size:14px; font-family:manrope;text-align:center; color: #fff;">Accept</p>',
           role: "accept_all", // 'accept_selected' or 'accept_all'
         },
         secondary_btn: {
-          text: '<p style="text-align:center; color: #fff;">Reject</p>',
+          text: '<p style="font-size:14px; text-align:center; color: #fff;">Reject</p>',
           role: "accept_necessary", // 'settings' or 'accept_necessary'
         },
       },
       settings_modal: {
-        title: '<p style="font-size:20px; color: #000; text-align:left;">Cookie settings</p>',
-        save_settings_btn: '<p style="text-align:center; background-color: #102958; color: #fff;">Save settings</p>',
-        accept_all_btn: '<p style="text-align:center; background-color: #102958; color: #fff;">Accept all</p>',
-        reject_all_btn: '<p style="text-align:center; background-color: #102958; color: #fff;">Reject all</p>',
+        title: '<p style="font-size:16px; color: #000; text-align:left;">Cookie settings</p>',
+        save_settings_btn: '<p style="font-size:14px; text-align:center; background-color: #102958; color: #fff;">Save settings</p>',
+        accept_all_btn: '<p style="font-size:14px; text-align:center; background-color: #102958; color: #fff;">Accept all</p>',
+        reject_all_btn: '<p style="font-size:14px; text-align:center; background-color: #102958; color: #fff;">Reject all</p>',
         close_btn_label: "Close",
         cookie_table_headers: [
           { col1: "Name" },
@@ -65,14 +65,14 @@ const config = {
         ],
         blocks: [
           {
-            title: '<p style="font-size:18px; color: #000; text-align:left;">Necessary cookies 📢</p>',
+            title: '<p style="font-size:16px; color: #000; text-align:left;">Necessary cookies 📢</p>',
             description:
-              '<p style="color: #000; text-align:left;">Cookies to ensure the basic functionalities of the website and to enhance your online experience. You can choose for each category to opt-in/out whenever you want. For more details relative to cookies and other sensitive data, please read the full <a href="https://smartbooking.installdirect.asia/Cookiepolicy" class="cc-link">cookie policy</a>.</p>',
+              '<p style="font-size:0.8rem; color: #000; text-align:left;">Cookies to ensure the basic functionalities of the website and to enhance your online experience. You can choose for each category to opt-in/out whenever you want. For more details relative to cookies and other sensitive data, please read the full <a href="https://smartbooking.installdirect.asia/Cookiepolicy" class="cc-link">cookie policy</a>.</p>',
           },
           {
-            title: '<p style="text-align:left;">Strictly necessary cookies</p>',
+            title: '<p style="font-size:14px; text-align:left;">Strictly necessary cookies</p>',
             description:
-              '<p style="color: #000; text-align:left;">These cookies are essential for the proper functioning of my website. Without these cookies, the website would not work properly</p>',
+              '<p style="font-size:14px; color: #000; text-align:left;">These cookies are essential for the proper functioning of my website. Without these cookies, the website would not work properly</p>',
             toggle: {
               value: "necessary",
               enabled: true,
@@ -80,9 +80,9 @@ const config = {
             },
           },
           {
-            title: '<p style="text-align:left;">Cookies for analysis and evaluation</p>',
+            title: '<p style="font-size:14px; text-align:left;">Cookies for analysis and evaluation</p>',
             description:
-              '<p style="color: #000; text-align:left;">Performance cookies allow us to count visits and traffic sources so we can measure and improve the performance of our site. They enable us to understand how the Viewer/User interact with the Website by collecting and reporting information anonymously and to help us improve user experience of the Website.</p>',
+              '<p style="font-size:14px; color: #000; text-align:left;">Performance cookies allow us to count visits and traffic sources so we can measure and improve the performance of our site. They enable us to understand how the Viewer/User interact with the Website by collecting and reporting information anonymously and to help us improve user experience of the Website.</p>',
             toggle: {
               value: "analytics", // your cookie category
               enabled: false,
@@ -90,9 +90,9 @@ const config = {
             },
           },
           {
-            title: '<p style="text-align:left;">Advertisement and Targeting cookies</p>',
+            title: '<p style="font-size:14px; text-align:left;">Advertisement and Targeting cookies</p>',
             description:
-              '<p style="color: #000; text-align:left;">This type of cookie stores information about your visit to the website. What websites do you visit? And visit the website through which links?</p>',
+              '<p style="font-size:14px; color: #000; text-align:left;">This type of cookie stores information about your visit to the website. What websites do you visit? And visit the website through which links?</p>',
             toggle: {
               value: "targeting",
               enabled: false,

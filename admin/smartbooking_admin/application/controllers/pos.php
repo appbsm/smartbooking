@@ -1870,7 +1870,8 @@ class Pos extends MY_Controller
 
 		$pdf->SetFont('angsa', 'I', 18);
 		$pdf->SetX(120);
-		$pdf->SetFillColor(131, 146, 135);
+		// $pdf->SetFillColor(131, 146, 135);
+		$pdf->SetFillColor(16, 40, 88);
 		$pdf->SetTextColor(255, 255, 255);
 		$pdf->Cell(80, 8, _t('Booking Number: ', 'เลขที่การจอง: ') . $booking['booking_number'], 0, 0, 'C', true);
 
@@ -2700,7 +2701,8 @@ class Pos extends MY_Controller
 		$pdf->Cell(80, 11.5, _t($order['project_name_en'], $order['project_name_th']));
 
 		$pdf->SetFont('angsa', 'I', 18);
-		$pdf->SetFillColor(131, 146, 135);
+		// $pdf->SetFillColor(131, 146, 135);
+		$pdf->SetFillColor(16, 40, 88);
 		$pdf->SetTextColor(255, 255, 255);
 		$pdf->Cell(80, 8, _t('Order Number: ', 'เลขที่ออเดอร์: ') . $order['order_number'], 0, 0, 'C', true);
 
@@ -2813,7 +2815,8 @@ class Pos extends MY_Controller
 		///////// Order Item ----------------------------------------------------------------------------------------------------------------------------
 		$pdf->SetY($pdf->GetY() + 9);
 		$pdf->SetFont('angsa', 'B', 16);
-		$pdf->SetFillColor(131, 146, 135);
+		// $pdf->SetFillColor(131, 146, 135);
+		$pdf->SetFillColor(16, 40, 88);
 		$pdf->SetTextColor(255, 255, 255);
 		$pdf->Cell(190.3, 7, _t('Order Items:', 'รายการออเดอร์:'), 0, 0, 'L', true);
 

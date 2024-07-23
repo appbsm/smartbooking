@@ -67,7 +67,7 @@
                                 </div>
                             </div>
                             <div style="width:100%; height:40px; overflow:hidden; white-space:nowrap;" v-for="(r, i) in sortRoom()">
-                                <div style="width:250px; height:100%; line-height:35px; float:left; border:1px solid #dddddd; padding-left:5px; padding-right:5px;">
+                                <div style="width:250px; height:100%; line-height:35px; float:left; border:1px solid #dddddd; padding-left:5px; padding-right:5px; display: flex; align-items: center; justify-content: space-between;">
                                     <span class="badge badge-success" style="float:left;" v-if="(i == 0 || r.id_room_type != sortRoom()[i - 1].id_room_type)">{{ <?= _r('r.room_type_name_en', 'r.room_type_name_th'); ?> }}</span>
                                     <span style="float:right;">{{ r.room_number }}</span>
                                 </div>

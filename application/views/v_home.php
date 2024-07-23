@@ -653,7 +653,8 @@ $CI->load->model('m_room_type');
 	
 	@media (min-width: 1300px) {	
 		.img-roomtype {
-			width: 90% !important;
+			/*width: 90% !important;*/
+			width: 95% !important;
 			max-width: 100% !important;
 			float:right;
 		}
@@ -1261,7 +1262,8 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
 	const multipleItemCarousel = document.querySelector("#carouselExampleControls-Package");
 		if (window.matchMedia("(min-width:576px)").matches) {
 		  const carousel = new bootstrap.Carousel(multipleItemCarousel, {
-			interval: false
+			//interval: false
+			interval: 3000
 		  });
 
 		  var carouselWidth = $(".carousel-inner-packgage")[0].scrollWidth;
@@ -1284,7 +1286,7 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
 		} else {
 		  $(multipleItemCarousel).addClass("slide");
 		}
-		*/
+		
 </script>
 <!-- PROMOTION & PACKAGE -->
 
@@ -1415,10 +1417,11 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
 
 	<div class="col-md-12 d-flex mt-3" style="flex-wrap: wrap;">
 
-		<div class="col-lg-1">
+		<div class="col-lg-0">
 		</div>
+		
 		 <!-- mr-md-5 -->
-		<div class="col-lg-5 col-md-11 ml-md-0" style="padding: 0; display: flex; justify-content: flex-end;">
+		<div class="col-lg-6 col-md-11 ml-md-0" style="padding: 0; display: flex; justify-content: flex-end;">
 			<div class="content content-product">
 				<!--<img class="img-roomtype room_img" src="<?php echo share_folder_path() . $photos[0]->room_photo_url; ?>" style="width: 100%;min-height: 310px !important;min-width: 470px !important;" data-type="<?php echo $ctr; ?>" data-ctr="<?php echo $ctr1; ?>">-->
 				

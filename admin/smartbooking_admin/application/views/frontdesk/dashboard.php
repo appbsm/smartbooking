@@ -45,8 +45,8 @@
                             </div>
                             <div style="padding:2px; font-size:12px; overflow:auto; border:1px solid #e0dcdc; width:100%; height:90px;">
                                 <span v-for="b in booking">
-                                    <div style="width:100%; height:28px; overflow:hidden; white-space:nowrap;">
-                                        <button :class="'btn btn-xs btn-'+ getBsClass(b.status)" style="padding-left:0; padding-right:0; margin-top:-20px; border-radius:0px; width:100px;" @click="editBooking(b.id_booking)">{{ b.booking_number }}</button>
+                                    <div style="width:100%; height:28px; overflow:hidden; white-space:nowrap; display: flex;">
+                                        <button :class="'btn btn-xs btn-'+ getBsClass(b.status)" style="padding-left:0; padding-right:0; margin-top:4px; border-radius:0px; width:100px;" @click="editBooking(b.id_booking)">{{ b.booking_number }}</button>
                                         <span style="padding-left:3px; line-height:27px; max-width:calc(100% - 100px); display:inline-block; overflow:hidden; text-overflow:ellipsis;">{{ b.guest_name }}</span>
                                     </div>
                                 </span>
@@ -58,8 +58,8 @@
                             </div>
                             <div style="padding:2px; font-size:12px; overflow:auto; border:1px solid #e0dcdc; width:100%; height:90px;">
                                 <span v-for="b in booking">
-                                    <div style="width:100%; height:28px; overflow:hidden; white-space:nowrap;" v-if="b.status == 'Booked' || b.status == 'Verifying'">
-                                        <button :class="'btn btn-xs btn-'+ getBsClass(b.status)" style="padding-left:0; padding-right:0; margin-top:-20px; border-radius:0px; width:100px;" @click="editBooking(b.id_booking)">{{ b.booking_number }}</button>
+                                    <div style="width:100%; height:28px; overflow:hidden; white-space:nowrap; display: flex;" v-if="b.status == 'Booked' || b.status == 'Verifying'">
+                                        <button :class="'btn btn-xs btn-'+ getBsClass(b.status)" style="padding-left:0; padding-right:0; margin-top:4px; border-radius:0px; width:100px;" @click="editBooking(b.id_booking)">{{ b.booking_number }}</button>
                                         <span style="padding-left:3px; line-height:27px; max-width:calc(100% - 100px); display:inline-block; overflow:hidden; text-overflow:ellipsis;">{{ b.guest_name }}</span>
                                     </div>
                                 </span>
@@ -71,8 +71,8 @@
                             </div>
                             <div style="padding:2px; font-size:12px; overflow:auto; border:1px solid #e0dcdc; width:100%; height:90px;">
                                 <span v-for="b in booking">
-                                    <div style="width:100%; height:28px; overflow:hidden; white-space:nowrap;" v-if="b.status == 'Confirmed'">
-                                        <button :class="'btn btn-xs btn-'+ getBsClass(b.status)" style="padding-left:0; padding-right:0; margin-top:-20px; border-radius:0px; width:100px;" @click="editBooking(b.id_booking)">{{ b.booking_number }}</button>
+                                    <div style="width:100%; height:28px; overflow:hidden; white-space:nowrap; display: flex;" v-if="b.status == 'Confirmed'">
+                                        <button :class="'btn btn-xs btn-'+ getBsClass(b.status)" style="padding-left:0; padding-right:0; margin-top:4px; border-radius:0px; width:100px;" @click="editBooking(b.id_booking)">{{ b.booking_number }}</button>
                                         <span style="padding-left:3px; line-height:27px; max-width:calc(100% - 100px); display:inline-block; overflow:hidden; text-overflow:ellipsis;">{{ b.guest_name }}</span>
                                     </div>
                                 </span>
