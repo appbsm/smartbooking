@@ -96,7 +96,7 @@ $CI->load->model('m_room_type');
 
 	.button__badge {
 		margin-right: 0px;
-		font-size: 0.8em !important;
+		font-size: 0.6em !important;
 		position: absolute;
 		top: -8px !important;
 		right: -4px !important;
@@ -189,7 +189,11 @@ $CI->load->model('m_room_type');
 <main class="main-2">
 	<div class="container">
 
+<<<<<<< HEAD
 	<div class="container_progress_bar">
+=======
+	<div class="container_progress_bar" style="padding-top: 80px;">
+>>>>>>> d0d7c15431d357585ecbe51d3dffe6e6aac9d7ee
       <ul class="progressbar">
         <li class="active"><?php echo $this->lang->line('guest_info');?></li>
         <li class="active"><?php echo $this->lang->line('billing');?></li>
@@ -204,9 +208,9 @@ $CI->load->model('m_room_type');
   <div class="container-fluid" >
   	<div class="row">
   		<div class="col-md-12 price room_type_header m-0" style="background-color: #102958;">
-			<h4>
+			<h5 style="margin-bottom: 0; padding: 8px 0;">
 				<span><?php echo $this->lang->line('step_3');?></span>
-			</h4>
+			</h5>
 		</div>
   	</div>
   	<?php 
@@ -215,12 +219,12 @@ $CI->load->model('m_room_type');
   	?>
   	<div class="row"> 
   		<div class="col-md-6"></div>
-  		<div class="col-md-6">
+  		<div class="col-md-6" style="margin-top: 5px;">
   			<div class="row" style="margin-left: 15px; font-weight: bold; text-align: right; margin-right: 10px;">
 				<div class="col-md-8 col-xs-9"><?php echo $this->lang->line('total');?> : </div>
 				<div class="col-md-4 col-xs-3" style="text-align: right;"><?php echo number_format($booking->grand_total, 2);?></div>
 				<div class="col-md-8 col-xs-9"><?php echo $this->lang->line('total_payment');?> : </div>
-				<div class="col-md-4 col-xs-3" style="text-align: right;"><?php echo number_format($total_payment, 2); ?></div>
+				<div class="col-md-4 col- xs-3" style="text-align: right;"><?php echo number_format($total_payment, 2); ?></div>
 				<div class="col-md-8 col-xs-9 <?php echo ($balance > 0) ? 'balance_amount' : '';?>"><?php echo $this->lang->line('balance_amount');?>: </div>
 				<div class="col-md-4 col-xs-3 <?php echo ($balance > 0) ? 'balance_amount' : '';?>" style="text-align: right;"><?php echo number_format($balance, 2);?></div>
 			</div>
@@ -233,21 +237,21 @@ $CI->load->model('m_room_type');
 	                <label class="form-label" for="booking_number">
 						<span class="required">*</span><?php echo $this->lang->line('booking_number');?>
 					</label>
-	            	<input type="text" id="booking_number" name="booking_number" class="form-control input-payment" value="<?php echo $booking_number;?>" readonly required/>					                    
+	            	<input type="text" id="booking_number" name="booking_number" class="form-control input-payment" value="<?php echo $booking_number;?>" style="font-size: 14px !important;" readonly required/>					                    
 	            </div>
             </div>
             
             <div class="col-md-12 mb-4">
 	  			<div class="form-outline">
 	                <label class="form-label" for="booking_date"><span class="required">*</span><?php echo $this->lang->line('booking_date');?></label>
-	            	<input type="text" id="booking_date" name="booking_date" class="form-control input-payment" value="<?php echo date('d-m-Y', strtotime($booking->booking_date));?>" readonly required/>					                    
+	            	<input type="text" id="booking_date" name="booking_date" class="form-control input-payment" value="<?php echo date('d-m-Y', strtotime($booking->booking_date));?>" style="font-size: 14px !important;" readonly required/>					                    
 	            </div>
             </div>            
             
             <div class="col-md-12 mb-4">
 	  			<div class="form-outline">
 	                <label class="form-label" for="transfer_date"><span class="required">*</span><?php echo $this->lang->line('transfer_date');?></label>
-	                <input type='text' class="form-control datepicker input-payment" name="transfer_date" id="transfer_date" value="" required />				                    
+	                <input type='text' class="form-control datepicker input-payment" name="transfer_date" id="transfer_date" value="" style="font-size: 14px !important;" required />				                    
 	            </div>
             </div>
             
@@ -255,7 +259,7 @@ $CI->load->model('m_room_type');
 	  			<div class="form-outline">
 	                <label class="form-label" for="transfer_time"><span class="required">*</span><?php echo $this->lang->line('transfer_time');?></label>		
 	            	<div class='input-group date' id='transfer_time'>
-			          <input type='text' class="form-control input-payment" name="transfer_time" value="<?php echo date('H:i');?>" required />
+			          <input type='text' class="form-control input-payment" name="transfer_time" value="<?php echo date('H:i');?>" style="font-size: 14px !important;" required />
 			          <span class="input-group-addon">
 			            <span class="glyphicon glyphicon-time"></span>
 			          </span>
@@ -268,14 +272,14 @@ $CI->load->model('m_room_type');
             <div class="col-md-12 mb-4">
 	  			<div class="form-outline">
 	                <label class="form-label" for="amount"><span class="required">*</span><?php echo $this->lang->line('amount');?></label>
-	            	<input type="text" id="amount" name="amount" class="form-control input-payment" value="<?php echo number_format($booking->balance_amount,2);?>" required />					                    
+	            	<input type="text" id="amount" name="amount" class="form-control input-payment" value="<?php echo number_format($booking->balance_amount,2);?>" style="font-size: 14px !important;" required />					                    
 	            </div>
             </div>
             
             <div class="col-md-12 mb-4">
 	  			<div class="form-outline">
 	                <label class="form-label" for="transfer_slip"><span class="required">*</span><?php echo $this->lang->line('attach_transfer_slip');?></label>
-	            	<input type="file" id="transfer_slip" name="transfer_slip" class="form-control input-payment" required />					                    
+	            	<input type="file" id="transfer_slip" name="transfer_slip" class="form-control input-payment" style="font-size: 14px !important;" required />					                    
 	            </div>
             </div>
   		</div>
@@ -292,13 +296,13 @@ $CI->load->model('m_room_type');
 					</div>
   		</div>
   		
-  		<div class="col-md-6" style="line-height: 20px;">
+  		<div class="col-md-6" style="font-size: 14px;">
   			<div class="row mt-4" style="border: 1px solid #7F8C8D; border-radius: 10px; ">	
   				<div class="col-md-12 price table-payment-his">
 					<?php echo $this->lang->line('payment_history');?>
 				</div>
 				
-	  			<div class="col-md-12">
+	  			<div class="col-md-12 p-0">
 	  				
 		  			<table class="table w-100" style="padding: 5px; ;">
 		            		<tr>
@@ -471,6 +475,8 @@ function stepper(dis) {
 
 	//$('#myModal').modal('show');
 </script>
+
+<br/><br/>
 
 <button type="button" onclick="topFunction()" class="return-to-top btn-returntop" id="returnTopBtn" title="Go to top" style="float: right; background-color: #102958 !important; color: #FFF !important; border: #102958; margin: -16px 2px; ">↑</button>
 

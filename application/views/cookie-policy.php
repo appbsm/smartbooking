@@ -935,239 +935,140 @@
 				<h4 class="">
 					<span style="color: #000; font-weight: 600;">
 						<?php echo $lang == "english" ? 'Cookie Policy' : 'นโยบายการใช้คุ้กกี้'; ?>
-						</span>
+					</span>
 					<span style="color: #000;"></span> 
 				</h4>
 			 </div> 
 			 <br/><br/>
 			
-      <div class="col-md-12">
-        <div class="icon-box d-flex">
-          <div class="icon-box-content">
-                <h3 class="card-title  " style="color: #102958;font-size:23px;">นโยบายการใช้คุ้กกี้</h3>
-                <p class="text-muted">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        นโยบายการใช้คุกกี้นี้ จะอธิบายถึงความหมาย ประเภท ลักษณะการใช้งานคุกกี้และระยะเวลาการจัดเก็บคุกกี้ของเว็บไซต์ของบริษัทในเครือเจริญโภคภัณฑ์อาหาร 1 (ในที่นี้รวมเรียกว่า “บริษัทฯ”) เว็บไซต์นี้ใช้คุกกี้เพื่อช่วยให้เว็บไซต์ของบริษัทฯ ทำงานได้อย่างถูกต้อง แสดงเนื้อหาและโฆษณาที่ตรงกับความสนใจของผู้ใช้
-                </p>
+			  <div class="col-md-12">
+				<div class="icon-box d-flex">
+				  <div class="icon-box-content">
+						<h6 class="card-title " style="color: #000; font-weight: 600; text-align: left;">
+							<?php echo $lang == "english" ? 'Cookie Policy' : 'นโยบายการใช้คุ้กกี้'; ?>
+						</h6>
+						<p style="color: black !important;font-size:14px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							<?php echo $lang == "english" ? 'This cookie policy explains the meaning, types, usage characteristics, and retention period of cookies on the websites of Charoen Pokphand Foods affiliates (hereinafter referred to as "the Company"). This website uses cookies to help the Company is website function correctly and to display content and advertisements that match users interests.' : 'นโยบายการใช้คุกกี้นี้ จะอธิบายถึงความหมาย ประเภท ลักษณะการใช้งานคุกกี้และระยะเวลาการจัดเก็บคุกกี้ของเว็บไซต์ของบริษัทในเครือเจริญโภคภัณฑ์อาหาร 1 (ในที่นี้รวมเรียกว่า “บริษัทฯ”) เว็บไซต์นี้ใช้คุกกี้เพื่อช่วยให้เว็บไซต์ของบริษัทฯ ทำงานได้อย่างถูกต้อง แสดงเนื้อหาและโฆษณาที่ตรงกับความสนใจของผู้ใช้'; ?>
+						</p>
 
-          </div>
-        </div>
-      </div>
+				  </div>
+				</div>
+			  </div>
 
-      <div class="col-md-12">
-        <div class="icon-box d-flex">
-          <div class="icon-box-content">
-                <h3 class="card-title  " style="color: #102958;font-size:23px;">1. คุกกี้คืออะไร?</h3>
-                <p class="text-muted">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        คุกกี้เป็นไฟล์แบบตัวอักษรที่ส่งจากเว็บเบราว์เซอร์ของท่านโดยเว็บไซต์ที่เข้าเยี่ยมชม ไฟล์คุกกี้จะถูกติดตั้งหรือบันทึกลงบนคอมพิวเตอร์หรืออุปกรณ์อิเล็กทรอนิกส์ของท่านเมื่อเข้าชมเว็บไซต์ คุกกี้จะจดจำข้อมูลการใช้งานเว็บไซต์ และทำให้การเยี่ยมชมครั้งต่อไปของท่านง่ายขึ้นและบริการมีประโยชน์มากขึ้น
-                </p>
-          </div>
-        </div>
-      </div>
+			  <div class="col-md-12">
+				<div class="icon-box d-flex">
+				  <div class="icon-box-content">
+						<h6 class="card-title " style="color: #000; font-weight: 600; text-align: left;">
+							<?php echo $lang == "english" ? '1. What are cookies?' : '1. คุกกี้คืออะไร?'; ?>
+						</h6>
+						<p style="color: black !important;font-size:14px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							<?php echo $lang == "english" ? 'Cookies are text files sent by the websites you visit to your browser. The cookie files are installed or stored on your computer or electronic devices when you visit the website. Cookies remember your website usage information, making your next visit easier and the services more useful.' : 'คุกกี้เป็นไฟล์แบบตัวอักษรที่ส่งจากเว็บเบราว์เซอร์ของท่านโดยเว็บไซต์ที่เข้าเยี่ยมชม ไฟล์คุกกี้จะถูกติดตั้งหรือบันทึกลงบนคอมพิวเตอร์หรืออุปกรณ์อิเล็กทรอนิกส์ของท่านเมื่อเข้าชมเว็บไซต์ คุกกี้จะจดจำข้อมูลการใช้งานเว็บไซต์ และทำให้การเยี่ยมชมครั้งต่อไปของท่านง่ายขึ้นและบริการมีประโยชน์มากขึ้น'; ?>
+						</p>
+				  </div>
+				</div>
+			  </div>
 
-      <div class="col-md-12">
-        <div class="icon-box d-flex">
-          <div class="icon-box-content">
-                <h3 class="card-title  " style="color: #102958;font-size:23px;">2. การใช้งานคุกกี้</h3>
-                <p class="text-muted">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        ประเภทของคุกกี้ที่บริษัทฯ ใช้และในการใช้งานคุกกี้ดังกล่าว ประกอบด้วย แต่ไม่จำกัดเพียง รายการต่อไปนี้
-                </p>
-          </div>
-        </div>
-      </div>
+			  <div class="col-md-12">
+				<div class="icon-box d-flex">
+				  <div class="icon-box-content">
+						<h6 class="card-title " style="color: #000; font-weight: 600; text-align: left;">
+							<?php echo $lang == "english" ? '2. The use of cookies' : '2. การใช้งานคุกกี้'; ?>
+						</h6>
+						<p style="color: black !important;font-size:14px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							<?php echo $lang == "english" ? 'The types of cookies used by the company and their usage include, but are not limited to, the following:' : 'ประเภทของคุกกี้ที่บริษัทฯ ใช้และในการใช้งานคุกกี้ดังกล่าว ประกอบด้วย แต่ไม่จำกัดเพียง รายการต่อไปนี้'; ?>
+						</p>
+				  </div>
+				</div>
+			  </div>
 
         
-          <div class="icon-box d-flex">
-            <div class="pe-2 pb-3">
-                <svg width="40" height="40" fill="#102958" class="bi bi-dot" viewBox="0 2 16 16">
-                  <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3"></path>
-                </svg>
-            </div>
-            <div class="icon-box-content">
-                <p class="text-muted">คุกกี้ที่จำเป็น (Strictly Necessary Cookies)<br>
-                คุกกี้ที่จำเป็น คือ คุกกี้ที่ใช้สำหรับการทำงานที่จำเป็นของเว็บไซต์ และท่านไม่สามารถปิดการใช้งานในระหว่างการเข้าหน้าเว็บไซต์ของบริษัทฯ ได้ ซึ่งคุกกี้ประเภทนี้จะมีไว้เพื่อการจัดเก็บข้อมูลของท่านและตอบสนองต่อความต้องการที่ได้รับการร้องขอจากท่าน เช่น การตั้งค่าความเป็นส่วนตัว การเข้าสู่ระบบ หรือการกรอกแบบฟอร์ม เป็นต้น</p>
-            </div>
-          </div>
+			  <div class="icon-box d-flex">
+				<div class="pe-2 pb-3">
+					<svg width="40" height="40" fill="#102958" class="bi bi-dot" viewBox="0 2 16 16">
+					  <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3"></path>
+					</svg>
+				</div>
+				<div class="icon-box-content">
+					<p style="color: black !important;font-size:14px;"><?php echo $lang == "english" ? 'Strictly Necessary Cookies' : 'คุกกี้ที่จำเป็น (Strictly Necessary Cookies)'; ?><br>
+						<?php echo $lang == "english" ? 'Strictly Necessary Cookies are cookies used for essential website functions, and you cannot disable them while browsing the Company is website. These cookies are used to store your information and respond to your requests, such as privacy settings, logging in, or filling out forms.' : 'คุกกี้ที่จำเป็น คือ คุกกี้ที่ใช้สำหรับการทำงานที่จำเป็นของเว็บไซต์ และท่านไม่สามารถปิดการใช้งานในระหว่างการเข้าหน้าเว็บไซต์ของบริษัทฯ ได้ ซึ่งคุกกี้ประเภทนี้จะมีไว้เพื่อการจัดเก็บข้อมูลของท่านและตอบสนองต่อความต้องการที่ได้รับการร้องขอจากท่าน เช่น การตั้งค่าความเป็นส่วนตัว การเข้าสู่ระบบ หรือการกรอกแบบฟอร์ม เป็นต้น'; ?>
+					</p>
+				</div>
+			  </div>
         
 
-          <div class="icon-box d-flex">
-            <div class="pe-2 pb-3">
-                <svg width="40" height="40" fill="#102958" class="bi bi-dot" viewBox="0 0 16 16">
-                  <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3"></path>
-                </svg>
-            </div>
-            <div class="icon-box-content">
-                <p class="text-muted">คุกกี้การใช้งาน (Functional Cookies)<br>
-                คุกกี้ที่ใช้สำหรับการทำงานกับเว็บไซต์และการปรับเปลี่ยนรูปแบบการใช้งานหน้าเว็บไซต์ของบริษัทฯ ตามความต้องการของท่าน เช่น การตั้งค่าปุ่มทางลัด หากท่านไม่อนุญาตให้คุกกี้ประเภทนี้ทำงาน อาจส่งผลต่อการใช้งานของท่านบนเว็บไซต์</p>
-            </div>
-          </div>
+			  <div class="icon-box d-flex">
+				<div class="pe-2 pb-3">
+					<svg width="40" height="40" fill="#102958" class="bi bi-dot" viewBox="0 0 16 16">
+					  <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3"></path>
+					</svg>
+				</div>
+				<div class="icon-box-content">
+					<p style="color: black !important;font-size:14px;"><?php echo $lang == "english" ? 'Functional Cookies' : 'คุกกี้การใช้งาน (Functional Cookies)'; ?><br>
+						<?php echo $lang == "english" ? 'Functional Cookies are used to work with the website and to adjust the layout of the Company is website according to your preferences, such as shortcut button settings. If you do not allow these cookies to function, it may affect your experience on the website.' : 'คุกกี้ที่ใช้สำหรับการทำงานกับเว็บไซต์และการปรับเปลี่ยนรูปแบบการใช้งานหน้าเว็บไซต์ของบริษัทฯ ตามความต้องการของท่าน เช่น การตั้งค่าปุ่มทางลัด หากท่านไม่อนุญาตให้คุกกี้ประเภทนี้ทำงาน อาจส่งผลต่อการใช้งานของท่านบนเว็บไซต์'; ?>
+					</p>
+				</div>
+			  </div>
 
-          <div class="icon-box d-flex">
-            <div class="pe-2 pb-3">
-                <svg width="40" height="40" fill="#102958" class="bi bi-dot" viewBox="0 0 16 16">
-                  <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3"></path>
-                </svg>
-            </div>
-            <div class="icon-box-content">
-                <p class="text-muted">คุกกี้กำหนดเป้าหมาย (Targeting Cookies)<br>
-                คุกกี้กำหนดเป้าหมาย คือ คุกกี้ที่ใช้สำหรับการสื่อสาร ประชาสัมพันธ์ หรือโฆษณาของบริษัทฯ โดยคุกกี้ประเภทนี้จะสร้างเป็นโปรไฟล์ เพื่อระบุว่าท่านสนใจหรือชอบในสิ่งใดเป็นพิเศษบนเว็บไซต์ของบริษัทฯ คุกกี้เหล่านี้ทำงานโดยการระบุแต่ละเบราว์เซอร์และรหัสอ้างอิงของอุปกรณ์ท่าน ทั้งนี้ หากท่านไม่อนุญาตให้คุกกี้ประเภทนี้ทำงาน ท่านจะไม่ได้รับข้อมูลการสื่อสาร ประชาสัมพันธ์ หรือโฆษณาของบริษัทฯ บนเว็บไซต์</p>
-            </div>
-          </div>
+			  <div class="icon-box d-flex">
+				<div class="pe-2 pb-3">
+					<svg width="40" height="40" fill="#102958" class="bi bi-dot" viewBox="0 0 16 16">
+					  <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3"></path>
+					</svg>
+				</div>
+				<div class="icon-box-content">
+					<p style="color: black !important;font-size:14px;"><?php echo $lang == "english" ? 'Targeting Cookies' : 'คุกกี้กำหนดเป้าหมาย (Targeting Cookies)'; ?><br>
+						<?php echo $lang == "english" ? 'Targeting Cookies are used for the communication, public relations, or advertising of the Company. These cookies create a profile to identify what you are particularly interested in or like on the Company is website. They work by identifying each browser and device reference code. If you do not allow these cookies to function, you will not receive the Company’s communication, public relations, or advertising information on the website.' : 'คุกกี้กำหนดเป้าหมาย คือ คุกกี้ที่ใช้สำหรับการสื่อสาร ประชาสัมพันธ์ หรือโฆษณาของบริษัทฯ โดยคุกกี้ประเภทนี้จะสร้างเป็นโปรไฟล์ เพื่อระบุว่าท่านสนใจหรือชอบในสิ่งใดเป็นพิเศษบนเว็บไซต์ของบริษัทฯ คุกกี้เหล่านี้ทำงานโดยการระบุแต่ละเบราว์เซอร์และรหัสอ้างอิงของอุปกรณ์ท่าน ทั้งนี้ หากท่านไม่อนุญาตให้คุกกี้ประเภทนี้ทำงาน ท่านจะไม่ได้รับข้อมูลการสื่อสาร ประชาสัมพันธ์ หรือโฆษณาของบริษัทฯ บนเว็บไซต์'; ?>
+					</p>
+				</div>
+			  </div>
 
-          <div class="icon-box d-flex">
-            <div class="pe-2 pb-3">
-                <svg width="40" height="40" fill="#102958" class="bi bi-dot" viewBox="0 0 16 16">
-                  <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3"></path>
-                </svg>
-            </div>
-            <div class="icon-box-content">
-                <p class="text-muted">คุกกี้วัดผลการทำงานของเว็บไซต์ (Performance Cookies)<br>
-                คุกกี้วัดผลการทำงานของเว็บไซต์ คือคุกกี้ที่ใช้สำหรับจดจำและนับจำนวนผู้เข้าเยี่ยมชมเว็บไซต์ รวมถึงพฤติกรรมในการเยี่ยมชมเว็บไซต์ เพื่อเป็นข้อมูลในการปรับปรุงการทำงานของเว็บไซต์ อีกทั้งใช้สำหรับรวบรวมข้อมูลทางสถิติเกี่ยวกับวิธีการเข้าและพฤติกรรมการเยี่ยมชมเว็บไซต์ ซึ่งจะช่วยปรับปรุงการทำงานของเว็บไซต์ หากท่านไม่อนุญาตให้บริษัทฯ ใช้คุกกี้ประเภทนี้ บริษัทฯ จะไม่สามารถวัดผลการทำงานและปรับปรุงประสิทธิภาพของเว็บไซต์บริษัทฯ ได้</p>
-            </div>
-          </div>
+			  <div class="icon-box d-flex">
+				<div class="pe-2 pb-3">
+					<svg width="40" height="40" fill="#102958" class="bi bi-dot" viewBox="0 0 16 16">
+					  <path d="M8 9.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3"></path>
+					</svg>
+				</div>
+				<div class="icon-box-content">
+					<p style="color: black !important;font-size:14px;"><?php echo $lang == "english" ? 'Performance Cookies' : 'คุกกี้วัดผลการทำงานของเว็บไซต์ (Performance Cookies)'; ?><br>
+						<?php echo $lang == "english" ? 'Performance Cookies are used to remember and count the number of visitors to the website, including their behavior during visits, to provide data for improving website functionality. They are also used to collect statistical information about how the website is accessed and user behavior, which helps in enhancing website performance. If you do not allow the Company to use these cookies, the Company will not be able to measure performance and improve the efficiency of the website.' : 'คุกกี้วัดผลการทำงานของเว็บไซต์ คือคุกกี้ที่ใช้สำหรับจดจำและนับจำนวนผู้เข้าเยี่ยมชมเว็บไซต์ รวมถึงพฤติกรรมในการเยี่ยมชมเว็บไซต์ เพื่อเป็นข้อมูลในการปรับปรุงการทำงานของเว็บไซต์ อีกทั้งใช้สำหรับรวบรวมข้อมูลทางสถิติเกี่ยวกับวิธีการเข้าและพฤติกรรมการเยี่ยมชมเว็บไซต์ ซึ่งจะช่วยปรับปรุงการทำงานของเว็บไซต์ หากท่านไม่อนุญาตให้บริษัทฯ ใช้คุกกี้ประเภทนี้ บริษัทฯ จะไม่สามารถวัดผลการทำงานและปรับปรุงประสิทธิภาพของเว็บไซต์บริษัทฯ ได้'; ?>
+					</p>
+				</div>
+			  </div>
 
       </div>
 
-      <div class="col-md-12">
-        <div class="icon-box d-flex">
-          <div class="icon-box-content">
-                <h3 class="card-title  " style="color: #102958;font-size:23px;">3. การใช้คุกกี้โดยบุคคลที่สาม (Third-Party Cookies)</h3>
-                <p class="text-muted">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        เว็บไซต์ของบริษัทฯ มีการใช้คุกกี้โดยบุคคลที่สาม เช่น Google Twitter Line YouTube และ/หรือ Facebook เป็นต้น ท่านไม่สามารถควบคุมการใช้งานคุกกี้โดยบุคคลที่สามผ่านหน้าเว็บไซต์ของบริษัทฯ ได้ บริษัทฯ จึงขอให้ท่านพิจารณานโยบายการใช้คุกกี้และการทำงานอื่นๆ ตามแต่ละเว็บไซต์ของบุคคลที่สามนั้นๆ ที่ท่านได้เข้าเยี่ยมชม
-                </p>
-          </div>
-        </div>
-      </div>
+		  <div class="col-md-12">
+			<div class="icon-box d-flex">
+			  <div class="icon-box-content">
+					<h6 class="card-title " style="color: #000; font-weight: 600; text-align: left;">
+						<?php echo $lang == "english" ? '3. The use of third-party cookies (Third-Party Cookies)' : '3. การใช้คุกกี้โดยบุคคลที่สาม (Third-Party Cookies)'; ?>
+					</h6>
+					<p style="color: black !important;font-size:14px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<?php echo $lang == "english" ? 'The Company is website uses third-party cookies from sources such as Google, Twitter, Line, YouTube, and/or Facebook. You cannot control the use of third-party cookies through the Company is website. Therefore, we recommend that you review the cookie policies and other practices of each third-party website you visit.' : 'เว็บไซต์ของบริษัทฯ มีการใช้คุกกี้โดยบุคคลที่สาม เช่น Google Twitter Line YouTube และ/หรือ Facebook เป็นต้น ท่านไม่สามารถควบคุมการใช้งานคุกกี้โดยบุคคลที่สามผ่านหน้าเว็บไซต์ของบริษัทฯ ได้ บริษัทฯ จึงขอให้ท่านพิจารณานโยบายการใช้คุกกี้และการทำงานอื่นๆ ตามแต่ละเว็บไซต์ของบุคคลที่สามนั้นๆ ที่ท่านได้เข้าเยี่ยมชม'; ?>
+					</p>
+			  </div>
+			</div>
+		  </div>
 
-       <div class="col-md-12">
-        <div class="icon-box d-flex">
-          <div class="icon-box-content">
-                <h3 class="card-title  " style="color: #102958;font-size:23px;">4. ระยะเวลาการจัดเก็บคุกกี้</h3>
-                <p class="text-muted">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        บริษัทฯ จะจัดเก็บคุกกี้ของท่าน (ผู้เข้าเยี่ยมหน้าเว็บไซต์) ไว้ตามความเหมาะสมของการใช้งานคุกกี้ซึ่งอาจแตกต่างกันไปตามแต่ละประเภท อย่างไรก็ตามท่านสามารถปรับแต่งการตั้งค่าคุกกี้ได้เองผ่านทางเว็บบราวเซอร์ที่ใช้งานอยู่นี้
-                </p>
-          </div>
-        </div>
-      </div>
+		   <div class="col-md-12">
+			<div class="icon-box d-flex">
+			  <div class="icon-box-content">
+					<h6 class="card-title " style="color: #000; font-weight: 600; text-align: left;">
+						<?php echo $lang == "english" ? '4. Cookie retention period' : '4. ระยะเวลาการจัดเก็บคุกกี้'; ?>
+					</h6>
+					<p style="color: black !important;font-size:14px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+						<?php echo $lang == "english" ? 'The Company will store your cookies (website visitors) according to the appropriateness of cookie usage, which may vary by type. However, you can adjust your cookie settings yourself through your current web browser.' : 'บริษัทฯ จะจัดเก็บคุกกี้ของท่าน (ผู้เข้าเยี่ยมหน้าเว็บไซต์) ไว้ตามความเหมาะสมของการใช้งานคุกกี้ซึ่งอาจแตกต่างกันไปตามแต่ละประเภท อย่างไรก็ตามท่านสามารถปรับแต่งการตั้งค่าคุกกี้ได้เองผ่านทางเว็บบราวเซอร์ที่ใช้งานอยู่นี้'; ?>
+					</p>
+			  </div>
+			</div>
+		  </div>
 
 
       </div>
 	  
-	<div class="row">
-		<div class="col-md-12 ml-2 text-center mt-0">
-			<section class="section-full bg-white about-bx1 m-b20 m-t30 m-b90">
-                <div class="container">
-          <div class="section-head text-center ">
-            <h4 class="">
-				<span style="color: #000; font-weight: 600;">
-					<?php echo $lang == "english" ? 'Contact us' : 'ติดต่อเรา'; ?>
-					</span>
-				<span style="color: #000;"></span> 
-			</h4>
-
-          </div>    
-          <br><br>
-          <div class="row">
-
-             <div class="col-md-6 col-lg-6 col-sm-12">
-            <div class=" d-flex">
-              <div class="icon-box-icon pe-3 pb-3">
-                <svg width="20" height="20" fill="#000" class="bi bi-geo-alt-fill" viewBox="0 0 16 16">
-                  <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10m0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6"></path>
-                </svg>
-              </div>
-
-              <div class="icon-box-content">
-               	<h6 class="card-title " style="color: #000; font-weight: 600; text-align: left;">
-									<?php echo $lang == "english" ? 'Address' : 'ที่อยู่'; ?>
-								</h6>
-                <!-- (มหาชน) -->
-                <p style="font-size:14px; text-align: left;color: black !important;">
-					<span style="color: black !important;" >
-						<?php echo $lang == "english" ? 'InstallDirect Co., Ltd.' : 'บริษัท อินสตอลไดเรค จำกัด'; ?>
-					</span><br/>
-					<span style="color: black !important;" >
-						<?php echo $lang == "english" ? '905/7 Rama 3 Road Bangpongpang Yannawa, Bangkok, Thailand 10120' : '905/7 ถนนพระราม 3 แขวงบางโพงพาง เขตยานนาวา จ.กรุงเทพฯ 10120'; ?>
-					</span>
-				</p>
-              </div>
-            </div>
-
-            <div class=" d-flex">
-              <div class="icon-box-icon pe-3 pb-3">
-                <svg width="20" height="20" fill="#000" class="bi bi-telephone" viewBox="0 0 16 16">
-				  <path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.6 17.6 0 0 0 4.168 6.608 17.6 17.6 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.68.68 0 0 0-.58-.122l-2.19.547a1.75 1.75 0 0 1-1.657-.459L5.482 8.062a1.75 1.75 0 0 1-.46-1.657l.548-2.19a.68.68 0 0 0-.122-.58zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.68.68 0 0 0 .178.643l2.457 2.457a.68.68 0 0 0 .644.178l2.189-.547a1.75 1.75 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.6 18.6 0 0 1-7.01-4.42 18.6 18.6 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877z"></path>
-				</svg>
-              </div>
-
-              <div class="icon-box-content">
-                <h6 class="card-title " style="color: #000; font-weight: 600;text-align: left;">
-									<?php echo $lang == "english" ? 'Phone' : 'เบอร์โทรศัพท์'; ?>
-								</h6>
-                <p style="font-size:14px; text-align: left;color: black !important;">065-989-8845</p>
-              </div>
-            </div>
-            <div class=" d-flex">
-              <div class="icon-box-icon pe-3 pb-3">
-                  <i style="font-size:20px;color:#000;" class="fa fa-fax"></i>
-              </div>
-              <div class="icon-box-content">
-                <h6 class="card-title " style="color: #000; font-weight: 600;text-align: left;">
-					<?php echo $lang == "english" ? 'Fax' : 'เบอร์โทรแฟกซ์'; ?>
-				</h6>
-                <p style="font-size:14px; text-align: left;color: black !important;">0-2683-4949</p>
-              </div>
-            </div>
-
-            <div class=" d-flex">
-              <div class="icon-box-icon pe-3 pb-3">
-                <svg width="20" height="20" fill="#000" class="bi bi-envelope" viewBox="0 0 16 16">
-				  <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z"></path>
-							</svg>
-            </div>
-
-            <div class="icon-box-content">
-                <h6 class="card-title " style="color: #000; font-weight: 600; text-align: left;">
-									<?php echo $lang == "english" ? 'E-mail' : 'อีเมล'; ?>
-								</h6>
-                <p style="font-size:14px; text-align: left;color: black !important;">customercare@installdirect.asia</p>
-              </div>
-            </div>
-
-            
-            
-            <div class=" d-flex">
-              <div class="icon-box-icon pe-3 pb-3">
-               <svg width="20" height="20" fill="#000" class="bi bi-line" viewBox="0 0 16 16">
-				  <path d="M8 0c4.411 0 8 2.912 8 6.492 0 1.433-.555 2.723-1.715 3.994-1.678 1.932-5.431 4.285-6.285 4.645-.83.35-.734-.197-.696-.413l.003-.018.114-.685c.027-.204.055-.521-.026-.723-.09-.223-.444-.339-.704-.395C2.846 12.39 0 9.701 0 6.492 0 2.912 3.59 0 8 0M5.022 7.686H3.497V4.918a.156.156 0 0 0-.155-.156H2.78a.156.156 0 0 0-.156.156v3.486c0 .041.017.08.044.107v.001l.002.002.002.002a.15.15 0 0 0 .108.043h2.242c.086 0 .155-.07.155-.156v-.56a.156.156 0 0 0-.155-.157m.791-2.924a.156.156 0 0 0-.156.156v3.486c0 .086.07.155.156.155h.562c.086 0 .155-.07.155-.155V4.918a.156.156 0 0 0-.155-.156zm3.863 0a.156.156 0 0 0-.156.156v2.07L7.923 4.832l-.013-.015v-.001l-.01-.01-.003-.003-.011-.009h-.001L7.88 4.79l-.003-.002-.005-.003-.008-.005h-.002l-.003-.002-.01-.004-.004-.002-.01-.003h-.002l-.003-.001-.009-.002h-.006l-.003-.001h-.004l-.002-.001h-.574a.156.156 0 0 0-.156.155v3.486c0 .086.07.155.156.155h.56c.087 0 .157-.07.157-.155v-2.07l1.6 2.16a.2.2 0 0 0 .039.038l.001.001.01.006.004.002.008.004.007.003.005.002.01.003h.003a.2.2 0 0 0 .04.006h.56c.087 0 .157-.07.157-.155V4.918a.156.156 0 0 0-.156-.156zm3.815.717v-.56a.156.156 0 0 0-.155-.157h-2.242a.16.16 0 0 0-.108.044h-.001l-.001.002-.002.003a.16.16 0 0 0-.044.107v3.486c0 .041.017.08.044.107l.002.003.002.002a.16.16 0 0 0 .108.043h2.242c.086 0 .155-.07.155-.156v-.56a.156.156 0 0 0-.155-.157H11.81v-.589h1.525c.086 0 .155-.07.155-.156v-.56a.156.156 0 0 0-.155-.157H11.81v-.589h1.525c.086 0 .155-.07.155-.156Z"></path>
-				</svg>
-              </div>
-
-              <div class="icon-box-content">
-                <h6 class="card-title " style="color: #000; font-weight: 600; text-align: left;">
-					<?php echo $lang == "english" ? 'LINE ID' : 'ไลน์ไอดี'; ?>
-				</h6>
-                <p style="color: black !important;font-size:14px;">@installdirect</p>
-              </div>
-            </div>
-
-          </div>
-
-          <!-- <div class="col-md-5 col-lg-5 col-sm-12"> -->
-			<div class="col-md-6 col-lg-6 col-sm-12">
-				<form class="contact-box dzForm p-a10 border-1">
-					<div id="google-map">
-
-						<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3876.7150510205365!2d100.5430111!3d13.675082999999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x30e2a1efa518798f%3A0x3f3e240d8dbb30ac!2sBuilderSmart%20Warehouse!5e0!3m2!1sth!2sth!4v1720518354389!5m2!1sth!2sth" width=100% height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-					</div>
-				</form>
-			</div>
-          </div>
-        </div>
-      </section>
-		</div>
-	</div>
+	  
+	<br/><br/>
 </div>
-
 <!-- <script src="//code.jquery.com/jquery.js"></script> -->
 <script src="https://smartbooking.installdirect.asia/js/jquery.min.js"></script>
 <script src="https://smartbooking.installdirect.asia/js/jquery-ui.min.js"></script>
