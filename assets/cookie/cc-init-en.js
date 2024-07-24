@@ -27,8 +27,26 @@ style.innerHTML = `
 		top: 50%;
 		transform: translateY(-50%) rotate(45deg);
 	}
-	.cc_div .c-bn  {
-		margin: 8px 16px;
+	.cc_div .cc-link {
+		border-bottom: unset !important;
+	}
+	@media (min-width: 1024px) { 
+		.cc_div .c-bn {
+			margin: 0 18px !important;
+			padding: 12px 15px !important;
+		}
+		button, .btn {
+			padding: 8px 16px; 
+		}
+		#cc_div #cm {
+			padding: 10px;
+			width: 26%;
+			max-width: 100%
+		}
+		.cc_div #c-bns {
+			margin-top: 0.7em !important;
+			padding: 0 14px !important;
+		}
 	}
 `;
 document.head.appendChild(style);
@@ -44,21 +62,21 @@ const config = {
       consent_modal: {
         title: '<p style="font-size:14px; color: #000;">This website uses cookies</p>',
         description:
-          '<p style="font-size:0.8rem; color: #000; ">This website uses essential cookies to ensure its proper operation and tracking cookies to understand how you interact with it. The latter will be set only after consent. <button type="button" data-cc="c-settings" class="cc-link" style="background-color: #fff !important; color: #000 !important;">Cookie settings</button></p>',
+          '<p style="font-size:0.688rem; color: #000; line-height: 20px; !important;">This website uses essential cookies to ensure its proper operation and tracking cookies to understand how you interact with it. The latter will be set only after consent. <button type="button" data-cc="c-settings" class="cc-link" style="background-color: #fff !important; color: #000 !important;">Cookie settings</button></p>',
         primary_btn: {
-          text: '<p style="font-size:14px; font-family:manrope;text-align:center; color: #fff;">Accept</p>',
+          text: '<p style="font-size:12px; text-align:center; color: #fff; font-weight: 400;">Accept</p>',
           role: "accept_all", // 'accept_selected' or 'accept_all'
         },
         secondary_btn: {
-          text: '<p style="font-size:14px; text-align:center; color: #fff;">Reject</p>',
+          text: '<p style="font-size:12px; text-align:center; color: #fff; font-weight: 400;">Reject</p>',
           role: "accept_necessary", // 'settings' or 'accept_necessary'
         },
       },
       settings_modal: {
         title: '<p style="font-size:16px; color: #000; text-align:left;">Cookie settings</p>',
-        save_settings_btn: '<p style="font-size:14px; text-align:center; background-color: #102958; color: #fff;">Save settings</p>',
-        accept_all_btn: '<p style="font-size:14px; text-align:center; background-color: #102958; color: #fff;">Accept all</p>',
-        reject_all_btn: '<p style="font-size:14px; text-align:center; background-color: #102958; color: #fff;">Reject all</p>',
+        save_settings_btn: '<p style="font-size:12px; text-align:center; background-color: #102958; color: #fff; font-weight: 400;">Save settings</p>',
+        accept_all_btn: '<p style="font-size:12px; text-align:center; background-color: #102958; color: #fff; font-weight: 400;">Accept all</p>',
+        reject_all_btn: '<p style="font-size:12px; text-align:center; background-color: #102958; color: #fff; font-weight: 400;">Reject all</p>',
         close_btn_label: "Close",
         cookie_table_headers: [
           { col1: "Name" },

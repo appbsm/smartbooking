@@ -1188,14 +1188,33 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
 		</div>
 	</div>
 <!-- New About Us -->
+<style>
+.no-package {
+    display: none;
+}
+</style>
 
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const packageSection = document.getElementById("package-section");
+    const roomTypeSection = document.getElementById("roomtype");
+
+    if (!packageSection || packageSection.innerHTML.trim() === '') {
+        // Hide package section
+        packageSection.classList.add("no-package");
+        // Show room type section
+        roomTypeSection.style.display = "block";
+    }
+});
+
+</script>
 <div class="row" id="package"></div><br/><br/>
 <?php if (sizeof($packages) > 0) { ?>
 <!-- PROMOTION & PACKAGE -->
 <div class="slider-wrapper slider1-wrapper slider-package" style="padding-top: 30px; padding-right: 20px;background-color: white;">
 	<div class="container">
 		<div class="row">
-			<div class="col-lg-12 col-md-12 col-sm-12 col-12" > 
+			<div class="col-lg-12 col-md-12 col-sm-12 col-12" id="package-section" > 
 				<h4 style="text-align: center; padding-bottom: 15px;" id="nav_packagep_promotions">
 					<a  href="javascript:;" class="tx-title-header">
 						<?php echo $lang == "english" ? 'Package & Promotions' : 'แพ็คเกจและโปรโมชั่น'; ?>

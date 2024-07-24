@@ -27,8 +27,26 @@ style.innerHTML = `
 		top: 50%;
 		transform: translateY(-50%) rotate(45deg);
 	}
-	.cc_div .c-bn  {
-		margin: 8px 16px;
+	.cc_div .cc-link {
+		border-bottom: unset !important;
+	}
+	@media (min-width: 1024px) { /* Adjust this breakpoint as needed */
+		.cc_div .c-bn {
+			margin: 0 18px !important;
+			padding: 12px 15px !important;
+		}
+		button, .btn {
+			padding: 8px 16px; 
+		}
+		#cc_div #cm {
+			padding: 10px;
+			width: 26%;
+			max-width: 100%
+		}
+		.cc_div #c-bns {
+			margin-top: 0.7em !important;
+			padding: 0 14px !important;
+		}
 	}
 `;
 document.head.appendChild(style);
@@ -77,23 +95,23 @@ const config = {
     en: {
       consent_modal: {
 		
-        title: '<p style="font-size:16px; color: #000;" >เว็บไซต์นี้ใช้คุกกี้</p>',
+        title: '<p style="font-size:14px; color: #000;" >เว็บไซต์นี้ใช้คุกกี้</p>',
         description:
-          '<p style="font-size: 0.8rem; color: #000;">เว็บไซต์นี้ใช้คุกกี้ที่จำเป็นเพื่อให้แน่ใจว่ามีการทำงานที่เหมาะสมและติดตามคุกกี้เพื่อทำความเข้าใจว่าคุณโต้ตอบกับมันอย่างไร ส่วนหลังจะถูกตั้งค่าหลังจากได้รับความยินยอมเท่านั้น <button type="button" data-cc="c-settings" class="cc-link" style="background-color: #fff !important; color: #000 !important;">ตั้งค่าคุกกี้</button> </p>',
+          '<p style="font-size: 0.688rem; color: #000; line-height: 20px; !important;">เว็บไซต์นี้ใช้คุกกี้ที่จำเป็นเพื่อให้แน่ใจว่ามีการทำงานที่เหมาะสมและติดตามคุกกี้เพื่อทำความเข้าใจว่าคุณโต้ตอบกับมันอย่างไร ส่วนหลังจะถูกตั้งค่าหลังจากได้รับความยินยอมเท่านั้น <button type="button" data-cc="c-settings" class="cc-link" style="background-color: #fff !important; color: #000 !important; padding: 5px 0 !important;">ตั้งค่าคุกกี้</button> </p>',
         primary_btn: {
-          text: '<p style="font-size:14px; text-align:center;">ยอมรับ</p>',
+          text: '<p style="font-size:12px; text-align:center; font-weight: 400;">ยอมรับ</p>',
           role: "accept_all", // 'accept_selected' or 'accept_all'
         },
         secondary_btn: {
-          text: '<p style="font-size:14px; text-align:center;">ปฏิเสธ</p>',
+          text: '<p style="font-size:12px; text-align:center; font-weight: 400;">ปฏิเสธ</p>',
           role: "accept_necessary", // 'settings' or 'accept_necessary'
         },
       },
       settings_modal: {
         title: '<p style="font-size:16px; color: #000; text-align:left;">ตั้งค่าคุกกี้</p>',
-        save_settings_btn: '<p style="font-size:14px; text-align:center;">บันทึกการตั้งค่า</p>',
-        accept_all_btn: '<p style="font-size:14px; text-align:center;">ยอมรับทั้งหมด</p>',
-        reject_all_btn: '<p style="font-size:14px; text-align:center;">ปฏิเสธทั้งหมด</p>',
+        save_settings_btn: '<p style="font-size:12px; text-align:center; font-weight: 400;">บันทึกการตั้งค่า</p>',
+        accept_all_btn: '<p style="font-size:12px; text-align:center; font-weight: 400;">ยอมรับทั้งหมด</p>',
+        reject_all_btn: '<p style="font-size:12px; text-align:center; font-weight: 400;">ปฏิเสธทั้งหมด</p>',
         close_btn_label: "Close",
         cookie_table_headers: [
 
