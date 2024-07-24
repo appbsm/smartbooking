@@ -26,7 +26,8 @@
         <div class="container-fluid">
             <div class="row">
                 <!-- Role Info -->
-                <div class="col-md-10 offset-md-1">
+                <!--<div class="col-md-10 offset-md-1">-->
+				<div class="col-md-12 ">
                     <div class="col-md-11" style="margin-top:30px;">
                         <div class="row" style="margin-top:10px">
                             <div class="col-md-12">

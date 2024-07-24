@@ -46,7 +46,7 @@
                                     <th style="width:80px;"><?= _r('Is Big Room?', 'เป็นห้องใหญ่หรือไม่'); ?></th>
                                     <th style="width:60px;"><?= _r('Status', 'สถานะ'); ?></th>
                                     <?php if (has_permission('room_management', 'view') || has_permission('room_management', 'delete')) : ?>
-                                    <th style="width:100px;"><?= _r('Action', 'ดำเนินการ'); ?></th>
+                                    <th style="width:110px;"><?= _r('Action', 'ดำเนินการ'); ?></th>
                                     <?php endif; ?>
                                 </tr>
                             </thead>
