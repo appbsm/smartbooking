@@ -27,6 +27,9 @@ style.innerHTML = `
 		top: 50%;
 		transform: translateY(-50%) rotate(45deg);
 	}
+	.cc_div .c-bn  {
+		margin: 8px 16px;
+	}
 `;
 document.head.appendChild(style);
 
