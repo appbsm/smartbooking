@@ -154,7 +154,7 @@ $CI->load->model('m_room_type');
 					<div class="col-md-12 price" style="color: white; font-weight: bold; font-size: 1.2em; padding: 3px 15px 3px 15px; background-color: #102958; width: 98%;"><?php echo $this->lang->line('booking_items');?>:</div>
 					<div class="col-md-12">
 						<div class = "table-responsive">
-					         <table class = "table table-bordered">
+					         <table class = "table table-bordered" style="border-color: #CCC !important;">
 					            <thead>
 					               <tr>
 					                  <th><?php echo $this->lang->line('number');?></th>

@@ -87,6 +87,7 @@ $CI->load->model('m_room_type');
 	.aboutus-tx-title {
 		text-align: left ;
 		text-transform: capitalize;
+		margin: 0 0 0 -8px !important;
 	}
 	.aboutus-tx-text {
 		font-size: 1em !important;
@@ -538,7 +539,8 @@ $CI->load->model('m_room_type');
 		color: #000 !important; 
 		background-color: #CCC; 
 		padding: 12px; 
-		margin-bottom: 18px; 
+		/*margin-bottom: 18px; */
+		margin: 0 0 0 5px;
 		font-weight: 600;     
 		box-shadow: 2px 2px 5px 0 rgba(22, 22, 26, 0.18); 
 	}
@@ -621,7 +623,10 @@ $CI->load->model('m_room_type');
 			object-fit: cover; /* Optional: This will ensure the image covers the 500px height without distortion */
 		}
 		.img-cover {
-			height: 500px !important;
+			/*height: 600px !important;*/
+			height: 95vh !important;
+			width: 100%;
+			object-fit: cover;
 		}
 		.amenities-nearby-column {
 			display: flex;
@@ -840,7 +845,7 @@ $CI->load->model('m_room_type');
 
 <!-- picker -->
 
-<div class=" home-p mb-4 mt-0">
+<div class=" home-p mb-2 mt-0">
 	<!-- Carousel Start -->
 	<div id="carousel carouselExampleIndicators" class="carousel slide carousel-fade" data-ride="carousel">
 		<!-- <ol class="carousel-indicators">
@@ -1120,20 +1125,34 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
 	
 	<div class="container mt-0 aboutus-lr">
 		<div class="row text-center mb-0" id="nav_roomstype">
-			<div class="col-md-12 d-flex p-0" style="flex-wrap: wrap;">
+			
+				<div class="row aboutus-tx-title">
+					<h4 class="header-text">
+						<?php
+							if (sizeof($packages) > 0) {
+								echo ($lang == 'english') ? 'Welcome SM Resort' : 'ยินดีต้อนรับสู่ เอสเอ็ม รีสอร์ท';
+							}
+						?>
+					</h4>
+				</div>
+				
+			
+			<div class="col-md-12 d-flex p-0 mt-4" style="flex-wrap: wrap;">
 				<div class="col-lg-6">
 
-					<div class="section-heading text-center mb-3">
+					<div class="section-heading text-center mb-0">
+							<!--
 							<div class="row aboutus-tx-title">
 								<h4 class="header-text">
 									<?php
-										if (sizeof($packages) > 0) {
+										/*if (sizeof($packages) > 0) {
 											echo ($lang == 'english') ? 'Welcome SM Resort' : 'ยินดีต้อนรับสู่ เอสเอ็ม รีสอร์ท';
-										}
+										}*/
 									?>
 								</h4>
 								<br/><br/><br/>
 							</div>
+							-->
 
 							<div class="row aboutus-tx-title">
 								<p style=" color: #000 !important; margin-bottom: 0;">
@@ -1161,7 +1180,7 @@ SM Resort redefines a new style of accommodation with its modern resort collecti
 					</div>
 				</div>
 				<div class="col-lg-6">
-					<div class="content" style="text-align: left; margin-top: 24px;"><br/><br/>
+					<div class="content" style="text-align: left;">
 						<img src="https://sharefolder.buildersmart.com/sms_booking/upload/package_photo/8_648ad3a488cab.jpg" style="width: 100%;">
 					</div>
 				</div>
