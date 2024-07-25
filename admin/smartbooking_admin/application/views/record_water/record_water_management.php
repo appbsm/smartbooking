@@ -4,8 +4,6 @@
 <script src="https://cdn.jsdelivr.net/npm/jspdf@2.4.0/dist/jspdf.umd.min.js"></script>
 <!-- CDN for jsPDF autoTable -->
 <script src="https://cdn.jsdelivr.net/npm/jspdf-autotable@3.5.23/dist/jspdf.plugin.autotable.min.js"></script>
-<!-- CDN for xlsx-style -->
-<script src="https://cdn.jsdelivr.net/npm/xlsx-style/dist/xlsx-style.full.min.js"></script>
 
 <!-- Content Header (Page header) -->
 <div class="content-wrapper" id="vApp" style="padding-bottom:50px;" v-cloak>
@@ -19,7 +17,7 @@
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><?= _r('Setting', 'การตั้งค่า'); ?></li>
                         <li class="breadcrumb-item">
-                            <a href="<?php echo electric_management_url(); ?>">{{ menu }}</a>
+                            <a href="<?php echo water_management_url(); ?>">{{ menu }}</a>
                         </li>
                     </ol>
                 </div> -->
@@ -28,7 +26,7 @@
     </section>
 
 <section class="content">
-<form action="<?php echo site_url('record_electric/record_electric_management') ?>" method="get">
+<form action="<?php echo site_url('record_water/record_water_management') ?>" method="get">
 
     <div class="container-fluid center-content">
         <!-- justify-content-center -->
@@ -51,7 +49,7 @@
                 <!-- <div class="form-inline"> -->
                     <label class="px-2"><?= _r('Project :', 'โปรเจกต์ :'); ?></label> 
                     <div class="form-group px-3">
-                        <select class="form-control" name="project" v-model="electric_info.id_project_info">
+                        <select class="form-control" name="project" v-model="water_info.id_project_info">
                             <option v-for="p in project_info" :value="p.id_project_info">{{ <?= _r('p.project_name_en', 'p.project_name_th'); ?> }}</option>
                         </select>
                      </div>
@@ -60,16 +58,16 @@
 
                      <?php //if($date_from){echo $date_from;} ?>
                      <?php //if($date_to){echo $date_to;} ?>
-                     <!-- v-model="electric_info.id_room_type" -->
+                     <!-- v-model="water_info.id_room_type" -->
                      <div class="form-group px-3">
-                        <select class="form-control" name="room_type" @change="handleRoomTypeChange" v-model="electric_info.id_room_type" >
+                        <select class="form-control" name="room_type" @change="handleRoomTypeChange" v-model="water_info.id_room_type" >
                             <option v-for="r in room_type" :value="r.id_room_type">{{ <?= _r('r.room_type_name_en', 'r.room_type_name_th'); ?> }}</option>
                         </select> 
                      </div>
 
                      <label class="px-2" ><?= _r('Room Number :', 'หมายเลขห้อง :'); ?></label>
                      <div class="form-group px-3">
-                        <select class="form-control" name="room_details" v-model="electric_info.id_room_details" @change="handleRoomNumberChange" >
+                        <select class="form-control" name="room_details" v-model="water_info.id_room_details" @change="handleRoomNumberChange" >
                             <option v-for="r in room_details" :value="r.id_room_details">{{ <?= _r('r.room_name_en', 'r.room_name_th'); ?> }}</option>
                         </select> 
                      </div>
@@ -114,9 +112,9 @@
                        </li>
                     </ul>
 
-                    <?php if (has_permission('electric_management', 'edit')) : ?>
+                    <?php if (has_permission('water_management', 'edit')) : ?>
 
-                    <a href="<?php echo edit_record_electric_url(); ?>" style="color:white;">
+                    <a href="<?php echo edit_record_water_url(); ?>" style="color:white;">
                         <button class="btn" style="width:170px; height:30px; line-height:9px; background-color:#0275d8; color:white; margin-bottom:20px;">
                             <?= _r('Create', 'สร้าง'); ?>
                         </button>
@@ -147,7 +145,7 @@
 
                                     <!-- <th style="width:60px;"><?= _r('Status', 'สถานะ'); ?></th> -->
 
-                                    <?php if (has_permission('electric_management', 'view') || has_permission('electric_management', 'delete')) : ?>
+                                    <?php if (has_permission('water_management', 'view') || has_permission('water_management', 'delete')) : ?>
                                     <th style="width:80px;"><?= _r('Action', 'ดำเนินการ'); ?></th>
                                     <?php endif; ?>
 
@@ -156,7 +154,7 @@
                             </thead>
 
                             <tbody>
-                                <tr v-for="r in electric_record">
+                                <tr v-for="r in water_record">
                                     <td class="text-center">{{ r.run_id }}
                                         <!-- <img :src="r.image" style="width:100%;"> -->
                                     </td>
@@ -175,9 +173,9 @@
                                     <td class="text-center">{{ (parseFloat(r.unit_rate)).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",") }}</td>
                                     <td class="text-center">{{ r.ct !== 0 && r.ct !== '' ? ((r.qty * r.ct) * r.unit_rate).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",") : (r.qty * r.unit_rate).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",") }}</td>
 
-                                    <?php if (has_permission('electric_management', 'view') || has_permission('electric_management', 'delete')) : ?>
+                                    <?php if (has_permission('water_management', 'view') || has_permission('water_management', 'delete')) : ?>
                                     <td class="text-center">
-                                        <?php if (has_permission('electric_management', 'view')) : ?>
+                                        <?php if (has_permission('water_management', 'view')) : ?>
                                         <button class="btn btn-sm btn-warning" @click="loadEditDiscount(r.id)">
                                             <i class="fa fa-pencil" style="color:black !important;"></i>
                                         </button>
@@ -207,11 +205,11 @@
     </section>
 
     <!-- Modal -->
-    <div class="modal fade" id="editElectricModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1" aria-hidden="true">
+    <div class="modal fade" id="editWaterModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel1" aria-hidden="true">
         <div class="modal-dialog modal-lg" role="document" style="height:90vh; overflow-y:auto;">
             <div class="modal-content" style="height:100%;">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel1">{{ edit_electric.id == 0 ? '<?= _r('Add', 'เพิ่ม'); ?>' : '<?= _r('Update Record Eletric', 'แก้ไขรายละเอียดการใช้ไฟฟ้า'); ?>' }}</h5>
+                    <h5 class="modal-title" id="exampleModalLabel1">{{ edit_water.id == 0 ? '<?= _r('Add', 'เพิ่ม'); ?>' : '<?= _r('Update Record Eletric', 'แก้ไขรายละเอียดการใช้ไฟฟ้า'); ?>' }}</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -222,11 +220,11 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <small><font color="red">*</font><?= _r('Record Date', 'วันที่จดบันทึก'); ?></small>
-                                <input type="text" class="form-control" style="margin-top:-3px;" v-model="edit_electric.record_date_f" disabled="true">
+                                <input type="text" class="form-control" style="margin-top:-3px;" v-model="edit_water.record_date_f" disabled="true">
                             </div>
                             <div class="col-md-6">
                                 <small><font color="red">*</font><?= _r('Meter ID', 'รหัสมิเตอร์'); ?></small>
-                                <input type="text" class="form-control" style="margin-top:-3px;" v-model="edit_electric.meter_id" disabled="true">
+                                <input type="text" class="form-control" style="margin-top:-3px;" v-model="edit_water.meter_id" disabled="true">
                             </div>
                         </div>
                     </div>
@@ -235,11 +233,11 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <small><font color="red">*</font><?= _r('Project', 'โปรเจกต์'); ?></small>
-                                <input type="text" class="form-control" style="margin-top:-3px;" v-model="<?= _r('edit_electric.project_name_en', 'edit_electric.project_name_th'); ?>" disabled="true">
+                                <input type="text" class="form-control" style="margin-top:-3px;" v-model="<?= _r('edit_water.project_name_en', 'edit_water.project_name_th'); ?>" disabled="true">
                             </div>
                             <div class="col-md-6">
                                 <small><font color="red">*</font><?= _r('Room Type', 'ประเภทห้อง'); ?></small>
-                                <input type="text" class="form-control" style="margin-top:-3px;" v-model="<?= _r('edit_electric.room_type_name_en', 'edit_electric.room_type_name_th'); ?>" disabled="true">
+                                <input type="text" class="form-control" style="margin-top:-3px;" v-model="<?= _r('edit_water.room_type_name_en', 'edit_water.room_type_name_th'); ?>" disabled="true">
                             </div>
                         </div>
                     </div>
@@ -248,7 +246,7 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <small><font color="red">*</font><?= _r('Room Number', 'หมายเลขห้อง'); ?></small>
-                                <input type="text" class="form-control" style="margin-top:-3px;" v-model="<?= _r('edit_electric.room_name_th', 'edit_electric.room_name_en'); ?>" disabled="true">
+                                <input type="text" class="form-control" style="margin-top:-3px;" v-model="<?= _r('edit_water.room_name_th', 'edit_water.room_name_en'); ?>" disabled="true">
                             </div>
                             
                         </div>
@@ -260,12 +258,12 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <small><font color="red">*</font><?= _r('Current Unit', 'หน่วยปัจจุบัน'); ?></small>
-                                <input type="text" class="form-control" style="margin-top:-3px;" v-model="edit_electric.current_unit" >
+                                <input type="text" class="form-control" style="margin-top:-3px;" v-model="edit_water.current_unit" >
                             </div>
 
                             <div class="col-md-6">
                                 <small><font color="red">*</font><?= _r('Previous Unit', 'หน่วยก่อนหน้า'); ?></small>
-                                <input type="text" class="form-control" style="margin-top:-3px;" v-model="edit_electric.previous_unit" disabled="true">
+                                <input type="text" class="form-control" style="margin-top:-3px;" v-model="edit_water.previous_unit" disabled="true">
                             </div>
                         </div>
                     </div>
@@ -274,12 +272,12 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <small><font color="red">*</font><?= _r('Qty', 'จำนวน'); ?></small>
-                                <input type="text" class="form-control" style="margin-top:-3px;" v-model="edit_electric.qty" disabled="true">
+                                <input type="text" class="form-control" style="margin-top:-3px;" v-model="edit_water.qty" disabled="true">
                             </div>
                             
                             <div class="col-md-6">
                                 <small><font color="red">*</font><?= _r('Unit Rate', 'อัตราต่อหน่วย'); ?></small>
-                                <input type="text" class="form-control" style="margin-top:-3px;" v-model="edit_electric.unit_rate" disabled="true">
+                                <input type="text" class="form-control" style="margin-top:-3px;" v-model="edit_water.unit_rate" disabled="true">
                             </div>
                         </div>
                     </div>
@@ -288,7 +286,7 @@
                     <div class="row justify-content-center w-100">
                         <button type="button" class="btn btn-info" style="background-color:#0275d8;" onclick="close_edit()">Close</button>&nbsp;&nbsp;&nbsp;
                         <!-- <button type="submit" class="btn btn-info" style="background-color:#0275d8;" >Save</button> -->
-                        <button type="button" class="btn btn-info" style="background-color:#0275d8;" @click="EditElectricInfo()" >Save</button>
+                        <button type="button" class="btn btn-info" style="background-color:#0275d8;" @click="EditWaterInfo()" >Save</button>
                     </div>
 
                     
@@ -302,7 +300,7 @@
 <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
 <script>
     function close_edit() {
-      $('#editElectricModal').modal('hide');
+      $('#editWaterModal').modal('hide');
     }
 </script>
 
@@ -311,10 +309,10 @@ $(document).ready(function() {
     app = new Vue({
         el: '#vApp',
         data: {
-            menu: "<?= _r('Eletric Using Record Detail', 'บันทึกรายละเอียดการใช้ไฟฟ้า'); ?>",
-            electric_record: <?php echo json_encode($electric_record); ?>,
-            edit_electric: {},
-            electric_info: <?php echo empty($electric_info) ? '{}' : json_encode($electric_info); ?>,
+            menu: "<?= _r('Water Using Record Detail', 'บันทึกรายละเอียดการใช้น้ำ'); ?>",
+            water_record: <?php echo json_encode($water_record); ?>,
+            edit_water: {},
+            water_info: <?php echo empty($water_info) ? '{}' : json_encode($water_info); ?>,
             project_info: <?php echo empty($project_info) ? '{}' : json_encode($project_info); ?>,
             room_type: <?php echo empty($room_type) ? '{}' : json_encode($room_type); ?>,
             room_details: <?php echo empty($room_details) ? '{}' : json_encode($room_details);?>
@@ -325,7 +323,7 @@ $(document).ready(function() {
                 dateFormat: "dd-mm-yy",
                 onSelect: function(d) {
                     const convertedDate = convertDateDash(d);
-                    self.electric_info.record_date = convertedDate;
+                    self.water_info.record_date = convertedDate;
                     self.lastRecordDateChange(convertedDate);
                 }
             });
@@ -333,24 +331,24 @@ $(document).ready(function() {
                 dateFormat: "dd-mm-yy",
                 onSelect: function(d) {
                     const convertedDate = convertDateDash(d);
-                    self.electric_info.record_date = convertedDate;
+                    self.water_info.record_date = convertedDate;
                     self.lastRecordDateChange(convertedDate);
                 }
             });
             if (this.project_info.length > 0) {
-                this.electric_info.id_project_info = this.project_info[0].id_project_info;
-                this.fetchRoomTypes_start(this.electric_info.id_project_info);
+                this.water_info.id_project_info = this.project_info[0].id_project_info;
+                this.fetchRoomTypes_start(this.water_info.id_project_info);
             }
         },
         computed: {
             totalQtyCTValue() {
-                return this.electric_record.reduce((total, r) => {
+                return this.water_record.reduce((total, r) => {
                     const qtyCTValue = (r.ct !== 0 && r.ct !== '') ? (r.qty * r.ct) : r.qty;
                     return total + (qtyCTValue || 0);
                 }, 0).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
             },
             totalAmount() {
-                return this.electric_record.reduce((total, r) => {
+                return this.water_record.reduce((total, r) => {
                     const qtyCTValue = (r.ct !== 0 && r.ct !== '') ? (r.qty * r.ct) : r.qty;
                     const amount = qtyCTValue * r.unit_rate;
                     return total + (amount || 0);
@@ -462,49 +460,12 @@ $(document).ready(function() {
                 });
 
                 XLSX.utils.book_append_sheet(wb, ws, wsName);
-                XLSX.writeFile(wb, 'electric_records.xlsx');
-            },
-            arrayBufferToBase64(buffer) {
-                let binary = '';
-                let bytes = new Uint8Array(buffer);
-                let len = bytes.byteLength;
-                for (let i = 0; i < len; i++) {
-                    binary += String.fromCharCode(bytes[i]);
-                }
-                return window.btoa(binary);
-            },
-            fetchFontAsBase64(fontUrl) {
-                try {
-                    // const response = await fetch(fontUrl);
-                    // if (!response.ok) {
-                    //     throw new Error('Network response was not ok');
-                    // }
-                    // const arrayBuffer = await response.arrayBuffer();
-                    // return this.arrayBufferToBase64(arrayBuffer);
-                } catch (error) {
-                    // console.error('Error fetching font:', error);
-                    // throw error;
-                }
+                XLSX.writeFile(wb, 'water_records.xlsx');
             },
             exportToPDF() {
                 const { jsPDF } = window.jspdf;
                 const doc = new jsPDF({ orientation: 'landscape' });  // ตั้งค่าการจัดหน้าเป็นแนวนอน
                 // const doc = new jsPDF();
-
-                // const fontUrl = '/assets/fonts/THSarabun.ttf';
-                // const fontUrl = '/images/THSarabun.ttf';
-
-                // const base64Font = await this.fetchFontAsBase64(fontUrl);
-
-                // doc.addFileToVFS('THSarabun.ttf', base64Font);
-                // doc.addFont('THSarabun.ttf', 'THSarabun', 'normal');
-                // doc.setFont('THSarabun');
-
-                // โหลดฟอนต์ TH Sarabun
-                // doc.addFileToVFS('THSarabun.ttf',base64Data);
-                // doc.addFont('THSarabun.ttf', 'THSarabun', 'normal');
-                // doc.setFont('THSarabun');
-
                 const table = document.getElementById('roomTable');
 
                 const check_action = "<?php echo (has_permission('electric_management', 'view') || has_permission('electric_management', 'delete')) ? 'true' : 'false'; ?>";
@@ -585,19 +546,19 @@ $(document).ready(function() {
                     headStyles: {halign: 'center',fillColor: [16, 41, 88] }
                 });
 
-                doc.save('electric_records.pdf');
+                doc.save('water_records.pdf');
             },
             fetchRoomTypes_start: function(projectId) {
                 var vm = this;
                 $.ajax({
-                    url: '<?php echo get_record_electric_by_project(); ?>/' + projectId,
+                    url: '<?php echo get_record_water_by_project(); ?>/' + projectId,
                     method: 'GET',
                     success: function(response) {
                         vm.room_type = JSON.parse(response);
-                        // vm.electric_list = null;
-                        // vm.electric_info.id_room_type = null;
-                        // vm.electric_info.id_room_details = null;
-                        // vm.electric_info.electric_list_id = null;
+                        // vm.water_list = null;
+                        // vm.water_info.id_room_type = null;
+                        // vm.water_info.id_room_details = null;
+                        // vm.water_info.water_list_id = null;
                     },
                     error: function() {
                         alert('Failed to fetch room types.');
@@ -607,14 +568,14 @@ $(document).ready(function() {
             fetchRoomTypes: function(projectId) {
                 var vm = this;
                 $.ajax({
-                    url: '<?php echo get_record_electric_by_project(); ?>/' + projectId,
+                    url: '<?php echo get_record_water_by_project(); ?>/' + projectId,
                     method: 'GET',
                     success: function(response) {
                         vm.room_type = JSON.parse(response);
-                        vm.electric_list = null;
-                        vm.electric_info.id_room_type = null;
-                        vm.electric_info.id_room_details = null;
-                        vm.electric_info.electric_list_id = null;
+                        vm.water_list = null;
+                        vm.water_info.id_room_type = null;
+                        vm.water_info.id_room_details = null;
+                        vm.water_info.water_list_id = null;
                         
                         // alert('success');
                     },
@@ -639,13 +600,13 @@ $(document).ready(function() {
             fetchRoomId: function(roomtId) {
                 var vm = this;
                 $.ajax({
-                    url: '<?php echo get_record_electric_by_room_details(); ?>/' + roomtId,
+                    url: '<?php echo get_record_water_by_room_details(); ?>/' + roomtId,
                     method: 'GET',
                     success: function(response) {
                         vm.room_details = JSON.parse(response);
-                        vm.electric_list = null;
-                        vm.electric_info.id_room_details = null;
-                        vm.electric_info.electric_list_id = null;
+                        vm.water_list = null;
+                        vm.water_info.id_room_details = null;
+                        vm.water_info.water_list_id = null;
                         // alert('success');
                     },
                     error: function() {
@@ -656,30 +617,30 @@ $(document).ready(function() {
             fetchRoomNumberId: function(roomtId) {
                 var vm = this;
                 $.ajax({
-                    url: '<?php echo get_record_electric_by_room_number(); ?>/' + roomtId,
+                    url: '<?php echo get_record_water_by_room_number(); ?>/' + roomtId,
                     method: 'GET',
                     success: function(response) {
-                        vm.electric_info.record_date = '';
-                        vm.electric_info.current_unit = '';
+                        vm.water_info.record_date = '';
+                        vm.water_info.current_unit = '';
                         vm.previous_unit = '';
                         vm.current_using = '';
 
-                        // vm.electric_list = JSON.parse(response);
+                        // vm.water_list = JSON.parse(response);
                         var result = JSON.parse(response);
                         var record = result[0];
                         if (result.length>0) {
                             vm.meter_name = record.meter_id;
-                            vm.electric_info.id = record.id;
+                            vm.water_info.id = record.id;
                             vm.meter_id = record.id;
                             vm.fetchLastDate(vm.meter_id);
                         } else {
                             vm.lastRecordDate = 'Meter data not found';
                             vm.meter_name = '';
-                            vm.electric_info.id = null;
+                            vm.water_info.id = null;
                             vm.meter_id = null;
                         }
 
-                        // vm.electric_info.electric_list_id = null;
+                        // vm.water_info.water_list_id = null;
                         // alert('success'+record.meter_id);
                     },
                     error: function() {
@@ -687,25 +648,25 @@ $(document).ready(function() {
                     }
                 });
             },
-            EditElectricInfo: function() {
-                // alert('current_unit:'+this.edit_electric.current_unit);
-                if (!this.edit_electric.current_unit) {
+            EditWaterInfo: function() {
+                // alert('current_unit:'+this.edit_water.current_unit);
+                if (!this.edit_water.current_unit) {
                 // แสดงข้อความแจ้งเตือน
                     alert('กรุณากรอกข้อมูลทั้งหมด');
                     return; // หยุดการทำงานต่อไปถ้ามีค่าว่าง
                 }
 
-                if(this.edit_electric.current_unit <= this.edit_electric.previous_unit){
+                if(this.edit_water.current_unit <= this.edit_water.previous_unit){
                     alert('มิเตอร์ปัจจุบันต้องมากกว่ามิเตอร์ก่อนหน้า');
                     return;
                 }
 
-                $.post("<?php echo edit_record_electric_id(); ?>", {
-                    id: this.edit_electric.id,
-                    current_unit: this.edit_electric.current_unit,
-                    previous_unit: this.edit_electric.previous_unit,
-                    qty: this.edit_electric.qty,
-                    unit_rate: this.edit_electric.unit_rate
+                $.post("<?php echo edit_record_water_id(); ?>", {
+                    id: this.edit_water.id,
+                    current_unit: this.edit_water.current_unit,
+                    previous_unit: this.edit_water.previous_unit,
+                    qty: this.edit_water.qty,
+                    unit_rate: this.edit_water.unit_rate
                 }, function(response) {
                     // alert('success');
                     // ตรวจสอบการส่งค่ากลับ
@@ -713,7 +674,7 @@ $(document).ready(function() {
                         // alert('บันทึกข้อมูลสำเร็จ');
                         alert('บันทึกข้อมูลสำเร็จ');
                         // ทำสิ่งที่ต้องการหลังจากบันทึกข้อมูลสำเร็จ เช่น รีเฟรชหน้าเว็บ
-                        location.href = "<?php echo record_electric_management_url(); ?>";
+                        location.href = "<?php echo record_water_management_url(); ?>";
                     } else {
                         alert('เกิดข้อผิดพลาดในการบันทึกข้อมูล: ' + response.message);
                         // กระทำตามที่ต้องการในกรณีเกิดข้อผิดพลาด
@@ -725,26 +686,26 @@ $(document).ready(function() {
             },
             loadEditDiscount: function(id) {
                 let self = this;
-                this.electric_record.forEach((v) => {
+                this.water_record.forEach((v) => {
                     if (v.id == id) {
-                        self.edit_electric = JSON.parse(JSON.stringify(v));
+                        self.edit_water = JSON.parse(JSON.stringify(v));
                     }
                 });
-                $('#editElectricModal').modal('show');
+                $('#editWaterModal').modal('show');
             },
             editRoomType: function(id) {
-                <?php if (has_permission('electric_management', 'view')) : ?>
-                location.href = '<?php echo edit_electric_url(); ?>'+ id;
+                <?php if (has_permission('water_management', 'view')) : ?>
+                location.href = '<?php echo edit_water_url(); ?>'+ id;
                 <?php endif; ?>
             },
             deleteRoomType: function(id) {
-                if (confirm('Delete this Electric ?')) {
+                if (confirm('Delete this Water ?')) {
                     let param = {'id': id};
-                    $.post("<?php echo delete_electric_url(); ?>", param, function(res) {
+                    $.post("<?php echo delete_water_url(); ?>", param, function(res) {
                         if (res.result == 'false') {
                             alert(res.message);
                         } else {
-                            alert('Delete Electric Success');
+                            alert('Delete Water Success');
                             location.reload();
                         }
                     });

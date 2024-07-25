@@ -214,7 +214,17 @@
 
 	// Setting => Unit Rate
 	function unit_management_url() {
-		return site_url() .'unit/unit_management';
+		return site_url() .'unit/unit_management'; 
+	}
+
+	function edit_unit_id() {
+		return site_url() .'unit/unit_management'; 
+	}
+	function edit_setting_url() {
+		return site_url() .'unit/unit_management'; 
+	}
+	function delete_setting_url() {
+		return site_url() .'unit/unit_management'; 
 	}
 
 	// Setting => internet
@@ -275,8 +285,26 @@
 	function save_record_water_url() {
 		return site_url() .'record_water/save_record_water';
 	}
+	function edit_record_water_id($id = '') {
+		return site_url() .'record_water/edit_record_water_id/'. $id;
+	}
 	function edit_record_water_url($id = '') {
 		return site_url() .'record_water/edit_record_water/'. $id;
+	}
+	function get_record_water_by_project() {
+		return site_url() .'record_water/get_water_by_project/';
+	}
+	function get_record_water_by_room_details() {
+		return site_url() .'record_water/get_record_water_by_room_details/';
+	}
+	function get_record_water_by_room_number() {
+		return site_url() .'record_water/get_record_water_by_room_number/';
+	}
+	function get_record_water_by_meter() {
+		return site_url() .'record_water/get_record_water_by_meter/';
+	}
+	function get_record_water_by_meter_date() {
+		return site_url() .'record_water/get_record_water_by_meter_date/';
 	}
 
 	// Using Record => electric
