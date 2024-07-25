@@ -217,9 +217,14 @@
 		return site_url() .'unit/unit_management'; 
 	}
 
+	function edit_unit_url($id = '') {
+		return site_url() .'unit/edit_unit/'.$id;
+	}
+
 	function edit_unit_id() {
 		return site_url() .'unit/unit_management'; 
 	}
+
 	function edit_setting_url() {
 		return site_url() .'unit/unit_management'; 
 	}
