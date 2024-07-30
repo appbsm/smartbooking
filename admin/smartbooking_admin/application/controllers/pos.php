@@ -44,6 +44,7 @@ class Pos extends MY_Controller
 			}
 			$tmp['id_discount'] = '0';
 
+			$tmp['type_customer'] = 'personal';
 			$this->_data['guest'] = $tmp;
 		}
 

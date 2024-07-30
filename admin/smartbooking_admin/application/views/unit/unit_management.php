@@ -18,7 +18,18 @@
             
 
                 <div class="col-sm-6 d-flex justify-content-end align-items-center">
+
                     <div class="dropdown mr-2">
+                        <?php if (has_permission('unit_management', 'edit')) : ?>
+                        <a href="<?php echo edit_unit_url(); ?>" style="color:white;">
+                            <button class="btn" style="width:170px; height:30px; line-height:9px; background-color:#0275d8; color:white;">
+                                <?= _r('Create', 'สร้าง'); ?>
+                            </button>
+                        </a>
+                        <?php endif; ?>
+                    </div>
+
+                    <div class="dropdown ">
                         <button class="btn btn-success dropdown-toggle" style="width:170px; height:30px; line-height:9px; background-color:#1aac75; color:white;" data-toggle="dropdown">
                             <?= _r('Export Data', 'ส่งออกข้อมูล'); ?>
                         </button>
@@ -35,14 +46,7 @@
                             </li> 
                         </ul>
                     </div>
-
-                    <?php if (has_permission('unit_management', 'edit')) : ?>
-                        <a href="<?php echo edit_unit_url(); ?>" style="color:white;">
-                            <button class="btn" style="width:170px; height:30px; line-height:9px; background-color:#0275d8; color:white;">
-                                <?= _r('Create', 'สร้าง'); ?>
-                            </button>
-                        </a>
-                    <?php endif; ?>
+                   
                 </div>
 
             </div>    
@@ -72,7 +76,6 @@
                                     <th style="width:80px;"><?= _r('Action', 'ดำเนินการ'); ?></th>
                                     <?php endif; ?>
 
-
                                 </tr>
                             </thead>
 
@@ -92,14 +95,15 @@
                                    
                                     <?php if (has_permission('unit_management', 'view') || has_permission('unit_management', 'delete')) : ?>
                                     <td class="text-center">
+
                                         <?php if (has_permission('unit_management', 'view')) : ?>
-                                        <button class="btn btn-sm btn-warning" @click="loadEditDiscount(r.id)">
+                                        <button class="btn btn-sm btn-warning" @click="editUnit(r.id)">
                                             <i class="fa fa-pencil" style="color:black !important;"></i>
                                         </button>
                                         <?php endif; ?>
 
                                         <?php if (has_permission('unit_management', 'delete')) : ?>
-                                        <button class="btn btn-sm btn-danger" style="padding: 4px 11px 4px 11px;" @click="deleteRoomType(r.id)">
+                                        <button class="btn btn-sm btn-danger" style="padding: 4px 11px 4px 11px;" @click="deleteSetting(r.id)">
                                             <i class="fa fa-times"></i>
                                         </button>
                                         <?php endif; ?>
@@ -363,21 +367,12 @@ $(document).ready(function() {
                     alert('เกิดข้อผิดพลาดในการเชื่อมต่อกับเซิร์ฟเวอร์');
                 });
             },
-            loadEditDiscount: function(id) {
-                let self = this;
-                this.setting_unit_rate.forEach((v) => {
-                    if (v.id == id) {
-                        self.edit_setting = JSON.parse(JSON.stringify(v));
-                    }
-                });
-                $('#editUnitModal').modal('show');
-            },
-            editRoomType: function(id) {
+            editUnit: function(id) {
                 <?php if (has_permission('unit_management', 'view')) : ?>
-                location.href = '<?php echo edit_setting_url(); ?>'+ id;
+                location.href = '<?php echo edit_unit_url(); ?>'+ id;
                 <?php endif; ?>
             },
-            deleteRoomType: function(id) {
+            deleteSetting: function(id) {
                 if (confirm('Delete this Setting Unit ?')) {
                     let param = {'id': id};
                     $.post("<?php echo delete_setting_url(); ?>", param, function(res) {

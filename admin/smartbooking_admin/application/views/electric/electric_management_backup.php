@@ -15,6 +15,15 @@
                 <div class="col-sm-6">
                     <h1>{{ menu }}</h1>
                 </div>
+                <!-- <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item"><?= _r('Setting', 'การตั้งค่า'); ?></li>
+                        <li class="breadcrumb-item">
+                            <a href="<?php echo electric_management_url(); ?>">{{ menu }}</a>
+                        </li>
+                    </ol>
+                </div> -->
+
                 <div class="col-sm-6 d-flex justify-content-end align-items-center">
                     <div class="dropdown mr-2">
                         <button class="btn btn-success dropdown-toggle" style="width:170px; height:30px; line-height:9px; background-color:#1aac75; color:white;" data-toggle="dropdown">
@@ -34,8 +43,8 @@
                         </ul>
                     </div>
 
-                <?php if (has_permission('internet_management', 'edit')) : ?>
-                    <a href="<?php echo edit_internet_url(); ?>" style="color:white;">
+                <?php if (has_permission('electric_management', 'edit')) : ?>
+                    <a href="<?php echo edit_electric_url(); ?>" style="color:white;">
                         <button class="btn" style="width:170px; height:30px; line-height:9px; background-color:#0275d8; color:white;">
                             <?= _r('Create', 'สร้าง'); ?>
                         </button>
@@ -52,13 +61,7 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12">
-                    <?php //if (has_permission('internet_management', 'edit')) : ?>
-                    <!-- <a href="<?php echo edit_internet_url(); ?>" style="color:white;">
-                        <button class="btn" style="float:right; width:170px; height:30px; line-height:9px; background-color:#0275d8; color:white; margin-bottom:20px;">
-                            <?= _r('Create', 'สร้าง'); ?>
-                        </button>
-                    </a> -->
-                    <?php //endif; ?>
+
                     <div style="width:100%; overflow:auto;">
                         <table id="roomTable" class="display" style="width:99%;">
 
@@ -69,10 +72,10 @@
                                     <th style="width:60px;"><?= _r('Rooms type', 'ห้อง'); ?></th>
                                     <th style="width:60px;"><?= _r('Room Number', 'หมายเลขห้อง'); ?></th>
                                     <th style="width:80px;"><?= _r('Meter ID', 'รหัสมิเตอร์'); ?></th>
-                                    <th style="width:80px;"><?= _r('Unit No', 'หมายเลขหน่วย'); ?></th>
-                                    <th style="width:60px;"><?= _r('ID', 'ID'); ?></th>
+                                    <th style="width:60px;"><?= _r('Serial No', 'หมายเลขซีเรียล'); ?></th>
                                     <!-- <th style="width:60px;"><?= _r('Status', 'สถานะ'); ?></th> -->
-                                    <?php if (has_permission('internet_management', 'view') || has_permission('internet_management', 'delete')) : ?>
+
+                                    <?php if (has_permission('electric_management', 'view') || has_permission('electric_management', 'delete')) : ?>
                                     <th style="width:80px;"><?= _r('Action', 'ดำเนินการ'); ?></th>
                                     <?php endif; ?>
 
@@ -80,7 +83,7 @@
                             </thead>
 
                             <tbody>
-                                <tr v-for="r in internet_list">
+                                <tr v-for="r in electric_list">
                                     <td class="text-center">{{ r.run_id }}
                                         <!-- <img :src="r.image" style="width:100%;"> -->
                                     </td>
@@ -88,18 +91,21 @@
                                     <td>{{ <?= _r('r.room_type_name_en', 'r.room_type_name_th'); ?> }}</td>
                                     <td>{{ <?= _r('r.room_name_en', 'r.room_name_th'); ?> }}</td>
                                     <td class="text-center">{{ r.meter_id }}</td>
-                                    <td class="text-center">{{ r.unit_no }}</td>
-                                    <td class="text-center">{{ r.id_internet }}</td>
+                                    <td class="text-center">{{ r.serial_no }}</td>
                                     
-                                    <?php if (has_permission('internet_management', 'view') || has_permission('internet_management', 'delete')) : ?>
+                                    <!-- <td class="text-center">
+                                        <span class="badge badge-success" v-if="r.is_active == 1">Active</span>
+                                        <span class="badge badge-danger" v-if="r.is_active == 0">Inactive</span>
+                                    </td> -->
+
+                                    <?php if (has_permission('electric_management', 'view') || has_permission('electric_management', 'delete')) : ?>
                                     <td class="text-center">
-                                        <?php if (has_permission('internet_management', 'view')) : ?>
+                                        <?php if (has_permission('electric_management', 'view')) : ?>
                                         <button class="btn btn-sm btn-warning" @click="editRoomType(r.id)">
                                             <i class="fa fa-pencil" style="color:black !important;"></i>
                                         </button>
                                         <?php endif; ?>
-                                        
-                                        <?php if (has_permission('internet_management', 'delete')) : ?>
+                                        <?php if (has_permission('electric_management', 'delete')) : ?>
                                         <button class="btn btn-sm btn-danger" style="padding: 4px 11px 4px 11px;" @click="deleteRoomType(r.id)">
                                             <i class="fa fa-times"></i>
                                         </button>
@@ -123,8 +129,8 @@ $(document).ready(function() {
     app = new Vue({
         el: '#vApp',
         data: {
-            menu: "<?= _r('Internet List', 'รายการอินเทอร์เน็ต'); ?>",
-            internet_list: <?php echo json_encode($internet_list); ?>
+            menu: "<?= _r('Electric Meter List', 'รายการมิเตอร์ไฟฟ้า'); ?>",
+            electric_list: <?php echo json_encode($electric_list); ?>
         },
         mounted() {
             $("#roomTable").DataTable();
@@ -321,18 +327,18 @@ $(document).ready(function() {
                 doc.save('electric_records.pdf');
             },
             editRoomType: function(id) {
-                <?php if (has_permission('internet_management', 'view')) : ?>
-                location.href = '<?php echo edit_internet_url(); ?>'+ id;
+                <?php if (has_permission('electric_management', 'view')) : ?>
+                location.href = '<?php echo edit_electric_url(); ?>'+ id;
                 <?php endif; ?>
             },
             deleteRoomType: function(id) {
-                if (confirm('Delete this Room Type ?')) {
+                if (confirm('Delete this Electric ?')) {
                     let param = {'id': id};
-                    $.post("<?php echo delete_internet_url(); ?>", param, function(res) {
+                    $.post("<?php echo delete_electric_url(); ?>", param, function(res) {
                         if (res.result == 'false') {
                             alert(res.message);
                         } else {
-                            alert('Delete Internet Success');
+                            alert('Delete Electric Success');
                             location.reload();
                         }
                     });

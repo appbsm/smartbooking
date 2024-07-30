@@ -467,28 +467,28 @@
                                      <li class="nav-item">
                                         <a href="<?php echo electric_management_url(); ?>" class="nav-link">
                                             <i class="fa fa-gear nav-icon"></i>
-                                            <p><?= _r('Electric Meter List', 'รายการมิเตอร์ไฟฟ้า'); ?></p>
+                                            <p><?= _r('Utilities Setup', 'ตั้งค่าสาธารณูปโภค'); ?></p>
                                         </a>
                                     </li>
                                     <?php endif; ?>
 
-                                    <?php if (has_permission('water_management', 'view')) : ?>
-                                    <li class="nav-item">
+                                    <?php //if (has_permission('water_management', 'view')) : ?>
+                                    <!-- <li class="nav-item">
                                         <a href="<?php echo water_management_url(); ?>" class="nav-link">
                                             <i class="fa fa-gear nav-icon"></i>
                                             <p><?= _r('Water Meter List', 'รายการมิเตอร์น้ำ'); ?></p>
                                         </a>
-                                    </li>
-                                    <?php endif; ?>
+                                    </li> -->
+                                    <?php //endif; ?>
 
-                                    <?php if (has_permission('internet_management', 'view')) : ?>
-                                    <li class="nav-item">
+                                    <?php //if (has_permission('internet_management', 'view')) : ?>
+                                    <!-- <li class="nav-item">
                                         <a href="<?php echo internet_management_url(); ?>" class="nav-link">
                                             <i class="fa fa-gear nav-icon"></i>
                                             <p><?= _r('Internet Meter List', 'รายการมิเตอร์อินเตอร์เน็ต'); ?></p>
                                         </a>
-                                    </li>
-                                    <?php endif; ?>
+                                    </li> -->
+                                    <?php //endif; ?>
 
                                     <?php if (has_permission('unit_management', 'view')) : ?>
                                     <li class="nav-item">
@@ -532,11 +532,21 @@
                                             </a>
                                         </li>
                                     <?php endif; ?>
+
                                     <?php if (has_permission('edit_email_setting', 'view')) : ?>
                                         <li class="nav-item">
                                             <a href="<?php echo edit_email_setting_url(); ?>" class="nav-link">
                                                 <i class="fa fa-envelope nav-icon"></i>
                                                 <p><?= _r('Email Setting', 'ตั้งค่าอีเมล'); ?></p>
+                                            </a>
+                                        </li>
+                                    <?php endif; ?>
+
+                                    <?php if (has_permission('edit_email_setting', 'view')) : ?>
+                                        <li class="nav-item">
+                                            <a href="<?php echo edit_document_setting_url(); ?>" class="nav-link">
+                                                <i class="fa fa-envelope nav-icon"></i>
+                                                <p><?= _r('Documents Setting', 'ตั้งค่าเอกสาร'); ?></p>
                                             </a>
                                         </li>
                                     <?php endif; ?>

@@ -286,7 +286,7 @@
 
                     <br>
                     <div class="row justify-content-center w-100">
-                        <button type="button" class="btn btn-info" style="background-color:#0275d8;" onclick="close_edit()">Close</button>&nbsp;&nbsp;&nbsp;
+                        <button type="button" class="btn btn-secondary"  onclick="close_edit()">Close</button>&nbsp;&nbsp;&nbsp;
                         <!-- <button type="submit" class="btn btn-info" style="background-color:#0275d8;" >Save</button> -->
                         <button type="button" class="btn btn-info" style="background-color:#0275d8;" @click="EditElectricInfo()" >Save</button>
                     </div>

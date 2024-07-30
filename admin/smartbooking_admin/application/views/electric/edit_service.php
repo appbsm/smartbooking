@@ -23,9 +23,7 @@
                             <?php //echo internet_management_url(); ?>
                             <a href="<?php echo electric_management_url(); ?>?tab=3"><?= _r('internet Meter List', 'รายการมิเตอร์ไฟฟ้า'); ?></a>
                         </li>
-                        <!-- <li class="breadcrumb-item">
-                            <a href="<?php echo edit_internet_url($internet_info['id']); ?>">{{ menu }}<?php echo $internet_info['id'] ? (' ('. $internet_info['serial_no'] .')') : ''; ?></a>
-                        </li> -->
+
                     </ol>
                 </div>
 
@@ -36,75 +34,16 @@
     <section class="content">
         <div class="container-fluid">
             <div class="row">
-                <div class="col-md-12" style="overflow-x:auto;">
-                    <span  >
-                        <!-- <b>{{ m }}</b> -->
-                    </span>
-                </div>
-
-
                 <div class="col-md-12" >
-                    <div class="col-md-11" style="margin-top:50px;">
-                         <div class="row">
-                            <div class="col-md-6">
-                                <small><font color="red">*</font> <?= _r('Project', 'โปรเจกต์'); ?></small>
-                                <select class="form-control" v-model="internet_info.id_project_info">
-                                    <option v-for="p in project_info" :value="p.id_project_info">{{ <?= _r('p.project_name_en', 'p.project_name_th'); ?> }}</option>
-                                </select>
-                            </div>
-
-                            <div class="col-md-6">
-                                <small><font color="red">*</font> <?= _r('Room Type', 'Room Type'); ?></small>
-                                <select class="form-control" v-model="internet_info.id_room_type" @change="handleRoomTypeChange">
-                                    <option v-for="r in room_type" :value="r.id_room_type">{{ <?= _r('r.room_type_name_en', 'r.room_type_name_th'); ?> }}</option>
-                                </select>
-                            </div>
-                        </div>
 
                         <div class="row">
-                           <div class="col-md-6">
-                                <small><font color="red">*</font><?= _r('Room Number', 'หมายเลขห้อง'); ?></small>
-                                <select class="form-control" v-model="internet_info.id_room_details">
-                                    <option v-for="r in room_details" :value="r.id_room_details">{{ <?= _r('r.room_name_en', 'r.room_name_th'); ?> }}</option>
-                                </select>
-                            </div>
-                            <div class="col-md-6">
-                                <small><font color="red">*</font> <?= _r('Unit No', 'หมายเลขหน่วย'); ?></small>
-                                <input type="text" class="form-control" v-model="internet_info.unit_no">
+                            <div class="col-md-3 mb-3" v-for="r in room_type" :key="r.id_room_type" >
+                              <button @click="editService(r.id_room_type)" class="btn btn-light btn-block custom-btn" style="background-color: white;box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);height: 150px;" data-toggle="modal" data-target="#addServiceModal" >
+                                <img src='<?php echo site_url(); ?>images/<? if($service_info[0]['type']=='service'){echo 'service.png';}else{ echo 'discount.png';} ?>' alt="Image" class="img-fluid mb-2" width="50" >
+                                <div class="text-center">{{r.room_type_name_en}}</div>
+                              </button>
                             </div>
                         </div>
-
-                        <div class="row">
-                            <div class="col-md-6">
-                                <small><?= _r('ID', 'ID'); ?></small>
-                                <input type="text" class="form-control" v-model="internet_info.id_internet">
-                            </div>
-                        </div>
-
-                        <div class="row">
-                            <div class="col-md-6">
-                                <small><font color="red">*</font> <?= _r('Installation Date', 'เริ่มวันที่เรียกเก็บเงิน'); ?></small>
-                                <input type="text" id="installation_date_modal" class="form-control" style="margin-top:-3px;" v-model="internet_info.installation_date"  >
-
-                            </div>
-                            <div class="col-md-6">
-                                <small><font color="red">*</font> <?= _r('Start Bill Date', 'วันที่ติดตั้ง'); ?></small>
-                                <input type="text" id="start_bill_modal" class="form-control" style="margin-top:-3px;" v-model="internet_info.start_bill_date" :value="internet_info.start_bill_date" @change="logEndDate" >
-                            </div>
-                        </div>
-
-                        <!-- <div class="row">
-                            <div class="col-md-6">
-                                <small><font color="red">*</font> <?= _r('Start Date', 'วันเริ่มต้น'); ?></small>
-                                <input type="text" id="start_date_seasonal_price_modal" class="form-control" style="margin-top:-3px;" v-model="internet_info.start_date"  >
-
-                            </div>
-
-                            <div class="col-md-6">
-                                <small><font color="red">*</font> <?= _r('End Date', 'วันสิ้นสุด'); ?></small>
-                                <input type="text" id="end_date_seasonal_price_modal" class="form-control" style="margin-top:-3px;" v-model="internet_info.end_date" :value="internet_info.end_date" @change="logEndDate" >
-                            </div>
-                        </div> -->
 
                         <?php if (has_permission('room_management', 'edit')) : ?>
                         <div class="row" style="margin-top:15px">
@@ -113,13 +52,44 @@
                             </div>
                         </div>
                         <?php endif; ?>
-                       
-                    </div>
 
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- Modal -->
+    <div class="modal fade" id="addServiceModal" tabindex="-1" role="dialog" aria-labelledby="addServiceModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h5 class="modal-title" id="addServiceModalLabel"><?= _r('Add a new service', 'เพิ่มค่าบริการใหม่'); ?></h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+
+                <div class="modal-body">
+                        <div class="form-group">
+                            <label for="serviceName"><?= _r('Service name', 'ชื่อบริการ'); ?></label>
+                            <input type="text" class="form-control" id="serviceName" placeholder="<?= _r('Please enter service name', 'กรุณากรอกชื่อบริการ'); ?>" v-model="service_info.service_name_th">
+                        </div>
+                        <div class="form-group">
+                            <label for="serviceNameEN"><?= _r('Service name (English)', 'ชื่อบริการ (ภาษาอังกฤษ)'); ?></label>
+                            <input type="text" class="form-control" id="serviceNameEN" placeholder="<?= _r('Please enter service name in English', 'กรุณากรอกชื่อบริการภาษาอังกฤษ'); ?>" v-model="service_info.service_name_en" >
+                        </div>
+                </div>
+
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal"><?= _r('Close', 'ปิด'); ?></button>
+                    <button type="button" class="btn btn-primary" @click="saveService('service')" ><?= _r('Save', 'บันทึก'); ?></button>
+                </div>
+
+            </div>
+        </div>
+    </div>    
+    
 
 </div>
 
@@ -128,17 +98,15 @@ $(document).ready(function() {
     app = new Vue({
         el: '#vApp',
         data: {
-            menu: '<?php echo empty($internet_info['id']) ? _r("Add internet Meter", "เพิ่ม internet Meter") : _r("Update internet Meter", "แก้ไข internet Meter"); ?>',
-            internet_info: <?php echo empty($internet_info) ? '{}' : json_encode($internet_info); ?>,
-            project_info: <?php echo empty($project_info) ? '{}' : json_encode($project_info); ?>,
+            menu: '<?php echo empty($service_info[0]['id']) ? _r("Add Service Charge", "เพิ่ม Service Charge") : _r("Update Service Charge", "แก้ไข Service Charge"); ?>',
+            service_info: <?php echo empty($internet_info) ? '{}' : json_encode($internet_info); ?>,
             room_type: <?php echo empty($room_type) ? '{}' : json_encode($room_type); ?>,
-            tmp_amenity: {},
-            room_details: <?php echo empty($room_details) ? '{}' : json_encode($room_details); ?>
+            service_detail: <?php echo empty($service_detail) ? '{}' : json_encode($service_detail); ?>
         },
         watch: {
-            'internet_info.id_project_info': function(newVal) {
-                this.fetchRoomTypes(newVal);
-            }
+            // 'internet_info.id_project_info': function(newVal) {
+            //     this.fetchRoomTypes(newVal);
+            // }
         },
         mounted() {
             let self = this;

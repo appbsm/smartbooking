@@ -14,7 +14,6 @@ class Electric extends MY_Controller {
 			header("Location: ". home_url());
 		}
 
-		///////////// electric
 		$this->db->select('el.*, p.project_name_en, p.project_name_th,r.room_type_name_en,r.room_type_name_th,rd.room_name_en,rd.room_name_th');
 		$this->db->from('electric_list el');
 		$this->db->join('project_info p', 'el.id_project_info = p.id_project_info', 'left');
@@ -29,130 +28,6 @@ class Electric extends MY_Controller {
 		}
 
 		$this->_data['electric_list'] = $electric_list;
-
-		///////////// water
-		$this->db->select('wl.*, p.project_name_en, p.project_name_th,r.room_type_name_en,r.room_type_name_th,,rd.room_name_en,rd.room_name_th');
-		$this->db->from('water_list wl');
-		$this->db->join('project_info p', 'wl.id_project_info = p.id_project_info','left');
-		$this->db->join('room_type r', 'wl.id_room_type = r.id_room_type','left');
-		$this->db->join('room_details rd', 'wl.id_room_details = rd.id_room_details','left');
-		$water_list = $this->db->get()->result_array();
-		
-		$run_id=1;
-		foreach ($water_list as $i => $r) {
-			$water_list[$i]['run_id'] = $run_id;
-			$run_id++;
-		}
-
-		$this->_data['water_list'] = $water_list;
-
-		///////////// internet
-		$this->db->select('il.*, p.project_name_en, p.project_name_th,r.room_type_name_en,r.room_type_name_th,rd.room_name_en,rd.room_name_th');
-		$this->db->from('internet_list il');
-		$this->db->join('project_info p', 'il.id_project_info = p.id_project_info','left');
-		$this->db->join('room_type r', 'il.id_room_type = r.id_room_type','left');
-		$this->db->join('room_details rd', 'il.id_room_details = rd.id_room_details','left');
-		$internet_list = $this->db->get()->result_array();
-		
-		$run_id=1;
-		foreach ($internet_list as $i => $r) {
-			$internet_list[$i]['run_id'] = $run_id;
-			$run_id++;
-		}
-
-		$this->_data['internet_list'] = $internet_list;
-
-
-		///////////// service 
-		$this->db->select('*');
-		$this->db->from('service_charge');
-		$this->db->where('type','service');
-		$service_charge = $this->db->get()->result_array();
-		$this->_data['service_charge_info'] = $service_charge;
-
-		$this->db->select('*');
-		$this->db->from('service_charge');
-		$this->db->where('type','discount');
-		$service_charge = $this->db->get()->result_array();
-		$this->_data['service_charge_info2'] = $service_charge;
-
-		$fields = $this->db->list_fields('service_charge');
-		$tmp = array();
-		foreach ($fields as $field) {
-			$tmp[$field] = '';
-		}
-		// $this->_data['service_charge'] = $tmp;
-		$this->_data['service_charge'] = $tmp;
-
-		$this->render();
-	}
-
-	public function save_service(){
-		header('Content-Type: application/json; charset=utf-8');
-		$ret = array('result' => 'false', 'message' => '');
-
-		$data = $this->input->post();
-
-		if (empty($_POST['service_name_th'])) {
-			echo json_encode(array('result' => 'false', 'message' => 'ข้อมูลไม่ครบถ้วน'));
-        	return;
-		}
-
-		// if (empty($data['service_name_th'])) {
-        // 	echo json_encode(array('result' => 'false', 'message' => 'ข้อมูลไม่ครบถ้วน'));
-        // 	return;
-    	// }
-
-    	unset($_POST['id']);
-    	unset($_POST['update_by']);
-		unset($_POST['create_by']);
-		unset($_POST['update_date']);
-		$_POST['create_date'] = date('Y-m-d H:i:s');
-		$_POST['id_project_info'] = 1;
-		$this->db->insert('service_charge',$_POST);
-		$ret['result'] = 'true';
-
-		echo json_encode($ret);
-	}
-
-	public function edit_service($id = ''){
-		if (!has_permission('electric_management', 'view')) {
-			header("Location: ". home_url());
-		}
-
-		$this->db->where('id',$id);
-		$service_info = $this->db->get('service_charge')->result_array();
-		$this->_data['service_info'] = $service_info;
-
-		$room_type = $this->db->get('room_type')->result_array();
-		$this->_data['room_type'] = $room_type;
-
-		$fields = $this->db->list_fields('service_detail');
-		$tmp = array();
-		foreach ($fields as $field) {
-			$tmp[$field] = '';
-		}
-		$this->_data['service_detail'] = $tmp;
-
-		// $this->db->select('rt.*, sc.*, res.*');
-		// $this->db->from('room_type rt');
-		// $this->db->join('rela_service_to_room res', 'res.id_room = rt.id_room_type', 'left');
-		// $this->db->join('service_charge sc', 'sc.id = res.id_service', 'left');
-		// $this->db->where('sc.id',$id);
-		// $this->db->or_where('sc.id IS NULL');  // เพื่อให้รวมข้อมูลที่ไม่มี `sc.id` ในเงื่อนไขนี้
-		// $service_charge_info = $this->db->get();
-		// $this->_data['service_charge_info'] = $service_charge_info;
-		
-		if (count($service_info) > 0) {
-			// $this->db->select('*');
-			// $this->db->from('service_charge');
-			// $service_charge = $this->db->get()->result_array();
-			// $this->_data['service_charge_info'] = $service_charge;
-
-			
-		}else{
-
-		}
 
 		$this->render();
 	}

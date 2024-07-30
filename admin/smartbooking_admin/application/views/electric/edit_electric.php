@@ -20,7 +20,7 @@
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><?= _r('Setting', 'การตั้งค่า'); ?></li>
                         <li class="breadcrumb-item">
-                            <a href="<?php echo electric_management_url(); ?>"><?= _r('Electric Meter List', 'รายการมิเตอร์ไฟฟ้า'); ?></a>
+                            <a href="<?php echo electric_management_url(); ?>?tab=1"><?= _r('Electric Meter List', 'รายการมิเตอร์ไฟฟ้า'); ?></a>
                         </li>
                         <!-- <li class="breadcrumb-item">
                             <a href="<?php echo edit_electric_url($electric_info['id']); ?>">{{ menu }}<?php echo $electric_info['id'] ? (' ('. $electric_info['serial_no'] .')') : ''; ?></a>
@@ -44,7 +44,7 @@
 
                 <div class="col-md-12" >
                     <div class="col-md-11" style="margin-top:50px;">
-                         <div class="row">
+                        <div class="row">
                             <div class="col-md-6">
                                 <small><font color="red">*</font> <?= _r('Project', 'โปรเจกต์'); ?></small>
                                 <select class="form-control" v-model="electric_info.id_project_info">

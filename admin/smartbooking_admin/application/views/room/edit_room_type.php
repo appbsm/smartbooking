@@ -380,11 +380,30 @@
                                 <small><font color="red">*</font> <?= _r('Display Sequence', 'ลำดับการแสดง'); ?></small>
                                 <input type="number" class="form-control" v-model="room_type_info.display_sequence">
                             </div>
+                            
+                        </div>
+
+                        <div class="row" style="margin-top:10px">
                             <div class="col-md-6">
-                                <small><font color="red">*</font> <?= _r('Default Rate', 'ราคาห้อง'); ?></small>
+                                <small><font color="red">*</font> <?= _r('Daily Price(Default Rate)', 'ราคารายวัน(อัตราเริ่มต้น)'); ?></small>
                                 <input type="number" class="form-control" v-model="room_type_info.default_rate">
                             </div>
+
                         </div>
+
+                        <div class="row" style="margin-top:10px">
+                            <div class="col-md-6">
+                                <small><font color="red">*</font> <?= _r('Monthly Price', 'ราคารายเดือน'); ?></small>
+                                <input type="number" class="form-control" v-model="room_type_info.default_rate_month">
+                            </div>
+
+                            <div class="col-md-6">
+                                <small><font color="red">*</font> <?= _r('Furniture Cost','ค่าเช่าเฟอร์นิเจอร์'); ?></small>
+                                <input type="number" class="form-control" v-model="room_type_info.furniture_rate">
+                            </div>
+                            
+                        </div>
+
 
                         <div class="row" style="margin-top:10px">
                             <div class="col-md-4">

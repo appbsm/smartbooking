@@ -20,7 +20,8 @@
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><?= _r('Setting', 'การตั้งค่า'); ?></li>
                         <li class="breadcrumb-item">
-                            <a href="<?php echo water_management_url(); ?>"><?= _r('Water Meter List', 'รายการมิเตอร์ไฟฟ้า'); ?></a>
+                            <!-- <a href="<?php //echo water_management_url(); ?>"><?= _r('Water Meter List', 'รายการมิเตอร์ไฟฟ้า'); ?></a> -->
+                            <a href="<?php echo electric_management_url(); ?>?tab=2"><?= _r('Electric Meter List', 'รายการมิเตอร์ไฟฟ้า'); ?></a>
                         </li>
                         <!-- <li class="breadcrumb-item">
                             <a href="<?php echo edit_water_url($water_info['id']); ?>">{{ menu }}<?php echo $water_info['id'] ? (' ('. $water_info['serial_no'] .')') : ''; ?></a>

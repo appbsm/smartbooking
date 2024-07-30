@@ -172,7 +172,13 @@
                                 <small><font color="red">*</font> <?= _r('Fullname', 'Fullname'); ?></small>
                                 <input type="text" class="form-control" v-model="guest.name">
                             </div>
-                            
+                            <div class="col-md-6">
+                                <small><?= _r('Customer type', 'ประเภทบุคคล'); ?></small>
+                                <select class="form-control" v-model="guest.type_customer">
+                                    <option value="personal" ><?= _r('Personal', 'บุคคลธรรมดา'); ?></option>
+                                    <option value="corporate"><?= _r('Corporate', 'ลูกค้าองค์กร'); ?></option>
+                                </select>
+                            </div>
                         </div>
                         <div class="row" style="margin-top:10px">
                             <div class="col-md-6">
@@ -211,7 +217,7 @@
                                 <input type="text" id="birthday" class="form-control" :value="convertDateSlash(guest.birthday)">
                             </div>
                             <div class="col-md-6">
-                                <!--<small><font color="red">*</font> <?= _r('Gender', 'เพศ'); ?></small>-->
+                                <small><!--<font color="red">*</font>--> <?= _r('Gender', 'เพศ'); ?></small>
                                 <select class="form-control" v-model="guest.gender">
                                     <option value="male"><?= _r('Male', 'ชาย'); ?></option>
                                     <option value="female"><?= _r('Female', 'หญิง'); ?></option>

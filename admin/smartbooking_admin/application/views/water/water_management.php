@@ -15,14 +15,6 @@
                 <div class="col-sm-6">
                     <h1>{{ menu }}</h1>
                 </div>
-                <!-- <div class="col-sm-6">
-                    <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><?= _r('Setting', 'การตั้งค่า'); ?></li>
-                        <li class="breadcrumb-item">
-                            <a href="<?php echo water_management_url(); ?>">{{ menu }}</a>
-                        </li>
-                    </ol>
-                </div> -->
 
                 <div class="col-sm-6 d-flex justify-content-end align-items-center">
                     <div class="dropdown mr-2">

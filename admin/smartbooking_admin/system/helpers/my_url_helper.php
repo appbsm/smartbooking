@@ -213,6 +213,15 @@
 	}
 
 	// Setting => Unit Rate
+	function save_service_url() {
+		return site_url() .'electric/save_service';
+	}
+	function edit_service_url() {
+		return site_url() .'electric/edit_service';
+	}
+
+
+	// Setting => Unit Rate
 	function unit_management_url() {
 		return site_url() .'unit/unit_management'; 
 	}
@@ -220,16 +229,19 @@
 	function edit_unit_url($id = '') {
 		return site_url() .'unit/edit_unit/'.$id;
 	}
-
 	function edit_unit_id() {
 		return site_url() .'unit/unit_management'; 
 	}
 
+	function save_unit_url() {
+		return site_url() .'unit/save_unit';
+	}
+
 	function edit_setting_url() {
-		return site_url() .'unit/unit_management'; 
+		return site_url() .'unit/save_unit'; 
 	}
 	function delete_setting_url() {
-		return site_url() .'unit/unit_management'; 
+		return site_url() .'unit/delete_unit'; 
 	}
 
 	// Setting => internet
@@ -434,6 +446,12 @@
 	function delete_discount_url() {
 		return site_url() .'discounts/delete_discount';
 	}
+
+	// Setting => document_setting
+	function edit_document_setting_url() {
+		return site_url() .'document/document_setting';
+	}
+
 	// Setting => email_setting
 	function edit_email_setting_url() {
 		return site_url() .'email_setting/edit_email_setting';
