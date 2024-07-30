@@ -159,24 +159,27 @@
 											</div>
 
 											<div class="content">
+
 												<div class="card-sub-type" @click="clickElecType(1)">
-													<input ng-checked="elecModal.type == 1" type="radio" name="radioElecType" value="1" checked>
+													<input v-model="elecModal.type" type="radio" name="radioElecType" :value="1" checked>
 													เหมาจ่ายรายเดือน
 												</div>
+
 												<div class="card-sub-type" @click="clickElecType(2)">
-													<input ng-checked="elecModal.type == 2" type="radio" name="radioElecType" value="2">
+													<input v-model="elecModal.type" type="radio" name="radioElecType" :value="2" >
 													คิดตามจริง
 												</div>
+
 												<div class="card-sub-type" @click="clickElecType(3)">
-													<input ng-checked="elecModal.type == 3" type="radio" name="radioElecType" value="3">
+													<input v-model="elecModal.type" type="radio" name="radioElecType" :value="3">
 													คิดตามจริง (ขั้นต่ำเป็นจำนวนเงิน)
 												</div>
 												<div class="card-sub-type" @click="clickElecType(4)">
-													<input ng-checked="elecModal.type == 4" type="radio" name="radioElecType" value="4">
+													<input v-model="elecModal.type" type="radio" name="radioElecType" :value="4">
 													คิดตามจริง (ขั้นต่ำเป็นยูนิต)
 												</div>
 												<div class="card-sub-type" @click="clickElecType(5)">
-													<input ng-checked="elecModal.type == 5" type="radio" name="radioElecType" value="5">
+													<input v-model="elecModal.type" type="radio" name="radioElecType" :value="5">
 													คิดตามจริง (บวกส่วนต่างจากราคาขั้นต่ำ)
 												</div>
 											</div>
@@ -192,6 +195,7 @@
 
 											<div class="content">
 												<div>
+
 													<!-- เหมาจ่ายรายเดือน -->
 													<div v-if="elecModal.type == 1">
 														<div class="form-group">
@@ -513,27 +517,28 @@
 
 											<div class="content">
 												<div class="card-sub-type" @click="clickWaterType(1)">
-													<input ng-checked="waterModal.type == 1" type="radio" name="radioWaterTtype" value="1" checked="checked">
+													<input v-model="waterModal.type" type="radio" name="radioWaterTtype" :value="1" checked="checked">
 													เหมาจ่ายรายเดือน
 												</div>
+
 												<div class="card-sub-type" @click="clickWaterType(6)">
-													<input ng-checked="waterModal.type == 6" type="radio" name="radioWaterTtype" value="6">
+													<input v-model="waterModal.type" type="radio" name="radioWaterTtype" :value="6">
 													เหมาจ่ายรายหัว
 												</div>
 												<div class="card-sub-type" @click="clickWaterType(2)">
-													<input ng-checked="waterModal.type == 2" type="radio" name="radioWaterTtype" value="2">
+													<input v-model="waterModal.type" type="radio" name="radioWaterTtype" :value="2">
 													คิดตามจริง
 												</div>
 												<div class="card-sub-type" @click="clickWaterType(3)">
-													<input ng-checked="waterModal.type == 3" type="radio" name="radioWaterTtype" value="3">
+													<input v-model="waterModal.type" type="radio" name="radioWaterTtype" :value="3">
 													คิดตามจริง (ขั้นต่ำเป็นจำนวนเงิน)
 												</div>
 												<div class="card-sub-type" @click="clickWaterType(4)">
-													<input ng-checked="waterModal.type == 4" type="radio" name="radioWaterTtype" value="4">
+													<input v-model="waterModal.type" type="radio" name="radioWaterTtype" :value="4">
 													คิดตามจริง (ขั้นต่ำเป็นยูนิต)
 												</div>
 												<div class="card-sub-type" @click="clickWaterType(5)">
-													<input ng-checked="waterModal.type == 5" type="radio" name="radioWaterTtype" value="5">
+													<input v-model="waterModal.type" type="radio" name="radioWaterTtype" :value="5">
 													คิดตามจริง (บวกส่วนต่างจากราคาขั้นต่ำ)
 												</div>
 											</div>
@@ -548,6 +553,7 @@
 										</div>
 										<div class="content">
 											<div>
+
 												<!-- เหมาจ่ายรายเดือน -->
 													<div v-if="waterModal.type == 1">
 														<div class="form-group">
@@ -558,6 +564,7 @@
 																<i class="fa fa-eye" aria-hidden="true" style="margin-right: 5px;"></i>
 																ดูตัวอย่างการคำนวณ
 															</button>
+
 															<!-- Modal -->
 															<div id="Water-1" class="modal fade" tabindex="-1" role="dialog"  style="z-index: 1000;">
 															  <div class="modal-dialog modal-lg" role="document">
@@ -602,6 +609,7 @@
 
 														</div>
 													</div>
+
 												<!-- เหมาจ่ายรายหัว  -->
 													<div v-if="waterModal.type == 6">
 														<div class="form-group">
@@ -704,6 +712,7 @@
 															</div>
 														</div>
 													</div>
+
 												<!-- คิดตามจริง (ขั้นต่ำเป็นจำนวนเงิน) -->
 													<div v-if="waterModal.type == 3">
 														<div class="form-group">
@@ -758,6 +767,7 @@
 															</div>
 														</div>
 													</div>
+
 												<!-- คิดตามจริง (ขั้นต่ำเป็นยูนิต) -->
 													<div v-if="waterModal.type == 4">
 														<div class="form-group">
@@ -825,6 +835,7 @@
 															</div>
 														</div>
 													</div>
+
 												<!-- คิดตามจริง (บวกส่วนต่างจากราคาขั้นต่ำ) -->
 													<div v-if="waterModal.type == 5">
 														<div class="form-group">
@@ -892,9 +903,9 @@
 													</div>
 													
 											</div>
-											<button class="btn btn-view-example standard-water" ng-click="modalExampleCal('water')" type="button" fdprocessedid="ybadvn">
+											<!-- <button class="btn btn-view-example standard-water" ng-click="modalExampleCal('water')" type="button" fdprocessedid="ybadvn">
 											  <i class="fa fa-eye" aria-hidden="true" style="margin-right: 5px;"></i>
-												ดูตัวอย่างการคำนวณ</button>
+												ดูตัวอย่างการคำนวณ</button> -->
 											</div>
 									</div>
 								  </div>
@@ -912,7 +923,7 @@
 							</div>
 							-->
 							<div class="modal-footer">
-        <button type="button" data-dismiss="modal" ng-disabled="isSaving" class="btn btn-red" fdprocessedid="h2d46s">ยกเลิก</button>
+        <button type="button" data-dismiss="modal" ng-disabled="isSaving" class="btn btn-red" fdprocessedid="h2d46s" >ยกเลิก</button>
         <button type="submit" ng-click="saveStandardRateElec()" ng-disabled="isSaving" class="btn btn-green" fdprocessedid="jtakhc">บันทึก</button>
       </div>
 						</div>

@@ -393,12 +393,12 @@
 
                         <div class="row" style="margin-top:10px">
                             <div class="col-md-6">
-                                <small><font color="red">*</font> <?= _r('Monthly Price', 'ราคารายเดือน'); ?></small>
+                                <small><?= _r('Monthly Price', 'ราคารายเดือน'); ?></small>
                                 <input type="number" class="form-control" v-model="room_type_info.default_rate_month">
                             </div>
 
                             <div class="col-md-6">
-                                <small><font color="red">*</font> <?= _r('Furniture Cost','ค่าเช่าเฟอร์นิเจอร์'); ?></small>
+                                <small><?= _r('Furniture Cost','ค่าเช่าเฟอร์นิเจอร์'); ?></small>
                                 <input type="number" class="form-control" v-model="room_type_info.furniture_rate">
                             </div>
                             
@@ -816,7 +816,7 @@ $(document).ready(function() {
                 var valid = true;
                 var keys = Object.keys(this.room_type_info);
                 keys.forEach((v) => {
-                    if (valid && !['id_room_type', 'sofa_en', 'sofa_th', 'date_created'].includes(v) && self.room_type_info[v] === '') {
+                    if (valid && !['id_room_type', 'sofa_en', 'sofa_th', 'date_created','default_rate_month','furniture_rate'].includes(v) && self.room_type_info[v] === '') {
                         alert("Empty "+ v);
                         valid = false;
                     }
