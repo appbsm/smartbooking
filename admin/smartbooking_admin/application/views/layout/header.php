@@ -333,6 +333,21 @@
                                             </a>
                                         </li>
                                     <?php endif; ?>
+
+                                    <?php //if (has_permission('booking', 'view')) : ?>
+                                        <li class="nav-item">
+                                            <a href="<?php echo booking_url(); ?>" class="nav-link">
+                                                <i class="fa fa-suitcase-rolling nav-icon"></i>
+                                                <p><?= _r('Rental Bill', 'บิลค่าเช่า'); ?></p>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="<?php echo booking_url(); ?>" class="nav-link">
+                                                <i class="fa fa-suitcase-rolling nav-icon"></i>
+                                                <p><?= _r('Pay the bill', 'จ่ายบิล'); ?></p>
+                                            </a>
+                                        </li>
+                                    <?php //endif; ?>
                                 </ul>
                             </li>
                         <?php endif; ?>

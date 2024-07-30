@@ -38,6 +38,7 @@
 
      <div class="tab-content" id="myTabContent">
             <div class="tab-pane fade" :class="{ 'show active': currentTab === 'tab1' }" id="tab1" role="tabpanel" aria-labelledby="tab1-tab">
+
                 <section class="content-header">
                     <div class="container-fluid">
                         <div class="row mb-2">
@@ -150,6 +151,7 @@
                 </section>
 
             </div>
+            
             <div class="tab-pane fade" :class="{ 'show active': currentTab === 'tab2' }" id="tab2" role="tabpanel" aria-labelledby="tab2-tab">
                 <section class="content-header">
                     <div class="container-fluid">
@@ -313,8 +315,8 @@
                                                 <th style="width:160px;text-align:center;"><?= _r('Project', 'โครงการ'); ?></th>
                                                 <th style="width:60px;text-align:center;"><?= _r('Rooms type', 'ห้อง'); ?></th>
                                                 <th style="width:60px;text-align:center;"><?= _r('Room Number', 'หมายเลขห้อง'); ?></th>
-                                                <th style="width:80px;text-align:center;"><?= _r('Meter ID', 'รหัสมิเตอร์'); ?></th>
-                                                <th style="width:80px;text-align:center;"><?= _r('Unit No', 'หมายเลขหน่วย'); ?></th>
+                                               <!--  <th style="width:80px;text-align:center;"><?= _r('Meter ID', 'รหัสมิเตอร์'); ?></th>
+                                                <th style="width:80px;text-align:center;"><?= _r('Unit No', 'หมายเลขหน่วย'); ?></th> -->
                                                 <th style="width:60px;text-align:center;"><?= _r('ID', 'ID'); ?></th>
                                                 <!-- <th style="width:60px;"><?= _r('Status', 'สถานะ'); ?></th> -->
                                                 <?php if (has_permission('internet_management', 'view') || has_permission('internet_management', 'delete')) : ?>
@@ -330,8 +332,8 @@
                                                 <td>{{ <?= _r('r.project_name_en', 'r.project_name_th'); ?> }}</td>
                                                 <td>{{ <?= _r('r.room_type_name_en', 'r.room_type_name_th'); ?> }}</td>
                                                 <td class="text-center">{{ <?= _r('r.room_name_en', 'r.room_name_th'); ?> }}</td>
-                                                <td class="text-center">{{ r.meter_id }}</td>
-                                                <td class="text-center">{{ r.unit_no }}</td>
+                                                <!-- <td class="text-center">{{ r.meter_id }}</td>
+                                                <td class="text-center">{{ r.unit_no }}</td> -->
                                                 <td class="text-center">{{ r.id_internet }}</td>
                                                 
                                                 <?php if (has_permission('internet_management', 'view') || has_permission('internet_management', 'delete')) : ?>
